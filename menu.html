@@ -5,26 +5,77 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="style.css" />
-  <title>Browser</title>
+  <title>Cars Gallery</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    .spe {
+      outline: 5px solid blue;
+      width: 90%;
+      margin: 20px auto;
+      text-align: center;
+      border-radius: 10px;
+      overflow: hidden;
+      transition: transform 0.3s;
+    }
+
+    .spe:hover {
+      transform: scale(1.03);
+    }
+
+    .spe img {
+      width: 100%;
+      display: block;
+    }
+
+    .speed {
+      background-color: rgba(0, 0, 255, 0.1);
+      padding: 10px 0;
+    }
+
+    .speed h3 {
+      margin: 0;
+      color: #000;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+      display: block;
+    }
+  </style>
 </head>
-<style>
-  .spe{
-outline:5px solid blue;
-width:100%;
-  }
-  .speed{
-  text-align:center
-  }
-  a{
-  text-decoration:none;
-  }
-</style>
+
 <body>
-  <div class="spe"><a href="bugatti.html"> <img src="bugatti oldi.jpeg" width="100%"><div class="speed"><h3>Bugatti Chiron Super Sport 300+</h3></div></a></div> 
- 
- <div class="spe"><a href="koenigsegg.html"><img src="koenigsegg oldi.jpeg" width="100%"><div class="speed"><h3>Koenigsegg Jesko Absolut</h3></div></a></div>
-   
-  <div class="spe"><a href="tuatara.html"><img src="tuatara o'ng.jpeg" width="100%"><div class="speed"><h3>SSC Tuatara</h3></div></a></div>
-    </body>
+  <div class="spe">
+    <a href="bugatti.html">
+      <img src="images/bugatti-oldi.jpeg" alt="Bugatti Chiron Super Sport 300+">
+      <div class="speed">
+        <h3>Bugatti Chiron Super Sport 300+</h3>
+      </div>
+    </a>
+  </div>
+
+  <div class="spe">
+    <a href="koenigsegg.html">
+      <img src="images/koenigsegg-oldi.jpeg" alt="Koenigsegg Jesko Absolut">
+      <div class="speed">
+        <h3>Koenigsegg Jesko Absolut</h3>
+      </div>
+    </a>
+  </div>
+
+  <div class="spe">
+    <a href="tuatara.html">
+      <img src="images/tuatara-oldi.jpeg" alt="SSC Tuatara">
+      <div class="speed">
+        <h3>SSC Tuatara</h3>
+      </div>
+    </a>
+  </div>
+</body>
 
 </html>
