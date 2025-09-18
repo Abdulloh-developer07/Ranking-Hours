@@ -1,23 +1,99 @@
-<style>
-  .spe{
-outline:5px solid blue;
-width:60%;
-  text-align:center;
-  }
-  .speed{
-  text-align:center
-  }
-  a{
-  text-decoration:none;
-  }
-  img{
-  max-width:100%;
-  height:100%
-  }
-</style>
+<!DOCTYPE html>
+<html lang="en">
 
-  <div class="spe"><a href="bugatti.html"> <img src="first.jpeg" width="100%"><div class="speed"><h3>First Place</h3></div></a></div> 
- 
- <div class="spe"><a href="koenigsegg.html"><img src="rank-2.jpeg" width="100%"><div class="speed"><h3>Second Place</h3></div></a></div>
-   
-  <div class="spe"><a href="tuatara.html"><img src="rank-3.jpeg" width="100%"><div class="speed"><h3>Third Place</h3></div></a></div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+  <title>Ranking Hours</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+
+    .rank {
+      border-radius: 22px;
+      outline: 10px solid yellow;
+      width: 200px;
+      height: 160px;
+      margin: 20px auto;
+      overflow: hidden;
+    }
+
+    .rank img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .dis {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+
+    .spe {
+      outline: 5px solid blue;
+      width: 250px;
+      border-radius: 10px;
+      overflow: hidden;
+      transition: transform 0.3s;
+      text-align: center;
+    }
+
+    .spe:hover {
+      transform: scale(1.05);
+    }
+
+    .spe img {
+      width: 100%;
+      display: block;
+    }
+
+    .speed {
+      background-color: rgba(0, 0, 255, 0.1);
+      padding: 10px 0;
+    }
+
+    h4 {
+      margin: 5px 0;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+      display: block;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="rank">
+    <img src="Ranking-hours.jpeg" alt="Ranking Hours">
+  </div>
+
+  <div class="dis">
+    <div class="spe">
+      <a href="menu.html">
+        <img src="speed-cars.jpeg" alt="Ranking Speed">
+        <div class="speed">
+          <h4>Ranking Speed</h4>
+          <div>(Top Three)</div>
+        </div>
+      </a>
+    </div>
+
+    <div class="spe">
+      <img src="coming-soon.jpeg" alt="Others">
+      <div class="speed">
+        <h4>Others</h4>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
