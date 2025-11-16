@@ -4,12 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Ranking Hours</title>
-
 <style>
 body {
   font-family: Arial, sans-serif;
   margin: 0;
-  padding-top: 60px; /* Fixed menu balandligi uchun */
+  padding-top: 60px; /* Fixed menu balandligi */
 }
 
 nav {
@@ -30,26 +29,18 @@ nav ul {
 }
 
 nav ul li {
-  position: relative;
   padding: 15px 20px;
-  cursor: pointer;
   color: #fff;
+  cursor: pointer;
 }
 
 nav ul li:hover {
   background-color: #444;
 }
 
-.submenu {
-  display: none;
-  position: relative;
-  background-color: #f4f4f4;
-  padding: 10px 20px;
-  color: #000;
-}
-
-ul li.active .submenu {
-  display: block;
+.content-section {
+  padding: 20px;
+  border-bottom: 1px solid #ccc;
 }
 </style>
 </head>
@@ -57,41 +48,35 @@ ul li.active .submenu {
 
 <nav>
   <ul>
-    <li class="menu-item active">Home
-      <div class="submenu">
-        Welcome to my site, a hub designed to bring clarity and insight...
-      </div>
-    </li>
-    <li class="menu-item">About
-      <div class="submenu">
-        I am a seasoned developer with a strong passion for creating websites...
-      </div>
-    </li>
-    <li class="menu-item">Blog
-      <div class="submenu">
-        Here you will find detailed posts about my projects, top 10 rankings...
-      </div>
-    </li>
-    <li class="menu-item">Contact
-      <div class="submenu">
-        Email: abdullohmahmudov660@gmail.com<br>
-        Phone: +998885650604<br>
-        Telegram: +998338370086
-      </div>
-    </li>
+    <li>Home</li>
+    <li>About</li>
+    <li>Blog</li>
+    <li>Contact</li>
   </ul>
 </nav>
 
-<script>
-const menuItems = document.querySelectorAll('.menu-item');
+<div class="content-section" id="home">
+  <h2>Home</h2>
+  <p>Welcome to my site, a hub designed to bring clarity and insight to anyone interested in discovering the top performers in various fields...</p>
+</div>
 
-menuItems.forEach(item => {
-  item.addEventListener('click', () => {
-    menuItems.forEach(i => i.classList.remove('active')); // boshqa menyularni yopish
-    item.classList.add('active'); // faqat bosilganini ochish
-  });
-});
-</script>
+<div class="content-section" id="about">
+  <h2>About</h2>
+  <p>I am a seasoned developer with a strong passion for creating websites that help people find exactly what they are looking for...</p>
+</div>
+
+<div class="content-section" id="blog">
+  <h2>Blog</h2>
+  <p>Here you will find detailed posts about my projects, highlighting the top 10 rankings I have researched and curated...</p>
+</div>
+
+<div class="content-section" id="contact">
+  <h2>Contact</h2>
+  <p>Email: abdullohmahmudov660@gmail.com<br>
+     Phone: +998885650604<br>
+     Telegram: +998338370086
+  </p>
+</div>
 
 </body>
 </html>
