@@ -5,25 +5,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Ranking Hours</title>
-<!-- HTML -->
-<div class="language-selector">
-  <label for="lang">Choose language:</label>
-  <select id="lang" onchange="changeLanguage(this.value)">
-    <option value="uz">O‘zbekcha</option>
-    <option value="en">English</option>
-  </select>
-</div>
-
-<script>
-  function changeLanguage(lang) {
-    if(lang === 'uz') {
-      window.location.href = '/uz/index.html'; // O‘zbekcha sahifa
-    } else if(lang === 'ru') {
-    } else if(lang === 'en') {
-      window.location.href = '/en/index.html'; // Inglizcha sahifa
-    }
-  }
-</script>
   <style>
   .language-selector {
   position: fixed;
@@ -139,7 +120,14 @@
 </head>
 
 <body>
-
+<!-- HTML -->
+<div class="language-selector">
+  <label for="lang">Choose language:</label>
+  <select id="lang" onchange="changeLanguage(this.value)">
+    <option value="uz">O‘zbekcha</option>
+    <option value="en">English</option>
+  </select>
+</div>
   <!-- NAV -->
   <nav>
     <ul>
@@ -225,7 +213,16 @@
     // default: HOME ochiq
     document.querySelector("#home").style.display = "block";
   </script>
-
+<script>
+  function changeLanguage(lang) {
+    if(lang === 'uz') {
+      window.location.href = '/uz/index.html'; // O‘zbekcha sahifa
+    } else if(lang === 'ru') {
+    } else if(lang === 'en') {
+      window.location.href = '/en/index.html'; // Inglizcha sahifa
+    }
+  }
+</script>
 </body>
 
 </html>
