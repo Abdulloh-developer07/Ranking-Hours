@@ -5,9 +5,32 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Ranking Hours</title>
+<!-- HTML -->
+<div class="language-selector">
+  <label for="lang">Choose language:</label>
+  <select id="lang" onchange="changeLanguage(this.value)">
+    <option value="uz">O‘zbekcha</option>
+    <option value="en">English</option>
+  </select>
+</div>
 
+<script>
+  function changeLanguage(lang) {
+    if(lang === 'uz') {
+      window.location.href = '/uz/index.html'; // O‘zbekcha sahifa
+    } else if(lang === 'ru') {
+    } else if(lang === 'en') {
+      window.location.href = '/en/index.html'; // Inglizcha sahifa
+    }
+  }
+</script>
   <style>
-    body {
+  .language-selector {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+}
+  body {
       margin: 0;
       font-family: Arial, sans-serif;
       padding-top: 70px; 
