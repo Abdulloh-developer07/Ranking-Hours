@@ -4,98 +4,67 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="style.css" />
   <title>Ranking Hours</title>
-<meta name="google-adsense-account" content="ca-pub-3010655136119393">
-   <nav> 
-     <a href="#home">Home</a>
-  <a href="#about">About</a>
-  <a href="#blog">Blog</a>
-  <a href="#contact">Contact</a>
-</nav>
-
-
-<section id="contact"><h1>Contact</h1>Feel free to reach out if you have any questions, suggestions, or project inquiries. You can contact me through:
-
-Email: abdullohmahmudov660@gmail.com
-
-Phone: +998885650604
-
-Telegram: +998338370086
-
-I strive to respond promptly, typically within 24 hours on business days. Whether you want to discuss a new project, share feedback, or request additional information about the top 10 rankings, I am here to help. Your message is important, and I ensure that every inquiry receives careful attention.</section>
 
   <style>
     body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding-top: 10px; /* Fixed menu balandligi uchun */
-}
-
-nav {
-  position:fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  background-color: white                     ;
-  z-index: 10;
-}
-
-nav ul {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  display: flex;
-  justify-content: center;
-}
-
-nav ul li {
-  position: relative;
-  padding: 15px 20px;
-  cursor: pointer;
-  color: #fff;
-}
-
-nav ul li:hover {
-  background-color: #444;
-}
-
-.submenu {
-  display: none;
-  position: relative;
-  background-color: #f4f4f4;
-  padding: 10px 20px;
-  color: #000;
-}
-
-ul li.active .submenu {
-  display: block;
-}
-html { scroll-behavior: smooth; }
-
-
-    body {
       margin: 0;
       font-family: Arial, sans-serif;
-      text-align: center;
-      align-items:center
+      padding-top: 70px; 
+      background: #f7f7f7;
     }
 
-    .rank {
-      border-radius: 22px;
-      outline: 10px solid yellow;
-      width: 200px;
-      height: 160px;
-      margin: 20px auto;
-      overflow: hidden;
+    /* NAV */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      background: white;
+      border-bottom: 1px solid #ccc;
+      z-index: 1000;
     }
 
-    .rank img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
+    nav ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: flex;
+      justify-content: center;
     }
 
+    nav ul li {
+      padding: 15px 25px;
+      cursor: pointer;
+      font-size: 18px;
+      color: black;
+      transition: 0.2s;
+      position: relative;
+    }
+
+    nav ul li:hover {
+      background: #eee;
+    }
+
+    /* SUBMENU (pastga ochiladigan content) */
+    .submenu {
+      display: none;
+      padding: 20px;
+      background: white;
+      margin: 10px auto;
+      width: 85%;
+      border-radius: 10px;
+      box-shadow: 0 0 10px #ddd;
+      text-align: left;
+      font-size: 17px;
+      line-height: 1.5rem;
+    }
+
+    li.active + .submenu {
+      display: block;
+    }
+
+    /* BLOG CARDS */
     .dis {
       display: flex;
       justify-content: center;
@@ -109,30 +78,25 @@ html { scroll-behavior: smooth; }
       width: 250px;
       border-radius: 10px;
       overflow: hidden;
-      transition: transform 0.3s;
-      text-align: center;
+      transition: 0.3s;
+      background: white;
+    }
+
+    .spe img {
+      width: 100%;
+      height: 170px;
+      object-fit: cover;
     }
 
     .spe:hover {
       transform: scale(1.05);
     }
-.spe img,.x {
-      width: 100%;
-      height:100%;
-      display: block;
-    }
 
-    .speed {
-      background-color: rgba(0, 0, 255, 0.1);
-      padding: 12px 0;
-    }
+    .speed,
     .speedd {
-      background-color: rgba(0, 0, 255, 0.1);
-      padding: 24px 0;
-    }
-
-    h4 {
-      margin: 5px 0;
+      padding: 15px;
+      text-align: center;
+      background: rgba(0, 0, 255, 0.1);
     }
 
     a {
@@ -140,91 +104,108 @@ html { scroll-behavior: smooth; }
       color: inherit;
       display: block;
     }
-     .x{
-    margin:200px ;
-    }
-  @media (max-width: 480px) {
-    body {
-        font-size: 15px;
-    }
-}
 
-}
-</style>
+    .footer {
+      text-align: center;
+      margin-top: 150px;
+      padding: 40px;
+      font-size: 18px;
+    }
+  </style>
+
 </head>
+
 <body>
 
-<nav>
-  <ul>
-    <li class="menu-item active">Home<h1>Home</h1>
-      <div class="submenu"><div class="rank"> <img src="Ranking-hours.jpg" alt="Ranking Hours">
-  </div>
-    Welcome to my site, a hub designed to bring clarity and insight to anyone interested in discovering the top performers in various fields. Here, you can explore top 10 rankings of cars, people, and much more, all presented in an organized, user-friendly manner. Whether you want to know the fastest cars, the most influential personalities, or unique statistics, this platform provides accurate and well-curated information. As a developer with extensive experience in website creation, I have designed this site to be fast, intuitive, and visually engaging. Navigate through sections effortlessly, find the information you need, and enjoy the combination of technology, data, and aesthetics that makes your exploration enjoyable and meaningful.
-   <br>  
-   
- </li>
-    <li class="menu-item">About
-      <div class="submenu">
-    <h1>About Us</h1>I am a seasoned developer with a strong passion for creating websites that help people find exactly what they are looking for. Over the years, I have worked on numerous projects, building both simple and complex platforms that prioritize usability, design, and performance. My mission is to make information accessible, easy to understand, and visually appealing. By combining my skills in coding, UI/UX design, and data curation, I bring unique insights to visitors who want to explore top 10 rankings in various categories. Whether it is cars, people, or other interesting metrics, my goal is to provide clear and accurate information that empowers users to make informed decisions or simply enjoy discovering new facts.
+  <!-- NAV -->
+  <nav>
+    <ul>
+      <li id="home-btn" class="menu">Home</li>
+      <li id="about-btn" class="menu">About</li>
+      <li id="blog-btn" class="menu">Blog</li>
+      <li id="contact-btn" class="menu">Contact</li>
+    </ul>
+  </nav>
 
-      </div>
-    </li>
-    <li class="menu-item">Blog
-      <div class="submenu">
-<h1>Blog</h1>In the Blog section, you will find detailed posts about my projects, highlighting the top 10 rankings I have researched and curated. This includes the fastest cars, the strongest individuals, and other unique categories that spark curiosity. Each post explains the methodology, sources, and interesting facts behind the rankings, making it both informative and engaging. I update the blog regularly to showcase new findings, innovative projects, and insights from my ongoing development work. Readers can enjoy a combination of educational content, interactive visuals, and professional analysis, all designed to help them understand the metrics and context behind each top 10 list.<br>
-        <div class="dis">
-    <div class="spe">
-      <a href="aboutcars.html">
-        <img src="cars.jpg" alt="Ranking Speed">
-        <div class="speedd">
-          <h4>Cars</h4>
-          <div>(About many things)</div>
-        </div>
-      </a>
+  <!-- CONTENTS -->
+
+  <!-- HOME -->
+  <div id="home" class="submenu">
+    <h1>Home</h1>
+    <p>
+      Welcome to my site, a hub designed to bring clarity and insight to anyone
+      interested in discovering the top performers in various fields. Explore top
+      10 rankings of cars, people, and much more.
+    </p>
+
+    <div class="rank">
+      <img src="Ranking-hours.jpg" alt="Ranking Hours" style="width:100%; border-radius:10px;">
     </div>
+  </div>
 
-    <div class="spe">
-      <a href="humans.html">
-      <img src="humans.jpg" alt="Humans">
-      <div class="speed">
-        <h4>Humans</h4>
-         <div>(About many things)</div>
-      </div>
+  <!-- ABOUT -->
+  <div id="about" class="submenu">
+    <h1>About</h1>
+    <p>
+      I am a seasoned developer with a strong passion for creating websites that
+      help people find exactly what they need. My mission is to make information
+      easy, accurate, and visually engaging.
+    </p>
+  </div>
+
+  <!-- BLOG -->
+  <div id="blog" class="submenu">
+    <h1>Blog</h1>
+    <p>Explore new top 10 projects updated weekly.</p>
+
+    <div class="dis">
+      <div class="spe">
+        <a href="aboutcars.html">
+          <img src="cars.jpg">
+          <div class="speedd">
+            <h4>Cars</h4>
+            (About many things)
+          </div>
         </a>
-    </div></div>
-    </li>
-    <li class="menu-item">Contact
-      <div class="submenu"><h1>Contact</h1>Feel free to reach out if you have any questions, suggestions, or project inquiries. You can contact me through:
-
-        Email: abdullohmahmudov660@gmail.com<br>
-        Phone: +998885650604<br>
-        Telegram: +998338370086
       </div>
-    </li>
-  </ul>
-</nav>
 
+      <div class="spe">
+        <a href="humans.html">
+          <img src="humans.jpg">
+          <div class="speed">
+            <h4>Humans</h4>
+            (About many things)
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
 
+  <!-- CONTACT -->
+  <div id="contact" class="submenu">
+    <h1>Contact</h1>
+    <p>Email: abdullohmahmudov660@gmail.com</p>
+    <p>Phone: +998885650604</p>
+    <p>Telegram: +998338370086</p>
+  </div>
 
-</head>
+  <div class="footer">Created by abdulloh-developer07</div>
 
-<body>
+  <script>
+    const buttons = document.querySelectorAll(".menu");
+    const sections = document.querySelectorAll(".submenu");
 
+    buttons.forEach(btn => {
+      btn.addEventListener("click", () => {
+        sections.forEach(s => s.style.display = "none");
+        document.querySelector("#" + btn.id.replace("-btn", "")).style.display = "block";
+      });
+    });
 
+    // default: HOME ochiq
+    document.querySelector("#home").style.display = "block";
+  </script>
 
-    <script>
-const menuItems = document.querySelectorAll('.menu-item');
+</body>
 
-menuItems.forEach(item => {
-  item.addEventListener('click', () => {
-    menuItems.forEach(i => i.classList.remove('active')); // boshqa menyularni yopish
-    item.classList.add('active'); // faqat bosilganini ochish
-  });
-});
-</script>
-
-       <div class="x">
-        <p>Created by abdulloh-developer07</p>
-        </div>
-      </body>
-      </html>
+</html>
