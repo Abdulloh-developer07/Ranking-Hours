@@ -36,13 +36,48 @@
   transform: translateX(-50%);  /* faqat gorizontal markazlashtirish */
 }
     details img { margin: 10px 0; }
-     @media (max-width: 600px) {
+/* MOBIL EKRANLAR UCHUN (max 600px) */
+@media (max-width: 600px) {
+  /* Body va umumiy sozlamalar */
   body {
     padding: 10px;
-   height:auto 0;
-    width:100%
+    margin: 0;
+    width: 100%;
+    height: auto;
+    font-size: 16px; /* matnni biroz kichraytirish */
   }
-    }
+
+  /* Header markazlashuvi va padding */
+  header {
+    text-align: center;
+    padding: 15px 10px;
+  }
+
+  /* Navigatsiya menyuni vertikal qilish */
+  nav ul {
+    flex-direction: column;
+    gap: 10px;
+    padding: 0;
+    text-align: center;
+  }
+
+  nav ul li {
+    margin: 5px 0;
+  }
+
+  /* Karta yoki box elementlarini ekran bo‘yicha kengaytirish */
+  .card {
+    width: 90%; /* ekran bo‘yicha kenglik */
+    margin: 10px auto;
+  }
+
+  /* Agar rasm bo‘lsa, ekranga moslashtirish */
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
   </style>
 </head>
 <body>
