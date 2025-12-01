@@ -1,27 +1,27 @@
+Мумтозабегим, [12/1/2025 8:04 PM]
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="responsive.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ranking Hours - Combined</title>
-  <link rel="stylesheet" href="responsive.css">
-  <link rel="stylesheet" href="style.css">
+  <title>Ranking Hours</title>
   <style>
-    body {
+  .language-selector {
+  position: fixed; 
+  top: 10px;
+  right: 10px;
+}
+  body {
       margin: 0;
       font-family: Arial, sans-serif;
-      text-align: center;
-      padding-top: 70px;
+      padding-top: 70px; 
       background: #f7f7f7;
     }
 
-    .language-selector {
-      position: fixed;
-      top: 10px;
-      right: 10px;
-    }
-
+    /* NAV */
     nav {
       position: fixed;
       top: 0;
@@ -53,12 +53,13 @@
       background: #eee;
     }
 
+    /* SUBMENU (pastga ochiladigan content) */
     .submenu {
       display: none;
       padding: 20px;
       background: white;
       margin: 10px auto;
-      width: 90%;
+      width: 85%;
       border-radius: 10px;
       box-shadow: 0 0 10px #ddd;
       text-align: left;
@@ -66,6 +67,11 @@
       line-height: 1.5rem;
     }
 
+    li.active + .submenu {
+      display: block;
+    }
+
+    /* BLOG CARDS */
     .dis {
       display: flex;
       justify-content: center;
@@ -76,19 +82,17 @@
 
     .spe {
       outline: 5px solid blue;
-      width: 260px;
+      width: 250px;
       border-radius: 10px;
       overflow: hidden;
-      transition: transform 0.3s;
+      transition: 0.3s;
       background: white;
-      text-align: center;
     }
 
     .spe img {
       width: 100%;
       height: 170px;
       object-fit: cover;
-      display: block;
     }
 
     .spe:hover {
@@ -97,7 +101,7 @@
 
     .speed,
     .speedd {
-      padding: 10px 15px;
+      padding: 15px;
       text-align: center;
       background: rgba(0, 0, 255, 0.1);
     }
@@ -114,69 +118,60 @@
       padding: 40px;
       font-size: 18px;
     }
-
-    button {
-      border-radius: 10px;
-      width: 100px;
-    }
-
-    .home {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-    }
   </style>
+
 </head>
 
 <body>
-
-<!-- LANGUAGE SELECTOR -->
+<!-- HTML -->
 <div class="language-selector">
   <label for="lang">Choose language:</label>
   <select id="lang" onchange="changeLanguage(this.value)">
     <option value="uz">O‘zbekcha</option>
-    <option value="en" selected>English</option>
+    <option value="en">English</option>
   </select>
 </div>
+  <!-- NAV -->
+  <nav>
+    <ul>
+      <li id="home-btn" class="menu">Home</li>
+      <li id="about-btn" class="menu">About</li>
+      <li id="blog-btn" class="menu">Blog</li>
+      <li id="contact-btn" class="menu">Contact</li>
+    </ul>
+  </nav>
 
-<!-- NAV -->
-<nav>
-  <ul>
-    <li id="home-btn" class="menu">Home</li>
-    <li id="about-btn" class="menu">About</li>
-    <li id="blog-btn" class="menu">Blog</li>
-    <li id="contact-btn" class="menu">Contact</li>
-  </ul>
-</nav>
+  <!-- CONTENTS -->
 
-<!-- HOME -->
-<div id="home" class="submenu">
-  <h1>Home</h1>
-  <p>
+  <!-- HOME -->
+  <div id="home" class="submenu">
+    <h1>Home</h1>
+    <p>
     Welcome to my site, a hub designed to bring clarity and insight to anyone interested in discovering the top performers in various fields. Here, you can explore top 10 rankings of cars, people, and much more, all presented in an organized, user-friendly manner. Whether you want to know the fastest cars, the most influential personalities, or unique statistics, this platform provides accurate and well-curated information. As a developer with extensive experience in website creation, I have designed this site to be fast, intuitive, and visually engaging. Navigate through sections effortlessly, find the information you need, and enjoy the combination of technology, data, and aesthetics that makes your exploration enjoyable and meaningful.
-  </p>
-  <div class="rank">
-    <img src="Ranking-hours.jpg" alt="Ranking Hours" style="width:70%; height:70%; border-radius:10px; display:block; margin:0 auto;">
+    </p>
+
+    <div class="rank">
+      <img src="Ranking-hours.jpg" alt="Ranking Hours" style="width:70%; height:70%; border-radius:10px; display:block; margin:0 auto;">
+    </div>
   </div>
-</div>
 
+Мумтозабегим, [12/1/2025 8:04 PM]
 <!-- ABOUT -->
-<div id="about" class="submenu">
-  <h1>About</h1>
-  <p>
-    I am a seasoned developer with a strong passion for creating websites that help people find exactly what they are looking for. Over the years, I have worked on numerous projects, building both simple and complex platforms that prioritize usability, design, and performance. My mission is to make information accessible, easy to understand, and visually appealing. By combining my skills in coding, UI/UX design, and data curation, I bring unique insights to visitors who want to explore top 10 rankings in various categories. Whether it is cars, people, or other interesting metrics, my goal is to provide clear and accurate information that empowers users to make informed decisions or simply enjoy discovering new facts.
-  </p>
-</div>
+  <div id="about" class="submenu">
+    <h1>About</h1>
+    <p>
+     I am a seasoned developer with a strong passion for creating websites that help people find exactly what they are looking for. Over the years, I have worked on numerous projects, building both simple and complex platforms that prioritize usability, design, and performance. My mission is to make information accessible, easy to understand, and visually appealing. By combining my skills in coding, UI/UX design, and data curation, I bring unique insights to visitors who want to explore top 10 rankings in various categories. Whether it is cars, people, or other interesting metrics, my goal is to provide clear and accurate information that empowers users to make informed decisions or simply enjoy discovering new facts.
+    </p>
+  </div>
 
-<!-- BLOG -->
-<div id="blog" class="submenu">
-  <h1>Blog</h1>
-  <p>
-    In the Blog section, you will find detailed posts about my projects, highlighting the top 10 rankings I have researched and curated. This includes the fastest cars, the strongest individuals, and other unique categories that spark curiosity. Each post explains the methodology, sources, and interesting facts behind the rankings, making it both informative and engaging. I update the blog regularly to showcase new findings, innovative projects, and insights from my ongoing development work. Readers can enjoy a combination of educational content, interactive visuals, and professional analysis, all designed to help them understand the metrics and context behind each top 10 list.
-  </p>
+  <!-- BLOG -->
+  <div id="blog" class="submenu">
+    <h1>Blog</h1>
+    <p>In the Blog section, you will find detailed posts about my projects, highlighting the top 10 rankings I have researched and curated. This includes the fastest cars, the strongest individuals, and other unique categories that spark curiosity. Each post explains the methodology, sources, and interesting facts behind the rankings, making it both informative and engaging. I update the blog regularly to showcase new findings, innovative projects, and insights from my ongoing development work. Readers can enjoy a combination of educational content, interactive visuals, and professional analysis, all designed to help them understand the metrics and context behind each top 10 list.</p>
+
     <div class="dis">
       <div class="spe">
-        <a href="aboutcars.html">
+        <a href="#cars-menu.html">
           <img src="cars.jpg">
           <div class="speedd">
             <h4>Cars</h4>
@@ -196,116 +191,43 @@
       </div>
     </div>
   </div>
-  <div class="dis">
-    <div class="spe">
-      <a href="fastcars.html">
-        <img src="speed-cars.jpg" alt="Ranking-Speed">
-        <div class="speed">
-          <h4>The Fastest Cars</h4>
-          <div>(Top 10)</div>
-        </div>
-      </a>
-    </div>
-    <div class="spe">
-      <a href="ex-cars.html">
-        <img src="expen-cars.jpg" alt="Most-expensive-cars">
-        <div class="speed">
-          <h4>The Most Expensive Cars</h4>
-          <div>(Top 10)</div>
-        </div>
-      </a>
-    </div>
-    <div class="spe">
-      <a href="be-cars.html">
-        <img src="beautiful-cars-top-10.jpg" alt="beautiful-cars">
-        <div class="speed">
-          <h4>The Most Beautiful Cars</h4>
-          <div>(Top 10)</div>
-        </div>
-      </a>
-    </div>
-    <div class="spe">
-      <a href="power-car.html">
-        <img src="powerful-cars.png" alt="strong-cars">
-        <div class="speed">
-          <h4>The Most Powerful Cars</h4>
-          <div>(Top 10)</div>
-        </div>
-      </a>
-    </div>
-    <div class="spe">
-      <a href="rich.html">
-        <img src="rich-hu.jpg" alt="Rich-humans">
-        <div class="speed">
-          <h4>The Richest Humans</h4>
-          <div>(Top 10)</div>
-        </div>
-      </a>
-    </div>
-    <div class="spe">
-      <a href="be-hu.html">
-        <img src="be-hu.png" alt="beautiful-humans">
-        <div class="speed">
-          <h4>The Most Beautiful Humans</h4>
-          <div>(Top 10)</div>
-        </div>
-      </a>
-    </div>
-    <div class="spe">
-      <a href="pop.html">
-        <img src="pop-hu.png" alt="popular-humans">
-        <div class="speed">
-          <h4>The Most Popular Humans</h4>
-          <div>(Top 10)</div>
-        </div>
-      </a>
-    </div>
-    <div class="spe">
-      <a href="strong.html">
-        <img src="st-hu.jpg" alt="strong-humans" height="70%">
-        <div class="speed">
-          <h4>The Strongest Humans</h4>
-          <div>(Top 10)</div>
-        </div>
-      </a>
-    </div>
+
+  <!-- CONTACT -->
+  <div id="contact" class="submenu">
+    <h1>Contact</h1>
+    <p>Feel free to reach out if you have any questions, suggestions, or project inquiries. You can contact me through:</p>
+    <p>Email: abdullohmahmudov660@gmail.com</p>
+    <p>Phone: +998885650604</p>
+    <p>Telegram: +998338370086</p>
   </div>
-  <div class="home"><a href="#home"><button>Home</button></a></div>
-</div>
 
-<!-- CONTACT -->
-<div id="contact" class="submenu">
-  <h1>Contact</h1>
-  <p>Feel free to reach out if you have any questions, suggestions, or project inquiries. You can contact me through:</p>
-  <p>Email: abdullohmahmudov660@gmail.com</p>
-  <p>Phone: +998885650604</p>
-  <p>Telegram: +998338370086</p>
-</div>
+  <div class="footer">Created by abdulloh-developer07</div>
 
-<div class="footer">Created by abdulloh-developer07</div>
+  <script>
+    const buttons = document.querySelectorAll(".menu");
+    const sections = document.querySelectorAll(".submenu");
 
-<script>
-  const buttons = document.querySelectorAll(".menu");
-  const sections = document.querySelectorAll(".submenu");
-
-  buttons.forEach(btn => {
-    btn.addEventListener("click", () => {
-      sections.forEach(s => s.style.display = "none");
-      document.querySelector("#" + btn.id.replace("-btn", "")).style.display = "block";
+    buttons.forEach(btn => {
+      btn.addEventListener("click", () => {
+        sections.forEach(s => s.style.display = "none");
+        document.querySelector("#" + btn.id.replace("-btn", "")).style.display = "block";
+      });
     });
-  });
 
-  // default: HOME ochiq
-  document.querySelector("#home").style.display = "block";
-
-  function changeLanguage(lang) {
+    // default: HOME ochiq
+    document.querySelector("#home").style.display = "block";
+  </script>
+<script>
+function changeLanguage(lang) {
     if(lang === 'uz') {
-      window.location.href = '/uz/index.html';
+        window.location.href = '/uz/index.html'; // O‘zbekcha sahifa
     } else if(lang === 'en') {
-      window.location.href = '/en/index.html';
+        window.location.href = '/en/index.html'; // Inglizcha sahifa
     }
-  }
+}
 </script>
 
+</script>
 </body>
+
 </html>
