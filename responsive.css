@@ -1,0 +1,92 @@
+/* --- UNIVERSAL RESPONSIVE CSS --- */
+
+/* Rasm va bloklar kichik ekranlarda chiqib ketmasin */
+img, video {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Barcha containerlar ekran o‘lchamiga moslashsin */
+.container, .wrapper, .content {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+/* Katta bloklar telefonda 100% bo'lsin */
+.section, .box, .card {
+  width: 100%;
+}
+
+/* Jadval telefonda oson scroll bo'lsin */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  display: block;
+  overflow-x: auto;
+}
+
+/* Flex → telefon uchun ustun ko‘rinish */
+.row, .flex {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+/* 50% bloklar → telefonda 100% */
+.col-2, .col-3, .col-4, .column {
+  flex: 1;
+  min-width: 100%;
+}
+
+/* Matn o'lchami va bo'shliqlar */
+body {
+  font-size: 16px;
+  line-height: 1.4;
+}
+
+/* --- MEDIA QUERY: 720px dan kichik ekranlar uchun --- */
+@media (max-width: 720px) {
+
+  h1 { font-size: 24px; }
+  h2 { font-size: 20px; }
+  h3 { font-size: 18px; }
+
+  nav ul {
+    display: block;
+    padding: 0;
+  }
+
+  nav ul li {
+    margin: 10px 0;
+  }
+
+  /* Yon panel → pastga tushadi */
+  .sidebar {
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  /* Rasmlar markazlashadi */
+  img {
+    display: block;
+    margin: 0 auto;
+  }
+}
+
+/* --- MEDIA QUERY: 480px dan kichik ekranlar uchun --- */
+@media (max-width: 480px) {
+  body {
+    font-size: 15px;
+  }
+
+  button, a {
+    padding: 10px 15px;
+    font-size: 15px;
+  }
+
+  .card, .box {
+    padding: 10px;
+  }
+}
