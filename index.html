@@ -3,21 +3,21 @@
 
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="responsive.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Ranking Hours</title>
   <style>
-  .language-selector {
-  position: fixed; 
-  top: 10px;
-  right: 10px;
-}
-  body {
+    body {
       margin: 0;
       font-family: Arial, sans-serif;
-      padding-top: 70px; 
+      padding-top: 70px;
       background: #f7f7f7;
+      text-align: center;
+    }
+
+    .language-selector {
+      position: fixed;
+      top: 10px;
+      right: 10px;
     }
 
     /* NAV */
@@ -52,13 +52,12 @@
       background: #eee;
     }
 
-    /* SUBMENU (pastga ochiladigan content) */
     .submenu {
       display: none;
       padding: 20px;
       background: white;
       margin: 10px auto;
-      width: 85%;
+      width: 90%;
       border-radius: 10px;
       box-shadow: 0 0 10px #ddd;
       text-align: left;
@@ -70,7 +69,7 @@
       display: block;
     }
 
-    /* BLOG CARDS */
+    /* BLOG / CARS CARDS */
     .dis {
       display: flex;
       justify-content: center;
@@ -84,8 +83,9 @@
       width: 250px;
       border-radius: 10px;
       overflow: hidden;
-      transition: 0.3s;
+      transition: transform 0.3s;
       background: white;
+      text-align: center;
     }
 
     .spe img {
@@ -98,10 +98,8 @@
       transform: scale(1.05);
     }
 
-    .speed,
-    .speedd {
+    .speed, .speedd {
       padding: 15px;
-      text-align: center;
       background: rgba(0, 0, 255, 0.1);
     }
 
@@ -117,115 +115,169 @@
       padding: 40px;
       font-size: 18px;
     }
-  </style>
 
+    button {
+      border-radius: 10px;
+      width: 100px;
+    }
+
+    .home {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+    }
+  </style>
 </head>
 
 <body>
-<!-- HTML -->
+
+<!-- LANGUAGE SELECTOR -->
 <div class="language-selector">
   <label for="lang">Choose language:</label>
   <select id="lang" onchange="changeLanguage(this.value)">
     <option value="uz">O‘zbekcha</option>
-    <option value="en">English</option>
+    <option value="en" selected>English</option>
   </select>
 </div>
-  <!-- NAV -->
-  <nav>
-    <ul>
-      <li id="home-btn" class="menu">Home</li>
-      <li id="about-btn" class="menu">About</li>
-      <li id="blog-btn" class="menu">Blog</li>
-      <li id="contact-btn" class="menu">Contact</li>
-    </ul>
-  </nav>
 
-  <!-- CONTENTS -->
+<!-- NAV -->
+<nav>
+  <ul>
+    <li id="home-btn" class="menu">Home</li>
+    <li id="about-btn" class="menu">About</li>
+    <li id="blog-btn" class="menu">Blog</li>
+    <li id="cars-btn" class="menu">Cars</li>
+    <li id="contact-btn" class="menu">Contact</li>
+  </ul>
+</nav>
 
-  <!-- HOME -->
-  <div id="home" class="submenu">
-    <h1>Home</h1>
-    <p>
+<!-- CONTENTS -->
+
+<!-- HOME -->
+<div id="home" class="submenu">
+  <h1>Home</h1>
+  <p>
     Welcome to my site, a hub designed to bring clarity and insight to anyone interested in discovering the top performers in various fields. Here, you can explore top 10 rankings of cars, people, and much more, all presented in an organized, user-friendly manner. Whether you want to know the fastest cars, the most influential personalities, or unique statistics, this platform provides accurate and well-curated information. As a developer with extensive experience in website creation, I have designed this site to be fast, intuitive, and visually engaging. Navigate through sections effortlessly, find the information you need, and enjoy the combination of technology, data, and aesthetics that makes your exploration enjoyable and meaningful.
-    </p>
-
-    <div class="rank">
-      <img src="Ranking-hours.jpg" alt="Ranking Hours" style="width:70%; height:70%; border-radius:10px; display:block; margin:0 auto;">
-    </div>
+  </p>
+  <div class="rank">
+    <img src="Ranking-hours.jpg" alt="Ranking Hours" style="width:70%; border-radius:10px; display:block; margin:0 auto;">
   </div>
+</div>
 
-  <!-- ABOUT -->
-  <div id="about" class="submenu">
-    <h1>About</h1>
-    <p>
+<!-- ABOUT -->
+<div id="about" class="submenu">
+  <h1>About</h1>
+  <p>
      I am a seasoned developer with a strong passion for creating websites that help people find exactly what they are looking for. Over the years, I have worked on numerous projects, building both simple and complex platforms that prioritize usability, design, and performance. My mission is to make information accessible, easy to understand, and visually appealing. By combining my skills in coding, UI/UX design, and data curation, I bring unique insights to visitors who want to explore top 10 rankings in various categories. Whether it is cars, people, or other interesting metrics, my goal is to provide clear and accurate information that empowers users to make informed decisions or simply enjoy discovering new facts.
-    </p>
-  </div>
+  </p>
+</div>
 
-  <!-- BLOG -->
-  <div id="blog" class="submenu">
-    <h1>Blog</h1>
-    <p>In the Blog section, you will find detailed posts about my projects, highlighting the top 10 rankings I have researched and curated. This includes the fastest cars, the strongest individuals, and other unique categories that spark curiosity. Each post explains the methodology, sources, and interesting facts behind the rankings, making it both informative and engaging. I update the blog regularly to showcase new findings, innovative projects, and insights from my ongoing development work. Readers can enjoy a combination of educational content, interactive visuals, and professional analysis, all designed to help them understand the metrics and context behind each top 10 list.</p>
-
-    <div class="dis">
-      <div class="spe">
-        <a href="aboutcars.html">
-          <img src="cars.jpg">
-          <div class="speedd">
-            <h4>Cars</h4>
-            (About many things)
-          </div>
-        </a>
-      </div>
-
-      <div class="spe">
-        <a href="humans.html">
-          <img src="humans.jpg">
-          <div class="speed">
-            <h4>Humans</h4>
-            (About many things)
-          </div>
-        </a>
-      </div>
+<!-- BLOG -->
+<div id="blog" class="submenu">
+  <h1>Blog</h1>
+  <p>In the Blog section, you will find detailed posts about my projects, highlighting the top 10 rankings I have researched and curated. This includes the fastest cars, the strongest individuals, and other unique categories that spark curiosity. Each post explains the methodology, sources, and interesting facts behind the rankings, making it both informative and engaging. I update the blog regularly to showcase new findings, innovative projects, and insights from my ongoing development work. Readers can enjoy a combination of educational content, interactive visuals, and professional analysis, all designed to help them understand the metrics and context behind each top 10 list.</p>
+  <div class="dis">
+    <div class="spe">
+      <a href="#cars">
+        <img src="cars.jpg" alt="Cars">
+        <div class="speedd">
+          <h4>Cars</h4>
+          (About many things)
+        </div>
+      </a>
+    </div>
+    <div class="spe">
+      <a href="#humans">
+        <img src="humans.jpg" alt="Humans">
+        <div class="speed">
+          <h4>Humans</h4>
+          (About many things)
+        </div>
+      </a>
     </div>
   </div>
+</div>
 
-  <!-- CONTACT -->
-  <div id="contact" class="submenu">
-    <h1>Contact</h1>
-    <p>Feel free to reach out if you have any questions, suggestions, or project inquiries. You can contact me through:</p>
-    <p>Email: abdullohmahmudov660@gmail.com</p>
-    <p>Phone: +998885650604</p>
-    <p>Telegram: +998338370086</p>
+<!-- CARS -->
+<div id="cars" class="submenu">
+  <h1>Cars Menu</h1>
+  <div class="dis">
+    <div class="spe">
+      <a href="#fastcars">
+        <img src="speed-cars.jpg" alt="Fast Cars">
+        <div class="speed">
+          <h4>The Fastest Cars</h4>
+          <div>(Top 10)</div>
+        </div>
+      </a>
+    </div>
+
+    <div class="spe">
+      <a href="#excars">
+        <img src="expen-cars.jpg" alt="Expensive Cars">
+        <div class="speed">
+          <h4>The Most Expensive Cars</h4>
+          <div>(Top 10)</div>
+        </div>
+      </a>
+    </div>
+
+    <div class="spe">
+      <a href="#beautifulcars">
+        <img src="beautiful-cars-top-10.jpg" alt="Beautiful Cars">
+        <div class="speed">
+          <h4>The Most Beautiful Cars</h4>
+          <div>(Top 10)</div>
+        </div>
+      </a>
+    </div>
+
+    <div class="spe">
+      <a href="#powercars">
+        <img src="powerful-cars.png" alt="Powerful Cars">
+        <div class="speed">
+          <h4>The Most Powerful Cars</h4>
+          <div>(Top 10)</div>
+        </div>
+      </a>
+    </div>
   </div>
+  <div class="home"><a href="#home"><button>Home</button></a></div>
+</div>
 
-  <div class="footer">Created by abdulloh-developer07</div>
+<!-- CONTACT -->
+<div id="contact" class="submenu">
+  <h1>Contact</h1>
+    <p>Feel free to reach out if you have any questions, suggestions, or project inquiries. You can contact me through:</p>
+  <p>Email: abdullohmahmudov660@gmail.com</p>
+  <p>Phone: +998885650604</p>
+  <p>Telegram: +998338370086</p>
+</div>
 
-  <script>
-    const buttons = document.querySelectorAll(".menu");
-    const sections = document.querySelectorAll(".submenu");
+<div class="footer">Created by abdulloh-developer07</div>
 
-    buttons.forEach(btn => {
-      btn.addEventListener("click", () => {
-        sections.forEach(s => s.style.display = "none");
-        document.querySelector("#" + btn.id.replace("-btn", "")).style.display = "block";
-      });
-    });
-
-    // default: HOME ochiq
-    document.querySelector("#home").style.display = "block";
-  </script>
 <script>
-function changeLanguage(lang) {
+  const buttons = document.querySelectorAll(".menu");
+  const sections = document.querySelectorAll(".submenu");
+
+  buttons.forEach(btn => {
+    btn.addEventListener("click", () => {
+      sections.forEach(s => s.style.display = "none");
+      document.querySelector("#" + btn.id.replace("-btn", "")).style.display = "block";
+    });
+  });
+
+  // Default open HOME
+  document.querySelector("#home").style.display = "block";
+
+  function changeLanguage(lang) {
     if(lang === 'uz') {
-        window.location.href = '/uz/index.html'; // O‘zbekcha sahifa
+      window.location.href = '/uz/index.html';
     } else if(lang === 'en') {
-        window.location.href = '/en/index.html'; // Inglizcha sahifa
+      window.location.href = '/en/index.html';
     }
-}
+  }
 </script>
 
-</script>
 </body>
-
 </html>
