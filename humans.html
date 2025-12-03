@@ -27,4 +27,84 @@
         transform: scale(1.05); 
       } 
       .spe img { width: 100%; display: block; }
-      .speed { padding: 10px 0; } h4 { margin: 5px 0; } a { text-decoration: none; color: inherit; display: block; } button { border-radius: 10px; width: 100px; } a { text-decoration: none; color: black; } .home { position: fixed; bottom: 20px; margin:0 auto; } </style> </head> <body> <div class="dis"> <div class="spe"> <a href="rich.html"> <img src="rich-hu.jpg" alt="Rich-humans"> <div class="speed"> <h4>The Richest Humans</h4> <div>(Top 10)</div> </div> </a> </div> <div class="spe"> <a href="be-hu.html"> <img src="be-hu.png" alt="beautiful-humans"> <div class="speed"> <br> <h4>The Most Beautiful Humans</h4> <div>(Top 10)</div> </div> </a> </div> <div class="spe"> <a href="pop.html"> <img src="pop-hu.png" alt="popular-humans"> <br> <h4>The Most Popular Humans</h4> <div>(Top 10)</div> </a> </div> <div class="spe"> <a href="strong.html"> <img src="st-hu.jpg" alt="strong-humans" height="70%" > <br> <h4>The Strongest Humans</h4> <div>(Top 10)</div> </a> </div> <div class="home"><a href="index.html"><button>Home</button></a></div><br><br><br><br> </body> </html>
+      .speed { padding: 10px 0; } h4 { margin: 5px 0; } a { text-decoration: none; color: inherit; display: block; } button { border-radius: 10px; width: 100px; } a { text-decoration: none; color: black; } .home { position: fixed; bottom: 20px; margin:0 auto; }  @media (max-width: 600px) {
+
+  nav ul li {
+    padding: 12px 10px;
+    font-size: 15px;
+  }
+
+  body {
+    max-width: 430px;
+    font-size: 15px;
+    align-items:center;
+    margin:0 auto
+  }
+
+    .speed, .spe, .dis{
+    flex-direction: column;
+    gap: 1rem;
+       align-items:center;
+    margin:0 auto
+      max-width: 430px
+  }
+
+     .speed, .spe, .dis{
+    max-width: 430px;
+       align-items:center;
+    margin:0 auto
+  }
+
+  img {
+    height: 150px;
+  }
+
+  .language-selector {
+    right: 5px;
+    top: 5px;
+    font-size: 14px;
+  }
+
+
+
+/* 📌 O‘rtacha ekran (planshet: 600–900px) */
+@media (min-width: 600px) and (max-width: 900px) {
+
+  nav ul li {
+    padding: 15px 20px;
+    font-size: 17px;
+  }
+
+  body {
+    width: 90%;
+  }
+  .speed, .spe, .dis{
+    width: 45%;
+  }
+
+  img {
+    height: 170px;
+  }
+/* 📌 Katta ekran (noutbuk / PC: 900px+) */
+@media (min-width: 900px) {
+
+  .speed, .spe, .dis{
+    width: 85%;
+  }
+
+  body {
+    width: 250px;
+  }
+ </style> </head> <body> 
+   <h1>The Richest Humans</h1> 
+   <p>The richest humans in the world are often visionaries and entrepreneurs who have built immense fortunes through innovation, investment, and leadership. These top 10 individuals have influenced industries such as technology, finance, and entertainment, shaping global economies and trends. Beyond wealth, many of them invest in philanthropy, education, and social causes, using their resources to make a positive impact. Their stories inspire ambition and determination, showing how creativity, hard work, and strategic thinking can lead to extraordinary success and influence on a global scale.</p>
+   <div class="dis"> <div class="spe"> <a href="rich.html"> <img src="rich-hu.jpg" alt="Rich-humans"> <div class="speed"> <h4>The Richest Humans</h4> <div>(Top 10)</div> </div> </a> </div><br> 
+     <h1>The Most Beautiful Humans</h1>
+     <p>Beauty comes in many forms, blending physical appearance with charm, charisma, and confidence. The most beautiful humans on this list captivate audiences with their elegance, style, and personality. These top 10 individuals often work in fashion, entertainment, and media, inspiring millions with their aesthetic appeal and presence. Their beauty is not just about appearance—it is a combination of poise, self-expression, and the ability to positively influence others. Admired worldwide, they set standards for elegance and inspire appreciation for art, culture, and individuality.</p>
+     <div class="spe"> <a href="be-hu.html"> <img src="be-hu.png" alt="beautiful-humans"> <div class="speed"> <br> <h4>The Most Beautiful Humans</h4> <div>(Top 10)</div> </div> </a> </div><br>
+     <h1>The Most Popular Humans</h1>
+     <p>Popularity reflects influence, impact, and connection with people. The most popular humans are recognized globally for their achievements, talents, or presence on social media, entertainment, and public life. These top 10 individuals have large followings, inspiring fans through their work, opinions, or performances. Popularity also comes with responsibility, as these figures often shape trends, promote awareness, and influence public opinion. Their reach and engagement make them role models, leaders, and sources of entertainment, admired across borders and cultures.</p>
+     <div class="spe"> <a href="pop.html"> <img src="pop-hu.png" alt="popular-humans"> <br> <h4>The Most Popular Humans</h4> <div>(Top 10)</div> </a> </div> <br>
+     <h1>The Strongest Humans</h1>
+     <p>Strength is not only about physical power but also determination, discipline, and resilience. The strongest humans on this list demonstrate extraordinary capabilities in sports, fitness, and personal achievements. These top 10 individuals inspire with their ability to push boundaries, overcome challenges, and achieve remarkable feats. From athletes to adventurers, they show that dedication, training, and mental toughness are essential to mastering both body and mind. Their stories motivate others to pursue strength, perseverance, and excellence in all aspects of life.</p>
+     <div class="spe"> <a href="strong.html"> <img src="st-hu.jpg" alt="strong-humans" height="70%" > <br> <h4>The Strongest Humans</h4> <div>(Top 10)</div> </a> </div> <div class="home"><a href="index.html"><button>Home</button></a></div><br><br><br><br> </body> </html>
