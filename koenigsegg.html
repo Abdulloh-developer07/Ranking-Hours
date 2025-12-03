@@ -77,6 +77,73 @@
     height: auto;
   }
 }
+/* 📌 Telefon (kichik ekran: 0–600px) */
+@media (max-width: 600px) {
+
+  nav ul li {
+    padding: 12px 10px;
+    font-size: 15px;
+  }
+
+  .submenu {
+    width: 95%;
+    font-size: 15px;
+  }
+
+  .dis {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .spe {
+    width: 100%;
+  }
+
+  .spe img {
+    height: 150px;
+  }
+
+  .language-selector {
+    right: 5px;
+    top: 5px;
+    font-size: 14px;
+  }
+}
+
+
+/* 📌 O‘rtacha ekran (planshet: 600–900px) */
+@media (min-width: 600px) and (max-width: 900px) {
+
+  nav ul li {
+    padding: 15px 20px;
+    font-size: 17px;
+  }
+
+  .submenu {
+    width: 90%;
+  }
+
+  .spe {
+    width: 45%;
+  }
+
+  .spe img {
+    height: 170px;
+  }
+}
+
+
+/* 📌 Katta ekran (noutbuk / PC: 900px+) */
+@media (min-width: 900px) {
+
+  .submenu {
+    width: 85%;
+  }
+
+  .spe {
+    width: 250px;
+  }
+}
 
   </style>
 </head>
