@@ -53,8 +53,74 @@ a {
        button { border-radius: 10px; width: 100px; }
     a { text-decoration: none; color: black; }
     .home { position: fixed; bottom: 20px; right: 20px; }
-    /* 📌 Telefon (kichik ekran: 0–600px) */
- 
+   @media (max-width: 600px) {
+
+  nav ul li {
+    padding: 12px 10px;
+    font-size: 15px;
+  }
+
+  body {
+    max-width: 430px;
+    font-size: 15px;
+    align-items:center;
+    margin:0 auto
+  }
+
+    .speed, .spe, .dis{
+    flex-direction: column;
+    gap: 1rem;
+       align-items:center;
+    margin:0 auto
+      max-width: 430px
+  }
+
+     .speed, .spe, .dis{
+    max-width: 430px;
+       align-items:center;
+    margin:0 auto
+  }
+
+  img {
+    height: 150px;
+  }
+
+  .language-selector {
+    right: 5px;
+    top: 5px;
+    font-size: 14px;
+  }
+
+
+
+/* 📌 O‘rtacha ekran (planshet: 600–900px) */
+@media (min-width: 600px) and (max-width: 900px) {
+
+  nav ul li {
+    padding: 15px 20px;
+    font-size: 17px;
+  }
+
+  body {
+    width: 90%;
+  }
+  .speed, .spe, .dis{
+    width: 45%;
+  }
+
+  img {
+    height: 170px;
+  }
+/* 📌 Katta ekran (noutbuk / PC: 900px+) */
+@media (min-width: 900px) {
+
+  .speed, .spe, .dis{
+    width: 85%;
+  }
+
+  body {
+    width: 250px;
+  }
 
   </style>
 </head>
@@ -71,8 +137,8 @@ a {
           <div>(Top 10)</div>
         </div>
       </a>
-    </div>
-         <div><h1>The Most Expensive Cars</h1></div>
+    </div><br>
+         <h1>The Most Expensive Cars</h1>
      <p>Luxury and exclusivity define the most expensive cars. Each of these top 10 vehicles is a masterpiece of craftsmanship, offering rare materials, custom designs, and advanced technology. Beyond transportation, they are symbols of status and taste. Owners invest not only in a car but also in prestige, sophistication, and unique experiences. These cars often have limited production, making them highly collectible and admired worldwide. They perfectly combine performance, elegance, and unparalleled quality, representing the pinnacle of automotive luxury.</p>
     <div class="spe">
       <a href="ex-cars.html">
@@ -83,8 +149,8 @@ a {
          <div>(Top 10)</div>
       </div>
         </a>
-    </div>    
-    <div><h1>The Most Beautiful Cars</h1></div> 
+    </div>    <br>
+    <h1>The Most Beautiful Cars</h1>
      <p>Beauty in cars is about balance, elegance, and design. The most beautiful cars are not only visually stunning but also engineered for performance. Smooth curves, harmonious proportions, and attention to detail create a strong impression on anyone who sees them. These top 10 cars showcase designers’ creativity, combining aesthetics with functionality. Whether classic or modern, they capture admiration everywhere, reflecting innovation, artistry, and passion in automotive design.</p>
       <div class="spe">
       <a href="be-cars.html">
@@ -93,8 +159,8 @@ a {
           <h4>The Most Beautiful Cars</h4>
           <div>(Top 10)</div>
           </a>
-          </div>
-     <div><h1>The Most Powerful Cars</h1></div>
+          </div><br>
+    <h1>The Most Powerful Cars</h1>
      <p>Power is the key to extraordinary performance. The most powerful cars on this list feature engines with astonishing horsepower, capable of extreme acceleration. Designers carefully manage this power with advanced transmission, suspension, and aerodynamics, ensuring safety and control. These top 10 vehicles demonstrate peak engineering and technology, designed to thrill drivers on racetracks or highways. They are symbols of strength, precision, and high-performance excellence, admired by car enthusiasts globally.</p>
           <div class="spe">
       <a href="power-car.html">
