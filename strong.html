@@ -16,6 +16,75 @@
     a { text-decoration: none; color: black; }
     .menu { position: fixed; bottom: 20px; left: 20px; }
     .home { position: fixed; bottom: 20px; right: 20px; }
+       @media (max-width: 600px) {
+
+  nav ul li {
+    padding: 12px 10px;
+    font-size: 15px;
+  }
+
+  body {
+    max-width: 430px;
+    font-size: 15px;
+    align-items:center;
+    margin:0 auto
+  }
+
+    .ht, h1, p{
+    flex-direction: column;
+    gap: 1rem;
+       align-items:center;
+    margin:0 auto
+      max-width: 430px
+  }
+
+     .ht, h1, p{
+    max-width: 430px;
+       align-items:center;
+    margin:0 auto
+  }
+
+  img {
+    height: 150px;
+  }
+
+  .language-selector {
+    right: 5px;
+    top: 5px;
+    font-size: 14px;
+  }
+
+
+
+/* 📌 O‘rtacha ekran (planshet: 600–900px) */
+@media (min-width: 600px) and (max-width: 900px) {
+
+  nav ul li {
+    padding: 15px 20px;
+    font-size: 17px;
+  }
+
+  body {
+    width: 90%;
+  }
+ .ht, h1, p{
+    width: 45%;
+  }
+
+  img {
+    height: 170px;
+  }
+/* 📌 Katta ekran (noutbuk / PC: 900px+) */
+@media (min-width: 900px) {
+
+  .ht, h1, p{
+    width: 85%;
+  }
+
+  body {
+    width: 250px;
+  }
+
   </style>
 </head>
 <body>
