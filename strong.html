@@ -6,142 +6,209 @@
   <title>Strong Humans Ranking</title>
 
   <style>
-    body{
-      max-width: 600px;
-      margin: 0 auto;
-      font-family: Arial, sans-serif;
-      padding: 10px;
-      line-height: 1.5;
-    }
-
-    h1{
+    .ht, h1, pre {
       text-align: center;
+    }
+
+    h1 {
       color: purple;
-      margin-bottom: 30px;
     }
 
-    .item{
-      margin-bottom: 25px;
-      font-size: 17px;
+    button { 
+      border-radius: 10px; 
+      width: 100px; 
     }
 
-    .name{
-      font-weight: bold;
-      font-size: 20px;
-      margin-bottom: 5px;
+    a { 
+      text-decoration: none; 
+      color: black; 
     }
 
-    details{
-      background: #f7f7f7;
-      padding: 10px;
-      border-radius: 10px;
-      border: 1px solid #ccc;
+    .menu { 
+      position: fixed; 
+      bottom: 20px; 
+      left: 20px; 
     }
 
-    button{
-      border-radius: 10px;
-      width: 100px;
-      padding: 7px;
+    .home { 
+      position: fixed; 
+      bottom: 20px; 
+      right: 20px; 
+    }
+
+    body {
+      max-width: 430px;
+      margin: 0 auto;
       font-size: 15px;
     }
 
-    a{
-      text-decoration: none;
-      color: black;
+    img {
+      height: 150px;
     }
 
-    .menu{
-      position: fixed;
-      bottom: 20px;
-      left: 20px;
+    /* 📌 Kichik ekran */
+    @media (max-width: 600px) {
+      nav ul li {
+        padding: 12px 10px;
+        font-size: 15px;
+      }
+      body {
+        width: 100%;
+      }
     }
 
-    .home{
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
+    /* 📌 O‘rtacha ekran (600–900px) */
+    @media (min-width: 600px) and (max-width: 900px) {
+      nav ul li {
+        padding: 15px 20px;
+        font-size: 17px;
+      }
+      body {
+        width: 90%;
+      }
+      img {
+        height: 170px;
+      }
     }
 
+    /* 📌 Katta ekran (PC) */
+    @media (min-width: 900px) {
+      body {
+        width: 250px;
+      }
+    }
   </style>
+
 </head>
-
 <body>
-
+  
 <h1>Strongest Humans Ranking</h1>
 
-<div class="item">
-  1) <div class="name">Žydrūnas Savickas</div>
-  <details><summary><i>see information</i></summary>
-    "Žydrūnas Savickas — Lithuanian strongman and former powerlifter... (matn shu yerda davom etadi)"
-  </details>
+<h3>
+1)
+<div class="ht">
+  Žydrūnas Savickas
+  <pre>
+<details><summary><i>see information</i></summary><br>
+"Žydrūnas Savickas — Lithuanian strongman and former powerlifter..."
+</details>
+  </pre>
 </div>
 
-<div class="item">
-  2) <div class="name">Hafþór Júlíus Björnsson</div>
-  <details><summary><i>see information</i></summary>
-    "Hafþór Júlíus Björnsson is an Icelandic strongman…"
-  </details>
+<br>
+
+2)
+<div class="ht">
+  Hafþór Júlíus Björnsson
+  <pre>
+<details><summary><i>see information</i></summary><br>
+"Hafþór Júlíus Björnsson is an Icelandic strongman..."
+</details>
+  </pre>
 </div>
 
-<div class="item">
-  3) <div class="name">Oleksii Novikov</div>
-  <details><summary><i>see information</i></summary>
-    "Oleksii Novikov is a Ukrainian strongman…"
-  </details>
+<br>
+
+3)
+<div class="ht">
+  Oleksii Novikov 
+  <pre>
+<details><summary><i>see information</i></summary><br>
+"Oleksii Novikov is a Ukrainian strongman..."
+</details>
+  </pre>
 </div>
 
-<div class="item">
-  4) <div class="name">Brian Shaw</div>
-  <details><summary><i>see information</i></summary>
-    "Brian Shaw is an American strongman…"
-  </details>
+<br>
+
+4)
+<div class="ht">
+  Brian Shaw
+  <pre>
+<details><summary><i>see information</i></summary><br>
+"Brian Shaw is an American retired strongman..."
+</details>
+  </pre>
 </div>
 
-<div class="item">
-  5) <div class="name">Tom Stoltman</div>
-  <details><summary><i>see information</i></summary>
-    "Tom Stoltman is a Scottish strongman…"
-  </details>
+<br>
+
+5)
+<div class="ht">
+  Tom Stoltman
+  <pre>
+<details><summary><i>see information</i></summary><br>
+"Tom Stoltman is a Scottish professional strongman..."
+</details>
+  </pre>
 </div>
 
-<div class="item">
-  6) <div class="name">Mark Henry</div>
-  <details><summary><i>see information</i></summary>
-    "Mark Henry is an American wrestler…"
-  </details>
+<br>
+
+6)
+<div class="ht">
+  Mark Henry
+  <pre>
+<details><summary><i>see information</i></summary><br>
+"Mark Henry is an American wrestler..."
+</details>
+  </pre>
 </div>
 
-<div class="item">
-  7) <div class="name">Bill Kazmaier</div>
-  <details><summary><i>see information</i></summary>
-    "Bill Kazmaier is an American strongman…"
-  </details>
+<br>
+
+7)
+<div class="ht">
+  Bill Kazmaier
+  <pre>
+<details><summary><i>see information</i></summary><br>
+"Bill Kazmaier is an American former powerlifter..."
+</details>
+  </pre>
 </div>
 
-<div class="item">
-  8) <div class="name">Vasyl Virastyuk</div>
-  <details><summary><i>see information</i></summary>
-    "Vasyl Virastyuk is a Ukrainian strongman…"
-  </details>
+<br>
+
+8)
+<div class="ht">
+  Vasyl Virastyuk
+  <pre>
+<details><summary><i>see information</i></summary><br>
+"Vasyl Virastyuk is a Ukrainian former strongman..."
+</details>
+  </pre>
 </div>
 
-<div class="item">
-  9) <div class="name">Andy Bolton</div>
-  <details><summary><i>see information</i></summary>
-    "Andy Bolton is a British powerlifter…"
-  </details>
+<br>
+
+9)
+<div class="ht">
+  Andy Bolton
+  <pre>
+<details><summary><i>see information</i></summary><br>
+"Andy Bolton is a British powerlifter..."
+</details>
+  </pre>
 </div>
 
-<div class="item">
-  10) <div class="name">Leonid Taranenko</div>
-  <details><summary><i>see information</i></summary>
-    "Leonid Taranenko was a Soviet weightlifter…"
-  </details>
+<br>
+
+10)
+<div class="ht">
+  Leonid Taranenko
+  <pre>
+<details><summary><i>see information</i></summary><br>
+"Leonid Taranenko was a Soviet weightlifter..."
+</details>
+  </pre>
 </div>
 
-<p style="margin-top: 40px; font-size: 14px; color: gray;">
-  These informations are from ChatGPT
-</p>
+</h3>
+
+<hr>
+<br>
+
+<p>These informations are from ChatGPT</p>
 
 <div class="menu"><a href="humans.html"><button>← Menu</button></a></div>
 <div class="home"><a href="index.html"><button>Home</button></a></div>
