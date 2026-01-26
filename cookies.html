@@ -1,0 +1,1310 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cookie Siyosati - Ranking Hours</title>
+    <meta name="description" content="Ranking Hours saytidagi cookie fayllari haqida to'liq ma'lumot. Cookie fayllarini qanday boshqarish mumkinligi haqida bilib oling.">
+    
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/cookies.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Til tanlash -->
+    <div class="language-switcher">
+        <div class="container">
+            <button class="lang-btn active" data-lang="uz">🇺🇿 O'zbek</button>
+            <button class="lang-btn" data-lang="en">🇬🇧 English</button>
+            <button class="lang-btn" data-lang="ru">🇷🇺 Русский</button>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <img src="images/logo.png" alt="Ranking Hours Logo" width="40">
+                <span>Ranking<span class="highlight">Hours</span></span>
+            </a>
+            <div class="nav-menu">
+                <a href="index.html">Bosh Sahifa</a>
+                <a href="comparisons.html">Solishtirishlar</a>
+                <a href="categories.html">Kategoriyalar</a>
+                <a href="about.html">Biz Haqimizda</a>
+                <a href="faq.html">FAQ</a>
+                <a href="contact.html">Bog'lanish</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Cookie Hero -->
+    <section class="cookie-hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Cookie Siyosati</h1>
+                <p class="hero-subtitle">Cookie fayllari haqida to'liq ma'lumot va ularni qanday boshqarish mumkin</p>
+                
+                <div class="cookie-status">
+                    <div class="status-badge">
+                        <i class="fas fa-cookie-bite"></i>
+                        <span>Cookie Roziligi: <strong id="consentStatus">Faol</strong></span>
+                    </div>
+                    <button id="manageCookiesBtn" class="btn btn-outline">
+                        <i class="fas fa-sliders-h"></i> Cookie Sozlamalari
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cookie Content -->
+    <main class="cookie-content">
+        <div class="container">
+            <!-- Quick Summary -->
+            <section class="cookie-summary">
+                <div class="summary-card">
+                    <div class="summary-icon">
+                        <i class="fas fa-info-circle"></i>
+                    </div>
+                    <div class="summary-content">
+                        <h3>Qisqacha Ma'lumot</h3>
+                        <p>Cookie fayllari - bu saytimizning ishlashini yaxshilash, tajribangizni shaxsiylashtirish va tahlil qilish uchun foydalanadigan kichik matn fayllari. Ular shaxsiy ma'lumotlarni to'plamaydi.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- What are Cookies -->
+            <section class="cookie-section">
+                <h2 class="section-title">
+                    <i class="fas fa-question-circle"></i>
+                    Cookie Nima?
+                </h2>
+                <div class="section-content">
+                    <p>Cookie (kuki) - bu veb-sayt tomonidan foydalanuvchining brauzeriga saqlanadigan kichik matn fayli. Ushbu fayllar:</p>
+                    
+                    <div class="cookie-types">
+                        <div class="type-card essential">
+                            <div class="type-header">
+                                <i class="fas fa-shield-alt"></i>
+                                <h4>Majburiy Cookie</h4>
+                            </div>
+                            <p>Saytning asosiy funksiyalari uchun zarur. Ular siz saytdan foydalanishingizni ta'minlaydi.</p>
+                            <span class="type-tag">O'chirib bo'lmaydi</span>
+                        </div>
+                        <div class="type-card functional">
+                            <div class="type-header">
+                                <i class="fas fa-cogs"></i>
+                                <h4>Funksional Cookie</h4>
+                            </div>
+                            <p>Qulaylikni oshirish uchun. Til tanlash, tema, avtorizatsiya ma'lumotlari.</p>
+                            <span class="type-tag">Tanlash mumkin</span>
+                        </div>
+                        <div class="type-card analytics">
+                            <div class="type-header">
+                                <i class="fas fa-chart-bar"></i>
+                                <h4>Analitika Cookie</h4>
+                            </div>
+                            <p>Sayt trafigini tahlil qilish uchun. Qaysi sahifalar ko'proq qiziqish uyg'otadi.</p>
+                            <span class="type-tag">Tanlash mumkin</span>
+                        </div>
+                        <div class="type-card marketing">
+                            <div class="type-header">
+                                <i class="fas fa-ad"></i>
+                                <h4>Marketing Cookie</h4>
+                            </div>
+                            <p>Reklamalarni shaxsiylashtirish uchun. Sizga mos reklamalarni ko'rsatish.</p>
+                            <span class="type-tag">Tanlash mumkin</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Our Cookies -->
+            <section class="cookie-section">
+                <h2 class="section-title">
+                    <i class="fas fa-list"></i>
+                    Biz Qanday Cookie'lar Ishlatamiz?
+                </h2>
+                
+                <div class="cookies-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Cookie Nomi</th>
+                                <th>Maqsadi</th>
+                                <th>Davomiyligi</th>
+                                <th>Tur</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><code>session_id</code></td>
+                                <td>Foydalanuvchi seansini saqlash</td>
+                                <td>Seans davomiyligi</td>
+                                <td><span class="badge essential">Majburiy</span></td>
+                            </tr>
+                            <tr>
+                                <td><code>language_pref</code></td>
+                                <td>Tanlangan tilni eslab qolish</td>
+                                <td>1 yil</td>
+                                <td><span class="badge functional">Funksional</span></td>
+                            </tr>
+                            <tr>
+                                <td><code>theme_mode</code></td>
+                                <td>Tohir/qorong'i rejim</td>
+                                <td>1 yil</td>
+                                <td><span class="badge functional">Funksional</span></td>
+                            </tr>
+                            <tr>
+                                <td><code>_ga</code></td>
+                                <td>Google Analytics - foydalanuvchini aniqlash</td>
+                                <td>2 yil</td>
+                                <td><span class="badge analytics">Analitika</span></td>
+                            </tr>
+                            <tr>
+                                <td><code>_gid</code></td>
+                                <td>Google Analytics - seans ma'lumotlari</td>
+                                <td>24 soat</td>
+                                <td><span class="badge analytics">Analitika</span></td>
+                            </tr>
+                            <tr>
+                                <td><code>_fbp</code></td>
+                                <td>Facebook reklama konversiyalarini kuzatish</td>
+                                <td>3 oy</td>
+                                <td><span class="badge marketing">Marketing</span></td>
+                            </tr>
+                            <tr>
+                                <td><code>consent_status</code></td>
+                                <td>Cookie roziligini eslab qolish</td>
+                                <td>1 yil</td>
+                                <td><span class="badge essential">Majburiy</span></td>
+                            </tr>
+                            <tr>
+                                <td><code>compare_items</code></td>
+                                <td>Solishtirish ro'yxatini saqlash</td>
+                                <td>7 kun</td>
+                                <td><span class="badge functional">Funksional</span></td>
+                            </tr>
+                            <tr>
+                                <td><code>viewed_pages</code></td>
+                                <td>Oxirgi ko'rilgan sahifalar</td>
+                                <td>30 kun</td>
+                                <td><span class="badge functional">Funksional</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Third Party Cookies -->
+            <section class="cookie-section">
+                <h2 class="section-title">
+                    <i class="fas fa-external-link-alt"></i>
+                    Uchinchi Tomon Cookie'lari
+                </h2>
+                
+                <div class="third-party">
+                    <div class="partner-card">
+                        <div class="partner-logo">
+                            <i class="fab fa-google"></i>
+                        </div>
+                        <div class="partner-info">
+                            <h4>Google Analytics</h4>
+                            <p>Sayt trafigini tahlil qilish uchun</p>
+                            <a href="https://policies.google.com/technologies/cookies" target="_blank" class="partner-link">
+                                <i class="fas fa-external-link-alt"></i> Cookie Siyosati
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="partner-card">
+                        <div class="partner-logo">
+                            <i class="fab fa-facebook"></i>
+                        </div>
+                        <div class="partner-info">
+                            <h4>Facebook Pixel</h4>
+                            <p>Reklama samaradorligini o'lchash</p>
+                            <a href="https://www.facebook.com/policies/cookies/" target="_blank" class="partner-link">
+                                <i class="fas fa-external-link-alt"></i> Cookie Siyosati
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="partner-card">
+                        <div class="partner-logo">
+                            <i class="fab fa-amazon"></i>
+                        </div>
+                        <div class="partner-info">
+                            <h4>Amazon Associates</h4>
+                            <p>Affiliate linklarini kuzatish</p>
+                            <a href="https://affiliate-program.amazon.com/help/operating/policies" target="_blank" class="partner-link">
+                                <i class="fas fa-external-link-alt"></i> Cookie Siyosati
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="partner-card">
+                        <div class="partner-logo">
+                            <i class="fas fa-ad"></i>
+                        </div>
+                        <div class="partner-info">
+                            <h4>Google AdSense</h4>
+                            <p>Reklamalarni shaxsiylashtirish</p>
+                            <a href="https://policies.google.com/technologies/ads" target="_blank" class="partner-link">
+                                <i class="fas fa-external-link-alt"></i> Cookie Siyosati
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Cookie Management -->
+            <section class="cookie-section">
+                <h2 class="section-title">
+                    <i class="fas fa-user-cog"></i>
+                    Cookie'lar Boshqaruvi
+                </h2>
+                
+                <div class="management-content">
+                    <div class="browser-control">
+                        <h3>Brauzer Orqali Boshqarish</h3>
+                        <p>Cookie'lar brauzer sozlamalari orqali boshqarilishi mumkin:</p>
+                        
+                        <div class="browser-guides">
+                            <div class="guide">
+                                <i class="fab fa-chrome"></i>
+                                <h4>Google Chrome</h4>
+                                <p>Sozlamalar → Maxfiylik va xavfsizlik → Cookie'lar va sayt ma'lumotlari</p>
+                            </div>
+                            <div class="guide">
+                                <i class="fab fa-firefox"></i>
+                                <h4>Mozilla Firefox</h4>
+                                <p>Sozlamalar → Maxfiylik va xavfsizlik → Cookie'lar va sayt ma'lumotlari</p>
+                            </div>
+                            <div class="guide">
+                                <i class="fab fa-safari"></i>
+                                <h4>Apple Safari</h4>
+                                <p>Sozlamalar → Maxfiylik → Cookie'lar va sayt ma'lumotlari</p>
+                            </div>
+                            <div class="guide">
+                                <i class="fab fa-edge"></i>
+                                <h4>Microsoft Edge</h4>
+                                <p>Sozlamalar → Cookie'lar va sayt ruxsatlari → Cookie'lar</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="website-control">
+                        <h3>Saytimiz Orqali Boshqarish</h3>
+                        <p>Quyidagi tugma orqali Cookie sozlamalarini o'zgartirishingiz mumkin:</p>
+                        
+                        <div class="control-actions">
+                            <button id="acceptAllBtn" class="btn btn-success">
+                                <i class="fas fa-check"></i> Barcha Cookie'larni Qabul Qilish
+                            </button>
+                            <button id="rejectNonEssentialBtn" class="btn btn-warning">
+                                <i class="fas fa-times"></i> Majburiy Cookie'larnigina Qabul Qilish
+                            </button>
+                            <button id="clearCookiesBtn" class="btn btn-danger">
+                                <i class="fas fa-trash"></i> Barcha Cookie'larni O'chirish
+                            </button>
+                        </div>
+                        
+                        <div class="current-settings">
+                            <h4>Joriy Sozlamalar:</h4>
+                            <div id="currentSettings" class="settings-display">
+                                <!-- Settings will be populated by JavaScript -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- FAQ -->
+            <section class="cookie-section">
+                <h2 class="section-title">
+                    <i class="fas fa-question-circle"></i>
+                    Cookie Haqida Ko'p So'raladigan Savollar
+                </h2>
+                
+                <div class="cookie-faq">
+                    <div class="faq-item">
+                        <h4>Cookie fayllari kompyuterimga zarar keltiradimi?</h4>
+                        <p>Yo'q, cookie fayllari dastur yoki virus emas. Ular oddiy matn fayllari bo'lib, kompyuteringizga zarar keltira olmaydi.</p>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <h4>Cookie'larni o'chirsam nima bo'ladi?</h4>
+                        <p>Cookie'larni o'chirganingizda, saytda saqlangan sozlamalar (til, tema, login ma'lumotlari) yo'qoladi va siz har safar yangidan sozlashingiz kerak bo'ladi.</p>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <h4>Cookie'lar shaxsiy ma'lumotlarimni to'playdimi?</h4>
+                        <p>Bizning cookie'lar shaxsiy ma'lumotlarni (ism, manzil, telefon raqami) to'plamaydi. Ular faqat texnik ma'lumotlarni (brauzer turi, ekran o'lchami, til) saqlaydi.</p>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <h4>Cookie'lar qancha vaqt saqlanadi?</h4>
+                        <p>Cookie'lar turli muddatga saqlanadi:
+                        <ul>
+                            <li><strong>Seans cookie:</strong> Brauzer yopilganda o'chadi</li>
+                            <li><strong>Doimiy cookie:</strong> 30 kundan 2 yilgacha saqlanadi</li>
+                        </ul>
+                        </p>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <h4>Cookie'lar har doim zarurmi?</h4>
+                        <p>Majburiy cookie'lar sayt ishlashi uchun zarur. Boshqa cookie'lar esa ixtiyoriy bo'lib, siz ularni o'chirib qo'yishingiz mumkin.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Cookie Preferences Form -->
+            <section class="cookie-preferences">
+                <div class="preferences-card">
+                    <h3><i class="fas fa-cogs"></i> Cookie Sozlamalarini O'zgartirish</h3>
+                    
+                    <form id="cookiePreferencesForm">
+                        <div class="preference-group">
+                            <div class="preference-header">
+                                <label>
+                                    <input type="checkbox" id="essentialCookies" checked disabled>
+                                    <span class="preference-title">
+                                        <i class="fas fa-shield-alt"></i>
+                                        <strong>Majburiy Cookie'lar</strong>
+                                    </span>
+                                </label>
+                                <span class="preference-badge">Majburiy</span>
+                            </div>
+                            <p class="preference-desc">Saytning asosiy funksiyalari uchun zarur. Ular sizning roziligingizsiz ham ishlatiladi.</p>
+                        </div>
+                        
+                        <div class="preference-group">
+                            <div class="preference-header">
+                                <label>
+                                    <input type="checkbox" id="functionalCookies" checked>
+                                    <span class="preference-title">
+                                        <i class="fas fa-cogs"></i>
+                                        <strong>Funksional Cookie'lar</strong>
+                                    </span>
+                                </label>
+                                <span class="preference-badge">Ixtiyoriy</span>
+                            </div>
+                            <p class="preference-desc">Til tanlash, tema, avtorizatsiya kabi qulayliklarni eslab qolish.</p>
+                        </div>
+                        
+                        <div class="preference-group">
+                            <div class="preference-header">
+                                <label>
+                                    <input type="checkbox" id="analyticsCookies" checked>
+                                    <span class="preference-title">
+                                        <i class="fas fa-chart-bar"></i>
+                                        <strong>Analitika Cookie'lari</strong>
+                                    </span>
+                                </label>
+                                <span class="preference-badge">Ixtiyoriy</span>
+                            </div>
+                            <p class="preference-desc">Sayt trafigini tahlil qilish, qaysi sahifalar yaxshi ishlashini aniqlash.</p>
+                        </div>
+                        
+                        <div class="preference-group">
+                            <div class="preference-header">
+                                <label>
+                                    <input type="checkbox" id="marketingCookies">
+                                    <span class="preference-title">
+                                        <i class="fas fa-ad"></i>
+                                        <strong>Marketing Cookie'lari</strong>
+                                    </span>
+                                </label>
+                                <span class="preference-badge">Ixtiyoriy</span>
+                            </div>
+                            <p class="preference-desc">Reklamalarni shaxsiylashtirish va sizga mos reklamalarni ko'rsatish.</p>
+                        </div>
+                        
+                        <div class="preference-actions">
+                            <button type="submit" class="btn btn-primary">
+                                <i class="fas fa-save"></i> Sozlamalarni Saqlash
+                            </button>
+                            <button type="button" id="resetPreferencesBtn" class="btn btn-secondary">
+                                <i class="fas fa-redo"></i> Standart Sozlamalar
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Cookie Consent Banner (Always visible for management) -->
+    <div id="cookieConsentBanner" class="cookie-banner">
+        <div class="container">
+            <div class="banner-content">
+                <div class="banner-text">
+                    <h4><i class="fas fa-cookie-bite"></i> Cookie Sozlamalari</h4>
+                    <p>Biz cookie fayllaridan foydalanamiz. Sizning roziligingizni olishimiz va cookie sozlamalaringizni boshqarishingiz uchun.</p>
+                </div>
+                <div class="banner-actions">
+                    <button id="bannerAcceptBtn" class="btn btn-success btn-sm">
+                        <i class="fas fa-check"></i> Barchasini Qabul Qilish
+                    </button>
+                    <button id="bannerSettingsBtn" class="btn btn-outline btn-sm">
+                        <i class="fas fa-cogs"></i> Sozlamalar
+                    </button>
+                    <button id="bannerRejectBtn" class="btn btn-danger btn-sm">
+                        <i class="fas fa-times"></i> Rad Etish
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <a href="index.html" class="footer-logo">
+                        <img src="images/logo.png" alt="Ranking Hours" width="40">
+                        <span>Ranking<span class="highlight">Hours</span></span>
+                    </a>
+                    <p class="footer-description">
+                        Biz haqiqiy odamlardan haqiqiy maslahatlar. 
+                        Har bir mahsulotni o'zimiz sinab ko'ramiz.
+                    </p>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Huquqiy Hujjatlar</h3>
+                    <ul class="footer-links">
+                        <li><a href="cookies.html" class="active">Cookie Siyosati</a></li>
+                        <li><a href="privacy-policy.html">Maxfiylik Siyosati</a></li>
+                        <li><a href="terms-of-service.html">Foydalanish Shartlari</a></li>
+                        <li><a href="disclaimer.html">Mas'uliyatdan Voz Kechish</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Yordam va Qo'llab-quvvatlash</h3>
+                    <ul class="footer-links">
+                        <li><a href="faq.html">FAQ (Ko'p So'raladigan Savollar)</a></li>
+                        <li><a href="contact.html">Bog'lanish</a></li>
+                        <li><a href="support.html">Texnik Yordam</a></li>
+                        <li><a href="sitemap.html">Sayt Xaritasi</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Biz Bilan Bog'lanish</h3>
+                    <ul class="footer-links">
+                        <li><a href="contact.html">Kontakt Formasi</a></li>
+                        <li><a href="mailto:support@ranking-hours.uz">support@ranking-hours.uz</a></li>
+                        <li><a href="tel:+998901234567">+998 90 123 45 67</a></li>
+                        <li><a href="#"><i class="fas fa-comments"></i> Onlayn Chat</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 RankingHours.uz - Barcha huquqlar himoyalangan.</p>
+                <p class="footer-note">
+                    Cookie siyosati oxirgi yangilangan: Mart 15, 2024. <a href="#updateHistory" class="update-link">Yangilanishlar tarixi</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        // Cookie Management System
+        document.addEventListener('DOMContentLoaded', function() {
+            // Cookie types
+            const COOKIE_TYPES = {
+                essential: 'majburiy',
+                functional: 'funksional',
+                analytics: 'analitika',
+                marketing: 'marketing'
+            };
+            
+            // Default settings
+            const DEFAULT_SETTINGS = {
+                essential: true,
+                functional: true,
+                analytics: true,
+                marketing: false
+            };
+            
+            // Get current settings from localStorage
+            function getCookieSettings() {
+                const saved = localStorage.getItem('cookieSettings');
+                return saved ? JSON.parse(saved) : DEFAULT_SETTINGS;
+            }
+            
+            // Save settings to localStorage
+            function saveCookieSettings(settings) {
+                localStorage.setItem('cookieSettings', JSON.stringify(settings));
+                updateDisplay();
+            }
+            
+            // Update display with current settings
+            function updateDisplay() {
+                const settings = getCookieSettings();
+                const statusElement = document.getElementById('consentStatus');
+                const settingsDisplay = document.getElementById('currentSettings');
+                
+                // Update status
+                const acceptedCount = Object.values(settings).filter(v => v).length;
+                statusElement.textContent = acceptedCount >= 3 ? 'Faol' : 'Cheklangan';
+                statusElement.style.color = acceptedCount >= 3 ? '#28a745' : '#ffc107';
+                
+                // Update settings display
+                settingsDisplay.innerHTML = Object.entries(settings)
+                    .map(([key, value]) => `
+                        <div class="setting-item">
+                            <span class="setting-name">${COOKIE_TYPES[key]}</span>
+                            <span class="setting-value ${value ? 'active' : 'inactive'}">
+                                ${value ? 'Qabul qilindi' : 'Rad etildi'}
+                            </span>
+                        </div>
+                    `).join('');
+                
+                // Update form checkboxes
+                document.getElementById('functionalCookies').checked = settings.functional;
+                document.getElementById('analyticsCookies').checked = settings.analytics;
+                document.getElementById('marketingCookies').checked = settings.marketing;
+            }
+            
+            // Initialize form with current settings
+            function initializeForm() {
+                const settings = getCookieSettings();
+                
+                document.getElementById('functionalCookies').checked = settings.functional;
+                document.getElementById('analyticsCookies').checked = settings.analytics;
+                document.getElementById('marketingCookies').checked = settings.marketing;
+                
+                // Form submission
+                document.getElementById('cookiePreferencesForm').addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    const newSettings = {
+                        essential: true, // Always true
+                        functional: document.getElementById('functionalCookies').checked,
+                        analytics: document.getElementById('analyticsCookies').checked,
+                        marketing: document.getElementById('marketingCookies').checked
+                    };
+                    
+                    saveCookieSettings(newSettings);
+                    
+                    // Show success message
+                    showNotification('Cookie sozlamalari muvaffaqiyatli saqlandi!', 'success');
+                });
+                
+                // Reset to defaults
+                document.getElementById('resetPreferencesBtn').addEventListener('click', function() {
+                    saveCookieSettings(DEFAULT_SETTINGS);
+                    showNotification('Sozlamalar standart holatga qaytarildi', 'info');
+                });
+            }
+            
+            // Cookie actions
+            document.getElementById('acceptAllBtn').addEventListener('click', function() {
+                saveCookieSettings({
+                    essential: true,
+                    functional: true,
+                    analytics: true,
+                    marketing: true
+                });
+                showNotification('Barcha cookie turlari qabul qilindi', 'success');
+            });
+            
+            document.getElementById('rejectNonEssentialBtn').addEventListener('click', function() {
+                saveCookieSettings({
+                    essential: true,
+                    functional: false,
+                    analytics: false,
+                    marketing: false
+                });
+                showNotification('Faqat majburiy cookie\'lar qabul qilindi', 'warning');
+            });
+            
+            document.getElementById('clearCookiesBtn').addEventListener('click', function() {
+                if (confirm('Barcha cookie sozlamalari o\'chiriladi. Rozimisiz?')) {
+                    localStorage.removeItem('cookieSettings');
+                    updateDisplay();
+                    showNotification('Barcha cookie sozlamalari o\'chirildi', 'info');
+                }
+            });
+            
+            // Banner actions
+            document.getElementById('bannerAcceptBtn').addEventListener('click', function() {
+                saveCookieSettings({
+                    essential: true,
+                    functional: true,
+                    analytics: true,
+                    marketing: true
+                });
+                document.getElementById('cookieConsentBanner').style.display = 'none';
+                showNotification('Barcha cookie turlari qabul qilindi', 'success');
+            });
+            
+            document.getElementById('bannerRejectBtn').addEventListener('click', function() {
+                saveCookieSettings({
+                    essential: true,
+                    functional: false,
+                    analytics: false,
+                    marketing: false
+                });
+                document.getElementById('cookieConsentBanner').style.display = 'none';
+                showNotification('Faqat majburiy cookie\'lar qabul qilindi', 'warning');
+            });
+            
+            document.getElementById('bannerSettingsBtn').addEventListener('click', function() {
+                document.getElementById('manageCookiesBtn').click();
+            });
+            
+            // Scroll to preferences when manage button clicked
+            document.getElementById('manageCookiesBtn').addEventListener('click', function() {
+                document.querySelector('.cookie-preferences').scrollIntoView({ 
+                    behavior: 'smooth' 
+                });
+            });
+            
+            // Show notification
+            function showNotification(message, type) {
+                // Remove existing notification
+                const existing = document.querySelector('.cookie-notification');
+                if (existing) existing.remove();
+                
+                // Create new notification
+                const notification = document.createElement('div');
+                notification.className = `cookie-notification ${type}`;
+                notification.innerHTML = `
+                    <i class="fas fa-${type === 'success' ? 'check-circle' : 
+                                    type === 'warning' ? 'exclamation-triangle' : 
+                                    'info-circle'}"></i>
+                    <span>${message}</span>
+                    <button class="close-notification"><i class="fas fa-times"></i></button>
+                `;
+                
+                // Add to page
+                document.body.appendChild(notification);
+                
+                // Show notification
+                setTimeout(() => notification.classList.add('show'), 100);
+                
+                // Close button
+                notification.querySelector('.close-notification').addEventListener('click', function() {
+                    notification.classList.remove('show');
+                    setTimeout(() => notification.remove(), 300);
+                });
+                
+                // Auto-remove after 5 seconds
+                setTimeout(() => {
+                    if (notification.parentNode) {
+                        notification.classList.remove('show');
+                        setTimeout(() => notification.remove(), 300);
+                    }
+                }, 5000);
+            }
+            
+            // Initialize
+            initializeForm();
+            updateDisplay();
+            
+            // Show banner if no consent yet
+            if (!localStorage.getItem('cookieSettings')) {
+                document.getElementById('cookieConsentBanner').style.display = 'block';
+            }
+        });
+    </script>
+    
+    <style>
+        .cookie-hero {
+            background: linear-gradient(135deg, #9b59b6 0%, #8e44ad 100%);
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+        .cookie-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        .hero-subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 30px;
+        }
+        .cookie-status {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+        .status-badge {
+            background: rgba(255,255,255,0.1);
+            padding: 15px 25px;
+            border-radius: 50px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            backdrop-filter: blur(10px);
+        }
+        .status-badge i {
+            font-size: 1.5rem;
+        }
+        .btn {
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s;
+        }
+        .btn-outline {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+        .btn-outline:hover {
+            background: white;
+            color: #9b59b6;
+        }
+        
+        .cookie-content {
+            padding: 60px 0;
+            background: #f8f9fa;
+        }
+        .cookie-summary {
+            margin-bottom: 40px;
+        }
+        .summary-card {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            border-left: 5px solid #9b59b6;
+        }
+        .summary-icon i {
+            font-size: 3rem;
+            color: #9b59b6;
+        }
+        .summary-content h3 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+            font-size: 1.5rem;
+        }
+        
+        .cookie-section {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            margin-bottom: 40px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+        }
+        .section-title {
+            color: #2c3e50;
+            margin-bottom: 30px;
+            font-size: 1.8rem;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        .section-title i {
+            color: #9b59b6;
+        }
+        
+        .cookie-types {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+        .type-card {
+            padding: 25px;
+            border-radius: 10px;
+            border: 2px solid #e0e0e0;
+            transition: all 0.3s;
+        }
+        .type-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        .type-card.essential {
+            border-color: #28a745;
+        }
+        .type-card.functional {
+            border-color: #17a2b8;
+        }
+        .type-card.analytics {
+            border-color: #007bff;
+        }
+        .type-card.marketing {
+            border-color: #dc3545;
+        }
+        .type-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+        .type-header i {
+            font-size: 1.8rem;
+        }
+        .type-card.essential .type-header i { color: #28a745; }
+        .type-card.functional .type-header i { color: #17a2b8; }
+        .type-card.analytics .type-header i { color: #007bff; }
+        .type-card.marketing .type-header i { color: #dc3545; }
+        .type-header h4 {
+            margin: 0;
+            color: #2c3e50;
+            font-size: 1.2rem;
+        }
+        .type-card p {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+        .type-tag {
+            display: inline-block;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+        .type-card.essential .type-tag {
+            background: #d4edda;
+            color: #155724;
+        }
+        .type-card.functional .type-tag,
+        .type-card.analytics .type-tag,
+        .type-card.marketing .type-tag {
+            background: #fff3cd;
+            color: #856404;
+        }
+        
+        .cookies-table {
+            overflow-x: auto;
+        }
+        .cookies-table table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .cookies-table th {
+            background: #9b59b6;
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+        }
+        .cookies-table td {
+            padding: 15px;
+            border-bottom: 1px solid #f0f0f0;
+            color: #555;
+        }
+        .cookies-table tr:last-child td {
+            border-bottom: none;
+        }
+        .cookies-table tr:hover {
+            background: #f8f9fa;
+        }
+        .cookies-table code {
+            background: #f1f1f1;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-family: monospace;
+            color: #9b59b6;
+        }
+        .badge {
+            display: inline-block;
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+        .badge.essential {
+            background: #d4edda;
+            color: #155724;
+        }
+        .badge.functional {
+            background: #d1ecf1;
+            color: #0c5460;
+        }
+        .badge.analytics {
+            background: #cce5ff;
+            color: #004085;
+        }
+        .badge.marketing {
+            background: #f8d7da;
+            color: #721c24;
+        }
+        
+        .third-party {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+        .partner-card {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            border-left: 4px solid #9b59b6;
+        }
+        .partner-logo i {
+            font-size: 2.5rem;
+            color: #9b59b6;
+        }
+        .partner-info h4 {
+            margin-bottom: 5px;
+            color: #2c3e50;
+        }
+        .partner-info p {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+        }
+        .partner-link {
+            color: #9b59b6;
+            text-decoration: none;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        .partner-link:hover {
+            text-decoration: underline;
+        }
+        
+        .management-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+        .browser-guides {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .guide {
+            text-align: center;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 10px;
+        }
+        .guide i {
+            font-size: 2.5rem;
+            color: #9b59b6;
+            margin-bottom: 15px;
+        }
+        .guide h4 {
+            margin-bottom: 10px;
+            color: #2c3e50;
+        }
+        .guide p {
+            color: #666;
+            font-size: 0.85rem;
+            line-height: 1.4;
+            margin: 0;
+        }
+        
+        .control-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin: 20px 0;
+        }
+        .btn-success {
+            background: #28a745;
+            color: white;
+        }
+        .btn-warning {
+            background: #ffc107;
+            color: #212529;
+        }
+        .btn-danger {
+            background: #dc3545;
+            color: white;
+        }
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .current-settings {
+            margin-top: 30px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 10px;
+        }
+        .settings-display {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 15px;
+        }
+        .setting-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 20px;
+            background: white;
+            border-radius: 8px;
+            border: 1px solid #e0e0e0;
+        }
+        .setting-value.active {
+            color: #28a745;
+            font-weight: 600;
+        }
+        .setting-value.inactive {
+            color: #dc3545;
+            font-weight: 600;
+        }
+        
+        .cookie-faq {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .faq-item {
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            border-left: 4px solid #9b59b6;
+        }
+        .faq-item h4 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+        .faq-item p, .faq-item ul {
+            color: #666;
+            line-height: 1.6;
+            margin: 0;
+        }
+        .faq-item ul {
+            padding-left: 20px;
+            margin-top: 10px;
+        }
+        
+        .cookie-preferences {
+            margin-top: 40px;
+        }
+        .preferences-card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            border: 2px solid #9b59b6;
+        }
+        .preferences-card h3 {
+            color: #2c3e50;
+            margin-bottom: 30px;
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        .preference-group {
+            margin-bottom: 20px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 10px;
+        }
+        .preference-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        .preference-header label {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            cursor: pointer;
+        }
+        .preference-header input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+        }
+        .preference-title {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.1rem;
+        }
+        .preference-title i {
+            font-size: 1.2rem;
+        }
+        .essential .preference-title i { color: #28a745; }
+        .functional .preference-title i { color: #17a2b8; }
+        .analytics .preference-title i { color: #007bff; }
+        .marketing .preference-title i { color: #dc3545; }
+        .preference-badge {
+            padding: 5px 15px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            background: #fff3cd;
+            color: #856404;
+        }
+        .preference-desc {
+            color: #666;
+            margin: 0;
+            padding-left: 35px;
+        }
+        .preference-actions {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+        }
+        .btn-primary {
+            background: #9b59b6;
+            color: white;
+        }
+        .btn-secondary {
+            background: #6c757d;
+            color: white;
+        }
+        
+        .cookie-banner {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(44, 62, 80, 0.95);
+            color: white;
+            padding: 20px 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+            display: none;
+        }
+        .banner-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 30px;
+        }
+        .banner-text h4 {
+            margin-bottom: 5px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .banner-text p {
+            margin: 0;
+            opacity: 0.9;
+            font-size: 0.9rem;
+        }
+        .banner-actions {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        .btn-sm {
+            padding: 8px 16px;
+            font-size: 0.9rem;
+        }
+        
+        .cookie-notification {
+            position: fixed;
+            bottom: 100px;
+            right: 20px;
+            background: white;
+            color: #333;
+            padding: 15px 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            z-index: 1001;
+            transform: translateX(100%);
+            opacity: 0;
+            transition: all 0.3s;
+        }
+        .cookie-notification.show {
+            transform: translateX(0);
+            opacity: 1;
+        }
+        .cookie-notification.success {
+            border-left: 4px solid #28a745;
+        }
+        .cookie-notification.warning {
+            border-left: 4px solid #ffc107;
+        }
+        .cookie-notification.info {
+            border-left: 4px solid #17a2b8;
+        }
+        .cookie-notification i {
+            font-size: 1.5rem;
+        }
+        .cookie-notification.success i { color: #28a745; }
+        .cookie-notification.warning i { color: #ffc107; }
+        .cookie-notification.info i { color: #17a2b8; }
+        .close-notification {
+            background: none;
+            border: none;
+            color: #666;
+            cursor: pointer;
+            padding: 0;
+            margin-left: 10px;
+        }
+        
+        @media (max-width: 992px) {
+            .management-content {
+                grid-template-columns: 1fr;
+            }
+            .banner-content {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .cookie-hero h1 {
+                font-size: 2rem;
+            }
+            .cookie-types {
+                grid-template-columns: 1fr;
+            }
+            .control-actions {
+                flex-direction: column;
+            }
+            .btn {
+                width: 100%;
+                justify-content: center;
+            }
+            .preference-actions {
+                flex-direction: column;
+            }
+            .cookie-notification {
+                left: 20px;
+                right: 20px;
+                transform: translateY(100%);
+            }
+            .cookie-notification.show {
+                transform: translateY(0);
+            }
+        }
+    </style>
+</body>
+</html>

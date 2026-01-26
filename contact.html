@@ -1,0 +1,904 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bog'lanish - Ranking Hours</title>
+    <meta name="description" content="Ranking Hours bilan bog'lanish. Savollar, takliflar, hamkorlik yoki reklama uchun bizga yozing.">
+    
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Til tanlash -->
+    <div class="language-switcher">
+        <div class="container">
+            <button class="lang-btn active" data-lang="uz">🇺🇿 O'zbek</button>
+            <button class="lang-btn" data-lang="en">🇬🇧 English</button>
+            <button class="lang-btn" data-lang="ru">🇷🇺 Русский</button>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <img src="images/logo.png" alt="Ranking Hours Logo" width="40">
+                <span>Ranking<span class="highlight">Hours</span></span>
+            </a>
+            <div class="nav-menu">
+                <a href="index.html">Bosh Sahifa</a>
+                <a href="comparisons.html">Solishtirishlar</a>
+                <a href="about.html">Biz Haqimizda</a>
+                <a href="contact.html" class="active">Bog'lanish</a>
+                <a href="faq.html">FAQ</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Contact Hero -->
+    <section class="contact-hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Biz Bilan Bog'lanish</h1>
+                <p class="hero-subtitle">Savollaringiz, takliflaringiz yoki hamkorlik uchun - bizga yozing</p>
+                <div class="contact-stats">
+                    <div class="stat">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <h3>24 Soat</h3>
+                            <p>Javob berish vaqti</p>
+                        </div>
+                    </div>
+                    <div class="stat">
+                        <i class="fas fa-check-circle"></i>
+                        <div>
+                            <h3>100%</h3>
+                            <p>Har bir xabarga javob</p>
+                        </div>
+                    </div>
+                    <div class="stat">
+                        <i class="fas fa-users"></i>
+                        <div>
+                            <h3>5 Kishi</h3>
+                            <p>Qo'llab-quvvatlash jamoasi</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Main -->
+    <main class="contact-main">
+        <div class="container">
+            <div class="contact-wrapper">
+                <!-- Contact Form -->
+                <div class="contact-form-section">
+                    <h2><i class="fas fa-envelope"></i> Xabar Yuborish</h2>
+                    <form id="contactForm" class="contact-form">
+                        <div class="form-group">
+                            <label for="name">Ismingiz *</label>
+                            <input type="text" id="name" name="name" required placeholder="Ismingizni kiriting">
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="email">Elektron pochta *</label>
+                                <input type="email" id="email" name="email" required placeholder="email@example.com">
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Telefon raqam</label>
+                                <input type="tel" id="phone" name="phone" placeholder="+998 90 123 45 67">
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="subject">Mavzu *</label>
+                            <select id="subject" name="subject" required>
+                                <option value="">Mavzuni tanlang</option>
+                                <option value="general">Umumiy savol</option>
+                                <option value="suggestion">Taklif</option>
+                                <option value="partnership">Hamkorlik</option>
+                                <option value="advertising">Reklama</option>
+                                <option value="product_test">Mahsulot test</option>
+                                <option value="bug_report">Xato haqida xabar</option>
+                                <option value="other">Boshqa</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Xabaringiz *</label>
+                            <textarea id="message" name="message" rows="6" required placeholder="Xabaringizni batafsil yozing..."></textarea>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="attachment">Fayl biriktirish</label>
+                            <input type="file" id="attachment" name="attachment" accept=".jpg,.png,.pdf,.doc,.docx">
+                            <small>Rasm, PDF yoki hujjat (max: 5MB)</small>
+                        </div>
+                        
+                        <div class="form-group checkbox-group">
+                            <input type="checkbox" id="newsletter" name="newsletter">
+                            <label for="newsletter">Yangiliklarga obuna bo'lishni istayman</label>
+                        </div>
+                        
+                        <div class="form-group checkbox-group">
+                            <input type="checkbox" id="terms" name="terms" required>
+                            <label for="terms">
+                                <a href="privacy-policy.html">Maxfiylik siyosati</a> va 
+                                <a href="terms-of-service.html">Foydalanish shartlari</a> bilan tanishdim va roziman *
+                            </label>
+                        </div>
+                        
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-primary">
+                                <i class="fas fa-paper-plane"></i> Xabarni Yuborish
+                            </button>
+                            <button type="reset" class="btn btn-secondary">
+                                <i class="fas fa-redo"></i> Tozalash
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="contact-info-section">
+                    <!-- Quick Contact -->
+                    <div class="contact-info-card">
+                        <h3><i class="fas fa-info-circle"></i> Tez Aloqa</h3>
+                        <div class="contact-methods">
+                            <div class="contact-method">
+                                <div class="method-icon">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div class="method-details">
+                                    <h4>Elektron pochta</h4>
+                                    <a href="mailto:info@ranking-hours.uz">info@ranking-hours.uz</a>
+                                    <p>Javob vaqti: 24 soat ichida</p>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-method">
+                                <div class="method-icon">
+                                    <i class="fas fa-phone"></i>
+                                </div>
+                                <div class="method-details">
+                                    <h4>Telefon</h4>
+                                    <a href="tel:+998901234567">+998 90 123 45 67</a>
+                                    <p>Ish vaqti: 9:00 - 18:00</p>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-method">
+                                <div class="method-icon">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <div class="method-details">
+                                    <h4>Manzil</h4>
+                                    <p>Toshkent shahri,<br>Yunusobod tumani</p>
+                                    <p>Ofisga kelish uchun avval qo'ng'iroq qiling</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Department Contacts -->
+                    <div class="contact-info-card">
+                        <h3><i class="fas fa-sitemap"></i> Bo'limlar</h3>
+                        <div class="departments">
+                            <div class="department">
+                                <h4>✍️ Tahririyat</h4>
+                                <p>Maqolalar, testlar, tahrir</p>
+                                <a href="mailto:editorial@ranking-hours.uz">editorial@ranking-hours.uz</a>
+                            </div>
+                            
+                            <div class="department">
+                                <h4>🤝 Hamkorlik</h4>
+                                <p>Hamkorlik, reklama, loyihalar</p>
+                                <a href="mailto:partnership@ranking-hours.uz">partnership@ranking-hours.uz</a>
+                            </div>
+                            
+                            <div class="department">
+                                <h4>🛠️ Texnik Yordam</h4>
+                                <p>Sayt muammolari, texnik masalalar</p>
+                                <a href="mailto:support@ranking-hours.uz">support@ranking-hours.uz</a>
+                            </div>
+                            
+                            <div class="department">
+                                <h4>🔒 Maxfiylik</h4>
+                                <p>Maxfiylik, ma'lumotlar himoyasi</p>
+                                <a href="mailto:privacy@ranking-hours.uz">privacy@ranking-hours.uz</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- FAQ Preview -->
+                    <div class="contact-info-card">
+                        <h3><i class="fas fa-question-circle"></i> Tez-tez So'raladigan Savollar</h3>
+                        <div class="faq-preview">
+                            <div class="faq-item">
+                                <h4>Qancha vaqtda javob olaman?</h4>
+                                <p>24 soat ichida. Agar shoshilinch bo'lsa, telefon qiling.</p>
+                            </div>
+                            <div class="faq-item">
+                                <h4>Mahsulotimni test qilishingizni xohlasam?</h4>
+                                <p>"Mahsulot test" mavzusini tanlang va mahsulot haqida ma'lumot bering.</p>
+                            </div>
+                            <div class="faq-item">
+                                <h4>Reklama berishni xohlasam?</h4>
+                                <p>"Reklama" mavzusini tanlang yoki partnership@ranking-hours.uz ga yozing.</p>
+                            </div>
+                        </div>
+                        <a href="faq.html" class="btn btn-outline btn-small">
+                            <i class="fas fa-external-link-alt"></i> Barcha FAQ
+                        </a>
+                    </div>
+
+                    <!-- Social Media -->
+                    <div class="contact-info-card">
+                        <h3><i class="fas fa-share-alt"></i> Ijtimoiy Tarmoqlar</h3>
+                        <p>Bizni ijtimoiy tarmoqlarda kuzating va savollaringizni tezroq bering:</p>
+                        <div class="social-links-grid">
+                            <a href="#" class="social-link telegram">
+                                <i class="fab fa-telegram"></i>
+                                <span>Telegram</span>
+                            </a>
+                            <a href="#" class="social-link youtube">
+                                <i class="fab fa-youtube"></i>
+                                <span>YouTube</span>
+                            </a>
+                            <a href="#" class="social-link instagram">
+                                <i class="fab fa-instagram"></i>
+                                <span>Instagram</span>
+                            </a>
+                            <a href="#" class="social-link facebook">
+                                <i class="fab fa-facebook"></i>
+                                <span>Facebook</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Map Section -->
+    <section class="map-section">
+        <div class="container">
+            <h2><i class="fas fa-map"></i> Bizning Manzil</h2>
+            <div class="map-container">
+                <!-- Google Map Embed -->
+                <div class="map-embed">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2996.2547156509676!2d69.27973741542487!3d41.32617987927016!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38ae8b534175ed31%3A0x52a8f9d9414a2ad8!2sTashkent%2C%20Uzbekistan!5e0!3m2!1sen!2s!4v1649850000000!5m2!1sen!2s" 
+                        width="100%" 
+                        height="400" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+                
+                <div class="map-details">
+                    <div class="detail-item">
+                        <i class="fas fa-subway"></i>
+                        <div>
+                            <h4>Metro</h4>
+                            <p>Yunusobod metro bekati</p>
+                            <p>5 daqiqa piyoda</p>
+                        </div>
+                    </div>
+                    
+                    <div class="detail-item">
+                        <i class="fas fa-car"></i>
+                        <div>
+                            <h4>Parking</h4>
+                            <p>Binoda bepul parking</p>
+                            <p>20 ta joy mavjud</p>
+                        </div>
+                    </div>
+                    
+                    <div class="detail-item">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <h4>Ish vaqti</h4>
+                            <p>Dushanba - Juma: 9:00-18:00</p>
+                            <p>Shanba - Yakshanba: Dam olish</p>
+                        </div>
+                    </div>
+                    
+                    <div class="detail-item">
+                        <i class="fas fa-wheelchair"></i>
+                        <div>
+                            <h4>Qulayliklar</h4>
+                            <p>Nogironlar uchun lift</p>
+                            <p>Wi-Fi, kofe, dam olish xonasi</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="contact-cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Telefon Orqali Bog'lanishni Xohlaysizmi?</h2>
+                <p>Biz bilan bepul maslahatlashish uchun quyidagi vaqtlarda qo'ng'iroq qiling:</p>
+                
+                <div class="call-schedule">
+                    <div class="schedule-day">
+                        <h4>Dushanba - Juma</h4>
+                        <p>10:00 - 12:00: Umumiy maslahat</p>
+                        <p>14:00 - 16:00: Hamkorlik masalalari</p>
+                    </div>
+                    
+                    <div class="schedule-day">
+                        <h4>Qo'ng'iroq uchun raqam:</h4>
+                        <div class="call-number">
+                            <i class="fas fa-phone"></i>
+                            <a href="tel:+998901234567">+998 90 123 45 67</a>
+                        </div>
+                        <p>Qo'ng'iroq pullik emas</p>
+                    </div>
+                </div>
+                
+                <div class="emergency-contact">
+                    <h3><i class="fas fa-exclamation-triangle"></i> Shoshilinch Aloqa</h3>
+                    <p>Agar sizda saytda xavfsizlik muammosi bo'lsa yoki shoshilinch masala bo'lsa:</p>
+                    <a href="mailto:security@ranking-hours.uz" class="btn btn-warning">
+                        <i class="fas fa-shield-alt"></i> security@ranking-hours.uz
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <a href="index.html" class="footer-logo">
+                        <img src="images/logo.png" alt="Ranking Hours" width="40">
+                        <span>Ranking<span class="highlight">Hours</span></span>
+                    </a>
+                    <p class="footer-description">
+                        Biz haqiqiy odamlardan haqiqiy maslahatlar. 
+                        Har bir mahsulotni o'zimiz sinab ko'ramiz.
+                    </p>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Aloqa</h3>
+                    <ul class="footer-links">
+                        <li><a href="contact.html" class="active">Bog'lanish</a></li>
+                        <li><a href="mailto:info@ranking-hours.uz">info@ranking-hours.uz</a></li>
+                        <li><a href="tel:+998901234567">+998 90 123 45 67</a></li>
+                        <li>Toshkent, O'zbekiston</li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Qo'llab-quvvatlash</h3>
+                    <ul class="footer-links">
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="support.html">Yordam markazi</a></li>
+                        <li><a href="status.html">Sayt holati</a></li>
+                        <li><a href="report.html">Muammo xabar qilish</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Xavfsizlik</h3>
+                    <ul class="footer-links">
+                        <li><a href="privacy-policy.html">Maxfiylik siyosati</a></li>
+                        <li><a href="terms-of-service.html">Foydalanish shartlari</a></li>
+                        <li><a href="cookies.html">Cookie siyosati</a></li>
+                        <li><a href="security.html">Xavfsizlik</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 RankingHours.uz - Barcha huquqlar himoyalangan.</p>
+                <p class="footer-note">
+                    Barcha aloqalar maxfiylik siyosati asosida qayta ishlanadi. 
+                    Spam yubormaymiz va ma'lumotlaringizni uchinchi tomonlarga bermaymiz.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/contact.js"></script>
+    
+    <script>
+        // Contact Form Validation
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Form validation
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value;
+            const terms = document.getElementById('terms').checked;
+            
+            if (!name || !email || !subject || !message || !terms) {
+                alert('Iltimos, barcha kerakli maydonlarni to\'ldiring va shartlarga roziligingizni bildiring.');
+                return;
+            }
+            
+            // Email validation
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                alert('Iltimos, to\'g\'ri elektron pochta manzilini kiriting.');
+                return;
+            }
+            
+            // File validation
+            const fileInput = document.getElementById('attachment');
+            if (fileInput.files.length > 0) {
+                const file = fileInput.files[0];
+                const maxSize = 5 * 1024 * 1024; // 5MB
+                const allowedTypes = ['image/jpeg', 'image/png', 'application/pdf', 'application/msword', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'];
+                
+                if (file.size > maxSize) {
+                    alert('Fayl hajmi 5MB dan oshmasligi kerak.');
+                    return;
+                }
+                
+                if (!allowedTypes.includes(file.type)) {
+                    alert('Faqat rasm (JPG, PNG), PDF yoki Word hujjatlarni yuklashingiz mumkin.');
+                    return;
+                }
+            }
+            
+            // Show success message
+            alert('Rahmat! Xabaringiz qabul qilindi. Biz sizga 24 soat ichida javob beramiz.');
+            this.reset();
+            
+            // Here you would normally send the form data to a server
+            // Example: fetch('/api/contact', { method: 'POST', body: new FormData(this) })
+        });
+        
+        // Phone number formatting
+        document.getElementById('phone').addEventListener('input', function(e) {
+            let value = e.target.value.replace(/\D/g, '');
+            if (value.startsWith('998')) {
+                value = '+998 ' + value.substring(3);
+            }
+            if (value.length > 4) {
+                value = value.substring(0, 7) + ' ' + value.substring(7, 10) + ' ' + value.substring(10, 12) + ' ' + value.substring(12, 14);
+            }
+            e.target.value = value;
+        });
+        
+        // Subject-specific instructions
+        document.getElementById('subject').addEventListener('change', function(e) {
+            const messageField = document.getElementById('message');
+            const instructions = {
+                'product_test': 'Iltimos, mahsulot nomi, modeli va test qilish sababingizni batafsil yozing.',
+                'advertising': 'Reklama turi, muddati va byudjetingiz haqida ma\'lumot bering.',
+                'partnership': 'Qanday hamkorlikni xohlaysiz? Loyiha haqida ma\'lumot bering.',
+                'bug_report': 'Xato qanday paydo bo\'ldi? Qaysi sahifada? Qanday qaytarish mumkin?'
+            };
+            
+            if (instructions[e.target.value]) {
+                messageField.placeholder = instructions[e.target.value];
+            } else {
+                messageField.placeholder = 'Xabaringizni batafsil yozing...';
+            }
+        });
+    </script>
+    
+    <style>
+        .contact-hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+        }
+        .contact-hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        .hero-subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 40px;
+        }
+        .contact-stats {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+        .stat {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            text-align: left;
+        }
+        .stat i {
+            font-size: 2rem;
+            opacity: 0.8;
+        }
+        .stat h3 {
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+        }
+        .stat p {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        
+        .contact-main {
+            padding: 60px 0;
+            background: #f8f9fa;
+        }
+        .contact-wrapper {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+        }
+        .contact-form-section {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        .contact-form-section h2 {
+            color: #2c3e50;
+            margin-bottom: 30px;
+            font-size: 1.8rem;
+        }
+        .contact-form-section h2 i {
+            color: #667eea;
+            margin-right: 10px;
+        }
+        .form-group {
+            margin-bottom: 25px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #2c3e50;
+        }
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: #667eea;
+            outline: none;
+        }
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        .checkbox-group {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .checkbox-group input[type="checkbox"] {
+            width: auto;
+        }
+        .checkbox-group label {
+            margin-bottom: 0;
+            font-weight: normal;
+        }
+        .checkbox-group a {
+            color: #667eea;
+            text-decoration: none;
+        }
+        .checkbox-group a:hover {
+            text-decoration: underline;
+        }
+        .form-actions {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+        }
+        
+        .contact-info-section {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+        .contact-info-card {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+        .contact-info-card h3 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+        }
+        .contact-info-card h3 i {
+            color: #667eea;
+            margin-right: 10px;
+        }
+        .contact-methods {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .contact-method {
+            display: flex;
+            gap: 15px;
+            align-items: flex-start;
+        }
+        .method-icon {
+            width: 40px;
+            height: 40px;
+            background: #f0f4ff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #667eea;
+            font-size: 1.2rem;
+        }
+        .method-details h4 {
+            margin-bottom: 5px;
+            font-size: 1rem;
+        }
+        .method-details a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 600;
+            display: block;
+            margin-bottom: 5px;
+        }
+        .method-details p {
+            font-size: 0.9rem;
+            color: #666;
+        }
+        
+        .departments {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .department {
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+        .department h4 {
+            margin-bottom: 8px;
+            font-size: 1rem;
+        }
+        .department p {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 8px;
+        }
+        .department a {
+            color: #667eea;
+            font-size: 0.9rem;
+            text-decoration: none;
+        }
+        .department a:hover {
+            text-decoration: underline;
+        }
+        
+        .faq-preview {
+            margin-bottom: 20px;
+        }
+        .faq-item {
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #eee;
+        }
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+        .faq-item h4 {
+            font-size: 0.95rem;
+            margin-bottom: 8px;
+            color: #2c3e50;
+        }
+        .faq-item p {
+            font-size: 0.9rem;
+            color: #666;
+            line-height: 1.5;
+        }
+        
+        .social-links-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+        }
+        .social-link {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px;
+            border-radius: 8px;
+            text-decoration: none;
+            color: white;
+            font-weight: 600;
+            transition: transform 0.3s;
+        }
+        .social-link:hover {
+            transform: translateY(-3px);
+        }
+        .social-link.telegram { background: #0088cc; }
+        .social-link.youtube { background: #ff0000; }
+        .social-link.instagram { background: #e4405f; }
+        .social-link.facebook { background: #1877f2; }
+        
+        .map-section {
+            padding: 60px 0;
+            background: white;
+        }
+        .map-section h2 {
+            text-align: center;
+            margin-bottom: 40px;
+            color: #2c3e50;
+            font-size: 2rem;
+        }
+        .map-section h2 i {
+            color: #667eea;
+            margin-right: 10px;
+        }
+        .map-container {
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        .map-details {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 30px;
+            background: #f8f9fa;
+        }
+        .detail-item {
+            display: flex;
+            gap: 15px;
+            align-items: flex-start;
+        }
+        .detail-item i {
+            font-size: 1.5rem;
+            color: #667eea;
+            margin-top: 5px;
+        }
+        .detail-item h4 {
+            margin-bottom: 5px;
+            font-size: 1rem;
+        }
+        .detail-item p {
+            font-size: 0.9rem;
+            color: #666;
+            line-height: 1.5;
+        }
+        
+        .contact-cta {
+            padding: 60px 0;
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            text-align: center;
+        }
+        .contact-cta h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+        .contact-cta p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            margin-bottom: 40px;
+        }
+        .call-schedule {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            max-width: 800px;
+            margin: 0 auto 40px;
+            text-align: left;
+        }
+        .schedule-day h4 {
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+        }
+        .schedule-day p {
+            margin-bottom: 10px;
+            opacity: 0.9;
+        }
+        .call-number {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            font-size: 1.5rem;
+            margin: 15px 0;
+        }
+        .call-number a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .emergency-contact {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 30px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+        }
+        .emergency-contact h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        .emergency-contact p {
+            margin-bottom: 20px;
+        }
+        .btn-warning {
+            background: #ff6b6b;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-block;
+            transition: background 0.3s;
+        }
+        .btn-warning:hover {
+            background: #ff5252;
+        }
+        
+        @media (max-width: 1024px) {
+            .contact-wrapper {
+                grid-template-columns: 1fr;
+            }
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .contact-stats {
+                flex-direction: column;
+                align-items: center;
+                gap: 20px;
+            }
+            .contact-form-section {
+                padding: 20px;
+            }
+            .map-details {
+                grid-template-columns: 1fr;
+            }
+            .call-schedule {
+                grid-template-columns: 1fr;
+            }
+            .social-links-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</body>
+</html>

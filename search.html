@@ -1,0 +1,2368 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kuchli Qidiruv - Ranking Hours</title>
+    <meta name="description" content="Ranking Hours saytida mahsulotlar, maqolalar va sharhlarni toping. Kuchli qidiruv tizimi bilan kerakli ma'lumotni tez toping.">
+    
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/search.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Til tanlash -->
+    <div class="language-switcher">
+        <div class="container">
+            <button class="lang-btn active" data-lang="uz">🇺🇿 O'zbek</button>
+            <button class="lang-btn" data-lang="en">🇬🇧 English</button>
+            <button class="lang-btn" data-lang="ru">🇷🇺 Русский</button>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <img src="images/logo.png" alt="Ranking Hours Logo" width="40">
+                <span>Ranking<span class="highlight">Hours</span></span>
+            </a>
+            <div class="nav-menu">
+                <a href="index.html">Bosh Sahifa</a>
+                <a href="comparisons.html">Solishtirishlar</a>
+                <a href="categories.html">Kategoriyalar</a>
+                <a href="about.html">Biz Haqimizda</a>
+                <a href="faq.html">FAQ</a>
+                <a href="contact.html">Bog'lanish</a>
+                <a href="search.html" class="active">Qidiruv</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Search Hero -->
+    <section class="search-hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Kuchli Qidiruv</h1>
+                <p class="hero-subtitle">150+ maqola va 1000+ mahsulot ichidan keraklisini toping</p>
+                
+                <!-- Main Search Box -->
+                <div class="main-search-box">
+                    <div class="search-input-wrapper">
+                        <i class="fas fa-search"></i>
+                        <input type="text" id="mainSearch" placeholder="Nima izlayabsiz? Masalan: iPhone 15 Pro, Samsung TV, gaming noutbuk...">
+                        <button id="voiceSearchBtn" class="voice-btn" title="Ovozli qidiruv">
+                            <i class="fas fa-microphone"></i>
+                        </button>
+                    </div>
+                    <button id="searchButton" class="search-btn">
+                        <i class="fas fa-search"></i> Qidirish
+                    </button>
+                </div>
+                
+                <!-- Search Stats -->
+                <div class="search-stats">
+                    <div class="stat">
+                        <i class="fas fa-database"></i>
+                        <div>
+                            <h3>150+</h3>
+                            <p>Maqola</p>
+                        </div>
+                    </div>
+                    <div class="stat">
+                        <i class="fas fa-box"></i>
+                        <div>
+                            <h3>1000+</h3>
+                            <p>Mahsulot</p>
+                        </div>
+                    </div>
+                    <div class="stat">
+                        <i class="fas fa-bolt"></i>
+                        <div>
+                            <h3>0.2s</h3>
+                            <p>Qidiruv tezligi</p>
+                        </div>
+                    </div>
+                    <div class="stat">
+                        <i class="fas fa-tags"></i>
+                        <div>
+                            <h3>15+</h3>
+                            <p>Kategoriya</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Search Content -->
+    <main class="search-content">
+        <div class="container">
+            <div class="search-layout">
+                <!-- Sidebar Filters -->
+                <aside class="search-sidebar">
+                    <!-- Search Tips -->
+                    <div class="filter-section">
+                        <h3><i class="fas fa-lightbulb"></i> Qidiruv Maslahatlari</h3>
+                        <div class="search-tips">
+                            <div class="tip">
+                                <i class="fas fa-quote-left"></i>
+                                <p>Aniq so'zlar ishlating: "iPhone 15 Pro"</p>
+                            </div>
+                            <div class="tip">
+                                <i class="fas fa-asterisk"></i>
+                                <p>Yulduzcha ishlating: "noutbuk*"</p>
+                            </div>
+                            <div class="tip">
+                                <i class="fas fa-minus"></i>
+                                <p>Chiqarib tashlash: "smartfon -Xiaomi"</p>
+                            </div>
+                            <div class="tip">
+                                <i class="fas fa-filter"></i>
+                                <p>Filtrlar bilan aniqroq toping</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Category Filter -->
+                    <div class="filter-section">
+                        <h3><i class="fas fa-folder"></i> Kategoriya</h3>
+                        <div class="category-filter">
+                            <label class="filter-option">
+                                <input type="checkbox" name="category" value="smartphones" checked>
+                                <span class="checkmark"></span>
+                                <span class="filter-label">
+                                    <i class="fas fa-mobile-alt"></i>
+                                    Smartfonlar
+                                    <span class="count">45</span>
+                                </span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" name="category" value="laptops" checked>
+                                <span class="checkmark"></span>
+                                <span class="filter-label">
+                                    <i class="fas fa-laptop"></i>
+                                    Noutbuklar
+                                    <span class="count">32</span>
+                                </span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" name="category" value="cars" checked>
+                                <span class="checkmark"></span>
+                                <span class="filter-label">
+                                    <i class="fas fa-car"></i>
+                                    Avtomobillar
+                                    <span class="count">28</span>
+                                </span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" name="category" value="tv" checked>
+                                <span class="checkmark"></span>
+                                <span class="filter-label">
+                                    <i class="fas fa-tv"></i>
+                                    Televizorlar
+                                    <span class="count">15</span>
+                                </span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" name="category" value="audio">
+                                <span class="checkmark"></span>
+                                <span class="filter-label">
+                                    <i class="fas fa-headphones"></i>
+                                    Audio
+                                    <span class="count">12</span>
+                                </span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" name="category" value="home">
+                                <span class="checkmark"></span>
+                                <span class="filter-label">
+                                    <i class="fas fa-home"></i>
+                                    Maishiy Texnika
+                                    <span class="count">18</span>
+                                </span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Price Filter -->
+                    <div class="filter-section">
+                        <h3><i class="fas fa-tag"></i> Narx Oralig'i</h3>
+                        <div class="price-filter">
+                            <div class="price-range">
+                                <input type="range" id="priceMin" min="0" max="5000" value="0">
+                                <input type="range" id="priceMax" min="0" max="5000" value="5000">
+                            </div>
+                            <div class="price-values">
+                                <span id="minPriceValue">$0</span>
+                                <span>-</span>
+                                <span id="maxPriceValue">$5000</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Rating Filter -->
+                    <div class="filter-section">
+                        <h3><i class="fas fa-star"></i> Reyting</h3>
+                        <div class="rating-filter">
+                            <label class="rating-option">
+                                <input type="radio" name="rating" value="5">
+                                <span class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <span class="rating-text">5 yulduz (150+)</span>
+                                </span>
+                            </label>
+                            <label class="rating-option">
+                                <input type="radio" name="rating" value="4">
+                                <span class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                    <span class="rating-text">4+ yulduz (85+)</span>
+                                </span>
+                            </label>
+                            <label class="rating-option">
+                                <input type="radio" name="rating" value="3">
+                                <span class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                    <span class="rating-text">3+ yulduz (45+)</span>
+                                </span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Sort Options -->
+                    <div class="filter-section">
+                        <h3><i class="fas fa-sort"></i> Tartiblash</h3>
+                        <div class="sort-options">
+                            <label class="sort-option">
+                                <input type="radio" name="sort" value="relevance" checked>
+                                <span class="sort-label">
+                                    <i class="fas fa-bullseye"></i>
+                                    Tegishlilik
+                                </span>
+                            </label>
+                            <label class="sort-option">
+                                <input type="radio" name="sort" value="newest">
+                                <span class="sort-label">
+                                    <i class="fas fa-clock"></i>
+                                    Yangilari
+                                </span>
+                            </label>
+                            <label class="sort-option">
+                                <input type="radio" name="sort" value="popular">
+                                <span class="sort-label">
+                                    <i class="fas fa-fire"></i>
+                                    Mashhurlari
+                                </span>
+                            </label>
+                            <label class="sort-option">
+                                <input type="radio" name="sort" value="rating">
+                                <span class="sort-label">
+                                    <i class="fas fa-star"></i>
+                                    Reyting
+                                </span>
+                            </label>
+                            <label class="sort-option">
+                                <input type="radio" name="sort" value="price_low">
+                                <span class="sort-label">
+                                    <i class="fas fa-dollar-sign"></i>
+                                    Arzonidan
+                                </span>
+                            </label>
+                            <label class="sort-option">
+                                <input type="radio" name="sort" value="price_high">
+                                <span class="sort-label">
+                                    <i class="fas fa-dollar-sign"></i>
+                                    Qimmatidan
+                                </span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Quick Filters -->
+                    <div class="filter-section">
+                        <h3><i class="fas fa-bolt"></i> Tez Filtrlar</h3>
+                        <div class="quick-filters">
+                            <button class="quick-filter" data-filter="with_video">
+                                <i class="fas fa-video"></i> Video bor
+                            </button>
+                            <button class="quick-filter" data-filter="comparison">
+                                <i class="fas fa-balance-scale"></i> Solishtirish
+                            </button>
+                            <button class="quick-filter" data-filter="review">
+                                <i class="fas fa-file-alt"></i> To'liq sharh
+                            </button>
+                            <button class="quick-filter" data-filter="affiliate">
+                                <i class="fas fa-shopping-cart"></i> Sotib olish
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Recent Searches -->
+                    <div class="filter-section">
+                        <h3><i class="fas fa-history"></i> Oxirgi Qidiruvlar</h3>
+                        <div class="recent-searches" id="recentSearches">
+                            <!-- Will be populated by JavaScript -->
+                        </div>
+                    </div>
+                </aside>
+
+                <!-- Main Results -->
+                <div class="search-results">
+                    <!-- Search Header -->
+                    <div class="results-header">
+                        <div class="results-info">
+                            <h2 id="resultsTitle">Barcha Mahsulotlar</h2>
+                            <p id="resultsCount">45 ta natija topildi</p>
+                        </div>
+                        <div class="results-controls">
+                            <div class="view-toggle">
+                                <button class="view-btn active" data-view="grid">
+                                    <i class="fas fa-th-large"></i>
+                                </button>
+                                <button class="view-btn" data-view="list">
+                                    <i class="fas fa-list"></i>
+                                </button>
+                            </div>
+                            <div class="results-per-page">
+                                <span>Ko'rsatish:</span>
+                                <select id="perPageSelect">
+                                    <option value="10">10</option>
+                                    <option value="25" selected>25</option>
+                                    <option value="50">50</option>
+                                    <option value="100">100</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Active Filters -->
+                    <div class="active-filters" id="activeFilters">
+                        <!-- Will be populated by JavaScript -->
+                    </div>
+
+                    <!-- Results Grid -->
+                    <div class="results-grid" id="resultsGrid">
+                        <!-- Results will be populated by JavaScript -->
+                        
+                        <!-- Sample Result Item 1 -->
+                        <div class="result-item" data-category="smartphones" data-price="999" data-rating="4.8" data-views="15423">
+                            <div class="result-image">
+                                <img src="images/iphone-15-pro.jpg" alt="iPhone 15 Pro Max">
+                                <div class="result-badges">
+                                    <span class="badge new">Yangi</span>
+                                    <span class="badge video"><i class="fas fa-video"></i></span>
+                                    <span class="badge comparison"><i class="fas fa-balance-scale"></i></span>
+                                </div>
+                            </div>
+                            <div class="result-content">
+                                <div class="result-category">
+                                    <i class="fas fa-mobile-alt"></i> Smartfonlar
+                                </div>
+                                <h3 class="result-title">
+                                    <a href="iphone-15-pro-review.html">iPhone 15 Pro Max - To'liq Test va Sharh</a>
+                                </h3>
+                                <p class="result-excerpt">
+                                    Apple'ning yangi flagmani - titanium korpus, A17 Pro chip, 5x zoom. 
+                                    Haqiqiy hayotda 2 haftalik test natijalari.
+                                </p>
+                                <div class="result-meta">
+                                    <div class="meta-rating">
+                                        <div class="stars">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star-half-alt"></i>
+                                            <span>4.8/5</span>
+                                        </div>
+                                    </div>
+                                    <div class="meta-views">
+                                        <i class="far fa-eye"></i> 15,423
+                                    </div>
+                                    <div class="meta-date">
+                                        <i class="far fa-clock"></i> 5 kun oldin
+                                    </div>
+                                </div>
+                                <div class="result-price">
+                                    <span class="price">$999 dan</span>
+                                    <a href="iphone-15-pro-review.html" class="btn-read">
+                                        <i class="fas fa-book-open"></i> O'qish
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Sample Result Item 2 -->
+                        <div class="result-item" data-category="laptops" data-price="1299" data-rating="4.6" data-views="8923">
+                            <div class="result-image">
+                                <img src="images/macbook-air-m2.jpg" alt="MacBook Air M2">
+                                <div class="result-badges">
+                                    <span class="badge editors">Tavsiya</span>
+                                    <span class="badge affiliate"><i class="fas fa-shopping-cart"></i></span>
+                                </div>
+                            </div>
+                            <div class="result-content">
+                                <div class="result-category">
+                                    <i class="fas fa-laptop"></i> Noutbuklar
+                                </div>
+                                <h3 class="result-title">
+                                    <a href="macbook-air-m2-review.html">MacBook Air M2 - Yengil va Kuchli</a>
+                                </h3>
+                                <p class="result-excerpt">
+                                    Apple M2 chip bilan yangilangan MacBook Air. Batareya quvvati, 
+                                    ishlash va portativlik testi. Ish va o'qish uchun mukammal.
+                                </p>
+                                <div class="result-meta">
+                                    <div class="meta-rating">
+                                        <div class="stars">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="far fa-star"></i>
+                                            <span>4.6/5</span>
+                                        </div>
+                                    </div>
+                                    <div class="meta-views">
+                                        <i class="far fa-eye"></i> 8,923
+                                    </div>
+                                    <div class="meta-date">
+                                        <i class="far fa-clock"></i> 2 hafta oldin
+                                    </div>
+                                </div>
+                                <div class="result-price">
+                                    <span class="price">$1,299 dan</span>
+                                    <a href="macbook-air-m2-review.html" class="btn-read">
+                                        <i class="fas fa-book-open"></i> O'qish
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Sample Result Item 3 -->
+                        <div class="result-item" data-category="cars" data-price="45000" data-rating="4.9" data-views="8456">
+                            <div class="result-image">
+                                <img src="images/tesla-model-y.jpg" alt="Tesla Model Y">
+                                <div class="result-badges">
+                                    <span class="badge popular">Mashhur</span>
+                                    <span class="badge video"><i class="fas fa-video"></i></span>
+                                </div>
+                            </div>
+                            <div class="result-content">
+                                <div class="result-category">
+                                    <i class="fas fa-car"></i> Avtomobillar
+                                </div>
+                                <h3 class="result-title">
+                                    <a href="tesla-model-y-review.html">Tesla Model Y - O'zbekistonda Test</a>
+                                </h3>
+                                <p class="result-excerpt">
+                                    Elektromobilning mahalliy sharoitlarda to'liq testi. Batareya quvvati, 
+                                    zaryadlash, O'zbekiston yo'llarida ishlash. 1 oylik test natijalari.
+                                </p>
+                                <div class="result-meta">
+                                    <div class="meta-rating">
+                                        <div class="stars">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <span>4.9/5</span>
+                                        </div>
+                                    </div>
+                                    <div class="meta-views">
+                                        <i class="far fa-eye"></i> 8,456
+                                    </div>
+                                    <div class="meta-date">
+                                        <i class="far fa-clock"></i> 1 oy oldin
+                                    </div>
+                                </div>
+                                <div class="result-price">
+                                    <span class="price">$45,000 dan</span>
+                                    <a href="tesla-model-y-review.html" class="btn-read">
+                                        <i class="fas fa-book-open"></i> O'qish
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Pagination -->
+                    <div class="pagination">
+                        <button class="page-btn prev" disabled>
+                            <i class="fas fa-chevron-left"></i> Oldingi
+                        </button>
+                        <div class="page-numbers">
+                            <button class="page-number active">1</button>
+                            <button class="page-number">2</button>
+                            <button class="page-number">3</button>
+                            <button class="page-number">4</button>
+                            <button class="page-number">5</button>
+                            <span class="page-dots">...</span>
+                            <button class="page-number">10</button>
+                        </div>
+                        <button class="page-btn next">
+                            Keyingi <i class="fas fa-chevron-right"></i>
+                        </button>
+                    </div>
+
+                    <!-- No Results Message -->
+                    <div class="no-results" id="noResults" style="display: none;">
+                        <div class="no-results-content">
+                            <i class="fas fa-search"></i>
+                            <h3>Natija topilmadi</h3>
+                            <p>Kechirasiz, sizning qidiruvingizga mos natijalar topilmadi.</p>
+                            <div class="suggestions">
+                                <h4>Maslahatlar:</h4>
+                                <ul>
+                                    <li>Qidiruv so'zini to'g'ri yozganligingizni tekshiring</li>
+                                    <li>Boshqa so'zlar bilan qidiring</li>
+                                    <li>Filtrlarni kamaytiring</li>
+                                    <li>Kategoriyalarni o'zgartiring</li>
+                                </ul>
+                            </div>
+                            <button id="resetFiltersBtn" class="btn btn-primary">
+                                <i class="fas fa-redo"></i> Filtrlarni Tozalash
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Related Searches -->
+                    <div class="related-searches">
+                        <h3><i class="fas fa-random"></i> Bog'liq Qidiruvlar</h3>
+                        <div class="related-tags">
+                            <a href="search.html?q=iphone+14" class="related-tag">iPhone 14 Pro</a>
+                            <a href="search.html?q=smartfon+test" class="related-tag">Smartfon test</a>
+                            <a href="search.html?q=arzon+smartfon" class="related-tag">Arzon smartfon</a>
+                            <a href="search.html?q=macbook+pro" class="related-tag">MacBook Pro</a>
+                            <a href="search.html?q=elektromobil" class="related-tag">Elektromobil</a>
+                            <a href="search.html?q=uy+texnikasi" class="related-tag">Uy texnikasi</a>
+                            <a href="search.html?q=gaming+noutbuk" class="related-tag">Gaming noutbuk</a>
+                            <a href="search.html?q=televizor+2024" class="related-tag">Televizor 2024</a>
+                        </div>
+                    </div>
+
+                    <!-- Search History -->
+                    <div class="search-history">
+                        <div class="history-header">
+                            <h3><i class="fas fa-chart-line"></i> Qidiruv Trendlari</h3>
+                            <button id="clearHistoryBtn" class="btn-clear">
+                                <i class="fas fa-trash"></i> Tozalash
+                            </button>
+                        </div>
+                        <div class="trending-searches">
+                            <div class="trend-item">
+                                <span class="trend-rank">1</span>
+                                <div class="trend-content">
+                                    <h4>iPhone 16 Pro</h4>
+                                    <p>+245% oxirgi 7 kunda</p>
+                                </div>
+                                <span class="trend-up"><i class="fas fa-arrow-up"></i></span>
+                            </div>
+                            <div class="trend-item">
+                                <span class="trend-rank">2</span>
+                                <div class="trend-content">
+                                    <h4>Samsung S24</h4>
+                                    <p>+189% oxirgi 7 kunda</p>
+                                </div>
+                                <span class="trend-up"><i class="fas fa-arrow-up"></i></span>
+                            </div>
+                            <div class="trend-item">
+                                <span class="trend-rank">3</span>
+                                <div class="trend-content">
+                                    <h4>BYD Atto 3</h4>
+                                    <p>+156% oxirgi 7 kunda</p>
+                                </div>
+                                <span class="trend-up"><i class="fas fa-arrow-up"></i></span>
+                            </div>
+                            <div class="trend-item">
+                                <span class="trend-rank">4</span>
+                                <div class="trend-content">
+                                    <h4>PS5 Pro</h4>
+                                    <p>+132% oxirgi 7 kunda</p>
+                                </div>
+                                <span class="trend-up"><i class="fas fa-arrow-up"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <a href="index.html" class="footer-logo">
+                        <img src="images/logo.png" alt="Ranking Hours" width="40">
+                        <span>Ranking<span class="highlight">Hours</span></span>
+                    </a>
+                    <p class="footer-description">
+                        <strong>Kuchli qidiruv, aniq natijalar.</strong>
+                        Har bir mahsulotni o'zimiz sinab ko'ramiz va haqiqiy baholaymiz.
+                    </p>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Qidiruv va Kategoriyalar</h3>
+                    <ul class="footer-links">
+                        <li><a href="search.html" class="active">Kuchli Qidiruv</a></li>
+                        <li><a href="categories.html">Barcha Kategoriyalar</a></li>
+                        <li><a href="comparisons.html">Solishtirishlar</a></li>
+                        <li><a href="sitemap.html">Sayt Xaritasi</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Yordam va Qo'llab-quvvatlash</h3>
+                    <ul class="footer-links">
+                        <li><a href="faq.html">FAQ (Ko'p So'raladigan Savollar)</a></li>
+                        <li><a href="contact.html">Bog'lanish</a></li>
+                        <li><a href="support.html">Qidiruv Yordami</a></li>
+                        <li><a href="404.html">Sahifa Topilmadi</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Yangiliklar va Obuna</h3>
+                    <ul class="footer-links">
+                        <li><a href="newsletter.html">Yangiliklar Obunasi</a></li>
+                        <li><a href="rss.xml">RSS Feed</a></li>
+                        <li><a href="sitemap.xml">XML Sitemap</a></li>
+                        <li><a href="api/search">Qidiruv API</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 RankingHours.uz - Barcha huquqlar himoyalangan.</p>
+                <p class="footer-note">
+                    Qidiruv tizimi doimiy ravishda yangilanadi. Oxirgi yangilanish: Mart 15, 2024.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        // Search System JavaScript
+        document.addEventListener('DOMContentLoaded', function() {
+            // Sample data for search
+            const searchData = [
+                {
+                    id: 1,
+                    title: "iPhone 15 Pro Max - To'liq Test va Sharh",
+                    category: "smartphones",
+                    price: 999,
+                    rating: 4.8,
+                    views: 15423,
+                    date: "5 kun oldin",
+                    excerpt: "Apple'ning yangi flagmani - titanium korpus, A17 Pro chip, 5x zoom. Haqiqiy hayotda 2 haftalik test natijalari.",
+                    badges: ["new", "video", "comparison"],
+                    image: "images/iphone-15-pro.jpg"
+                },
+                {
+                    id: 2,
+                    title: "MacBook Air M2 - Yengil va Kuchli",
+                    category: "laptops",
+                    price: 1299,
+                    rating: 4.6,
+                    views: 8923,
+                    date: "2 hafta oldin",
+                    excerpt: "Apple M2 chip bilan yangilangan MacBook Air. Batareya quvvati, ishlash va portativlik testi.",
+                    badges: ["editors", "affiliate"],
+                    image: "images/macbook-air-m2.jpg"
+                },
+                {
+                    id: 3,
+                    title: "Tesla Model Y - O'zbekistonda Test",
+                    category: "cars",
+                    price: 45000,
+                    rating: 4.9,
+                    views: 8456,
+                    date: "1 oy oldin",
+                    excerpt: "Elektromobilning mahalliy sharoitlarda to'liq testi. Batareya quvvati, zaryadlash, O'zbekiston yo'llarida ishlash.",
+                    badges: ["popular", "video"],
+                    image: "images/tesla-model-y.jpg"
+                },
+                {
+                    id: 4,
+                    title: "Samsung S24 Ultra - 200MP Kamera Testi",
+                    category: "smartphones",
+                    price: 1199,
+                    rating: 4.7,
+                    views: 12891,
+                    date: "3 kun oldin",
+                    excerpt: "Dunyodagi eng yaxshi smartfon kamerasi testi. 200MP sensor, AI yordamida rasm ishlash.",
+                    badges: ["new", "comparison"],
+                    image: "images/samsung-s24.jpg"
+                },
+                {
+                    id: 5,
+                    title: "Xiaomi 14 Pro - Narx/Sifat Nisbati",
+                    category: "smartphones",
+                    price: 699,
+                    rating: 4.5,
+                    views: 7456,
+                    date: "1 hafta oldin",
+                    excerpt: "Xiaomi'ning yangi flagmani. Snapdragon 8 Gen 3, 120Hz ekran, 90W tez zaryadlovchi.",
+                    badges: ["affiliate"],
+                    image: "images/xiaomi-14-pro.jpg"
+                }
+            ];
+
+            // Current search state
+            let currentSearch = {
+                query: '',
+                category: [],
+                minPrice: 0,
+                maxPrice: 5000,
+                rating: null,
+                sort: 'relevance',
+                view: 'grid',
+                page: 1,
+                perPage: 25
+            };
+
+            // Get URL parameters
+            const urlParams = new URLSearchParams(window.location.search);
+            const queryParam = urlParams.get('q');
+            if (queryParam) {
+                document.getElementById('mainSearch').value = queryParam;
+                currentSearch.query = queryParam.toLowerCase();
+                performSearch();
+            }
+
+            // Initialize recent searches
+            initializeRecentSearches();
+
+            // Main search button
+            document.getElementById('searchButton').addEventListener('click', performSearch);
+            document.getElementById('mainSearch').addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') performSearch();
+            });
+
+            // Voice search
+            document.getElementById('voiceSearchBtn').addEventListener('click', startVoiceSearch);
+
+            // Category filters
+            document.querySelectorAll('input[name="category"]').forEach(checkbox => {
+                checkbox.addEventListener('change', updateCategoryFilter);
+            });
+
+            // Price filters
+            const priceMin = document.getElementById('priceMin');
+            const priceMax = document.getElementById('priceMax');
+            const minPriceValue = document.getElementById('minPriceValue');
+            const maxPriceValue = document.getElementById('maxPriceValue');
+
+            priceMin.addEventListener('input', function() {
+                minPriceValue.textContent = `$${this.value}`;
+                currentSearch.minPrice = parseInt(this.value);
+                performSearch();
+            });
+
+            priceMax.addEventListener('input', function() {
+                maxPriceValue.textContent = `$${this.value}`;
+                currentSearch.maxPrice = parseInt(this.value);
+                performSearch();
+            });
+
+            // Rating filter
+            document.querySelectorAll('input[name="rating"]').forEach(radio => {
+                radio.addEventListener('change', function() {
+                    currentSearch.rating = this.value ? parseInt(this.value) : null;
+                    performSearch();
+                });
+            });
+
+            // Sort options
+            document.querySelectorAll('input[name="sort"]').forEach(radio => {
+                radio.addEventListener('change', function() {
+                    currentSearch.sort = this.value;
+                    performSearch();
+                });
+            });
+
+            // View toggle
+            document.querySelectorAll('.view-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    document.querySelectorAll('.view-btn').forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    currentSearch.view = this.dataset.view;
+                    
+                    const resultsGrid = document.getElementById('resultsGrid');
+                    resultsGrid.className = `results-grid ${currentSearch.view}-view`;
+                });
+            });
+
+            // Results per page
+            document.getElementById('perPageSelect').addEventListener('change', function() {
+                currentSearch.perPage = parseInt(this.value);
+                currentSearch.page = 1;
+                performSearch();
+            });
+
+            // Quick filters
+            document.querySelectorAll('.quick-filter').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    this.classList.toggle('active');
+                    // Add quick filter logic here
+                    performSearch();
+                });
+            });
+
+            // Reset filters
+            document.getElementById('resetFiltersBtn').addEventListener('click', resetFilters);
+
+            // Clear search history
+            document.getElementById('clearHistoryBtn').addEventListener('click', clearSearchHistory);
+
+            // Pagination
+            document.querySelector('.page-btn.next').addEventListener('click', function() {
+                currentSearch.page++;
+                updatePagination();
+            });
+
+            document.querySelector('.page-btn.prev').addEventListener('click', function() {
+                if (currentSearch.page > 1) {
+                    currentSearch.page--;
+                    updatePagination();
+                }
+            });
+
+            document.querySelectorAll('.page-number').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    currentSearch.page = parseInt(this.textContent);
+                    updatePagination();
+                });
+            });
+
+            // Main search function
+            function performSearch() {
+                const query = document.getElementById('mainSearch').value.trim().toLowerCase();
+                currentSearch.query = query;
+                
+                // Save to recent searches
+                if (query) {
+                    saveToRecentSearches(query);
+                }
+                
+                // Filter data based on current search state
+                let results = searchData.filter(item => {
+                    // Text search
+                    if (currentSearch.query && !item.title.toLowerCase().includes(currentSearch.query) && 
+                        !item.excerpt.toLowerCase().includes(currentSearch.query)) {
+                        return false;
+                    }
+                    
+                    // Category filter
+                    if (currentSearch.category.length > 0 && !currentSearch.category.includes(item.category)) {
+                        return false;
+                    }
+                    
+                    // Price filter
+                    if (item.price < currentSearch.minPrice || item.price > currentSearch.maxPrice) {
+                        return false;
+                    }
+                    
+                    // Rating filter
+                    if (currentSearch.rating && item.rating < currentSearch.rating) {
+                        return false;
+                    }
+                    
+                    return true;
+                });
+                
+                // Sort results
+                results = sortResults(results, currentSearch.sort);
+                
+                // Update UI
+                updateResultsCount(results.length);
+                displayResults(results);
+                updateActiveFilters();
+                
+                // Update URL
+                updateURL();
+            }
+
+            // Sort results
+            function sortResults(results, sortType) {
+                return [...results].sort((a, b) => {
+                    switch(sortType) {
+                        case 'newest':
+                            return b.id - a.id;
+                        case 'popular':
+                            return b.views - a.views;
+                        case 'rating':
+                            return b.rating - a.rating;
+                        case 'price_low':
+                            return a.price - b.price;
+                        case 'price_high':
+                            return b.price - a.price;
+                        default: // relevance
+                            return b.views - a.views;
+                    }
+                });
+            }
+
+            // Display results
+            function displayResults(results) {
+                const resultsGrid = document.getElementById('resultsGrid');
+                const noResults = document.getElementById('noResults');
+                
+                if (results.length === 0) {
+                    resultsGrid.innerHTML = '';
+                    noResults.style.display = 'block';
+                    return;
+                }
+                
+                noResults.style.display = 'none';
+                
+                // Calculate pagination
+                const start = (currentSearch.page - 1) * currentSearch.perPage;
+                const end = start + currentSearch.perPage;
+                const paginatedResults = results.slice(start, end);
+                
+                // Generate HTML
+                let html = '';
+                paginatedResults.forEach(item => {
+                    const badges = item.badges.map(badge => {
+                        switch(badge) {
+                            case 'new': return '<span class="badge new">Yangi</span>';
+                            case 'video': return '<span class="badge video"><i class="fas fa-video"></i></span>';
+                            case 'comparison': return '<span class="badge comparison"><i class="fas fa-balance-scale"></i></span>';
+                            case 'editors': return '<span class="badge editors">Tavsiya</span>';
+                            case 'affiliate': return '<span class="badge affiliate"><i class="fas fa-shopping-cart"></i></span>';
+                            case 'popular': return '<span class="badge popular">Mashhur</span>';
+                            default: return '';
+                        }
+                    }).join('');
+                    
+                    const stars = Array.from({length: 5}, (_, i) => {
+                        if (i < Math.floor(item.rating)) return '<i class="fas fa-star"></i>';
+                        if (i < item.rating) return '<i class="fas fa-star-half-alt"></i>';
+                        return '<i class="far fa-star"></i>';
+                    }).join('');
+                    
+                    html += `
+                        <div class="result-item" data-category="${item.category}" data-price="${item.price}" data-rating="${item.rating}">
+                            <div class="result-image">
+                                <img src="${item.image}" alt="${item.title}">
+                                <div class="result-badges">
+                                    ${badges}
+                                </div>
+                            </div>
+                            <div class="result-content">
+                                <div class="result-category">
+                                    <i class="fas fa-${getCategoryIcon(item.category)}"></i> ${getCategoryName(item.category)}
+                                </div>
+                                <h3 class="result-title">
+                                    <a href="${item.id}.html">${item.title}</a>
+                                </h3>
+                                <p class="result-excerpt">
+                                    ${item.excerpt}
+                                </p>
+                                <div class="result-meta">
+                                    <div class="meta-rating">
+                                        <div class="stars">
+                                            ${stars}
+                                            <span>${item.rating}/5</span>
+                                        </div>
+                                    </div>
+                                    <div class="meta-views">
+                                        <i class="far fa-eye"></i> ${item.views.toLocaleString()}
+                                    </div>
+                                    <div class="meta-date">
+                                        <i class="far fa-clock"></i> ${item.date}
+                                    </div>
+                                </div>
+                                <div class="result-price">
+                                    <span class="price">$${item.price} dan</span>
+                                    <a href="${item.id}.html" class="btn-read">
+                                        <i class="fas fa-book-open"></i> O'qish
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                });
+                
+                resultsGrid.innerHTML = html;
+                updatePagination(results.length);
+            }
+
+            // Helper functions
+            function getCategoryIcon(category) {
+                const icons = {
+                    smartphones: 'mobile-alt',
+                    laptops: 'laptop',
+                    cars: 'car',
+                    tv: 'tv',
+                    audio: 'headphones',
+                    home: 'home'
+                };
+                return icons[category] || 'box';
+            }
+
+            function getCategoryName(category) {
+                const names = {
+                    smartphones: 'Smartfonlar',
+                    laptops: 'Noutbuklar',
+                    cars: 'Avtomobillar',
+                    tv: 'Televizorlar',
+                    audio: 'Audio',
+                    home: 'Maishiy Texnika'
+                };
+                return names[category] || category;
+            }
+
+            function updateResultsCount(count) {
+                document.getElementById('resultsCount').textContent = `${count} ta natija topildi`;
+                document.getElementById('resultsTitle').textContent = count > 0 ? 
+                    `"${currentSearch.query || 'Barcha'}" uchun natijalar` : 
+                    'Natija topilmadi';
+            }
+
+            function updateActiveFilters() {
+                const activeFilters = document.getElementById('activeFilters');
+                let filters = [];
+                
+                if (currentSearch.query) {
+                    filters.push(`<span class="active-filter">Qidiruv: "${currentSearch.query}" <button class="remove-filter" data-type="query">&times;</button></span>`);
+                }
+                
+                if (currentSearch.category.length > 0) {
+                    currentSearch.category.forEach(cat => {
+                        filters.push(`<span class="active-filter">${getCategoryName(cat)} <button class="remove-filter" data-type="category" data-value="${cat}">&times;</button></span>`);
+                    });
+                }
+                
+                if (currentSearch.minPrice > 0 || currentSearch.maxPrice < 5000) {
+                    filters.push(`<span class="active-filter">Narx: $${currentSearch.minPrice} - $${currentSearch.maxPrice} <button class="remove-filter" data-type="price">&times;</button></span>`);
+                }
+                
+                if (currentSearch.rating) {
+                    filters.push(`<span class="active-filter">Reyting: ${currentSearch.rating}+ <button class="remove-filter" data-type="rating">&times;</button></span>`);
+                }
+                
+                activeFilters.innerHTML = filters.length > 0 ? 
+                    `<h4><i class="fas fa-filter"></i> Faol Filtrlar:</h4>` + filters.join('') :
+                    '';
+                
+                // Add event listeners to remove buttons
+                document.querySelectorAll('.remove-filter').forEach(btn => {
+                    btn.addEventListener('click', function() {
+                        const type = this.dataset.type;
+                        const value = this.dataset.value;
+                        removeFilter(type, value);
+                    });
+                });
+            }
+
+            function removeFilter(type, value) {
+                switch(type) {
+                    case 'query':
+                        currentSearch.query = '';
+                        document.getElementById('mainSearch').value = '';
+                        break;
+                    case 'category':
+                        currentSearch.category = currentSearch.category.filter(cat => cat !== value);
+                        document.querySelector(`input[name="category"][value="${value}"]`).checked = false;
+                        break;
+                    case 'price':
+                        currentSearch.minPrice = 0;
+                        currentSearch.maxPrice = 5000;
+                        priceMin.value = 0;
+                        priceMax.value = 5000;
+                        minPriceValue.textContent = '$0';
+                        maxPriceValue.textContent = '$5000';
+                        break;
+                    case 'rating':
+                        currentSearch.rating = null;
+                        document.querySelector('input[name="rating"]:checked').checked = false;
+                        break;
+                }
+                performSearch();
+            }
+
+            function updateCategoryFilter() {
+                const checked = document.querySelectorAll('input[name="category"]:checked');
+                currentSearch.category = Array.from(checked).map(cb => cb.value);
+                performSearch();
+            }
+
+            function resetFilters() {
+                // Reset all filters
+                currentSearch = {
+                    query: '',
+                    category: [],
+                    minPrice: 0,
+                    maxPrice: 5000,
+                    rating: null,
+                    sort: 'relevance',
+                    view: 'grid',
+                    page: 1,
+                    perPage: 25
+                };
+                
+                // Reset UI
+                document.getElementById('mainSearch').value = '';
+                document.querySelectorAll('input[name="category"]').forEach(cb => cb.checked = true);
+                priceMin.value = 0;
+                priceMax.value = 5000;
+                minPriceValue.textContent = '$0';
+                maxPriceValue.textContent = '$5000';
+                document.querySelector('input[name="rating"]:checked').checked = false;
+                document.querySelector('input[name="sort"][value="relevance"]').checked = true;
+                
+                performSearch();
+            }
+
+            function updatePagination(totalResults) {
+                const totalPages = Math.ceil(totalResults / currentSearch.perPage);
+                const prevBtn = document.querySelector('.page-btn.prev');
+                const nextBtn = document.querySelector('.page-btn.next');
+                const pageNumbers = document.querySelector('.page-numbers');
+                
+                // Update button states
+                prevBtn.disabled = currentSearch.page <= 1;
+                nextBtn.disabled = currentSearch.page >= totalPages;
+                
+                // Generate page numbers
+                let pagesHtml = '';
+                const maxVisiblePages = 5;
+                let startPage = Math.max(1, currentSearch.page - Math.floor(maxVisiblePages / 2));
+                let endPage = Math.min(totalPages, startPage + maxVisiblePages - 1);
+                
+                if (endPage - startPage + 1 < maxVisiblePages) {
+                    startPage = Math.max(1, endPage - maxVisiblePages + 1);
+                }
+                
+                for (let i = startPage; i <= endPage; i++) {
+                    pagesHtml += `<button class="page-number ${i === currentSearch.page ? 'active' : ''}">${i}</button>`;
+                }
+                
+                if (endPage < totalPages) {
+                    pagesHtml += `<span class="page-dots">...</span>`;
+                    pagesHtml += `<button class="page-number">${totalPages}</button>`;
+                }
+                
+                pageNumbers.innerHTML = pagesHtml;
+                
+                // Add event listeners to new page numbers
+                document.querySelectorAll('.page-number').forEach(btn => {
+                    if (!btn.classList.contains('page-dots')) {
+                        btn.addEventListener('click', function() {
+                            currentSearch.page = parseInt(this.textContent);
+                            updatePagination(totalResults);
+                            performSearch();
+                        });
+                    }
+                });
+            }
+
+            function updateURL() {
+                const params = new URLSearchParams();
+                if (currentSearch.query) params.set('q', currentSearch.query);
+                if (currentSearch.category.length > 0) params.set('category', currentSearch.category.join(','));
+                if (currentSearch.minPrice > 0) params.set('minPrice', currentSearch.minPrice);
+                if (currentSearch.maxPrice < 5000) params.set('maxPrice', currentSearch.maxPrice);
+                if (currentSearch.rating) params.set('rating', currentSearch.rating);
+                if (currentSearch.sort !== 'relevance') params.set('sort', currentSearch.sort);
+                
+                const newURL = `${window.location.pathname}?${params.toString()}`;
+                window.history.replaceState({}, '', newURL);
+            }
+
+            // Voice search
+            function startVoiceSearch() {
+                if (!('webkitSpeechRecognition' in window) && !('SpeechRecognition' in window)) {
+                    alert('Kechirasiz, brauzeringiz ovozli qidiruvni qo'llab-quvvatlamaydi.');
+                    return;
+                }
+                
+                const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+                const recognition = new SpeechRecognition();
+                recognition.lang = 'uz-UZ';
+                recognition.interimResults = false;
+                recognition.maxAlternatives = 1;
+                
+                const voiceBtn = document.getElementById('voiceSearchBtn');
+                voiceBtn.classList.add('listening');
+                
+                recognition.start();
+                
+                recognition.onresult = function(event) {
+                    const transcript = event.results[0][0].transcript;
+                    document.getElementById('mainSearch').value = transcript;
+                    voiceBtn.classList.remove('listening');
+                    performSearch();
+                };
+                
+                recognition.onerror = function(event) {
+                    console.error('Ovozli qidiruv xatosi:', event.error);
+                    voiceBtn.classList.remove('listening');
+                };
+                
+                recognition.onend = function() {
+                    voiceBtn.classList.remove('listening');
+                };
+            }
+
+            // Recent searches
+            function initializeRecentSearches() {
+                const recentSearches = JSON.parse(localStorage.getItem('recentSearches') || '[]');
+                updateRecentSearchesDisplay(recentSearches);
+            }
+
+            function saveToRecentSearches(query) {
+                let recentSearches = JSON.parse(localStorage.getItem('recentSearches') || '[]');
+                
+                // Remove if already exists
+                recentSearches = recentSearches.filter(item => item !== query);
+                
+                // Add to beginning
+                recentSearches.unshift(query);
+                
+                // Keep only last 10
+                recentSearches = recentSearches.slice(0, 10);
+                
+                localStorage.setItem('recentSearches', JSON.stringify(recentSearches));
+                updateRecentSearchesDisplay(recentSearches);
+            }
+
+            function updateRecentSearchesDisplay(searches) {
+                const container = document.getElementById('recentSearches');
+                
+                if (searches.length === 0) {
+                    container.innerHTML = '<p class="no-recent">Hozircha qidiruvlar yo\'q</p>';
+                    return;
+                }
+                
+                let html = '';
+                searches.forEach((search, index) => {
+                    html += `
+                        <div class="recent-search-item">
+                            <span class="recent-number">${index + 1}</span>
+                            <a href="search.html?q=${encodeURIComponent(search)}" class="recent-query">
+                                <i class="fas fa-search"></i>
+                                <span>${search}</span>
+                            </a>
+                            <button class="remove-recent" data-query="${search}">
+                                <i class="fas fa-times"></i>
+                            </button>
+                        </div>
+                    `;
+                });
+                
+                container.innerHTML = html;
+                
+                // Add event listeners to remove buttons
+                document.querySelectorAll('.remove-recent').forEach(btn => {
+                    btn.addEventListener('click', function() {
+                        const query = this.dataset.query;
+                        removeFromRecentSearches(query);
+                    });
+                });
+            }
+
+            function removeFromRecentSearches(query) {
+                let recentSearches = JSON.parse(localStorage.getItem('recentSearches') || '[]');
+                recentSearches = recentSearches.filter(item => item !== query);
+                localStorage.setItem('recentSearches', JSON.stringify(recentSearches));
+                updateRecentSearchesDisplay(recentSearches);
+            }
+
+            function clearSearchHistory() {
+                localStorage.removeItem('recentSearches');
+                updateRecentSearchesDisplay([]);
+            }
+        });
+    </script>
+    
+    <style>
+        .search-hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+        
+        .search-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 40px;
+        }
+        
+        .main-search-box {
+            max-width: 800px;
+            margin: 0 auto 50px;
+            display: flex;
+            gap: 10px;
+            background: white;
+            border-radius: 12px;
+            padding: 5px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        
+        .search-input-wrapper {
+            flex: 1;
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+        
+        .search-input-wrapper i {
+            position: absolute;
+            left: 20px;
+            color: #764ba2;
+            font-size: 1.2rem;
+        }
+        
+        #mainSearch {
+            flex: 1;
+            padding: 20px 20px 20px 50px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            width: 100%;
+        }
+        
+        #mainSearch:focus {
+            outline: none;
+        }
+        
+        .voice-btn {
+            background: none;
+            border: none;
+            padding: 10px 20px;
+            color: #764ba2;
+            cursor: pointer;
+            font-size: 1.2rem;
+            transition: all 0.3s;
+        }
+        
+        .voice-btn.listening {
+            color: #e74c3c;
+            animation: pulse 1.5s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+        
+        .search-btn {
+            padding: 20px 40px;
+            background: #764ba2;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s;
+        }
+        
+        .search-btn:hover {
+            background: #5d3d8a;
+            transform: translateY(-2px);
+        }
+        
+        .search-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 30px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .stat {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            background: rgba(255,255,255,0.1);
+            padding: 20px;
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+        }
+        
+        .stat i {
+            font-size: 2rem;
+            opacity: 0.8;
+        }
+        
+        .stat h3 {
+            font-size: 2rem;
+            margin-bottom: 5px;
+        }
+        
+        .stat p {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        
+        .search-content {
+            padding: 60px 0;
+            background: #f8f9fa;
+        }
+        
+        .search-layout {
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            gap: 40px;
+        }
+        
+        .search-sidebar {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            height: fit-content;
+            position: sticky;
+            top: 30px;
+        }
+        
+        .filter-section {
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #e9ecef;
+        }
+        
+        .filter-section:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+        
+        .filter-section h3 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .search-tips {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        
+        .tip {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+        
+        .tip i {
+            color: #764ba2;
+            font-size: 0.9rem;
+            margin-top: 3px;
+        }
+        
+        .tip p {
+            margin: 0;
+            font-size: 0.85rem;
+            color: #666;
+            line-height: 1.4;
+        }
+        
+        .category-filter {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        
+        .filter-option {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            cursor: pointer;
+        }
+        
+        .filter-option input {
+            display: none;
+        }
+        
+        .checkmark {
+            width: 18px;
+            height: 18px;
+            border: 2px solid #dee2e6;
+            border-radius: 4px;
+            position: relative;
+        }
+        
+        .filter-option input:checked + .checkmark {
+            background: #764ba2;
+            border-color: #764ba2;
+        }
+        
+        .filter-option input:checked + .checkmark::after {
+            content: '✓';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: 0.8rem;
+        }
+        
+        .filter-label {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #495057;
+            font-size: 0.9rem;
+        }
+        
+        .filter-label i {
+            color: #764ba2;
+            width: 16px;
+        }
+        
+        .count {
+            margin-left: auto;
+            background: #e9ecef;
+            color: #6c757d;
+            padding: 2px 8px;
+            border-radius: 10px;
+            font-size: 0.8rem;
+        }
+        
+        .price-filter {
+            padding: 10px 0;
+        }
+        
+        .price-range {
+            position: relative;
+            height: 40px;
+        }
+        
+        .price-range input[type="range"] {
+            position: absolute;
+            width: 100%;
+            height: 4px;
+            background: none;
+            pointer-events: none;
+            -webkit-appearance: none;
+        }
+        
+        .price-range input[type="range"]::-webkit-slider-thumb {
+            pointer-events: all;
+            width: 20px;
+            height: 20px;
+            background: #764ba2;
+            border-radius: 50%;
+            cursor: pointer;
+            -webkit-appearance: none;
+        }
+        
+        .price-values {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 15px;
+            font-weight: 600;
+            color: #495057;
+        }
+        
+        .rating-filter {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        
+        .rating-option {
+            cursor: pointer;
+        }
+        
+        .rating-option input {
+            display: none;
+        }
+        
+        .stars {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .stars i {
+            color: #ffc107;
+        }
+        
+        .rating-text {
+            margin-left: 10px;
+            color: #6c757d;
+            font-size: 0.85rem;
+        }
+        
+        .rating-option input:checked + .stars .rating-text {
+            color: #764ba2;
+            font-weight: 600;
+        }
+        
+        .sort-options {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        
+        .sort-option {
+            cursor: pointer;
+            padding: 8px 0;
+        }
+        
+        .sort-option input {
+            display: none;
+        }
+        
+        .sort-label {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #495057;
+            font-size: 0.9rem;
+        }
+        
+        .sort-label i {
+            color: #764ba2;
+            width: 16px;
+        }
+        
+        .sort-option input:checked + .sort-label {
+            color: #764ba2;
+            font-weight: 600;
+        }
+        
+        .quick-filters {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+        }
+        
+        .quick-filter {
+            padding: 8px 12px;
+            background: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            color: #495057;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            transition: all 0.3s;
+        }
+        
+        .quick-filter:hover, .quick-filter.active {
+            background: #764ba2;
+            color: white;
+            border-color: #764ba2;
+        }
+        
+        .recent-searches {
+            max-height: 200px;
+            overflow-y: auto;
+        }
+        
+        .recent-search-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 0;
+            border-bottom: 1px solid #f8f9fa;
+        }
+        
+        .recent-search-item:last-child {
+            border-bottom: none;
+        }
+        
+        .recent-number {
+            width: 20px;
+            height: 20px;
+            background: #e9ecef;
+            color: #6c757d;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.7rem;
+            font-weight: 600;
+        }
+        
+        .recent-query {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #495057;
+            text-decoration: none;
+            font-size: 0.85rem;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        
+        .recent-query:hover {
+            color: #764ba2;
+        }
+        
+        .recent-query i {
+            color: #764ba2;
+        }
+        
+        .remove-recent {
+            background: none;
+            border: none;
+            color: #adb5bd;
+            cursor: pointer;
+            font-size: 0.8rem;
+        }
+        
+        .no-recent {
+            color: #6c757d;
+            font-size: 0.85rem;
+            text-align: center;
+            padding: 20px 0;
+        }
+        
+        .search-results {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+        }
+        
+        .results-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+        
+        .results-info h2 {
+            color: #2c3e50;
+            margin-bottom: 5px;
+            font-size: 1.5rem;
+        }
+        
+        .results-info p {
+            color: #6c757d;
+            font-size: 0.9rem;
+        }
+        
+        .results-controls {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        
+        .view-toggle {
+            display: flex;
+            gap: 5px;
+            background: #f8f9fa;
+            padding: 5px;
+            border-radius: 8px;
+        }
+        
+        .view-btn {
+            width: 40px;
+            height: 40px;
+            background: none;
+            border: none;
+            border-radius: 6px;
+            color: #6c757d;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .view-btn.active {
+            background: white;
+            color: #764ba2;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .results-per-page {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #495057;
+            font-size: 0.9rem;
+        }
+        
+        #perPageSelect {
+            padding: 8px 15px;
+            border: 1px solid #dee2e6;
+            border-radius: 6px;
+            background: white;
+            color: #495057;
+        }
+        
+        .active-filters {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            align-items: center;
+        }
+        
+        .active-filters h4 {
+            margin: 0;
+            color: #495057;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .active-filter {
+            background: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            color: #495057;
+            border: 1px solid #dee2e6;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .remove-filter {
+            background: none;
+            border: none;
+            color: #adb5bd;
+            cursor: pointer;
+            font-size: 1.1rem;
+            line-height: 1;
+        }
+        
+        .results-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .results-grid.list-view {
+            grid-template-columns: 1fr;
+        }
+        
+        .result-item {
+            border: 1px solid #e9ecef;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: all 0.3s;
+        }
+        
+        .result-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        
+        .result-image {
+            position: relative;
+            height: 200px;
+            background: #f8f9fa;
+            overflow: hidden;
+        }
+        
+        .result-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .result-item:hover .result-image img {
+            transform: scale(1.05);
+        }
+        
+        .result-badges {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            display: flex;
+            gap: 5px;
+        }
+        
+        .badge {
+            padding: 4px 10px;
+            border-radius: 15px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+        
+        .badge.new {
+            background: #28a745;
+            color: white;
+        }
+        
+        .badge.video {
+            background: #dc3545;
+            color: white;
+        }
+        
+        .badge.comparison {
+            background: #007bff;
+            color: white;
+        }
+        
+        .badge.editors {
+            background: #ffc107;
+            color: #212529;
+        }
+        
+        .badge.affiliate {
+            background: #6f42c1;
+            color: white;
+        }
+        
+        .badge.popular {
+            background: #fd7e14;
+            color: white;
+        }
+        
+        .result-content {
+            padding: 20px;
+        }
+        
+        .result-category {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #764ba2;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        
+        .result-title {
+            margin-bottom: 10px;
+            line-height: 1.4;
+        }
+        
+        .result-title a {
+            color: #2c3e50;
+            text-decoration: none;
+            font-size: 1.1rem;
+        }
+        
+        .result-title a:hover {
+            color: #764ba2;
+        }
+        
+        .result-excerpt {
+            color: #6c757d;
+            font-size: 0.9rem;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+        
+        .result-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #e9ecef;
+        }
+        
+        .meta-rating .stars {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .meta-rating i {
+            color: #ffc107;
+            font-size: 0.9rem;
+        }
+        
+        .meta-rating span {
+            color: #495057;
+            font-size: 0.85rem;
+            margin-left: 5px;
+        }
+        
+        .meta-views, .meta-date {
+            color: #6c757d;
+            font-size: 0.85rem;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .result-price {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .price {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #28a745;
+        }
+        
+        .btn-read {
+            padding: 8px 16px;
+            background: #764ba2;
+            color: white;
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s;
+        }
+        
+        .btn-read:hover {
+            background: #5d3d8a;
+        }
+        
+        .pagination {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+        
+        .page-btn {
+            padding: 10px 20px;
+            background: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 6px;
+            color: #495057;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s;
+        }
+        
+        .page-btn:hover:not(:disabled) {
+            background: #764ba2;
+            color: white;
+            border-color: #764ba2;
+        }
+        
+        .page-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+        
+        .page-numbers {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .page-number {
+            width: 40px;
+            height: 40px;
+            background: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 6px;
+            color: #495057;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+        }
+        
+        .page-number:hover {
+            background: #e9ecef;
+        }
+        
+        .page-number.active {
+            background: #764ba2;
+            color: white;
+            border-color: #764ba2;
+        }
+        
+        .page-dots {
+            display: flex;
+            align-items: center;
+            color: #6c757d;
+        }
+        
+        .no-results {
+            text-align: center;
+            padding: 60px 0;
+        }
+        
+        .no-results-content i {
+            font-size: 4rem;
+            color: #adb5bd;
+            margin-bottom: 20px;
+        }
+        
+        .no-results-content h3 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+        
+        .no-results-content p {
+            color: #6c757d;
+            margin-bottom: 30px;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .suggestions {
+            text-align: left;
+            max-width: 500px;
+            margin: 0 auto 30px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 10px;
+        }
+        
+        .suggestions h4 {
+            color: #495057;
+            margin-bottom: 15px;
+        }
+        
+        .suggestions ul {
+            color: #6c757d;
+            padding-left: 20px;
+            margin: 0;
+        }
+        
+        .suggestions li {
+            margin-bottom: 8px;
+            font-size: 0.9rem;
+        }
+        
+        .btn {
+            padding: 12px 24px;
+            background: #764ba2;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s;
+        }
+        
+        .btn:hover {
+            background: #5d3d8a;
+            transform: translateY(-2px);
+        }
+        
+        .related-searches {
+            margin-bottom: 40px;
+        }
+        
+        .related-searches h3 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .related-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .related-tag {
+            padding: 8px 16px;
+            background: #f8f9fa;
+            color: #495057;
+            border-radius: 20px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+        }
+        
+        .related-tag:hover {
+            background: #764ba2;
+            color: white;
+        }
+        
+        .search-history {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 10px;
+        }
+        
+        .history-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .history-header h3 {
+            color: #2c3e50;
+            margin: 0;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .btn-clear {
+            background: none;
+            border: none;
+            color: #dc3545;
+            cursor: pointer;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .trending-searches {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        
+        .trend-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 12px 15px;
+            background: white;
+            border-radius: 8px;
+            border-left: 4px solid #28a745;
+        }
+        
+        .trend-rank {
+            width: 30px;
+            height: 30px;
+            background: #e9ecef;
+            color: #495057;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 0.9rem;
+        }
+        
+        .trend-content {
+            flex: 1;
+        }
+        
+        .trend-content h4 {
+            color: #2c3e50;
+            margin-bottom: 5px;
+            font-size: 1rem;
+        }
+        
+        .trend-content p {
+            color: #6c757d;
+            font-size: 0.8rem;
+            margin: 0;
+        }
+        
+        .trend-up {
+            color: #28a745;
+            font-weight: 700;
+        }
+        
+        @media (max-width: 1200px) {
+            .search-layout {
+                grid-template-columns: 1fr;
+            }
+            
+            .search-sidebar {
+                position: static;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .search-hero h1 {
+                font-size: 2rem;
+            }
+            
+            .main-search-box {
+                flex-direction: column;
+                background: none;
+                box-shadow: none;
+                padding: 0;
+            }
+            
+            .search-input-wrapper {
+                background: white;
+                border-radius: 12px;
+                overflow: hidden;
+            }
+            
+            .search-btn {
+                width: 100%;
+                justify-content: center;
+            }
+            
+            .results-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 20px;
+            }
+            
+            .results-controls {
+                width: 100%;
+                justify-content: space-between;
+            }
+            
+            .results-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .result-meta {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+        }
+    </style>
+</body>
+</html>
