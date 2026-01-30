@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Yangi va ishlatilgan avtomobillar, elektromobillar, xususiyatlari va narxlari bo'yicha to'liq ma'lumot">
+    <title>🚗 Avtomobillar | Eng Yaxshisini Tanlang</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background: linear-gradient(135deg, #dc3545 0%, #a71d2a 100%);
+            color: white;
+            padding: 20px 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo i {
+            font-size: 2rem;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 8px 15px;
+            border-radius: 20px;
+            transition: all 0.3s;
+        }
+
+        nav a:hover, nav a.active {
+            background-color: rgba(255, 255, 255, 0.15);
+        }
+
+        .page-header {
+            background: linear-gradient(rgba(220, 53, 69, 0.9), rgba(167, 29, 42, 0.9));
+            color: white;
+            text-align: center;
+            padding: 60px 20px;
+            margin-bottom: 40px;
+            border-radius: 0 0 20px 20px;
+        }
+
+        .page-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .page-header .category-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .product-image {
+            height: 200px;
+            background: linear-gradient(135deg, #dc3545 0%, #a71d2a 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 4rem;
+        }
+
+        .product-content {
+            padding: 25px;
+        }
+
+        .product-content h3 {
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+            color: #dc3545;
+        }
+
+        .rating {
+            color: #ffc107;
+            margin-bottom: 15px;
+        }
+
+        .price {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #2e7d32;
+            margin: 15px 0;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 25px;
+            background: #dc3545;
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background: #a71d2a;
+            transform: translateY(-2px);
+        }
+
+        .ad-unit {
+            background-color: #f0f0f0;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            margin: 30px 0;
+            color: #666;
+            border: 1px dashed #ccc;
+        }
+
+        footer {
+            background-color: #5a0b1a;
+            color: white;
+            padding: 40px 0 20px;
+            margin-top: 50px;
+        }
+
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #bbdefb;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                text-align: center;
+                gap: 15px;
+            }
+
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .products-grid {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            }
+        }
+
+        @media (max-width: 576px) {
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <i class="fas fa-star"></i>
+                <div>Eng Yaxshisini Tanlang</div>
+            </a>
+            
+            <nav>
+                <ul>
+                    <li><a href="index.html"><i class="fas fa-home"></i> Bosh Sahifa</a></li>
+                    <li><a href="technology.html"><i class="fas fa-mobile-alt"></i> 📱 Texnologiya</a></li>
+                    <li><a href="software.html"><i class="fas fa-laptop-code"></i> 💻 Dasturiy</a></li>
+                    <li><a href="automotive.html" class="active"><i class="fas fa-car"></i> 🚗 Avtomobil</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="page-header">
+        <div class="container">
+            <div class="category-icon">
+                <i class="fas fa-car"></i>
+            </div>
+            <h1>🚗 Avtomobillar</h1>
+            <p>Yangi va ishlatilgan avtomobillar, elektromobillar, xususiyatlari va narxlari bo'yicha to'liq ma'lumot</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- Adsense Banner -->
+        <div class="ad-unit">
+            <h3>Reklama</h3>
+            <p>Avtomobil reklamasi</p>
+            <p>300x600 o'lchamdagi banner</p>
+        </div>
+
+        <div class="products-grid">
+            <!-- Product 1 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <i class="fas fa-bolt"></i>
+                </div>
+                <div class="product-content">
+                    <h3>Tesla Model Y vs BYD Atto 3</h3>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                        <span style="color: #666; margin-left: 10px;">4.5/5</span>
+                    </div>
+                    <p>Ikki elektromobilni 2 haftalik real yo'l testida sinab ko'rdik. Qaysi biri O'zbekiston sharoitiga mos?</p>
+                    <div class="price">BYD - arzon, Tesla - tez</div>
+                    <a href="#" class="btn">To'liq ko'rish</a>
+                </div>
+            </div>
+
+            <!-- Product 2 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <i class="fas fa-gas-pump"></i>
+                </div>
+                <div class="product-content">
+                    <h3>CR-V vs RAV4 - Qaysi Krossover?</h3>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <span style="color: #666; margin-left: 10px;">4.0/5</span>
+                    </div>
+                    <p>Oila uchun qaysi krossover yaxshi? 1000 km yo'l testi.</p>
+                    <div class="price">CR-V - qulay, RAV4 - iqtisodiy</div>
+                    <a href="#" class="btn">To'liq ko'rish</a>
+                </div>
+            </div>
+
+            <!-- Product 3 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <i class="fas fa-tachometer-alt"></i>
+                </div>
+                <div class="product-content">
+                    <h3>Lacetti vs Nexia 3 - Iqtisodiy Avtomobillar</h3>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <span style="color: #666; margin-left: 10px;">5.0/5</span>
+                    </div>
+                    <p>Birinchi avtomobil uchun qaysi biri yaxshi? Yoqilg'i sarfi testi.</p>
+                    <div class="price">Lacetti - mustahkam, Nexia - yengil</div>
+                    <a href="#" class="btn">To'liq ko'rish</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Adsense In-Article -->
+        <div class="ad-unit">
+            <h3>Avtomobil Maqolasi Ichidagi Reklama</h3>
+            <p>Bu yerda relevant reklamalar ko'rsatiladi</p>
+        </div>
+
+        <div class="products-grid">
+            <!-- Product 4 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <i class="fas fa-car-side"></i>
+                </div>
+                <div class="product-content">
+                    <h3>Mercedes C-Class vs BMW 3-Series</h3>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                        <i class="far fa-star"></i>
+                        <span style="color: #666; margin-left: 10px;">3.5/5</span>
+                    </div>
+                    <p>Premium sedanga qaysi biri? Quvvat va qulaylik testi.</p>
+                    <div class="price">Mercedes - qulay, BMW - sport</div>
+                    <a href="#" class="btn">To'liq ko'rish</a>
+                </div>
+            </div>
+
+            <!-- Product 5 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <i class="fas fa-truck-pickup"></i>
+                </div>
+                <div class="product-content">
+                    <h3>Damas vs Labo - Biznes Avtomobili</h3>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <span style="color: #666; margin-left: 10px;">4.0/5</span>
+                    </div>
+                    <p>Kichik biznes uchun qaysi avtomobil yaxshi? Yuk tashish testi.</p>
+                    <div class="price">Damas - yengil, Labo - kuchli</div>
+                    <a href="#" class="btn">To'liq ko'rish</a>
+                </div>
+            </div>
+
+            <!-- Product 6 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <i class="fas fa-suv"></i>
+                </div>
+                <div class="product-content">
+                    <h3>Tahoe vs Patrol - Katta SUV</h3>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                        <i class="far fa-star"></i>
+                        <span style="color: #666; margin-left: 10px;">3.5/5</span>
+                    </div>
+                    <p>Katta oila va safar uchun qaysi SUV yaxshi?</p>
+                    <div class="price">Tahoe - qulay, Patrol - off-road</div>
+                    <a href="#" class="btn">To'liq ko'rish</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-column">
+                    <h3>Eng Yaxshisini Tanlang</h3>
+                    <p>Avtomobillarni haqiqiy testlar asosida solishtiring.</p>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Kategoriyalar</h3>
+                    <ul>
+                        <li><a href="technology.html"><i class="fas fa-mobile-alt"></i> 📱 Texnologiya</a></li>
+                        <li><a href="software.html"><i class="fas fa-laptop-code"></i> 💻 Dasturiy Ta'minot</a></li>
+                        <li><a href="automotive.html"><i class="fas fa-car"></i> 🚗 Avtomobillar</a></li>
+                        <li><a href="index.html"><i class="fas fa-home"></i> Bosh Sahifa</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Bog'lanish</h3>
+                    <p><i class="fas fa-envelope"></i> info@engyaxshisi.uz</p>
+                    <p><i class="fas fa-phone"></i> +998 90 123 45 67</p>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2024 Avtomobillar Kategoriyasi. Eng Yaxshisini Tanlang.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple JavaScript for interactivity
+        document.querySelectorAll('.btn').forEach(button => {
+            button.addEventListener('click', function(e) {
+                e.preventDefault();
+                alert("To'liq maqola tez orada qo'shiladi!");
+            });
+        });
+    </script>
+</body>
+</html>
