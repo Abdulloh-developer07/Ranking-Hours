@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Smartfonlarni haqiqiy testlar asosida solishtiring - iPhone, Samsung, Xiaomi, Google Pixel va boshqalar">
+    <title>Smartfon Solishtirishlari | Eng Yaxshisini Tanlang</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f5f7fa;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background: linear-gradient(135deg, #2196F3 0%, #0D47A1 100%);
+            color: white;
+            padding: 20px 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo a {
+            color: white;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo i {
+            font-size: 2rem;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 8px 15px;
+            border-radius: 20px;
+            transition: all 0.3s;
+        }
+
+        nav a:hover, nav a.active {
+            background-color: rgba(255, 255, 255, 0.15);
+        }
+
+        .page-header {
+            background: linear-gradient(rgba(33, 150, 243, 0.9), rgba(13, 71, 161, 0.9));
+            color: white;
+            text-align: center;
+            padding: 80px 20px 60px;
+            margin-bottom: 40px;
+            border-radius: 0 0 30px 30px;
+        }
+
+        .page-header h1 {
+            font-size: 2.8rem;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .page-header .subtitle {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            opacity: 0.9;
+        }
+
+        .category-icon {
+            font-size: 4rem;
+            margin-bottom: 25px;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .comparison-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s;
+            border: 1px solid #e0e0e0;
+        }
+
+        .comparison-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(33, 150, 243, 0.15);
+        }
+
+        .card-header {
+            background: linear-gradient(135deg, #2196F3 0%, #0D47A1 100%);
+            color: white;
+            padding: 25px;
+            text-align: center;
+        }
+
+        .card-header h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .card-content {
+            padding: 30px;
+        }
+
+        .phone-specs {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 25px;
+        }
+
+        .spec-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            transition: all 0.3s;
+        }
+
+        .spec-item:hover {
+            background: #e3f2fd;
+            transform: translateY(-3px);
+        }
+
+        .spec-icon {
+            font-size: 1.8rem;
+            color: #2196F3;
+            margin-bottom: 10px;
+        }
+
+        .spec-value {
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin: 5px 0;
+        }
+
+        .spec-label {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .verdict {
+            background: #e8f5e9;
+            border-left: 4px solid #4CAF50;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+
+        .verdict h4 {
+            color: #2E7D32;
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 30px;
+            background: linear-gradient(135deg, #2196F3 0%, #0D47A1 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            text-align: center;
+            width: 100%;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(33, 150, 243, 0.3);
+        }
+
+        .ad-unit {
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4e8f0 100%);
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            margin: 50px 0;
+            border: 2px dashed #c5cae9;
+            position: relative;
+        }
+
+        .ad-unit h3 {
+            color: #5C6BC0;
+            margin-bottom: 15px;
+        }
+
+        .ad-badge {
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #FF9800;
+            color: white;
+            padding: 5px 20px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .brand-comparison {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin: 40px 0;
+        }
+
+        .brand-card {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s;
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .brand-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .brand-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .apple { color: #000000; }
+        .samsung { color: #1428A0; }
+        .xiaomi { color: #FF6700; }
+        .google { color: #4285F4; }
+
+        footer {
+            background: linear-gradient(135deg, #1A237E 0%, #283593 100%);
+            color: white;
+            padding: 50px 0 20px;
+            margin-top: 80px;
+        }
+
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 30px;
+        }
+
+        .footer-column h3 {
+            font-size: 1.3rem;
+            margin-bottom: 25px;
+            color: #C5CAE9;
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column li {
+            margin-bottom: 12px;
+        }
+
+        .footer-column a {
+            color: #E8EAF6;
+            text-decoration: none;
+            transition: color 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .footer-column a:hover {
+            color: #FFFFFF;
+            text-decoration: underline;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #C5CAE9;
+            font-size: 0.9rem;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        @media (max-width: 992px) {
+            .comparison-grid {
+                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                text-align: center;
+                gap: 20px;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+                position: absolute;
+                top: 25px;
+                right: 20px;
+            }
+
+            nav ul {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                margin-top: 20px;
+            }
+
+            nav ul.active {
+                display: flex;
+            }
+
+            .page-header h1 {
+                font-size: 2.2rem;
+            }
+
+            .page-header .subtitle {
+                font-size: 1.1rem;
+            }
+
+            .phone-specs {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .comparison-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .brand-comparison {
+                flex-direction: column;
+            }
+
+            .page-header {
+                padding: 60px 20px 40px;
+            }
+
+            .page-header h1 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <a href="index.html">
+                    <i class="fas fa-star"></i>
+                    <span>Eng Yaxshisini Tanlang</span>
+                </a>
+            </div>
+            
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <nav>
+                <ul id="mainNav">
+                    <li><a href="index.html"><i class="fas fa-home"></i> Bosh Sahifa</a></li>
+                    <li><a href="smartphone-comparisons.html" class="active"><i class="fas fa-mobile-alt"></i> Smartfonlar</a></li>
+                    <li><a href="laptop-comparisons.html"><i class="fas fa-laptop"></i> Noutbuklar</a></li>
+                    <li><a href="automotive-comparisons.html"><i class="fas fa-car"></i> Avtomobillar</a></li>
+                    <li><a href="appliances-comparisons.html"><i class="fas fa-blender"></i> Maishiy Texnika</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="page-header">
+        <div class="container">
+            <div class="category-icon">
+                <i class="fas fa-mobile-alt"></i>
+            </div>
+            <h1>Smartfon Solishtirishlari</h1>
+            <p class="subtitle">Biz har bir smartfonni haqiqiy hayotda test qilamiz. Kameralar, batareya, ishlash tezligi va qulaylikni solishtiring</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- Adsense Banner -->
+        <div class="ad-unit">
+            <div class="ad-badge">Reklama</div>
+            <h3>Smartfonlar haqida yangiliklar</h3>
+            <p>Eng so'nggi smartfon modellari va ularning xususiyatlari haqida ma'lumot</p>
+            <p style="color: #666; margin-top: 15px;">300x250 | 728x90 | 300x600</p>
+        </div>
+
+        <div class="comparison-grid">
+            <!-- Comparison 1 -->
+            <div class="comparison-card">
+                <div class="card-header">
+                    <h3>iPhone 15 Pro vs Samsung Galaxy S24 Ultra</h3>
+                    <p>2024-yilning eng yaxshi flagship smartfonlari</p>
+                </div>
+                <div class="card-content">
+                    <div class="phone-specs">
+                        <div class="spec-item">
+                            <div class="spec-icon"><i class="fas fa-camera"></i></div>
+                            <div class="spec-value">48 MP</div>
+                            <div class="spec-label">Asosiy kamera</div>
+                        </div>
+                        <div class="spec-item">
+                            <div class="spec-icon"><i class="fas fa-battery-full"></i></div>
+                            <div class="spec-value">29 soat</div>
+                            <div class="spec-label">Video ijro vaqti</div>
+                        </div>
+                        <div class="spec-item">
+                            <div class="spec-icon"><i class="fas fa-microchip"></i></div>
+                            <div class="spec-value">A17 Pro</div>
+                            <div class="spec-label">Protsessor</div>
+                        </div>
+                        <div class="spec-item">
+                            <div class="spec-icon"><i class="fas fa-weight"></i></div>
+                            <div class="spec-value">187g / 233g</div>
+                            <div class="spec-label">Og'irlik</div>
+                        </div>
+                    </div>
+                    
+                    <div class="verdict">
+                        <h4><i class="fas fa-trophy"></i> Test G'olibi: Samsung S24 Ultra</h4>
+                        <p>2 haftalik test natijasiga ko'ra, S24 Ultra batareya va kamera sifatida ustun. iPhone esa video sifati va optimallashtirishda yaxshi.</p>
+                    </div>
+                    
+                    <button class="btn"><i class="fas fa-chart-bar"></i> Batafsil Solishtirishni Ko'rish</button>
+                </div>
+            </div>
+
+            <!-- Comparison 2 -->
+            <div class="comparison-card">
+                <div class="card-header">
+                    <h3>Xiaomi 14 vs Google Pixel 8 Pro</h3>
+                    <p>AI kamerali smartfonlar jangi</p>
+                </div>
+                <div class="card-content">
+                    <div class="phone-specs">
+                        <div class="spec-item">
+                            <div class="spec-icon"><i class="fas fa-camera"></i></div>
+                            <div class="spec-value">50 MP</div>
+                            <div class="spec-label">Leica kamera</div>
+                        </div>
+                        <div class="spec-item">
+                            <div class="spec-icon"><i class="fas fa-bolt"></i></div>
+                            <div class="spec-value">120W</div>
+                            <div class="spec-label">Tez zaryadlash</div>
+                        </div>
+                        <div class="spec-item">
+                            <div class="spec-icon"><i class="fas fa-robot"></i></div>
+                            <div class="spec-value">Tensor G3</div>
+                            <div class="spec-label">AI Protsessor</div>
+                        </div>
+                        <div class="spec-item">
+                            <div class="spec-icon"><i class="fas fa-dollar-sign"></i></div>
+                            <div class="spec-value">$999 / $999</div>
+                            <div class="spec-label">Narxi</div>
+                        </div>
+                    </div>
+                    
+                    <div class="verdict">
+                        <h4><i class="fas fa-trophy"></i> Test G'olibi: Google Pixel 8 Pro</h4>
+                        <p>Pixel 8 Pro AI orqali rasm ishlashda ajoyib. Xiaomi esa tez zaryadlash va narx-sifat nisbatida yaxshi.</p>
+                    </div>
+                    
+                    <button class="btn"><i class="fas fa-chart-bar"></i> Batafsil Solishtirishni Ko'rish</button>
+                </div>
+            </div>
+
+            <!-- Comparison 3 -->
+            <div class="comparison-card">
+                <div class="card-header">
+                    <h3>Samsung A54 vs iPhone SE 2024</h3>
+                    <p>Ortacha byudjetli smartfonlar</p>
+                </div>
+                <div class="card-content">
+                    <div class="phone-specs">
+                        <div class="spec-item">
+                            <div class="spec-icon"><i class="fas fa-expand"></i></div>
+                            <div class="spec-value">6.4" / 4.7"</div>
+                            <div class="spec-label">Ekran o'lchami</div>
+                        </div>
+                        <div class="spec-item">
+                            <div class="spec-icon"><i class="fas fa-sync-alt"></i></div>
+                            <div class="spec-value">120Hz / 60Hz</div>
+                            <div class="spec-label">Yangilanish chastotasi</div>
+                        </div>
+                        <div class="spec-item">
+                            <div class="spec-icon"><i class="fas fa-fingerprint"></i></div>
+                            <div class="spec-value">Ostida / Oldida</div>
+                            <div class="spec-label">Barmoq izi skaneri</div>
+                        </div>
+                        <div class="spec-item">
+                            <div class="spec-icon"><i class="fas fa-shield-alt"></i></div>
+                            <div class="spec-value">5 yil / 6 yil</div>
+                            <div class="spec-label">Yordam berish davri</div>
+                        </div>
+                    </div>
+                    
+                    <div class="verdict">
+                        <h4><i class="fas fa-trophy"></i> Test G'olibi: Samsung A54</h4>
+                        <p>A54 katta ekran, yaxshi batareya va arzon narxda. iPhone SE esa kichik o'lcham va tez protsessor uchun yaxshi.</p>
+                    </div>
+                    
+                    <button class="btn"><i class="fas fa-chart-bar"></i> Batafsil Solishtirishni Ko'rish</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Adsense In-Article -->
+        <div class="ad-unit">
+            <div class="ad-badge">Tavsiya etilgan</div>
+            <h3>Smartfon aksessuarlari</h3>
+            <p>Telefon qoplari, himoya oynalari, quvvat banklari va boshqa aksessuarlar</p>
+        </div>
+
+        <div class="brand-comparison">
+            <div class="brand-card">
+                <div class="brand-icon apple">
+                    <i class="fab fa-apple"></i>
+                </div>
+                <h3>iPhone</h3>
+                <p>Optimallashtirilgan tizim, video sifati</p>
+                <div style="margin-top: 15px; color: #4CAF50; font-weight: bold;">
+                    <i class="fas fa-star"></i> 4.5/5
+                </div>
+            </div>
+            
+            <div class="brand-card">
+                <div class="brand-icon samsung">
+                    <i class="fas fa-mobile-alt"></i>
+                </div>
+                <h3>Samsung</h3>
+                <p>Batareya, ko'p funksiyalar</p>
+                <div style="margin-top: 15px; color: #4CAF50; font-weight: bold;">
+                    <i class="fas fa-star"></i> 4.7/5
+                </div>
+            </div>
+            
+            <div class="brand-card">
+                <div class="brand-icon xiaomi">
+                    <i class="fas fa-bolt"></i>
+                </div>
+                <h3>Xiaomi</h3>
+                <p>Narx-sifat nisbati</p>
+                <div style="margin-top: 15px; color: #4CAF50; font-weight: bold;">
+                    <i class="fas fa-star"></i> 4.2/5
+                </div>
+            </div>
+            
+            <div class="brand-card">
+                <div class="brand-icon google">
+                    <i class="fab fa-google"></i>
+                </div>
+                <h3>Google Pixel</h3>
+                <p>AI kamera, sof Android</p>
+                <div style="margin-top: 15px; color: #4CAF50; font-weight: bold;">
+                    <i class="fas fa-star"></i> 4.4/5
+                </div>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin: 50px 0;">
+            <h2 style="color: #2196F3; margin-bottom: 20px;">Smartfon Tanlash Qo'llanmasi</h2>
+            <div style="max-width: 800px; margin: 0 auto; text-align: left;">
+                <div style="background: white; padding: 30px; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.05);">
+                    <h3 style="color: #0D47A1; margin-bottom: 20px;"><i class="fas fa-lightbulb"></i> Qanday Smartfon Tanlash Kerak?</h3>
+                    
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-top: 25px;">
+                        <div style="background: #E3F2FD; padding: 20px; border-radius: 10px;">
+                            <h4 style="color: #1565C0;"><i class="fas fa-camera"></i> Kamera</h4>
+                            <p>Kundalik foydalanish uchun 48-50 MP kamera etarli. Professional suratlar uchun sensor o'lchamiga e'tibor bering.</p>
+                        </div>
+                        
+                        <div style="background: #E8F5E9; padding: 20px; border-radius: 10px;">
+                            <h4 style="color: #2E7D32;"><i class="fas fa-battery-full"></i> Batareya</h4>
+                            <p>5000 mAh batareya butun kun ishlashni ta'minlaydi. Tez zaryadlash (30W+) qulaylik yaratadi.</p>
+                        </div>
+                        
+                        <div style="background: #FFF3E0; padding: 20px; border-radius: 10px;">
+                            <h4 style="color: #EF6C00;"><i class="fas fa-microchip"></i> Protsessor</h4>
+                            <p>Oʻrtacha foydalanish uchun Snapdragon 7 seriyasi, gaming uchun 8 seriyasi yoki Apple A seriyasi.</p>
+                        </div>
+                        
+                        <div style="background: #F3E5F5; padding: 20px; border-radius: 10px;">
+                            <h4 style="color: #7B1FA2;"><i class="fas fa-sync-alt"></i> Ekran</h4>
+                            <p>120 Hz ekran oqimli ishlashni ta'minlaydi. OLED ekranlar qorong'i rejimda energiya tejaydi.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-column">
+                    <h3>Eng Yaxshisini Tanlang</h3>
+                    <p style="color: #C5CAE9; margin-bottom: 20px;">Biz haqiqiy odamlardan haqiqiy maslahatlar. Har bir mahsulotni o'zimiz sinab ko'ramiz.</p>
+                    <div style="display: flex; gap: 15px;">
+                        <a href="#" style="font-size: 1.2rem;"><i class="fab fa-telegram"></i></a>
+                        <a href="#" style="font-size: 1.2rem;"><i class="fab fa-instagram"></i></a>
+                        <a href="#" style="font-size: 1.2rem;"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Mashhur Solishtirishlar</h3>
+                    <ul>
+                        <li><a href="smartphone-comparisons.html"><i class="fas fa-mobile-alt"></i> Smartfon Solishtirishlari</a></li>
+                        <li><a href="laptop-comparisons.html"><i class="fas fa-laptop"></i> Noutbuk Solishtirishlari</a></li>
+                        <li><a href="automotive-comparisons.html"><i class="fas fa-car"></i> Avtomobil Solishtirishlari</a></li>
+                        <li><a href="appliances-comparisons.html"><i class="fas fa-blender"></i> Maishiy Texnika Solishtirishlari</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Yordam</h3>
+                    <ul>
+                        <li><a href="how-to-choose.html"><i class="fas fa-question-circle"></i> Qanday Tanlash Kerak?</a></li>
+                        <li><a href="buying-guide.html"><i class="fas fa-shopping-cart"></i> Xarid Qo'llanmasi</a></li>
+                        <li><a href="price-alerts.html"><i class="fas fa-bell"></i> Narx Ogohlantirishlari</a></li>
+                        <li><a href="newsletter.html"><i class="fas fa-newspaper"></i> Yangiliklar Obunasi</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Aloqada bo'ling</h3>
+                    <ul>
+                        <li><a href="#"><i class="fas fa-envelope"></i> info@engyaxshisi.uz</a></li>
+                        <li><a href="#"><i class="fas fa-phone"></i> +998 90 123 45 67</a></li>
+                        <li><a href="#"><i class="fas fa-map-marker-alt"></i> Toshkent, O'zbekiston</a></li>
+                    </ul>
+                    <form style="margin-top: 20px;">
+                        <input type="email" placeholder="Email manzilingiz" style="padding: 10px; width: 100%; border-radius: 5px; border: none; margin-bottom: 10px; background: rgba(255,255,255,0.1); color: white;">
+                        <button type="submit" style="background: #2196F3; color: white; border: none; padding: 10px; border-radius: 5px; width: 100%; cursor: pointer;">Obuna bo'lish</button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2024 Eng Yaxshisini Tanlang. Barcha huquqlar himoyalangan.</p>
+                <p style="margin-top: 5px;">Biz haqiqiy testlar - haqiqiy tavsiyalar</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobileMenuBtn').addEventListener('click', function() {
+            document.getElementById('mainNav').classList.toggle('active');
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                if(this.getAttribute('href') === '#') return;
+                
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    document.getElementById('mainNav').classList.remove('active');
+                }
+            });
+        });
+        
+        // Form submission
+        document.querySelector('form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const email = this.querySelector('input[type="email"]').value;
+            if(email) {
+                alert('Smartfon yangiliklari obunangiz qabul qilindi! Rahmat.');
+                this.reset();
+            }
+        });
+        
+        // Button click handlers
+        document.querySelectorAll('.btn').forEach(button => {
+            button.addEventListener('click', function() {
+                alert("Batafsil solishtirish maqolasi tez orada qo'shiladi!");
+            });
+        });
+        
+        // Animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+        
+        // Observe elements for animation
+        document.querySelectorAll('.comparison-card, .brand-card').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
