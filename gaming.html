@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Videoo'yinlar, konsollar, gaming kompyuterlar va aksessuarlar bo'yicha tavsiyalar">
+    <title>🎮 O'yinlar | Eng Yaxshisini Tanlang</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #0f0f23;
+            color: #e0e0e0;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background: linear-gradient(135deg, #ff6b6b 0%, #c92a2a 100%);
+            color: white;
+            padding: 20px 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo i {
+            font-size: 2rem;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 8px 15px;
+            border-radius: 20px;
+            transition: all 0.3s;
+        }
+
+        nav a:hover, nav a.active {
+            background-color: rgba(255, 255, 255, 0.15);
+        }
+
+        .page-header {
+            background: linear-gradient(rgba(255, 107, 107, 0.9), rgba(201, 42, 42, 0.9));
+            color: white;
+            text-align: center;
+            padding: 60px 20px;
+            margin-bottom: 40px;
+            border-radius: 0 0 20px 20px;
+        }
+
+        .page-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .page-header .category-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .product-card {
+            background: #1a1a2e;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s;
+            border: 1px solid #333;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(255, 107, 107, 0.2);
+            border-color: #ff6b6b;
+        }
+
+        .product-image {
+            height: 200px;
+            background: linear-gradient(135deg, #ff6b6b 0%, #c92a2a 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 4rem;
+        }
+
+        .product-content {
+            padding: 25px;
+        }
+
+        .product-content h3 {
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+            color: #ff6b6b;
+        }
+
+        .rating {
+            color: #ffc107;
+            margin-bottom: 15px;
+        }
+
+        .price {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #4caf50;
+            margin: 15px 0;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 25px;
+            background: #ff6b6b;
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background: #c92a2a;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 107, 107, 0.4);
+        }
+
+        .ad-unit {
+            background-color: #1a1a2e;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            margin: 30px 0;
+            color: #888;
+            border: 1px dashed #444;
+        }
+
+        footer {
+            background-color: #0a0a1a;
+            color: white;
+            padding: 40px 0 20px;
+            margin-top: 50px;
+            border-top: 2px solid #ff6b6b;
+        }
+
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #bbdefb;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                text-align: center;
+                gap: 15px;
+            }
+
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .products-grid {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            }
+        }
+
+        @media (max-width: 576px) {
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <i class="fas fa-star"></i>
+                <div>Eng Yaxshisini Tanlang</div>
+            </a>
+            
+            <nav>
+                <ul>
+                    <li><a href="index.html"><i class="fas fa-home"></i> Bosh Sahifa</a></li>
+                    <li><a href="gaming.html" class="active"><i class="fas fa-gamepad"></i> 🎮 O'yinlar</a></li>
+                    <li><a href="audio.html"><i class="fas fa-headphones"></i> 🎧 Audio</a></li>
+                    <li><a href="appliances.html"><i class="fas fa-blender"></i> 🏠 Maishiy</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="page-header">
+        <div class="container">
+            <div class="category-icon">
+                <i class="fas fa-gamepad"></i>
+            </div>
+            <h1>🎮 O'yinlar Dunyosi</h1>
+            <p>Videoo'yinlar, konsollar, gaming kompyuterlar va aksessuarlar bo'yicha tavsiyalar</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- Adsense Banner -->
+        <div class="ad-unit">
+            <h3>O'yin Reklamasi</h3>
+            <p>Bu yerda gaming bilan bog'liq reklamalar</p>
+            <p>728x90 o'lchamdagi banner</p>
+        </div>
+
+        <div class="products-grid">
+            <!-- Product 1 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <i class="fab fa-playstation"></i>
+                </div>
+                <div class="product-content">
+                    <h3>PS5 vs Xbox Series X</h3>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                        <span style="color: #888; margin-left: 10px;">4.5/5</span>
+                    </div>
+                    <p>Yangi avlod konsollarni 100 soatlik gaming testida sinab ko'rdik.</p>
+                    <div class="price">PS5 - eksklyuzivlar, Xbox - Game Pass</div>
+                    <a href="#" class="btn">To'liq ko'rish</a>
+                </div>
+            </div>
+
+            <!-- Product 2 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <i class="fas fa-desktop"></i>
+                </div>
+                <div class="product-content">
+                    <h3>Gaming PC Build 2024</h3>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <span style="color: #888; margin-left: 10px;">4.0/5</span>
+                    </div>
+                    <p>$1000, $1500, $2000 - har bir byudjet uchun eng yaxshi konfiguratsiya.</p>
+                    <div class="price">RTX 4060 - eng yaxshi qiymat</div>
+                    <a href="#" class="btn">To'liq ko'rish</a>
+                </div>
+            </div>
+
+            <!-- Product 3 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <i class="fas fa-headset"></i>
+                </div>
+                <div class="product-content">
+                    <h3>Gaming Naushniklar</h3>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <span style="color: #888; margin-left: 10px;">5.0/5</span>
+                    </div>
+                    <p>SteelSeries vs Razer vs Logitech - qaysi gaming naushnik yaxshi?</p>
+                    <div class="price">SteelSeries - qulay, Razer - RGB</div>
+                    <a href="#" class="btn">To'liq ko'rish</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Adsense In-Article -->
+        <div class="ad-unit">
+            <h3>O'yin Maqolasi Ichidagi Reklama</h3>
+            <p>Bu yerda gaming kontentiga relevant reklamalar</p>
+        </div>
+
+        <div class="products-grid">
+            <!-- Product 4 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <i class="fas fa-mouse"></i>
+                </div>
+                <div class="product-content">
+                    <h3>Gaming Sichqonchalar</h3>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                        <i class="far fa-star"></i>
+                        <span style="color: #888; margin-left: 10px;">3.5/5</span>
+                    </div>
+                    <p>FPS vs MOBA vs RPG - har bir janr uchun eng yaxshi sichqoncha.</p>
+                    <div class="price">FPS - aniq, MMO - ko'p tugmalar</div>
+                    <a href="#" class="btn">To'liq ko'rish</a>
+                </div>
+            </div>
+
+            <!-- Product 5 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <i class="fas fa-keyboard"></i>
+                </div>
+                <div class="product-content">
+                    <h3>Mexanik Klaviaturalar</h3>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <span style="color: #888; margin-left: 10px;">4.0/5</span>
+                    </div>
+                    <p>Cherry MX Red vs Blue vs Brown - qaysi switch gaming uchun?</p>
+                    <div class="price">Red - FPS, Brown - universal</div>
+                    <a href="#" class="btn">To'liq ko'rish</a>
+                </div>
+            </div>
+
+            <!-- Product 6 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <i class="fas fa-vr-cardboard"></i>
+                </div>
+                <div class="product-content">
+                    <h3>VR O'yinlar Uchun Qurilmalar</h3>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                        <i class="far fa-star"></i>
+                        <span style="color: #888; margin-left: 10px;">3.5/5</span>
+                    </div>
+                    <p>Oculus Quest 2 vs HTC Vive - VR gaming uchun qaysi qurilma?</p>
+                    <div class="price">Quest 2 - simsiz, Vive - yuqori sifat</div>
+                    <a href="#" class="btn">To'liq ko'rish</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-column">
+                    <h3>Eng Yaxshisini Tanlang</h3>
+                    <p>O'yinlar va gaming uskunalarini haqiqiy testlar asosida solishtiring.</p>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Kategoriyalar</h3>
+                    <ul>
+                        <li><a href="gaming.html"><i class="fas fa-gamepad"></i> 🎮 O'yinlar</a></li>
+                        <li><a href="audio.html"><i class="fas fa-headphones"></i> 🎧 Audio Uskunalar</a></li>
+                        <li><a href="appliances.html"><i class="fas fa-blender"></i> 🏠 Maishiy Texnika</a></li>
+                        <li><a href="index.html"><i class="fas fa-home"></i> Bosh Sahifa</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Bog'lanish</h3>
+                    <p><i class="fas fa-envelope"></i> gaming@engyaxshisi.uz</p>
+                    <p><i class="fas fa-phone"></i> +998 90 987 65 43</p>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2024 O'yinlar Kategoriyasi. Eng Yaxshisini Tanlang.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple JavaScript for interactivity
+        document.querySelectorAll('.btn').forEach(button => {
+            button.addEventListener('click', function(e) {
+                e.preventDefault();
+                alert("To'liq maqola tez orada qo'shiladi!");
+            });
+        });
+
+        // Gaming theme effect
+        document.addEventListener('DOMContentLoaded', function() {
+            const cards = document.querySelectorAll('.product-card');
+            cards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-10px) scale(1.02)';
+                });
+                card.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0) scale(1)';
+                });
+            });
+        });
+    </script>
+</body>
+</html>
