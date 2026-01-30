@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Naushniklar, dinamiklar, soundbar'lar va boshqa audio texnika haqida haqiqiy fikrlar">
+    <title>🎧 Audio Uskunalar | Eng Yaxshisini Tanlang</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #0a0a0a;
+            color: #e0e0e0;
+            line-height: 1.6;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background: linear-gradient(135deg, #00b4d8 0%, #0077b6 100%);
+            color: white;
+            padding: 20px 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo i {
+            font-size: 2rem;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 8px 15px;
+            border-radius: 20px;
+            transition: all 0.3s;
+        }
+
+        nav a:hover, nav a.active {
+            background-color: rgba(255, 255, 255, 0.15);
+        }
+
+        .page-header {
+            background: linear-gradient(rgba(0, 180, 216, 0.9), rgba(0, 119, 182, 0.9));
+            color: white;
+            text-align: center;
+            padding: 60px 20px;
+            margin-bottom: 40px;
+            border-radius: 0 0 20px 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .page-header:before {
+            content: "🎧";
+            position: absolute;
+            font-size: 20rem;
+            opacity: 0.1;
+            top: -50px;
+            right: -50px;
+            transform: rotate(15deg);
+        }
+
+        .page-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            position: relative;
+            z-index: 1;
+        }
+
+        .page-header .category-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .product-card {
+            background: #1a1a1a;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s;
+            border: 1px solid #333;
+            position: relative;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 180, 216, 0.2);
+            border-color: #00b4d8;
+        }
+
+        .product-card:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #00b4d8, #0077b6);
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .product-card:hover:before {
+            opacity: 1;
+        }
+
+        .product-image {
+            height: 200px;
+            background: linear-gradient(135deg, #00b4d8 0%, #0077b6 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 4rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .product-image:after {
+            content: "";
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            animation: pulse 3s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.8); opacity: 0.5; }
+            50% { transform: scale(1.2); opacity: 0.2; }
+            100% { transform: scale(0.8); opacity: 0.5; }
+        }
+
+        .product-content {
+            padding: 25px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .product-content h3 {
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+            color: #00b4d8;
+        }
+
+        .rating {
+            color: #ffc107;
+            margin-bottom: 15px;
+        }
+
+        .price {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #4caf50;
+            margin: 15px 0;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 25px;
+            background: linear-gradient(135deg, #00b4d8 0%, #0077b6 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0, 180, 216, 0.3);
+        }
+
+        .btn:after {
+            content: "";
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, transparent 70%);
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .btn:hover:after {
+            opacity: 1;
+        }
+
+        .ad-unit {
+            background-color: #1a1a1a;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            margin: 30px 0;
+            color: #888;
+            border: 1px dashed #444;
+        }
+
+        footer {
+            background-color: #001219;
+            color: white;
+            padding: 40px 0 20px;
+            margin-top: 50px;
+            border-top: 2px solid #00b4d8;
+        }
+
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #bbdefb;
+            font-size: 0.9rem;
+        }
+
+        .audio-feature {
+            display: flex;
+            align-items: center;
+            margin: 5px 0;
+            font-size: 0.9rem;
+        }
+
+        .audio-feature i {
+            color: #00b4d8;
+            margin-right: 10px;
+            width: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                text-align: center;
+                gap: 15px;
+            }
+
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .products-grid {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            }
+
+            .page-header:before {
+                font-size: 10rem;
+                top: 0;
+                right: -30px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .page-header:before {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <i class="fas fa-star"></i>
+                <div>Eng Yaxshisini Tanlang</div>
+            </a>
+            
+            <nav>
+                <ul>
+                    <li><a href="index.html"><i class="fas fa-home"></i> Bosh Sahifa</a></li>
+                    <li><a href="audio.html" class="active"><i class="fas fa-headphones"></i> 🎧 Audio</a></li>
+                    <li><a href="gaming.html"><i class="fas fa-gamepad"></i> 🎮 O'yinlar</a></li>
+                    <li><a href="appliances.html"><i class="fas fa-blender"></i> 🏠 Maishiy</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="page-header">
+        <div class="container">
+            <div class="category-icon">
+                <i class="fas fa-headphones"></i>
+            </div>
+            <h1>🎧 Audio Uskunalar</h1>
+            <p>Naushniklar, dinamiklar, soundbar'lar va boshqa audio texnika haqida haqiqiy fikrlar</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- Adsense Banner -->
+        <div class="ad-unit">
+            <h3>Audio Reklamasi</h3>
+            <p>Bu yerda audio uskunalar bilan bog'liq reklamalar</p>
+            <p>300x600 o'lchamdagi banner</p>
+        </div>
+
+        <div class="products-grid">
+            <!-- Product 1 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <i class="fas fa-headphones"></i>
+                </div>
+                <div class="product-content">
+                    <h3>Sony WH-1000XM5 vs Bose QC45</h3>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                        <span style="color: #888; margin-left: 10px;">4.5/5</span>
+                    </div>
+                    <p>Premium shovqinni bartaraf qiluvchi naushniklar. 50 soatlik test.</p>
+                    
+                    <div class="audio-feature">
+                        <i class="fas fa-volume-up"></i>
+                        <span>Sony - ANC yaxshi, Bose - qulaylik</span>
+                    </div>
+                    <div class="audio-feature">
+                        <i class="fas fa-battery-full"></i>
+                        <span>Sony: 30 soat, Bose: 24 soat</span>
+                    </div>
+                    
+                    <div class="price">Sony - audio sifat, Bose - qulaylik</div>
+                    <a href="#" class="btn">To'liq ko'rish</a>
+                </div>
+            </div>
+
+            <!-- Product 2 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <i class="fas fa-volume-up"></i>
+                </div>
+                <div class="product-content">
+                    <h3>Portativ Bluetooth Kolonkalar</h3>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <span style="color: #888; margin-left: 10px;">4.0/5</span>
+                    </div>
+                    <p>JBL vs Sony vs Ultimate Ears - qaysi portativ kolonka yaxshi?</p>
+                    
+                    <div class="audio-feature">
+                        <i class="fas fa-water"></i>
+                        <span>Hammasi suvga chidamli</span>
+                    </div>
+                    <div class="audio-feature">
+                        <i class="fas fa-sun"></i>
+                        <span>JBL - 20 soat, Sony - 15 soat</span>
+                    </div>
+                    
+                    <div class="price">JBL - bass, Sony - balans</div>
+                    <a href="#" class="btn">To'liq ko'rish</a>
+                </div>
+            </div>
+
+            <!-- Product 3 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <i class="fas fa-tv"></i>
+                </div>
+                <div class="product-content">
+                    <h3>TV uchun Soundbar Sistemalar</h3>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <span style="color: #888; margin-left: 10px;">5.0/5</span>
+                    </div>
+                    <p>Samsung vs LG vs Sonos - qaysi soundbar kino tajribasi uchun yaxshi?</p>
+                    
+                    <div class="audio-feature">
+                        <i class="fas fa-satellite-dish"></i>
+                        <span>Dolby Atmos qo'llab-quvvatlash</span>
+                    </div>
+                    <div class="audio-feature">
+                        <i class="fas fa-wifi"></i>
+                        <span>WiFi va Bluetooth ulanish</span>
+                    </div>
+                    
+                    <div class="price">Sonos - tizim, Samsung - TV bilan</div>
+                    <a href="#" class="btn">To'liq ko'rish</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Adsense In-Article -->
+        <div class="ad-unit">
+            <h3>Audio Maqolasi Ichidagi Reklama</h3>
+            <p>Bu yerda audio kontentiga relevant reklamalar</p>
+        </div>
+
+        <div class="products-grid">
+            <!-- Product 4 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <i class="fas fa-microphone"></i>
+                </div>
+                <div class="product-content">
+                    <h3>Podcast va Streaming Uskunalari</h3>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                        <i class="far fa-star"></i>
+                        <span style="color: #888; margin-left: 10px;">3.5/5</span>
+                    </div>
+                    <p>Yangi boshlovchilar uchun mikrofon va audio interfeyslar.</p>
+                    
+                    <div class="audio-feature">
+                        <i class="fas fa-dollar-sign"></i>
+                        <span>$50 dan $500 gacha variantlar</span>
+                    </div>
+                    <div class="audio-feature">
+                        <i class="fas fa-plug"></i>
+                        <span>USB va XLR ulanishlar</span>
+                    </div>
+                    
+                    <div class="price">Blue Yeti - boshlovchilar uchun</div>
+                    <a href="#" class="btn">To'liq ko'rish</a>
+                </div>
+            </div>
+
+            <!-- Product 5 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <i class="fas fa-guitar"></i>
+                </div>
+                <div class="product-content">
+                    <h3>Studio Monitorlar va Uslubatlar</h3>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <span style="color: #888; margin-left: 10px;">4.0/5</span>
+                    </div>
+                    <p>Musiqa ishlab chiqarish uchun studio audio uskunalari.</p>
+                    
+                    <div class="audio-feature">
+                        <i class="fas fa-sliders-h"></i>
+                        <span>5" dan 8" gacha diapazon</span>
+                    </div>
+                    <div class="audio-feature">
+                        <i class="fas fa-wave-square"></i>
+                        <span>Yorqin va neytral tovush</span>
+                    </div>
+                    
+                    <div class="price">Yamaha - standart, KRK - bass</div>
+                    <a href="#" class="btn">To'liq ko'rish</a>
+                </div>
+            </div>
+
+            <!-- Product 6 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <i class="fas fa-earbuds"></i>
+                </div>
+                <div class="product-content">
+                    <h3>True Wireless Naushniklar</h3>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                        <i class="far fa-star"></i>
+                        <span style="color: #888; margin-left: 10px;">3.5/5</span>
+                    </div>
+                    <p>AirPods Pro vs Galaxy Buds vs Sony WF - qaysi TWS yaxshi?</p>
+                    
+                    <div class="audio-feature">
+                        <i class="fas fa-bluetooth"></i>
+                        <span>Bluetooth 5.2 va 5.3</span>
+                    </div>
+                    <div class="audio-feature">
+                        <i class="fas fa-charging-station"></i>
+                        <span>Tez zaryadlovchi qutilari</span>
+                    </div>
+                    
+                    <div class="price">AirPods - iOS, Buds - Android</div>
+                    <a href="#" class="btn">To'liq ko'rish</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-column">
+                    <h3>Eng Yaxshisini Tanlang</h3>
+                    <p>Audio uskunalarni haqiqiy testlar asosida solishtiring.</p>
+                    <div style="margin-top: 15px;">
+                        <a href="#" style="margin-right: 10px; font-size: 1.2rem; color: #00b4d8;"><i class="fab fa-spotify"></i></a>
+                        <a href="#" style="margin-right: 10px; font-size: 1.2rem; color: #00b4d8;"><i class="fab fa-soundcloud"></i></a>
+                        <a href="#" style="font-size: 1.2rem; color: #00b4d8;"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Audio Kategoriyalari</h3>
+                    <ul>
+                        <li><a href="#"><i class="fas fa-headphones"></i> Naushniklar</a></li>
+                        <li><a href="#"><i class="fas fa-volume-up"></i> Kolonkalar</a></li>
+                        <li><a href="#"><i class="fas fa-home"></i> Uy Audio Sistemalari</a></li>
+                        <li><a href="#"><i class="fas fa-microphone"></i> Professional Audio</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Bog'lanish</h3>
+                    <p><i class="fas fa-envelope"></i> audio@engyaxshisi.uz</p>
+                    <p><i class="fas fa-phone"></i> +998 90 555 44 33</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Toshkent, Studio</p>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2024 Audio Uskunalar Kategoriyasi. Eng Yaxshisini Tanlang.</p>
+                <p style="margin-top: 5px; font-size: 0.8rem;">Haqiqiy audio testlar - haqiqiy tavsiyalar</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Enhanced JavaScript for audio category
+        document.querySelectorAll('.btn').forEach(button => {
+            button.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                // Create audio feedback
+                const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+                const oscillator = audioContext.createOscillator();
+                const gainNode = audioContext.createGain();
+                
+                oscillator.connect(gainNode);
+                gainNode.connect(audioContext.destination);
+                
+                oscillator.frequency.value = 523.25; // C5 note
+                oscillator.type = 'sine';
+                
+                gainNode.gain.setValueAtTime(0.3, audioContext.currentTime);
+                gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 0.5);
+                
+                oscillator.start();
+                oscillator.stop(audioContext.currentTime + 0.5);
+                
+                alert("To'liq audio review tez orada qo'shiladi!");
+            });
+        });
+
+        // Audio visual effects
+        document.addEventListener('DOMContentLoaded', function() {
+            const cards = document.querySelectorAll('.product-card');
+            
+            cards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    const image = this.querySelector('.product-image');
+                    if (image) {
+                        image.style.animation = 'pulse 1.5s infinite';
+                    }
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    const image = this.querySelector('.product-image');
+                    if (image) {
+                        image.style.animation = 'pulse 3s infinite';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
