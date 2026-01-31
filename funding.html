@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Bizning moliyalashtirish manbalarimiz - shaffof va ochiq ma'lumot">
+    <title>Moliyalashtirish | RankingHours</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #0288d1;
+            --secondary: #03a9f4;
+            --accent: #4fc3f7;
+            --light: #e1f5fe;
+            --dark: #01579b;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+            color: #0d47a1;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--dark) 100%);
+            color: white;
+            padding: 20px 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo i {
+            font-size: 2rem;
+            color: var(--accent);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 8px 15px;
+            border-radius: 20px;
+            transition: all 0.3s;
+        }
+
+        nav a:hover, nav a.active {
+            background-color: var(--secondary);
+        }
+
+        .page-header {
+            background: linear-gradient(rgba(2, 136, 209, 0.9), rgba(1, 87, 155, 0.9)), url('https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 100px 20px;
+            margin-bottom: 50px;
+            border-radius: 0 0 30px 30px;
+        }
+
+        .page-header h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .funding-content {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            margin-bottom: 40px;
+        }
+
+        .funding-section {
+            margin-bottom: 40px;
+            padding-bottom: 30px;
+            border-bottom: 2px solid var(--light);
+        }
+
+        .funding-section:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+        }
+
+        .funding-section h3 {
+            color: var(--primary);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .funding-chart {
+            width: 100%;
+            height: 300px;
+            background: #f5f5f5;
+            border-radius: 10px;
+            margin: 20px 0;
+            display: flex;
+            align-items: flex-end;
+            padding: 20px;
+        }
+
+        .chart-bar {
+            flex: 1;
+            margin: 0 5px;
+            background: var(--primary);
+            border-radius: 5px 5px 0 0;
+            position: relative;
+        }
+
+        .chart-bar:hover {
+            opacity: 0.8;
+        }
+
+        .bar-label {
+            position: absolute;
+            bottom: -25px;
+            left: 0;
+            right: 0;
+            text-align: center;
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .bar-value {
+            position: absolute;
+            top: -25px;
+            left: 0;
+            right: 0;
+            text-align: center;
+            font-weight: bold;
+            color: var(--dark);
+        }
+
+        .funding-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .funding-source {
+            background: var(--light);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .funding-source i {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+
+        .ad-unit {
+            background: #f8f9fa;
+            border: 2px dashed #dee2e6;
+            border-radius: 10px;
+            padding: 30px;
+            text-align: center;
+            margin: 40px 0;
+            color: #6c757d;
+        }
+
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 50px 0 20px;
+            margin-top: 50px;
+        }
+
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #b0bec5;
+            font-size: 0.9rem;
+        }
+
+        .financial-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        .financial-table th,
+        .financial-table td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .financial-table th {
+            background: var(--light);
+            color: var(--primary);
+        }
+
+        @media (max-width: 768px) {
+            .page-header h1 {
+                font-size: 2.2rem;
+            }
+            
+            .funding-content {
+                padding: 25px;
+            }
+            
+            .funding-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .financial-table {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <i class="fas fa-money-bill-wave"></i>
+                <div>Ranking<span>Hours</span></div>
+            </a>
+            
+            <nav>
+                <ul>
+                    <li><a href="index.html"><i class="fas fa-home"></i> Bosh</a></li>
+                    <li><a href="funding.html" class="active"><i class="fas fa-money-bill-wave"></i> Moliyalashtirish</a></li>
+                    <li><a href="ethics.html"><i class="fas fa-scale-balanced"></i> Etika</a></li>
+                    <li><a href="independence.html"><i class="fas fa-shield-alt"></i> Mustaqillik</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="page-header">
+        <div class="container">
+            <h1><i class="fas fa-money-bill-wave"></i> Moliyalashtirish</h1>
+            <p>Bizning moliyaviy manbalarimiz - shaffof va ochiq</p>
+        </div>
+    </section>
+
+    <div class="container">
+        <div class="funding-content">
+            <div class="funding-section">
+                <h3><i class="fas fa-chart-pie"></i> Moliyaviy Manbalar Taqsimoti</h3>
+                <p>Bizning moliyalashtirish manbalarimiz quyidagicha taqsimlangan:</p>
+                
+                <div class="funding-chart">
+                    <div class="chart-bar" style="height: 65%; background: var(--primary);">
+                        <div class="bar-value">65%</div>
+                        <div class="bar-label">Foydalanuvchi Obunalari</div>
+                    </div>
+                    <div class="chart-bar" style="height: 20%; background: var(--secondary);">
+                        <div class="bar-value">20%</div>
+                        <div class="bar-label">Kichik Reklamalar</div>
+                    </div>
+                    <div class="chart-bar" style="height: 10%; background: #4caf50;">
+                        <div class="bar-value">10%</div>
+                        <div class="bar-label">Xayriya</div>
+                    </div>
+                    <div class="chart-bar" style="height: 5%; background: #ff9800;">
+                        <div class="bar-value">5%</div>
+                        <div class="bar-label">Boshqa Manbalar</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="funding-section">
+                <h3><i class="fas fa-hand-holding-usd"></i> Asosiy Moliyaviy Manbalar</h3>
+                
+                <div class="funding-grid">
+                    <div class="funding-source">
+                        <i class="fas fa-users"></i>
+                        <h4>Premium Obunalar</h4>
+                        <p>Foydalanuvchilardan oylik/kvartal obunalar</p>
+                        <strong>65%</strong>
+                    </div>
+                    
+                    <div class="funding-source">
+                        <i class="fas fa-ad"></i>
+                        <h4>Kichik Reklamalar</h4>
+                        <p>Saytda cheklangan reklama joylari</p>
+                        <strong>20%</strong>
+                    </div>
+                    
+                    <div class="funding-source">
+                        <i class="fas fa-hands-helping"></i>
+                        <h4>Xayriya</h4>
+                        <p>Mustaqillikni qo'llab-quvvatlovchi xayr-ehsonlar</p>
+                        <strong>10%</strong>
+                    </div>
+                    
+                    <div class="funding-source">
+                        <i class="fas fa-gift"></i>
+                        <h4>Boshqa Manbalar</h4>
+                        <p>Kitoblar, konferensiyalar va boshqalar</p>
+                        <strong>5%</strong>
+                    </div>
+                </div>
+            </div>
+
+            <div class="funding-section">
+                <h3><i class="fas fa-ban"></i> Qabul Qilinmaydigan Manbalar</h3>
+                <p>Biz mustaqillikni saqlash uchun quyidagi moliyaviy manbalarni qabul qilmaymiz:</p>
+                
+                <ul style="margin: 20px 0; padding-left: 20px;">
+                    <li style="margin-bottom: 10px;"><strong>Test qilinayotgan kompaniyalardan to'g'ridan-to'g'ri mablag'lar</strong> - har qanday shaklda</li>
+                    <li style="margin-bottom: 10px;"><strong>Pulli sharhlar yoki reytinglar uchun to'lovlar</strong> - hech qanday shaklda</li>
+                    <li style="margin-bottom: 10px;"><strong>Natijalarga ta'sir qilish imkoniyatini beruvchi sarmoyalar</strong></li>
+                    <li style="margin-bottom: 10px;"><strong>Maxsus kelishuvlar asosidagi mablag'lar</strong></li>
+                </ul>
+            </div>
+
+            <div class="funding-section">
+                <h3><i class="fas fa-chart-line"></i> Moliyaviy Hisobot</h3>
+                <p>2024 yil birinchi chorak uchun moliyaviy hisobot:</p>
+                
+                <table class="financial-table">
+                    <thead>
+                        <tr>
+                            <th>Manba</th>
+                            <th>Miqdor ($)</th>
+                            <th>Foiz</th>
+                            <th>Qo'llanilishi</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Premium Obunalar</td>
+                            <td>$32,500</td>
+                            <td>65%</td>
+                            <td>Test uskunalari, xodimlar maoshi</td>
+                        </tr>
+                        <tr>
+                            <td>Kichik Reklamalar</td>
+                            <td>$10,000</td>
+                            <td>20%</td>
+                            <td>Sayt texnik xizmati, kommunikatsiya</td>
+                        </tr>
+                        <tr>
+                            <td>Xayriya</td>
+                            <td>$5,000</td>
+                            <td>10%</td>
+                            <td>Mustaqillikni qo'llab-quvvatlash</td>
+                        </tr>
+                        <tr>
+                            <td>Boshqa Manbalar</td>
+                            <td>$2,500</td>
+                            <td>5%</td>
+                            <td>Operatsion xarajatlar</td>
+                        </tr>
+                        <tr style="background: var(--light); font-weight: bold;">
+                            <td>Jami</td>
+                            <td>$50,000</td>
+                            <td>100%</td>
+                            <td>Barcha faoliyat</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="funding-section">
+                <h3><i class="fas fa-search-dollar"></i> Moliyaviy Auditorlik</h3>
+                <p>Moliyaviy shaffoflikni ta'minlash uchun:</p>
+                
+                <div style="background: var(--light); padding: 20px; border-radius: 10px; margin-top: 15px;">
+                    <h4><i class="fas fa-user-tie"></i> Tashqi Auditor</h4>
+                    <p>Har chorakda mustaqil tashqi auditor tomonidan moliyaviy hisobotlar tekshiriladi va e'lon qilinadi.</p>
+                    <p><strong>Oxirgi auditorlik:</strong> 2024 yil 1-chorak (e'lon qilingan: 2024 yil 10 aprel)</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="ad-unit">
+            <h3>Moliyaviy Shaffoflik</h3>
+            <p>Bu yerda moliyaviy shaffoflik haqidagi kontent reklamasi</p>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-column">
+                    <h3>Moliyalashtirish</h3>
+                    <p>Shaffof moliyaviy ma'lumotlar - bizning mas'uliyatimiz.</p>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Moliyaviy Manbalar</h3>
+                    <ul>
+                        <li><a href="#"><i class="fas fa-users"></i> Obunachilar</a></li>
+                        <li><a href="#"><i class="fas fa-ad"></i> Reklamalar</a></li>
+                        <li><a href="#"><i class="fas fa-hands-helping"></i> Xayriyalar</a></li>
+                        <li><a href="#"><i class="fas fa-file-invoice-dollar"></i> Hisobotlar</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Auditorlik</h3>
+                    <p>Moliyaviy hisobotlarimiz mustaqil auditor tomonidan tekshiriladi.</p>
+                    <p>Yangi hisobot: Har chorak oxirida</p>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2024 RankingHours. Barcha moliyaviy ma'lumotlar ochiq va tekshirish uchun mavjud.</p>
+                <p style="margin-top: 5px; font-size: 0.8rem;">Oxirgi yangilangan: 2024 yil 10 aprel</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple chart interaction
+        document.querySelectorAll('.chart-bar').forEach(bar => {
+            bar.addEventListener('mouseenter', function() {
+                this.style.transform = 'scale(1.05)';
+            });
+            
+            bar.addEventListener('mouseleave', function() {
+                this.style.transform = 'scale(1)';
+            });
+        });
+    </script>
+</body>
+</html>
