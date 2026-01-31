@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Bizning 5 ballik reyting tizimimiz qanday ishlaydi? Har bir ball qanday baholanadi?">
+    <title>Reyting Tizimi | RankingHours</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --secondary: #3498db;
+            --accent: #e74c3c;
+            --star: #FFD700;
+            --light: #ecf0f1;
+            --dark: #2c3e50;
+            --success: #27ae60;
+            --warning: #f39c12;
+            --info: #3498db;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            color: var(--dark);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--primary);
+            color: white;
+            padding: 20px 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo i {
+            font-size: 2rem;
+            color: var(--star);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 8px 15px;
+            border-radius: 20px;
+            transition: all 0.3s;
+        }
+
+        nav a:hover, nav a.active {
+            background-color: var(--secondary);
+        }
+
+        /* Page Header */
+        .page-header {
+            background: linear-gradient(135deg, var(--primary) 0%, #34495e 100%);
+            color: white;
+            text-align: center;
+            padding: 80px 20px;
+            margin-bottom: 50px;
+            border-radius: 0 0 30px 30px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .page-header:before {
+            content: "★★★★★";
+            position: absolute;
+            font-size: 15rem;
+            opacity: 0.1;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .page-header h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .page-header p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto;
+            opacity: 0.9;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Rating System */
+        .rating-system {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            margin: 40px 0;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .rating-scale {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .rating-card {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            transition: all 0.3s;
+            border: 2px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .rating-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+            border-color: var(--secondary);
+        }
+
+        .rating-stars {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--star);
+            letter-spacing: 5px;
+        }
+
+        .rating-number {
+            font-size: 4rem;
+            font-weight: bold;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+
+        .rating-1 .rating-number { color: #e74c3c; }
+        .rating-2 .rating-number { color: #f39c12; }
+        .rating-3 .rating-number { color: #f1c40f; }
+        .rating-4 .rating-number { color: #2ecc71; }
+        .rating-5 .rating-number { color: #27ae60; }
+
+        .rating-label {
+            font-size: 1.3rem;
+            font-weight: bold;
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+
+        .rating-desc {
+            color: #666;
+            font-size: 0.95rem;
+        }
+
+        /* Criteria Grid */
+        .criteria-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin: 40px 0;
+        }
+
+        .criterion {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            border-left: 5px solid var(--secondary);
+        }
+
+        .criterion h4 {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+
+        .criterion h4 i {
+            color: var(--secondary);
+        }
+
+        .weight {
+            display: inline-block;
+            background: var(--secondary);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        /* Example Section */
+        .example-section {
+            background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+            border-radius: 20px;
+            padding: 40px;
+            margin: 50px 0;
+        }
+
+        .example-calc {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            margin: 20px 0;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        .calc-step {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin: 15px 0;
+            padding: 10px;
+            background: #f8f9fa;
+            border-radius: 10px;
+        }
+
+        .calc-step-number {
+            background: var(--secondary);
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 30px;
+            font-weight: bold;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary);
+            color: white;
+            padding: 50px 0 20px;
+            margin-top: 50px;
+        }
+
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #95a5a6;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                text-align: center;
+                gap: 15px;
+            }
+
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .page-header h1 {
+                font-size: 2.2rem;
+            }
+
+            .rating-scale {
+                grid-template-columns: 1fr;
+            }
+
+            .criteria-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <i class="fas fa-star"></i>
+                <div>Ranking<span style="color: var(--star);">Hours</span></div>
+            </a>
+            
+            <nav>
+                <ul>
+                    <li><a href="index.html"><i class="fas fa-home"></i> Bosh Sahifa</a></li>
+                    <li><a href="methodology.html"><i class="fas fa-flask"></i> Metodologiya</a></li>
+                    <li><a href="rating-system.html" class="active"><i class="fas fa-star-half-alt"></i> Reyting Tizimi</a></li>
+                    <li><a href="test-process.html"><i class="fas fa-cogs"></i> Test Jarayoni</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1><i class="fas fa-star-half-alt"></i> Reyting Tizimi</h1>
+            <p>Bizning 5 ballik reyting tizimimiz qanday ishlaydi? Har bir ball qanday baholanadi va nimani anglatadi?</p>
+        </div>
+    </section>
+
+    <div class="container">
+        <!-- Introduction -->
+        <div class="rating-system">
+            <h2 style="color: var(--primary); margin-bottom: 20px;">
+                <i class="fas fa-chart-line"></i> Bizning Reyting Tizimimiz
+            </h2>
+            <p style="font-size: 1.1rem; margin-bottom: 30px;">
+                Biz 5 ballik tizimdan foydalanamiz. Har bir ball aniq mezonlar asosida belgilanadi. 
+                Barcha mahsulotlar bir xil mezonlar asosida baholanadi, shuning uchun ularni adolatli solishtirish mumkin.
+            </p>
+            
+            <div class="rating-scale">
+                <!-- Rating 5 -->
+                <div class="rating-card rating-5">
+                    <div class="rating-stars">★★★★★</div>
+                    <div class="rating-number">5.0</div>
+                    <div class="rating-label">A'lo (Mukammal)</div>
+                    <div class="rating-desc">
+                        Mukammal mahsulot. Dehqonat darajasida, barcha asosiy va qo'shimcha funksiyalarni bajaradi. 
+                        Hech qanday jiddiy kamchiliklari yo'q. Tavsiya etiladi.
+                    </div>
+                </div>
+
+                <!-- Rating 4 -->
+                <div class="rating-card rating-4">
+                    <div class="rating-stars">★★★★☆</div>
+                    <div class="rating-number">4.0</div>
+                    <div class="rating-label">Yaxshi (Yuqori)</div>
+                    <div class="rating-desc">
+                        Juda yaxshi mahsulot. Barcha asosiy vazifalarni a'lo darajada bajaradi. 
+                        Kichik kamchiliklari bo'lishi mumkin, ammo umumiy tajribaga ta'sir qilmaydi.
+                    </div>
+                </div>
+
+                <!-- Rating 3 -->
+                <div class="rating-card rating-3">
+                    <div class="rating-stars">★★★☆☆</div>
+                    <div class="rating-number">3.0</div>
+                    <div class="rating-label">O'rtacha (Qoniqarli)</div>
+                    <div class="rating-desc">
+                        Qoniqarli mahsulot. Asosiy funksiyalarni bajaradi, lekin kuchli va zaif tomonlari bor. 
+                        Ma'lum sharoitlarda tavsiya etilishi mumkin.
+                    </div>
+                </div>
+
+                <!-- Rating 2 -->
+                <div class="rating-card rating-2">
+                    <div class="rating-stars">★★☆☆☆</div>
+                    <div class="rating-number">2.0</div>
+                    <div class="rating-label">Past (Qoniqarsiz)</div>
+                    <div class="rating-desc">
+                        Qoniqarsiz mahsulot. Ko'p kamchiliklari bor yoki asosiy vazifalarni bajara olmaydi. 
+                        Aksariyat hollarda tavsiya etilmaydi.
+                    </div>
+                </div>
+
+                <!-- Rating 1 -->
+                <div class="rating-card rating-1">
+                    <div class="rating-stars">★☆☆☆☆</div>
+                    <div class="rating-number">1.0</div>
+                    <div class="rating-label">Yomon (Tavsiya etilmaydi)</div>
+                    <div class="rating-desc">
+                        Juda yomon mahsulot. Ishlatish qiyin yoki xavfli. Ko'p nuqsonlari bor. 
+                        Har qanday sharoitda xarid qilishdan qaytarish tavsiya etiladi.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Rating Criteria -->
+        <div class="rating-system">
+            <h2 style="color: var(--primary); margin-bottom: 30px;">
+                <i class="fas fa-clipboard-check"></i> Reyting Mezonlari
+            </h2>
+            <p style="margin-bottom: 30px;">
+                Har bir mahsulot quyidagi 7 ta asosiy mezon bo'yicha baholanadi. Har bir mezonning o'ziga xos og'irligi bor:
+            </p>
+            
+            <div class="criteria-grid">
+                <!-- Criterion 1 -->
+                <div class="criterion">
+                    <h4><i class="fas fa-bullseye"></i> Ishlash va Samaradorlik</h4>
+                    <p>Mahsulot o'z vazifasini qanchalik yaxshi bajaradi? Tezlik, aniqlik, kuch.</p>
+                    <span class="weight">Og'irlik: 25%</span>
+                </div>
+
+                <!-- Criterion 2 -->
+                <div class="criterion">
+                    <h4><i class="fas fa-cogs"></i> Qurilish Sifati va Mustahkamlik</h4>
+                    <p>Materiallar sifat, montaj, umumiy mustahkamlik va chidamlilik.</p>
+                    <span class="weight">Og'irlik: 20%</span>
+                </div>
+
+                <!-- Criterion 3 -->
+                <div class="criterion">
+                    <h4><i class="fas fa-hand-rock"></i> Foydalanish Qulayligi</h4>
+                    <p>Intuitiv interfeys, o'rnatish osonligi, qo'llanma aniqligi.</p>
+                    <span class="weight">Og'irlik: 15%</span>
+                </div>
+
+                <!-- Criterion 4 -->
+                <div class="criterion">
+                    <h4><i class="fas fa-dollar-sign"></i> Narx va Qiymat</h4>
+                    <p>Narx uning taklif qilayotgan qiymatiga nisbatan qanchalik adolatli?</p>
+                    <span class="weight">Og'irlik: 15%</span>
+                </div>
+
+                <!-- Criterion 5 -->
+                <div class="criterion">
+                    <h4><i class="fas fa-battery-full"></i> Energiya Samaradorligi</h4>
+                    <p>Quvvat iste'moli, batareya umri, energiya tejamkorligi.</p>
+                    <span class="weight">Og'irlik: 10%</span>
+                </div>
+
+                <!-- Criterion 6 -->
+                <div class="criterion">
+                    <h4><i class="fas fa-headset"></i> Kafolat va Xizmat</h4>
+                    <p>Kafolat muddati, texnik yordam, ehtiyot qismlar mavjudligi.</p>
+                    <span class="weight">Og'irlik: 10%</span>
+                </div>
+
+                <!-- Criterion 7 -->
+                <div class="criterion">
+                    <h4><i class="fas fa-heart"></i> Dizayn va Ergonomika</h4>
+                    <p>Ko'rinish, ergonomika, rang va shakl tanlovi.</p>
+                    <span class="weight">Og'irlik: 5%</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Example Calculation -->
+        <div class="example-section">
+            <h2 style="color: var(--primary); margin-bottom: 30px;">
+                <i class="fas fa-calculator"></i> Reyting Qanday Hisoblanadi? (Misol)
+            </h2>
+            
+            <div class="example-calc">
+                <h4>iPhone 15 Pro uchun reyting hisobi:</h4>
+                
+                <div class="calc-step">
+                    <div class="calc-step-number">1</div>
+                    <div>
+                        <strong>Ishlash:</strong> 4.8/5 (25% og'irlik)<br>
+                        <small>1.2 ball (4.8 × 0.25)</small>
+                    </div>
+                </div>
+
+                <div class="calc-step">
+                    <div class="calc-step-number">2</div>
+                    <div>
+                        <strong>Qurilish sifati:</strong> 4.9/5 (20% og'irlik)<br>
+                        <small>0.98 ball (4.9 × 0.20)</small>
+                    </div>
+                </div>
+
+                <div class="calc-step">
+                    <div class="calc-step-number">3</div>
+                    <div>
+                        <strong>Foydalanish qulayligi:</strong> 4.5/5 (15% og'irlik)<br>
+                        <small>0.675 ball (4.5 × 0.15)</small>
+                    </div>
+                </div>
+
+                <div class="calc-step">
+                    <div class="calc-step-number">4</div>
+                    <div>
+                        <strong>Narx/qiymat:</strong> 3.8/5 (15% og'irlik)<br>
+                        <small>0.57 ball (3.8 × 0.15)</small>
+                    </div>
+                </div>
+
+                <div class="calc-step">
+                    <div class="calc-step-number">5</div>
+                    <div>
+                        <strong>Energiya samaradorligi:</strong> 4.2/5 (10% og'irlik)<br>
+                        <small>0.42 ball (4.2 × 0.10)</small>
+                    </div>
+                </div>
+
+                <div class="calc-step">
+                    <div class="calc-step-number">6</div>
+                    <div>
+                        <strong>Kafolat:</strong> 4.0/5 (10% og'irlik)<br>
+                        <small>0.4 ball (4.0 × 0.10)</small>
+                    </div>
+                </div>
+
+                <div class="calc-step">
+                    <div class="calc-step-number">7</div>
+                    <div>
+                        <strong>Dizayn:</strong> 4.7/5 (5% og'irlik)<br>
+                        <small>0.235 ball (4.7 × 0.05)</small>
+                    </div>
+                </div>
+
+                <div style="background: var(--primary); color: white; padding: 20px; border-radius: 10px; margin-top: 20px; text-align: center;">
+                    <h3 style="margin-bottom: 10px;">Umumiy Reyting</h3>
+                    <div style="font-size: 2.5rem; font-weight: bold; color: var(--star);">4.48/5.0</div>
+                    <p style="margin-top: 10px;">★★★★☆ (Yaxshi - Yuqori)</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- FAQ Section -->
+        <div class="rating-system">
+            <h2 style="color: var(--primary); margin-bottom: 30px;">
+                <i class="fas fa-question-circle"></i> Tez-tez So'raladigan Savollar
+            </h2>
+            
+            <div style="background: #f8f9fa; padding: 25px; border-radius: 15px; margin-bottom: 20px;">
+                <h4><i class="fas fa-question"></i> Nima uchun 5 ballik tizim?</h4>
+                <p>5 ballik tizim eng oddiy va tushunarli tizimdir. Foydalanuvchilar uchun tez tushunish va taqqoslash imkonini beradi.</p>
+            </div>
+
+            <div style="background: #f8f9fa; padding: 25px; border-radius: 15px; margin-bottom: 20px;">
+                <h4><i class="fas fa-question"></i> Yarim ballar (4.5 kabi) nima uchun?</h4>
+                <p>Yarim ballar mahsulotning aniqroq baholanishini ta'minlaydi. Masalan, 4.5 - "juda yaxshi" va "mukammal" o'rtasidagi mahsulot.</p>
+            </div>
+
+            <div style="background: #f8f9fa; padding: 25px; border-radius: 15px; margin-bottom: 20px;">
+                <h4><i class="fas fa-question"></i> Og'irliklar nima uchun har xil?</h4>
+                <p>Har bir parametr turli darajada muhim. Masalan, ishlash har doim dizayndan muhimroq, shuning uchun uning og'irligi kattaroq.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-column">
+                    <h3>RankingHours</h3>
+                    <p>Biz haqiqiy odamlardan haqiqiy maslahatlar. Har bir mahsulotni o'zimiz sinab ko'ramiz.</p>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Test Usullari</h3>
+                    <ul>
+                        <li><a href="methodology.html"><i class="fas fa-flask"></i> Metodologiya</a></li>
+                        <li><a href="rating-system.html"><i class="fas fa-star-half-alt"></i> Reyting Tizimi</a></li>
+                        <li><a href="test-process.html"><i class="fas fa-cogs"></i> Test Jarayoni</a></li>
+                        <li><a href="test-equipment.html"><i class="fas fa-tools"></i> Test Uskunalari</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Transparency</h3>
+                    <ul>
+                        <li><a href="ethics.html"><i class="fas fa-handshake"></i> Etika Kodeksi</a></li>
+                        <li><a href="independence.html"><i class="fas fa-balance-scale"></i> Mustaqillik</a></li>
+                        <li><a href="funding.html"><i class="fas fa-money-bill-wave"></i> Moliyalashtirish</a></li>
+                        <li><a href="corrections.html"><i class="fas fa-edit"></i> Tuzatishlar</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2024 RankingHours. Barcha huquqlar himoyalangan.</p>
+                <p style="margin-top: 5px; font-size: 0.8rem;">Haqiqiy testlar - Shaffof reytinglar</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Interactive rating cards
+        document.querySelectorAll('.rating-card').forEach(card => {
+            card.addEventListener('click', function() {
+                const rating = this.querySelector('.rating-number').textContent;
+                const label = this.querySelector('.rating-label').textContent;
+                alert(`Siz ${rating} bahosini tanladingiz: ${label}`);
+            });
+        });
+
+        // Animate rating numbers on scroll
+        const observerOptions = {
+            threshold: 0.5
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const ratingNumber = entry.target.querySelector('.rating-number');
+                    if (ratingNumber && !ratingNumber.classList.contains('animated')) {
+                        ratingNumber.classList.add('animated');
+                        animateValue(ratingNumber, 0, parseFloat(ratingNumber.textContent), 1000);
+                    }
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.rating-card').forEach(card => {
+            observer.observe(card);
+        });
+
+        function animateValue(element, start, end, duration) {
+            let startTimestamp = null;
+            const step = (timestamp) => {
+                if (!startTimestamp) startTimestamp = timestamp;
+                const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+                element.textContent = (progress * (end - start) + start).toFixed(1);
+                if (progress < 1) {
+                    window.requestAnimationFrame(step);
+                }
+            };
+            window.requestAnimationFrame(step);
+        }
+    </script>
+</body>
+</html>
