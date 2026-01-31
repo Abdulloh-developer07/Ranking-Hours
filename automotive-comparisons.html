@@ -1,0 +1,968 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Avtomobillarni haqiqiy testlar asosida solishtiring - Elektromobillar, SUV, Sedan, Oila avtomobillari">
+    <title>Avtomobil Solishtirishlari | Eng Yaxshisini Tanlang</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f5f7fa;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background: linear-gradient(135deg, #F44336 0%, #C62828 100%);
+            color: white;
+            padding: 20px 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo a {
+            color: white;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo i {
+            font-size: 2rem;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 8px 15px;
+            border-radius: 20px;
+            transition: all 0.3s;
+        }
+
+        nav a:hover, nav a.active {
+            background-color: rgba(255, 255, 255, 0.15);
+        }
+
+        .page-header {
+            background: linear-gradient(rgba(244, 67, 54, 0.9), rgba(198, 40, 40, 0.9));
+            color: white;
+            text-align: center;
+            padding: 80px 20px 60px;
+            margin-bottom: 40px;
+            border-radius: 0 0 30px 30px;
+        }
+
+        .page-header h1 {
+            font-size: 2.8rem;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .page-header .subtitle {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            opacity: 0.9;
+        }
+
+        .category-icon {
+            font-size: 4rem;
+            margin-bottom: 25px;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .comparison-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s;
+            border: 1px solid #e0e0e0;
+        }
+
+        .comparison-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(244, 67, 54, 0.15);
+        }
+
+        .card-header {
+            background: linear-gradient(135deg, #F44336 0%, #C62828 100%);
+            color: white;
+            padding: 25px;
+            text-align: center;
+        }
+
+        .card-header h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .card-content {
+            padding: 30px;
+        }
+
+        .specs-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .spec-item {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            transition: all 0.3s;
+        }
+
+        .spec-item:hover {
+            background: #ffebee;
+            transform: translateY(-3px);
+        }
+
+        .spec-icon {
+            font-size: 1.5rem;
+            color: #F44336;
+            margin-bottom: 8px;
+        }
+
+        .spec-value {
+            font-weight: bold;
+            font-size: 1.1rem;
+            margin: 5px 0;
+        }
+
+        .spec-label {
+            font-size: 0.85rem;
+            color: #666;
+        }
+
+        .verdict {
+            background: #FFEBEE;
+            border-left: 4px solid #F44336;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+
+        .verdict h4 {
+            color: #C62828;
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 30px;
+            background: linear-gradient(135deg, #F44336 0%, #C62828 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            text-align: center;
+            width: 100%;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(244, 67, 54, 0.3);
+        }
+
+        .ad-unit {
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4e8f0 100%);
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            margin: 50px 0;
+            border: 2px dashed #c5cae9;
+            position: relative;
+        }
+
+        .ad-unit h3 {
+            color: #5C6BC0;
+            margin-bottom: 15px;
+        }
+
+        .ad-badge {
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #FF9800;
+            color: white;
+            padding: 5px 20px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .car-type-section {
+            margin: 60px 0;
+        }
+
+        .car-type-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .car-type-card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s;
+            border-top: 4px solid #F44336;
+        }
+
+        .car-type-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .car-type-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: #F44336;
+        }
+
+        .car-type-card.electric { border-top-color: #4CAF50; }
+        .car-type-card.electric .car-type-icon { color: #4CAF50; }
+        .car-type-card.suv { border-top-color: #2196F3; }
+        .car-type-card.suv .car-type-icon { color: #2196F3; }
+        .car-type-card.family { border-top-color: #FF9800; }
+        .car-type-card.family .car-type-icon { color: #FF9800; }
+        .car-type-card.sports { border-top-color: #9C27B0; }
+        .car-type-card.sports .car-type-icon { color: #9C27B0; }
+
+        .price-comparison {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            margin: 40px 0;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        .price-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .price-row:last-child {
+            border-bottom: none;
+        }
+
+        .price-car {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .price-value {
+            font-weight: bold;
+            font-size: 1.2rem;
+            color: #F44336;
+        }
+
+        footer {
+            background: linear-gradient(135deg, #B71C1C 0%, #C62828 100%);
+            color: white;
+            padding: 50px 0 20px;
+            margin-top: 80px;
+        }
+
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 30px;
+        }
+
+        .footer-column h3 {
+            font-size: 1.3rem;
+            margin-bottom: 25px;
+            color: #FFCDD2;
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column li {
+            margin-bottom: 12px;
+        }
+
+        .footer-column a {
+            color: #FFEBEE;
+            text-decoration: none;
+            transition: color 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .footer-column a:hover {
+            color: #FFFFFF;
+            text-decoration: underline;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #FFCDD2;
+            font-size: 0.9rem;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        .fuel-economy {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: #f5f5f5;
+            border-radius: 10px;
+            padding: 15px;
+            margin: 15px 0;
+        }
+
+        .fuel-bar {
+            flex-grow: 1;
+            height: 10px;
+            background: #ddd;
+            border-radius: 5px;
+            overflow: hidden;
+            margin: 0 15px;
+        }
+
+        .fuel-fill {
+            height: 100%;
+            border-radius: 5px;
+            transition: width 1s ease;
+        }
+
+        @media (max-width: 992px) {
+            .comparison-grid {
+                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                text-align: center;
+                gap: 20px;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+                position: absolute;
+                top: 25px;
+                right: 20px;
+            }
+
+            nav ul {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                margin-top: 20px;
+            }
+
+            nav ul.active {
+                display: flex;
+            }
+
+            .page-header h1 {
+                font-size: 2.2rem;
+            }
+
+            .page-header .subtitle {
+                font-size: 1.1rem;
+            }
+
+            .specs-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .comparison-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .car-type-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .page-header {
+                padding: 60px 20px 40px;
+            }
+
+            .page-header h1 {
+                font-size: 1.8rem;
+            }
+
+            .price-row {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <a href="index.html">
+                    <i class="fas fa-star"></i>
+                    <span>Eng Yaxshisini Tanlang</span>
+                </a>
+            </div>
+            
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <nav>
+                <ul id="mainNav">
+                    <li><a href="index.html"><i class="fas fa-home"></i> Bosh Sahifa</a></li>
+                    <li><a href="smartphone-comparisons.html"><i class="fas fa-mobile-alt"></i> Smartfonlar</a></li>
+                    <li><a href="laptop-comparisons.html"><i class="fas fa-laptop"></i> Noutbuklar</a></li>
+                    <li><a href="automotive-comparisons.html" class="active"><i class="fas fa-car"></i> Avtomobillar</a></li>
+                    <li><a href="appliances-comparisons.html"><i class="fas fa-blender"></i> Maishiy Texnika</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="page-header">
+        <div class="container">
+            <div class="category-icon">
+                <i class="fas fa-car"></i>
+            </div>
+            <h1>Avtomobil Solishtirishlari</h1>
+            <p class="subtitle">Elektromobillar, SUV, Sedan va boshqa avtomobillarni haqiqiy yo'l testlari asosida solishtiring</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- Adsense Banner -->
+        <div class="ad-unit">
+            <div class="ad-badge">Reklama</div>
+            <h3>Avtomobil aksessuarlari</h3>
+            <p>Avtomobil tovarlari, ehtiyot qismlar va aksessuarlar</p>
+            <p style="color: #666; margin-top: 15px;">300x250 | 728x90 | 300x600</p>
+        </div>
+
+        <div class="comparison-grid">
+            <!-- Comparison 1 -->
+            <div class="comparison-card">
+                <div class="card-header">
+                    <h3>Tesla Model Y vs BYD Atto 3</h3>
+                    <p>Elektromobillar jangi - O'zbekiston sharoitida</p>
+                </div>
+                <div class="card-content">
+                    <div class="specs-grid">
+                        <div class="spec-item">
+                            <div class="spec-icon"><i class="fas fa-bolt"></i></div>
+                            <div class="spec-value">533 km</div>
+                            <div class="spec-label">Zaryad masofasi</div>
+                        </div>
+                        <div class="spec-item">
+                            <div class="spec-icon"><i class="fas fa-tachometer-alt"></i></div>
+                            <div class="spec-value">4.8s</div>
+                            <div class="spec-label">0-100 km/soat</div>
+                        </div>
+                        <div class="spec-item">
+                            <div class="spec-icon"><i class="fas fa-plug"></i></div>
+                            <div class="spec-value">15 daqiqa</div>
+                            <div class="spec-label">80% zaryad</div>
+                        </div>
+                        <div class="spec-item">
+                            <div class="spec-icon"><i class="fas fa-dollar-sign"></i></div>
+                            <div class="spec-value">$50,000</div>
+                            <div class="spec-label">Boshlang'ich narx</div>
+                        </div>
+                    </div>
+                    
+                    <div class="fuel-economy">
+                        <span>Tesla Model Y</span>
+                        <div class="fuel-bar">
+                            <div class="fuel-fill" style="background: #4CAF50; width: 90%;"></div>
+                        </div>
+                        <span>90%</span>
+                    </div>
+                    
+                    <div class="fuel-economy">
+                        <span>BYD Atto 3</span>
+                        <div class="fuel-bar">
+                            <div class="fuel-fill" style="background: #2196F3; width: 85%;"></div>
+                        </div>
+                        <span>85%</span>
+                    </div>
+                    
+                    <div class="verdict">
+                        <h4><i class="fas fa-trophy"></i> Test G'olibi: BYD Atto 3</h4>
+                        <p>BYD narx-sifat nisbati va O'zbekiston sharoitida mavjud servislar tufayli g'olib. Tesla esa Supercharger tarmog'i va ishlash tezligida ustun.</p>
+                    </div>
+                    
+                    <button class="btn"><i class="fas fa-chart-bar"></i> Batafsil Solishtirishni Ko'rish</button>
+                </div>
+            </div>
+
+            <!-- Comparison 2 -->
+            <div class="comparison-card">
+                <div class="card-header">
+                    <h3>Toyota RAV4 vs Honda CR-V</h3>
+                    <p>Oila uchun eng yaxshi SUV</p>
+                </div>
+                <div class="card-content">
+                    <div class="specs-grid">
+                        <div class="spec-item">
+                            <div class="spec-icon"><i class="fas fa-gas-pump"></i></div>
+                            <div class="spec-value">7.5 L/100km</div>
+                            <div class="spec-label">Yoqilg'i sarfi</div>
+                        </div>
+                        <div class="spec-item">
+                            <div class="spec-icon"><i class="fas fa-users"></i></div>
+                            <div class="spec-value">5 kishi</div>
+                            <div class="spec-label">Oʻrindiqlar</div>
+                        </div>
+                        <div class="spec-item">
+                            <div class="spec-icon"><i class="fas fa-suitcase"></i></div>
+                            <div class="spec-value">580 L</div>
+                            <div class="spec-label">Yukxona hajmi</div>
+                        </div>
+                        <div class="spec-item">
+                            <div class="spec-icon"><i class="fas fa-shield-alt"></i></div>
+                            <div class="spec-value">5 yulduz</div>
+                            <div class="spec-label">Xavfsizlik reytingi</div>
+                        </div>
+                    </div>
+                    
+                    <div class="fuel-economy">
+                        <span>Toyota RAV4</span>
+                        <div class="fuel-bar">
+                            <div class="fuel-fill" style="background: #FF9800; width: 88%;"></div>
+                        </div>
+                        <span>88%</span>
+                    </div>
+                    
+                    <div class="fuel-economy">
+                        <span>Honda CR-V</span>
+                        <div class="fuel-bar">
+                            <div class="fuel-fill" style="background: #F44336; width: 85%;"></div>
+                        </div>
+                        <span>85%</span>
+                    </div>
+                    
+                    <div class="verdict">
+                        <h4><i class="fas fa-trophy"></i> Test G'olibi: Toyota RAV4</h4>
+                        <p>RAV4 ishonchliligi va qayta sotish qiymati bilan ajralib turadi. CR-V esa qulayligi va katta ichki makon bilan yaxshi.</p>
+                    </div>
+                    
+                    <button class="btn"><i class="fas fa-chart-bar"></i> Batafsil Solishtirishni Ko'rish</button>
+                </div>
+            </div>
+
+            <!-- Comparison 3 -->
+            <div class="comparison-card">
+                <div class="card-header">
+                    <h3>Chevrolet Lacetti vs Ravon Nexia 3</h3>
+                    <p>Birinchi avtomobil uchun tanlov</p>
+                </div>
+                <div class="card-content">
+                    <div class="specs-grid">
+                        <div class="spec-item">
+                            <div class="spec-icon"><i class="fas fa-cogs"></i></div>
+                            <div class="spec-value">1.5L</div>
+                            <div class="spec-label">Dvigatel hajmi</div>
+                        </div>
+                        <div class="spec-item">
+                            <div class="spec-icon"><i class="fas fa-wrench"></i></div>
+                            <div class="spec-value">Arzon</div>
+                            <div class="spec-label">Ta'mirlash xarajati</div>
+                        </div>
+                        <div class="spec-item">
+                            <div class="spec-icon"><i class="fas fa-chart-line"></i></div>
+                            <div class="spec-value">70%</div>
+                            <div class="spec-label">Qayta sotish qiymati</div>
+                        </div>
+                        <div class="spec-item">
+                            <div class="spec-icon"><i class="fas fa-dollar-sign"></i></div>
+                            <div class="spec-value">$12,000</div>
+                            <div class="spec-label">Boshlang'ich narx</div>
+                        </div>
+                    </div>
+                    
+                    <div class="fuel-economy">
+                        <span>Chevrolet Lacetti</span>
+                        <div class="fuel-bar">
+                            <div class="fuel-fill" style="background: #9C27B0; width: 82%;"></div>
+                        </div>
+                        <span>82%</span>
+                    </div>
+                    
+                    <div class="fuel-economy">
+                        <span>Ravon Nexia 3</span>
+                        <div class="fuel-bar">
+                            <div class="fuel-fill" style="background: #2196F3; width: 78%;"></div>
+                        </div>
+                        <span>78%</span>
+                    </div>
+                    
+                    <div class="verdict">
+                        <h4><i class="fas fa-trophy"></i> Test G'olibi: Chevrolet Lacetti</h4>
+                        <p>Lacetti mustahkamligi va keng servis tarmog'i bilan g'olib. Nexia 3 esa arzon narxi va yengil boshqaruvi bilan.</p>
+                    </div>
+                    
+                    <button class="btn"><i class="fas fa-chart-bar"></i> Batafsil Solishtirishni Ko'rish</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Adsense In-Article -->
+        <div class="ad-unit">
+            <div class="ad-badge">Tavsiya etilgan</div>
+            <h3>Avtomobil sug'urtasi</h3>
+            <p>Eng yaxshi sug'urta kompaniyalari va ularning takliflari</p>
+        </div>
+
+        <div class="car-type-section">
+            <h2 style="text-align: center; color: #C62828; margin-bottom: 40px;">Avtomobil Turini Tanlang</h2>
+            
+            <div class="car-type-grid">
+                <div class="car-type-card electric">
+                    <div class="car-type-icon">
+                        <i class="fas fa-charging-station"></i>
+                    </div>
+                    <h3>⚡ Elektromobil</h3>
+                    <p style="margin: 15px 0;">Kam xarajat, ekologik, zamonaviy texnologiya</p>
+                    <div style="color: #F44336; font-weight: bold;">
+                        <i class="fas fa-car"></i> Tesla, BYD, Nissan Leaf
+                    </div>
+                </div>
+                
+                <div class="car-type-card suv">
+                    <div class="car-type-icon">
+                        <i class="fas fa-truck"></i>
+                    </div>
+                    <h3>🚙 SUV</h3>
+                    <p style="margin: 15px 0;">Katta oila, yo'l yurish, ko'p yuk</p>
+                    <div style="color: #F44336; font-weight: bold;">
+                        <i class="fas fa-car"></i> Toyota RAV4, Honda CR-V, Kia Sportage
+                    </div>
+                </div>
+                
+                <div class="car-type-card family">
+                    <div class="car-type-icon">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <h3>🏠 Oila Avtomobili</h3>
+                    <p style="margin: 15px 0;">Iqtisodiy, ishonchli, arzon ta'mirlash</p>
+                    <div style="color: #F44336; font-weight: bold;">
+                        <i class="fas fa-car"></i> Chevrolet Lacetti, Ravon Nexia, Hyundai Elantra
+                    </div>
+                </div>
+                
+                <div class="car-type-card sports">
+                    <div class="car-type-icon">
+                        <i class="fas fa-tachometer-alt"></i>
+                    </div>
+                    <h3>🏎️ Sport Avtomobil</h3>
+                    <p style="margin: 15px 0;">Tezlik, dizayn, haydash qulayligi</p>
+                    <div style="color: #F44336; font-weight: bold;">
+                        <i class="fas fa-car"></i> BMW M seriyasi, Mercedes AMG
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="price-comparison">
+            <h3 style="color: #C62828; margin-bottom: 25px; text-align: center;"><i class="fas fa-tags"></i> 2024-yil Narx Solishtirishlari</h3>
+            
+            <div class="price-row">
+                <div class="price-car">
+                    <div style="background: #F44336; color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                        <i class="fas fa-car"></i>
+                    </div>
+                    <div>
+                        <div style="font-weight: bold;">Toyota RAV4 Hybrid</div>
+                        <div style="font-size: 0.9rem; color: #666;">Oʻrtacha yoqilg'i sarfi: 5.8 L/100km</div>
+                    </div>
+                </div>
+                <div class="price-value">$32,000</div>
+            </div>
+            
+            <div class="price-row">
+                <div class="price-car">
+                    <div style="background: #4CAF50; color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <div>
+                        <div style="font-weight: bold;">BYD Atto 3</div>
+                        <div style="font-size: 0.9rem; color: #666;">Zaryad masofasi: 420 km</div>
+                    </div>
+                </div>
+                <div class="price-value">$28,500</div>
+            </div>
+            
+            <div class="price-row">
+                <div class="price-car">
+                    <div style="background: #2196F3; color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                        <i class="fas fa-car"></i>
+                    </div>
+                    <div>
+                        <div style="font-weight: bold;">Hyundai Tucson</div>
+                        <div style="font-size: 0.9rem; color: #666;">Kafolat: 5 yil/100,000 km</div>
+                    </div>
+                </div>
+                <div class="price-value">$29,800</div>
+            </div>
+            
+            <div class="price-row">
+                <div class="price-car">
+                    <div style="background: #9C27B0; color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                        <i class="fas fa-car"></i>
+                    </div>
+                    <div>
+                        <div style="font-weight: bold;">Chevrolet Lacetti</div>
+                        <div style="font-size: 0.9rem; color: #666;">Ishonchlilik: 4.5/5</div>
+                    </div>
+                </div>
+                <div class="price-value">$12,500</div>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin: 50px 0;">
+            <h2 style="color: #C62828; margin-bottom: 20px;">Avtomobil Tanlash Qo'llanmasi</h2>
+            <div style="max-width: 800px; margin: 0 auto; text-align: left;">
+                <div style="background: white; padding: 30px; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.05);">
+                    <h3 style="color: #C62828; margin-bottom: 20px;"><i class="fas fa-lightbulb"></i> Qanday Avtomobil Tanlash Kerak?</h3>
+                    
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-top: 25px;">
+                        <div style="background: #FFEBEE; padding: 20px; border-radius: 10px;">
+                            <h4 style="color: #C62828;"><i class="fas fa-gas-pump"></i> Yoqilg'i Sarfi</h4>
+                            <p>Shahar sharoitida 8-10 L/100km normal. Elektromobil uchun 100 km uchun 15-20 kWh sarf hisoblang.</p>
+                        </div>
+                        
+                        <div style="background: #E8F5E9; padding: 20px; border-radius: 10px;">
+                            <h4 style="color: #2E7D32;"><i class="fas fa-wrench"></i> Xizmat Ko'rsatish</h4>
+                            <p>Servis tarmog'i keng, ehtiyot qismlari arzon va mavjud bo'lgan brendlarni tanlang.</p>
+                        </div>
+                        
+                        <div style="background: #E3F2FD; padding: 20px; border-radius: 10px;">
+                            <h4 style="color: #1565C0;"><i class="fas fa-shield-alt"></i> Xavfsizlik</h4>
+                            <p>ABS, ESP, kamera, to'ldiruvchi yostiqlar muhim. Euro NCAP 5 yulduzli reytingni tekshiring.</p>
+                        </div>
+                        
+                        <div style="background: #FFF3E0; padding: 20px; border-radius: 10px;">
+                            <h4 style="color: #EF6C00;"><i class="fas fa-chart-line"></i> Qayta Sotish Qiymati</h4>
+                            <p>Toyota, Honda, Hyundai kabi brendlar qayta sotishda ko'proq qiymatini saqlaydi.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-column">
+                    <h3>Eng Yaxshisini Tanlang</h3>
+                    <p style="color: #FFCDD2; margin-bottom: 20px;">Biz haqiqiy odamlardan haqiqiy maslahatlar. Har bir mahsulotni o'zimiz sinab ko'ramiz.</p>
+                    <div style="display: flex; gap: 15px;">
+                        <a href="#" style="font-size: 1.2rem;"><i class="fab fa-telegram"></i></a>
+                        <a href="#" style="font-size: 1.2rem;"><i class="fab fa-instagram"></i></a>
+                        <a href="#" style="font-size: 1.2rem;"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Mashhur Solishtirishlar</h3>
+                    <ul>
+                        <li><a href="smartphone-comparisons.html"><i class="fas fa-mobile-alt"></i> Smartfon Solishtirishlari</a></li>
+                        <li><a href="laptop-comparisons.html"><i class="fas fa-laptop"></i> Noutbuk Solishtirishlari</a></li>
+                        <li><a href="automotive-comparisons.html"><i class="fas fa-car"></i> Avtomobil Solishtirishlari</a></li>
+                        <li><a href="appliances-comparisons.html"><i class="fas fa-blender"></i> Maishiy Texnika Solishtirishlari</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Yordam</h3>
+                    <ul>
+                        <li><a href="how-to-choose.html"><i class="fas fa-question-circle"></i> Qanday Tanlash Kerak?</a></li>
+                        <li><a href="buying-guide.html"><i class="fas fa-shopping-cart"></i> Xarid Qo'llanmasi</a></li>
+                        <li><a href="price-alerts.html"><i class="fas fa-bell"></i> Narx Ogohlantirishlari</a></li>
+                        <li><a href="newsletter.html"><i class="fas fa-newspaper"></i> Yangiliklar Obunasi</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Aloqada bo'ling</h3>
+                    <ul>
+                        <li><a href="#"><i class="fas fa-envelope"></i> info@engyaxshisi.uz</a></li>
+                        <li><a href="#"><i class="fas fa-phone"></i> +998 90 123 45 67</a></li>
+                        <li><a href="#"><i class="fas fa-map-marker-alt"></i> Toshkent, O'zbekiston</a></li>
+                    </ul>
+                    <form style="margin-top: 20px;">
+                        <input type="email" placeholder="Email manzilingiz" style="padding: 10px; width: 100%; border-radius: 5px; border: none; margin-bottom: 10px; background: rgba(255,255,255,0.1); color: white;">
+                        <button type="submit" style="background: #F44336; color: white; border: none; padding: 10px; border-radius: 5px; width: 100%; cursor: pointer;">Obuna bo'lish</button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2024 Eng Yaxshisini Tanlang. Barcha huquqlar himoyalangan.</p>
+                <p style="margin-top: 5px;">Biz haqiqiy testlar - haqiqiy tavsiyalar</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobileMenuBtn').addEventListener('click', function() {
+            document.getElementById('mainNav').classList.toggle('active');
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                if(this.getAttribute('href') === '#') return;
+                
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    document.getElementById('mainNav').classList.remove('active');
+                }
+            });
+        });
+        
+        // Form submission
+        document.querySelector('form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const email = this.querySelector('input[type="email"]').value;
+            if(email) {
+                alert('Avtomobil yangiliklari obunangiz qabul qilindi! Rahmat.');
+                this.reset();
+            }
+        });
+        
+        // Button click handlers
+        document.querySelectorAll('.btn').forEach(button => {
+            button.addEventListener('click', function() {
+                alert("Batafsil solishtirish maqolasi tez orada qo'shiladi!");
+            });
+        });
+        
+        // Animate fuel bars on scroll
+        const observerOptions = {
+            threshold: 0.2,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const fuelFills = entry.target.querySelectorAll('.fuel-fill');
+                    fuelFills.forEach(fill => {
+                        const width = fill.style.width;
+                        fill.style.width = '0';
+                        setTimeout(() => {
+                            fill.style.width = width;
+                        }, 300);
+                    });
+                }
+            });
+        }, observerOptions);
+        
+        // Observe comparison cards for animation
+        document.querySelectorAll('.comparison-card').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            observer.observe(el);
+            
+            // Animate on load
+            setTimeout(() => {
+                el.style.opacity = '1';
+                el.style.transform = 'translateY(0)';
+            }, 100);
+        });
+    </script>
+</body>
+</html>
