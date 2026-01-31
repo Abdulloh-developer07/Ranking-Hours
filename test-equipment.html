@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Bizning test laboratoriyamizda qanday uskunalardan foydalanamiz">
+    <title>Test Uskunalari | RankingHours</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #00695c;
+            --secondary: #00897b;
+            --accent: #4db6ac;
+            --light: #e0f2f1;
+            --dark: #004d40;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #f1f8e9 0%, #e8f5e9 100%);
+            color: #263238;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--dark) 100%);
+            color: white;
+            padding: 20px 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo i {
+            font-size: 2rem;
+            color: var(--accent);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 8px 15px;
+            border-radius: 20px;
+            transition: all 0.3s;
+        }
+
+        nav a:hover, nav a.active {
+            background-color: var(--secondary);
+        }
+
+        .page-header {
+            background: linear-gradient(rgba(0, 105, 92, 0.9), rgba(0, 77, 64, 0.9)), url('https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 100px 20px;
+            margin-bottom: 50px;
+            border-radius: 0 0 30px 30px;
+        }
+
+        .page-header h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .equipment-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .equipment-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s;
+        }
+
+        .equipment-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .equipment-image {
+            height: 200px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 4rem;
+        }
+
+        .equipment-content {
+            padding: 25px;
+        }
+
+        .equipment-content h3 {
+            color: var(--primary);
+            margin-bottom: 10px;
+            font-size: 1.4rem;
+        }
+
+        .specs {
+            background: var(--light);
+            padding: 15px;
+            border-radius: 10px;
+            margin: 15px 0;
+            font-size: 0.9rem;
+        }
+
+        .ad-unit {
+            background: #f8f9fa;
+            border: 2px dashed #dee2e6;
+            border-radius: 10px;
+            padding: 30px;
+            text-align: center;
+            margin: 40px 0;
+            color: #6c757d;
+        }
+
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 50px 0 20px;
+            margin-top: 50px;
+        }
+
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #b0bec5;
+            font-size: 0.9rem;
+        }
+
+        .lab-photo {
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            margin: 30px 0;
+            text-align: center;
+        }
+
+        .lab-photo img {
+            max-width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        @media (max-width: 768px) {
+            .equipment-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .page-header h1 {
+                font-size: 2.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <i class="fas fa-microscope"></i>
+                <div>Ranking<span>Hours</span></div>
+            </a>
+            
+            <nav>
+                <ul>
+                    <li><a href="index.html"><i class="fas fa-home"></i> Bosh</a></li>
+                    <li><a href="test-process.html"><i class="fas fa-vial"></i> Test Jarayoni</a></li>
+                    <li><a href="test-equipment.html" class="active"><i class="fas fa-tools"></i> Uskunalar</a></li>
+                    <li><a href="methodology.html"><i class="fas fa-cogs"></i> Metodologiya</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="page-header">
+        <div class="container">
+            <h1><i class="fas fa-tools"></i> Test Uskunalari</h1>
+            <p>Professional test laboratoriyamizda qanday uskunalardan foydalanamiz</p>
+        </div>
+    </section>
+
+    <div class="container">
+        <div class="lab-photo">
+            <h3><i class="fas fa-laboratory"></i> Bizning Test Laboratoriyamiz</h3>
+            <p>Professional testlar uchun jihozlangan laboratoriya</p>
+            <div style="background: var(--light); padding: 20px; border-radius: 10px; margin-top: 15px;">
+                <i class="fas fa-camera fa-3x" style="color: var(--primary);"></i>
+                <p style="margin-top: 10px;">Laboratoriya fotosurati</p>
+            </div>
+        </div>
+
+        <div class="equipment-grid">
+            <!-- Equipment 1 -->
+            <div class="equipment-card">
+                <div class="equipment-image">
+                    <i class="fas fa-thermometer-half"></i>
+                </div>
+                <div class="equipment-content">
+                    <h3>Issiqlik va Namlik Test Uskunasi</h3>
+                    <p>Mahsulotlarning turli sharoitlarda ishlashini test qilish</p>
+                    <div class="specs">
+                        <strong>Texnik xususiyatlar:</strong>
+                        <ul style="margin-top: 5px; padding-left: 20px;">
+                            <li>Harorat diapazoni: -20°C dan +70°C gacha</li>
+                            <li>Namlik diapazoni: 10% dan 95% gacha</li>
+                            <li>Aniqlik: ±0.5°C</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Equipment 2 -->
+            <div class="equipment-card">
+                <div class="equipment-image">
+                    <i class="fas fa-tachometer-alt"></i>
+                </div>
+                <div class="equipment-content">
+                    <h3>Ishlash Test Standi</h3>
+                    <p>Protsessor, GPU va xotira ishlashini o'lchash</p>
+                    <div class="specs">
+                        <strong>Test dasturlari:</strong>
+                        <ul style="margin-top: 5px; padding-left: 20px;">
+                            <li>3DMark Professional</li>
+                            <li>Geekbench 6 Pro</li>
+                            <li>Cinebench R23</li>
+                            <li>PCMark 10</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Equipment 3 -->
+            <div class="equipment-card">
+                <div class="equipment-image">
+                    <i class="fas fa-battery-full"></i>
+                </div>
+                <div class="equipment-content">
+                    <h3>Batareya Test Sistemi</h3>
+                    <p>Quvvat iste'moli va batareya muddatini o'lchash</p>
+                    <div class="specs">
+                        <strong>O'lchash tizimi:</strong>
+                        <ul style="margin-top: 5px; padding-left: 20px;">
+                            <li>Monsoon Power Monitor</li>
+                            <li>Aniqlik: ±0.1%</li>
+                            <li>Quvvat diapazoni: 0-100W</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Equipment 4 -->
+            <div class="equipment-card">
+                <div class="equipment-image">
+                    <i class="fas fa-camera"></i>
+                </div>
+                <div class="equipment-content">
+                    <h3>Kamera Test Uskunasi</h3>
+                    <p>Foto va video kameralar sifati uchun</p>
+                    <div class="specs">
+                        <strong>Test muhiti:</strong>
+                        <ul style="margin-top: 5px; padding-left: 20px;">
+                            <li>Kontroll yoritish stansiyasi</li>
+                            <li>ColorChecker paneli</li>
+                            <li>Aniq fokus test chartlari</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Equipment 5 -->
+            <div class="equipment-card">
+                <div class="equipment-image">
+                    <i class="fas fa-wave-square"></i>
+                </div>
+                <div class="equipment-content">
+                    <h3>Audio Test Sistemi</h3>
+                    <p>Ovoz sifati va chastotalarni o'lchash</p>
+                    <div class="specs">
+                        <strong>Audio analizator:</strong>
+                        <ul style="margin-top: 5px; padding-left: 20px;">
+                            <li>Audio Precision APx585</li>
+                            <li>Aniq bosh simulatori</li>
+                            <li>Sessiz kamera</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Equipment 6 -->
+            <div class="equipment-card">
+                <div class="equipment-image">
+                    <i class="fas fa-vial"></i>
+                </div>
+                <div class="equipment-content">
+                    <h3>Chidamlilik Test Uskunasi</h3>
+                    <p>Mexanik chidamlilik va bardoshlilik</p>
+                    <div class="specs">
+                        <strong>Testlar:</strong>
+                        <ul style="margin-top: 5px; padding-left: 20px;">
+                            <li>Yiqilish testi (1.5 metr)</li>
+                            <li>Egilish testi</li>
+                            <li>Yuzaga ishqalanish testi</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="ad-unit">
+            <h3>Professional Test Uskunalari</h3>
+            <p>Bu yerda professional test uskunalari reklamasi bo'lishi mumkin</p>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-column">
+                    <h3>RankingHours</h3>
+                    <p>Professional test uskunalari bilan ishonchli natijalar.</p>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Test Infrastruktura</h3>
+                    <ul>
+                        <li><a href="#"><i class="fas fa-building"></i> Laboratoriya</a></li>
+                        <li><a href="#"><i class="fas fa-tools"></i> Uskunalar</a></li>
+                        <li><a href="#"><i class="fas fa-users"></i> Mutaxassislar</a></li>
+                        <li><a href="#"><i class="fas fa-certificate"></i> Sertifikatlar</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Kalibratsiya</h3>
+                    <p>Barcha uskunalarimiz muntazam ravishda kalibrlanadi va sertifikatlanadi.</p>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2024 RankingHours Test Laboratoriyasi. ISO 17025 standartlari asosida.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
