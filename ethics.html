@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Bizning etika kodeksimiz - adolatli va shaffof testlar uchun asos">
+    <title>Etika Kodeksi | RankingHours</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #5c6bc0;
+            --secondary: #7986cb;
+            --accent: #9fa8da;
+            --light: #e8eaf6;
+            --dark: #3949ab;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #f3f4f9 0%, #e8eaf6 100%);
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--dark) 100%);
+            color: white;
+            padding: 20px 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo i {
+            font-size: 2rem;
+            color: var(--accent);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 8px 15px;
+            border-radius: 20px;
+            transition: all 0.3s;
+        }
+
+        nav a:hover, nav a.active {
+            background-color: var(--secondary);
+        }
+
+        .page-header {
+            background: linear-gradient(rgba(92, 107, 192, 0.9), rgba(57, 73, 171, 0.9)), url('https://images.unsplash.com/photo-1553877522-43269d4ea984?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 100px 20px;
+            margin-bottom: 50px;
+            border-radius: 0 0 30px 30px;
+        }
+
+        .page-header h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .ethics-container {
+            display: grid;
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .ethics-card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            border-left: 5px solid var(--primary);
+        }
+
+        .ethics-card h3 {
+            color: var(--primary);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .principle-number {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 35px;
+            margin-right: 10px;
+            font-weight: bold;
+        }
+
+        .ad-unit {
+            background: #f8f9fa;
+            border: 2px dashed #dee2e6;
+            border-radius: 10px;
+            padding: 30px;
+            text-align: center;
+            margin: 40px 0;
+            color: #6c757d;
+        }
+
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 50px 0 20px;
+            margin-top: 50px;
+        }
+
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #b0bec5;
+            font-size: 0.9rem;
+        }
+
+        .compliance-section {
+            background: var(--light);
+            padding: 30px;
+            border-radius: 15px;
+            margin: 30px 0;
+        }
+
+        @media (max-width: 768px) {
+            .page-header h1 {
+                font-size: 2.2rem;
+            }
+            
+            .ethics-card {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <i class="fas fa-scale-balanced"></i>
+                <div>Ranking<span>Hours</span></div>
+            </a>
+            
+            <nav>
+                <ul>
+                    <li><a href="index.html"><i class="fas fa-home"></i> Bosh</a></li>
+                    <li><a href="ethics.html" class="active"><i class="fas fa-scale-balanced"></i> Etika</a></li>
+                    <li><a href="independence.html"><i class="fas fa-shield-alt"></i> Mustaqillik</a></li>
+                    <li><a href="funding.html"><i class="fas fa-money-bill"></i> Moliyalashtirish</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="page-header">
+        <div class="container">
+            <h1><i class="fas fa-scale-balanced"></i> Etika Kodeksi</h1>
+            <p>Adolatli, halol va shaffof testlar uchun bizning axloqiy tamoyillarimiz</p>
+        </div>
+    </section>
+
+    <div class="container">
+        <div class="compliance-section">
+            <h2 style="color: var(--primary); text-align: center; margin-bottom: 20px;">
+                <i class="fas fa-handshake"></i> Bizning Vajibimiz
+            </h2>
+            <p style="text-align: center; font-size: 1.1rem;">
+                Biz iste'molchilar uchun ishonchli, xolis va aniq ma'lumot berishni maqsad qilgan holda,
+                quyidagi etika tamoyillariga qat'iy rioya qilamiz.
+            </p>
+        </div>
+
+        <div class="ethics-container">
+            <!-- Principle 1 -->
+            <div class="ethics-card">
+                <h3><span class="principle-number">1</span> Xolislik va Adolat</h3>
+                <p>Barcha testlar va sharhlar to'liq xolis va adolatli asosda amalga oshiriladi.</p>
+                <ul style="margin: 15px 0; padding-left: 20px;">
+                    <li>Hech qanday kompaniya yoki brend bilan imtiyozli shartnomalar</li>
+                    <li>Barcha mahsulotlar bir xil shartlarda testlanadi</li>
+                    <li>Shaxsiy qadr-qimmatlar test natijalariga ta'sir qilmaydi</li>
+                </ul>
+            </div>
+
+            <!-- Principle 2 -->
+            <div class="ethics-card">
+                <h3><span class="principle-number">2</span> Shaffoflik</h3>
+                <p>Test metodologiyasi va natijalari to'liq ochiq va tushunarli.</p>
+                <ul style="margin: 15px 0; padding-left: 20px;">
+                    <li>Barcha test usullari ochiq e'lon qilinadi</li>
+                    <li>Moliyaviy manbalar ochiq ko'rsatiladi</li>
+                    <li>Test natijalarini tasdiqlovchi ma'lumotlar taqdim etiladi</li>
+                </ul>
+            </div>
+
+            <!-- Principle 3 -->
+            <div class="ethics-card">
+                <h3><span class="principle-number">3</span> To'g'rilik va Aniqlik</h3>
+                <p>Barcha ma'lumotlar to'g'ri, aniq va dalillar asosida taqdim etiladi.</p>
+                <ul style="margin: 15px 0; padding-left: 20px;">
+                    <li>Faqat o'lchangan va tasdiqlangan natijalar e'lon qilinadi</li>
+                    <li>Taxmin va g'oyalar aniq belgilab qo'yiladi</li>
+                    <li>Xatolar darhol tuzatiladi va e'lon qilinadi</li>
+                </ul>
+            </div>
+
+            <!-- Principle 4 -->
+            <div class="ethics-card">
+                <h3><span class="principle-number">4</span> Maxfiylik va Xavfsizlik</h3>
+                <p>Test jarayonida olingan maxfiy ma'lumotlar qat'iy himoya qilinadi.</p>
+                <ul style="margin: 15px 0; padding-left: 20px;">
+                    <li>NDA (Maxfiylik kelishuvi) shartlariga qat'iy rioya</li>
+                    <li>Ishlab chiqaruvchilarning maxfiy ma'lumotlari himoyalanadi</li>
+                    <li>Test jarayonida olingan shaxsiy ma'lumotlar himoyalanadi</li>
+                </ul>
+            </div>
+
+            <!-- Principle 5 -->
+            <div class="ethics-card">
+                <h3><span class="principle-number">5</span> Mas'uliyat</h3>
+                <p>Biz o'z sharhlarimiz va tavsiyalarimiz uchun to'liq javobgarmiz.</p>
+                <ul style="margin: 15px 0; padding-left: 20px;">
+                    <li>Barcha materiallar to'g'ri va yangilangan bo'lishi kafolatlanadi</li>
+                    <li>Xatolar uchun to'liq javobgarlik</li>
+                    <li>Iste'molchilarning fikr-mulohazalari e'tiborga olinadi</li>
+                </ul>
+            </div>
+
+            <!-- Principle 6 -->
+            <div class="ethics-card">
+                <h3><span class="principle-number">6</span> Qonuniylik</h3>
+                <p>Barcha faoliyat qonunlar va qoidalarga to'liq mos ravishda olib boriladi.</p>
+                <ul style="margin: 15px 0; padding-left: 20px;">
+                    <li>Mualliflik huquqi qonunlariga rioya</li>
+                    <li>Tijorat sirlarini himoya qilish</li>
+                    <li>Reklama qonunlariga to'liq rioya</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="ad-unit">
+            <h3>Etika va Shaffoflik</h3>
+            <p>Bu yerda etik biznes amaliyotlari haqida reklama bo'lishi mumkin</p>
+        </div>
+
+        <div class="compliance-section">
+            <h3 style="color: var(--primary); margin-bottom: 15px;">
+                <i class="fas fa-flag"></i> Etika Bo'yicha Shikoyatlar
+            </h3>
+            <p>Agar siz bizning etika kodeksimizga rioya qilinmagan deb hisoblasangiz, iltimos, bizga xabar bering:</p>
+            <div style="background: white; padding: 20px; border-radius: 10px; margin-top: 15px;">
+                <p><strong>Email:</strong> ethics@rankinghours.uz</p>
+                <p><strong>Telefon:</strong> +998 90 123 45 67</p>
+                <p><strong>Muddati:</strong> 5 ish kuni ichida javob beramiz</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-column">
+                    <h3>Etika Kodeksi</h3>
+                    <p>Bizning axloqiy tamoyillarimiz - ishonchli testlar uchun asos.</p>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Transparency</h3>
+                    <ul>
+                        <li><a href="ethics.html"><i class="fas fa-scale-balanced"></i> Etika Kodeksi</a></li>
+                        <li><a href="independence.html"><i class="fas fa-shield-alt"></i> Mustaqillik</a></li>
+                        <li><a href="funding.html"><i class="fas fa-money-bill"></i> Moliyalashtirish</a></li>
+                        <li><a href="corrections.html"><i class="fas fa-edit"></i> Tuzatishlar</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Shikoyatlar</h3>
+                    <p>Etika kodeksiga rioya qilinmasligi haqida xabar berish:</p>
+                    <p>ethics@rankinghours.uz</p>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2024 RankingHours. Barcha huquqlar himoyalangan. Etika kodeksi 2023 yil 1 yanvardan kuchga kirgan.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
