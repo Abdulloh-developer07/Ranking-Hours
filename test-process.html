@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Mahsulotlarni qanday sinab ko'ramiz? Bizning batafsil test jarayonimiz.">
+    <title>Test Jarayoni | RankingHours</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --secondary: #3498db;
+            --accent: #e74c3c;
+            --light: #ecf0f1;
+            --dark: #2c3e50;
+            --success: #27ae60;
+            --warning: #f39c12;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            color: var(--dark);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary) 0%, #34495e 100%);
+            color: white;
+            padding: 20px 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo i {
+            font-size: 2rem;
+            color: var(--secondary);
+        }
+
+        .logo span {
+            color: var(--secondary);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 8px 15px;
+            border-radius: 20px;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        nav a:hover, nav a.active {
+            background-color: var(--secondary);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        .page-header {
+            background: linear-gradient(rgba(44, 62, 80, 0.9), rgba(52, 73, 94, 0.9)), url('https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 100px 20px;
+            margin-bottom: 50px;
+            border-radius: 0 0 30px 30px;
+        }
+
+        .page-header h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .page-header p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+
+        .process-timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+        }
+
+        .process-timeline::before {
+            content: '';
+            position: absolute;
+            left: 50px;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: var(--secondary);
+            transform: translateX(-50%);
+        }
+
+        .process-step {
+            position: relative;
+            margin-bottom: 40px;
+            padding-left: 80px;
+        }
+
+        .step-icon {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100px;
+            height: 100px;
+            background: white;
+            border: 4px solid var(--secondary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: var(--secondary);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .step-content {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        .step-content h3 {
+            color: var(--primary);
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+
+        .step-number {
+            display: inline-block;
+            background: var(--secondary);
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 30px;
+            margin-right: 10px;
+            font-weight: bold;
+        }
+
+        .test-duration {
+            background: var(--light);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            border-left: 5px solid var(--success);
+        }
+
+        .ad-unit {
+            background: #f8f9fa;
+            border: 2px dashed #dee2e6;
+            border-radius: 10px;
+            padding: 30px;
+            text-align: center;
+            margin: 40px 0;
+            color: #6c757d;
+        }
+
+        footer {
+            background: var(--primary);
+            color: white;
+            padding: 50px 0 20px;
+            margin-top: 50px;
+        }
+
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #bdc3c7;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .process-timeline::before {
+                left: 40px;
+            }
+            
+            .process-step {
+                padding-left: 70px;
+            }
+            
+            .step-icon {
+                width: 80px;
+                height: 80px;
+                font-size: 1.5rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .process-timeline {
+                padding: 10px;
+            }
+            
+            .process-timeline::before {
+                left: 30px;
+            }
+            
+            .process-step {
+                padding-left: 60px;
+            }
+            
+            .step-icon {
+                width: 60px;
+                height: 60px;
+                font-size: 1.2rem;
+            }
+            
+            .step-content {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <i class="fas fa-flask"></i>
+                <div>Ranking<span>Hours</span></div>
+            </a>
+            
+            <nav>
+                <ul id="mainNav">
+                    <li><a href="index.html"><i class="fas fa-home"></i> Bosh</a></li>
+                    <li><a href="methodology.html"><i class="fas fa-cogs"></i> Metodologiya</a></li>
+                    <li><a href="test-process.html" class="active"><i class="fas fa-vial"></i> Test Jarayoni</a></li>
+                    <li><a href="test-equipment.html"><i class="fas fa-tools"></i> Uskunalar</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="page-header">
+        <div class="container">
+            <h1><i class="fas fa-vial"></i> Test Jarayoni</h1>
+            <p>Har bir mahsulotni qanday sinab ko'ramiz? 5 bosqichli standart test jarayonimiz.</p>
+        </div>
+    </section>
+
+    <div class="container">
+        <div class="ad-unit">
+            <h3>Test Uskunalari Reklamasi</h3>
+            <p>Bu yerda test jarayonida foydalaniladigan uskunalar reklamasi</p>
+        </div>
+
+        <div class="process-timeline">
+            <!-- Step 1 -->
+            <div class="process-step">
+                <div class="step-icon">
+                    <i class="fas fa-box-open"></i>
+                </div>
+                <div class="step-content">
+                    <h3><span class="step-number">1</span> Mahsulotni Ochish va Dastlabki Ko'rish</h3>
+                    <p>Har bir mahsulotni rasmiy qadoqlashda ochamiz va dastlabki tasvirni qayd etamiz:</p>
+                    <ul style="margin: 15px 0; padding-left: 20px;">
+                        <li>Qadoqlash sifati va dizayni</li>
+                        <li>Komplektatsiya (barcha aksessuarlar mavjudligi)</li>
+                        <li>Dastlabki qurilish sifatini tekshirish</li>
+                        <li>Hujjatlarni tekshirish (kafolat, qo'llanma)</li>
+                    </ul>
+                    <div class="test-duration">
+                        <strong><i class="fas fa-clock"></i> Vaqt:</strong> 1-2 soat
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 2 -->
+            <div class="process-step">
+                <div class="step-icon">
+                    <i class="fas fa-battery-full"></i>
+                </div>
+                <div class="step-content">
+                    <h3><span class="step-number">2</span> Dastlabki Sozlash va Kalibratsiya</h3>
+                    <p>Mahsulotni ishlatishga tayyorlash:</p>
+                    <ul style="margin: 15px 0; padding-left: 20px;">
+                        <li>Batareyani to'liq zaryadlash (agar bor bo'lsa)</li>
+                        <li>Dasturiy ta'minotni yangilash</li>
+                        <li>Standart sozlamalarni o'rnatish</li>
+                        <li>Kalibratsiya (ekran, sensorlar, va boshqalar)</li>
+                    </ul>
+                    <div class="test-duration">
+                        <strong><i class="fas fa-clock"></i> Vaqt:</strong> 2-4 soat
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 3 -->
+            <div class="process-step">
+                <div class="step-icon">
+                    <i class="fas fa-tasks"></i>
+                </div>
+                <div class="step-content">
+                    <h3><span class="step-number">3</span> Standart Testlar</h3>
+                    <p>Barcha mahsulotlar uchun umumiy testlar:</p>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin: 20px 0;">
+                        <div style="background: #e8f4fc; padding: 15px; border-radius: 8px;">
+                            <strong>Ishlash Testi</strong>
+                            <p>Asosiy funksiyalar</p>
+                        </div>
+                        <div style="background: #e8f4fc; padding: 15px; border-radius: 8px;">
+                            <strong>Quvvat Testi</strong>
+                            <p>Batareya/quvvat sarfi</p>
+                        </div>
+                        <div style="background: #e8f4fc; padding: 15px; border-radius: 8px;">
+                            <strong>Qurilish Sifati</strong>
+                            <p>Material va qurilish</p>
+                        </div>
+                        <div style="background: #e8f4fc; padding: 15px; border-radius: 8px;">
+                            <strong>Qulaylik Testi</strong>
+                            <p>Foydalanuvchi tajribasi</p>
+                        </div>
+                    </div>
+                    <div class="test-duration">
+                        <strong><i class="fas fa-clock"></i> Vaqt:</strong> 3-7 kun
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 4 -->
+            <div class="process-step">
+                <div class="step-icon">
+                    <i class="fas fa-chart-line"></i>
+                </div>
+                <div class="step-content">
+                    <h3><span class="step-number">4</span> Maxsus Testlar</h3>
+                    <p>Mahsulot turiga qarab maxsus testlar:</p>
+                    <div style="background: #fff3cd; padding: 20px; border-radius: 10px; margin: 15px 0;">
+                        <h4><i class="fas fa-mobile-alt"></i> Smartfonlar uchun:</h4>
+                        <ul style="margin: 10px 0; padding-left: 20px;">
+                            <li>Kamera testi (yorug'lik, xira)</li>
+                            <li>Ovoz sifati</li>
+                            <li>GPS aniqligi</li>
+                            <li>O'yin ishlashi</li>
+                        </ul>
+                    </div>
+                    <div style="background: #d1ecf1; padding: 20px; border-radius: 10px; margin: 15px 0;">
+                        <h4><i class="fas fa-laptop"></i> Noutbuklar uchun:</h4>
+                        <ul style="margin: 10px 0; padding-left: 20px;">
+                            <li>Ishlovchi quvvati</li>
+                            <li>Issiqlik boshqaruvi</li>
+                            <li>Ekran sifati</li>
+                            <li>Klaviatura/trackpad</li>
+                        </ul>
+                    </div>
+                    <div class="test-duration">
+                        <strong><i class="fas fa-clock"></i> Vaqt:</strong> 5-14 kun
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 5 -->
+            <div class="process-step">
+                <div class="step-icon">
+                    <i class="fas fa-file-alt"></i>
+                </div>
+                <div class="step-content">
+                    <h3><span class="step-number">5</span> Natijalarni Tahlil Qilish va Hisobot</h3>
+                    <p>Test natijalarini qayta ishlash va hisobot tayyorlash:</p>
+                    <ul style="margin: 15px 0; padding-left: 20px;">
+                        <li>Barcha ma'lumotlarni tahlil qilish</li>
+                        <li>Solishtirish jadvalini tuzish</li>
+                        <li>Afzalliklar va kamchiliklar ro'yxati</li>
+                        <li>Video va fotoreportaj tayyorlash</li>
+                        <li>Yakuniy reyting berish</li>
+                    </ul>
+                    <div class="test-duration">
+                        <strong><i class="fas fa-clock"></i> Vaqt:</strong> 2-3 kun
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="ad-unit">
+            <h3>Test Natijalari</h3>
+            <p>Eng so'nggi test natijalarimizni ko'rish uchun solishtirishlar sahifasiga o'ting</p>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-column">
+                    <h3>RankingHours</h3>
+                    <p>Biz haqiqiy odamlardan haqiqiy maslahatlar. Har bir mahsulotni o'zimiz sinab ko'ramiz.</p>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Test Usullari</h3>
+                    <ul>
+                        <li><a href="methodology.html"><i class="fas fa-cogs"></i> Metodologiya</a></li>
+                        <li><a href="rating-system.html"><i class="fas fa-star"></i> Reyting Tizimi</a></li>
+                        <li><a href="test-process.html"><i class="fas fa-vial"></i> Test Jarayoni</a></li>
+                        <li><a href="test-equipment.html"><i class="fas fa-tools"></i> Test Uskunalari</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Transparency</h3>
+                    <ul>
+                        <li><a href="ethics.html"><i class="fas fa-scale-balanced"></i> Etika Kodeksi</a></li>
+                        <li><a href="independence.html"><i class="fas fa-shield-alt"></i> Mustaqillik</a></li>
+                        <li><a href="funding.html"><i class="fas fa-money-bill"></i> Moliyalashtirish</a></li>
+                        <li><a href="corrections.html"><i class="fas fa-edit"></i> Tuzatishlar</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2024 RankingHours. Barcha testlar haqiqiy.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
