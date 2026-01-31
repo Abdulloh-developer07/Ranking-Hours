@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Mahsulotlarni qanday tanlash kerak? To'g'ri tanlov qilish uchun to'liq qo'llanma.">
+    <title>Qanday Tanlash Kerak? | Haqiqiy Maslahatlar</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --secondary: #3498db;
+            --accent: #e74c3c;
+            --light: #ecf0f1;
+            --dark: #2c3e50;
+            --success: #27ae60;
+            --warning: #f39c12;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            color: var(--dark);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--primary);
+            color: white;
+            padding: 20px 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo i {
+            font-size: 2rem;
+            color: var(--secondary);
+        }
+
+        .logo span {
+            color: var(--secondary);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 8px 15px;
+            border-radius: 20px;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        nav a:hover, nav a.active {
+            background-color: var(--secondary);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Page Header */
+        .page-header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            text-align: center;
+            padding: 80px 20px;
+            margin-bottom: 50px;
+            border-radius: 0 0 30px 30px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .page-header:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 Z" fill="rgba(255,255,255,0.1)"/></svg>');
+            background-size: cover;
+        }
+
+        .page-header h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .page-header p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto;
+            opacity: 0.9;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Content */
+        .guide-container {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+
+        .main-content {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .sidebar {
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            height: fit-content;
+            position: sticky;
+            top: 100px;
+        }
+
+        .step {
+            margin-bottom: 40px;
+            padding-bottom: 30px;
+            border-bottom: 2px dashed #eee;
+        }
+
+        .step:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+        }
+
+        .step-number {
+            display: inline-block;
+            background: var(--secondary);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 40px;
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+        }
+
+        .step h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+
+        .step-content {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 15px;
+        }
+
+        .tip-box {
+            background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+            border-left: 5px solid var(--secondary);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 0 10px 10px 0;
+        }
+
+        .warning-box {
+            background: linear-gradient(135deg, #ffebee 0%, #ffcdd2 100%);
+            border-left: 5px solid var(--accent);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 0 10px 10px 0;
+        }
+
+        .checklist {
+            list-style: none;
+            margin: 20px 0;
+        }
+
+        .checklist li {
+            padding: 10px 0 10px 35px;
+            position: relative;
+        }
+
+        .checklist li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            top: 10px;
+            width: 25px;
+            height: 25px;
+            background: var(--success);
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 25px;
+            font-weight: bold;
+        }
+
+        /* Category Cards */
+        .category-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin: 40px 0;
+        }
+
+        .category-card {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            text-align: center;
+            transition: all 0.3s;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+
+        .category-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .category-card i {
+            font-size: 2.5rem;
+            color: var(--secondary);
+            margin-bottom: 15px;
+        }
+
+        .category-card h4 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: var(--primary);
+        }
+
+        /* Adsense */
+        .ad-unit {
+            background: #f8f9fa;
+            border: 2px dashed #ddd;
+            border-radius: 10px;
+            padding: 30px;
+            text-align: center;
+            margin: 40px 0;
+            color: #666;
+        }
+
+        .ad-unit h3 {
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary);
+            color: white;
+            padding: 50px 0 20px;
+            margin-top: 50px;
+        }
+
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .footer-column h3 {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            color: var(--secondary);
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column li {
+            margin-bottom: 10px;
+        }
+
+        .footer-column a {
+            color: #bdc3c7;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-column a:hover {
+            color: white;
+            text-decoration: underline;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #95a5a6;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .guide-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .sidebar {
+                position: static;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                text-align: center;
+                gap: 15px;
+            }
+
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .page-header h1 {
+                font-size: 2.2rem;
+            }
+
+            .page-header p {
+                font-size: 1rem;
+            }
+
+            .main-content {
+                padding: 25px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .mobile-menu-btn {
+                display: block;
+                position: absolute;
+                top: 20px;
+                right: 20px;
+            }
+
+            nav ul {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                margin-top: 15px;
+            }
+
+            nav ul.active {
+                display: flex;
+            }
+
+            .page-header {
+                padding: 60px 20px;
+            }
+
+            .page-header h1 {
+                font-size: 1.8rem;
+            }
+
+            .category-cards {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <i class="fas fa-check-circle"></i>
+                <div>Haqiqiy<span>Testlar</span></div>
+            </a>
+            
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <nav>
+                <ul id="mainNav">
+                    <li><a href="index.html"><i class="fas fa-home"></i> Bosh Sahifa</a></li>
+                    <li><a href="comparisons.html"><i class="fas fa-balance-scale"></i> Solishtirishlar</a></li>
+                    <li><a href="how-to-choose.html" class="active"><i class="fas fa-question-circle"></i> Qanday Tanlash</a></li>
+                    <li><a href="buying-guide.html"><i class="fas fa-shopping-cart"></i> Xarid Qo'llanmasi</a></li>
+                    <li><a href="price-alerts.html"><i class="fas fa-bell"></i> Narx Ogohlantirish</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1><i class="fas fa-question-circle"></i> Qanday Tanlash Kerak?</h1>
+            <p>To'g'ri mahsulotni tanlash uchun bosqichma-bosqich qo'llanma. Har bir kategoriya uchun maxsus maslahatlar.</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <div class="container">
+        <!-- Adsense Top Banner -->
+        <div class="ad-unit">
+            <h3>Reklama</h3>
+            <p>Bu yerda mahsulot tanlashga oid foydali reklamalar ko'rsatilishi mumkin</p>
+            <p>728x90 o'lchamdagi banner</p>
+        </div>
+
+        <div class="guide-container">
+            <div class="main-content">
+                <!-- Introduction -->
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Tanlashning Asosiy Tamoyillari</h3>
+                    <p>Har qanday mahsulotni tanlashda quyidagi 5 ta asosiy tamoyilga amal qiling:</p>
+                    
+                    <div class="step-content">
+                        <h4><i class="fas fa-bullseye"></i> 1. Ehtiyojlarni aniqlash</h4>
+                        <p>Avval o'zingizga savol bering: "Menga bu mahsulot nimasi kerak?" Keraksiz funksiyalar uchun ortiqcha pul to'lamang.</p>
+                        
+                        <div class="tip-box">
+                            <strong><i class="fas fa-lightbulb"></i> Maslahat:</strong> Har bir funksiya uchun "Menga bu kerakmi?" deb so'rang. Agar javob "Yo'q" bo'lsa, uni o'tkazib yuboring.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Byudjetni Belgilash</h3>
+                    <p>Byudjetingizni oldindan belgilang va unga qat'iy rioya qiling.</p>
+                    
+                    <div class="step-content">
+                        <h4><i class="fas fa-money-bill-wave"></i> Byudjetni qanday belgilash kerak?</h4>
+                        <ul class="checklist">
+                            <li>Maksimal byudjetni belgilang</li>
+                            <li>Narx oralig'ini aniqlang (masalan: $300-400)</li>
+                            <li>Qo'shimcha xarajatlarni hisobga oling (yetkazib berish, kafolat, aksessuarlar)</li>
+                            <li>Chegirmalar va aksiyalarni kuzatib boring</li>
+                        </ul>
+                        
+                        <div class="warning-box">
+                            <strong><i class="fas fa-exclamation-triangle"></i> Diqqat:</strong> Eng arzon variant har doim eng yaxshi emas. Ba'zida biroz qimmatroq mahsulot uzoq muddatda tejamkorroq bo'ladi.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Spetsifikatsiyalarni Tushunish</h3>
+                    <p>Texnik spetsifikatsiyalarni qanday tushunish va solishtirish kerak?</p>
+                    
+                    <div class="step-content">
+                        <h4><i class="fas fa-microchip"></i> Muhim parametrlar:</h4>
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin: 20px 0;">
+                            <div style="background: #e8f4fc; padding: 15px; border-radius: 8px;">
+                                <strong>Protsessor/GPU</strong>
+                                <p>Tezlik va samaradorlik</p>
+                            </div>
+                            <div style="background: #e8f4fc; padding: 15px; border-radius: 8px;">
+                                <strong>Xotira (RAM)</strong>
+                                <p>Ko'p vazifalilik</p>
+                            </div>
+                            <div style="background: #e8f4fc; padding: 15px; border-radius: 8px;">
+                                <strong>Saqlash (Storage)</strong>
+                                <p>Fayllar uchun joy</p>
+                            </div>
+                            <div style="background: #e8f4fc; padding: 15px; border-radius: 8px;">
+                                <strong>Batareya/quvvat</strong>
+                                <p>Ishlash muddati</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h3>Sharhlar va Reytinglarni O'rganish</h3>
+                    <p>Foydalanuvchi sharhlarini qanday to'g'ri tahlil qilish kerak?</p>
+                    
+                    <div class="step-content">
+                        <h4><i class="fas fa-star"></i> Sharhlarni tahlil qilish sirlari:</h4>
+                        <ul class="checklist">
+                            <li>Ko'p sonli sharhlarga e'tibor bering (100+)</li>
+                            <li>Eng yangi sharhlarni o'qing</li>
+                            <li>1 va 5 ballik sharhlarni diqqat bilan o'qing</li>
+                            <li>Takrorlanadigan muammolarni qidiring</li>
+                            <li>Video sharhlarni ko'rib chiqing</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Step 5 -->
+                <div class="step">
+                    <div class="step-number">5</div>
+                    <h3>Yakuniy Qaror va Xarid</h3>
+                    <p>Yakuniy qaror qabul qilish va xavfsiz xarid qilish.</p>
+                    
+                    <div class="step-content">
+                        <h4><i class="fas fa-check-double"></i> Yakuniy tekshiruv ro'yxati:</h4>
+                        <ul class="checklist">
+                            <li>Kafolat muddati (kamida 1-2 yil)</li>
+                            <li>Qaytarish shartlari (30 kun ichida)</li>
+                            <li>Texnik yordam mavjudligi</li>
+                            <li>Ehtiyot qismlar mavjudligi</li>
+                            <li>Yetkazib berish muddati va narxi</li>
+                        </ul>
+                        
+                        <div class="tip-box">
+                            <strong><i class="fas fa-lightbulb"></i> Maslahat:</strong> Har doim rasmiy distribyutorlardan yoki ishonchli do'konlardan xarid qiling. "Judayam arzon" takliflarga ishonmang.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sidebar -->
+            <div class="sidebar">
+                <h3><i class="fas fa-fire"></i> Tez Maslahatlar</h3>
+                
+                <div style="background: #f0f7ff; padding: 20px; border-radius: 10px; margin: 20px 0;">
+                    <h4><i class="fas fa-clock"></i> Vaqtni tejash</h4>
+                    <p>Tanlash uchun 3-7 kun vaqt ajrating. Shoshilmasdan, batafsil o'rganing.</p>
+                </div>
+                
+                <div style="background: #fff0f0; padding: 20px; border-radius: 10px; margin: 20px 0;">
+                    <h4><i class="fas fa-exclamation-triangle"></i> Qochish kerak</h4>
+                    <ul style="list-style: none; padding-left: 0;">
+                        <li style="margin-bottom: 8px;">• Noma'lum brendlar</li>
+                        <li style="margin-bottom: 8px;">• "Too good to be true" narxlar</li>
+                        <li style="margin-bottom: 8px;">• Sharhlar yo'q mahsulotlar</li>
+                    </ul>
+                </div>
+                
+                <div style="background: #f0fff4; padding: 20px; border-radius: 10px; margin: 20px 0;">
+                    <h4><i class="fas fa-thumbs-up"></i> Ishontirish belgilari</h4>
+                    <ul style="list-style: none; padding-left: 0;">
+                        <li style="margin-bottom: 8px;">• Keng kafolat</li>
+                        <li style="margin-bottom: 8px;">• Ko'p ijobiy sharhlar</li>
+                        <li style="margin-bottom: 8px;">• Ishonchli brend</li>
+                        <li style="margin-bottom: 8px;">• Yaxshi texnik yordam</li>
+                    </ul>
+                </div>
+
+                <!-- Sidebar Ads -->
+                <div class="ad-unit" style="margin: 30px 0; padding: 20px;">
+                    <h4>Reklama</h4>
+                    <p>300x250 banner</p>
+                    <p>Tanlashga yordam beradigan vositalar</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Category Specific Guides -->
+        <h2 style="text-align: center; margin: 50px 0 30px; color: var(--primary);">
+            <i class="fas fa-th-large"></i> Kategoriyalar Bo'yicha Maslahatlar
+        </h2>
+
+        <div class="category-cards">
+            <a href="smartphone-comparisons.html" class="category-card">
+                <i class="fas fa-mobile-alt"></i>
+                <h4>Smartfon Tanlash</h4>
+                <p>Protsessor, kamera, batareya - qaysi parametrlar muhim?</p>
+            </a>
+
+            <a href="laptop-comparisons.html" class="category-card">
+                <i class="fas fa-laptop"></i>
+                <h4>Noutbuk Tanlash</h4>
+                <p>Ish yoki o'yin uchun? Dizayn yoki quvvat?</p>
+            </a>
+
+            <a href="car-comparisons.html" class="category-card">
+                <i class="fas fa-car"></i>
+                <h4>Avtomobil Tanlash</h4>
+                <p>Yangi yoki ishlatilgan? Benzin yoki elektr?</p>
+            </a>
+
+            <a href="appliance-comparisons.html" class="category-card">
+                <i class="fas fa-blender"></i>
+                <h4>Maishiy Texnika</h4>
+                <p>Energiya tejamkorligi va ishonchlilikni qanday tekshirish?</p>
+            </a>
+        </div>
+
+        <!-- Bottom Ads -->
+        <div class="ad-unit">
+            <h3>Mahsulot Taqqoslash Vositalari</h3>
+            <p>Bu yerda turli mahsulotlarni solishtirishga yordam beradigan vositalar reklamasi</p>
+            <p>728x90 yoki 300x250 banner</p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-column">
+                    <h3>Haqiqiy Testlar</h3>
+                    <p>Biz haqiqiy odamlardan haqiqiy maslahatlar beramiz. Har bir mahsulotni o'zimiz sinab ko'ramiz.</p>
+                    <div style="margin-top: 15px;">
+                        <a href="#" style="margin-right: 10px; font-size: 1.2rem; color: var(--secondary);"><i class="fab fa-telegram"></i></a>
+                        <a href="#" style="margin-right: 10px; font-size: 1.2rem; color: var(--secondary);"><i class="fab fa-instagram"></i></a>
+                        <a href="#" style="margin-right: 10px; font-size: 1.2rem; color: var(--secondary);"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Tez Havolalar</h3>
+                    <ul>
+                        <li><a href="index.html"><i class="fas fa-chevron-right"></i> Bosh Sahifa</a></li>
+                        <li><a href="comparisons.html"><i class="fas fa-chevron-right"></i> Barcha Solishtirishlar</a></li>
+                        <li><a href="how-to-choose.html"><i class="fas fa-chevron-right"></i> Qanday Tanlash Kerak?</a></li>
+                        <li><a href="buying-guide.html"><i class="fas fa-chevron-right"></i> Xarid Qo'llanmasi</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Yordam Markazi</h3>
+                    <ul>
+                        <li><a href="faq.html"><i class="fas fa-question-circle"></i> Tez-tez So'raladigan Savollar</a></li>
+                        <li><a href="contact.html"><i class="fas fa-envelope"></i> Biz bilan Bog'lanish</a></li>
+                        <li><a href="about.html"><i class="fas fa-info-circle"></i> Biz Haqimizda</a></li>
+                        <li><a href="privacy.html"><i class="fas fa-shield-alt"></i> Maxfiylik Siyosati</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Obuna Bo'ling</h3>
+                    <p>Yangi qo'llanmalar va maslahatlar haqida xabardor bo'ling.</p>
+                    <form id="subscribeForm" style="margin-top: 15px;">
+                        <input type="email" placeholder="Email manzilingiz" required 
+                               style="padding: 10px; width: 100%; border-radius: 5px; border: none; margin-bottom: 10px;">
+                        <button type="submit" 
+                                style="background: var(--secondary); color: white; border: none; padding: 10px 15px; border-radius: 5px; width: 100%; cursor: pointer;">
+                            <i class="fas fa-paper-plane"></i> Obuna bo'lish
+                        </button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2024 Haqiqiy Testlar. Barcha huquqlar himoyalangan.</p>
+                <p style="margin-top: 5px; font-size: 0.8rem;">Haqiqiy odamlar - Haqiqiy testlar - Haqiqiy maslahatlar</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        document.getElementById('mobileMenuBtn').addEventListener('click', function() {
+            document.getElementById('mainNav').classList.toggle('active');
+        });
+
+        // Smooth Scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                if(this.getAttribute('href') === '#') return;
+                
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId.startsWith('#')) {
+                    const targetElement = document.querySelector(targetId);
+                    
+                    if(targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                        
+                        // Close mobile menu if open
+                        document.getElementById('mainNav').classList.remove('active');
+                    }
+                }
+            });
+        });
+
+        // Subscription Form
+        document.getElementById('subscribeForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const email = this.querySelector('input[type="email"]').value;
+            
+            if(email) {
+                // Simulate API call
+                setTimeout(() => {
+                    alert('Tabriklaymiz! Siz muvaffaqiyatli obuna bo'ldingiz. Tez orada birinchi maslahatimizni olasiz.');
+                    this.reset();
+                }, 500);
+            }
+        });
+
+        // Interactive Checklist
+        document.querySelectorAll('.checklist li').forEach(item => {
+            item.addEventListener('click', function() {
+                this.classList.toggle('completed');
+            });
+        });
+
+        // Add completed style
+        const style = document.createElement('style');
+        style.textContent = `
+            .checklist li.completed {
+                opacity: 0.7;
+                text-decoration: line-through;
+            }
+            .checklist li.completed:before {
+                background: var(--success);
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>
