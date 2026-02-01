@@ -586,31 +586,7 @@
     </footer>
 
     <script>
-        // Enhanced JavaScript for audio category
-        document.querySelectorAll('.btn').forEach(button => {
-            button.addEventListener('click', function(e) {
-                e.preventDefault();
-                
-                // Create audio feedback
-                const audioContext = new (window.AudioContext || window.webkitAudioContext)();
-                const oscillator = audioContext.createOscillator();
-                const gainNode = audioContext.createGain();
-                
-                oscillator.connect(gainNode);
-                gainNode.connect(audioContext.destination);
-                
-                oscillator.frequency.value = 523.25; // C5 note
-                oscillator.type = 'sine';
-                
-                gainNode.gain.setValueAtTime(0.3, audioContext.currentTime);
-                gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 0.5);
-                
-                oscillator.start();
-                oscillator.stop(audioContext.currentTime + 0.5);
-                
-                alert("To'liq audio review tez orada qo'shiladi!");
-            });
-        });
+       
 
         // Audio visual effects
         document.addEventListener('DOMContentLoaded', function() {
@@ -620,14 +596,14 @@
                 card.addEventListener('mouseenter', function() {
                     const image = this.querySelector('.product-image');
                     if (image) {
-                        image.style.animation = 'pulse 1.5s infinite';
+                        image.style.animation = 'pulse 1.5s ;
                     }
                 });
                 
                 card.addEventListener('mouseleave', function() {
                     const image = this.querySelector('.product-image');
                     if (image) {
-                        image.style.animation = 'pulse 3s infinite';
+                        image.style.animation = 'pulse 3s ;
                     }
                 });
             });
