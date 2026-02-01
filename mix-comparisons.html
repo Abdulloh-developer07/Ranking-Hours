@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Smartwatch, kamera va gaming noutbuklarni batafsil solishtirish. Professional testlar va tavsiyalar.">
+    <title>Texnika Solishtirish - Eng Yaxshi Tanlov</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', system-ui, sans-serif;
+        }
+        
+        :root {
+            --primary: #2563eb;
+            --secondary: #7c3aed;
+            --accent: #f59e0b;
+            --light: #f8fafc;
+            --dark: #1e293b;
+            --gray: #64748b;
+            --success: #10b981;
+            --card-bg: #ffffff;
+            --shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        
+        body {
+            background-color: #f1f5f9;
+            color: var(--dark);
+            line-height: 1.6;
+            padding-top: 0;
+        }
+        
+        /* Header */
+        .site-header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 1.5rem 2rem;
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+        
+        .logo-icon {
+            font-size: 2rem;
+        }
+        
+        .nav-menu {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+        
+        .nav-menu a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            transition: background-color 0.3s;
+        }
+        
+        .nav-menu a:hover {
+            background-color: rgba(255, 255, 255, 0.15);
+        }
+        
+        /* Hero Section */
+        .hero {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--dark);
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--gray);
+            max-width: 800px;
+            margin: 0 auto 2rem;
+        }
+        
+        /* Main Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem 3rem;
+        }
+        
+        /* Comparison Grid */
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .comparison-card {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+        
+        .comparison-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.15);
+        }
+        
+        .card-header {
+            padding: 1.5rem;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            color: white;
+        }
+        
+        .card-title {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .card-rating {
+            background-color: rgba(255, 255, 255, 0.2);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .stars {
+            color: var(--accent);
+        }
+        
+        .card-subtitle {
+            font-size: 1rem;
+            opacity: 0.9;
+            margin-bottom: 0.5rem;
+        }
+        
+        .card-body {
+            padding: 1.5rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .comparison-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.8rem 0;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        
+        .comparison-item:last-child {
+            border-bottom: none;
+        }
+        
+        .item-label {
+            font-weight: 600;
+            color: var(--dark);
+        }
+        
+        .item-value {
+            color: var(--gray);
+        }
+        
+        .item-value.best {
+            color: var(--success);
+            font-weight: 600;
+        }
+        
+        .pros-cons {
+            margin-top: 1.5rem;
+            display: flex;
+            gap: 1.5rem;
+        }
+        
+        .pros, .cons {
+            flex: 1;
+        }
+        
+        .pros h4, .cons h4 {
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .pros h4 {
+            color: var(--success);
+        }
+        
+        .cons h4 {
+            color: #ef4444;
+        }
+        
+        .pros ul, .cons ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .pros li, .cons li {
+            padding: 0.3rem 0;
+            font-size: 0.95rem;
+        }
+        
+        .pros li:before {
+            content: "✓ ";
+            color: var(--success);
+            font-weight: bold;
+        }
+        
+        .cons li:before {
+            content: "✗ ";
+            color: #ef4444;
+            font-weight: bold;
+        }
+        
+        /* Ad Sections */
+        .ad-section {
+            margin: 2.5rem 0;
+            padding: 1.5rem;
+            background-color: var(--light);
+            border-radius: 12px;
+            border: 2px dashed #cbd5e1;
+            text-align: center;
+        }
+        
+        .ad-label {
+            display: inline-block;
+            background-color: var(--accent);
+            color: white;
+            padding: 0.3rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+        
+        .ad-placeholder {
+            height: 250px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #e2e8f0;
+            border-radius: 8px;
+            color: var(--gray);
+            font-style: italic;
+            margin: 1rem 0;
+        }
+        
+        .ad-horizontal {
+            height: 100px;
+        }
+        
+        /* CTA Buttons */
+        .card-footer {
+            padding: 1.5rem;
+            background-color: #f8fafc;
+            border-top: 1px solid #e2e8f0;
+            text-align: center;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            color: white;
+            padding: 0.8rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
+        }
+        
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 18px rgba(37, 99, 235, 0.3);
+        }
+        
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+            box-shadow: none;
+        }
+        
+        .btn-outline:hover {
+            background-color: var(--primary);
+            color: white;
+        }
+        
+        /* Footer */
+        .site-footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 3rem 2rem 1.5rem;
+            margin-top: 3rem;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        
+        .footer-section h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1.2rem;
+            color: var(--light);
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+        
+        .footer-links a {
+            color: #cbd5e1;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: white;
+        }
+        
+        .copyright {
+            text-align: center;
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #334155;
+            color: #94a3b8;
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .nav-menu {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 1rem;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .pros-cons {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .comparison-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .container, .hero {
+                padding: 0 1rem;
+            }
+            
+            .card-title {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.5rem;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="site-header">
+        <div class="header-content">
+            <div class="logo">
+                <span class="logo-icon">⚡</span>
+                <span>TexnikaSolishtirish.uz</span>
+            </div>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="#"><i class="fas fa-home"></i> Bosh sahifa</a></li>
+                    <li><a href="#"><i class="fas fa-watch"></i> Smartwatch</a></li>
+                    <li><a href="#"><i class="fas fa-camera"></i> Kameralar</a></li>
+                    <li><a href="#"><i class="fas fa-laptop"></i> Noutbuklar</a></li>
+                    <li><a href="#"><i class="fas fa-phone"></i> Telefonlar</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Eng Yaxshi Texnikani Tanlang</h1>
+        <p>Batafsil solishtirish jadvallari, professional test natijalari va foydalanuvchi sharhlari asosida eng yaxshi tanlovni qiling</p>
+        <a href="#comparisons" class="btn"><i class="fas fa-chart-bar"></i> Solishtirishni Ko'rish</a>
+    </section>
+
+    <!-- Main Content -->
+    <div class="container">
+        <!-- Horizontal Ad -->
+        <div class="ad-section">
+            <div class="ad-label">Reklama</div>
+            <div class="ad-placeholder ad-horizontal">
+                AdSense Horizontal Banner (728x90)
+            </div>
+        </div>
+        
+        <!-- Comparisons Section -->
+        <h2 id="comparisons" style="margin-top: 2rem; font-size: 2rem; color: var(--dark);">Mahsulotlarni Solishtirish</h2>
+        <p style="color: var(--gray); margin-bottom: 2rem;">Quyida 3 ta mashhur texnika toifasidagi eng yaxshi modellarni solishtiring</p>
+        
+        <div class="comparison-grid">
+            <!-- Smartwatch Comparison -->
+            <article class="comparison-card">
+                <div class="card-header">
+                    <div class="card-title">
+                        <span>Apple Watch vs Samsung Galaxy</span>
+                        <div class="card-rating">
+                            <span class="stars">★★★★★</span> 4.5/5
+                        </div>
+                    </div>
+                    <div class="card-subtitle">Sog'lom turmush tarzi uchun qaysi smartwatch yaxshi?</div>
+                </div>
+                <div class="card-body">
+                    <div class="comparison-item">
+                        <span class="item-label">Test muddati:</span>
+                        <span class="item-value">30 kun</span>
+                    </div>
+                    <div class="comparison-item">
+                        <span class="item-label">Battery:</span>
+                        <span class="item-value">Samsung <span class="best">(3 kun)</span></span>
+                    </div>
+                    <div class="comparison-item">
+                        <span class="item-label">Sog'lomlik:</span>
+                        <span class="item-value">Apple <span class="best">(Yuqori)</span></span>
+                    </div>
+                    <div class="comparison-item">
+                        <span class="item-label">Narxi:</span>
+                        <span class="item-value">Samsung <span class="best">(Arzonroq)</span></span>
+                    </div>
+                    
+                    <div class="pros-cons">
+                        <div class="pros">
+                            <h4><i class="fas fa-check-circle"></i> Apple Watch</h4>
+                            <ul>
+                                <li>iOS bilan mukammal integratsiya</li>
+                                <li>Yuqori aniqlikdagi sensorlar</li>
+                                <li>Premium qurilish sifati</li>
+                            </ul>
+                        </div>
+                        <div class="cons">
+                            <h4><i class="fas fa-times-circle"></i> Kamchiliklari</h4>
+                            <ul>
+                                <li>Battery quvvati past</li>
+                                <li>Faqat iPhone bilan ishlaydi</li>
+                                <li>Narxi yuqori</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <a href="#" class="btn"><i class="fas fa-eye"></i> To'liq Ko'rish</a>
+                </div>
+            </article>
+            
+            <!-- Camera Comparison -->
+            <article class="comparison-card">
+                <div class="card-header">
+                    <div class="card-title">
+                        <span>Sony vs Canon vs Nikon</span>
+                        <div class="card-rating">
+                            <span class="stars">★★★★★</span> 4.0/5
+                        </div>
+                    </div>
+                    <div class="card-subtitle">Qaysi kamera haqiqatan professional?</div>
+                </div>
+                <div class="card-body">
+                    <div class="comparison-item">
+                        <span class="item-label">Sensor:</span>
+                        <span class="item-value">Sony <span class="best">(45 MP)</span></span>
+                    </div>
+                    <div class="comparison-item">
+                        <span class="item-label">Auto-fokus:</span>
+                        <span class="item-value">Canon <span class="best">(Tezkor)</span></span>
+                    </div>
+                    <div class="comparison-item">
+                        <span class="item-label">Video sifati:</span>
+                        <span class="item-value">Sony <span class="best">(8K)</span></span>
+                    </div>
+                    <div class="comparison-item">
+                        <span class="item-label">Ob'ektivlar:</span>
+                        <span class="item-value">Nikon <span class="best">(Keng tanlov)</span></span>
+                    </div>
+                    
+                    <div class="pros-cons">
+                        <div class="pros">
+                            <h4><i class="fas fa-check-circle"></i> Sony Alpha</h4>
+                            <ul>
+                                <li>Yuqori sensor sifati</li>
+                                <li>Mukammal video yozish</li>
+                                <li>Yengil va ixcham</li>
+                            </ul>
+                        </div>
+                        <div class="cons">
+                            <h4><i class="fas fa-times-circle"></i> Kamchiliklari</h4>
+                            <ul>
+                                <li>Batareya quvvati past</li>
+                                <li>Ob'ektivlar qimmat</li>
+                                <li>Murakkab menyu</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <a href="#" class="btn"><i class="fas fa-eye"></i> To'liq Ko'rish</a>
+                </div>
+            </article>
+            
+            <!-- Laptop Comparison -->
+            <article class="comparison-card">
+                <div class="card-header">
+                    <div class="card-title">
+                        <span>ROG vs MSI vs Legion</span>
+                        <div class="card-rating">
+                            <span class="stars">★★★★★</span> 3.5/5
+                        </div>
+                    </div>
+                    <div class="card-subtitle">2024 yilning eng yaxshi gaming noutbuklari</div>
+                </div>
+                <div class="card-body">
+                    <div class="comparison-item">
+                        <span class="item-label">FPS (o'rtacha):</span>
+                        <span class="item-value">ROG <span class="best">(142 FPS)</span></span>
+                    </div>
+                    <div class="comparison-item">
+                        <span class="item-label">Sovutish:</span>
+                        <span class="item-value">Legion <span class="best">(A'lo)</span></span>
+                    </div>
+                    <div class="comparison-item">
+                        <span class="item-label">Narx sifat:</span>
+                        <span class="item-value">MSI <span class="best">(Yaxshi)</span></span>
+                    </div>
+                    <div class="comparison-item">
+                        <span class="item-label">Ekran:</span>
+                        <span class="item-value">ROG <span class="best">(240Hz)</span></span>
+                    </div>
+                    
+                    <div class="pros-cons">
+                        <div class="pros">
+                            <h4><i class="fas fa-check-circle"></i> ROG - Eng Yuqori FPS</h4>
+                            <ul>
+                                <li>Eng yuqori o'yin performansi</li>
+                                <li>240Hz ekran yangilanishi</li>
+                                <li>RGB orqali shaxsiylashtirish</li>
+                            </ul>
+                        </div>
+                        <div class="cons">
+                            <h4><i class="fas fa-times-circle"></i> Kamchiliklari</h4>
+                            <ul>
+                                <li>Qimmat narx</li>
+                                <li>Vazni og'ir</li>
+                                <li>Issiqlik muammosi</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <a href="#" class="btn"><i class="fas fa-eye"></i> To'liq Ko'rish</a>
+                </div>
+            </article>
+        </div>
+        
+        <!-- Vertical Ad -->
+        <div class="ad-section">
+            <div class="ad-label">Tavsiya etilgan</div>
+            <div class="ad-placeholder" style="height: 300px;">
+                AdSense Vertical Banner (300x600)
+            </div>
+        </div>
+        
+        <!-- Call to Action -->
+        <div style="text-align: center; margin: 3rem 0; padding: 2rem; background: linear-gradient(135deg, var(--primary), var(--secondary)); border-radius: 12px; color: white;">
+            <h2 style="margin-bottom: 1rem; font-size: 1.8rem;">Boshqa Mahsulotlarni Solishtirishni Xohlaysizmi?</h2>
+            <p style="margin-bottom: 1.5rem; opacity: 0.9;">Telefonlar, planshetlar, televizorlar va boshqa texnikalarni ham solishtiring</p>
+            <a href="#" class="btn" style="background-color: white; color: var(--primary);"><i class="fas fa-search"></i> Barcha Taqqoslashlar</a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>TexnikaSolishtirish.uz</h3>
+                <p>Eng so'nggi texnika mahsulotlarini professional test va solishtirishlar. Har qanday byudjet uchun eng yaxshi tanlovni toping.</p>
+                <div style="margin-top: 1rem;">
+                    <a href="#" class="btn btn-outline" style="margin-right: 0.5rem;"><i class="fab fa-telegram"></i></a>
+                    <a href="#" class="btn btn-outline" style="margin-right: 0.5rem;"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="btn btn-outline"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Tez O'tishlar</h3>
+                <ul class="footer-links">
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> Bosh sahifa</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> Smartwatch taqqoslash</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> Kamera taqqoslash</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> Noutbuk taqqoslash</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> Telefon taqqoslash</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Aloqa</h3>
+                <ul class="footer-links">
+                    <li><i class="fas fa-envelope"></i> info@texnikasolishtirish.uz</li>
+                    <li><i class="fas fa-phone"></i> +998 90 123 45 67</li>
+                    <li><i class="fas fa-map-marker-alt"></i> Toshkent shahar, Yunusobod tumani</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            <p>© 2024 TexnikaSolishtirish.uz - Barcha huquqlar himoyalangan.</p>
+            <p style="margin-top: 0.5rem;">Ma'lumotlar test natijalariga asoslangan. Saytda AdSense reklamalari mavjud.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Interactive elements
+        document.querySelectorAll('.comparison-card').forEach(card => {
+            card.addEventListener('click', function(e) {
+                if (!e.target.closest('.btn')) {
+                    const title = this.querySelector('.card-title span').textContent;
+                    console.log(`Selected: ${title}`);
+                }
+            });
+        });
+        
+        // Rating stars interaction
+        document.querySelectorAll('.card-rating').forEach(rating => {
+            rating.addEventListener('mouseenter', function() {
+                this.style.transform = 'scale(1.05)';
+            });
+            
+            rating.addEventListener('mouseleave', function() {
+                this.style.transform = 'scale(1)';
+            });
+        });
+        
+        // Ad placeholder click
+        document.querySelectorAll('.ad-placeholder').forEach(ad => {
+            ad.addEventListener('click', function() {
+                alert('Haqiqiy saytda bu joyda AdSense reklamasi bo\'ladi');
+            });
+        });
+        
+        // Mobile menu toggle (for future enhancement)
+        console.log('Texnika solishtirish sayti yuklandi');
+    </script>
+</body>
+</html>
