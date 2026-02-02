@@ -1,0 +1,913 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gree vs Samsung Konditsionerlar - Batafsil Solishtirish</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #e0f7fa 0%, #e8f5e9 100%);
+            color: #333;
+            line-height: 1.6;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .comparison-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            margin-bottom: 40px;
+        }
+        
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header::before {
+            content: "❄️";
+            position: absolute;
+            font-size: 150px;
+            opacity: 0.1;
+            top: -30px;
+            right: -30px;
+        }
+        
+        .main-title {
+            font-size: 2.8rem;
+            margin-bottom: 15px;
+            font-weight: 800;
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        /* Adsense Top */
+        .adsense-top {
+            background: #f8f9fa;
+            border: 2px dashed #dee2e6;
+            border-radius: 15px;
+            padding: 30px;
+            margin: 30px;
+            text-align: center;
+        }
+        
+        .ad-label {
+            display: inline-block;
+            background: #27ae60;
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            margin-bottom: 15px;
+            font-size: 0.9rem;
+            font-weight: bold;
+        }
+        
+        .ad-placeholder {
+            height: 250px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(45deg, #e8f5e9, #e3f2fd);
+            border-radius: 10px;
+            color: #666;
+            font-style: italic;
+            font-size: 1.1rem;
+        }
+        
+        /* Products Grid */
+        .products-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            padding: 40px;
+        }
+        
+        @media (max-width: 768px) {
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .product-card {
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .gree-card {
+            border-top: 6px solid #27ae60;
+        }
+        
+        .samsung-card {
+            border-top: 6px solid #0066cc;
+        }
+        
+        .product-header {
+            padding: 30px;
+            text-align: center;
+            color: white;
+        }
+        
+        .gree-header {
+            background: linear-gradient(135deg, #27ae60, #2ecc71);
+        }
+        
+        .samsung-header {
+            background: linear-gradient(135deg, #0066cc, #1e88e5);
+        }
+        
+        .product-logo {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+        
+        .product-name {
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 10px;
+        }
+        
+        .product-type {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+        
+        /* Specifications */
+        .specifications {
+            padding: 30px;
+            background: #f8f9fa;
+        }
+        
+        .spec-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            border-bottom: 1px solid #dee2e6;
+        }
+        
+        .spec-item:last-child {
+            border-bottom: none;
+        }
+        
+        .spec-label {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            font-weight: 600;
+            color: #2c3e50;
+        }
+        
+        .spec-icon {
+            font-size: 1.3rem;
+            width: 40px;
+            text-align: center;
+        }
+        
+        .spec-value {
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+        
+        .gree-value {
+            color: #27ae60;
+        }
+        
+        .samsung-value {
+            color: #0066cc;
+        }
+        
+        /* Price Section */
+        .price-section {
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            padding: 25px;
+            text-align: center;
+            border-top: 1px solid #dee2e6;
+        }
+        
+        .price-label {
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 10px;
+        }
+        
+        .price {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 15px;
+        }
+        
+        .gree-price {
+            color: #27ae60;
+        }
+        
+        .samsung-price {
+            color: #0066cc;
+        }
+        
+        /* Comparison Result */
+        .result-section {
+            background: linear-gradient(135deg, #0066cc, #1e88e5);
+            color: white;
+            padding: 40px;
+            text-align: center;
+            margin: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0, 102, 204, 0.3);
+        }
+        
+        .winner-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 15px;
+            background: white;
+            color: #0066cc;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-size: 1.5rem;
+            font-weight: 800;
+            margin-bottom: 25px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        .trophy-icon {
+            font-size: 2rem;
+        }
+        
+        .winner-reason {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        /* Adsense Middle */
+        .adsense-middle {
+            background: #f8f9fa;
+            border: 2px dashed #dee2e6;
+            border-radius: 15px;
+            padding: 30px;
+            margin: 40px;
+            text-align: center;
+        }
+        
+        .adsense-middle .ad-placeholder {
+            height: 200px;
+            background: linear-gradient(45deg, #fff3e0, #f3e5f5);
+        }
+        
+        /* Features Section */
+        .features-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            padding: 40px;
+        }
+        
+        @media (max-width: 768px) {
+            .features-section {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .features-card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+        }
+        
+        .features-title {
+            font-size: 1.5rem;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid;
+        }
+        
+        .gree-features-title {
+            color: #27ae60;
+            border-bottom-color: #27ae60;
+        }
+        
+        .samsung-features-title {
+            color: #0066cc;
+            border-bottom-color: #0066cc;
+        }
+        
+        .features-list {
+            list-style: none;
+            margin-bottom: 25px;
+        }
+        
+        .features-list li {
+            padding: 15px 0;
+            padding-left: 35px;
+            position: relative;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .features-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .gree-features li::before {
+            content: "🌿";
+            position: absolute;
+            left: 0;
+            color: #27ae60;
+            font-size: 1.2rem;
+        }
+        
+        .samsung-features li::before {
+            content: "🌟";
+            position: absolute;
+            left: 0;
+            color: #0066cc;
+            font-size: 1.2rem;
+        }
+        
+        /* Filter Technology Section */
+        .filter-section {
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            padding: 40px;
+            text-align: center;
+            margin: 40px;
+            border-radius: 15px;
+            border: 1px solid #dee2e6;
+        }
+        
+        .filter-title {
+            font-size: 1.8rem;
+            color: #2c3e50;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+        
+        .filter-icon {
+            font-size: 2rem;
+            color: #27ae60;
+        }
+        
+        .filter-comparison {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-top: 30px;
+        }
+        
+        @media (max-width: 768px) {
+            .filter-comparison {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .filter-card {
+            padding: 25px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        
+        .gree-filter {
+            background: rgba(39, 174, 96, 0.1);
+            border: 2px solid #27ae60;
+        }
+        
+        .samsung-filter {
+            background: rgba(0, 102, 204, 0.1);
+            border: 2px solid #0066cc;
+        }
+        
+        .filter-name {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+        
+        .gree-filter .filter-name {
+            color: #27ae60;
+        }
+        
+        .samsung-filter .filter-name {
+            color: #0066cc;
+        }
+        
+        /* Smart Control Section */
+        .smart-control {
+            padding: 40px;
+            background: linear-gradient(135deg, #2c3e50, #34495e);
+            color: white;
+            text-align: center;
+            margin: 40px;
+            border-radius: 15px;
+        }
+        
+        .smart-title {
+            font-size: 2rem;
+            margin-bottom: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+        }
+        
+        .smart-icon {
+            font-size: 2.5rem;
+            color: #3498db;
+        }
+        
+        .smart-features {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        @media (max-width: 768px) {
+            .smart-features {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .smart-feature {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        
+        .smart-feature-icon {
+            font-size: 2rem;
+            margin-bottom: 15px;
+            color: #3498db;
+        }
+        
+        /* CTA Button */
+        .cta-section {
+            text-align: center;
+            padding: 40px;
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            border-top: 1px solid #dee2e6;
+        }
+        
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 15px;
+            background: linear-gradient(135deg, #27ae60, #0066cc);
+            color: white;
+            padding: 20px 40px;
+            border-radius: 50px;
+            font-size: 1.3rem;
+            font-weight: 600;
+            text-decoration: none;
+            box-shadow: 0 10px 25px rgba(39, 174, 96, 0.3);
+            transition: transform 0.3s ease;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(39, 174, 96, 0.4);
+        }
+        
+        .cta-icon {
+            font-size: 1.5rem;
+        }
+        
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 30px;
+            color: #666;
+            font-size: 0.9rem;
+            border-top: 1px solid #dee2e6;
+            background: #f8f9fa;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .footer-links a {
+            color: #27ae60;
+            text-decoration: none;
+        }
+        
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="comparison-container">
+        <!-- Header -->
+        <div class="header">
+            <h1 class="main-title">Gree vs Samsung Konditsionerlar</h1>
+            <p class="subtitle">Inverter konditsionerlar, 12000 BTU - Qaysi biri yaxshiroq?</p>
+        </div>
+        
+        <!-- Adsense Top -->
+        <div class="adsense-top">
+            <div class="ad-label">📢 REKLAMA</div>
+            <div class="ad-placeholder">
+                Adsense Banner - Gree va Samsung konditsionerlar uchun maxsus chegirmalar
+            </div>
+        </div>
+        
+        <!-- Products Grid -->
+        <div class="products-grid">
+            <!-- Gree -->
+            <div class="product-card gree-card">
+                <div class="product-header gree-header">
+                    <div class="product-logo">🌿</div>
+                    <h2 class="product-name">GREE</h2>
+                    <div class="product-type">Inverter Konditsioner 12000 BTU</div>
+                </div>
+                
+                <div class="specifications">
+                    <div class="spec-item">
+                        <div class="spec-label">
+                            <span class="spec-icon">💨</span>
+                            <span>Quvvat (BTU)</span>
+                        </div>
+                        <div class="spec-value gree-value">12000 BTU</div>
+                    </div>
+                    
+                    <div class="spec-item">
+                        <div class="spec-label">
+                            <span class="spec-icon">🛡️</span>
+                            <span>Havoni tozalash</span>
+                        </div>
+                        <div class="spec-value gree-value">Hepa Filter</div>
+                    </div>
+                    
+                    <div class="spec-item">
+                        <div class="spec-label">
+                            <span class="spec-icon">📱</span>
+                            <span>Smart boshqaruv</span>
+                        </div>
+                        <div class="spec-value gree-value">WiFi + Ilova</div>
+                    </div>
+                    
+                    <div class="spec-item">
+                        <div class="spec-label">
+                            <span class="spec-icon">🔥</span>
+                            <span>Isitish qobiliyati</span>
+                        </div>
+                        <div class="spec-value gree-value">-15°C gacha</div>
+                    </div>
+                    
+                    <div class="spec-item">
+                        <div class="spec-label">
+                            <span class="spec-icon">🔇</span>
+                            <span>Shovqin darajasi</span>
+                        </div>
+                        <div class="spec-value gree-value">23 dB</div>
+                    </div>
+                </div>
+                
+                <div class="price-section">
+                    <div class="price-label">Narxi</div>
+                    <div class="price gree-price">$450</div>
+                    <p style="color: #666;">O'rnatish: $50 qo'shimcha</p>
+                </div>
+            </div>
+            
+            <!-- Samsung -->
+            <div class="product-card samsung-card">
+                <div class="product-header samsung-header">
+                    <div class="product-logo">🌟</div>
+                    <h2 class="product-name">SAMSUNG</h2>
+                    <div class="product-type">Inverter Konditsioner 12000 BTU</div>
+                </div>
+                
+                <div class="specifications">
+                    <div class="spec-item">
+                        <div class="spec-label">
+                            <span class="spec-icon">💨</span>
+                            <span>Quvvat (BTU)</span>
+                        </div>
+                        <div class="spec-value samsung-value">12000 BTU</div>
+                    </div>
+                    
+                    <div class="spec-item">
+                        <div class="spec-label">
+                            <span class="spec-icon">🛡️</span>
+                            <span>Havoni tozalash</span>
+                        </div>
+                        <div class="spec-value samsung-value">Anti-virus Filter</div>
+                    </div>
+                    
+                    <div class="spec-item">
+                        <div class="spec-label">
+                            <span class="spec-icon">📱</span>
+                            <span>Smart boshqaruv</span>
+                        </div>
+                        <div class="spec-value samsung-value">Bluetooth</div>
+                    </div>
+                    
+                    <div class="spec-item">
+                        <div class="spec-label">
+                            <span class="spec-icon">🔥</span>
+                            <span>Isitish qobiliyati</span>
+                        </div>
+                        <div class="spec-value samsung-value">-10°C gacha</div>
+                    </div>
+                    
+                    <div class="spec-item">
+                        <div class="spec-label">
+                            <span class="spec-icon">🔇</span>
+                            <span>Shovqin darajasi</span>
+                        </div>
+                        <div class="spec-value samsung-value">25 dB</div>
+                    </div>
+                </div>
+                
+                <div class="price-section">
+                    <div class="price-label">Narxi</div>
+                    <div class="price samsung-price">$550</div>
+                    <p style="color: #666;">O'rnatish: bepul</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Comparison Result -->
+        <div class="result-section">
+            <div class="winner-badge">
+                <span class="trophy-icon">🏆</span>
+                TEST G'OLIBI: SAMSUNG
+            </div>
+            <p class="winner-reason">
+                Samsung smart funksiyalari va energiya tejamkorligi bilan g'olib. 
+                Gree esa narxi va sovutish samaradorligi bilan ajralib turadi.
+            </p>
+        </div>
+        
+        <!-- Adsense Middle -->
+        <div class="adsense-middle">
+            <div class="ad-label">🔥 KONDITSIONERLAR SOLISHTIRILMOQDA</div>
+            <div class="ad-placeholder">
+                Adsense Banner - Qaysi konditsioner sizga mos keladi?
+            </div>
+        </div>
+        
+        <!-- Features Section -->
+        <div class="features-section">
+            <div class="features-card">
+                <h3 class="features-title gree-features-title">GREE Xususiyatlari</h3>
+                <ul class="features-list gree-features">
+                    <li>Inverter kompressor - 40% energiya tejash</li>
+                    <li>Hepa filter - chang, allergenlar va zamburug'larni ushlaydi</li>
+                    <li>WiFi Smart Control - telefon orqali boshqarish</li>
+                    <li>Turbo rejim - tez sovutish</li>
+                    <li>Uyqu rejimi - 28 dB gacha past shovqin</li>
+                    <li>Avtomatik harorat nazorati</li>
+                    <li>4 yo'nalishli havoni taqsimlash</li>
+                    <li>Smart Eye - odam borligini sezish va rejimni o'zgartirish</li>
+                </ul>
+            </div>
+            
+            <div class="features-card">
+                <h3 class="features-title samsung-features-title">Samsung Xususiyatlari</h3>
+                <ul class="features-list samsung-features">
+                    <li>Digital Inverter Boost - 60% tejamkorlik</li>
+                    <li>Virus Doctor filter - virus va bakteriyalarni neytrallaydi</li>
+                    <li>WindFree™ - yo'naltirilgan shamolsiz sovutish</li>
+                    <li>SmartThings ilova - to'liq boshqaruv</li>
+                    <li>Auto Clean - avtomatik tozalash</li>
+                    <li>Fast Cooling - 43% tezroq sovutish</li>
+                    <li>8 yo'nalishli havoni taqsimlash</li>
+                    <li>AI Mode - sun'iy intellekt orqali haroratni o'zi sozlashi</li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- Filter Technology Section -->
+        <div class="filter-section">
+            <h3 class="filter-title">
+                <span class="filter-icon">🛡️</span>
+                Havoni Tozalash Texnologiyalari
+            </h3>
+            <p class="filter-description" style="color: #666; line-height: 1.8; max-width: 800px; margin: 0 auto 30px;">
+                Har ikkala konditsioner ham havo sifati uchun mukammal filtrlash tizimiga ega. 
+                Gree - an'anaviy Hepa filtrlardan foydalanadi, Samsung esa zamonaviy anti-virus texnologiyasiga ega.
+            </p>
+            
+            <div class="filter-comparison">
+                <div class="filter-card gree-filter">
+                    <div class="filter-name">GREE Hepa Filter</div>
+                    <p style="color: #666; line-height: 1.6;">
+                        ⭐ 99.97% chang va allergenlarni ushlaydi<br>
+                        ⭐ Har 3 oyda tozalash kerak<br>
+                        ⭐ Zamburug' va mog'or sporalariga qarshi<br>
+                        ⭐ O'z-o'zini tozalash funksiyasi
+                    </p>
+                </div>
+                
+                <div class="filter-card samsung-filter">
+                    <div class="filter-name">Samsung Virus Doctor</div>
+                    <p style="color: #666; line-height: 1.6;">
+                        ⭐ Virus va bakteriyalarni 99.9% neytrallaydi<br>
+                        ⭐ UV-C yorug'lik bilan ishlaydi<br>
+                        ⭐ Avtomatik ishlash rejimi<br>
+                        ⭐ COVID-19 ga qarshi samarali<br>
+                        ⭐ Odatdagi Hepa filtrlardan 4 barobar samarali
+                    </p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Smart Control Section -->
+        <div class="smart-control">
+            <h3 class="smart-title">
+                <span class="smart-icon">📱</span>
+                Smart Boshqarish Imkoniyatlari
+            </h3>
+            <p style="color: #e0e0e0; margin-bottom: 30px; max-width: 800px; margin-left: auto; margin-right: auto;">
+                Ikkala konditsioner ham smart boshqarish imkoniyatlariga ega. 
+                Gree WiFi orqali, Samsung esa Bluetooth orqali boshqariladi.
+            </p>
+            
+            <div class="smart-features">
+                <div class="smart-feature">
+                    <div class="smart-feature-icon">📅</div>
+                    <h4 style="color: white; margin-bottom: 10px;">Dasturlash</h4>
+                    <p style="color: #e0e0e0;">Haroratni kunlik dasturlash</p>
+                </div>
+                
+                <div class="smart-feature">
+                    <div class="smart-feature-icon">🌡️</div>
+                    <h4 style="color: white; margin-bottom: 10px;">Masofadan boshqarish</h4>
+                    <p style="color: #e0e0e0;">Telefon orqali to'liq nazorat</p>
+                </div>
+                
+                <div class="smart-feature">
+                    <div class="smart-feature-icon">📊</div>
+                    <h4 style="color: white; margin-bottom: 10px;">Energiya monitoringi</h4>
+                    <p style="color: #e0e0e0;">Iste'molni kuzatish va optimallashtirish</p>
+                </div>
+                
+                <div class="smart-feature">
+                    <div class="smart-feature-icon">🔔</div>
+                    <h4 style="color: white; margin-bottom: 10px;">Bildirishnomalar</h4>
+                    <p style="color: #e0e0e0;">Filtr tozalash, xato haqida xabarlar</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- CTA Button -->
+        <div class="cta-section">
+            <a href="#" class="cta-button">
+                <span class="cta-icon">🔍</span>
+                Batafsil Solishtirishni Ko'rish
+            </a>
+            <p style="margin-top: 20px; color: #666; font-size: 0.9rem;">
+                Batafsil test natijalari, energiya sarfi taqqoslash va haqiqiy foydalanuvchilar izohlari
+            </p>
+        </div>
+        
+        <!-- Footer -->
+        <div class="footer">
+            <p>© 2024 Maishiy Texnika Solishtirish | Gree vs Samsung Konditsionerlar</p>
+            <p>Barcha narxlar va xususiyatlar 2024 yil yanvar holatiga to'g'ri keladi</p>
+            <div class="footer-links">
+                <a href="#">Maxfiylik siyosati</a>
+                <a href="#">Foydalanish shartlari</a>
+                <a href="#">Biz bilan bog'lanish</a>
+                <a href="#">Reklama berish</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Product card hover effects
+        document.querySelectorAll('.product-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-10px)';
+                this.style.boxShadow = '0 20px 40px rgba(0, 0, 0, 0.15)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+                this.style.boxShadow = '0 10px 25px rgba(0, 0, 0, 0.08)';
+            });
+        });
+        
+        // CTA button animation
+        const ctaButton = document.querySelector('.cta-button');
+        ctaButton.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-5px)';
+            this.style.boxShadow = '0 15px 30px rgba(39, 174, 96, 0.4)';
+        });
+        
+        ctaButton.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(0)';
+            this.style.boxShadow = '0 10px 25px rgba(39, 174, 96, 0.3)';
+        });
+        
+        // Winner badge animation
+        const winnerBadge = document.querySelector('.winner-badge');
+        winnerBadge.style.animation = 'float 3s ease-in-out infinite';
+        
+        // Add floating animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes float {
+                0% { transform: translateY(0px); }
+                50% { transform: translateY(-10px); }
+                100% { transform: translateY(0px); }
+            }
+            
+            @keyframes pulse {
+                0% { transform: scale(1); }
+                50% { transform: scale(1.05); }
+                100% { transform: scale(1); }
+            }
+        `;
+        document.head.appendChild(style);
+        
+        // Features card hover effect
+        document.querySelectorAll('.features-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-5px)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+            });
+        });
+        
+        // Filter cards hover effect
+        document.querySelectorAll('.filter-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'scale(1.02)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'scale(1)';
+            });
+        });
+        
+        // Smart features pulse animation
+        document.querySelectorAll('.smart-feature').forEach(feature => {
+            feature.style.animation = 'pulse 4s infinite';
+        });
+        
+        // Spec items hover effect
+        document.querySelectorAll('.spec-item').forEach(item => {
+            item.addEventListener('mouseenter', function() {
+                this.style.backgroundColor = '#f0fff4';
+            });
+            
+            item.addEventListener('mouseleave', function() {
+                this.style.backgroundColor = '';
+            });
+        });
+        
+        // Logo animation on hover
+        document.querySelectorAll('.product-logo').forEach(logo => {
+            logo.addEventListener('mouseenter', function() {
+                this.style.transform = 'rotate(360deg)';
+                this.style.transition = 'transform 1s ease';
+            });
+            
+            logo.addEventListener('mouseleave', function() {
+                this.style.transform = 'rotate(0deg)';
+            });
+        });
+    </script>
+</body>
+</html>
