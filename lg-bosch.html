@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LG vs Bosch Kir Yuvish Mashinalari - Batafsil Solishtirish</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #e3f2fd 0%, #f3e5f5 100%);
+            color: #333;
+            line-height: 1.6;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .comparison-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            margin-bottom: 40px;
+        }
+        
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, #8e44ad 0%, #9b59b6 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header::before {
+            content: "👕";
+            position: absolute;
+            font-size: 150px;
+            opacity: 0.1;
+            top: -30px;
+            right: -30px;
+        }
+        
+        .main-title {
+            font-size: 2.8rem;
+            margin-bottom: 15px;
+            font-weight: 800;
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        /* Adsense Top */
+        .adsense-top {
+            background: #f8f9fa;
+            border: 2px dashed #dee2e6;
+            border-radius: 15px;
+            padding: 30px;
+            margin: 30px;
+            text-align: center;
+        }
+        
+        .ad-label {
+            display: inline-block;
+            background: #8e44ad;
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            margin-bottom: 15px;
+            font-size: 0.9rem;
+            font-weight: bold;
+        }
+        
+        .ad-placeholder {
+            height: 250px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(45deg, #f3e5f5, #e8f5e9);
+            border-radius: 10px;
+            color: #666;
+            font-style: italic;
+            font-size: 1.1rem;
+        }
+        
+        /* Products Grid */
+        .products-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            padding: 40px;
+        }
+        
+        @media (max-width: 768px) {
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .product-card {
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .lg-card {
+            border-top: 6px solid #8e44ad;
+        }
+        
+        .bosch-card {
+            border-top: 6px solid #2c3e50;
+        }
+        
+        .product-header {
+            padding: 30px;
+            text-align: center;
+            color: white;
+        }
+        
+        .lg-header {
+            background: linear-gradient(135deg, #8e44ad, #9b59b6);
+        }
+        
+        .bosch-header {
+            background: linear-gradient(135deg, #2c3e50, #34495e);
+        }
+        
+        .product-logo {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+        
+        .product-name {
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 10px;
+        }
+        
+        .product-type {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+        
+        /* Specifications */
+        .specifications {
+            padding: 30px;
+            background: #f8f9fa;
+        }
+        
+        .spec-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            border-bottom: 1px solid #dee2e6;
+        }
+        
+        .spec-item:last-child {
+            border-bottom: none;
+        }
+        
+        .spec-label {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            font-weight: 600;
+            color: #2c3e50;
+        }
+        
+        .spec-icon {
+            font-size: 1.3rem;
+            width: 40px;
+            text-align: center;
+        }
+        
+        .spec-value {
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+        
+        .lg-value {
+            color: #8e44ad;
+        }
+        
+        .bosch-value {
+            color: #2c3e50;
+        }
+        
+        /* Price Section */
+        .price-section {
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            padding: 25px;
+            text-align: center;
+            border-top: 1px solid #dee2e6;
+        }
+        
+        .price-label {
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 10px;
+        }
+        
+        .price {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 15px;
+        }
+        
+        .lg-price {
+            color: #8e44ad;
+        }
+        
+        .bosch-price {
+            color: #2c3e50;
+        }
+        
+        /* Comparison Result */
+        .result-section {
+            background: linear-gradient(135deg, #9b59b6, #8e44ad);
+            color: white;
+            padding: 40px;
+            text-align: center;
+            margin: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(155, 89, 182, 0.3);
+        }
+        
+        .winner-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 15px;
+            background: white;
+            color: #9b59b6;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-size: 1.5rem;
+            font-weight: 800;
+            margin-bottom: 25px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        .trophy-icon {
+            font-size: 2rem;
+        }
+        
+        .winner-reason {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        /* Adsense Middle */
+        .adsense-middle {
+            background: #f8f9fa;
+            border: 2px dashed #dee2e6;
+            border-radius: 15px;
+            padding: 30px;
+            margin: 40px;
+            text-align: center;
+        }
+        
+        .adsense-middle .ad-placeholder {
+            height: 200px;
+            background: linear-gradient(45deg, #e8f5e9, #fff3e0);
+        }
+        
+        /* Features Section */
+        .features-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            padding: 40px;
+        }
+        
+        @media (max-width: 768px) {
+            .features-section {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .features-card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+        }
+        
+        .features-title {
+            font-size: 1.5rem;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid;
+        }
+        
+        .lg-features-title {
+            color: #8e44ad;
+            border-bottom-color: #8e44ad;
+        }
+        
+        .bosch-features-title {
+            color: #2c3e50;
+            border-bottom-color: #2c3e50;
+        }
+        
+        .features-list {
+            list-style: none;
+            margin-bottom: 25px;
+        }
+        
+        .features-list li {
+            padding: 15px 0;
+            padding-left: 35px;
+            position: relative;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .features-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .lg-features li::before {
+            content: "💜";
+            position: absolute;
+            left: 0;
+            color: #8e44ad;
+            font-size: 1.2rem;
+        }
+        
+        .bosch-features li::before {
+            content: "⚫";
+            position: absolute;
+            left: 0;
+            color: #2c3e50;
+            font-size: 1.2rem;
+        }
+        
+        /* Motor Technology Section */
+        .motor-section {
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            padding: 40px;
+            text-align: center;
+            margin: 40px;
+            border-radius: 15px;
+            border: 1px solid #dee2e6;
+        }
+        
+        .motor-title {
+            font-size: 1.8rem;
+            color: #2c3e50;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+        
+        .motor-icon {
+            font-size: 2rem;
+            color: #8e44ad;
+        }
+        
+        .motor-description {
+            font-size: 1.1rem;
+            color: #666;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+        
+        /* CTA Button */
+        .cta-section {
+            text-align: center;
+            padding: 40px;
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            border-top: 1px solid #dee2e6;
+        }
+        
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 15px;
+            background: linear-gradient(135deg, #8e44ad, #9b59b6);
+            color: white;
+            padding: 20px 40px;
+            border-radius: 50px;
+            font-size: 1.3rem;
+            font-weight: 600;
+            text-decoration: none;
+            box-shadow: 0 10px 25px rgba(142, 68, 173, 0.3);
+            transition: transform 0.3s ease;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(142, 68, 173, 0.4);
+        }
+        
+        .cta-icon {
+            font-size: 1.5rem;
+        }
+        
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 30px;
+            color: #666;
+            font-size: 0.9rem;
+            border-top: 1px solid #dee2e6;
+            background: #f8f9fa;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .footer-links a {
+            color: #8e44ad;
+            text-decoration: none;
+        }
+        
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="comparison-container">
+        <!-- Header -->
+        <div class="header">
+            <h1 class="main-title">LG vs Bosch Kir Yuvish Mashinalari</h1>
+            <p class="subtitle">Yuk og'irligi 7-8 kg, inverter motorli kir yuvish mashinalarini solishtirish</p>
+        </div>
+        
+        <!-- Adsense Top -->
+        <div class="adsense-top">
+            <div class="ad-label">📢 REKLAMA</div>
+            <div class="ad-placeholder">
+                Adsense Banner - LG va Bosch kir yuvish mashinalari uchun chegirmalar
+            </div>
+        </div>
+        
+        <!-- Products Grid -->
+        <div class="products-grid">
+            <!-- LG -->
+            <div class="product-card lg-card">
+                <div class="product-header lg-header">
+                    <div class="product-logo">👕</div>
+                    <h2 class="product-name">LG</h2>
+                    <div class="product-type">Inverter Motorli Kir Yuvish Mashina</div>
+                </div>
+                
+                <div class="specifications">
+                    <div class="spec-item">
+                        <div class="spec-label">
+                            <span class="spec-icon">⚖️</span>
+                            <span>Yuk og'irligi</span>
+                        </div>
+                        <div class="spec-value lg-value">8 kg</div>
+                    </div>
+                    
+                    <div class="spec-item">
+                        <div class="spec-label">
+                            <span class="spec-icon">💧</span>
+                            <span>Suv sarfi</span>
+                        </div>
+                        <div class="spec-value lg-value">45 Litr</div>
+                    </div>
+                    
+                    <div class="spec-item">
+                        <div class="spec-label">
+                            <span class="spec-icon">🌀</span>
+                            <span>Aylanish tezligi</span>
+                        </div>
+                        <div class="spec-value lg-value">1400 rpm</div>
+                    </div>
+                    
+                    <div class="spec-item">
+                        <div class="spec-label">
+                            <span class="spec-icon">📋</span>
+                            <span>Dasturlar soni</span>
+                        </div>
+                        <div class="spec-value lg-value">14 ta</div>
+                    </div>
+                    
+                    <div class="spec-item">
+                        <div class="spec-label">
+                            <span class="spec-icon">🔇</span>
+                            <span>Shovqin darajasi</span>
+                        </div>
+                        <div class="spec-value lg-value">47 dB</div>
+                    </div>
+                </div>
+                
+                <div class="price-section">
+                    <div class="price-label">Narxi</div>
+                    <div class="price lg-price">$600</div>
+                    <p style="color: #666;">Yetkazib berish: 3 kun ichida</p>
+                </div>
+            </div>
+            
+            <!-- Bosch -->
+            <div class="product-card bosch-card">
+                <div class="product-header bosch-header">
+                    <div class="product-logo">⚙️</div>
+                    <h2 class="product-name">BOSCH</h2>
+                    <div class="product-type">Inverter Motorli Kir Yuvish Mashina</div>
+                </div>
+                
+                <div class="specifications">
+                    <div class="spec-item">
+                        <div class="spec-label">
+                            <span class="spec-icon">⚖️</span>
+                            <span>Yuk og'irligi</span>
+                        </div>
+                        <div class="spec-value bosch-value">7 kg</div>
+                    </div>
+                    
+                    <div class="spec-item">
+                        <div class="spec-label">
+                            <span class="spec-icon">💧</span>
+                            <span>Suv sarfi</span>
+                        </div>
+                        <div class="spec-value bosch-value">50 Litr</div>
+                    </div>
+                    
+                    <div class="spec-item">
+                        <div class="spec-label">
+                            <span class="spec-icon">🌀</span>
+                            <span>Aylanish tezligi</span>
+                        </div>
+                        <div class="spec-value bosch-value">1200 rpm</div>
+                    </div>
+                    
+                    <div class="spec-item">
+                        <div class="spec-label">
+                            <span class="spec-icon">📋</span>
+                            <span>Dasturlar soni</span>
+                        </div>
+                        <div class="spec-value bosch-value">12 ta</div>
+                    </div>
+                    
+                    <div class="spec-item">
+                        <div class="spec-label">
+                            <span class="spec-icon">🔇</span>
+                            <span>Shovqin darajasi</span>
+                        </div>
+                        <div class="spec-value bosch-value">49 dB</div>
+                    </div>
+                </div>
+                
+                <div class="price-section">
+                    <div class="price-label">Narxi</div>
+                    <div class="price bosch-price">$650</div>
+                    <p style="color: #666;">Yetkazib berish: 4 kun ichida</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Comparison Result -->
+        <div class="result-section">
+            <div class="winner-badge">
+                <span class="trophy-icon">🏆</span>
+                TEST G'OLIBI: LG
+            </div>
+            <p class="winner-reason">
+                LG ko'p funksiyalari va tez yuvish dasturlari bilan g'olib. 
+                Bosch esa sifat va uzoq muddatli ishlash davomiyligi bilan ajralib turadi.
+            </p>
+        </div>
+        
+        <!-- Adsense Middle -->
+        <div class="adsense-middle">
+            <div class="ad-label">🔥 KIR YUVISH MASHINALARI SOLISHTIRILMOQDA</div>
+            <div class="ad-placeholder">
+                Adsense Banner - Qaysi mashina sizga mos keladi?
+            </div>
+        </div>
+        
+        <!-- Features Section -->
+        <div class="features-section">
+            <div class="features-card">
+                <h3 class="features-title lg-features-title">LG Xususiyatlari</h3>
+                <ul class="features-list lg-features">
+                    <li>Direct Drive inverter motor - 10 yil kafolat</li>
+                    <li>Steam technology - bug' bilan yuvish</li>
+                    <li>AI DD™ - sun'iy intellekt bilan yuvish</li>
+                    <li>TurboWash™ - 59 daqiqada tez yuvish</li>
+                    <li>Wi-Fi va ThinQ ilova orqali boshqarish</li>
+                    <li>6 harakatli yuvish texnologiyasi</li>
+                    <li>Allergy Care™ - allergiya uchun maxsus dastur</li>
+                </ul>
+            </div>
+            
+            <div class="features-card">
+                <h3 class="features-title bosch-features-title">Bosch Xususiyatlari</h3>
+                <ul class="features-list bosch-features">
+                    <li>EcoSilence Drive™ - energiya tejamkor motor</li>
+                    <li>ActiveWater Plus - suv tejamkor texnologiya</li>
+                    <li>i-DOS - avtomatik yuvish vositalari dozasi</li>
+                    <li>VarioPerfect® - vaqt yoki energiya tejamkorligi</li>
+                    <li>AntiVibration Design - vibratsiyaga qarshi</li>
+                    <li>SpeedPerfect - 65% tezroq yuvish</li>
+                    <li>AquaStop® - suv oqishiga qarshi himoya</li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- Motor Technology Section -->
+        <div class="motor-section">
+            <h3 class="motor-title">
+                <span class="motor-icon">⚡</span>
+                Inverter Motor Texnologiyasi
+            </h3>
+            <p class="motor-description">
+                Har ikkala kir yuvish mashinasi ham zamonaviy inverter motor texnologiyasiga ega. 
+                Bu motorlar an'anaviy motorlarga qaraganda 50% kamroq energiya iste'mol qiladi, 
+                kamroq shovqin chiqaradi va uzoqroq xizmat qiladi. LG Direct Drive motori 10 yilgacha, 
+                Bosch EcoSilence Drive motori esa 8 yilgacha kafolatga ega.
+            </p>
+        </div>
+        
+        <!-- CTA Button -->
+        <div class="cta-section">
+            <a href="#" class="cta-button">
+                <span class="cta-icon">🔍</span>
+                Batafsil Solishtirishni Ko'rish
+            </a>
+            <p style="margin-top: 20px; color: #666; font-size: 0.9rem;">
+                Batafsil test natijalari, video sharhlar va haqiqiy foydalanuvchilar izohlari
+            </p>
+        </div>
+        
+        <!-- Footer -->
+        <div class="footer">
+            <p>© 2024 Maishiy Texnika Solishtirish | LG vs Bosch Kir Yuvish Mashinalari</p>
+            <p>Barcha narxlar va xususiyatlar 2024 yil yanvar holatiga to'g'ri keladi</p>
+            <div class="footer-links">
+                <a href="#">Maxfiylik siyosati</a>
+                <a href="#">Foydalanish shartlari</a>
+                <a href="#">Biz bilan bog'lanish</a>
+                <a href="#">Reklama berish</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Product card hover effects
+        document.querySelectorAll('.product-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-10px)';
+                this.style.boxShadow = '0 20px 40px rgba(0, 0, 0, 0.15)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+                this.style.boxShadow = '0 10px 25px rgba(0, 0, 0, 0.08)';
+            });
+        });
+        
+        // CTA button animation
+        const ctaButton = document.querySelector('.cta-button');
+        ctaButton.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-5px)';
+            this.style.boxShadow = '0 15px 30px rgba(142, 68, 173, 0.4)';
+        });
+        
+        ctaButton.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(0)';
+            this.style.boxShadow = '0 10px 25px rgba(142, 68, 173, 0.3)';
+        });
+        
+        // Winner badge animation
+        const winnerBadge = document.querySelector('.winner-badge');
+        winnerBadge.style.animation = 'float 3s ease-in-out infinite';
+        
+        // Add floating animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes float {
+                0% { transform: translateY(0px); }
+                50% { transform: translateY(-10px); }
+                100% { transform: translateY(0px); }
+            }
+        `;
+        document.head.appendChild(style);
+        
+        // Features card hover effect
+        document.querySelectorAll('.features-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-5px)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+            });
+        });
+        
+        // Spec items hover effect
+        document.querySelectorAll('.spec-item').forEach(item => {
+            item.addEventListener('mouseenter', function() {
+                this.style.backgroundColor = '#f5f0ff';
+            });
+            
+            item.addEventListener('mouseleave', function() {
+                this.style.backgroundColor = '';
+            });
+        });
+    </script>
+</body>
+</html>
