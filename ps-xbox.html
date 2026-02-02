@@ -1,0 +1,1242 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PS5 vs Xbox Series X - Yangi Avlod Gaming Konsollar</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', system-ui, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: #e2e8f0;
+            min-height: 100vh;
+        }
+        
+        .console-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        /* Header */
+        .console-header {
+            text-align: center;
+            margin-bottom: 60px;
+            padding: 60px 40px;
+            background: linear-gradient(135deg, rgba(0, 87, 184, 0.2), rgba(16, 124, 16, 0.2));
+            border-radius: 30px;
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .console-header::before {
+            content: '🎮';
+            position: absolute;
+            font-size: 200px;
+            opacity: 0.05;
+            top: -40px;
+            right: -40px;
+        }
+        
+        .main-title {
+            font-size: 3.5rem;
+            background: linear-gradient(45deg, #0066cc, #107c10);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 20px;
+            font-weight: 800;
+            line-height: 1.1;
+        }
+        
+        .subtitle {
+            font-size: 1.4rem;
+            color: #cbd5e1;
+            max-width: 800px;
+            margin: 0 auto 30px;
+            line-height: 1.6;
+        }
+        
+        .rating-badge {
+            display: inline-flex;
+            align-items: center;
+            background: linear-gradient(45deg, #f59e0b, #fbbf24);
+            color: #1e293b;
+            padding: 15px 35px;
+            border-radius: 30px;
+            font-weight: 800;
+            font-size: 1.5rem;
+            margin-top: 20px;
+            box-shadow: 0 10px 25px rgba(245, 158, 11, 0.3);
+        }
+        
+        .test-badge {
+            display: inline-block;
+            background: rgba(59, 130, 246, 0.2);
+            color: #60a5fa;
+            padding: 10px 25px;
+            border-radius: 20px;
+            margin-left: 15px;
+            border: 1px solid rgba(59, 130, 246, 0.4);
+            font-weight: 700;
+        }
+        
+        /* Consoles Grid */
+        .consoles-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+        
+        @media (max-width: 992px) {
+            .consoles-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+        }
+        
+        .console-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 25px;
+            padding: 45px 40px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .console-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
+        }
+        
+        .console-card.ps5 {
+            border-left: 8px solid #0066cc;
+        }
+        
+        .console-card.ps5::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 8px;
+            background: linear-gradient(90deg, #0066cc, #1e88e5);
+        }
+        
+        .console-card.xbox {
+            border-left: 8px solid #107c10;
+        }
+        
+        .console-card.xbox::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 8px;
+            background: linear-gradient(90deg, #107c10, #4caf50);
+        }
+        
+        .console-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 35px;
+            padding-bottom: 25px;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .console-icon {
+            font-size: 4rem;
+            margin-right: 30px;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .ps5-icon {
+            background: rgba(0, 102, 204, 0.2);
+            color: #1e88e5;
+        }
+        
+        .xbox-icon {
+            background: rgba(16, 124, 16, 0.2);
+            color: #4caf50;
+        }
+        
+        .console-name {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 10px;
+        }
+        
+        .ps5-name {
+            color: #1e88e5;
+        }
+        
+        .xbox-name {
+            color: #4caf50;
+        }
+        
+        .console-model {
+            color: #cbd5e1;
+            font-size: 1.3rem;
+            font-weight: 600;
+        }
+        
+        /* Performance Stats */
+        .performance-stats {
+            margin: 30px 0;
+        }
+        
+        .stat-item {
+            margin-bottom: 25px;
+        }
+        
+        .stat-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+        
+        .stat-label {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+        
+        .stat-icon {
+            font-size: 1.4rem;
+            width: 40px;
+            text-align: center;
+        }
+        
+        .ps5-stat .stat-icon {
+            color: #1e88e5;
+        }
+        
+        .xbox-stat .stat-icon {
+            color: #4caf50;
+        }
+        
+        .stat-value {
+            font-size: 1.3rem;
+            font-weight: 700;
+        }
+        
+        .stat-bar {
+            height: 12px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 6px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .stat-fill {
+            height: 100%;
+            border-radius: 6px;
+            transition: width 1.5s ease;
+        }
+        
+        .ps5-fill {
+            background: linear-gradient(90deg, #0066cc, #1e88e5);
+        }
+        
+        .xbox-fill {
+            background: linear-gradient(90deg, #107c10, #4caf50);
+        }
+        
+        /* Exclusive Games */
+        .exclusives-section {
+            margin: 60px 0;
+        }
+        
+        .exclusives-title {
+            text-align: center;
+            font-size: 2.8rem;
+            margin-bottom: 40px;
+            color: #fbbf24;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+        }
+        
+        .exclusives-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 35px;
+        }
+        
+        @media (max-width: 768px) {
+            .exclusives-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .exclusive-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 35px 30px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        
+        .exclusive-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+        
+        .ps5-exclusive {
+            border-left: 6px solid #0066cc;
+        }
+        
+        .xbox-exclusive {
+            border-left: 6px solid #107c10;
+        }
+        
+        .exclusive-icon {
+            font-size: 3.5rem;
+            margin-bottom: 25px;
+        }
+        
+        .ps5-exclusive .exclusive-icon {
+            color: #1e88e5;
+        }
+        
+        .xbox-exclusive .exclusive-icon {
+            color: #4caf50;
+        }
+        
+        .exclusive-title {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: #f0f0f0;
+        }
+        
+        .exclusive-games {
+            list-style: none;
+            margin-top: 20px;
+        }
+        
+        .exclusive-games li {
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        
+        .exclusive-games li:last-child {
+            border-bottom: none;
+        }
+        
+        /* Comparison Table */
+        .comparison-section {
+            margin: 60px 0;
+        }
+        
+        .comparison-title {
+            text-align: center;
+            font-size: 2.8rem;
+            margin-bottom: 40px;
+            color: #fbbf24;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+        }
+        
+        .comparison-table {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 25px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+        
+        .table-header {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            background: linear-gradient(90deg, rgba(0, 102, 204, 0.3), rgba(16, 124, 16, 0.3));
+            padding: 30px 40px;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .header-cell {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: #f0f0f0;
+        }
+        
+        .ps5-header {
+            color: #1e88e5;
+        }
+        
+        .xbox-header {
+            color: #4caf50;
+        }
+        
+        .table-row {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            padding: 25px 40px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            align-items: center;
+            transition: background 0.3s ease;
+        }
+        
+        .table-row:hover {
+            background: rgba(255, 255, 255, 0.05);
+        }
+        
+        .table-row:last-child {
+            border-bottom: none;
+        }
+        
+        .row-label {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            font-size: 1.3rem;
+            font-weight: 600;
+        }
+        
+        .row-icon {
+            font-size: 1.5rem;
+            width: 40px;
+            text-align: center;
+            color: #fbbf24;
+        }
+        
+        .row-value {
+            font-size: 1.4rem;
+            font-weight: 700;
+        }
+        
+        .comparison-badge {
+            display: inline-block;
+            padding: 8px 18px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 800;
+            margin-left: 15px;
+        }
+        
+        .ps5-badge {
+            background: rgba(0, 102, 204, 0.2);
+            color: #1e88e5;
+            border: 1px solid rgba(0, 102, 204, 0.4);
+        }
+        
+        .xbox-badge {
+            background: rgba(16, 124, 16, 0.2);
+            color: #4caf50;
+            border: 1px solid rgba(16, 124, 16, 0.4);
+        }
+        
+        /* Game Pass Section */
+        .gamepass-section {
+            background: linear-gradient(135deg, rgba(16, 124, 16, 0.15), rgba(0, 102, 204, 0.15));
+            border-radius: 30px;
+            padding: 50px;
+            margin: 60px 0;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .gamepass-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 6px;
+            background: linear-gradient(90deg, #0066cc, #107c10);
+        }
+        
+        .gamepass-title {
+            font-size: 2.8rem;
+            margin-bottom: 25px;
+            color: #fbbf24;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+        }
+        
+        .gamepass-features {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        @media (max-width: 992px) {
+            .gamepass-features {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .gamepass-features {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .gamepass-feature {
+            padding: 25px;
+            border-radius: 20px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+        }
+        
+        .gamepass-icon {
+            font-size: 2.5rem;
+            color: #4caf50;
+            margin-bottom: 20px;
+        }
+        
+        .gamepass-feature-title {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: #f0f0f0;
+        }
+        
+        .gamepass-feature-desc {
+            color: #cbd5e1;
+            line-height: 1.6;
+        }
+        
+        /* Recommendation Section */
+        .recommendation-section {
+            margin: 60px 0;
+        }
+        
+        .recommendation-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+            color: #fbbf24;
+        }
+        
+        .recommendation-cards {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 35px;
+        }
+        
+        @media (max-width: 768px) {
+            .recommendation-cards {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .recommendation-card {
+            padding: 40px 35px;
+            border-radius: 25px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+        }
+        
+        .recommendation-card.ps5-rec {
+            border-top: 8px solid #0066cc;
+        }
+        
+        .recommendation-card.xbox-rec {
+            border-top: 8px solid #107c10;
+        }
+        
+        .rec-title {
+            font-size: 1.8rem;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+        
+        .ps5-rec .rec-title {
+            color: #1e88e5;
+        }
+        
+        .xbox-rec .rec-title {
+            color: #4caf50;
+        }
+        
+        .rec-points {
+            list-style: none;
+            margin-top: 25px;
+        }
+        
+        .rec-points li {
+            padding: 15px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .rec-points li:last-child {
+            border-bottom: none;
+        }
+        
+        .rec-points li::before {
+            content: '🎯';
+            font-size: 1.2rem;
+        }
+        
+        /* Ad Sections */
+        .ad-section {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 25px;
+            padding: 40px;
+            margin: 50px 0;
+            text-align: center;
+            border: 2px dashed rgba(251, 191, 36, 0.3);
+        }
+        
+        .ad-label {
+            display: inline-block;
+            background: rgba(251, 191, 36, 0.2);
+            color: #fbbf24;
+            padding: 12px 30px;
+            border-radius: 25px;
+            margin-bottom: 30px;
+            font-size: 1.1rem;
+            font-weight: 800;
+        }
+        
+        .ad-placeholder {
+            height: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(251, 191, 36, 0.1);
+            border-radius: 20px;
+            color: #94a3b8;
+            font-style: italic;
+            font-size: 1.2rem;
+            margin: 25px 0;
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            text-align: center;
+            margin: 60px 0 40px;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            padding: 20px 45px;
+            border-radius: 15px;
+            font-size: 1.3rem;
+            font-weight: 800;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 15px;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            min-width: 220px;
+            justify-content: center;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(45deg, #0066cc, #107c10);
+            color: white;
+            box-shadow: 0 10px 30px rgba(0, 102, 204, 0.4);
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 102, 204, 0.5);
+        }
+        
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.1);
+            color: #e2e8f0;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateY(-5px);
+        }
+        
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 40px 20px;
+            margin-top: 60px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #94a3b8;
+            font-size: 1rem;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="console-container">
+        <!-- Header -->
+        <header class="console-header">
+            <h1 class="main-title">PS5 vs Xbox Series X</h1>
+            <p class="subtitle">Yangi avlod konsollarni 100 soatlik gaming testida sinab ko'rdik</p>
+            <div class="rating-badge">
+                <i class="fas fa-star"></i>
+                <span>4.5/5 Gaming Reytingi</span>
+                <span class="test-badge">100 soatlik test</span>
+            </div>
+        </header>
+
+        <!-- Consoles Grid -->
+        <div class="consoles-grid">
+            <!-- PS5 -->
+            <div class="console-card ps5">
+                <div class="console-header">
+                    <div class="console-icon ps5-icon">
+                        <i class="fab fa-playstation"></i>
+                    </div>
+                    <div>
+                        <h2 class="console-name ps5-name">PlayStation 5</h2>
+                        <div class="console-model">Digital Edition & Standard</div>
+                    </div>
+                </div>
+                
+                <div class="performance-stats">
+                    <div class="stat-item">
+                        <div class="stat-header">
+                            <div class="stat-label ps5-stat">
+                                <i class="fas fa-microchip stat-icon"></i>
+                                <span>GPU Quvvati</span>
+                            </div>
+                            <div class="stat-value ps5-name">10.28 TFLOPS</div>
+                        </div>
+                        <div class="stat-bar">
+                            <div class="stat-fill ps5-fill" style="width: 82%;"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-item">
+                        <div class="stat-header">
+                            <div class="stat-label ps5-stat">
+                                <i class="fas fa-bolt stat-icon"></i>
+                                <span>SSD Tezligi</span>
+                            </div>
+                            <div class="stat-value ps5-name">5.5 GB/s</div>
+                        </div>
+                        <div class="stat-bar">
+                            <div class="stat-fill ps5-fill" style="width: 90%;"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-item">
+                        <div class="stat-header">
+                            <div class="stat-label ps5-stat">
+                                <i class="fas fa-gamepad stat-icon"></i>
+                                <span>Eksklyuzivlar</span>
+                            </div>
+                            <div class="stat-value ps5-name">25+ o'yin</div>
+                        </div>
+                        <div class="stat-bar">
+                            <div class="stat-fill ps5-fill" style="width: 85%;"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div style="margin-top: 30px; padding: 25px; background: rgba(0, 102, 204, 0.1); border-radius: 15px; border-left: 4px solid #0066cc;">
+                    <h3 style="color: #1e88e5; margin-bottom: 15px; display: flex; align-items: center; gap: 12px;">
+                        <i class="fas fa-crown"></i>
+                        Kuchli Tomonlari
+                    </h3>
+                    <p style="color: #cbd5e1; line-height: 1.7;">
+                        Eng yaxshi eksklyuziv o'yinlar (Spider-Man, God of War). Ultra tez SSD, DualSense kontrollerning taktil feedbacki.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Xbox Series X -->
+            <div class="console-card xbox">
+                <div class="console-header">
+                    <div class="console-icon xbox-icon">
+                        <i class="fab fa-xbox"></i>
+                    </div>
+                    <div>
+                        <h2 class="console-name xbox-name">Xbox Series X</h2>
+                        <div class="console-model">Most Powerful Console</div>
+                    </div>
+                </div>
+                
+                <div class="performance-stats">
+                    <div class="stat-item">
+                        <div class="stat-header">
+                            <div class="stat-label xbox-stat">
+                                <i class="fas fa-microchip stat-icon"></i>
+                                <span>GPU Quvvati</span>
+                            </div>
+                            <div class="stat-value xbox-name">12.15 TFLOPS</div>
+                        </div>
+                        <div class="stat-bar">
+                            <div class="stat-fill xbox-fill" style="width: 95%;"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-item">
+                        <div class="stat-header">
+                            <div class="stat-label xbox-stat">
+                                <i class="fas fa-gamepad stat-icon"></i>
+                                <span>Game Pass</span>
+                            </div>
+                            <div class="stat-value xbox-name">400+ o'yin</div>
+                        </div>
+                        <div class="stat-bar">
+                            <div class="stat-fill xbox-fill" style="width: 92%;"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-item">
+                        <div class="stat-header">
+                            <div class="stat-label xbox-stat">
+                                <i class="fas fa-sync-alt stat-icon"></i>
+                                <span>Quick Resume</span>
+                            </div>
+                            <div class="stat-value xbox-name">6 o'yin</div>
+                        </div>
+                        <div class="stat-bar">
+                            <div class="stat-fill xbox-fill" style="width: 88%;"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div style="margin-top: 30px; padding: 25px; background: rgba(16, 124, 16, 0.1); border-radius: 15px; border-left: 4px solid #107c10;">
+                    <h3 style="color: #4caf50; margin-bottom: 15px; display: flex; align-items: center; gap: 12px;">
+                        <i class="fas fa-trophy"></i>
+                        Kuchli Tomonlari
+                    </h3>
+                    <p style="color: #cbd5e1; line-height: 1.7;">
+                        Xbox Game Pass - 400+ o'yin kutubxonasi. Eng kuchli konsol, Smart Delivery, Quick Resume, backward compatibility.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Exclusive Games -->
+        <section class="exclusives-section">
+            <h2 class="exclusives-title">
+                <i class="fas fa-gamepad"></i>
+                Eksklyuziv O'yinlar
+            </h2>
+            
+            <div class="exclusives-grid">
+                <div class="exclusive-card ps5-exclusive">
+                    <div class="exclusive-icon">
+                        <i class="fab fa-playstation"></i>
+                    </div>
+                    <h3 class="exclusive-title">PS5 Eksklyuzivlari</h3>
+                    <p style="color: #cbd5e1; margin-bottom: 20px; line-height: 1.6;">
+                        PlayStation Studios tomonidan ishlab chiqilgan premium eksklyuziv o'yinlar
+                    </p>
+                    <ul class="exclusive-games">
+                        <li>Spider-Man 2</li>
+                        <li>God of War Ragnarök</li>
+                        <li>Horizon Forbidden West</li>
+                        <li>The Last of Us Part I</li>
+                        <li>Gran Turismo 7</li>
+                    </ul>
+                </div>
+                
+                <div class="exclusive-card xbox-exclusive">
+                    <div class="exclusive-icon">
+                        <i class="fab fa-xbox"></i>
+                    </div>
+                    <h3 class="exclusive-title">Xbox Game Pass</h3>
+                    <p style="color: #cbd5e1; margin-bottom: 20px; line-height: 1.6;">
+                        400+ o'yinga ega kutubxona. Yangi chiqqan o'yinlar darhol mavjud
+                    </p>
+                    <ul class="exclusive-games">
+                        <li>Starfield</li>
+                        <li>Halo Infinite</li>
+                        <li>Forza Horizon 5</li>
+                        <li>Microsoft Flight Simulator</li>
+                        <li>EA Play integratsiyasi</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Ad Banner -->
+        <div class="ad-section">
+            <div class="ad-label">Gaming Konsollar</div>
+            <div class="ad-placeholder">
+                AdSense Horizontal Banner (728x90)
+            </div>
+        </div>
+
+        <!-- Comparison Table -->
+        <section class="comparison-section">
+            <h2 class="comparison-title">
+                <i class="fas fa-table"></i>
+                Texnik Xususiyatlar Taqqoslash
+            </h2>
+            
+            <div class="comparison-table">
+                <div class="table-header">
+                    <div class="header-cell">Xususiyatlar</div>
+                    <div class="header-cell ps5-header">PS5</div>
+                    <div class="header-cell xbox-header">Xbox Series X</div>
+                </div>
+                
+                <div class="table-row">
+                    <div class="row-label">
+                        <i class="fas fa-microchip row-icon"></i>
+                        <span>CPU</span>
+                    </div>
+                    <div class="row-value">AMD Zen 2 8-core</div>
+                    <div class="row-value">AMD Zen 2 8-core</div>
+                </div>
+                
+                <div class="table-row">
+                    <div class="row-label">
+                        <i class="fas fa-tachometer-alt row-icon"></i>
+                        <span>GPU Quvvati</span>
+                    </div>
+                    <div class="row-value">10.28 TFLOPS</div>
+                    <div class="row-value">
+                        12.15 TFLOPS
+                        <span class="comparison-badge xbox-badge">YUQORI</span>
+                    </div>
+                </div>
+                
+                <div class="table-row">
+                    <div class="row-label">
+                        <i class="fas fa-hdd row-icon"></i>
+                        <span>Xotira</span>
+                    </div>
+                    <div class="row-value">825 GB SSD</div>
+                    <div class="row-value">
+                        1 TB SSD
+                        <span class="comparison-badge xbox-badge">KO'P</span>
+                    </div>
+                </div>
+                
+                <div class="table-row">
+                    <div class="row-label">
+                        <i class="fas fa-bolt row-icon"></i>
+                        <span>SSD Tezligi</span>
+                    </div>
+                    <div class="row-value">
+                        5.5 GB/s
+                        <span class="comparison-badge ps5-badge">TEZ</span>
+                    </div>
+                    <div class="row-value">2.4 GB/s</div>
+                </div>
+                
+                <div class="table-row">
+                    <div class="row-label">
+                        <i class="fas fa-gamepad row-icon"></i>
+                        <span>O'yinlar Strategiyasi</span>
+                    </div>
+                    <div class="row-value">
+                        Eksklyuzivlar
+                        <span class="comparison-badge ps5-badge">PREMIUM</span>
+                    </div>
+                    <div class="row-value">
+                        Game Pass
+                        <span class="comparison-badge xbox-badge">ARZON</span>
+                    </div>
+                </div>
+                
+                <div class="table-row">
+                    <div class="row-label">
+                        <i class="fas fa-dollar-sign row-icon"></i>
+                        <span>Boshlang'ich Narx</span>
+                    </div>
+                    <div class="row-value">$499</div>
+                    <div class="row-value">$499</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Game Pass Section -->
+        <section class="gamepass-section">
+            <h2 class="gamepass-title">
+                <i class="fas fa-crown"></i>
+                Xbox Game Pass - Gaming Revolutsiyasi
+            </h2>
+            <p style="font-size: 1.5rem; color: #cbd5e1; margin-bottom: 40px; max-width: 800px; margin-left: auto; margin-right: auto;">
+                400+ o'yindan iborat kutubxona. Yangi chiqqan o'yinlar darhol mavjud. Oylik $9.99/$14.99
+            </p>
+            
+            <div class="gamepass-features">
+                <div class="gamepass-feature">
+                    <div class="gamepass-icon">
+                        <i class="fas fa-infinity"></i>
+                    </div>
+                    <h3 class="gamepass-feature-title">400+ O'yin</h3>
+                    <p class="gamepass-feature-desc">
+                        AAA o'yinlar, indie o'yinlar, EA Play o'yinlari. Doimiy yangilanadi.
+                    </p>
+                </div>
+                
+                <div class="gamepass-feature">
+                    <div class="gamepass-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <h3 class="gamepass-feature-title">Day One Releases</h3>
+                    <p class="gamepass-feature-desc">
+                        Microsoft Studios o'yinlari chiqqan kunidan Game Passda. Starfield, Halo Infinite.
+                    </p>
+                </div>
+                
+                <div class="gamepass-feature">
+                    <div class="gamepass-icon">
+                        <i class="fas fa-cloud"></i>
+                    </div>
+                    <h3 class="gamepass-feature-title">Cloud Gaming</h3>
+                    <p class="gamepass-feature-desc">
+                        O'yinlarni telefon, planshet yoki kompyuterda bulut orqali o'ynash.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Recommendation Section -->
+        <section class="recommendation-section">
+            <h2 class="recommendation-title">Qaysi Konsol Sizga Mos Keladi?</h2>
+            
+            <div class="recommendation-cards">
+                <div class="recommendation-card ps5-rec">
+                    <h3 class="rec-title">
+                        <i class="fab fa-playstation"></i>
+                        PlayStation 5 Tanlash Sabablari
+                    </h3>
+                    <p style="color: #cbd5e1; line-height: 1.7; margin-bottom: 20px; text-align: center;">
+                        Agar siz premium eksklyuziv o'yinlar, innovatsion kontroller va tez yuklanishni afzal ko'rsangiz.
+                    </p>
+                    <ul class="rec-points">
+                        <li>Spider-Man, God of War kabi eksklyuzivlar</li>
+                        <li>DualSense - haptik va adaptive triggers</li>
+                        <li>Ultra tez SSD yuklanish</li>
+                        <li>VR (PlayStation VR2) qo'llab-quvvatlash</li>
+                    </ul>
+                </div>
+                
+                <div class="recommendation-card xbox-rec">
+                    <h3 class="rec-title">
+                        <i class="fab fa-xbox"></i>
+                        Xbox Series X Tanlash Sabablari
+                    </h3>
+                    <p style="color: #cbd5e1; line-height: 1.7; margin-bottom: 20px; text-align: center;">
+                        Agar siz keng o'yin kutubxonasi, eng kuchli texnik xususiyatlar va arzon gamingni istasangiz.
+                    </p>
+                    <ul class="rec-points">
+                        <li>Xbox Game Pass - 400+ o'yin</li>
+                        <li>Eng kuchli konsol (12.15 TFLOPS)</li>
+                        <li>Quick Resume - 6 o'yinni saqlash</li>
+                        <li>Smart Delivery - avtomatik yangilash</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 40px; padding: 30px; background: rgba(251, 191, 36, 0.1); border-radius: 20px; border: 1px solid rgba(251, 191, 36, 0.3);">
+                <h3 style="color: #fbbf24; margin-bottom: 15px; font-size: 1.8rem;">
+                    <i class="fas fa-lightbulb"></i>
+                    Yakuniy Qaror
+                </h3>
+                <p style="color: #e2e8f0; font-size: 1.2rem; line-height: 1.7;">
+                    Agar siz <strong>eksklyuziv o'yinlar</strong>ni afzal ko'rsangiz - <span style="color: #1e88e5; font-weight: bold;">PS5</span> tanlang<br>
+                    Agar siz <strong>keng o'yin kutubxonasi</strong>ni afzal ko'rsangiz - <span style="color: #4caf50; font-weight: bold;">Xbox Series X</span> tanlang
+                </p>
+            </div>
+        </section>
+
+        <!-- Vertical Ad -->
+        <div class="ad-section">
+            <div class="ad-label">Gaming Aksessuarlar</div>
+            <div class="ad-placeholder" style="height: 300px;">
+                AdSense Vertical Banner (300x600)
+            </div>
+        </div>
+
+        <!-- CTA Section -->
+        <div class="cta-section">
+            <h2 style="font-size: 2.5rem; color: #f3f4f6; margin-bottom: 20px;">Yangi Avlod Konsollar Tanlashga Tayyormisiz?</h2>
+            <p style="font-size: 1.3rem; color: #cbd5e1; max-width: 800px; margin: 0 auto 30px;">
+                Batafsil test natijalari, o'yin demo'lari va haqiqiy gamerlar sharhlarini o'qish.
+            </p>
+            
+            <div class="cta-buttons">
+                <a href="#" class="btn btn-primary">
+                    <i class="fas fa-gamepad"></i>
+                    To'liq Test Natijalari
+                </a>
+                <a href="#" class="btn btn-secondary">
+                    <i class="fas fa-shopping-cart"></i>
+                    Narxlarni Solishtirish
+                </a>
+                <a href="#" class="btn btn-secondary">
+                    <i class="fas fa-video"></i>
+                    Gameplay Demo'lar
+                </a>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <p>© 2024 PS5 vs Xbox Series X Taqqoslash. 100 soatlik gaming test natijalariga asoslangan.</p>
+            <p style="margin-top: 10px;">PlayStation, Xbox - tegishli kompaniyalarning savdo belgilari.</p>
+        </div>
+    </div>
+
+    <script>
+        // Console card hover effects
+        document.querySelectorAll('.console-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-10px)';
+                this.style.boxShadow = '0 25px 50px rgba(0, 0, 0, 0.4)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+                this.style.boxShadow = 'none';
+            });
+        });
+        
+        // Performance bars animation
+        document.addEventListener('DOMContentLoaded', function() {
+            const statFills = document.querySelectorAll('.stat-fill');
+            statFills.forEach(fill => {
+                const width = fill.style.width;
+                fill.style.width = '0%';
+                
+                setTimeout(() => {
+                    fill.style.width = width;
+                }, 300);
+            });
+        });
+        
+        // Exclusive card hover effects
+        document.querySelectorAll('.exclusive-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-8px)';
+                this.style.boxShadow = '0 20px 40px rgba(0, 0, 0, 0.3)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+                this.style.boxShadow = 'none';
+            });
+        });
+        
+        // Table row hover effects
+        document.querySelectorAll('.table-row').forEach(row => {
+            row.addEventListener('mouseenter', function() {
+                this.style.background = 'rgba(255, 255, 255, 0.08)';
+            });
+            
+            row.addEventListener('mouseleave', function() {
+                this.style.background = '';
+            });
+        });
+        
+        // Gamepass feature hover effects
+        document.querySelectorAll('.gamepass-feature').forEach(feature => {
+            feature.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-5px)';
+            });
+            
+            feature.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+            });
+        });
+        
+        // Recommendation card hover effects
+        document.querySelectorAll('.recommendation-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-8px)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+            });
+        });
+        
+        // Rating badge animation
+        const ratingBadge = document.querySelector('.rating-badge');
+        ratingBadge.addEventListener('click', function() {
+            this.style.transform = 'scale(1.05)';
+            setTimeout(() => {
+                this.style.transform = 'scale(1)';
+            }, 300);
+        });
+        
+        // Ad placeholder click
+        document.querySelectorAll('.ad-placeholder').forEach(ad => {
+            ad.addEventListener('click', function() {
+                alert('Haqiqiy saytda bu joyda AdSense reklamasi bo\'ladi');
+            });
+        });
+        
+        // Add pulse animation for badges
+        const badges = document.querySelectorAll('.comparison-badge');
+        badges.forEach(badge => {
+            badge.style.animation = 'pulse 2s infinite';
+        });
+        
+        // Test badge animation
+        const testBadge = document.querySelector('.test-badge');
+        testBadge.style.animation = 'pulse 3s infinite';
+        
+        // Add CSS animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes pulse {
+                0% { transform: scale(1); opacity: 1; }
+                50% { transform: scale(1.05); opacity: 0.8; }
+                100% { transform: scale(1); opacity: 1; }
+            }
+            
+            @keyframes float {
+                0% { transform: translateY(0px); }
+                50% { transform: translateY(-10px); }
+                100% { transform: translateY(0px); }
+            }
+        `;
+        document.head.appendChild(style);
+        
+        // Console icons floating animation
+        const consoleIcons = document.querySelectorAll('.console-icon');
+        consoleIcons.forEach((icon, index) => {
+            icon.style.animation = `float 3s ease-in-out ${index * 0.5}s infinite`;
+        });
+    </script>
+</body>
+</html>
