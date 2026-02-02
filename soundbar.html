@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Samsung vs LG vs Sonos - Soundbar Sistemalar Solishtirish</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', system-ui, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: #e2e8f0;
+            min-height: 100vh;
+        }
+        
+        .soundbar-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        /* Header */
+        .soundbar-header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 40px 20px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .soundbar-header::before {
+            content: '🎬';
+            position: absolute;
+            top: -30px;
+            right: -30px;
+            font-size: 150px;
+            opacity: 0.05;
+            z-index: 0;
+        }
+        
+        .soundbar-title {
+            font-size: 3rem;
+            background: linear-gradient(45deg, #ef4444, #f97316);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 15px;
+            font-weight: 800;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .soundbar-subtitle {
+            font-size: 1.3rem;
+            color: #94a3b8;
+            max-width: 700px;
+            margin: 0 auto 25px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .soundbar-rating {
+            display: inline-flex;
+            align-items: center;
+            background: linear-gradient(45deg, #ef4444, #dc2626);
+            color: white;
+            padding: 10px 25px;
+            border-radius: 30px;
+            font-weight: 700;
+            font-size: 1.2rem;
+            margin-top: 15px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .soundbar-stars {
+            color: #FFD700;
+            margin-right: 8px;
+            font-size: 1.4rem;
+        }
+        
+        /* Features Section */
+        .features-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+        
+        .feature-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+            border-color: rgba(239, 68, 68, 0.5);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+        
+        .feature-card.dolby {
+            border-top: 5px solid #3b82f6;
+        }
+        
+        .feature-card.wifi {
+            border-top: 5px solid #10b981;
+        }
+        
+        .feature-card.connectivity {
+            border-top: 5px solid #f59e0b;
+        }
+        
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .dolby .feature-icon {
+            color: #3b82f6;
+        }
+        
+        .wifi .feature-icon {
+            color: #10b981;
+        }
+        
+        .connectivity .feature-icon {
+            color: #f59e0b;
+        }
+        
+        .feature-title {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            color: #fff;
+        }
+        
+        .feature-desc {
+            color: #cbd5e1;
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+        
+        /* Product Comparison */
+        .product-comparison {
+            margin-bottom: 40px;
+        }
+        
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 25px;
+        }
+        
+        .product-item {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+        }
+        
+        .product-item.samsung {
+            border-left: 5px solid #3b82f6;
+        }
+        
+        .product-item.lg {
+            border-left: 5px solid #10b981;
+        }
+        
+        .product-item.sonos {
+            border-left: 5px solid #8b5cf6;
+        }
+        
+        .product-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 25px;
+        }
+        
+        .product-name {
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+        
+        .product-name.samsung {
+            color: #3b82f6;
+        }
+        
+        .product-name.lg {
+            color: #10b981;
+        }
+        
+        .product-name.sonos {
+            color: #8b5cf6;
+        }
+        
+        .product-tag {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+        
+        .product-features {
+            list-style: none;
+            margin: 20px 0;
+        }
+        
+        .product-features li {
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .product-features li:last-child {
+            border-bottom: none;
+        }
+        
+        .feature-text {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .feature-check {
+            color: #10b981;
+        }
+        
+        .feature-status {
+            font-weight: 600;
+        }
+        
+        .feature-status.supported {
+            color: #10b981;
+        }
+        
+        .feature-status.unsupported {
+            color: #ef4444;
+        }
+        
+        .product-summary {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 20px;
+            border-radius: 15px;
+            margin-top: 20px;
+            border-left: 4px solid;
+        }
+        
+        .samsung .product-summary {
+            border-left-color: #3b82f6;
+        }
+        
+        .lg .product-summary {
+            border-left-color: #10b981;
+        }
+        
+        .sonos .product-summary {
+            border-left-color: #8b5cf6;
+        }
+        
+        /* Test Results */
+        .test-results {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 40px;
+            margin: 40px 0;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .results-title {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 30px;
+            color: #fbbf24;
+        }
+        
+        .results-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            text-align: center;
+        }
+        
+        .result-item {
+            padding: 25px;
+            border-radius: 15px;
+            background: rgba(255, 255, 255, 0.03);
+        }
+        
+        .result-winner {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+        
+        .result-category {
+            color: #94a3b8;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+        
+        .result-desc {
+            color: #cbd5e1;
+            font-size: 1.1rem;
+        }
+        
+        /* Ad Sections */
+        .ad-section {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 30px;
+            margin: 40px 0;
+            text-align: center;
+            border: 2px dashed rgba(239, 68, 68, 0.3);
+        }
+        
+        .ad-label {
+            display: inline-block;
+            background: rgba(239, 68, 68, 0.2);
+            color: #f87171;
+            padding: 8px 20px;
+            border-radius: 20px;
+            margin-bottom: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+        
+        .ad-placeholder {
+            height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(239, 68, 68, 0.1);
+            border-radius: 15px;
+            color: #94a3b8;
+            font-style: italic;
+            margin: 20px 0;
+        }
+        
+        /* CTA Buttons */
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            padding: 16px 35px;
+            border-radius: 12px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(45deg, #ef4444, #dc2626);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(239, 68, 68, 0.4);
+        }
+        
+        .btn-outline {
+            background: transparent;
+            color: #f87171;
+            border: 2px solid #ef4444;
+        }
+        
+        .btn-outline:hover {
+            background: rgba(239, 68, 68, 0.1);
+            transform: translateY(-3px);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .soundbar-title {
+                font-size: 2.2rem;
+            }
+            
+            .features-section,
+            .product-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .feature-card,
+            .product-item {
+                padding: 20px;
+            }
+            
+            .results-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+            }
+            
+            .btn {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="soundbar-container">
+        <!-- Header -->
+        <header class="soundbar-header">
+            <h1 class="soundbar-title">Samsung vs LG vs Sonos</h1>
+            <p class="soundbar-subtitle">TV uchun soundbar sistemalar - qaysi biri haqiqiy kino tajribasini beradi?</p>
+            <div class="soundbar-rating">
+                <span class="soundbar-stars">★★★★★</span>
+                <span>5.0/5 Reyting</span>
+            </div>
+        </header>
+
+        <!-- Ad Banner -->
+        <div class="ad-section">
+            <div class="ad-label">Home Theater</div>
+            <div class="ad-placeholder">
+                AdSense Horizontal Banner (728x90)
+            </div>
+        </div>
+
+        <!-- Features Section -->
+        <div class="features-section">
+            <div class="feature-card dolby">
+                <div class="feature-icon">
+                    <i class="fas fa-film"></i>
+                </div>
+                <h3 class="feature-title">Dolby Atmos Qo'llab-quvvatlash</h3>
+                <p class="feature-desc">
+                    Eng yuqori darajadagi audio tajriba. Ovoz sizning atrofdagi har bir nuqtadan kelayotgandek his qilinasiz.
+                </p>
+                <div style="display: flex; align-items: center; gap: 10px; color: #60a5fa;">
+                    <i class="fas fa-check-circle"></i>
+                    <span>Barcha premium modellar qo'llab-quvvatlaydi</span>
+                </div>
+            </div>
+
+            <div class="feature-card wifi">
+                <div class="feature-icon">
+                    <i class="fas fa-wifi"></i>
+                </div>
+                <h3 class="feature-title">WiFi va Bluetooth Ulanish</h3>
+                <p class="feature-desc">
+                    Nusxa uzatishning ikkala usuli ham mavjud. WiFi orqali yuqori sifatti audio, Bluetooth orqali qulay ulanish.
+                </p>
+                <div style="display: flex; align-items: center; gap: 10px; color: #10b981;">
+                    <i class="fas fa-check-circle"></i>
+                    <span>Zamonaviy barcha modelarda mavjud</span>
+                </div>
+            </div>
+
+            <div class="feature-card connectivity">
+                <div class="feature-icon">
+                    <i class="fas fa-plug"></i>
+                </div>
+                <h3 class="feature-title">Ko'p kanalli Ulanish</h3>
+                <p class="feature-desc">
+                    HDMI eARC, Optical, AUX va boshqa ko'plab ulanish variantlari. TV, pleer va boshqa qurilmalarni ulash mumkin.
+                </p>
+                <div style="display: flex; align-items: center; gap: 10px; color: #fbbf24;">
+                    <i class="fas fa-check-circle"></i>
+                    <span>Har bir modelda kamida 3 turdagi port</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Product Comparison -->
+        <div class="product-comparison">
+            <h2 style="text-align: center; font-size: 2.2rem; margin-bottom: 30px; color: #fbbf24;">
+                <i class="fas fa-tv"></i>
+                Soundbar Sistemalarni Solishtirish
+            </h2>
+            
+            <div class="product-grid">
+                <!-- Samsung -->
+                <div class="product-item samsung">
+                    <div class="product-header">
+                        <div class="product-name samsung">Samsung</div>
+                        <div class="product-tag">TV bilan integratsiya</div>
+                    </div>
+                    
+                    <p style="color: #94a3b8; margin-bottom: 20px;">
+                        <strong>Asosiy afzalligi:</strong> Samsung TV bilan mukammal ishlaydi
+                    </p>
+                    
+                    <ul class="product-features">
+                        <li>
+                            <div class="feature-text">
+                                <i class="fas fa-satellite-dish feature-check"></i>
+                                <span>Dolby Atmos</span>
+                            </div>
+                            <span class="feature-status supported">Qo'llab-quvvatlanadi</span>
+                        </li>
+                        <li>
+                            <div class="feature-text">
+                                <i class="fas fa-wifi feature-check"></i>
+                                <span>WiFi 6</span>
+                            </div>
+                            <span class="feature-status supported">Mavjud</span>
+                        </li>
+                        <li>
+                            <div class="feature-text">
+                                <i class="fas fa-plug feature-check"></i>
+                                <span>HDMI eARC</span>
+                            </div>
+                            <span class="feature-status supported">2 ta port</span>
+                        </li>
+                        <li>
+                            <div class="feature-text">
+                                <i class="fas fa-volume-up feature-check"></i>
+                                <span>Subwoofer</span>
+                            </div>
+                            <span class="feature-status supported">Wireless</span>
+                        </li>
+                    </ul>
+                    
+                    <div class="product-summary">
+                        <i class="fas fa-tv" style="color: #3b82f6; margin-right: 8px;"></i>
+                        <strong>Tavsiya:</strong> Samsung TV egalari uchun eng yaxshi tanlov
+                    </div>
+                </div>
+
+                <!-- LG -->
+                <div class="product-item lg">
+                    <div class="product-header">
+                        <div class="product-name lg">LG</div>
+                        <div class="product-tag">AI Sound Pro</div>
+                    </div>
+                    
+                    <p style="color: #94a3b8; margin-bottom: 20px;">
+                        <strong>Asosiy afzalligi:</strong> Sun'iy intellekt bilan ovozni sozlash
+                    </p>
+                    
+                    <ul class="product-features">
+                        <li>
+                            <div class="feature-text">
+                                <i class="fas fa-satellite-dish feature-check"></i>
+                                <span>Dolby Atmos</span>
+                            </div>
+                            <span class="feature-status supported">Qo'llab-quvvatlanadi</span>
+                        </li>
+                        <li>
+                            <div class="feature-text">
+                                <i class="fas fa-brain feature-check"></i>
+                                <span>AI Sound</span>
+                            </div>
+                            <span class="feature-status supported">Mavjud</span>
+                        </li>
+                        <li>
+                            <div class="feature-text">
+                                <i class="fas fa-plug feature-check"></i>
+                                <span>HDMI eARC</span>
+                            </div>
+                            <span class="feature-status supported">2 ta port</span>
+                        </li>
+                        <li>
+                            <div class="feature-text">
+                                <i class="fas fa-volume-up feature-check"></i>
+                                <span>Meridian Audio</span>
+                            </div>
+                            <span class="feature-status supported">Premium</span>
+                        </li>
+                    </ul>
+                    
+                    <div class="product-summary">
+                        <i class="fas fa-robot" style="color: #10b981; margin-right: 8px;"></i>
+                        <strong>Tavsiya:</strong> Avtomatik ovoz sozlashni xohlovchilar uchun
+                    </div>
+                </div>
+
+                <!-- Sonos -->
+                <div class="product-item sonos">
+                    <div class="product-header">
+                        <div class="product-name sonos">Sonos</div>
+                        <div class="product-tag">Smart Audio System</div>
+                    </div>
+                    
+                    <p style="color: #94a3b8; margin-bottom: 20px;">
+                        <strong>Asosiy afzalligi:</strong> Butun uy uchun audio tizim
+                    </p>
+                    
+                    <ul class="product-features">
+                        <li>
+                            <div class="feature-text">
+                                <i class="fas fa-satellite-dish feature-check"></i>
+                                <span>Dolby Atmos</span>
+                            </div>
+                            <span class="feature-status supported">Qo'llab-quvvatlanadi</span>
+                        </li>
+                        <li>
+                            <div class="feature-text">
+                                <i class="fas fa-home feature-check"></i>
+                                <span>Multi-room</span>
+                            </div>
+                            <span class="feature-status supported">Mavjud</span>
+                        </li>
+                        <li>
+                            <div class="feature-text">
+                                <i class="fas fa-plug feature-check"></i>
+                                <span>HDMI eARC</span>
+                            </div>
+                            <span class="feature-status supported">1 ta port</span>
+                        </li>
+                        <li>
+                            <div class="feature-text">
+                                <i class="fas fa-music feature-check"></i>
+                                <span>Music Services</span>
+                            </div>
+                            <span class="feature-status supported">30+</span>
+                        </li>
+                    </ul>
+                    
+                    <div class="product-summary">
+                        <i class="fas fa-expand-arrows-alt" style="color: #8b5cf6; margin-right: 8px;"></i>
+                        <strong>Tavsiya:</strong> Butun uy uchun audio tizim xohlovchilar uchun
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Test Results -->
+        <div class="test-results">
+            <h3 class="results-title">Test Natijalari</h3>
+            <div class="results-grid">
+                <div class="result-item">
+                    <div class="result-winner" style="color: #3b82f6;">Samsung</div>
+                    <div class="result-category">TV Bilan Integratsiya</div>
+                    <div class="result-desc">
+                        Samsung TV bilan mukammal ishlaydi. Bitta pult bilan boshqarish.
+                    </div>
+                </div>
+                <div class="result-item">
+                    <div class="result-winner" style="color: #10b981;">LG</div>
+                    <div class="result-category">AI Ovoz Sozlash</div>
+                    <div class="result-desc">
+                        Sun'iy intellekt kontent turiga qarab avtomatik ovoz sozlaydi.
+                    </div>
+                </div>
+                <div class="result-item">
+                    <div class="result-winner" style="color: #8b5cf6;">Sonos</div>
+                    <div class="result-category">Tizim Kengaytmasi</div>
+                    <div class="result-desc">
+                        Boshqa Sonos kolonkalarini qo'shib, butun uy tizimiga aylantirish.
+                    </div>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 30px; padding-top: 20px; border-top: 1px solid rgba(255, 255, 255, 0.1);">
+                <h4 style="color: #fbbf24; font-size: 1.3rem; margin-bottom: 15px;">
+                    <i class="fas fa-trophy"></i>
+                    Umumiy G'alaba
+                </h4>
+                <p style="font-size: 1.2rem; color: #cbd5e1;">
+                    <span style="color: #3b82f6; font-weight: bold;">Samsung</span> - TV bilan ishlash uchun<br>
+                    <span style="color: #10b981; font-weight: bold;">LG</span> - aqlli ovoz sozlash uchun<br>
+                    <span style="color: #8b5cf6; font-weight: bold;">Sonos</span> - tizim va kengaytma uchun
+                </p>
+            </div>
+        </div>
+
+        <!-- Vertical Ad -->
+        <div class="ad-section">
+            <div class="ad-label">Home Audio Systems</div>
+            <div class="ad-placeholder" style="height: 250px;">
+                AdSense Vertical Banner (300x250)
+            </div>
+        </div>
+
+        <!-- CTA Buttons -->
+        <div class="cta-buttons">
+            <a href="#" class="btn btn-primary">
+                <i class="fas fa-film"></i>
+                Demo Video Ko'rish
+            </a>
+            <a href="#" class="btn btn-outline">
+                <i class="fas fa-store"></i>
+                Do'konlardagi Narxlar
+            </a>
+            <a href="#" class="btn btn-outline">
+                <i class="fas fa-comments"></i>
+                Mutaxassislar Fikri
+            </a>
+        </div>
+    </div>
+
+    <script>
+        // Feature card animation
+        document.querySelectorAll('.feature-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-10px)';
+                this.style.boxShadow = '0 20px 40px rgba(0, 0, 0, 0.3)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+                this.style.boxShadow = 'none';
+            });
+        });
+        
+        // Product item interaction
+        document.querySelectorAll('.product-item').forEach(item => {
+            item.addEventListener('mouseenter', function() {
+                this.style.backgroundColor = 'rgba(255, 255, 255, 0.08)';
+            });
+            
+            item.addEventListener('mouseleave', function() {
+                this.style.backgroundColor = '';
+            });
+        });
+        
+        // Rating badge animation
+        const ratingBadge = document.querySelector('.soundbar-rating');
+        ratingBadge.addEventListener('click', function() {
+            this.style.animation = 'pulse 0.5s';
+            setTimeout(() => {
+                this.style.animation = '';
+            }, 500);
+        });
+        
+        // Add CSS animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes pulse {
+                0% { transform: scale(1); }
+                50% { transform: scale(1.05); }
+                100% { transform: scale(1); }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>
