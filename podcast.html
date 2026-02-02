@@ -1,0 +1,1303 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Podcast va Streaming Uskunalari - Boshlovchilar uchun</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', system-ui, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: #e2e8f0;
+            min-height: 100vh;
+        }
+        
+        .podcast-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        /* Header */
+        .podcast-header {
+            text-align: center;
+            margin-bottom: 60px;
+            padding: 60px 40px;
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.2), rgba(59, 130, 246, 0.2));
+            border-radius: 30px;
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .podcast-header::before {
+            content: '🎙️';
+            position: absolute;
+            font-size: 200px;
+            opacity: 0.05;
+            top: -40px;
+            right: -40px;
+        }
+        
+        .main-title {
+            font-size: 3.5rem;
+            background: linear-gradient(45deg, #8b5cf6, #3b82f6);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 20px;
+            font-weight: 800;
+            line-height: 1.1;
+        }
+        
+        .subtitle {
+            font-size: 1.4rem;
+            color: #cbd5e1;
+            max-width: 800px;
+            margin: 0 auto 30px;
+            line-height: 1.6;
+        }
+        
+        .rating-badge {
+            display: inline-flex;
+            align-items: center;
+            background: linear-gradient(45deg, #f59e0b, #fbbf24);
+            color: #1e293b;
+            padding: 15px 35px;
+            border-radius: 30px;
+            font-weight: 800;
+            font-size: 1.5rem;
+            margin-top: 20px;
+            box-shadow: 0 10px 25px rgba(245, 158, 11, 0.3);
+        }
+        
+        /* Price Range */
+        .price-range {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 25px;
+            margin: 30px auto;
+            max-width: 600px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .price-title {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: #fbbf24;
+        }
+        
+        .price-slider {
+            height: 10px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 5px;
+            margin: 20px 0;
+            position: relative;
+        }
+        
+        .price-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #10b981, #3b82f6, #8b5cf6);
+            border-radius: 5px;
+            width: 100%;
+        }
+        
+        .price-labels {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+        }
+        
+        .price-label {
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+        
+        .price-start {
+            color: #10b981;
+        }
+        
+        .price-end {
+            color: #8b5cf6;
+        }
+        
+        /* Connection Types */
+        .connection-section {
+            margin: 50px 0;
+            text-align: center;
+        }
+        
+        .connection-title {
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+            color: #fbbf24;
+        }
+        
+        .connection-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
+        
+        @media (max-width: 768px) {
+            .connection-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .connection-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 40px 30px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .connection-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+        
+        .connection-card.usb {
+            border-top: 6px solid #3b82f6;
+        }
+        
+        .connection-card.xlr {
+            border-top: 6px solid #8b5cf6;
+        }
+        
+        .connection-icon {
+            font-size: 4rem;
+            margin-bottom: 25px;
+        }
+        
+        .usb-icon {
+            color: #3b82f6;
+        }
+        
+        .xlr-icon {
+            color: #8b5cf6;
+        }
+        
+        .connection-name {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        
+        .connection-desc {
+            color: #cbd5e1;
+            line-height: 1.7;
+            margin-bottom: 25px;
+        }
+        
+        /* Equipment Grid */
+        .equipment-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 35px;
+            margin-bottom: 60px;
+        }
+        
+        @media (max-width: 1200px) {
+            .equipment-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .equipment-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .equipment-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 25px;
+            padding: 40px 35px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .equipment-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
+        }
+        
+        .equipment-card.beginner {
+            border-left: 8px solid #10b981;
+        }
+        
+        .equipment-card.beginner::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 8px;
+            background: linear-gradient(90deg, #10b981, #34d399);
+        }
+        
+        .equipment-card.intermediate {
+            border-left: 8px solid #3b82f6;
+        }
+        
+        .equipment-card.intermediate::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 8px;
+            background: linear-gradient(90deg, #3b82f6, #60a5fa);
+        }
+        
+        .equipment-card.professional {
+            border-left: 8px solid #8b5cf6;
+        }
+        
+        .equipment-card.professional::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 8px;
+            background: linear-gradient(90deg, #8b5cf6, #a78bfa);
+        }
+        
+        .equipment-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+            padding-bottom: 25px;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .equipment-icon {
+            font-size: 3.5rem;
+            margin-right: 25px;
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .beginner-icon {
+            background: rgba(16, 185, 129, 0.2);
+            color: #10b981;
+        }
+        
+        .intermediate-icon {
+            background: rgba(59, 130, 246, 0.2);
+            color: #3b82f6;
+        }
+        
+        .professional-icon {
+            background: rgba(139, 92, 246, 0.2);
+            color: #8b5cf6;
+        }
+        
+        .equipment-name {
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 10px;
+        }
+        
+        .beginner-name {
+            color: #10b981;
+        }
+        
+        .intermediate-name {
+            color: #3b82f6;
+        }
+        
+        .professional-name {
+            color: #8b5cf6;
+        }
+        
+        .equipment-price {
+            color: #fbbf24;
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-top: 5px;
+        }
+        
+        /* Features */
+        .equipment-features {
+            margin: 30px 0;
+        }
+        
+        .feature-item {
+            display: flex;
+            align-items: center;
+            padding: 15px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .feature-item:last-child {
+            border-bottom: none;
+        }
+        
+        .feature-icon {
+            margin-right: 15px;
+            font-size: 1.2rem;
+            width: 30px;
+        }
+        
+        .beginner-feature .feature-icon {
+            color: #10b981;
+        }
+        
+        .intermediate-feature .feature-icon {
+            color: #3b82f6;
+        }
+        
+        .professional-feature .feature-icon {
+            color: #8b5cf6;
+        }
+        
+        /* Blue Yeti Special */
+        .blue-yeti-section {
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.15), rgba(16, 185, 129, 0.15));
+            border-radius: 30px;
+            padding: 50px;
+            margin: 60px 0;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .blue-yeti-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 6px;
+            background: linear-gradient(90deg, #3b82f6, #10b981);
+        }
+        
+        .blue-yeti-title {
+            font-size: 2.8rem;
+            margin-bottom: 25px;
+            color: #3b82f6;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+        }
+        
+        .blue-yeti-subtitle {
+            font-size: 1.5rem;
+            color: #cbd5e1;
+            margin-bottom: 40px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .blue-yeti-features {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        @media (max-width: 992px) {
+            .blue-yeti-features {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .blue-yeti-features {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .yeti-feature {
+            padding: 25px;
+            border-radius: 20px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+        }
+        
+        .yeti-feature-icon {
+            font-size: 2.5rem;
+            color: #3b82f6;
+            margin-bottom: 20px;
+        }
+        
+        .yeti-feature-title {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: #f0f0f0;
+        }
+        
+        .yeti-feature-desc {
+            color: #cbd5e1;
+            line-height: 1.6;
+        }
+        
+        /* Setup Comparison */
+        .setup-section {
+            margin: 60px 0;
+        }
+        
+        .setup-title {
+            text-align: center;
+            font-size: 2.8rem;
+            margin-bottom: 40px;
+            color: #fbbf24;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+        }
+        
+        .setup-comparison {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 25px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+        
+        .setup-header {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            background: linear-gradient(90deg, rgba(16, 185, 129, 0.3), rgba(59, 130, 246, 0.3), rgba(139, 92, 246, 0.3));
+            padding: 30px 40px;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .setup-header-cell {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: #f0f0f0;
+        }
+        
+        .beginner-header {
+            color: #10b981;
+        }
+        
+        .intermediate-header {
+            color: #3b82f6;
+        }
+        
+        .professional-header {
+            color: #8b5cf6;
+        }
+        
+        .setup-row {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            padding: 25px 40px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            align-items: center;
+            transition: background 0.3s ease;
+        }
+        
+        .setup-row:hover {
+            background: rgba(255, 255, 255, 0.05);
+        }
+        
+        .setup-row:last-child {
+            border-bottom: none;
+        }
+        
+        .setup-label {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            font-size: 1.3rem;
+            font-weight: 600;
+        }
+        
+        .setup-icon {
+            font-size: 1.5rem;
+            width: 40px;
+            text-align: center;
+            color: #fbbf24;
+        }
+        
+        .setup-value {
+            font-size: 1.4rem;
+            font-weight: 700;
+        }
+        
+        .setup-badge {
+            display: inline-block;
+            padding: 8px 18px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 800;
+            margin-left: 15px;
+        }
+        
+        .beginner-badge {
+            background: rgba(16, 185, 129, 0.2);
+            color: #10b981;
+            border: 1px solid rgba(16, 185, 129, 0.4);
+        }
+        
+        .intermediate-badge {
+            background: rgba(59, 130, 246, 0.2);
+            color: #3b82f6;
+            border: 1px solid rgba(59, 130, 246, 0.4);
+        }
+        
+        .professional-badge {
+            background: rgba(139, 92, 246, 0.2);
+            color: #8b5cf6;
+            border: 1px solid rgba(139, 92, 246, 0.4);
+        }
+        
+        /* Ad Sections */
+        .ad-section {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 25px;
+            padding: 40px;
+            margin: 50px 0;
+            text-align: center;
+            border: 2px dashed rgba(59, 130, 246, 0.3);
+        }
+        
+        .ad-label {
+            display: inline-block;
+            background: rgba(59, 130, 246, 0.2);
+            color: #3b82f6;
+            padding: 12px 30px;
+            border-radius: 25px;
+            margin-bottom: 30px;
+            font-size: 1.1rem;
+            font-weight: 800;
+        }
+        
+        .ad-placeholder {
+            height: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(59, 130, 246, 0.1);
+            border-radius: 20px;
+            color: #94a3b8;
+            font-style: italic;
+            font-size: 1.2rem;
+            margin: 25px 0;
+        }
+        
+        /* Recommendation Section */
+        .recommendation-section {
+            margin: 60px 0;
+        }
+        
+        .recommendation-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+            color: #fbbf24;
+        }
+        
+        .recommendation-cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 35px;
+        }
+        
+        @media (max-width: 992px) {
+            .recommendation-cards {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .recommendation-cards {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .recommendation-card {
+            padding: 40px 35px;
+            border-radius: 25px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+            text-align: center;
+        }
+        
+        .recommendation-card.beginner-rec {
+            border-top: 8px solid #10b981;
+        }
+        
+        .recommendation-card.intermediate-rec {
+            border-top: 8px solid #3b82f6;
+        }
+        
+        .recommendation-card.professional-rec {
+            border-top: 8px solid #8b5cf6;
+        }
+        
+        .rec-title {
+            font-size: 1.8rem;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+        
+        .beginner-rec .rec-title {
+            color: #10b981;
+        }
+        
+        .intermediate-rec .rec-title {
+            color: #3b82f6;
+        }
+        
+        .professional-rec .rec-title {
+            color: #8b5cf6;
+        }
+        
+        .rec-points {
+            list-style: none;
+            margin-top: 25px;
+            text-align: left;
+        }
+        
+        .rec-points li {
+            padding: 15px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .rec-points li:last-child {
+            border-bottom: none;
+        }
+        
+        .rec-points li::before {
+            content: '🎯';
+            font-size: 1.2rem;
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            text-align: center;
+            margin: 60px 0 40px;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            padding: 20px 45px;
+            border-radius: 15px;
+            font-size: 1.3rem;
+            font-weight: 800;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 15px;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            min-width: 220px;
+            justify-content: center;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(45deg, #3b82f6, #8b5cf6);
+            color: white;
+            box-shadow: 0 10px 30px rgba(59, 130, 246, 0.4);
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(59, 130, 246, 0.5);
+        }
+        
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.1);
+            color: #e2e8f0;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateY(-5px);
+        }
+        
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 40px 20px;
+            margin-top: 60px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #94a3b8;
+            font-size: 1rem;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="podcast-container">
+        <!-- Header -->
+        <header class="podcast-header">
+            <h1 class="main-title">Podcast va Streaming Uskunalari</h1>
+            <p class="subtitle">Yangi boshlovchilar uchun mikrofon va audio interfeyslar - $50 dan $500 gacha barcha byudjetlar uchun</p>
+            <div class="rating-badge">
+                <i class="fas fa-star"></i>
+                <span>3.5/5 Boshlovchilar Reytingi</span>
+            </div>
+        </header>
+
+        <!-- Price Range -->
+        <div class="price-range">
+            <h3 class="price-title">Byudjet Oralig'i</h3>
+            <div class="price-slider">
+                <div class="price-fill"></div>
+            </div>
+            <div class="price-labels">
+                <span class="price-label price-start">$50 - Boshlang'ich</span>
+                <span class="price-label price-end">$500 - Professional</span>
+            </div>
+        </div>
+
+        <!-- Connection Types -->
+        <section class="connection-section">
+            <h2 class="connection-title">Ulanish Turlari</h2>
+            <div class="connection-grid">
+                <div class="connection-card usb">
+                    <div class="connection-icon usb-icon">
+                        <i class="fas fa-plug"></i>
+                    </div>
+                    <h3 class="connection-name">USB Mikrofonlar</h3>
+                    <p class="connection-desc">
+                        Oson ulanish - kompyuterga to'g'ridan-to'g'ri ulash. Qo'shimcha uskunalar talab qilmaydi. Yangi boshlovchilar uchun ideal.
+                    </p>
+                    <div style="margin-top: 20px; padding: 15px; background: rgba(59, 130, 246, 0.1); border-radius: 10px;">
+                        <i class="fas fa-check-circle" style="color: #3b82f6; margin-right: 8px;"></i>
+                        <strong>Qulaylik:</strong> Plug & Play, arzon, oddiy
+                    </div>
+                </div>
+                
+                <div class="connection-card xlr">
+                    <div class="connection-icon xlr-icon">
+                        <i class="fas fa-sliders-h"></i>
+                    </div>
+                    <h3 class="connection-name">XLR Mikrofonlar</h3>
+                    <p class="connection-desc">
+                        Professional audio interfeys talab qiladi. Yuqori audio sifat va sozlash imkoniyatlari. Tajribali podcasterlar uchun.
+                    </p>
+                    <div style="margin-top: 20px; padding: 15px; background: rgba(139, 92, 246, 0.1); border-radius: 10px;">
+                        <i class="fas fa-check-circle" style="color: #8b5cf6; margin-right: 8px;"></i>
+                        <strong>Afzallik:</strong> Yuqori sifat, keng sozlash
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Equipment Grid -->
+        <div class="equipment-grid">
+            <!-- Beginner -->
+            <div class="equipment-card beginner">
+                <div class="equipment-header">
+                    <div class="equipment-icon beginner-icon">
+                        <i class="fas fa-user-graduate"></i>
+                    </div>
+                    <div>
+                        <h2 class="equipment-name beginner-name">Boshlang'ich</h2>
+                        <div class="equipment-price">$50 - $150</div>
+                    </div>
+                </div>
+                
+                <div class="equipment-features">
+                    <div class="feature-item beginner-feature">
+                        <i class="fas fa-microphone feature-icon"></i>
+                        <span>Blue Yeti Nano</span>
+                    </div>
+                    <div class="feature-item beginner-feature">
+                        <i class="fas fa-headphones feature-icon"></i>
+                        <span>Audio-Technica ATH-M20x</span>
+                    </div>
+                    <div class="feature-item beginner-feature">
+                        <i class="fas fa-desktop feature-icon"></i>
+                        <span>USB to'g'ridan-to'g'ri ulanish</span>
+                    </div>
+                    <div class="feature-item beginner-feature">
+                        <i class="fas fa-dollar-sign feature-icon"></i>
+                        <span>Arzon va samarali</span>
+                    </div>
+                </div>
+                
+                <div style="margin-top: 30px; padding: 25px; background: rgba(16, 185, 129, 0.1); border-radius: 15px; border-left: 4px solid #10b981;">
+                    <h3 style="color: #10b981; margin-bottom: 15px; display: flex; align-items: center; gap: 12px;">
+                        <i class="fas fa-rocket"></i>
+                        Boshlovchilar uchun
+                    </h3>
+                    <p style="color: #cbd5e1; line-height: 1.7;">
+                        Agar siz podcasting yoki streamingni yangi boshlayotgan bo'lsangiz. Minimal investitsiya bilan yaxshi natijalar.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Intermediate -->
+            <div class="equipment-card intermediate">
+                <div class="equipment-header">
+                    <div class="equipment-icon intermediate-icon">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <div>
+                        <h2 class="equipment-name intermediate-name">O'rta</h2>
+                        <div class="equipment-price">$150 - $300</div>
+                    </div>
+                </div>
+                
+                <div class="equipment-features">
+                    <div class="feature-item intermediate-feature">
+                        <i class="fas fa-microphone-alt feature-icon"></i>
+                        <span>Rode NT-USB Mini</span>
+                    </div>
+                    <div class="feature-item intermediate-feature">
+                        <i class="fas fa-headphones-alt feature-icon"></i>
+                        <span>Beyerdynamic DT 770 Pro</span>
+                    </div>
+                    <div class="feature-item intermediate-feature">
+                        <i class="fas fa-sliders-h feature-icon"></i>
+                        <span>Audio interfeys bilan</span>
+                    </div>
+                    <div class="feature-item intermediate-feature">
+                        <i class="fas fa-chart-line feature-icon"></i>
+                        <span>Yaxshilangan audio sifat</span>
+                    </div>
+                </div>
+                
+                <div style="margin-top: 30px; padding: 25px; background: rgba(59, 130, 246, 0.1); border-radius: 15px; border-left: 4px solid #3b82f6;">
+                    <h3 style="color: #3b82f6; margin-bottom: 15px; display: flex; align-items: center; gap: 12px;">
+                        <i class="fas fa-chart-bar"></i>
+                        Rivojlanayotganlar uchun
+                    </h3>
+                    <p style="color: #cbd5e1; line-height: 1.7;">
+                        Agar siz muntazam kontent yaratasiz va audio sifatini yaxshilashni istasangiz. Professionalga o'tish bosqichi.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Professional -->
+            <div class="equipment-card professional">
+                <div class="equipment-header">
+                    <div class="equipment-icon professional-icon">
+                        <i class="fas fa-user-crown"></i>
+                    </div>
+                    <div>
+                        <h2 class="equipment-name professional-name">Professional</h2>
+                        <div class="equipment-price">$300 - $500+</div>
+                    </div>
+                </div>
+                
+                <div class="equipment-features">
+                    <div class="feature-item professional-feature">
+                        <i class="fas fa-microphone feature-icon"></i>
+                        <span>Shure SM7B</span>
+                    </div>
+                    <div class="feature-item professional-feature">
+                        <i class="fas fa-headset feature-icon"></i>
+                        <span>Sennheiser HD 600</span>
+                    </div>
+                    <div class="feature-item professional-feature">
+                        <i class="fas fa-server feature-icon"></i>
+                        <span>Focusrite Scarlett 2i2</span>
+                    </div>
+                    <div class="feature-item professional-feature">
+                        <i class="fas fa-award feature-icon"></i>
+                        <span>Studio sifatida audio</span>
+                    </div>
+                </div>
+                
+                <div style="margin-top: 30px; padding: 25px; background: rgba(139, 92, 246, 0.1); border-radius: 15px; border-left: 4px solid #8b5cf6;">
+                    <h3 style="color: #8b5cf6; margin-bottom: 15px; display: flex; align-items: center; gap: 12px;">
+                        <i class="fas fa-trophy"></i>
+                        Professional uchun
+                    </h3>
+                    <p style="color: #cbd5e1; line-height: 1.7;">
+                        Agar siz professional podcaster yoki streamer bo'lsangiz. Eng yuqori audio sifat va keng sozlash imkoniyatlari.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Blue Yeti Special Section -->
+        <section class="blue-yeti-section">
+            <h2 class="blue-yeti-title">
+                <i class="fas fa-microphone-alt"></i>
+                Blue Yeti - Boshlovchilar uchun №1
+            </h2>
+            <p class="blue-yeti-subtitle">
+                Streaming va podcasting olamida eng mashhur USB mikrofon. 4 ta to'planish naqshlari, o'rnatish uchun oddiy va ajoyib audio sifat.
+            </p>
+            
+            <div class="blue-yeti-features">
+                <div class="yeti-feature">
+                    <div class="yeti-feature-icon">
+                        <i class="fas fa-compress-alt"></i>
+                    </div>
+                    <h3 class="yeti-feature-title">4 To'planish Naqshi</h3>
+                    <p class="yeti-feature-desc">
+                        Cardioid, bidirectional, omnidirectional, stereo. Har qanday vaziyat uchun.
+                    </p>
+                </div>
+                
+                <div class="yeti-feature">
+                    <div class="yeti-feature-icon">
+                        <i class="fas fa-sliders-h"></i>
+                    </div>
+                    <h3 class="yeti-feature-title">O'rnatish Oddiy</h3>
+                    <p class="yeti-feature-desc">
+                        USB orqali to'g'ridan-to'g'ri ulash. Hech qanday qo'shimcha uskuna talab qilmaydi.
+                    </p>
+                </div>
+                
+                <div class="yeti-feature">
+                    <div class="yeti-feature-icon">
+                        <i class="fas fa-volume-up"></i>
+                    </div>
+                    <h3 class="yeti-feature-title">Ajoyib Audio</h3>
+                    <p class="yeti-feature-desc">
+                        Katta diafragma kondensator. Toza va aniq ovoz yozish.
+                    </p>
+                </div>
+            </div>
+            
+            <div style="margin-top: 40px; display: inline-block; background: linear-gradient(45deg, #3b82f6, #10b981); color: white; padding: 15px 35px; border-radius: 25px; font-weight: 700; font-size: 1.2rem;">
+                <i class="fas fa-tag" style="margin-right: 10px;"></i>
+                Boshlang'ich Narxi: $129
+            </div>
+        </section>
+
+        <!-- Ad Banner -->
+        <div class="ad-section">
+            <div class="ad-label">Audio Uskunalari</div>
+            <div class="ad-placeholder">
+                AdSense Horizontal Banner (728x90)
+            </div>
+        </div>
+
+        <!-- Setup Comparison -->
+        <section class="setup-section">
+            <h2 class="setup-title">
+                <i class="fas fa-cogs"></i>
+                To'liq O'rnatish Taqqoslash
+            </h2>
+            
+            <div class="setup-comparison">
+                <div class="setup-header">
+                    <div class="setup-header-cell">Uskunalar</div>
+                    <div class="setup-header-cell beginner-header">Boshlang'ich</div>
+                    <div class="setup-header-cell intermediate-header">O'rta</div>
+                    <div class="setup-header-cell professional-header">Professional</div>
+                </div>
+                
+                <div class="setup-row">
+                    <div class="setup-label">
+                        <i class="fas fa-microphone setup-icon"></i>
+                        <span>Mikrofon</span>
+                    </div>
+                    <div class="setup-value">
+                        Blue Yeti
+                        <span class="setup-badge beginner-badge">USB</span>
+                    </div>
+                    <div class="setup-value">
+                        Rode NT-USB
+                        <span class="setup-badge intermediate-badge">YAXSHI</span>
+                    </div>
+                    <div class="setup-value">
+                        Shure SM7B
+                        <span class="setup-badge professional-badge">PRO</span>
+                    </div>
+                </div>
+                
+                <div class="setup-row">
+                    <div class="setup-label">
+                        <i class="fas fa-headphones setup-icon"></i>
+                        <span>Quloqchinlar</span>
+                    </div>
+                    <div class="setup-value">Audio-Technica M20x</div>
+                    <div class="setup-value">
+                        Beyerdynamic DT 770
+                        <span class="setup-badge intermediate-badge">QULAY</span>
+                    </div>
+                    <div class="setup-value">
+                        Sennheiser HD 600
+                        <span class="setup-badge professional-badge">A'LO</span>
+                    </div>
+                </div>
+                
+                <div class="setup-row">
+                    <div class="setup-label">
+                        <i class="fas fa-sliders-h setup-icon"></i>
+                        <span>Audio Interfeys</span>
+                    </div>
+                    <div class="setup-value">Talab qilmaydi</div>
+                    <div class="setup-value">Focusrite Solo</div>
+                    <div class="setup-value">
+                        Focusrite 2i2
+                        <span class="setup-badge professional-badge">2 KIRISH</span>
+                    </div>
+                </div>
+                
+                <div class="setup-row">
+                    <div class="setup-label">
+                        <i class="fas fa-dollar-sign setup-icon"></i>
+                        <span>Umumiy Narx</span>
+                    </div>
+                    <div class="setup-value">
+                        $130
+                        <span class="setup-badge beginner-badge">ARZON</span>
+                    </div>
+                    <div class="setup-value">$280</div>
+                    <div class="setup-value">$550</div>
+                </div>
+                
+                <div class="setup-row">
+                    <div class="setup-label">
+                        <i class="fas fa-user-check setup-icon"></i>
+                        <span>Kim uchun?</span>
+                    </div>
+                    <div class="setup-value">Yangi boshlovchilar</div>
+                    <div class="setup-value">Muntazam kontent</div>
+                    <div class="setup-value">Professional</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Vertical Ad -->
+        <div class="ad-section">
+            <div class="ad-label">Streaming Aksessuarlari</div>
+            <div class="ad-placeholder" style="height: 300px;">
+                AdSense Vertical Banner (300x600)
+            </div>
+        </div>
+
+        <!-- Recommendation Section -->
+        <section class="recommendation-section">
+            <h2 class="recommendation-title">Qaysi Uskuna Sizga Mos Keladi?</h2>
+            
+            <div class="recommendation-cards">
+                <div class="recommendation-card beginner-rec">
+                    <h3 class="rec-title">
+                        <i class="fas fa-rocket"></i>
+                        Boshlang'ich Uskuna
+                    </h3>
+                    <p style="color: #cbd5e1; line-height: 1.7; margin-bottom: 20px; text-align: center;">
+                        Agar siz podcasting yoki streamingni yangi boshlayotgan bo'lsangiz va minimal byudjet bilan yaxshi natijalar olishni istasangiz.
+                    </p>
+                    <ul class="rec-points">
+                        <li>Blue Yeti + Audio-Technica M20x</li>
+                        <li>Umumiy narx: $130 atrofida</li>
+                        <li>Plug & Play - o'rnatish oddiy</li>
+                        <li>Yaxshi audio sifat minimal narxda</li>
+                    </ul>
+                </div>
+                
+                <div class="recommendation-card intermediate-rec">
+                    <h3 class="rec-title">
+                        <i class="fas fa-chart-line"></i>
+                        O'rta Darajali Uskuna
+                    </h3>
+                    <p style="color: #cbd5e1; line-height: 1.7; margin-bottom: 20px; text-align: center;">
+                        Agar siz muntazam ravishda kontent yaratasiz va audio sifatini sezilarli darajada yaxshilashni istasangiz.
+                    </p>
+                    <ul class="rec-points">
+                        <li>Rode NT-USB + Beyerdynamic + Focusrite</li>
+                        <li>Umumiy narx: $280 atrofida</li>
+                        <li>Professional audio interfeys</li>
+                        <li>Studio darajasida audio sifat</li>
+                    </ul>
+                </div>
+                
+                <div class="recommendation-card professional-rec">
+                    <h3 class="rec-title">
+                        <i class="fas fa-trophy"></i>
+                        Professional Uskuna
+                    </h3>
+                    <p style="color: #cbd5e1; line-height: 1.7; margin-bottom: 20px; text-align: center;">
+                        Agar siz professional podcaster, streamer yoki kontent yaratuvchisi bo'lsangiz va eng yaxshi audio sifatni talab qilsangiz.
+                    </p>
+                    <ul class="rec-points">
+                        <li>Shure SM7B + Sennheiser + Focusrite 2i2</li>
+                        <li>Umumiy narx: $550+</li>
+                        <li>Industry standard mikrofon</li>
+                        <li>To'liq professional studio o'rnatish</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <div class="cta-section">
+            <h2 style="font-size: 2.5rem; color: #f3f4f6; margin-bottom: 20px;">Podcast yoki Streamingni Boshlashga Tayyormisiz?</h2>
+            <p style="font-size: 1.3rem; color: #cbd5e1; max-width: 800px; margin: 0 auto 30px;">
+                To'g'ri uskunalarni tanlash, narxlarni solishtirish va boshlovchilar uchun qo'llanmalar.
+            </p>
+            
+            <div class="cta-buttons">
+                <a href="#" class="btn btn-primary">
+                    <i class="fas fa-microphone-alt"></i>
+                    Uskunalarni Solishtirish
+                </a>
+                <a href="#" class="btn btn-secondary">
+                    <i class="fas fa-video"></i>
+                    O'rnatish Qo'llanmasi
+                </a>
+                <a href="#" class="btn btn-secondary">
+                    <i class="fas fa-shopping-cart"></i>
+                    Narxlarni Ko'rish
+                </a>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <p>© 2024 Podcast va Streaming Uskunalari Taqqoslash. Barcha ma'lumotlar test natijalariga asoslangan.</p>
+            <p style="margin-top: 10px;">Blue Yeti, Rode, Shure, Audio-Technica - tegishli kompaniyalarning savdo belgilari.</p>
+        </div>
+    </div>
+
+    <script>
+        // Equipment card hover effects
+        document.querySelectorAll('.equipment-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-10px)';
+                this.style.boxShadow = '0 25px 50px rgba(0, 0, 0, 0.4)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+                this.style.boxShadow = 'none';
+            });
+        });
+        
+        // Connection card hover effects
+        document.querySelectorAll('.connection-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-8px)';
+                this.style.boxShadow = '0 20px 40px rgba(0, 0, 0, 0.3)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+                this.style.boxShadow = 'none';
+            });
+        });
+        
+        // Price slider animation
+        const priceFill = document.querySelector('.price-fill');
+        priceFill.style.width = '0%';
+        setTimeout(() => {
+            priceFill.style.width = '100%';
+            priceFill.style.transition = 'width 2s ease';
+        }, 500);
+        
+        // Setup row hover effects
+        document.querySelectorAll('.setup-row').forEach(row => {
+            row.addEventListener('mouseenter', function() {
+                this.style.background = 'rgba(255, 255, 255, 0.08)';
+            });
+            
+            row.addEventListener('mouseleave', function() {
+                this.style.background = '';
+            });
+        });
+        
+        // Yeti feature hover effects
+        document.querySelectorAll('.yeti-feature').forEach(feature => {
+            feature.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-5px)';
+            });
+            
+            feature.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+            });
+        });
+        
+        // Recommendation card hover effects
+        document.querySelectorAll('.recommendation-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-8px)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+            });
+        });
+        
+        // Rating badge animation
+        const ratingBadge = document.querySelector('.rating-badge');
+        ratingBadge.addEventListener('click', function() {
+            this.style.transform = 'scale(1.05)';
+            setTimeout(() => {
+                this.style.transform = 'scale(1)';
+            }, 300);
+        });
+        
+        // Ad placeholder click
+        document.querySelectorAll('.ad-placeholder').forEach(ad => {
+            ad.addEventListener('click', function() {
+                alert('Haqiqiy saytda bu joyda AdSense reklamasi bo\'ladi');
+            });
+        });
+        
+        // Price labels animation
+        const priceLabels = document.querySelectorAll('.price-label');
+        priceLabels.forEach(label => {
+            label.style.opacity = '0';
+            label.style.transform = 'translateY(20px)';
+            
+            setTimeout(() => {
+                label.style.transition = 'all 0.5s ease';
+                label.style.opacity = '1';
+                label.style.transform = 'translateY(0)';
+            }, 1000);
+        });
+        
+        // Add animation for badges
+        const badges = document.querySelectorAll('.setup-badge');
+        badges.forEach(badge => {
+            badge.style.animation = 'pulse 2s infinite';
+        });
+        
+        // Add CSS animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes pulse {
+                0% { transform: scale(1); }
+                50% { transform: scale(1.05); }
+                100% { transform: scale(1); }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>
