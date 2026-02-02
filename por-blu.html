@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JBL vs Sony vs Ultimate Ears - Portativ Kolonkalar Solishtirish</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', system-ui, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #1a1f2e 0%, #2d3748 100%);
+            color: #e2e8f0;
+            min-height: 100vh;
+        }
+        
+        .speaker-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        /* Header */
+        .speaker-header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 40px 20px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .speaker-header::before {
+            content: '🔊';
+            position: absolute;
+            top: -50px;
+            right: -50px;
+            font-size: 200px;
+            opacity: 0.05;
+            z-index: 0;
+        }
+        
+        .speaker-title {
+            font-size: 3rem;
+            background: linear-gradient(45deg, #10b981, #3b82f6);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 15px;
+            font-weight: 800;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .speaker-subtitle {
+            font-size: 1.3rem;
+            color: #94a3b8;
+            max-width: 700px;
+            margin: 0 auto 25px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .speaker-rating {
+            display: inline-flex;
+            align-items: center;
+            background: linear-gradient(45deg, #10b981, #059669);
+            color: white;
+            padding: 10px 25px;
+            border-radius: 30px;
+            font-weight: 700;
+            font-size: 1.2rem;
+            margin-top: 15px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .speaker-stars {
+            color: #FFD700;
+            margin-right: 8px;
+            font-size: 1.4rem;
+        }
+        
+        /* Comparison Table */
+        .comparison-table {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            overflow: hidden;
+            margin-bottom: 40px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .table-header {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            background: rgba(16, 185, 129, 0.2);
+            padding: 20px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .table-header div {
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: #10b981;
+        }
+        
+        .table-row {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            padding: 20px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            align-items: center;
+            transition: background 0.3s ease;
+        }
+        
+        .table-row:hover {
+            background: rgba(255, 255, 255, 0.05);
+        }
+        
+        .table-row:last-child {
+            border-bottom: none;
+        }
+        
+        .feature-name {
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .feature-icon {
+            color: #3b82f6;
+            font-size: 1.2rem;
+        }
+        
+        .feature-value {
+            font-size: 1.1rem;
+        }
+        
+        .feature-value.best {
+            color: #10b981;
+            font-weight: 700;
+            position: relative;
+            padding-left: 25px;
+        }
+        
+        .feature-value.best::before {
+            content: '👑';
+            position: absolute;
+            left: 0;
+            font-size: 1.2rem;
+        }
+        
+        .brand-name {
+            font-weight: 700;
+            font-size: 1.3rem;
+            padding: 8px 15px;
+            border-radius: 10px;
+            display: inline-block;
+        }
+        
+        .brand-jbl {
+            background: rgba(234, 179, 8, 0.2);
+            color: #fbbf24;
+        }
+        
+        .brand-sony {
+            background: rgba(59, 130, 246, 0.2);
+            color: #60a5fa;
+        }
+        
+        .brand-ue {
+            background: rgba(139, 92, 246, 0.2);
+            color: #a78bfa;
+        }
+        
+        /* Product Highlights */
+        .product-highlights {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+        
+        .highlight-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .highlight-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+        }
+        
+        .highlight-jbl::before {
+            background: linear-gradient(90deg, #fbbf24, #f59e0b);
+        }
+        
+        .highlight-sony::before {
+            background: linear-gradient(90deg, #3b82f6, #1d4ed8);
+        }
+        
+        .highlight-ue::before {
+            background: linear-gradient(90deg, #8b5cf6, #7c3aed);
+        }
+        
+        .highlight-title {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .highlight-icon {
+            font-size: 2.5rem;
+        }
+        
+        .highlight-points {
+            list-style: none;
+            margin: 20px 0;
+        }
+        
+        .highlight-points li {
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .highlight-points li:last-child {
+            border-bottom: none;
+        }
+        
+        /* Waterproof Badge */
+        .waterproof-section {
+            text-align: center;
+            padding: 30px;
+            background: rgba(59, 130, 246, 0.1);
+            border-radius: 20px;
+            margin: 30px 0;
+            border: 2px solid rgba(59, 130, 246, 0.3);
+        }
+        
+        .waterproof-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(59, 130, 246, 0.3);
+            padding: 12px 25px;
+            border-radius: 30px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+        }
+        
+        /* Ad Sections */
+        .ad-section {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 30px;
+            margin: 40px 0;
+            text-align: center;
+            border: 2px dashed rgba(16, 185, 129, 0.3);
+        }
+        
+        .ad-label {
+            display: inline-block;
+            background: rgba(16, 185, 129, 0.2);
+            color: #10b981;
+            padding: 8px 20px;
+            border-radius: 20px;
+            margin-bottom: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+        
+        .ad-placeholder {
+            height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(16, 185, 129, 0.1);
+            border-radius: 15px;
+            color: #94a3b8;
+            font-style: italic;
+            margin: 20px 0;
+        }
+        
+        /* CTA Buttons */
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            padding: 16px 35px;
+            border-radius: 12px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(45deg, #10b981, #059669);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(16, 185, 129, 0.4);
+        }
+        
+        .btn-outline {
+            background: transparent;
+            color: #10b981;
+            border: 2px solid #10b981;
+        }
+        
+        .btn-outline:hover {
+            background: rgba(16, 185, 129, 0.1);
+            transform: translateY(-3px);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .speaker-title {
+                font-size: 2.2rem;
+            }
+            
+            .table-header, .table-row {
+                grid-template-columns: 1fr;
+                gap: 10px;
+            }
+            
+            .table-header div {
+                display: none;
+            }
+            
+            .table-row {
+                border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+                padding: 15px;
+            }
+            
+            .feature-name::before {
+                content: attr(data-label) ': ';
+                font-weight: 600;
+                color: #94a3b8;
+            }
+            
+            .product-highlights {
+                grid-template-columns: 1fr;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+            }
+            
+            .btn {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="speaker-container">
+        <!-- Header -->
+        <header class="speaker-header">
+            <h1 class="speaker-title">JBL vs Sony vs Ultimate Ears</h1>
+            <p class="speaker-subtitle">Portativ Bluetooth kolonkalar - qaysi biri sizning hayotingizga mos keladi?</p>
+            <div class="speaker-rating">
+                <span class="speaker-stars">★★★★★</span>
+                <span>4.0/5 Reyting</span>
+            </div>
+        </header>
+
+        <!-- Ad Banner -->
+        <div class="ad-section">
+            <div class="ad-label">Audio Mahsulotlar</div>
+            <div class="ad-placeholder">
+                AdSense Horizontal Banner (728x90)
+            </div>
+        </div>
+
+        <!-- Comparison Table -->
+        <div class="comparison-table">
+            <div class="table-header">
+                <div>Xususiyat</div>
+                <div><span class="brand-name brand-jbl">JBL</span></div>
+                <div><span class="brand-name brand-sony">Sony</span></div>
+                <div><span class="brand-name brand-ue">Ultimate Ears</span></div>
+            </div>
+            
+            <div class="table-row">
+                <div class="feature-name" data-label="Batareya quvvati">
+                    <i class="fas fa-battery-full feature-icon"></i>
+                    <span>Batareya quvvati</span>
+                </div>
+                <div class="feature-value best">20 soat</div>
+                <div class="feature-value">15 soat</div>
+                <div class="feature-value">18 soat</div>
+            </div>
+            
+            <div class="table-row">
+                <div class="feature-name" data-label="Audio sifati">
+                    <i class="fas fa-volume-up feature-icon"></i>
+                    <span>Audio sifati</span>
+                </div>
+                <div class="feature-value best">Kuchli bass</div>
+                <div class="feature-value best">Balanslangan</div>
+                <div class="feature-value">Yaxshi</div>
+            </div>
+            
+            <div class="table-row">
+                <div class="feature-name" data-label="Suvga chidamlilik">
+                    <i class="fas fa-tint feature-icon"></i>
+                    <span>Suvga chidamlilik</span>
+                </div>
+                <div class="feature-value best">IP67</div>
+                <div class="feature-value best">IP67</div>
+                <div class="feature-value best">IP67</div>
+            </div>
+            
+            <div class="table-row">
+                <div class="feature-name" data-label="Og'irligi">
+                    <i class="fas fa-weight-hanging feature-icon"></i>
+                    <span>Og'irligi</span>
+                </div>
+                <div class="feature-value">540g</div>
+                <div class="feature-value best">500g</div>
+                <div class="feature-value">550g</div>
+            </div>
+            
+            <div class="table-row">
+                <div class="feature-name" data-label="Narxi">
+                    <i class="fas fa-tag feature-icon"></i>
+                    <span>Narxi</span>
+                </div>
+                <div class="feature-value best">$$</div>
+                <div class="feature-value">$$$</div>
+                <div class="feature-value">$$$</div>
+            </div>
+        </div>
+
+        <!-- Waterproof Section -->
+        <div class="waterproof-section">
+            <div class="waterproof-badge">
+                <i class="fas fa-water"></i>
+                <span>HAMMA MODEL SUVGA CHIDAMLI (IP67)</span>
+            </div>
+            <p style="color: #cbd5e1; max-width: 600px; margin: 0 auto;">
+                Barcha 3 ta model ham suv va changga chidamli. Havuz yoki plyajda bexavotir foydalanishingiz mumkin.
+            </p>
+        </div>
+
+        <!-- Product Highlights -->
+        <div class="product-highlights">
+            <!-- JBL -->
+            <div class="highlight-card highlight-jbl">
+                <h3 class="highlight-title">
+                    <span class="highlight-icon">🔊</span>
+                    <span class="brand-name brand-jbl">JBL</span>
+                </h3>
+                <p style="color: #cbd5e1; margin-bottom: 20px;">
+                    <strong>Kuchli tomoni:</strong> Eng kuchli bass va uzoq batareya quvvati
+                </p>
+                <ul class="highlight-points">
+                    <li>
+                        <span>Batareya:</span>
+                        <span style="color: #fbbf24; font-weight: bold;">20 soat</span>
+                    </li>
+                    <li>
+                        <span>Ovoz sifati:</span>
+                        <span style="color: #fbbf24; font-weight: bold;">Kuchli bass</span>
+                    </li>
+                    <li>
+                        <span>Maxsus xususiyat:</span>
+                        <span>PartyBoost (bir nechta kolonkani birlashtirish)</span>
+                    </li>
+                </ul>
+                <div style="background: rgba(251, 191, 36, 0.1); padding: 15px; border-radius: 10px; margin-top: 15px;">
+                    <i class="fas fa-fire" style="color: #fbbf24; margin-right: 8px;"></i>
+                    <strong>Tavsiya:</strong> Partiyalar va ochiq havoda foydalanish uchun ideal
+                </div>
+            </div>
+
+            <!-- Sony -->
+            <div class="highlight-card highlight-sony">
+                <h3 class="highlight-title">
+                    <span class="highlight-icon">🎵</span>
+                    <span class="brand-name brand-sony">Sony</span>
+                </h3>
+                <p style="color: #cbd5e1; margin-bottom: 20px;">
+                    <strong>Kuchli tomoni:</strong> Balanslangan audio va yaxshi dizayn
+                </p>
+                <ul class="highlight-points">
+                    <li>
+                        <span>Batareya:</span>
+                        <span style="color: #60a5fa;">15 soat</span>
+                    </li>
+                    <li>
+                        <span>Ovoz sifati:</span>
+                        <span style="color: #60a5fa; font-weight: bold;">Balanslangan</span>
+                    </li>
+                    <li>
+                        <span>Maxsus xususiyat:</span>
+                        <span>Extra Bass texnologiyasi</span>
+                    </li>
+                </ul>
+                <div style="background: rgba(59, 130, 246, 0.1); padding: 15px; border-radius: 10px; margin-top: 15px;">
+                    <i class="fas fa-balance-scale" style="color: #3b82f6; margin-right: 8px;"></i>
+                    <strong>Tavsiya:</strong> Har turdagi musiqa va kundalik foydalanish uchun
+                </div>
+            </div>
+
+            <!-- Ultimate Ears -->
+            <div class="highlight-card highlight-ue">
+                <h3 class="highlight-title">
+                    <span class="highlight-icon">🏆</span>
+                    <span class="brand-name brand-ue">Ultimate Ears</span>
+                </h3>
+                <p style="color: #cbd5e1; margin-bottom: 20px;">
+                    <strong>Kuchli tomoni:</strong> 360° ovoz va mustahkam qurilish
+                </p>
+                <ul class="highlight-points">
+                    <li>
+                        <span>Batareya:</span>
+                        <span style="color: #a78bfa;">18 soat</span>
+                    </li>
+                    <li>
+                        <span>Ovoz sifati:</span>
+                        <span style="color: #a78bfa; font-weight: bold;">360° ovoz</span>
+                    </li>
+                    <li>
+                        <span>Maxsus xususiyat:</span>
+                        <span>Istalgan joyga qo'yish mumkin</span>
+                    </li>
+                </ul>
+                <div style="background: rgba(139, 92, 246, 0.1); padding: 15px; border-radius: 10px; margin-top: 15px;">
+                    <i class="fas fa-expand-arrows-alt" style="color: #8b5cf6; margin-right: 8px;"></i>
+                    <strong>Tavsiya:</strong> Har tomondan ovoz kerak bo'lsa (piknik, kamp)
+                </div>
+            </div>
+        </div>
+
+        <!-- Test Summary -->
+        <div style="background: rgba(255, 255, 255, 0.05); border-radius: 20px; padding: 30px; margin: 30px 0; border: 1px solid rgba(255, 255, 255, 0.1);">
+            <h3 style="text-align: center; color: #fbbf24; font-size: 1.8rem; margin-bottom: 20px;">
+                <i class="fas fa-chart-bar"></i>
+                Test Natijalari
+            </h3>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; text-align: center;">
+                <div>
+                    <div style="font-size: 2.5rem; color: #fbbf24; font-weight: bold;">JBL</div>
+                    <div style="color: #94a3b8;">Bass bo'yicha eng yaxshi</div>
+                    <div style="margin-top: 10px; color: #fbbf24;">
+                        <i class="fas fa-battery-full"></i>
+                        <span>20 soat - eng uzoq</span>
+                    </div>
+                </div>
+                <div>
+                    <div style="font-size: 2.5rem; color: #3b82f6; font-weight: bold;">Sony</div>
+                    <div style="color: #94a3b8;">Audio balansi bo'yicha eng yaxshi</div>
+                    <div style="margin-top: 10px; color: #3b82f6;">
+                        <i class="fas fa-sliders-h"></i>
+                        <span>15 soat - o'rtacha</span>
+                    </div>
+                </div>
+                <div>
+                    <div style="font-size: 2.5rem; color: #8b5cf6; font-weight: bold;">UE</div>
+                    <div style="color: #94a3b8;">360° ovoz bo'yicha eng yaxshi</div>
+                    <div style="margin-top: 10px; color: #8b5cf6;">
+                        <i class="fas fa-volume-up"></i>
+                        <span>18 soat - yaxshi</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Vertical Ad -->
+        <div class="ad-section">
+            <div class="ad-label">Portativ Kolonkalar</div>
+            <div class="ad-placeholder" style="height: 250px;">
+                AdSense Vertical Banner (300x250)
+            </div>
+        </div>
+
+        <!-- CTA Buttons -->
+        <div class="cta-buttons">
+            <a href="#" class="btn btn-primary">
+                <i class="fas fa-shopping-cart"></i>
+                Narxlarni Ko'rish
+            </a>
+            <a href="#" class="btn btn-outline">
+                <i class="fas fa-headphones"></i>
+                Boshqa Kolonkalar
+            </a>
+            <a href="#" class="btn btn-outline">
+                <i class="fas fa-question-circle"></i>
+                Qanday Tanlash Kerak?
+            </a>
+        </div>
+    </div>
+
+    <script>
+        // Table row hover effect
+        document.querySelectorAll('.table-row').forEach(row => {
+            row.addEventListener('mouseenter', function() {
+                this.style.backgroundColor = 'rgba(255, 255, 255, 0.08)';
+            });
+            
+            row.addEventListener('mouseleave', function() {
+                this.style.backgroundColor = '';
+            });
+        });
+        
+        // Brand name animation
+        document.querySelectorAll('.brand-name').forEach(brand => {
+            brand.addEventListener('click', function() {
+                this.style.transform = 'scale(1.05)';
+                setTimeout(() => {
+                    this.style.transform = 'scale(1)';
+                }, 300);
+            });
+        });
+        
+        // Highlight card animation
+        document.querySelectorAll('.highlight-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-10px)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+            });
+        });
+    </script>
+</body>
+</html>
