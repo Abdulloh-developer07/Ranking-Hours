@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sony WH-1000XM5 vs Bose QC45 - Naushniklar Solishtirish</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', system-ui, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: #e2e8f0;
+            min-height: 100vh;
+        }
+        
+        .audio-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        /* Header */
+        .audio-header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 40px 20px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .audio-title {
+            font-size: 3rem;
+            background: linear-gradient(45deg, #3b82f6, #8b5cf6);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 15px;
+            font-weight: 800;
+        }
+        
+        .audio-subtitle {
+            font-size: 1.3rem;
+            color: #94a3b8;
+            max-width: 700px;
+            margin: 0 auto 25px;
+        }
+        
+        .rating-badge {
+            display: inline-flex;
+            align-items: center;
+            background: linear-gradient(45deg, #f59e0b, #fbbf24);
+            color: #1e293b;
+            padding: 10px 25px;
+            border-radius: 30px;
+            font-weight: 700;
+            font-size: 1.2rem;
+            margin-top: 15px;
+        }
+        
+        .rating-stars {
+            color: #1e293b;
+            margin-right: 8px;
+            font-size: 1.4rem;
+        }
+        
+        .test-duration {
+            display: inline-block;
+            background: rgba(59, 130, 246, 0.2);
+            padding: 8px 20px;
+            border-radius: 20px;
+            margin-left: 15px;
+            border: 1px solid #3b82f6;
+        }
+        
+        /* Comparison Grid */
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(550px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        @media (max-width: 768px) {
+            .comparison-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .product-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-10px);
+            border-color: rgba(59, 130, 246, 0.5);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+        
+        .product-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+        }
+        
+        .product-card.sony::before {
+            background: linear-gradient(90deg, #1d4ed8, #3b82f6);
+        }
+        
+        .product-card.bose::before {
+            background: linear-gradient(90deg, #4338ca, #6366f1);
+        }
+        
+        .product-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 25px;
+        }
+        
+        .product-icon {
+            font-size: 3rem;
+            margin-right: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .product-name {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+        
+        .product-tagline {
+            color: #94a3b8;
+            font-size: 1.1rem;
+        }
+        
+        .feature-list {
+            list-style: none;
+            margin: 25px 0;
+        }
+        
+        .feature-item {
+            padding: 15px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .feature-item:last-child {
+            border-bottom: none;
+        }
+        
+        .feature-label {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.1rem;
+        }
+        
+        .feature-value {
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: #60a5fa;
+        }
+        
+        .feature-value.best {
+            color: #10b981;
+            position: relative;
+            padding-right: 25px;
+        }
+        
+        .feature-value.best::after {
+            content: '★';
+            position: absolute;
+            right: 0;
+            color: #fbbf24;
+        }
+        
+        .feature-icon {
+            color: #3b82f6;
+            font-size: 1.3rem;
+        }
+        
+        /* Summary Section */
+        .summary-section {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 40px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .summary-title {
+            font-size: 2rem;
+            margin-bottom: 25px;
+            text-align: center;
+            color: #60a5fa;
+        }
+        
+        .key-points {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        
+        .key-point {
+            background: rgba(255, 255, 255, 0.03);
+            padding: 25px;
+            border-radius: 15px;
+            border-left: 4px solid;
+        }
+        
+        .key-point.sony {
+            border-left-color: #3b82f6;
+        }
+        
+        .key-point.bose {
+            border-left-color: #8b5cf6;
+        }
+        
+        .point-title {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+        
+        .point-desc {
+            color: #cbd5e1;
+            line-height: 1.6;
+        }
+        
+        /* CTA Buttons */
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 40px;
+        }
+        
+        .btn {
+            padding: 16px 40px;
+            border-radius: 12px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(45deg, #3b82f6, #2563eb);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(37, 99, 235, 0.4);
+        }
+        
+        .btn-outline {
+            background: transparent;
+            color: #60a5fa;
+            border: 2px solid #3b82f6;
+        }
+        
+        .btn-outline:hover {
+            background: rgba(59, 130, 246, 0.1);
+            transform: translateY(-3px);
+        }
+        
+        /* Ad Sections */
+        .ad-section {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 30px;
+            margin: 40px 0;
+            text-align: center;
+            border: 2px dashed rgba(59, 130, 246, 0.3);
+        }
+        
+        .ad-label {
+            display: inline-block;
+            background: rgba(59, 130, 246, 0.2);
+            color: #60a5fa;
+            padding: 8px 20px;
+            border-radius: 20px;
+            margin-bottom: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+        
+        .ad-placeholder {
+            height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(59, 130, 246, 0.1);
+            border-radius: 15px;
+            color: #94a3b8;
+            font-style: italic;
+            margin: 20px 0;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .audio-title {
+                font-size: 2.2rem;
+            }
+            
+            .comparison-grid {
+                gap: 20px;
+            }
+            
+            .product-card {
+                padding: 20px;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+            }
+            
+            .btn {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="audio-container">
+        <!-- Header -->
+        <header class="audio-header">
+            <h1 class="audio-title">Sony WH-1000XM5 vs Bose QC45</h1>
+            <p class="audio-subtitle">Premium showqinni bartaraf qiluvchi naushniklar - qaysi biri sizga mos keladi?</p>
+            <div class="rating-badge">
+                <span class="rating-stars">★★★★★</span>
+                <span>4.5/5 Reyting</span>
+            </div>
+            <span class="test-duration">50 soatlik test</span>
+        </header>
+
+        <!-- Ad Banner -->
+        <div class="ad-section">
+            <div class="ad-label">Tavsiya Etilgan</div>
+            <div class="ad-placeholder">
+                AdSense Horizontal Banner (728x90)
+            </div>
+        </div>
+
+        <!-- Comparison Grid -->
+        <div class="comparison-grid">
+            <!-- Sony WH-1000XM5 -->
+            <div class="product-card sony">
+                <div class="product-header">
+                    <div class="product-icon">
+                        <i class="fas fa-headphones-alt"></i>
+                    </div>
+                    <div>
+                        <h2 class="product-name">Sony WH-1000XM5</h2>
+                        <p class="product-tagline">ANC - Yuqori Sifat, Audio - A'lo</p>
+                    </div>
+                </div>
+                
+                <ul class="feature-list">
+                    <li class="feature-item">
+                        <span class="feature-label">
+                            <i class="fas fa-volume-up feature-icon"></i>
+                            <span>ANC (Showqinni bartaraf qilish)</span>
+                        </span>
+                        <span class="feature-value best">A'lo</span>
+                    </li>
+                    <li class="feature-item">
+                        <span class="feature-label">
+                            <i class="fas fa-battery-full feature-icon"></i>
+                            <span>Batareya quvvati</span>
+                        </span>
+                        <span class="feature-value best">30 soat</span>
+                    </li>
+                    <li class="feature-item">
+                        <span class="feature-label">
+                            <i class="fas fa-music feature-icon"></i>
+                            <span>Audio sifati</span>
+                        </span>
+                        <span class="feature-value best">Yuqori</span>
+                    </li>
+                    <li class="feature-item">
+                        <span class="feature-label">
+                            <i class="fas fa-weight-hanging feature-icon"></i>
+                            <span>Vazni</span>
+                        </span>
+                        <span class="feature-value">250g</span>
+                    </li>
+                    <li class="feature-item">
+                        <span class="feature-label">
+                            <i class="fas fa-hand-holding-usd feature-icon"></i>
+                            <span>Narxi</span>
+                        </span>
+                        <span class="feature-value">$$$</span>
+                    </li>
+                </ul>
+                
+                <div style="text-align: center; margin-top: 25px;">
+                    <div style="background: rgba(59, 130, 246, 0.1); padding: 15px; border-radius: 12px; border-left: 4px solid #3b82f6;">
+                        <i class="fas fa-star" style="color: #fbbf24; margin-right: 8px;"></i>
+                        <strong>Kuchli tomoni:</strong> Eng yaxshi ANC texnologiyasi
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bose QC45 -->
+            <div class="product-card bose">
+                <div class="product-header">
+                    <div class="product-icon">
+                        <i class="fas fa-headphones"></i>
+                    </div>
+                    <div>
+                        <h2 class="product-name">Bose QuietComfort 45</h2>
+                        <p class="product-tagline">Qulaylik - A'lo, Design - Zamonaviy</p>
+                    </div>
+                </div>
+                
+                <ul class="feature-list">
+                    <li class="feature-item">
+                        <span class="feature-label">
+                            <i class="fas fa-couch feature-icon"></i>
+                            <span>Qulaylik</span>
+                        </span>
+                        <span class="feature-value best">A'lo</span>
+                    </li>
+                    <li class="feature-item">
+                        <span class="feature-label">
+                            <i class="fas fa-battery-three-quarters feature-icon"></i>
+                            <span>Batareya quvvati</span>
+                        </span>
+                        <span class="feature-value">24 soat</span>
+                    </li>
+                    <li class="feature-item">
+                        <span class="feature-label">
+                            <i class="fas fa-sliders-h feature-icon"></i>
+                            <span>Boshqaruv qulayligi</span>
+                        </span>
+                        <span class="feature-value best">Oson</span>
+                    </li>
+                    <li class="feature-item">
+                        <span class="feature-label">
+                            <i class="fas fa-weight-hanging feature-icon"></i>
+                            <span>Vazni</span>
+                        </span>
+                        <span class="feature-value best">240g</span>
+                    </li>
+                    <li class="feature-item">
+                        <span class="feature-label">
+                            <i class="fas fa-hand-holding-usd feature-icon"></i>
+                            <span>Narxi</span>
+                        </span>
+                        <span class="feature-value">$$</span>
+                    </li>
+                </ul>
+                
+                <div style="text-align: center; margin-top: 25px;">
+                    <div style="background: rgba(139, 92, 246, 0.1); padding: 15px; border-radius: 12px; border-left: 4px solid #8b5cf6;">
+                        <i class="fas fa-star" style="color: #fbbf24; margin-right: 8px;"></i>
+                        <strong>Kuchli tomoni:</strong> Uzoq vaqt kiysa ham qulay
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Summary Section -->
+        <div class="summary-section">
+            <h2 class="summary-title">Xulosa va Tavsiyalar</h2>
+            <div class="key-points">
+                <div class="key-point sony">
+                    <h3 class="point-title">Sony WH-1000XM5</h3>
+                    <p class="point-desc">Eng yaxshi showqinni bartaraf qilish (ANC) texnologiyasi. Yuqori audio sifati va 30 soatlik batareya quvvati. Uzoq safarlar yoki ofis ishi uchun ideal.</p>
+                    <div style="margin-top: 15px; color: #60a5fa;">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Qachon tanlash kerak: Audio sifati va ANC muhim bo'lsa</span>
+                    </div>
+                </div>
+                
+                <div class="key-point bose">
+                    <h3 class="point-title">Bose QC45</h3>
+                    <p class="point-desc">Ajoyib qulaylik va engil dizayn. 24 soatlik batareya quvvati bilan kundalik foydalanish uchun juda qulay. An'anaviy Bose sifati va ishonchliligi.</p>
+                    <div style="margin-top: 15px; color: #a78bfa;">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Qachon tanlash kerak: Qulaylik va uzun muddatli foydalanish muhim bo'lsa</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 30px; padding: 25px; background: rgba(255, 255, 255, 0.05); border-radius: 15px;">
+                <h3 style="color: #fbbf24; margin-bottom: 15px;">Test Natijasi</h3>
+                <p style="font-size: 1.2rem; line-height: 1.8;">
+                    <span style="color: #3b82f6; font-weight: bold;">Sony WH-1000XM5</span> - showqinni bartaraf qilish va audio sifatida yaxshi<br>
+                    <span style="color: #8b5cf6; font-weight: bold;">Bose QC45</span> - qulaylik va dizaynda ustun<br>
+                    <span style="color: #10b981; font-weight: bold;">Umumiy g'alaba:</span> Sony (yuqori texnologiya uchun)
+                </p>
+            </div>
+        </div>
+
+        <!-- Vertical Ad -->
+        <div class="ad-section">
+            <div class="ad-label">Audio Aksessuarlar</div>
+            <div class="ad-placeholder" style="height: 250px;">
+                AdSense Vertical Banner (300x250)
+            </div>
+        </div>
+
+        <!-- CTA Buttons -->
+        <div class="cta-buttons">
+            <a href="#" class="btn btn-primary">
+                <i class="fas fa-shopping-cart"></i>
+                Narxlarni Solishtirish
+            </a>
+            <a href="#" class="btn btn-outline">
+                <i class="fas fa-video"></i>
+                Video Qiyosiy Ko'rish
+            </a>
+            <a href="#" class="btn btn-outline">
+                <i class="fas fa-comments"></i>
+                Sharhlarni O'qish
+            </a>
+        </div>
+    </div>
+
+    <script>
+        // Product card interactions
+        document.querySelectorAll('.product-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-10px)';
+                this.style.boxShadow = '0 20px 40px rgba(0, 0, 0, 0.3)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+                this.style.boxShadow = 'none';
+            });
+        });
+        
+        // Rating animation
+        const ratingBadge = document.querySelector('.rating-badge');
+        ratingBadge.addEventListener('click', function() {
+            this.style.transform = 'scale(1.05)';
+            setTimeout(() => {
+                this.style.transform = 'scale(1)';
+            }, 300);
+        });
+        
+        // Ad placeholder click
+        document.querySelectorAll('.ad-placeholder').forEach(ad => {
+            ad.addEventListener('click', function() {
+                alert('Haqiqiy saytda bu joyda AdSense reklamasi bo\'ladi');
+            });
+        });
+    </script>
+</body>
+</html>
