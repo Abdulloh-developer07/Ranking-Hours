@@ -1,0 +1,1486 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gaming Noutbuklar 2026 - ASUS ROG vs MSI vs Lenovo Legion Taqqoslash</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', system-ui, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #0a0a1f 0%, #151531 100%);
+            color: #f0f0f0;
+            min-height: 100vh;
+        }
+        
+        .gaming-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        /* Header */
+        .gaming-header {
+            text-align: center;
+            margin-bottom: 60px;
+            padding: 60px 40px;
+            background: linear-gradient(135deg, rgba(255, 0, 0, 0.2), rgba(0, 112, 192, 0.2), rgba(0, 153, 0, 0.2));
+            border-radius: 30px;
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .gaming-header::before {
+            content: '🎮';
+            position: absolute;
+            font-size: 200px;
+            opacity: 0.05;
+            top: -40px;
+            right: -40px;
+        }
+        
+        .main-title {
+            font-size: 4rem;
+            background: linear-gradient(45deg, #ff0000, #0070c0, #009900);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 20px;
+            font-weight: 800;
+            line-height: 1.1;
+        }
+        
+        .subtitle {
+            font-size: 1.5rem;
+            color: #cbd5e1;
+            max-width: 800px;
+            margin: 0 auto 30px;
+            line-height: 1.6;
+        }
+        
+        .rating-badge {
+            display: inline-flex;
+            align-items: center;
+            background: linear-gradient(45deg, #ff6b00, #ff8c00);
+            color: #0a0a1f;
+            padding: 15px 35px;
+            border-radius: 30px;
+            font-weight: 800;
+            font-size: 1.5rem;
+            margin-top: 20px;
+            box-shadow: 0 10px 25px rgba(255, 107, 0, 0.3);
+        }
+        
+        /* Gaming Laptops Grid */
+        .laptops-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 35px;
+            margin-bottom: 60px;
+        }
+        
+        @media (max-width: 1200px) {
+            .laptops-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .laptops-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .laptop-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 25px;
+            padding: 40px 35px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .laptop-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
+        }
+        
+        .laptop-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 8px;
+        }
+        
+        .rog-card {
+            border-left: 8px solid #ff0000;
+        }
+        
+        .rog-card::before {
+            background: linear-gradient(90deg, #ff0000, #ff6666);
+        }
+        
+        .msi-card {
+            border-left: 8px solid #0070c0;
+        }
+        
+        .msi-card::before {
+            background: linear-gradient(90deg, #0070c0, #0099ff);
+        }
+        
+        .legion-card {
+            border-left: 8px solid #009900;
+        }
+        
+        .legion-card::before {
+            background: linear-gradient(90deg, #009900, #00cc00);
+        }
+        
+        .laptop-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 35px;
+            padding-bottom: 25px;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .laptop-icon {
+            font-size: 4rem;
+            margin-right: 30px;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .rog-icon {
+            background: rgba(255, 0, 0, 0.2);
+            color: #ff6666;
+        }
+        
+        .msi-icon {
+            background: rgba(0, 112, 192, 0.2);
+            color: #0099ff;
+        }
+        
+        .legion-icon {
+            background: rgba(0, 153, 0, 0.2);
+            color: #00cc00;
+        }
+        
+        .laptop-name {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 10px;
+        }
+        
+        .rog-name {
+            color: #ff6666;
+        }
+        
+        .msi-name {
+            color: #0099ff;
+        }
+        
+        .legion-name {
+            color: #00cc00;
+        }
+        
+        .laptop-model {
+            color: #94a3b8;
+            font-size: 1.3rem;
+            font-weight: 600;
+        }
+        
+        /* Performance Stats */
+        .performance-stats {
+            margin: 30px 0;
+        }
+        
+        .stat-item {
+            margin-bottom: 25px;
+        }
+        
+        .stat-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+        
+        .stat-label {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+        
+        .stat-icon {
+            font-size: 1.4rem;
+            width: 40px;
+            text-align: center;
+        }
+        
+        .stat-value {
+            font-size: 1.3rem;
+            font-weight: 700;
+        }
+        
+        .stat-bar {
+            height: 12px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 6px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .stat-fill {
+            height: 100%;
+            border-radius: 6px;
+            transition: width 1.5s ease;
+        }
+        
+        .rog-fill {
+            background: linear-gradient(90deg, #ff0000, #ff6666);
+        }
+        
+        .msi-fill {
+            background: linear-gradient(90deg, #0070c0, #0099ff);
+        }
+        
+        .legion-fill {
+            background: linear-gradient(90deg, #009900, #00cc00);
+        }
+        
+        /* Comparison Table */
+        .comparison-section {
+            margin: 60px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.8rem;
+            margin-bottom: 40px;
+            color: #ff8c00;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+        }
+        
+        .comparison-table {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 25px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+        
+        .table-header {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            background: linear-gradient(90deg, rgba(255, 0, 0, 0.3), rgba(0, 112, 192, 0.3), rgba(0, 153, 0, 0.3));
+            padding: 30px 40px;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .header-cell {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: #f0f0f0;
+        }
+        
+        .rog-header {
+            color: #ff6666;
+        }
+        
+        .msi-header {
+            color: #0099ff;
+        }
+        
+        .legion-header {
+            color: #00cc00;
+        }
+        
+        .table-row {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            padding: 25px 40px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            align-items: center;
+            transition: background 0.3s ease;
+        }
+        
+        .table-row:hover {
+            background: rgba(255, 255, 255, 0.05);
+        }
+        
+        .table-row:last-child {
+            border-bottom: none;
+        }
+        
+        .row-label {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            font-size: 1.3rem;
+            font-weight: 600;
+        }
+        
+        .row-icon {
+            font-size: 1.5rem;
+            width: 40px;
+            text-align: center;
+        }
+        
+        .row-value {
+            font-size: 1.4rem;
+            font-weight: 700;
+        }
+        
+        .winner-badge {
+            display: inline-block;
+            padding: 8px 18px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 800;
+            margin-left: 15px;
+        }
+        
+        .rog-badge {
+            background: rgba(255, 0, 0, 0.2);
+            color: #ff6666;
+            border: 1px solid rgba(255, 0, 0, 0.4);
+        }
+        
+        .msi-badge {
+            background: rgba(0, 112, 192, 0.2);
+            color: #0099ff;
+            border: 1px solid rgba(0, 112, 192, 0.4);
+        }
+        
+        .legion-badge {
+            background: rgba(0, 153, 0, 0.2);
+            color: #00cc00;
+            border: 1px solid rgba(0, 153, 0, 0.4);
+        }
+        
+        /* Gaming Performance */
+        .performance-section {
+            margin: 60px 0;
+        }
+        
+        .games-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 35px;
+        }
+        
+        @media (max-width: 992px) {
+            .games-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .games-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .game-card {
+            padding: 35px 30px;
+            border-radius: 20px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        
+        .game-card:hover {
+            transform: translateY(-8px);
+            background: rgba(255, 255, 255, 0.05);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+        }
+        
+        .game-icon {
+            font-size: 3.5rem;
+            margin-bottom: 25px;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+        }
+        
+        .cyberpunk-icon {
+            background: rgba(255, 107, 0, 0.2);
+            color: #ff6b00;
+        }
+        
+        .cod-icon {
+            background: rgba(59, 130, 246, 0.2);
+            color: #3b82f6;
+        }
+        
+        .fortnite-icon {
+            background: rgba(16, 185, 129, 0.2);
+            color: #10b981;
+        }
+        
+        .game-title {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: #f3f4f6;
+        }
+        
+        .fps-results {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 25px;
+        }
+        
+        .fps-item {
+            text-align: center;
+        }
+        
+        .fps-value {
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 5px;
+        }
+        
+        .rog-fps {
+            color: #ff6666;
+        }
+        
+        .msi-fps {
+            color: #0099ff;
+        }
+        
+        .legion-fps {
+            color: #00cc00;
+        }
+        
+        .fps-label {
+            color: #94a3b8;
+            font-size: 0.9rem;
+        }
+        
+        /* Cooling System Comparison */
+        .cooling-section {
+            background: linear-gradient(135deg, rgba(0, 153, 0, 0.15), rgba(0, 112, 192, 0.15));
+            border-radius: 30px;
+            padding: 50px;
+            margin: 60px 0;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cooling-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 6px;
+            background: linear-gradient(90deg, #ff0000, #0070c0, #009900);
+        }
+        
+        .cooling-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+            color: #00cc00;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+        
+        .cooling-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+        
+        @media (max-width: 992px) {
+            .cooling-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .cooling-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .cooling-card {
+            padding: 35px 30px;
+            border-radius: 20px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+            position: relative;
+        }
+        
+        .cooling-rog {
+            border-left: 6px solid #ff0000;
+        }
+        
+        .cooling-msi {
+            border-left: 6px solid #0070c0;
+        }
+        
+        .cooling-legion {
+            border-left: 6px solid #009900;
+        }
+        
+        .cooling-header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 25px;
+            gap: 15px;
+        }
+        
+        .cooling-name {
+            font-size: 1.8rem;
+            font-weight: 800;
+        }
+        
+        .cooling-rog-name {
+            color: #ff6666;
+        }
+        
+        .cooling-msi-name {
+            color: #0099ff;
+        }
+        
+        .cooling-legion-name {
+            color: #00cc00;
+        }
+        
+        .cooling-features {
+            list-style: none;
+            margin-top: 20px;
+            text-align: left;
+        }
+        
+        .cooling-features li {
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .cooling-features li:last-child {
+            border-bottom: none;
+        }
+        
+        .cooling-features li::before {
+            content: '❄️';
+        }
+        
+        /* Ad Sections */
+        .ad-section {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 25px;
+            padding: 40px;
+            margin: 50px 0;
+            text-align: center;
+            border: 2px dashed rgba(255, 107, 0, 0.3);
+        }
+        
+        .ad-label {
+            display: inline-block;
+            background: rgba(255, 107, 0, 0.2);
+            color: #ff6b00;
+            padding: 12px 30px;
+            border-radius: 25px;
+            margin-bottom: 30px;
+            font-size: 1.1rem;
+            font-weight: 800;
+        }
+        
+        .ad-placeholder {
+            height: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 107, 0, 0.1);
+            border-radius: 20px;
+            color: #94a3b8;
+            font-style: italic;
+            font-size: 1.2rem;
+            margin: 25px 0;
+        }
+        
+        /* Recommendation Section */
+        .recommendation-section {
+            margin: 60px 0;
+        }
+        
+        .recommendation-cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 35px;
+        }
+        
+        @media (max-width: 992px) {
+            .recommendation-cards {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .recommendation-cards {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .recommendation-card {
+            padding: 40px 35px;
+            border-radius: 25px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+            text-align: center;
+        }
+        
+        .recommendation-rog {
+            border-top: 8px solid #ff0000;
+        }
+        
+        .recommendation-msi {
+            border-top: 8px solid #0070c0;
+        }
+        
+        .recommendation-legion {
+            border-top: 8px solid #009900;
+        }
+        
+        .recommendation-title {
+            font-size: 1.8rem;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+        
+        .recommendation-rog-title {
+            color: #ff6666;
+        }
+        
+        .recommendation-msi-title {
+            color: #0099ff;
+        }
+        
+        .recommendation-legion-title {
+            color: #00cc00;
+        }
+        
+        .recommendation-points {
+            list-style: none;
+            margin-top: 25px;
+        }
+        
+        .recommendation-points li {
+            padding: 15px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: left;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .recommendation-points li:last-child {
+            border-bottom: none;
+        }
+        
+        .recommendation-points li::before {
+            content: '✓';
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        
+        .rog-points li::before {
+            color: #ff6666;
+        }
+        
+        .msi-points li::before {
+            color: #0099ff;
+        }
+        
+        .legion-points li::before {
+            color: #00cc00;
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            text-align: center;
+            margin: 60px 0 40px;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            padding: 20px 45px;
+            border-radius: 15px;
+            font-size: 1.3rem;
+            font-weight: 800;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 15px;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            min-width: 220px;
+            justify-content: center;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(45deg, #ff0000, #ff6b00);
+            color: white;
+            box-shadow: 0 10px 30px rgba(255, 0, 0, 0.4);
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(255, 0, 0, 0.5);
+        }
+        
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.1);
+            color: #e2e8f0;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateY(-5px);
+        }
+        
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 40px 20px;
+            margin-top: 60px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #94a3b8;
+            font-size: 1rem;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="gaming-container">
+        <!-- Header -->
+        <header class="gaming-header">
+            <h1 class="main-title">Gaming Noutbuklar 2026</h1>
+            <p class="subtitle">ASUS ROG vs MSI vs Lenovo Legion - o'yin performansi, sovutish tizimi va qiymat sifat nisbati bo'yicha batafsil test</p>
+            <div class="rating-badge">
+                <i class="fas fa-gamepad"></i>
+                <span>4.5/5 Gaming Reyting</span>
+            </div>
+        </header>
+
+        <!-- Ad Banner -->
+        <div class="ad-section">
+            <div class="ad-label">Gaming Texnikasi 2026</div>
+            <div class="ad-placeholder">
+                AdSense Horizontal Banner (728x90)
+            </div>
+        </div>
+
+        <!-- Gaming Laptops Grid -->
+        <div class="laptops-grid">
+            <!-- ASUS ROG -->
+            <div class="laptop-card rog-card">
+                <div class="laptop-header">
+                    <div class="laptop-icon rog-icon">
+                        <i class="fas fa-desktop"></i>
+                    </div>
+                    <div>
+                        <h2 class="laptop-name rog-name">ASUS ROG</h2>
+                        <p class="laptop-model">Zephyrus G16 2026</p>
+                    </div>
+                </div>
+                
+                <div class="performance-stats">
+                    <div class="stat-item">
+                        <div class="stat-header">
+                            <div class="stat-label">
+                                <i class="fas fa-tachometer-alt stat-icon" style="color: #ff6666;"></i>
+                                <span>FPS (Cyberpunk 2077)</span>
+                            </div>
+                            <div class="stat-value rog-name">142 FPS</div>
+                        </div>
+                        <div class="stat-bar">
+                            <div class="stat-fill rog-fill" style="width: 85%;"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-item">
+                        <div class="stat-header">
+                            <div class="stat-label">
+                                <i class="fas fa-thermometer-half stat-icon" style="color: #ff6666;"></i>
+                                <span>Sovutish samaradorligi</span>
+                            </div>
+                            <div class="stat-value">78°C</div>
+                        </div>
+                        <div class="stat-bar">
+                            <div class="stat-fill rog-fill" style="width: 75%;"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-item">
+                        <div class="stat-header">
+                            <div class="stat-label">
+                                <i class="fas fa-bolt stat-icon" style="color: #ff6666;"></i>
+                                <span>Protsessor quvvati</span>
+                            </div>
+                            <div class="stat-value rog-name">Intel Core i9-15900HX</div>
+                        </div>
+                        <div class="stat-bar">
+                            <div class="stat-fill rog-fill" style="width: 90%;"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div style="margin-top: 30px; padding: 25px; background: rgba(255, 0, 0, 0.1); border-radius: 15px; border-left: 4px solid #ff0000;">
+                    <h3 style="color: #ff6666; margin-bottom: 15px; display: flex; align-items: center; gap: 12px;">
+                        <i class="fas fa-crown"></i>
+                        Gaming Afzalligi
+                    </h3>
+                    <p style="color: #cbd5e1; line-height: 1.7;">
+                        <strong>Eng yuqori FPS va ekran yangilanish tezligi.</strong> 240Hz mini-LED ekran, yuqori protsessor quvvati va premium RGB yoritish.
+                    </p>
+                </div>
+            </div>
+
+            <!-- MSI -->
+            <div class="laptop-card msi-card">
+                <div class="laptop-header">
+                    <div class="laptop-icon msi-icon">
+                        <i class="fas fa-laptop"></i>
+                    </div>
+                    <div>
+                        <h2 class="laptop-name msi-name">MSI</h2>
+                        <p class="laptop-model">Titan 18 Pro 2026</p>
+                    </div>
+                </div>
+                
+                <div class="performance-stats">
+                    <div class="stat-item">
+                        <div class="stat-header">
+                            <div class="stat-label">
+                                <i class="fas fa-tachometer-alt stat-icon" style="color: #0099ff;"></i>
+                                <span>FPS (Cyberpunk 2077)</span>
+                            </div>
+                            <div class="stat-value msi-name">135 FPS</div>
+                        </div>
+                        <div class="stat-bar">
+                            <div class="stat-fill msi-fill" style="width: 80%;"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-item">
+                        <div class="stat-header">
+                            <div class="stat-label">
+                                <i class="fas fa-thermometer-half stat-icon" style="color: #0099ff;"></i>
+                                <span>Sovutish samaradorligi</span>
+                            </div>
+                            <div class="stat-value msi-name">72°C</div>
+                        </div>
+                        <div class="stat-bar">
+                            <div class="stat-fill msi-fill" style="width: 85%;"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-item">
+                        <div class="stat-header">
+                            <div class="stat-label">
+                                <i class="fas fa-bolt stat-icon" style="color: #0099ff;"></i>
+                                <span>Protsessor quvvati</span>
+                            </div>
+                            <div class="stat-value">AMD Ryzen 9 9900HX</div>
+                        </div>
+                        <div class="stat-bar">
+                            <div class="stat-fill msi-fill" style="width: 88%;"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div style="margin-top: 30px; padding: 25px; background: rgba(0, 112, 192, 0.1); border-radius: 15px; border-left: 4px solid #0070c0;">
+                    <h3 style="color: #0099ff; margin-bottom: 15px; display: flex; align-items: center; gap: 12px;">
+                        <i class="fas fa-balance-scale"></i>
+                        Gaming Afzalligi
+                    </h3>
+                    <p style="color: #cbd5e1; line-height: 1.7;">
+                        <strong>Eng yaxshi qiymat sifat nisbati.</strong> Muvozanatli performans, yaxshi sovutish tizimi va professional dizayn.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Lenovo Legion -->
+            <div class="laptop-card legion-card">
+                <div class="laptop-header">
+                    <div class="laptop-icon legion-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <div>
+                        <h2 class="laptop-name legion-name">Lenovo Legion</h2>
+                        <p class="laptop-model">Pro 9i 2026</p>
+                    </div>
+                </div>
+                
+                <div class="performance-stats">
+                    <div class="stat-item">
+                        <div class="stat-header">
+                            <div class="stat-label">
+                                <i class="fas fa-tachometer-alt stat-icon" style="color: #00cc00;"></i>
+                                <span>FPS (Cyberpunk 2077)</span>
+                            </div>
+                            <div class="stat-value legion-name">138 FPS</div>
+                        </div>
+                        <div class="stat-bar">
+                            <div class="stat-fill legion-fill" style="width: 82%;"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-item">
+                        <div class="stat-header">
+                            <div class="stat-label">
+                                <i class="fas fa-thermometer-half stat-icon" style="color: #00cc00;"></i>
+                                <span>Sovutish samaradorligi</span>
+                            </div>
+                            <div class="stat-value legion-name">68°C</div>
+                        </div>
+                        <div class="stat-bar">
+                            <div class="stat-fill legion-fill" style="width: 90%;"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-item">
+                        <div class="stat-header">
+                            <div class="stat-label">
+                                <i class="fas fa-bolt stat-icon" style="color: #00cc00;"></i>
+                                <span>Protsessor quvvati</span>
+                            </div>
+                            <div class="stat-value">Intel Core i9-15900HX</div>
+                        </div>
+                        <div class="stat-bar">
+                            <div class="stat-fill legion-fill" style="width: 90%;"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div style="margin-top: 30px; padding: 25px; background: rgba(0, 153, 0, 0.1); border-radius: 15px; border-left: 4px solid #009900;">
+                    <h3 style="color: #00cc00; margin-bottom: 15px; display: flex; align-items: center; gap: 12px;">
+                        <i class="fas fa-snowflake"></i>
+                        Gaming Afzalligi
+                    </h3>
+                    <p style="color: #cbd5e1; line-height: 1.7;">
+                        <strong>Eng yaxshi sovutish tizimi.</strong> Legion Coldfront 5.0 texnologiyasi, eng past harorat va eng qulay klaviatura.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Gaming Performance -->
+        <section class="performance-section">
+            <h2 class="section-title">
+                <i class="fas fa-chart-line"></i>
+                O'yinlarda FPS Taqqoslash
+            </h2>
+            
+            <div class="games-grid">
+                <div class="game-card">
+                    <div class="game-icon cyberpunk-icon">
+                        <i class="fas fa-city"></i>
+                    </div>
+                    <h3 class="game-title">Cyberpunk 2077 Ultra RT</h3>
+                    <p style="color: #cbd5e1; margin-bottom: 20px;">1440p maksimal sozlamalar</p>
+                    
+                    <div class="fps-results">
+                        <div class="fps-item">
+                            <div class="fps-value rog-fps">142</div>
+                            <div class="fps-label">ROG</div>
+                        </div>
+                        <div class="fps-item">
+                            <div class="fps-value msi-fps">135</div>
+                            <div class="fps-label">MSI</div>
+                        </div>
+                        <div class="fps-item">
+                            <div class="fps-value legion-fps">138</div>
+                            <div class="fps-label">Legion</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="game-card">
+                    <div class="game-icon cod-icon">
+                        <i class="fas fa-crosshairs"></i>
+                    </div>
+                    <h3 class="game-title">Call of Duty Modern Warfare 3</h3>
+                    <p style="color: #cbd5e1; margin-bottom: 20px;">Competitive sozlamalar</p>
+                    
+                    <div class="fps-results">
+                        <div class="fps-item">
+                            <div class="fps-value rog-fps">240+</div>
+                            <div class="fps-label">ROG</div>
+                        </div>
+                        <div class="fps-item">
+                            <div class="fps-value msi-fps">225</div>
+                            <div class="fps-label">MSI</div>
+                        </div>
+                        <div class="fps-item">
+                            <div class="fps-value legion-fps">235</div>
+                            <div class="fps-label">Legion</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="game-card">
+                    <div class="game-icon fortnite-icon">
+                        <i class="fas fa-fort-awesome"></i>
+                    </div>
+                    <h3 class="game-title">Fortnite Chapter 6</h3>
+                    <p style="color: #cbd5e1; margin-bottom: 20px;">Epic sozlamalar</p>
+                    
+                    <div class="fps-results">
+                        <div class="fps-item">
+                            <div class="fps-value rog-fps">280</div>
+                            <div class="fps-label">ROG</div>
+                        </div>
+                        <div class="fps-item">
+                            <div class="fps-value msi-fps">260</div>
+                            <div class="fps-label">MSI</div>
+                        </div>
+                        <div class="fps-item">
+                            <div class="fps-value legion-fps">270</div>
+                            <div class="fps-label">Legion</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Comparison Table -->
+        <section class="comparison-section">
+            <h2 class="section-title">
+                <i class="fas fa-table"></i>
+                Texnik Xususiyatlar Taqqoslash
+            </h2>
+            
+            <div class="comparison-table">
+                <div class="table-header">
+                    <div class="header-cell">Spetsifikatsiyalar</div>
+                    <div class="header-cell rog-header">ASUS ROG</div>
+                    <div class="header-cell msi-header">MSI</div>
+                    <div class="header-cell legion-header">Lenovo Legion</div>
+                </div>
+                
+                <div class="table-row">
+                    <div class="row-label">
+                        <i class="fas fa-microchip row-icon"></i>
+                        <span>Protsessor</span>
+                    </div>
+                    <div class="row-value">
+                        Intel i9-15900HX
+                        <span class="winner-badge rog-badge">YUQORI</span>
+                    </div>
+                    <div class="row-value">AMD Ryzen 9 9900HX</div>
+                    <div class="row-value">Intel i9-15900HX</div>
+                </div>
+                
+                <div class="table-row">
+                    <div class="row-label">
+                        <i class="fas fa-microchip row-icon"></i>
+                        <span>Video karta</span>
+                    </div>
+                    <div class="row-value">
+                        RTX 5090 16GB
+                        <span class="winner-badge rog-badge">ENG KUCHLI</span>
+                    </div>
+                    <div class="row-value">RTX 5080 Ti 16GB</div>
+                    <div class="row-value">RTX 5090 16GB</div>
+                </div>
+                
+                <div class="table-row">
+                    <div class="row-label">
+                        <i class="fas fa-memory row-icon"></i>
+                        <span>Operativ xotira</span>
+                    </div>
+                    <div class="row-value">64GB DDR6</div>
+                    <div class="row-value">
+                        96GB DDR6
+                        <span class="winner-badge msi-badge">ENG KO'P</span>
+                    </div>
+                    <div class="row-value">64GB DDR6</div>
+                </div>
+                
+                <div class="table-row">
+                    <div class="row-label">
+                        <i class="fas fa-hdd row-icon"></i>
+                        <span>Doimiy xotira</span>
+                    </div>
+                    <div class="row-value">4TB PCIe 5.0</div>
+                    <div class="row-value">
+                        8TB PCIe 5.0
+                        <span class="winner-badge msi-badge">KATTA</span>
+                    </div>
+                    <div class="row-value">4TB PCIe 5.0</div>
+                </div>
+                
+                <div class="table-row">
+                    <div class="row-label">
+                        <i class="fas fa-tv row-icon"></i>
+                        <span>Ekran</span>
+                    </div>
+                    <div class="row-value">
+                        16" 240Hz mini-LED
+                        <span class="winner-badge rog-badge">YUQORI Hz</span>
+                    </div>
+                    <div class="row-value">18" 165Hz OLED</div>
+                    <div class="row-value">16" 240Hz IPS</div>
+                </div>
+                
+                <div class="table-row">
+                    <div class="row-label">
+                        <i class="fas fa-weight row-icon"></i>
+                        <span>Og'irligi</span>
+                    </div>
+                    <div class="row-value">
+                        2.1 kg
+                        <span class="winner-badge rog-badge">YENGIL</span>
+                    </div>
+                    <div class="row-value">3.2 kg</div>
+                    <div class="row-value">2.5 kg</div>
+                </div>
+                
+                <div class="table-row">
+                    <div class="row-label">
+                        <i class="fas fa-money-bill-wave row-icon"></i>
+                        <span>Narx (boshlang'ich)</span>
+                    </div>
+                    <div class="row-value">
+                        $3,499
+                        <span class="winner-badge msi-badge">ARZONROQ</span>
+                    </div>
+                    <div class="row-value">$3,299</div>
+                    <div class="row-value">$3,599</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Cooling System Comparison -->
+        <section class="cooling-section">
+            <h2 class="cooling-title">
+                <i class="fas fa-snowflake"></i>
+                Sovutish Tizimlari Taqqoslash
+            </h2>
+            
+            <div class="cooling-grid">
+                <div class="cooling-card cooling-rog">
+                    <div class="cooling-header">
+                        <h3 class="cooling-name cooling-rog-name">ASUS ROG</h3>
+                    </div>
+                    <p style="color: #cbd5e1; line-height: 1.7; margin-bottom: 20px; text-align: center;">
+                        <strong>ROG Intelligent Cooling</strong> - AI asosida haroratni boshqarish va 3D Vapor Chamber texnologiyasi.
+                    </p>
+                    <ul class="cooling-features">
+                        <li>3x 100mm fanlar</li>
+                        <li>Liquid Metal termal pasta</li>
+                        <li>AI harorat optimizatsiyasi</li>
+                        <li>78°C maksimal harorat</li>
+                    </ul>
+                </div>
+                
+                <div class="cooling-card cooling-msi">
+                    <div class="cooling-header">
+                        <h3 class="cooling-name cooling-msi-name">MSI</h3>
+                    </div>
+                    <p style="color: #cbd5e1; line-height: 1.7; margin-bottom: 20px; text-align: center;">
+                        <strong>Cooler Boost Titan</strong> - 4 ta issiqlik trubkasi va 6 ta issiqlik borlari bilan samarali sovutish.
+                    </p>
+                    <ul class="cooling-features">
+                        <li>4x 90mm fanlar</li>
+                        <li>6 ta issiqlik trubkasi</li>
+                        <li>Dual Chamber dizayn</li>
+                        <li>72°C maksimal harorat</li>
+                    </ul>
+                </div>
+                
+                <div class="cooling-card cooling-legion">
+                    <div class="cooling-header">
+                        <h3 class="cooling-name cooling-legion-name">Lenovo Legion</h3>
+                    </div>
+                    <p style="color: #cbd5e1; line-height: 1.7; margin-bottom: 20px; text-align: center;">
+                        <strong>Coldfront 5.0</strong> - Legion Ultimate Cooling texnologiyasi. Eng past harorat natijalari.
+                    </p>
+                    <ul class="cooling-features">
+                        <li>4x 120mm fanlar</li>
+                        <li>Liquid Crystal Polymer</li>
+                        <li>Phase-change material</li>
+                        <li>68°C maksimal harorat</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 40px; padding: 30px; background: rgba(255, 255, 255, 0.05); border-radius: 20px;">
+                <h3 style="color: #fbbf24; margin-bottom: 15px; font-size: 1.8rem;">
+                    <i class="fas fa-thermometer-half"></i>
+                    Sovutish Test Natijasi
+                </h3>
+                <p style="color: #e2e8f0; font-size: 1.2rem; line-height: 1.7;">
+                    <span style="color: #ff6666; font-weight: bold;">ASUS ROG</span> - 78°C (AI optimizatsiya)<br>
+                    <span style="color: #0099ff; font-weight: bold;">MSI</span> - 72°C (samarali trubkalar)<br>
+                    <span style="color: #00cc00; font-weight: bold;">Lenovo Legion</span> - 68°C (eng yaxshi sovutish)
+                </p>
+            </div>
+        </section>
+
+        <!-- Vertical Ad -->
+        <div class="ad-section">
+            <div class="ad-label">Gaming Aksessuarlar va Kompyuterlar</div>
+            <div class="ad-placeholder" style="height: 300px;">
+                AdSense Vertical Banner (300x600)
+            </div>
+        </div>
+
+        <!-- Recommendation Section -->
+        <section class="recommendation-section">
+            <h2 class="section-title">
+                <i class="fas fa-user-check"></i>
+                Qaysi Gaming Noutbuk Sizga Mos Keladi?
+            </h2>
+            
+            <div class="recommendation-cards">
+                <div class="recommendation-card recommendation-rog">
+                    <h3 class="recommendation-title recommendation-rog-title">
+                        <i class="fas fa-crown"></i>
+                        ASUS ROG - FPS Ustunligi
+                    </h3>
+                    <p style="color: #cbd5e1; line-height: 1.7; margin-bottom: 20px; text-align: center;">
+                        Agar siz eng yuqori FPS, tezkor ekran va maksimal o'yin tajribasini istasangiz.
+                    </p>
+                    <ul class="recommendation-points rog-points">
+                        <li>Competitive gaming</li>
+                        <li>Esports o'yinchilar</li>
+                        <li>240Hz ekran talab qilganlar</li>
+                        <li>Premium dizayn</li>
+                    </ul>
+                </div>
+                
+                <div class="recommendation-card recommendation-msi">
+                    <h3 class="recommendation-title recommendation-msi-title">
+                        <i class="fas fa-balance-scale"></i>
+                        MSI - Qiymat Sifat Nisbati
+                    </h3>
+                    <p style="color: #cbd5e1; line-height: 1.7; margin-bottom: 20px; text-align: center;">
+                        Agar siz muvozanatli performans, katta xotira va arzonroq narxni istasangiz.
+                    </p>
+                    <ul class="recommendation-points msi-points">
+                        <li>Streaming va kontent yaratish</li>
+                        <li>Multitasking</li>
+                        <li>Professional ish</li>
+                        <li>Budget gaming</li>
+                    </ul>
+                </div>
+                
+                <div class="recommendation-card recommendation-legion">
+                    <h3 class="recommendation-title recommendation-legion-title">
+                        <i class="fas fa-snowflake"></i>
+                        Lenovo Legion - Sovutish Yetakchisi
+                    </h3>
+                    <p style="color: #cbd5e1; line-height: 1.7; margin-bottom: 20px; text-align: center;">
+                        Agar siz uzoq vaqt o'ynash, past harorat va qulaylikni ustuvor qilsangiz.
+                    </p>
+                    <ul class="recommendation-points legion-points">
+                        <li>Uzoq o'yin seanslari</li>
+                        <li>Harorat muammosi bo'lganlar</li>
+                        <li>Qulay klaviatura</li>
+                        <li>Professional dizayn</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <div class="cta-section">
+            <h2 style="font-size: 2.5rem; color: #f3f4f6; margin-bottom: 20px;">Gaming Noutbuk Tanlashga Tayyormisiz?</h2>
+            <p style="font-size: 1.3rem; color: #cbd5e1; max-width: 800px; margin: 0 auto 30px;">
+                Batafsil test natijalarini ko'rish, narxlarni solishtirish va professional gamerlarning sharhlarini o'qish.
+            </p>
+            
+            <div class="cta-buttons">
+                <a href="#" class="btn btn-primary">
+                    <i class="fas fa-gamepad"></i>
+                    To'liq Test Natijalari
+                </a>
+                <a href="#" class="btn btn-secondary">
+                    <i class="fas fa-shopping-cart"></i>
+                    Narxlarni Solishtirish
+                </a>
+                <a href="#" class="btn btn-secondary">
+                    <i class="fas fa-video"></i>
+                    Gaming Demo Ko'rish
+                </a>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <p>© 2026 Gaming Noutbuklar Taqqoslash. Barcha ma'lumotlar 2026 yil test natijalariga asoslangan.</p>
+            <p style="margin-top: 10px;">ASUS ROG, MSI, Lenovo Legion - tegishli kompaniyalarning savdo belgilari.</p>
+        </div>
+    </div>
+
+    <script>
+        // Laptop card hover effects
+        document.querySelectorAll('.laptop-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-10px)';
+                this.style.boxShadow = '0 25px 50px rgba(0, 0, 0, 0.4)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+                this.style.boxShadow = 'none';
+            });
+        });
+        
+        // Performance bars animation
+        document.addEventListener('DOMContentLoaded', function() {
+            const statFills = document.querySelectorAll('.stat-fill');
+            statFills.forEach(fill => {
+                const width = fill.style.width;
+                fill.style.width = '0%';
+                
+                setTimeout(() => {
+                    fill.style.width = width;
+                }, 300);
+            });
+        });
+        
+        // Game card hover effects
+        document.querySelectorAll('.game-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-8px)';
+                this.style.boxShadow = '0 15px 35px rgba(0, 0, 0, 0.3)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+                this.style.boxShadow = 'none';
+            });
+        });
+        
+        // Table row hover effects
+        document.querySelectorAll('.table-row').forEach(row => {
+            row.addEventListener('mouseenter', function() {
+                this.style.background = 'rgba(255, 255, 255, 0.08)';
+            });
+            
+            row.addEventListener('mouseleave', function() {
+                this.style.background = '';
+            });
+        });
+        
+        // Cooling card hover effects
+        document.querySelectorAll('.cooling-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-5px)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+            });
+        });
+        
+        // Recommendation card hover effects
+        document.querySelectorAll('.recommendation-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-8px)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+            });
+        });
+        
+        // Rating badge animation
+        const ratingBadge = document.querySelector('.rating-badge');
+        ratingBadge.addEventListener('click', function() {
+            this.style.transform = 'scale(1.05)';
+            setTimeout(() => {
+                this.style.transform = 'scale(1)';
+            }, 300);
+        });
+        
+        // Ad placeholder click
+        document.querySelectorAll('.ad-placeholder').forEach(ad => {
+            ad.addEventListener('click', function() {
+                alert('Haqiqiy saytda bu joyda AdSense reklamasi bo\'ladi');
+            });
+        });
+        
+        // FPS values animation
+        const fpsValues = document.querySelectorAll('.fps-value');
+        fpsValues.forEach(value => {
+            value.style.opacity = '0';
+            value.style.transform = 'translateY(20px)';
+            
+            setTimeout(() => {
+                value.style.transition = 'all 0.5s ease';
+                value.style.opacity = '1';
+                value.style.transform = 'translateY(0)';
+            }, 500);
+        });
+        
+        // Add pulse animation for winner badges
+        const winnerBadges = document.querySelectorAll('.winner-badge');
+        winnerBadges.forEach(badge => {
+            badge.style.animation = 'pulse 2s infinite';
+        });
+        
+        // Add CSS animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes pulse {
+                0% { transform: scale(1); }
+                50% { transform: scale(1.05); }
+                100% { transform: scale(1); }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>
