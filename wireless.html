@@ -1,0 +1,1450 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>True Wireless Naushniklar - AirPods Pro vs Galaxy Buds vs Sony WF</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', system-ui, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: #e2e8f0;
+            min-height: 100vh;
+        }
+        
+        .tws-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        /* Header */
+        .tws-header {
+            text-align: center;
+            margin-bottom: 60px;
+            padding: 60px 40px;
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.2), rgba(100, 100, 100, 0.2));
+            border-radius: 30px;
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .tws-header::before {
+            content: '🎧';
+            position: absolute;
+            font-size: 200px;
+            opacity: 0.05;
+            top: -40px;
+            right: -40px;
+        }
+        
+        .main-title {
+            font-size: 3.5rem;
+            background: linear-gradient(45deg, #3b82f6, #8b5cf6, #ef4444);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 20px;
+            font-weight: 800;
+            line-height: 1.1;
+        }
+        
+        .subtitle {
+            font-size: 1.4rem;
+            color: #cbd5e1;
+            max-width: 800px;
+            margin: 0 auto 30px;
+            line-height: 1.6;
+        }
+        
+        .rating-badge {
+            display: inline-flex;
+            align-items: center;
+            background: linear-gradient(45deg, #f59e0b, #fbbf24);
+            color: #1e293b;
+            padding: 15px 35px;
+            border-radius: 30px;
+            font-weight: 800;
+            font-size: 1.5rem;
+            margin-top: 20px;
+            box-shadow: 0 10px 25px rgba(245, 158, 11, 0.3);
+        }
+        
+        /* Bluetooth Versions */
+        .bluetooth-section {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 30px;
+            margin: 40px auto;
+            max-width: 800px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .bluetooth-title {
+            font-size: 1.8rem;
+            margin-bottom: 25px;
+            color: #3b82f6;
+        }
+        
+        .version-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        @media (max-width: 768px) {
+            .version-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .version-card {
+            padding: 25px;
+            border-radius: 15px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+        }
+        
+        .version-card.bt52 {
+            border-left: 4px solid #3b82f6;
+        }
+        
+        .version-card.bt53 {
+            border-left: 4px solid #8b5cf6;
+        }
+        
+        .version-name {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+        
+        .bt52 .version-name {
+            color: #3b82f6;
+        }
+        
+        .bt53 .version-name {
+            color: #8b5cf6;
+        }
+        
+        /* Quick Charging */
+        .charging-section {
+            margin: 50px 0;
+            text-align: center;
+        }
+        
+        .charging-title {
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+            color: #fbbf24;
+        }
+        
+        .charging-features {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+        
+        @media (max-width: 992px) {
+            .charging-features {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .charging-features {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .charging-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 35px 30px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .charging-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+        
+        .charging-card.airpods {
+            border-top: 6px solid #3b82f6;
+        }
+        
+        .charging-card.galaxy {
+            border-top: 6px solid #8b5cf6;
+        }
+        
+        .charging-card.sony {
+            border-top: 6px solid #ef4444;
+        }
+        
+        .charging-icon {
+            font-size: 3.5rem;
+            margin-bottom: 25px;
+        }
+        
+        .airpods-icon {
+            color: #3b82f6;
+        }
+        
+        .galaxy-icon {
+            color: #8b5cf6;
+        }
+        
+        .sony-icon {
+            color: #ef4444;
+        }
+        
+        .charging-brand {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+        
+        .charging-time {
+            font-size: 1.4rem;
+            color: #fbbf24;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        
+        /* Ecosystem Compatibility */
+        .ecosystem-section {
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.15), rgba(139, 92, 246, 0.15));
+            border-radius: 30px;
+            padding: 50px;
+            margin: 60px 0;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .ecosystem-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 6px;
+            background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+        }
+        
+        .ecosystem-title {
+            font-size: 2.8rem;
+            margin-bottom: 25px;
+            color: #fbbf24;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+        }
+        
+        .ecosystem-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+            margin-top: 40px;
+        }
+        
+        @media (max-width: 768px) {
+            .ecosystem-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .ecosystem-card {
+            padding: 35px 30px;
+            border-radius: 20px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+        }
+        
+        .ecosystem-card.ios {
+            border-left: 6px solid #3b82f6;
+        }
+        
+        .ecosystem-card.android {
+            border-left: 6px solid #8b5cf6;
+        }
+        
+        .ecosystem-icon {
+            font-size: 3rem;
+            margin-bottom: 25px;
+        }
+        
+        .ios-icon {
+            color: #3b82f6;
+        }
+        
+        .android-icon {
+            color: #8b5cf6;
+        }
+        
+        .ecosystem-name {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        
+        .ios .ecosystem-name {
+            color: #3b82f6;
+        }
+        
+        .android .ecosystem-name {
+            color: #8b5cf6;
+        }
+        
+        /* TWS Comparison Grid */
+        .tws-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 35px;
+            margin-bottom: 60px;
+        }
+        
+        @media (max-width: 1200px) {
+            .tws-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .tws-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .tws-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 25px;
+            padding: 40px 35px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .tws-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
+        }
+        
+        .tws-card.airpods-card {
+            border-left: 8px solid #3b82f6;
+        }
+        
+        .tws-card.airpods-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 8px;
+            background: linear-gradient(90deg, #3b82f6, #60a5fa);
+        }
+        
+        .tws-card.galaxy-card {
+            border-left: 8px solid #8b5cf6;
+        }
+        
+        .tws-card.galaxy-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 8px;
+            background: linear-gradient(90deg, #8b5cf6, #a78bfa);
+        }
+        
+        .tws-card.sony-card {
+            border-left: 8px solid #ef4444;
+        }
+        
+        .tws-card.sony-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 8px;
+            background: linear-gradient(90deg, #ef4444, #f87171);
+        }
+        
+        .tws-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+            padding-bottom: 25px;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .tws-icon {
+            font-size: 3.5rem;
+            margin-right: 25px;
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .airpods-tws-icon {
+            background: rgba(59, 130, 246, 0.2);
+            color: #3b82f6;
+        }
+        
+        .galaxy-tws-icon {
+            background: rgba(139, 92, 246, 0.2);
+            color: #8b5cf6;
+        }
+        
+        .sony-tws-icon {
+            background: rgba(239, 68, 68, 0.2);
+            color: #ef4444;
+        }
+        
+        .tws-name {
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 10px;
+        }
+        
+        .airpods-name {
+            color: #3b82f6;
+        }
+        
+        .galaxy-name {
+            color: #8b5cf6;
+        }
+        
+        .sony-name {
+            color: #ef4444;
+        }
+        
+        .tws-model {
+            color: #cbd5e1;
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-top: 5px;
+        }
+        
+        /* Specifications */
+        .specs-grid {
+            margin: 30px 0;
+        }
+        
+        .spec-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .spec-item:last-child {
+            border-bottom: none;
+        }
+        
+        .spec-label {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+        
+        .spec-icon {
+            font-size: 1.3rem;
+            width: 30px;
+        }
+        
+        .airpods-spec .spec-icon {
+            color: #3b82f6;
+        }
+        
+        .galaxy-spec .spec-icon {
+            color: #8b5cf6;
+        }
+        
+        .sony-spec .spec-icon {
+            color: #ef4444;
+        }
+        
+        .spec-value {
+            font-size: 1.3rem;
+            font-weight: 700;
+        }
+        
+        .best-spec {
+            position: relative;
+            padding-right: 25px;
+        }
+        
+        .best-spec::after {
+            content: '👑';
+            position: absolute;
+            right: 0;
+            font-size: 1.2rem;
+        }
+        
+        .airpods-best {
+            color: #3b82f6;
+        }
+        
+        .galaxy-best {
+            color: #8b5cf6;
+        }
+        
+        .sony-best {
+            color: #ef4444;
+        }
+        
+        /* Comparison Table */
+        .comparison-section {
+            margin: 60px 0;
+        }
+        
+        .comparison-title {
+            text-align: center;
+            font-size: 2.8rem;
+            margin-bottom: 40px;
+            color: #fbbf24;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+        }
+        
+        .comparison-table {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 25px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+        
+        .table-header {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            background: linear-gradient(90deg, rgba(59, 130, 246, 0.3), rgba(139, 92, 246, 0.3), rgba(239, 68, 68, 0.3));
+            padding: 30px 40px;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .header-cell {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: #f0f0f0;
+        }
+        
+        .airpods-header {
+            color: #3b82f6;
+        }
+        
+        .galaxy-header {
+            color: #8b5cf6;
+        }
+        
+        .sony-header {
+            color: #ef4444;
+        }
+        
+        .table-row {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            padding: 25px 40px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            align-items: center;
+            transition: background 0.3s ease;
+        }
+        
+        .table-row:hover {
+            background: rgba(255, 255, 255, 0.05);
+        }
+        
+        .table-row:last-child {
+            border-bottom: none;
+        }
+        
+        .row-label {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            font-size: 1.3rem;
+            font-weight: 600;
+        }
+        
+        .row-icon {
+            font-size: 1.5rem;
+            width: 40px;
+            text-align: center;
+            color: #fbbf24;
+        }
+        
+        .row-value {
+            font-size: 1.4rem;
+            font-weight: 700;
+        }
+        
+        .comparison-badge {
+            display: inline-block;
+            padding: 8px 18px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 800;
+            margin-left: 15px;
+        }
+        
+        .airpods-badge {
+            background: rgba(59, 130, 246, 0.2);
+            color: #3b82f6;
+            border: 1px solid rgba(59, 130, 246, 0.4);
+        }
+        
+        .galaxy-badge {
+            background: rgba(139, 92, 246, 0.2);
+            color: #8b5cf6;
+            border: 1px solid rgba(139, 92, 246, 0.4);
+        }
+        
+        .sony-badge {
+            background: rgba(239, 68, 68, 0.2);
+            color: #ef4444;
+            border: 1px solid rgba(239, 68, 68, 0.4);
+        }
+        
+        /* Ad Sections */
+        .ad-section {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 25px;
+            padding: 40px;
+            margin: 50px 0;
+            text-align: center;
+            border: 2px dashed rgba(251, 191, 36, 0.3);
+        }
+        
+        .ad-label {
+            display: inline-block;
+            background: rgba(251, 191, 36, 0.2);
+            color: #fbbf24;
+            padding: 12px 30px;
+            border-radius: 25px;
+            margin-bottom: 30px;
+            font-size: 1.1rem;
+            font-weight: 800;
+        }
+        
+        .ad-placeholder {
+            height: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(251, 191, 36, 0.1);
+            border-radius: 20px;
+            color: #94a3b8;
+            font-style: italic;
+            font-size: 1.2rem;
+            margin: 25px 0;
+        }
+        
+        /* Recommendation Section */
+        .recommendation-section {
+            margin: 60px 0;
+        }
+        
+        .recommendation-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+            color: #fbbf24;
+        }
+        
+        .recommendation-cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 35px;
+        }
+        
+        @media (max-width: 992px) {
+            .recommendation-cards {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .recommendation-cards {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .recommendation-card {
+            padding: 40px 35px;
+            border-radius: 25px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+            text-align: center;
+        }
+        
+        .recommendation-card.airpods-rec {
+            border-top: 8px solid #3b82f6;
+        }
+        
+        .recommendation-card.galaxy-rec {
+            border-top: 8px solid #8b5cf6;
+        }
+        
+        .recommendation-card.sony-rec {
+            border-top: 8px solid #ef4444;
+        }
+        
+        .rec-title {
+            font-size: 1.8rem;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+        
+        .airpods-rec .rec-title {
+            color: #3b82f6;
+        }
+        
+        .galaxy-rec .rec-title {
+            color: #8b5cf6;
+        }
+        
+        .sony-rec .rec-title {
+            color: #ef4444;
+        }
+        
+        .rec-points {
+            list-style: none;
+            margin-top: 25px;
+            text-align: left;
+        }
+        
+        .rec-points li {
+            padding: 15px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .rec-points li:last-child {
+            border-bottom: none;
+        }
+        
+        .rec-points li::before {
+            content: '🎯';
+            font-size: 1.2rem;
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            text-align: center;
+            margin: 60px 0 40px;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            padding: 20px 45px;
+            border-radius: 15px;
+            font-size: 1.3rem;
+            font-weight: 800;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 15px;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            min-width: 220px;
+            justify-content: center;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(45deg, #3b82f6, #8b5cf6);
+            color: white;
+            box-shadow: 0 10px 30px rgba(59, 130, 246, 0.4);
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(59, 130, 246, 0.5);
+        }
+        
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.1);
+            color: #e2e8f0;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateY(-5px);
+        }
+        
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 40px 20px;
+            margin-top: 60px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #94a3b8;
+            font-size: 1rem;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="tws-container">
+        <!-- Header -->
+        <header class="tws-header">
+            <h1 class="main-title">True Wireless Naushniklar</h1>
+            <p class="subtitle">AirPods Pro vs Galaxy Buds vs Sony WF - Bluetooth 5.2 va 5.3, tez zaryadlovchi qutilari va ekotizim integratsiyasi</p>
+            <div class="rating-badge">
+                <i class="fas fa-star"></i>
+                <span>3.5/5 TWS Reytingi</span>
+            </div>
+        </header>
+
+        <!-- Bluetooth Versions -->
+        <div class="bluetooth-section">
+            <h2 class="bluetooth-title">Bluetooth Texnologiyalari</h2>
+            <p style="color: #cbd5e1; margin-bottom: 20px; font-size: 1.2rem;">
+                Bluetooth 5.2 va 5.3 - yuqori barqarorlik, past kechikish va energiya samaradorligi
+            </p>
+            
+            <div class="version-grid">
+                <div class="version-card bt52">
+                    <div class="version-name">Bluetooth 5.2</div>
+                    <div style="color: #cbd5e1; line-height: 1.7; margin-bottom: 15px;">
+                        <strong>Asosiy xususiyatlar:</strong> LE Audio, LC3 codec, murakkab raqamli audio. Past kechikish.
+                    </div>
+                    <div style="color: #3b82f6; font-weight: 700; font-size: 1.1rem;">
+                        <i class="fas fa-headphones"></i>
+                        AirPods Pro (2-gen), Sony WF-1000XM5
+                    </div>
+                </div>
+                
+                <div class="version-card bt53">
+                    <div class="version-name">Bluetooth 5.3</div>
+                    <div style="color: #cbd5e1; line-height: 1.7; margin-bottom: 15px;">
+                        <strong>Yangi imkoniyatlar:</strong> Yaxshilangan barqarorlik, kam energiya sarfi, yaxshi qamrov.
+                    </div>
+                    <div style="color: #8b5cf6; font-weight: 700; font-size: 1.1rem;">
+                        <i class="fas fa-headphones-alt"></i>
+                        Galaxy Buds 2 Pro, yangi TWS modellar
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Quick Charging -->
+        <section class="charging-section">
+            <h2 class="charging-title">Tez Zaryadlash Qobiliyatlari</h2>
+            <div class="charging-features">
+                <div class="charging-card airpods">
+                    <div class="charging-icon airpods-icon">
+                        <i class="fab fa-apple"></i>
+                    </div>
+                    <h3 class="charging-brand">AirPods Pro</h3>
+                    <div class="charging-time">5 daqiqada - 1 soat</div>
+                    <div style="color: #cbd5e1; line-height: 1.6;">
+                        MagSafe zaryadlash, tez zaryadlash. Qutida 24 soatgacha umumiy vaqt.
+                    </div>
+                </div>
+                
+                <div class="charging-card galaxy">
+                    <div class="charging-icon galaxy-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3 class="charging-brand">Galaxy Buds 2 Pro</h3>
+                    <div class="charging-time">5 daqiqada - 1 soat</div>
+                    <div style="color: #cbd5e1; line-height: 1.6;">
+                        Qi zaryadlash, USB-C tez zaryadlash. Qutida 29 soatgacha umumiy vaqt.
+                    </div>
+                </div>
+                
+                <div class="charging-card sony">
+                    <div class="charging-icon sony-icon">
+                        <i class="fas fa-charging-station"></i>
+                    </div>
+                    <h3 class="charging-brand">Sony WF-1000XM5</h3>
+                    <div class="charging-time">3 daqiqada - 1 soat</div>
+                    <div style="color: #cbd5e1; line-height: 1.6;">
+                        Eng tez zaryadlash, 8 soat uzluksiz eshitish. Qutida 24 soat.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Ecosystem Compatibility -->
+        <section class="ecosystem-section">
+            <h2 class="ecosystem-title">
+                <i class="fas fa-mobile-alt"></i>
+                Ekotizim Integratsiyasi
+            </h2>
+            
+            <div class="ecosystem-grid">
+                <div class="ecosystem-card ios">
+                    <div class="ecosystem-icon ios-icon">
+                        <i class="fab fa-apple"></i>
+                    </div>
+                    <h3 class="ecosystem-name">iOS Ekotizimi</h3>
+                    <div style="color: #cbd5e1; line-height: 1.7; margin-bottom: 20px;">
+                        AirPods Pro iPhone, iPad va Mac bilan mukammal ishlaydi. Avtomatik ulanish, iCloud sinxronizatsiyasi.
+                    </div>
+                    <div style="background: rgba(59, 130, 246, 0.1); padding: 15px; border-radius: 10px;">
+                        <i class="fas fa-check-circle" style="color: #3b82f6; margin-right: 8px;"></i>
+                        <strong>Afzallik:</strong> Seamless switching, Spatial Audio, Find My
+                    </div>
+                </div>
+                
+                <div class="ecosystem-card android">
+                    <div class="ecosystem-icon android-icon">
+                        <i class="fab fa-android"></i>
+                    </div>
+                    <h3 class="ecosystem-name">Android Ekotizimi</h3>
+                    <div style="color: #cbd5e1; line-height: 1.7; margin-bottom: 20px;">
+                        Galaxy Buds 2 Pro Samsung telefonlar bilan a'lo integratsiya. Sony WF har qanday Android bilan ishlaydi.
+                    </div>
+                    <div style="background: rgba(139, 92, 246, 0.1); padding: 15px; border-radius: 10px;">
+                        <i class="fas fa-check-circle" style="color: #8b5cf6; margin-right: 8px;"></i>
+                        <strong>Afzallik:</strong> Samsung Wearable, Google Fast Pair, 360 Audio
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Ad Banner -->
+        <div class="ad-section">
+            <div class="ad-label">TWS Naushniklar</div>
+            <div class="ad-placeholder">
+                AdSense Horizontal Banner (728x90)
+            </div>
+        </div>
+
+        <!-- TWS Comparison Grid -->
+        <div class="tws-grid">
+            <!-- AirPods Pro -->
+            <div class="tws-card airpods-card">
+                <div class="tws-header">
+                    <div class="tws-icon airpods-tws-icon">
+                        <i class="fab fa-apple"></i>
+                    </div>
+                    <div>
+                        <h2 class="tws-name airpods-name">AirPods Pro</h2>
+                        <div class="tws-model">2-nasli (2023)</div>
+                    </div>
+                </div>
+                
+                <div class="specs-grid">
+                    <div class="spec-item airpods-spec">
+                        <div class="spec-label">
+                            <i class="fas fa-battery-full spec-icon"></i>
+                            <span>Batareya quvvati</span>
+                        </div>
+                        <div class="spec-value">6 soat (ANC bilan)</div>
+                    </div>
+                    <div class="spec-item airpods-spec">
+                        <div class="spec-label">
+                            <i class="fas fa-wifi spec-icon"></i>
+                            <span>Bluetooth</span>
+                        </div>
+                        <div class="spec-value">5.2</div>
+                    </div>
+                    <div class="spec-item airpods-spec">
+                        <div class="spec-label">
+                            <i class="fas fa-shield-alt spec-icon"></i>
+                            <span>ANC (Showqinni bartaraf)</span>
+                        </div>
+                        <div class="spec-value best-spec airpods-best">Adaptive</div>
+                    </div>
+                    <div class="spec-item airpods-spec">
+                        <div class="spec-label">
+                            <i class="fas fa-water spec-icon"></i>
+                            <span>Suv chidamlilik</span>
+                        </div>
+                        <div class="spec-value">IPX4</div>
+                    </div>
+                </div>
+                
+                <div style="margin-top: 30px; padding: 25px; background: rgba(59, 130, 246, 0.1); border-radius: 15px; border-left: 4px solid #3b82f6;">
+                    <h3 style="color: #3b82f6; margin-bottom: 15px; display: flex; align-items: center; gap: 12px;">
+                        <i class="fas fa-crown"></i>
+                        Kuchli Tomonlari
+                    </h3>
+                    <p style="color: #cbd5e1; line-height: 1.7;">
+                        iOS ekotizimi bilan mukammal integratsiya. H2 chip, Adaptive ANC, Spatial Audio, Transparency mode.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Galaxy Buds 2 Pro -->
+            <div class="tws-card galaxy-card">
+                <div class="tws-header">
+                    <div class="tws-icon galaxy-tws-icon">
+                        <i class="fab fa-android"></i>
+                    </div>
+                    <div>
+                        <h2 class="tws-name galaxy-name">Galaxy Buds 2 Pro</h2>
+                        <div class="tws-model">2022 Model</div>
+                    </div>
+                </div>
+                
+                <div class="specs-grid">
+                    <div class="spec-item galaxy-spec">
+                        <div class="spec-label">
+                            <i class="fas fa-battery-full spec-icon"></i>
+                            <span>Batareya quvvati</span>
+                        </div>
+                        <div class="spec-value">5 soat (ANC bilan)</div>
+                    </div>
+                    <div class="spec-item galaxy-spec">
+                        <div class="spec-label">
+                            <i class="fas fa-wifi spec-icon"></i>
+                            <span>Bluetooth</span>
+                        </div>
+                        <div class="spec-value best-spec galaxy-best">5.3</div>
+                    </div>
+                    <div class="spec-item galaxy-spec">
+                        <div class="spec-label">
+                            <i class="fas fa-volume-up spec-icon"></i>
+                            <span>Audio sifati</span>
+                        </div>
+                        <div class="spec-value best-spec galaxy-best">24-bit Hi-Fi</div>
+                    </div>
+                    <div class="spec-item galaxy-spec">
+                        <div class="spec-label">
+                            <i class="fas fa-water spec-icon"></i>
+                            <span>Suv chidamlilik</span>
+                        </div>
+                        <div class="spec-value">IPX7</div>
+                    </div>
+                </div>
+                
+                <div style="margin-top: 30px; padding: 25px; background: rgba(139, 92, 246, 0.1); border-radius: 15px; border-left: 4px solid #8b5cf6;">
+                    <h3 style="color: #8b5cf6; margin-bottom: 15px; display: flex; align-items: center; gap: 12px;">
+                        <i class="fas fa-bolt"></i>
+                        Kuchli Tomonlari
+                    </h3>
+                    <p style="color: #cbd5e1; line-height: 1.7;">
+                        24-bit Hi-Fi audio, 360 Audio, Intelligent ANC. Samsung ekotizimi bilan mukammal, IPX7 suv chidamlilik.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Sony WF-1000XM5 -->
+            <div class="tws-card sony-card">
+                <div class="tws-header">
+                    <div class="tws-icon sony-tws-icon">
+                        <i class="fas fa-headphones-alt"></i>
+                    </div>
+                    <div>
+                        <h2 class="tws-name sony-name">Sony WF-1000XM5</h2>
+                        <div class="tws-model">Premium TWS</div>
+                    </div>
+                </div>
+                
+                <div class="specs-grid">
+                    <div class="spec-item sony-spec">
+                        <div class="spec-label">
+                            <i class="fas fa-battery-full spec-icon"></i>
+                            <span>Batareya quvvati</span>
+                        </div>
+                        <div class="spec-value best-spec sony-best">8 soat (ANC bilan)</div>
+                    </div>
+                    <div class="spec-item sony-spec">
+                        <div class="spec-label">
+                            <i class="fas fa-wifi spec-icon"></i>
+                            <span>Bluetooth</span>
+                        </div>
+                        <div class="spec-value">5.2</div>
+                    </div>
+                    <div class="spec-item sony-spec">
+                        <div class="spec-label">
+                            <i class="fas fa-microchip spec-icon"></i>
+                            <span>ANC texnologiyasi</span>
+                        </div>
+                        <div class="spec-value best-spec sony-best">QN2e + V2</div>
+                    </div>
+                    <div class="spec-item sony-spec">
+                        <div class="spec-label">
+                            <i class="fas fa-water spec-icon"></i>
+                            <span>Suv chidamlilik</span>
+                        </div>
+                        <div class="spec-value">IPX4</div>
+                    </div>
+                </div>
+                
+                <div style="margin-top: 30px; padding: 25px; background: rgba(239, 68, 68, 0.1); border-radius: 15px; border-left: 4px solid #ef4444;">
+                    <h3 style="color: #ef4444; margin-bottom: 15px; display: flex; align-items: center; gap: 12px;">
+                        <i class="fas fa-trophy"></i>
+                        Kuchli Tomonlari
+                    </h3>
+                    <p style="color: #cbd5e1; line-height: 1.7;">
+                        Eng yaxshi ANC, eng uzun batareya quvvati, yuqori audio sifat. LDAC codec qo'llab-quvvatlash, multipoint ulanish.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Comparison Table -->
+        <section class="comparison-section">
+            <h2 class="comparison-title">
+                <i class="fas fa-table"></i>
+                TWS Naushniklar Taqqoslash
+            </h2>
+            
+            <div class="comparison-table">
+                <div class="table-header">
+                    <div class="header-cell">Xususiyatlar</div>
+                    <div class="header-cell airpods-header">AirPods Pro</div>
+                    <div class="header-cell galaxy-header">Galaxy Buds 2 Pro</div>
+                    <div class="header-cell sony-header">Sony WF-1000XM5</div>
+                </div>
+                
+                <div class="table-row">
+                    <div class="row-label">
+                        <i class="fas fa-mobile-alt row-icon"></i>
+                        <span>Ekotizim integratsiyasi</span>
+                    </div>
+                    <div class="row-value">
+                        iOS/macOS
+                        <span class="comparison-badge airpods-badge">MUKEMMAL</span>
+                    </div>
+                    <div class="row-value">
+                        Android/Samsung
+                        <span class="comparison-badge galaxy-badge">A'LO</span>
+                    </div>
+                    <div class="row-value">Universal</div>
+                </div>
+                
+                <div class="table-row">
+                    <div class="row-label">
+                        <i class="fas fa-headphones row-icon"></i>
+                        <span>ANC Sifat</span>
+                    </div>
+                    <div class="row-value">Adaptive ANC</div>
+                    <div class="row-value">Intelligent ANC</div>
+                    <div class="row-value">
+                        Premium ANC
+                        <span class="comparison-badge sony-badge">ENG YAXSHI</span>
+                    </div>
+                </div>
+                
+                <div class="table-row">
+                    <div class="row-label">
+                        <i class="fas fa-battery-full row-icon"></i>
+                        <span>Batareya quvvati</span>
+                    </div>
+                    <div class="row-value">6 soat</div>
+                    <div class="row-value">5 soat</div>
+                    <div class="row-value">
+                        8 soat
+                        <span class="comparison-badge sony-badge">UZOQ</span>
+                    </div>
+                </div>
+                
+                <div class="table-row">
+                    <div class="row-label">
+                        <i class="fas fa-volume-up row-icon"></i>
+                        <span>Audio Codec</span>
+                    </div>
+                    <div class="row-value">AAC</div>
+                    <div class="row-value">
+                        24-bit Hi-Fi
+                        <span class="comparison-badge galaxy-badge">YUQORI</span>
+                    </div>
+                    <div class="row-value">
+                        LDAC, AAC
+                        <span class="comparison-badge sony-badge">YUQORI</span>
+                    </div>
+                </div>
+                
+                <div class="table-row">
+                    <div class="row-label">
+                        <i class="fas fa-water row-icon"></i>
+                        <span>Suv chidamlilik</span>
+                    </div>
+                    <div class="row-value">IPX4</div>
+                    <div class="row-value">
+                        IPX7
+                        <span class="comparison-badge galaxy-badge">YAXSHI</span>
+                    </div>
+                    <div class="row-value">IPX4</div>
+                </div>
+                
+                <div class="table-row">
+                    <div class="row-label">
+                        <i class="fas fa-dollar-sign row-icon"></i>
+                        <span>Narx</span>
+                    </div>
+                    <div class="row-value">
+                        $249
+                        <span class="comparison-badge airpods-badge">STANDART</span>
+                    </div>
+                    <div class="row-value">
+                        $229
+                        <span class="comparison-badge galaxy-badge">ARZON</span>
+                    </div>
+                    <div class="row-value">$299</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Vertical Ad -->
+        <div class="ad-section">
+            <div class="ad-label">Naushniklar va Aksessuarlar</div>
+            <div class="ad-placeholder" style="height: 300px;">
+                AdSense Vertical Banner (300x600)
+            </div>
+        </div>
+
+        <!-- Recommendation Section -->
+        <section class="recommendation-section">
+            <h2 class="recommendation-title">Qaysi TWS Sizga Mos Keladi?</h2>
+            
+            <div class="recommendation-cards">
+                <div class="recommendation-card airpods-rec">
+                    <h3 class="rec-title">
+                        <i class="fab fa-apple"></i>
+                        AirPods Pro - iOS Foydalanuvchilari
+                    </h3>
+                    <p style="color: #cbd5e1; line-height: 1.7; margin-bottom: 20px; text-align: center;">
+                        Agar siz iPhone, iPad yoki Mac egalari bo'lsangiz. Mukammal integratsiya va qulay foydalanish.
+                    </p>
+                    <ul class="rec-points">
+                        <li>iPhone va Mac egalari uchun</li>
+                        <li>Seamless switching</li>
+                        <li>Spatial Audio va Find My</li>
+                        <li>Adaptive ANC</li>
+                    </ul>
+                </div>
+                
+                <div class="recommendation-card galaxy-rec">
+                    <h3 class="rec-title">
+                        <i class="fab fa-android"></i>
+                        Galaxy Buds 2 Pro - Android Foydalanuvchilari
+                    </h3>
+                    <p style="color: #cbd5e1; line-height: 1.7; margin-bottom: 20px; text-align: center;">
+                        Agar siz Samsung yoki boshqa Android telefon foydalanuvchisi bo'lsangiz. Yuqori audio sifat.
+                    </p>
+                    <ul class="rec-points">
+                        <li>Samsung telefon egalari uchun</li>
+                        <li>24-bit Hi-Fi audio</li>
+                        <li>IPX7 suv chidamlilik</li>
+                        <li>360 Audio tajriba</li>
+                    </ul>
+                </div>
+                
+                <div class="recommendation-card sony-rec">
+                    <h3 class="rec-title">
+                        <i class="fas fa-trophy"></i>
+                        Sony WF - Audio Sevuvchilari
+                    </h3>
+                    <p style="color: #cbd5e1; line-height: 1.7; margin-bottom: 20px; text-align: center;">
+                        Agar siz eng yaxshi audio sifat va ANC istasangiz. Har qanday platforma uchun universal.
+                    </p>
+                    <ul class="rec-points">
+                        <li>Eng yaxshi ANC sifat</li>
+                        <li>8 soatlik batareya</li>
+                        <li>LDAC codec qo'llab-quvvatlash</li>
+                        <li>Universal kompatibilitet</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <div class="cta-section">
+            <h2 style="font-size: 2.5rem; color: #f3f4f6; margin-bottom: 20px;">TWS Naushniklar Tanlashga Tayyormisiz?</h2>
+            <p style="font-size: 1.3rem; color: #cbd5e1; max-width: 800px; margin: 0 auto 30px;">
+                Batafsil test natijalari, audio demo'lari va haqiqiy foydalanuvchi sharhlarini o'qish.
+            </p>
+            
+            <div class="cta-buttons">
+                <a href="#" class="btn btn-primary">
+                    <i class="fas fa-headphones"></i>
+                    To'liq Ko'rish
+                </a>
+                <a href="#" class="btn btn-secondary">
+                    <i class="fas fa-shopping-cart"></i>
+                    Narxlarni Solishtirish
+                </a>
+                <a href="#" class="btn btn-secondary">
+                    <i class="fas fa-volume-up"></i>
+                    Audio Demo Ko'rish
+                </a>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <p>© 2024 True Wireless Naushniklar Taqqoslash. Barcha ma'lumotlar test natijalariga asoslangan.</p>
+            <p style="margin-top: 10px;">AirPods, Galaxy Buds, Sony WF - tegishli kompaniyalarning savdo belgilari.</p>
+        </div>
+    </div>
+
+    <script>
+        // TWS card hover effects
+        document.querySelectorAll('.tws-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-10px)';
+                this.style.boxShadow = '0 25px 50px rgba(0, 0, 0, 0.4)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+                this.style.boxShadow = 'none';
+            });
+        });
+        
+        // Charging card hover effects
+        document.querySelectorAll('.charging-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-8px)';
+                this.style.boxShadow = '0 20px 40px rgba(0, 0, 0, 0.3)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+                this.style.boxShadow = 'none';
+            });
+        });
+        
+        // Version card hover effects
+        document.querySelectorAll('.version-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-5px)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+            });
+        });
+        
+        // Ecosystem card hover effects
+        document.querySelectorAll('.ecosystem-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-5px)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+            });
+        });
+        
+        // Table row hover effects
+        document.querySelectorAll('.table-row').forEach(row => {
+            row.addEventListener('mouseenter', function() {
+                this.style.background = 'rgba(255, 255, 255, 0.08)';
+            });
+            
+            row.addEventListener('mouseleave', function() {
+                this.style.background = '';
+            });
+        });
+        
+        // Recommendation card hover effects
+        document.querySelectorAll('.recommendation-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-8px)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+            });
+        });
+        
+        // Rating badge animation
+        const ratingBadge = document.querySelector('.rating-badge');
+        ratingBadge.addEventListener('click', function() {
+            this.style.transform = 'scale(1.05)';
+            setTimeout(() => {
+                this.style.transform = 'scale(1)';
+            }, 300);
+        });
+        
+        // Ad placeholder click
+        document.querySelectorAll('.ad-placeholder').forEach(ad => {
+            ad.addEventListener('click', function() {
+                alert('Haqiqiy saytda bu joyda AdSense reklamasi bo\'ladi');
+            });
+        });
+        
+        // Best spec animation
+        const bestSpecs = document.querySelectorAll('.best-spec');
+        bestSpecs.forEach(spec => {
+            spec.style.animation = 'pulse 2s infinite';
+        });
+        
+        // Bluetooth version animation
+        const versionCards = document.querySelectorAll('.version-card');
+        versionCards.forEach((card, index) => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateX(-20px)';
+            
+            setTimeout(() => {
+                card.style.transition = 'all 0.5s ease';
+                card.style.opacity = '1';
+                card.style.transform = 'translateX(0)';
+            }, 300 + (index * 200));
+        });
+        
+        // Charging time animation
+        const chargingTimes = document.querySelectorAll('.charging-time');
+        chargingTimes.forEach((time, index) => {
+            time.style.opacity = '0';
+            time.style.transform = 'scale(0.8)';
+            
+            setTimeout(() => {
+                time.style.transition = 'all 0.5s ease';
+                time.style.opacity = '1';
+                time.style.transform = 'scale(1)';
+            }, 500 + (index * 200));
+        });
+        
+        // Add CSS animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes pulse {
+                0% { transform: scale(1); }
+                50% { transform: scale(1.05); }
+                100% { transform: scale(1); }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>
