@@ -1,0 +1,1331 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Studio Monitorlar va Uslubatlar - Musiqa Ishlab Chiqarish</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', system-ui, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: #e2e8f0;
+            min-height: 100vh;
+        }
+        
+        .studio-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        /* Header */
+        .studio-header {
+            text-align: center;
+            margin-bottom: 60px;
+            padding: 60px 40px;
+            background: linear-gradient(135deg, rgba(255, 0, 0, 0.2), rgba(255, 255, 0, 0.2));
+            border-radius: 30px;
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .studio-header::before {
+            content: '🎵';
+            position: absolute;
+            font-size: 200px;
+            opacity: 0.05;
+            top: -40px;
+            right: -40px;
+        }
+        
+        .main-title {
+            font-size: 3.5rem;
+            background: linear-gradient(45deg, #ef4444, #fbbf24);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 20px;
+            font-weight: 800;
+            line-height: 1.1;
+        }
+        
+        .subtitle {
+            font-size: 1.4rem;
+            color: #cbd5e1;
+            max-width: 800px;
+            margin: 0 auto 30px;
+            line-height: 1.6;
+        }
+        
+        .rating-badge {
+            display: inline-flex;
+            align-items: center;
+            background: linear-gradient(45deg, #f59e0b, #fbbf24);
+            color: #1e293b;
+            padding: 15px 35px;
+            border-radius: 30px;
+            font-weight: 800;
+            font-size: 1.5rem;
+            margin-top: 20px;
+            box-shadow: 0 10px 25px rgba(245, 158, 11, 0.3);
+        }
+        
+        /* Size Range */
+        .size-range {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 25px;
+            margin: 30px auto;
+            max-width: 600px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .size-title {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: #fbbf24;
+        }
+        
+        .size-slider {
+            height: 10px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 5px;
+            margin: 20px 0;
+            position: relative;
+        }
+        
+        .size-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #ef4444, #f59e0b, #fbbf24);
+            border-radius: 5px;
+            width: 100%;
+        }
+        
+        .size-labels {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+        }
+        
+        .size-label {
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+        
+        .size-small {
+            color: #ef4444;
+        }
+        
+        .size-large {
+            color: #fbbf24;
+        }
+        
+        /* Speaker Types */
+        .speaker-types {
+            margin: 50px 0;
+            text-align: center;
+        }
+        
+        .speaker-title {
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+            color: #fbbf24;
+        }
+        
+        .speaker-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
+        
+        @media (max-width: 768px) {
+            .speaker-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .speaker-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 40px 30px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .speaker-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+        
+        .speaker-card.yamaha {
+            border-top: 6px solid #ef4444;
+        }
+        
+        .speaker-card.krk {
+            border-top: 6px solid #fbbf24;
+        }
+        
+        .speaker-icon {
+            font-size: 4rem;
+            margin-bottom: 25px;
+        }
+        
+        .yamaha-icon {
+            color: #ef4444;
+        }
+        
+        .krk-icon {
+            color: #fbbf24;
+        }
+        
+        .speaker-name {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        
+        .yamaha-name {
+            color: #ef4444;
+        }
+        
+        .krk-name {
+            color: #fbbf24;
+        }
+        
+        .speaker-desc {
+            color: #cbd5e1;
+            line-height: 1.7;
+            margin-bottom: 25px;
+        }
+        
+        /* Monitor Grid */
+        .monitor-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 35px;
+            margin-bottom: 60px;
+        }
+        
+        @media (max-width: 1200px) {
+            .monitor-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .monitor-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .monitor-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 25px;
+            padding: 40px 35px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .monitor-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
+        }
+        
+        .monitor-card.neutral {
+            border-left: 8px solid #ef4444;
+        }
+        
+        .monitor-card.neutral::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 8px;
+            background: linear-gradient(90deg, #ef4444, #f87171);
+        }
+        
+        .monitor-card.bass {
+            border-left: 8px solid #fbbf24;
+        }
+        
+        .monitor-card.bass::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 8px;
+            background: linear-gradient(90deg, #fbbf24, #fcd34d);
+        }
+        
+        .monitor-card.balanced {
+            border-left: 8px solid #10b981;
+        }
+        
+        .monitor-card.balanced::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 8px;
+            background: linear-gradient(90deg, #10b981, #34d399);
+        }
+        
+        .monitor-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+            padding-bottom: 25px;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .monitor-icon {
+            font-size: 3.5rem;
+            margin-right: 25px;
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .neutral-icon {
+            background: rgba(239, 68, 68, 0.2);
+            color: #ef4444;
+        }
+        
+        .bass-icon {
+            background: rgba(251, 191, 36, 0.2);
+            color: #fbbf24;
+        }
+        
+        .balanced-icon {
+            background: rgba(16, 185, 129, 0.2);
+            color: #10b981;
+        }
+        
+        .monitor-name {
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 10px;
+        }
+        
+        .neutral-name {
+            color: #ef4444;
+        }
+        
+        .bass-name {
+            color: #fbbf24;
+        }
+        
+        .balanced-name {
+            color: #10b981;
+        }
+        
+        .monitor-size {
+            color: #cbd5e1;
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-top: 5px;
+        }
+        
+        /* Features */
+        .monitor-features {
+            margin: 30px 0;
+        }
+        
+        .feature-item {
+            display: flex;
+            align-items: center;
+            padding: 15px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .feature-item:last-child {
+            border-bottom: none;
+        }
+        
+        .feature-icon {
+            margin-right: 15px;
+            font-size: 1.2rem;
+            width: 30px;
+        }
+        
+        .neutral-feature .feature-icon {
+            color: #ef4444;
+        }
+        
+        .bass-feature .feature-icon {
+            color: #fbbf24;
+        }
+        
+        .balanced-feature .feature-icon {
+            color: #10b981;
+        }
+        
+        /* Sound Characteristics */
+        .sound-section {
+            background: linear-gradient(135deg, rgba(239, 68, 68, 0.15), rgba(251, 191, 36, 0.15));
+            border-radius: 30px;
+            padding: 50px;
+            margin: 60px 0;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .sound-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 6px;
+            background: linear-gradient(90deg, #ef4444, #fbbf24);
+        }
+        
+        .sound-title {
+            font-size: 2.8rem;
+            margin-bottom: 25px;
+            color: #fbbf24;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+        }
+        
+        .sound-subtitle {
+            font-size: 1.5rem;
+            color: #cbd5e1;
+            margin-bottom: 40px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .sound-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        @media (max-width: 992px) {
+            .sound-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .sound-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .sound-card {
+            padding: 25px;
+            border-radius: 20px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+        }
+        
+        .sound-icon {
+            font-size: 2.5rem;
+            color: #fbbf24;
+            margin-bottom: 20px;
+        }
+        
+        .sound-card-title {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: #f0f0f0;
+        }
+        
+        .sound-card-desc {
+            color: #cbd5e1;
+            line-height: 1.6;
+        }
+        
+        /* Comparison Table */
+        .comparison-section {
+            margin: 60px 0;
+        }
+        
+        .comparison-title {
+            text-align: center;
+            font-size: 2.8rem;
+            margin-bottom: 40px;
+            color: #fbbf24;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+        }
+        
+        .comparison-table {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 25px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+        
+        .table-header {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            background: linear-gradient(90deg, rgba(239, 68, 68, 0.3), rgba(251, 191, 36, 0.3), rgba(16, 185, 129, 0.3));
+            padding: 30px 40px;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .header-cell {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: #f0f0f0;
+        }
+        
+        .yamaha-header {
+            color: #ef4444;
+        }
+        
+        .krk-header {
+            color: #fbbf24;
+        }
+        
+        .jbl-header {
+            color: #10b981;
+        }
+        
+        .table-row {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            padding: 25px 40px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            align-items: center;
+            transition: background 0.3s ease;
+        }
+        
+        .table-row:hover {
+            background: rgba(255, 255, 255, 0.05);
+        }
+        
+        .table-row:last-child {
+            border-bottom: none;
+        }
+        
+        .row-label {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            font-size: 1.3rem;
+            font-weight: 600;
+        }
+        
+        .row-icon {
+            font-size: 1.5rem;
+            width: 40px;
+            text-align: center;
+            color: #fbbf24;
+        }
+        
+        .row-value {
+            font-size: 1.4rem;
+            font-weight: 700;
+        }
+        
+        .comparison-badge {
+            display: inline-block;
+            padding: 8px 18px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 800;
+            margin-left: 15px;
+        }
+        
+        .yamaha-badge {
+            background: rgba(239, 68, 68, 0.2);
+            color: #ef4444;
+            border: 1px solid rgba(239, 68, 68, 0.4);
+        }
+        
+        .krk-badge {
+            background: rgba(251, 191, 36, 0.2);
+            color: #fbbf24;
+            border: 1px solid rgba(251, 191, 36, 0.4);
+        }
+        
+        .jbl-badge {
+            background: rgba(16, 185, 129, 0.2);
+            color: #10b981;
+            border: 1px solid rgba(16, 185, 129, 0.4);
+        }
+        
+        /* Ad Sections */
+        .ad-section {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 25px;
+            padding: 40px;
+            margin: 50px 0;
+            text-align: center;
+            border: 2px dashed rgba(251, 191, 36, 0.3);
+        }
+        
+        .ad-label {
+            display: inline-block;
+            background: rgba(251, 191, 36, 0.2);
+            color: #fbbf24;
+            padding: 12px 30px;
+            border-radius: 25px;
+            margin-bottom: 30px;
+            font-size: 1.1rem;
+            font-weight: 800;
+        }
+        
+        .ad-placeholder {
+            height: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(251, 191, 36, 0.1);
+            border-radius: 20px;
+            color: #94a3b8;
+            font-style: italic;
+            font-size: 1.2rem;
+            margin: 25px 0;
+        }
+        
+        /* Studio Setup */
+        .setup-section {
+            margin: 60px 0;
+        }
+        
+        .setup-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+            color: #fbbf24;
+        }
+        
+        .setup-cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 35px;
+        }
+        
+        @media (max-width: 992px) {
+            .setup-cards {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .setup-cards {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .setup-card {
+            padding: 40px 35px;
+            border-radius: 25px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255,255, 0.1);
+            position: relative;
+            text-align: center;
+        }
+        
+        .setup-card.beginner-setup {
+            border-top: 8px solid #ef4444;
+        }
+        
+        .setup-card.pro-setup {
+            border-top: 8px solid #fbbf24;
+        }
+        
+        .setup-card.studio-setup {
+            border-top: 8px solid #10b981;
+        }
+        
+        .setup-card-title {
+            font-size: 1.8rem;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+        
+        .beginner-setup .setup-card-title {
+            color: #ef4444;
+        }
+        
+        .pro-setup .setup-card-title {
+            color: #fbbf24;
+        }
+        
+        .studio-setup .setup-card-title {
+            color: #10b981;
+        }
+        
+        .setup-points {
+            list-style: none;
+            margin-top: 25px;
+            text-align: left;
+        }
+        
+        .setup-points li {
+            padding: 15px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .setup-points li:last-child {
+            border-bottom: none;
+        }
+        
+        .setup-points li::before {
+            content: '🎧';
+            font-size: 1.2rem;
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            text-align: center;
+            margin: 60px 0 40px;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            padding: 20px 45px;
+            border-radius: 15px;
+            font-size: 1.3rem;
+            font-weight: 800;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 15px;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            min-width: 220px;
+            justify-content: center;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(45deg, #ef4444, #f59e0b);
+            color: white;
+            box-shadow: 0 10px 30px rgba(239, 68, 68, 0.4);
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(239, 68, 68, 0.5);
+        }
+        
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.1);
+            color: #e2e8f0;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateY(-5px);
+        }
+        
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 40px 20px;
+            margin-top: 60px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #94a3b8;
+            font-size: 1rem;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="studio-container">
+        <!-- Header -->
+        <header class="studio-header">
+            <h1 class="main-title">Studio Monitorlar va Uslubatlar</h1>
+            <p class="subtitle">Musiqa ishlab chiqarish uchun studio audio uskunalari - 5" dan 8" gacha diapazonda yorqin va neytral tovush</p>
+            <div class="rating-badge">
+                <i class="fas fa-star"></i>
+                <span>4.0/5 Studio Reytingi</span>
+            </div>
+        </header>
+
+        <!-- Size Range -->
+        <div class="size-range">
+            <h3 class="size-title">Diapazon Oralig'i</h3>
+            <div class="size-slider">
+                <div class="size-fill"></div>
+            </div>
+            <div class="size-labels">
+                <span class="size-label size-small">5" - Kichik Studiolar</span>
+                <span class="size-label size-large">8" - Katta Studiolar</span>
+            </div>
+        </div>
+
+        <!-- Speaker Types -->
+        <section class="speaker-types">
+            <h2 class="speaker-title">Asosiy Monitorlar</h2>
+            <div class="speaker-grid">
+                <div class="speaker-card yamaha">
+                    <div class="speaker-icon yamaha-icon">
+                        <i class="fas fa-wave-square"></i>
+                    </div>
+                    <h3 class="speaker-name yamaha-name">Yamaha HS Series</h3>
+                    <p class="speaker-desc">
+                        <strong>Yorqin va neytral tovush</strong> - industry standard. Katta diapazon, aniq yuqori chastotalar va to'g'ri tahlil.
+                    </p>
+                    <div style="margin-top: 20px; padding: 15px; background: rgba(239, 68, 68, 0.1); border-radius: 10px;">
+                        <i class="fas fa-check-circle" style="color: #ef4444; margin-right: 8px;"></i>
+                        <strong>Afzalligi:</strong> Neytral tovush, har qanday musiqa turi uchun
+                    </div>
+                </div>
+                
+                <div class="speaker-card krk">
+                    <div class="speaker-icon krk-icon">
+                        <i class="fas fa-volume-up"></i>
+                    </div>
+                    <h3 class="speaker-name krk-name">KRK Rokit Series</h3>
+                    <p class="speaker-desc">
+                        <strong>Kuchli va aniq bass</strong> - elektron musiqa va hip-hop uchun ideal. Past chastotalarda ajoyib ishlash.
+                    </p>
+                    <div style="margin-top: 20px; padding: 15px; background: rgba(251, 191, 36, 0.1); border-radius: 10px;">
+                        <i class="fas fa-check-circle" style="color: #fbbf24; margin-right: 8px;"></i>
+                        <strong>Afzalligi:</strong> Kuchli bass, elektron musiqa uchun mukammal
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Monitor Grid -->
+        <div class="monitor-grid">
+            <!-- Neutral Sound -->
+            <div class="monitor-card neutral">
+                <div class="monitor-header">
+                    <div class="monitor-icon neutral-icon">
+                        <i class="fas fa-balance-scale"></i>
+                    </div>
+                    <div>
+                        <h2 class="monitor-name neutral-name">Yorqin & Neytral</h2>
+                        <div class="monitor-size">Yamaha HS5 / HS7 / HS8</div>
+                    </div>
+                </div>
+                
+                <div class="monitor-features">
+                    <div class="feature-item neutral-feature">
+                        <i class="fas fa-sun feature-icon"></i>
+                        <span>Yorqin yuqori chastotalar</span>
+                    </div>
+                    <div class="feature-item neutral-feature">
+                        <i class="fas fa-bullseye feature-icon"></i>
+                        <span>Aniq tahlil qilish</span>
+                    </div>
+                    <div class="feature-item neutral-feature">
+                        <i class="fas fa-ruler feature-icon"></i>
+                        <span>To'g'ri diapazon</span>
+                    </div>
+                    <div class="feature-item neutral-feature">
+                        <i class="fas fa-industry feature-icon"></i>
+                        <span>Industry standard</span>
+                    </div>
+                </div>
+                
+                <div style="margin-top: 30px; padding: 25px; background: rgba(239, 68, 68, 0.1); border-radius: 15px; border-left: 4px solid #ef4444;">
+                    <h3 style="color: #ef4444; margin-bottom: 15px; display: flex; align-items: center; gap: 12px;">
+                        <i class="fas fa-compact-disc"></i>
+                        Qaysi Musiqa uchun?
+                    </h3>
+                    <p style="color: #cbd5e1; line-height: 1.7;">
+                        Rock, pop, jazz, klassik - har qanday musiqani to'g'ri tahlil qilish uchun. Mix va mastering uchun ideal.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Bass Sound -->
+            <div class="monitor-card bass">
+                <div class="monitor-header">
+                    <div class="monitor-icon bass-icon">
+                        <i class="fas fa-wave-square"></i>
+                    </div>
+                    <div>
+                        <h2 class="monitor-name bass-name">Kuchli Bass</h2>
+                        <div class="monitor-size">KRK Rokit 5 / 7 / 8</div>
+                    </div>
+                </div>
+                
+                <div class="monitor-features">
+                    <div class="feature-item bass-feature">
+                        <i class="fas fa-bass feature-icon"></i>
+                        <span>Kuchli past chastotalar</span>
+                    </div>
+                    <div class="feature-item bass-feature">
+                        <i class="fas fa-bolt feature-icon"></i>
+                        <span>Energetik tovush</span>
+                    </div>
+                    <div class="feature-item bass-feature">
+                        <i class="fas fa-microchip feature-icon"></i>
+                        <span>Elektron musiqa uchun</span>
+                    </div>
+                    <div class="feature-item bass-feature">
+                        <i class="fas fa-sliders-h feature-icon"></i>
+                        <span>EQ sozlash</span>
+                    </div>
+                </div>
+                
+                <div style="margin-top: 30px; padding: 25px; background: rgba(251, 191, 36, 0.1); border-radius: 15px; border-left: 4px solid #fbbf24;">
+                    <h3 style="color: #fbbf24; margin-bottom: 15px; display: flex; align-items: center; gap: 12px;">
+                        <i class="fas fa-headphones"></i>
+                        Qaysi Musiqa uchun?
+                    </h3>
+                    <p style="color: #cbd5e1; line-height: 1.7;">
+                        EDM, hip-hop, trap, dubstep - bass va past chastotalarni eshitish muhim bo'lgan barcha turlar.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Balanced Sound -->
+            <div class="monitor-card balanced">
+                <div class="monitor-header">
+                    <div class="monitor-icon balanced-icon">
+                        <i class="fas fa-sliders-h"></i>
+                    </div>
+                    <div>
+                        <h2 class="monitor-name balanced-name">Balanslangan</h2>
+                        <div class="monitor-size">JBL 305 / 306 / 308</div>
+                    </div>
+                </div>
+                
+                <div class="monitor-features">
+                    <div class="feature-item balanced-feature">
+                        <i class="fas fa-balance-scale feature-icon"></i>
+                        <span>Muvozanatli tovush</span>
+                    </div>
+                    <div class="feature-item balanced-feature">
+                        <i class="fas fa-expand-arrows-alt feature-icon"></i>
+                        <span>Keng tarqalish</span>
+                    </div>
+                    <div class="feature-item balanced-feature">
+                        <i class="fas fa-dollar-sign feature-icon"></i>
+                        <span>Arzon variant</span>
+                    </div>
+                    <div class="feature-item balanced-feature">
+                        <i class="fas fa-home feature-icon"></i>
+                        <span>Uy studiyasi uchun</span>
+                    </div>
+                </div>
+                
+                <div style="margin-top: 30px; padding: 25px; background: rgba(16, 185, 129, 0.1); border-radius: 15px; border-left: 4px solid #10b981;">
+                    <h3 style="color: #10b981; margin-bottom: 15px; display: flex; align-items: center; gap: 12px;">
+                        <i class="fas fa-user-friends"></i>
+                        Qaysi Musiqa uchun?
+                    </h3>
+                    <p style="color: #cbd5e1; line-height: 1.7;">
+                        Multi-genre, video editing, game audio, podkast - har qanday kontent yaratish uchun.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sound Characteristics -->
+        <section class="sound-section">
+            <h2 class="sound-title">
+                <i class="fas fa-volume-up"></i>
+                Tovush Xarakteristikalari
+            </h2>
+            <p class="sound-subtitle">
+                Har bir monitor o'ziga xos tovush karakteristikasiga ega. Qaysi biri sizning musiqa ishlab chiqarish tarzingizga mos keladi?
+            </p>
+            
+            <div class="sound-grid">
+                <div class="sound-card">
+                    <div class="sound-icon">
+                        <i class="fas fa-sun"></i>
+                    </div>
+                    <h3 class="sound-card-title">Yamaha - Yorqinlik</h3>
+                    <p class="sound-card-desc">
+                        Yuqori chastotalarda yorqin, neytral tovush. Mix tafsilotlarini aniq eshitish imkonini beradi.
+                    </p>
+                </div>
+                
+                <div class="sound-card">
+                    <div class="sound-icon">
+                        <i class="fas fa-wave-square"></i>
+                    </div>
+                    <h3 class="sound-card-title">KRK - Bass</h3>
+                    <p class="sound-card-desc">
+                        35-45 Hz gacha past chastotalar. Kuchli, aniq bass. Elektron musiqa uchun ideal.
+                    </p>
+                </div>
+                
+                <div class="sound-card">
+                    <div class="sound-icon">
+                        <i class="fas fa-sliders-h"></i>
+                    </div>
+                    <h3 class="sound-card-title">JBL - Balans</h3>
+                    <p class="sound-card-desc">
+                        Yuqori va past chastotalar orasida mukammal muvozanat. Barcha turlar uchun mos keladi.
+                    </p>
+                </div>
+            </div>
+            
+            <div style="margin-top: 40px; display: inline-block; background: linear-gradient(45deg, #ef4444, #fbbf24); color: white; padding: 15px 35px; border-radius: 25px; font-weight: 700; font-size: 1.2rem;">
+                <i class="fas fa-chart-line" style="margin-right: 10px;"></i>
+                Maslahat: Yamaha - mix uchun, KRK - elektron musiqa uchun
+            </div>
+        </section>
+
+        <!-- Ad Banner -->
+        <div class="ad-section">
+            <div class="ad-label">Studio Uskunalari</div>
+            <div class="ad-placeholder">
+                AdSense Horizontal Banner (728x90)
+            </div>
+        </div>
+
+        <!-- Comparison Table -->
+        <section class="comparison-section">
+            <h2 class="comparison-title">
+                <i class="fas fa-table"></i>
+                Monitorlar Taqqoslash
+            </h2>
+            
+            <div class="comparison-table">
+                <div class="table-header">
+                    <div class="header-cell">Xususiyatlar</div>
+                    <div class="header-cell yamaha-header">Yamaha HS</div>
+                    <div class="header-cell krk-header">KRK Rokit</div>
+                    <div class="header-cell jbl-header">JBL 3 Series</div>
+                </div>
+                
+                <div class="table-row">
+                    <div class="row-label">
+                        <i class="fas fa-ruler row-icon"></i>
+                        <span>Razmer variantlari</span>
+                    </div>
+                    <div class="row-value">
+                        5", 7", 8"
+                        <span class="comparison-badge yamaha-badge">STANDART</span>
+                    </div>
+                    <div class="row-value">5", 7", 8"</div>
+                    <div class="row-value">5", 6", 8"</div>
+                </div>
+                
+                <div class="table-row">
+                    <div class="row-label">
+                        <i class="fas fa-wave-square row-icon"></i>
+                        <span>Bass javob</span>
+                    </div>
+                    <div class="row-value">54 Hz</div>
+                    <div class="row-value">
+                        45 Hz
+                        <span class="comparison-badge krk-badge">YUQORI</span>
+                    </div>
+                    <div class="row-value">49 Hz</div>
+                </div>
+                
+                <div class="table-row">
+                    <div class="row-label">
+                        <i class="fas fa-tint row-icon"></i>
+                        <span>Tovush xarakteri</span>
+                    </div>
+                    <div class="row-value">
+                        Yorqin & Neytral
+                        <span class="comparison-badge yamaha-badge">ANIQ</span>
+                    </div>
+                    <div class="row-value">Kuchli Bass</div>
+                    <div class="row-value">Balanslangan</div>
+                </div>
+                
+                <div class="table-row">
+                    <div class="row-label">
+                        <i class="fas fa-bullseye row-icon"></i>
+                        <span>Musiqa turlari</span>
+                    </div>
+                    <div class="row-value">Barcha turlar</div>
+                    <div class="row-value">
+                        Elektron, hip-hop
+                        <span class="comparison-badge krk-badge">BASS</span>
+                    </div>
+                    <div class="row-value">Multi-genre</div>
+                </div>
+                
+                <div class="table-row">
+                    <div class="row-label">
+                        <i class="fas fa-dollar-sign row-icon"></i>
+                        <span>Boshlang'ich narx</span>
+                    </div>
+                    <div class="row-value">$300 juft</div>
+                    <div class="row-value">
+                        $250 juft
+                        <span class="comparison-badge krk-badge">ARZON</span>
+                    </div>
+                    <div class="row-value">
+                        $200 juft
+                        <span class="comparison-badge jbl-badge">ENG ARZON</span>
+                    </div>
+                </div>
+                
+                <div class="table-row">
+                    <div class="row-label">
+                        <i class="fas fa-user-check row-icon"></i>
+                        <span>Kim uchun?</span>
+                    </div>
+                    <div class="row-value">Mix & Mastering</div>
+                    <div class="row-value">Elektron musiqa</div>
+                    <div class="row-value">Uy studiyasi</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Studio Setup Recommendations -->
+        <section class="setup-section">
+            <h2 class="setup-title">Studio O'rnatish Maslahatlari</h2>
+            
+            <div class="setup-cards">
+                <div class="setup-card beginner-setup">
+                    <h3 class="setup-card-title">
+                        <i class="fas fa-home"></i>
+                        Uy Studiyasi
+                    </h3>
+                    <p style="color: #cbd5e1; line-height: 1.7; margin-bottom: 20px; text-align: center;">
+                        Kichik xona, cheklangan byudjet. Boshlovchilar va hobby musiqachilar uchun.
+                    </p>
+                    <ul class="setup-points">
+                        <li>5" monitorlar (Yamaha HS5 / KRK 5)</li>
+                        <li>Akustik izolyatsiya panellari</li>
+                        <li>Monitor stendi yoki izolyatsiya</li>
+                        <li>Diafragma mikrofon</li>
+                    </ul>
+                </div>
+                
+                <div class="setup-card pro-setup">
+                    <h3 class="setup-card-title">
+                        <i class="fas fa-user-tie"></i>
+                        Professional
+                    </h3>
+                    <p style="color: #cbd5e1; line-height: 1.7; margin-bottom: 20px; text-align: center;">
+                        Muntazam ishlab chiqarish, mijozlar uchun. Yuqori audio sifat talab qilinadi.
+                    </p>
+                    <ul class="setup-points">
+                        <li>7" yoki 8" monitorlar</li>
+                        <li>Professional akustik o'rnatish</li>
+                        <li>Subwoofer bilan birgalikda</li>
+                        <li>Yuqori darajali interfeys</li>
+                    </ul>
+                </div>
+                
+                <div class="setup-card studio-setup">
+                    <h3 class="setup-card-title">
+                        <i class="fas fa-building"></i>
+                        To'liq Studio
+                    </h3>
+                    <p style="color: #cbd5e1; line-height: 1.7; margin-bottom: 20px; text-align: center;">
+                        Kommersial studio, turli akustik sharoitlar. Eng yuqori talablar.
+                    </p>
+                    <ul class="setup-points">
+                        <li>Har xil o'lchamdagi monitorlar</li>
+                        <li>Akustik muhandislik</li>
+                        <li>Birinchi darajali uskunalar</li>
+                        <li>Kalibratsiya uskunalari</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Vertical Ad -->
+        <div class="ad-section">
+            <div class="ad-label">Akustik Uskunalar</div>
+            <div class="ad-placeholder" style="height: 300px;">
+                AdSense Vertical Banner (300x600)
+            </div>
+        </div>
+
+        <!-- CTA Section -->
+        <div class="cta-section">
+            <h2 style="font-size: 2.5rem; color: #f3f4f6; margin-bottom: 20px;">Studio Monitorlarini Tanlashga Tayyormisiz?</h2>
+            <p style="font-size: 1.3rem; color: #cbd5e1; max-width: 800px; margin: 0 auto 30px;">
+                Batafsil test natijalari, akustik maslahatlar va studio o'rnatish qo'llanmalari.
+            </p>
+            
+            <div class="cta-buttons">
+                <a href="#" class="btn btn-primary">
+                    <i class="fas fa-headphones"></i>
+                    Monitorlarni Solishtirish
+                </a>
+                <a href="#" class="btn btn-secondary">
+                    <i class="fas fa-wave-square"></i>
+                    Tovush Demo'lari
+                </a>
+                <a href="#" class="btn btn-secondary">
+                    <i class="fas fa-calculator"></i>
+                    Akustik Kalkulyator
+                </a>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <p>© 2024 Studio Monitorlar va Uslubatlar Taqqoslash. Barcha ma'lumotlar test natijalariga asoslangan.</p>
+            <p style="margin-top: 10px;">Yamaha, KRK, JBL - tegishli kompaniyalarning savdo belgilari.</p>
+        </div>
+    </div>
+
+    <script>
+        // Monitor card hover effects
+        document.querySelectorAll('.monitor-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-10px)';
+                this.style.boxShadow = '0 25px 50px rgba(0, 0, 0, 0.4)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+                this.style.boxShadow = 'none';
+            });
+        });
+        
+        // Speaker card hover effects
+        document.querySelectorAll('.speaker-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-8px)';
+                this.style.boxShadow = '0 20px 40px rgba(0, 0, 0, 0.3)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+                this.style.boxShadow = 'none';
+            });
+        });
+        
+        // Size slider animation
+        const sizeFill = document.querySelector('.size-fill');
+        sizeFill.style.width = '0%';
+        setTimeout(() => {
+            sizeFill.style.width = '100%';
+            sizeFill.style.transition = 'width 2s ease';
+        }, 500);
+        
+        // Sound card hover effects
+        document.querySelectorAll('.sound-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-5px)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+            });
+        });
+        
+        // Table row hover effects
+        document.querySelectorAll('.table-row').forEach(row => {
+            row.addEventListener('mouseenter', function() {
+                this.style.background = 'rgba(255, 255, 255, 0.08)';
+            });
+            
+            row.addEventListener('mouseleave', function() {
+                this.style.background = '';
+            });
+        });
+        
+        // Setup card hover effects
+        document.querySelectorAll('.setup-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-8px)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+            });
+        });
+        
+        // Rating badge animation
+        const ratingBadge = document.querySelector('.rating-badge');
+        ratingBadge.addEventListener('click', function() {
+            this.style.transform = 'scale(1.05)';
+            setTimeout(() => {
+                this.style.transform = 'scale(1)';
+            }, 300);
+        });
+        
+        // Ad placeholder click
+        document.querySelectorAll('.ad-placeholder').forEach(ad => {
+            ad.addEventListener('click', function() {
+                alert('Haqiqiy saytda bu joyda AdSense reklamasi bo\'ladi');
+            });
+        });
+        
+        // Size labels animation
+        const sizeLabels = document.querySelectorAll('.size-label');
+        sizeLabels.forEach(label => {
+            label.style.opacity = '0';
+            label.style.transform = 'translateY(20px)';
+            
+            setTimeout(() => {
+                label.style.transition = 'all 0.5s ease';
+                label.style.opacity = '1';
+                label.style.transform = 'translateY(0)';
+            }, 1000);
+        });
+        
+        // Add animation for comparison badges
+        const comparisonBadges = document.querySelectorAll('.comparison-badge');
+        comparisonBadges.forEach(badge => {
+            badge.style.animation = 'pulse 2s infinite';
+        });
+        
+        // Add CSS animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes pulse {
+                0% { transform: scale(1); }
+                50% { transform: scale(1.05); }
+                100% { transform: scale(1); }
+            }
+        `;
+        document.head.appendChild(style);
+        
+        // Feature icons animation
+        const featureIcons = document.querySelectorAll('.feature-icon');
+        featureIcons.forEach((icon, index) => {
+            icon.style.opacity = '0';
+            icon.style.transform = 'rotate(-90deg)';
+            
+            setTimeout(() => {
+                icon.style.transition = 'all 0.5s ease';
+                icon.style.opacity = '1';
+                icon.style.transform = 'rotate(0deg)';
+            }, 500 + (index * 100));
+        });
+    </script>
+</body>
+</html>
