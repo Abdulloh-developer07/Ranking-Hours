@@ -1,0 +1,855 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apple Watch vs Samsung Galaxy Watch - Batareya Quvvati</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', system-ui, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: #e2e8f0;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .comparison-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        /* Header */
+        .header-section {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .main-title {
+            font-size: 3rem;
+            background: linear-gradient(45deg, #3b82f6, #8b5cf6);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 10px;
+            font-weight: 800;
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            color: #94a3b8;
+            max-width: 600px;
+            margin: 0 auto 20px;
+        }
+        
+        /* Grid Layout */
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        @media (max-width: 768px) {
+            .comparison-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+        }
+        
+        /* Product Column */
+        .product-column {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 25px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .product-column.apple {
+            border-top: 5px solid #3b82f6;
+        }
+        
+        .product-column.samsung {
+            border-top: 5px solid #8b5cf6;
+        }
+        
+        .product-header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .product-name {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+        
+        .product-name.apple {
+            color: #3b82f6;
+        }
+        
+        .product-name.samsung {
+            color: #8b5cf6;
+        }
+        
+        .product-logo {
+            font-size: 3rem;
+            margin-bottom: 15px;
+        }
+        
+        .logo-apple {
+            color: #3b82f6;
+        }
+        
+        .logo-samsung {
+            color: #8b5cf6;
+        }
+        
+        /* Battery Indicator */
+        .battery-indicator {
+            width: 100%;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            margin: 20px 0;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .battery-fill {
+            height: 100%;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: white;
+            transition: width 1.5s ease;
+        }
+        
+        .apple-battery {
+            background: linear-gradient(90deg, #3b82f6, #60a5fa);
+            width: 60%; /* Apple - 60% */
+        }
+        
+        .samsung-battery {
+            background: linear-gradient(90deg, #8b5cf6, #a78bfa);
+            width: 85%; /* Samsung - 85% */
+        }
+        
+        .battery-label {
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-weight: bold;
+            color: white;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        }
+        
+        /* Feature List */
+        .feature-list {
+            list-style: none;
+            margin: 30px 0;
+        }
+        
+        .feature-item {
+            padding: 15px;
+            margin-bottom: 12px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .feature-item:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateX(5px);
+        }
+        
+        .feature-icon {
+            font-size: 1.5rem;
+            margin-right: 15px;
+            width: 50px;
+            height: 50px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .apple .feature-icon {
+            color: #3b82f6;
+            background: rgba(59, 130, 246, 0.2);
+        }
+        
+        .samsung .feature-icon {
+            color: #8b5cf6;
+            background: rgba(139, 92, 246, 0.2);
+        }
+        
+        .feature-content {
+            flex: 1;
+        }
+        
+        .feature-title {
+            font-weight: 600;
+            margin-bottom: 5px;
+            font-size: 1.1rem;
+        }
+        
+        .feature-desc {
+            color: #94a3b8;
+            font-size: 0.95rem;
+        }
+        
+        /* Comparison Table */
+        .comparison-table {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            overflow: hidden;
+            margin: 40px 0;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .table-header {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            background: rgba(59, 130, 246, 0.2);
+            padding: 20px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .table-header div {
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: #60a5fa;
+        }
+        
+        .table-row {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            padding: 18px 20px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            align-items: center;
+        }
+        
+        .table-row:last-child {
+            border-bottom: none;
+        }
+        
+        .table-row:nth-child(even) {
+            background: rgba(255, 255, 255, 0.03);
+        }
+        
+        .table-feature {
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .table-value {
+            font-size: 1.1rem;
+        }
+        
+        .table-value.apple-best {
+            color: #3b82f6;
+            font-weight: 700;
+        }
+        
+        .table-value.samsung-best {
+            color: #8b5cf6;
+            font-weight: 700;
+        }
+        
+        .best-badge {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-left: 10px;
+        }
+        
+        .apple-best-badge {
+            background: rgba(59, 130, 246, 0.2);
+            color: #60a5fa;
+        }
+        
+        .samsung-best-badge {
+            background: rgba(139, 92, 246, 0.2);
+            color: #a78bfa;
+        }
+        
+        /* Summary Section */
+        .summary-section {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 40px;
+            margin: 40px 0;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+        }
+        
+        .summary-title {
+            font-size: 2rem;
+            margin-bottom: 25px;
+            color: #fbbf24;
+        }
+        
+        .summary-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+        
+        .summary-card {
+            padding: 25px;
+            border-radius: 15px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .summary-card.apple {
+            border-left: 4px solid #3b82f6;
+        }
+        
+        .summary-card.samsung {
+            border-left: 4px solid #8b5cf6;
+        }
+        
+        .summary-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        
+        .summary-card.apple h3 {
+            color: #3b82f6;
+        }
+        
+        .summary-card.samsung h3 {
+            color: #8b5cf6;
+        }
+        
+        /* Ad Sections */
+        .ad-section {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 30px;
+            margin: 40px 0;
+            text-align: center;
+            border: 2px dashed rgba(59, 130, 246, 0.3);
+        }
+        
+        .ad-label {
+            display: inline-block;
+            background: rgba(59, 130, 246, 0.2);
+            color: #60a5fa;
+            padding: 8px 20px;
+            border-radius: 20px;
+            margin-bottom: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+        
+        .ad-placeholder {
+            height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(59, 130, 246, 0.1);
+            border-radius: 15px;
+            color: #94a3b8;
+            font-style: italic;
+            margin: 20px 0;
+        }
+        
+        /* CTA Buttons */
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            padding: 16px 35px;
+            border-radius: 12px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(45deg, #3b82f6, #2563eb);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(37, 99, 235, 0.4);
+        }
+        
+        .btn-outline {
+            background: transparent;
+            color: #60a5fa;
+            border: 2px solid #3b82f6;
+        }
+        
+        .btn-outline:hover {
+            background: rgba(59, 130, 246, 0.1);
+            transform: translateY(-3px);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .main-title {
+                font-size: 2.2rem;
+            }
+            
+            .product-name {
+                font-size: 1.8rem;
+            }
+            
+            .table-header, .table-row {
+                grid-template-columns: 1fr;
+                gap: 10px;
+                text-align: center;
+            }
+            
+            .table-header div {
+                display: none;
+            }
+            
+            .table-feature::before {
+                content: attr(data-label) ': ';
+                font-weight: 600;
+                color: #94a3b8;
+            }
+            
+            .summary-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+            }
+            
+            .btn {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="comparison-container">
+        <!-- Header -->
+        <header class="header-section">
+            <h1 class="main-title">Apple Watch vs Samsung Galaxy Watch</h1>
+            <p class="subtitle">Batareya quvvati, sog'lom turmush tarzi xususiyatlari va smartwatch funksiyalarini batafsil solishtirish</p>
+        </header>
+
+        <!-- Ad Banner -->
+        <div class="ad-section">
+            <div class="ad-label">Smartwatch Taqqoslash</div>
+            <div class="ad-placeholder">
+                AdSense Horizontal Banner (728x90)
+            </div>
+        </div>
+
+        <!-- Comparison Grid -->
+        <div class="comparison-grid">
+            <!-- Apple Watch Column -->
+            <div class="product-column apple">
+                <div class="product-header">
+                    <div class="product-logo logo-apple">
+                        <i class="fab fa-apple"></i>
+                    </div>
+                    <h2 class="product-name apple">Apple Watch Series 9</h2>
+                    <p>Premium sog'lom turmush tarzi hamrohi</p>
+                </div>
+                
+                <!-- Battery Indicator -->
+                <div class="battery-indicator">
+                    <div class="battery-fill apple-battery">
+                        18 soat
+                    </div>
+                    <div class="battery-label">Standart</div>
+                </div>
+                <div style="text-align: center; color: #94a3b8; font-size: 0.9rem; margin-bottom: 20px;">
+                    Batareya quvvati: 18 soat (o'rtacha)
+                </div>
+                
+                <!-- Features List -->
+                <ul class="feature-list">
+                    <li class="feature-item apple">
+                        <div class="feature-icon">
+                            <i class="fas fa-heartbeat"></i>
+                        </div>
+                        <div class="feature-content">
+                            <div class="feature-title">Yurak urish tezligi monitori</div>
+                            <div class="feature-desc">Doimiy monitoring, OGTT yurak holati</div>
+                        </div>
+                    </li>
+                    <li class="feature-item apple">
+                        <div class="feature-icon">
+                            <i class="fas fa-bed"></i>
+                        </div>
+                        <div class="feature-content">
+                            <div class="feature-title">Uyqu monitoringi</div>
+                            <div class="feature-desc">Har bir uyqu bosqichi, uyqu sifatini tahlil</div>
+                        </div>
+                    </li>
+                    <li class="feature-item apple">
+                        <div class="feature-icon">
+                            <i class="fas fa-dumbbell"></i>
+                        </div>
+                        <div class="feature-content">
+                            <div class="feature-title">7x24 fitness kuzatish</div>
+                            <div class="feature-desc">Harakatlar, kaloriya, mashg'ulotlar</div>
+                        </div>
+                    </li>
+                    <li class="feature-item apple">
+                        <div class="feature-icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <div class="feature-content">
+                            <div class="feature-title">Stress monitoring</div>
+                            <div class="feature-desc">Nafas mashqlari, dam olish takliflari</div>
+                        </div>
+                    </li>
+                    <li class="feature-item apple">
+                        <div class="feature-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="feature-content">
+                            <div class="feature-title">iOS integratsiyasi</div>
+                            <div class="feature-desc">iPhone bilan mukammal ishlash</div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Samsung Galaxy Watch Column -->
+            <div class="product-column samsung">
+                <div class="product-header">
+                    <div class="product-logo logo-samsung">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h2 class="product-name samsung">Samsung Galaxy Watch 6</h2>
+                    <p>Keng qamrovli Android smartwatch</p>
+                </div>
+                
+                <!-- Battery Indicator -->
+                <div class="battery-indicator">
+                    <div class="battery-fill samsung-battery">
+                        40 soat
+                    </div>
+                    <div class="battery-label">Uzoq muddat</div>
+                </div>
+                <div style="text-align: center; color: #94a3b8; font-size: 0.9rem; margin-bottom: 20px;">
+                    Batareya quvvati: 40 soat (o'rtacha)
+                </div>
+                
+                <!-- Features List -->
+                <ul class="feature-list">
+                    <li class="feature-item samsung">
+                        <div class="feature-icon">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <div class="feature-content">
+                            <div class="feature-title">Yurak urishi va EKG</div>
+                            <div class="feature-desc">EKG o'lchash, fibrilatsiyani aniqlash</div>
+                        </div>
+                    </li>
+                    <li class="feature-item samsung">
+                        <div class="feature-icon">
+                            <i class="fas fa-weight-scale"></i>
+                        </div>
+                        <div class="feature-content">
+                            <div class="feature-title">Tana tarkibi tahlili</div>
+                            <div class="feature-desc">Yog' %, mushak massasi, suv migdori</div>
+                        </div>
+                    </li>
+                    <li class="feature-item samsung">
+                        <div class="feature-icon">
+                            <i class="fas fa-running"></i>
+                        </div>
+                        <div class="feature-content">
+                            <div class="feature-title">95+ sport rejimi</div>
+                            <div class="feature-desc">Avtomatik mashg'ulot aniqlash</div>
+                        </div>
+                    </li>
+                    <li class="feature-item samsung">
+                        <div class="feature-icon">
+                            <i class="fas fa-temperature-full"></i>
+                        </div>
+                        <div class="feature-content">
+                            <div class="feature-title">Tana harorati</div>
+                            <div class="feature-desc">Tana haroratini kuzatish va tahlil</div>
+                        </div>
+                    </li>
+                    <li class="feature-item samsung">
+                        <div class="feature-icon">
+                            <i class="fab fa-android"></i>
+                        </div>
+                        <div class="feature-content">
+                            <div class="feature-title">Android integratsiyasi</div>
+                            <div class="feature-desc">Barcha Android telefonlar bilan ishlash</div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Comparison Table -->
+        <div class="comparison-table">
+            <div class="table-header">
+                <div>Xususiyat</div>
+                <div>Apple Watch</div>
+                <div>Samsung Galaxy</div>
+            </div>
+            
+            <div class="table-row">
+                <div class="table-feature" data-label="Batareya quvvati">
+                    <i class="fas fa-battery-full" style="color: #3b82f6;"></i>
+                    <span>Batareya quvvati</span>
+                </div>
+                <div class="table-value">18 soat</div>
+                <div class="table-value samsung-best">
+                    40 soat
+                    <span class="best-badge samsung-best-badge">YAXSHI</span>
+                </div>
+            </div>
+            
+            <div class="table-row">
+                <div class="table-feature" data-label="Shovqinni bartaraf">
+                    <i class="fas fa-ear-deaf" style="color: #8b5cf6;"></i>
+                    <span>Shovqinni bartaraf qilish</span>
+                </div>
+                <div class="table-value apple-best">
+                    Mavjud
+                    <span class="best-badge apple-best-badge">A'LO</span>
+                </div>
+                <div class="table-value">Mavjud</div>
+            </div>
+            
+            <div class="table-row">
+                <div class="table-feature" data-label="Suv chidamlilik">
+                    <i class="fas fa-swimming-pool" style="color: #3b82f6;"></i>
+                    <span>Suv chidamlilik</span>
+                </div>
+                <div class="table-value">5 ATM</div>
+                <div class="table-value samsung-best">
+                    5 ATM + IP68
+                    <span class="best-badge samsung-best-badge">YUQORI</span>
+                </div>
+            </div>
+            
+            <div class="table-row">
+                <div class="table-feature" data-label="Ekran">
+                    <i class="fas fa-mobile-alt" style="color: #8b5cf6;"></i>
+                    <span>Ekran o'lchami</span>
+                </div>
+                <div class="table-value">45mm</div>
+                <div class="table-value samsung-best">
+                    47mm
+                    <span class="best-badge samsung-best-badge">KATTA</span>
+                </div>
+            </div>
+            
+            <div class="table-row">
+                <div class="table-feature" data-label="Protsessor">
+                    <i class="fas fa-microchip" style="color: #3b82f6;"></i>
+                    <span>Protsessor</span>
+                </div>
+                <div class="table-value apple-best">
+                    Apple S9
+                    <span class="best-badge apple-best-badge">TEZKOR</span>
+                </div>
+                <div class="table-value">Exynos W930</div>
+            </div>
+            
+            <div class="table-row">
+                <div class="table-feature" data-label="Operatsion tizim">
+                    <i class="fas fa-cog" style="color: #8b5cf6;"></i>
+                    <span>Operatsion tizim</span>
+                </div>
+                <div class="table-value apple-best">
+                    watchOS 10
+                    <span class="best-badge apple-best-badge">OPTIMAL</span>
+                </div>
+                <div class="table-value">Wear OS 4</div>
+            </div>
+            
+            <div class="table-row">
+                <div class="table-feature" data-label="Narxi">
+                    <i class="fas fa-tag" style="color: #3b82f6;"></i>
+                    <span>Boshlang'ich narxi</span>
+                </div>
+                <div class="table-value">$399</div>
+                <div class="table-value samsung-best">
+                    $299
+                    <span class="best-badge samsung-best-badge">ARZON</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Vertical Ad -->
+        <div class="ad-section">
+            <div class="ad-label">Smartwatch Aksessuarlar</div>
+            <div class="ad-placeholder" style="height: 250px;">
+                AdSense Vertical Banner (300x250)
+            </div>
+        </div>
+
+        <!-- Summary Section -->
+        <div class="summary-section">
+            <h2 class="summary-title">Xulosa va Tavsiyalar</h2>
+            
+            <div class="summary-content">
+                <div class="summary-card apple">
+                    <h3>
+                        <i class="fab fa-apple"></i>
+                        Apple Watch
+                    </h3>
+                    <p style="color: #cbd5e1; line-height: 1.7; margin-bottom: 15px;">
+                        <strong>iPhone foydalanuvchilari uchun ideal.</strong> watchOS ning silliq ishlashi, App Store ning keng tanlovi va sog'lom turmush tarzi funksiyalarining mukammal integratsiyasi.
+                    </p>
+                    <div style="background: rgba(59, 130, 246, 0.1); padding: 15px; border-radius: 10px;">
+                        <i class="fas fa-thumbs-up" style="color: #3b82f6; margin-right: 8px;"></i>
+                        <strong>Qachon tanlash kerak:</strong> iPhone egalari yoki Apple ekotizimiga kirishni xohlaganlar
+                    </div>
+                </div>
+                
+                <div class="summary-card samsung">
+                    <h3>
+                        <i class="fas fa-clock"></i>
+                        Samsung Galaxy Watch
+                    </h3>
+                    <p style="color: #cbd5e1; line-height: 1.7; margin-bottom: 15px;">
+                        <strong>Android foydalanuvchilari va uzoq batareya quvvatini xohlovchilar uchun.</strong> Kuchli batareya, keng Android qo'llab-quvvatlash va yaxshi suv chidamliligi.
+                    </p>
+                    <div style="background: rgba(139, 92, 246, 0.1); padding: 15px; border-radius: 10px;">
+                        <i class="fas fa-thumbs-up" style="color: #8b5cf6; margin-right: 8px;"></i>
+                        <strong>Qachon tanlash kerak:</strong> Uzoq batareya va Android telefon egalari
+                    </div>
+                </div>
+            </div>
+            
+            <div style="margin-top: 30px; padding: 25px; background: rgba(251, 191, 36, 0.1); border-radius: 15px; border-left: 4px solid #fbbf24;">
+                <h3 style="color: #fbbf24; margin-bottom: 10px;">
+                    <i class="fas fa-trophy"></i>
+                    Qaysi biri sizga mos keladi?
+                </h3>
+                <p style="color: #cbd5e1; font-size: 1.1rem;">
+                    Agar siz <strong>iPhone</strong> foydalanuvchisi bo'lsangiz - <span style="color: #3b82f6; font-weight: bold;">Apple Watch</span><br>
+                    Agar siz <strong>Android</strong> foydalanuvchisi bo'lsangiz - <span style="color: #8b5cf6; font-weight: bold;">Samsung Galaxy Watch</span><br>
+                    Agar siz <strong>uzoq batareya</strong> quvvatini istasangiz - <span style="color: #8b5cf6; font-weight: bold;">Samsung</span>
+                </p>
+            </div>
+        </div>
+
+        <!-- CTA Buttons -->
+        <div class="cta-buttons">
+            <a href="#" class="btn btn-primary">
+                <i class="fas fa-shopping-cart"></i>
+                Narxlarni Solishtirish
+            </a>
+            <a href="#" class="btn btn-outline">
+                <i class="fas fa-video"></i>
+                Video Qiyosiy Ko'rish
+            </a>
+            <a href="#" class="btn btn-outline">
+                <i class="fas fa-file-alt"></i>
+                To'liq Spetsifikatsiyalar
+            </a>
+        </div>
+    </div>
+
+    <script>
+        // Battery animation on load
+        document.addEventListener('DOMContentLoaded', function() {
+            const appleBattery = document.querySelector('.apple-battery');
+            const samsungBattery = document.querySelector('.samsung-battery');
+            
+            // Reset width for animation
+            appleBattery.style.width = '0%';
+            samsungBattery.style.width = '0%';
+            
+            setTimeout(() => {
+                appleBattery.style.width = '60%';
+            }, 300);
+            
+            setTimeout(() => {
+                samsungBattery.style.width = '85%';
+            }, 800);
+            
+            // Feature item hover effect
+            document.querySelectorAll('.feature-item').forEach(item => {
+                item.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateX(5px)';
+                    this.style.backgroundColor = 'rgba(255, 255, 255, 0.1)';
+                });
+                
+                item.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateX(0)';
+                    this.style.backgroundColor = 'rgba(255, 255, 255, 0.05)';
+                });
+            });
+            
+            // Table row hover effect
+            document.querySelectorAll('.table-row').forEach(row => {
+                row.addEventListener('mouseenter', function() {
+                    this.style.backgroundColor = 'rgba(255, 255, 255, 0.08)';
+                });
+                
+                row.addEventListener('mouseleave', function() {
+                    if (!this.classList.contains('nth-child(even)')) {
+                        this.style.backgroundColor = '';
+                    }
+                });
+            });
+            
+            // Ad placeholder click
+            document.querySelectorAll('.ad-placeholder').forEach(ad => {
+                ad.addEventListener('click', function() {
+                    alert('Haqiqiy saytda bu joyda AdSense reklamasi bo\'ladi');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
