@@ -1,0 +1,1707 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gaming Sichqonchalar: FPS vs MOBA vs RPG | Eng Yaxshi Gaming Mouse</title>
+    <meta name="description" content="Gaming sichqonchalar taqqoslash: FPS, MOBA, RPG o'yinlar uchun. 3.5/5 reyting. Aniqlik, ko'p tugmalar, qulaylik.">
+    <meta name="keywords" content="gaming mouse, fps mouse, moba mouse, rpg mouse, sichqoncha, gaming aksessuar, dpi, rgb">
+    <meta name="author" content="Gaming Mouse Expert">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #1a1a2e;
+            --secondary: #00b894;
+            --fps: #0984e3;
+            --moba: #e17055;
+            --rpg: #00cec9;
+            --card-bg: #2d3436;
+            --text: #dfe6e9;
+            --light-text: #b2bec3;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', system-ui, sans-serif;
+        }
+        
+        body {
+            background: var(--primary);
+            color: var(--text);
+            line-height: 1.8;
+            font-size: 18px;
+            min-height: 100vh;
+            padding-top: 20px;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        .main-header {
+            background: linear-gradient(135deg, 
+                rgba(9, 132, 227, 0.2), 
+                rgba(225, 112, 85, 0.2), 
+                rgba(0, 206, 201, 0.2));
+            border-radius: 30px;
+            padding: 70px 50px;
+            margin-bottom: 50px;
+            border-left: 10px solid var(--secondary);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .main-header::before {
+            content: '🖱️';
+            position: absolute;
+            font-size: 350px;
+            opacity: 0.05;
+            top: -70px;
+            right: -70px;
+            z-index: 0;
+        }
+        
+        .header-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .rating-badge {
+            display: inline-flex;
+            align-items: center;
+            background: linear-gradient(45deg, #74b9ff, #0984e3);
+            color: white;
+            padding: 12px 35px;
+            border-radius: 30px;
+            font-weight: 900;
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            box-shadow: 0 15px 30px rgba(9, 132, 227, 0.3);
+        }
+        
+        h1 {
+            font-size: 3.8rem;
+            background: linear-gradient(45deg, var(--fps), var(--moba), var(--rpg));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 25px;
+            line-height: 1.1;
+            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+        }
+        
+        .subtitle {
+            font-size: 1.6rem;
+            color: var(--light-text);
+            margin-bottom: 40px;
+            max-width: 1000px;
+            line-height: 1.6;
+        }
+        
+        .highlight {
+            color: var(--secondary);
+            font-weight: 800;
+        }
+        
+        /* Genre Comparison */
+        .genre-comparison {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin: 60px 0;
+        }
+        
+        @media (max-width: 1200px) {
+            .genre-comparison {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .genre-comparison {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .genre-card {
+            background: var(--card-bg);
+            border-radius: 25px;
+            padding: 45px 40px;
+            text-align: center;
+            transition: all 0.4s ease;
+            border: 3px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .genre-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 8px;
+        }
+        
+        .fps-card::before {
+            background: linear-gradient(90deg, var(--fps), #74b9ff);
+        }
+        
+        .moba-card::before {
+            background: linear-gradient(90deg, var(--moba), #fab1a0);
+        }
+        
+        .rpg-card::before {
+            background: linear-gradient(90deg, var(--rpg), #81ecec);
+        }
+        
+        .genre-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+        }
+        
+        .fps-card:hover {
+            border-color: var(--fps);
+        }
+        
+        .moba-card:hover {
+            border-color: var(--moba);
+        }
+        
+        .rpg-card:hover {
+            border-color: var(--rpg);
+        }
+        
+        .genre-icon {
+            font-size: 5rem;
+            margin-bottom: 25px;
+            display: inline-block;
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 30px;
+        }
+        
+        .fps-card .genre-icon {
+            background: rgba(9, 132, 227, 0.2);
+            color: var(--fps);
+            border: 4px solid var(--fps);
+        }
+        
+        .moba-card .genre-icon {
+            background: rgba(225, 112, 85, 0.2);
+            color: var(--moba);
+            border: 4px solid var(--moba);
+        }
+        
+        .rpg-card .genre-icon {
+            background: rgba(0, 206, 201, 0.2);
+            color: var(--rpg);
+            border: 4px solid var(--rpg);
+        }
+        
+        .genre-name {
+            font-size: 2.8rem;
+            margin-bottom: 15px;
+            font-weight: 800;
+        }
+        
+        .fps-card .genre-name {
+            color: var(--fps);
+        }
+        
+        .moba-card .genre-name {
+            color: var(--moba);
+        }
+        
+        .rpg-card .genre-name {
+            color: var(--rpg);
+        }
+        
+        .genre-desc {
+            font-size: 1.3rem;
+            color: var(--light-text);
+            margin-bottom: 30px;
+            font-weight: 600;
+            min-height: 80px;
+        }
+        
+        .key-feature {
+            margin-top: 30px;
+            padding: 25px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            text-align: left;
+        }
+        
+        .feature-title {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--secondary);
+        }
+        
+        .feature-list {
+            list-style: none;
+        }
+        
+        .feature-list li {
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .feature-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .feature-list li::before {
+            content: '🎯';
+            font-size: 1.2rem;
+        }
+        
+        .best-mouse {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 12px 25px;
+            border-radius: 25px;
+            font-size: 1.5rem;
+            font-weight: 800;
+            margin-top: 25px;
+        }
+        
+        .fps-card .best-mouse {
+            color: var(--fps);
+            border: 2px solid var(--fps);
+        }
+        
+        .moba-card .best-mouse {
+            color: var(--moba);
+            border: 2px solid var(--moba);
+        }
+        
+        .rpg-card .best-mouse {
+            color: var(--rpg);
+            border: 2px solid var(--rpg);
+        }
+        
+        /* Accuracy Section */
+        .accuracy-section {
+            background: linear-gradient(135deg, rgba(9, 132, 227, 0.15), rgba(116, 185, 255, 0.15));
+            border-radius: 30px;
+            padding: 60px 50px;
+            margin: 80px 0;
+            border-left: 10px solid var(--fps);
+        }
+        
+        .accuracy-title {
+            font-size: 3rem;
+            color: var(--fps);
+            margin-bottom: 40px;
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
+        
+        .accuracy-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+        
+        @media (max-width: 992px) {
+            .accuracy-content {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .accuracy-features {
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 25px;
+            padding: 40px 35px;
+        }
+        
+        .acc-feature-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid rgba(9, 132, 227, 0.2);
+        }
+        
+        .acc-feature-item:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+        
+        .acc-feature-icon {
+            font-size: 2.5rem;
+            color: var(--fps);
+            margin-right: 25px;
+            min-width: 60px;
+        }
+        
+        .acc-feature-text h4 {
+            font-size: 1.8rem;
+            color: var(--text);
+            margin-bottom: 12px;
+        }
+        
+        .acc-feature-text p {
+            color: var(--light-text);
+            line-height: 1.7;
+        }
+        
+        .accuracy-stats {
+            text-align: center;
+        }
+        
+        .dpi-visual {
+            font-size: 15rem;
+            color: var(--fps);
+            margin-bottom: 30px;
+            animation: pulse 2s ease-in-out infinite;
+        }
+        
+        .dpi-scale {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 30px;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 20px;
+        }
+        
+        .dpi-level {
+            text-align: center;
+        }
+        
+        .dpi-value {
+            font-size: 2rem;
+            font-weight: 900;
+            color: var(--fps);
+            margin-bottom: 10px;
+        }
+        
+        .dpi-label {
+            color: var(--light-text);
+            font-size: 1.1rem;
+        }
+        
+        /* Buttons Section */
+        .buttons-section {
+            background: linear-gradient(135deg, rgba(225, 112, 85, 0.15), rgba(250, 177, 160, 0.15));
+            border-radius: 30px;
+            padding: 60px 50px;
+            margin: 80px 0;
+            border-left: 10px solid var(--moba);
+        }
+        
+        .buttons-title {
+            font-size: 3rem;
+            color: var(--moba);
+            margin-bottom: 40px;
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
+        
+        .buttons-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        @media (max-width: 992px) {
+            .buttons-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .buttons-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .button-card {
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 20px;
+            padding: 35px 30px;
+            text-align: center;
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+        }
+        
+        .button-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--moba);
+            box-shadow: 0 20px 40px rgba(225, 112, 85, 0.2);
+        }
+        
+        .button-icon {
+            font-size: 4rem;
+            color: var(--moba);
+            margin-bottom: 25px;
+        }
+        
+        .button-card h4 {
+            font-size: 1.8rem;
+            color: var(--text);
+            margin-bottom: 20px;
+        }
+        
+        .button-card p {
+            color: var(--light-text);
+            line-height: 1.7;
+        }
+        
+        .button-count {
+            display: inline-block;
+            background: rgba(225, 112, 85, 0.2);
+            color: var(--moba);
+            padding: 10px 25px;
+            border-radius: 20px;
+            font-weight: 900;
+            font-size: 1.3rem;
+            margin-top: 20px;
+        }
+        
+        /* Comfort Section */
+        .comfort-section {
+            background: linear-gradient(135deg, rgba(0, 206, 201, 0.15), rgba(129, 236, 236, 0.15));
+            border-radius: 30px;
+            padding: 60px 50px;
+            margin: 80px 0;
+            border-left: 10px solid var(--rpg);
+        }
+        
+        .comfort-title {
+            font-size: 3rem;
+            color: var(--rpg);
+            margin-bottom: 40px;
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
+        
+        .comfort-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+        
+        @media (max-width: 992px) {
+            .comfort-content {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .grip-types {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            margin-top: 30px;
+        }
+        
+        .grip-card {
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 15px;
+            padding: 25px 20px;
+            text-align: center;
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+        }
+        
+        .grip-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--rpg);
+        }
+        
+        .grip-icon {
+            font-size: 3rem;
+            color: var(--rpg);
+            margin-bottom: 15px;
+        }
+        
+        .grip-name {
+            font-size: 1.3rem;
+            color: var(--text);
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+        
+        .grip-desc {
+            font-size: 0.9rem;
+            color: var(--light-text);
+        }
+        
+        .comfort-visual {
+            text-align: center;
+        }
+        
+        .mouse-visual {
+            font-size: 15rem;
+            color: var(--rpg);
+            margin-bottom: 30px;
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        /* Comparison Table */
+        .comparison-section {
+            margin: 80px 0;
+        }
+        
+        .comparison-title {
+            font-size: 3rem;
+            color: var(--secondary);
+            text-align: center;
+            margin-bottom: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 25px;
+        }
+        
+        .comparison-table {
+            background: var(--card-bg);
+            border-radius: 25px;
+            overflow: hidden;
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
+        }
+        
+        .table-header {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            background: linear-gradient(90deg, 
+                rgba(9, 132, 227, 0.3), 
+                rgba(225, 112, 85, 0.3), 
+                rgba(0, 206, 201, 0.3));
+            padding: 35px 40px;
+            border-bottom: 3px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .header-cell {
+            font-size: 1.8rem;
+            font-weight: 900;
+            color: var(--text);
+            text-align: center;
+        }
+        
+        .header-cell:nth-child(2) {
+            color: var(--fps);
+        }
+        
+        .header-cell:nth-child(3) {
+            color: var(--moba);
+        }
+        
+        .header-cell:nth-child(4) {
+            color: var(--rpg);
+        }
+        
+        .table-row {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            padding: 30px 40px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            align-items: center;
+            transition: background 0.3s ease;
+        }
+        
+        .table-row:hover {
+            background: rgba(255, 255, 255, 0.05);
+        }
+        
+        .table-row:last-child {
+            border-bottom: none;
+        }
+        
+        .row-label {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--text);
+        }
+        
+        .row-icon {
+            font-size: 1.8rem;
+            width: 50px;
+            text-align: center;
+            color: var(--secondary);
+        }
+        
+        .row-value {
+            font-size: 1.6rem;
+            font-weight: 700;
+            text-align: center;
+        }
+        
+        .winner {
+            display: inline-block;
+            padding: 8px 18px;
+            border-radius: 20px;
+            font-weight: 900;
+            font-size: 1.1rem;
+            margin-left: 10px;
+        }
+        
+        .fps-winner {
+            background: rgba(9, 132, 227, 0.2);
+            color: var(--fps);
+            border: 2px solid var(--fps);
+        }
+        
+        .moba-winner {
+            background: rgba(225, 112, 85, 0.2);
+            color: var(--moba);
+            border: 2px solid var(--moba);
+        }
+        
+        .rpg-winner {
+            background: rgba(0, 206, 201, 0.2);
+            color: var(--rpg);
+            border: 2px solid var(--rpg);
+        }
+        
+        /* Recommendation Section */
+        .recommendation-section {
+            margin: 80px 0;
+        }
+        
+        .recommendation-title {
+            font-size: 3rem;
+            color: var(--secondary);
+            text-align: center;
+            margin-bottom: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 25px;
+        }
+        
+        .recommendation-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+        
+        @media (max-width: 1200px) {
+            .recommendation-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .recommendation-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .recommendation-card {
+            background: var(--card-bg);
+            border-radius: 25px;
+            padding: 45px 40px;
+            text-align: center;
+            border-top: 10px solid;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .recommendation-card:nth-child(1) {
+            border-color: var(--fps);
+        }
+        
+        .recommendation-card:nth-child(2) {
+            border-color: var(--moba);
+        }
+        
+        .recommendation-card:nth-child(3) {
+            border-color: var(--rpg);
+        }
+        
+        .recommendation-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+        }
+        
+        .rec-genre {
+            font-size: 2.5rem;
+            font-weight: 900;
+            margin-bottom: 20px;
+        }
+        
+        .recommendation-card:nth-child(1) .rec-genre {
+            color: var(--fps);
+        }
+        
+        .recommendation-card:nth-child(2) .rec-genre {
+            color: var(--moba);
+        }
+        
+        .recommendation-card:nth-child(3) .rec-genre {
+            color: var(--rpg);
+        }
+        
+        .rec-mouse {
+            font-size: 1.8rem;
+            margin-bottom: 30px;
+            color: var(--text);
+            font-weight: 700;
+        }
+        
+        .rec-points {
+            list-style: none;
+            margin-top: 30px;
+            text-align: left;
+        }
+        
+        .rec-points li {
+            padding: 15px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        
+        .rec-points li:last-child {
+            border-bottom: none;
+        }
+        
+        .recommendation-card:nth-child(1) .rec-points li::before {
+            content: '🎯';
+            font-size: 1.5rem;
+            color: var(--fps);
+        }
+        
+        .recommendation-card:nth-child(2) .rec-points li::before {
+            content: '⚔️';
+            font-size: 1.5rem;
+            color: var(--moba);
+        }
+        
+        .recommendation-card:nth-child(3) .rec-points li::before {
+            content: '🏹';
+            font-size: 1.5rem;
+            color: var(--rpg);
+        }
+        
+        /* Footer */
+        .footer {
+            background: var(--card-bg);
+            padding: 70px 0 50px;
+            margin-top: 100px;
+            border-radius: 40px 40px 0 0;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 60px;
+            margin-bottom: 60px;
+        }
+        
+        .footer-section h3 {
+            font-size: 2rem;
+            color: var(--secondary);
+            margin-bottom: 30px;
+        }
+        
+        .footer-section p {
+            color: var(--light-text);
+            line-height: 1.7;
+            margin-bottom: 25px;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 20px;
+        }
+        
+        .footer-links a {
+            color: var(--light-text);
+            text-decoration: none;
+            transition: color 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            font-size: 1.1rem;
+        }
+        
+        .footer-links a:hover {
+            color: var(--secondary);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 50px;
+            border-top: 2px solid rgba(255, 255, 255, 0.1);
+            color: var(--light-text);
+            font-size: 1.1rem;
+        }
+        
+        /* Ad Sections */
+        .ad-section {
+            background: rgba(255, 193, 7, 0.1);
+            border-radius: 25px;
+            padding: 45px 40px;
+            margin: 60px 0;
+            text-align: center;
+            border: 3px dashed rgba(255, 193, 7, 0.3);
+        }
+        
+        .ad-label {
+            display: inline-block;
+            background: rgba(255, 193, 7, 0.2);
+            color: #ffc107;
+            padding: 12px 30px;
+            border-radius: 25px;
+            margin-bottom: 30px;
+            font-weight: 900;
+            font-size: 1.2rem;
+        }
+        
+        .ad-placeholder {
+            height: 150px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 193, 7, 0.1);
+            border-radius: 20px;
+            color: #cbd5e1;
+            font-style: italic;
+            font-size: 1.3rem;
+            margin: 25px 0;
+        }
+        
+        /* Responsive */
+        @media (max-width: 1200px) {
+            h1 {
+                font-size: 3.2rem;
+            }
+            
+            .accuracy-title,
+            .buttons-title,
+            .comfort-title,
+            .comparison-title,
+            .recommendation-title {
+                font-size: 2.5rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            .main-header {
+                padding: 50px 30px;
+            }
+            
+            .rating-badge {
+                font-size: 1.3rem;
+                padding: 10px 25px;
+            }
+            
+            .genre-name {
+                font-size: 2.2rem;
+            }
+            
+            .accuracy-title,
+            .buttons-title,
+            .comfort-title,
+            .comparison-title,
+            .recommendation-title {
+                font-size: 2rem;
+            }
+            
+            .table-header,
+            .table-row {
+                grid-template-columns: 1fr;
+                padding: 25px 30px;
+            }
+            
+            .row-label {
+                margin-bottom: 15px;
+            }
+            
+            .header-cell,
+            .row-value {
+                text-align: left;
+            }
+            
+            .dpi-visual,
+            .mouse-visual {
+                font-size: 10rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .subtitle {
+                font-size: 1.3rem;
+            }
+            
+            .genre-card {
+                padding: 35px 25px;
+            }
+            
+            .genre-icon {
+                width: 100px;
+                height: 100px;
+                font-size: 4rem;
+            }
+        }
+        
+        /* Animations */
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.1); opacity: 0.8; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="main-header">
+            <div class="header-content">
+                <div class="rating-badge">
+                    <i class="fas fa-star"></i>
+                    3.5/5 Gaming Mouse Reytingi
+                </div>
+                <h1>Gaming Sichqonchalar</h1>
+                <p class="subtitle">
+                    FPS vs MOBA vs RPG - har bir janr uchun eng yaxshi sichqoncha.
+                    <span class="highlight">FPS - aniq</span>, <span class="highlight">MMO - ko'p tugmalar</span>.
+                    40 soatlik gaming test natijalari.
+                </p>
+            </div>
+        </header>
+
+        <!-- Genre Comparison -->
+        <div class="genre-comparison">
+            <!-- FPS -->
+            <div class="genre-card fps-card">
+                <div class="genre-icon">
+                    <i class="fas fa-crosshairs"></i>
+                </div>
+                <h2 class="genre-name">FPS O'yinlar</h2>
+                <div class="genre-desc">
+                    Birinchi shaxs otishma o'yinlari uchun. Aniqlik va tezlik muhim.
+                </div>
+                
+                <div class="key-feature">
+                    <h3 class="feature-title">
+                        <i class="fas fa-bullseye"></i>
+                        Asosiy Xususiyat
+                    </h3>
+                    <ul class="feature-list">
+                        <li>Yuqori DPI (25,600+)</li>
+                        <li>Engil vazn (60-80g)</li>
+                        <li>Tez sensor respons</li>
+                        <li>Polling rate 1000Hz+</li>
+                        <li>Kabel/Simsiz variantlar</li>
+                    </ul>
+                </div>
+                
+                <div class="best-mouse">
+                    Logitech G Pro X Superlight
+                </div>
+            </div>
+
+            <!-- MOBA -->
+            <div class="genre-card moba-card">
+                <div class="genre-icon">
+                    <i class="fas fa-users"></i>
+                </div>
+                <h2 class="genre-name">MOBA O'yinlar</h2>
+                <div class="genre-desc">
+                    Ko'p o'yinchi onlayn jang maydoni. Ko'p tugmalar va macro kerak.
+                </div>
+                
+                <div class="key-feature">
+                    <h3 class="feature-title">
+                        <i class="fas fa-th"></i>
+                        Asosiy Xususiyat
+                    </h3>
+                    <ul class="feature-list">
+                        <li>12+ programmable buttons</li>
+                        <li>Macro recording</li>
+                        <li>Comfortable for long sessions</li>
+                        <li>RGB lighting</li>
+                        <li>Ergonomic design</li>
+                    </ul>
+                </div>
+                
+                <div class="best-mouse">
+                    Razer Naga Trinity
+                </div>
+            </div>
+
+            <!-- RPG -->
+            <div class="genre-card rpg-card">
+                <div class="genre-icon">
+                    <i class="fas fa-dragon"></i>
+                </div>
+                <h2 class="genre-name">RPG O'yinlar</h2>
+                <div class="genre-desc">
+                    Rol'li o'yinlar. Qulaylik va batareya uzoqligi muhim.
+                </div>
+                
+                <div class="key-feature">
+                    <h3 class="feature-title">
+                        <i class="fas fa-couch"></i>
+                        Asosiy Xususiyat
+                    </h3>
+                    <ul class="feature-list">
+                        <li>Ergonomic design</li>
+                        <li>Long battery life</li>
+                        <li>Wireless with low latency</li>
+                        <li>Programmable buttons</li>
+                        <li>Comfortable for hours</li>
+                    </ul>
+                </div>
+                
+                <div class="best-mouse">
+                    SteelSeries Rival 600
+                </div>
+            </div>
+        </div>
+
+        <!-- Ad Section -->
+        <div class="ad-section">
+            <div class="ad-label">Gaming Sichqoncha Aksessuarlar</div>
+            <div class="ad-placeholder">
+                AdSense Horizontal Banner (728x90) - Gaming Mice
+            </div>
+        </div>
+
+        <!-- Accuracy Section -->
+        <section class="accuracy-section">
+            <h2 class="accuracy-title">
+                <i class="fas fa-bullseye"></i>
+                FPS - Aniqlik Qiroli
+            </h2>
+            
+            <div class="accuracy-content">
+                <div class="accuracy-features">
+                    <div class="acc-feature-item">
+                        <div class="acc-feature-icon">
+                            <i class="fas fa-tachometer-alt"></i>
+                        </div>
+                        <div class="acc-feature-text">
+                            <h4>25,600 DPI Sensor</h4>
+                            <p>Eng yuqori aniqlik darajasi. Pixel-perfect tracking. Sub-micron precision.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="acc-feature-item">
+                        <div class="acc-feature-icon">
+                            <i class="fas fa-weight"></i>
+                        </div>
+                        <div class="acc-feature-text">
+                            <h4>63 Gramm Vazn</h4>
+                            <p>Dunyodagi eng yengil gaming mouse. Tez harakatlar, kam charchash.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="acc-feature-item">
+                        <div class="acc-feature-icon">
+                            <i class="fas fa-bolt"></i>
+                        </div>
+                        <div class="acc-feature-text">
+                            <h4>1ms Response Time</h4>
+                            <p>HERO 25K sensor. Lag yo'q, delay yo'q. Instant response.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="acc-feature-item">
+                        <div class="acc-feature-icon">
+                            <i class="fas fa-snowflake"></i>
+                        </div>
+                        <div class="acc-feature-text">
+                            <h4>Zero Smoothing/Filtering</h4>
+                            <p>Sensor orqali hech qanday filtratsiya. To'g'ridan-to'g'ri harakat uzatish.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="accuracy-stats">
+                    <div class="dpi-visual">
+                        <i class="fas fa-crosshairs"></i>
+                    </div>
+                    <p style="color: var(--light-text); font-size: 1.3rem; max-width: 400px; margin: 0 auto 30px;">
+                        FPS gaming uchun eng muhim faktor - aniqlik. Har bir pixel hisobga olinadi.
+                    </p>
+                    
+                    <div class="dpi-scale">
+                        <div class="dpi-level">
+                            <div class="dpi-value">400</div>
+                            <div class="dpi-label">CS:GO Pro</div>
+                        </div>
+                        <div class="dpi-level">
+                            <div class="dpi-value">800</div>
+                            <div class="dpi-label">Standard</div>
+                        </div>
+                        <div class="dpi-level">
+                            <div class="dpi-value">1600</div>
+                            <div class="dpi-label">High Sens</div>
+                        </div>
+                        <div class="dpi-level">
+                            <div class="dpi-value">3200</div>
+                            <div class="dpi-label">4K Gaming</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Buttons Section -->
+        <section class="buttons-section">
+            <h2 class="buttons-title">
+                <i class="fas fa-th"></i>
+                MOBA - Ko'p Tugmalar Qiroli
+            </h2>
+            
+            <p style="color: var(--light-text); font-size: 1.5rem; text-align: center; margin-bottom: 40px; max-width: 800px; margin-left: auto; margin-right: auto;">
+                19+ programmable buttons. Macro recording. Quick ability casting.
+            </p>
+            
+            <div class="buttons-grid">
+                <div class="button-card">
+                    <div class="button-icon">
+                        <i class="fas fa-layer-group"></i>
+                    </div>
+                    <h4>Interchangeable Side Plates</h4>
+                    <p>3 different side plates: 2-button, 7-button, 12-button. Har bir o'yin uchun alohida.</p>
+                    <div class="button-count">3 Plate Variants</div>
+                </div>
+                
+                <div class="button-card">
+                    <div class="button-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h4>Macro Recording</h4>
+                    <p>Complex combos bitta tugmaga. Ability sequences, item combinations, quick casts.</p>
+                    <div class="button-count">Unlimited Macros</div>
+                </div>
+                
+                <div class="button-card">
+                    <div class="button-icon">
+                        <i class="fas fa-fingerprint"></i>
+                    </div>
+                    <h4>Mechanical Switches</h4>
+                    <p>70 million click durability. Tactile feedback. Quick actuation for rapid ability use.</p>
+                    <div class="button-count">70M Clicks</div>
+                </div>
+            </div>
+            
+            <div style="margin-top: 50px; padding: 35px; background: rgba(225, 112, 85, 0.1); border-radius: 20px; text-align: center;">
+                <h3 style="color: var(--moba); font-size: 2rem; margin-bottom: 20px;">
+                    <i class="fas fa-gamepad"></i>
+                    MOBA Button Layout
+                </h3>
+                <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; text-align: center;">
+                    <div>
+                        <div style="width: 60px; height: 60px; background: var(--moba); border-radius: 10px; margin: 0 auto 15px; display: flex; align-items: center; justify-content: center; font-weight: 900;">Q</div>
+                        <p style="color: var(--light-text);">Ability 1</p>
+                    </div>
+                    <div>
+                        <div style="width: 60px; height: 60px; background: var(--moba); border-radius: 10px; margin: 0 auto 15px; display: flex; align-items: center; justify-content: center; font-weight: 900;">W</div>
+                        <p style="color: var(--light-text);">Ability 2</p>
+                    </div>
+                    <div>
+                        <div style="width: 60px; height: 60px; background: var(--moba); border-radius: 10px; margin: 0 auto 15px; display: flex; align-items: center; justify-content: center; font-weight: 900;">E</div>
+                        <p style="color: var(--light-text);">Ability 3</p>
+                    </div>
+                    <div>
+                        <div style="width: 60px; height: 60px; background: var(--moba); border-radius: 10px; margin: 0 auto 15px; display: flex; align-items: center; justify-content: center; font-weight: 900;">R</div>
+                        <p style="color: var(--light-text);">Ultimate</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Comfort Section -->
+        <section class="comfort-section">
+            <h2 class="comfort-title">
+                <i class="fas fa-couch"></i>
+                RPG - Qulaylik Qiroli
+            </h2>
+            
+            <div class="comfort-content">
+                <div class="comfort-visual">
+                    <div class="mouse-visual">
+                        <i class="fas fa-mouse"></i>
+                    </div>
+                    <p style="color: var(--light-text); font-size: 1.3rem; max-width: 400px; margin: 0 auto;">
+                        8+ soatlik RPG seanslari uchun eng qulay sichqoncha. Ergonomik dizayn, uzoq batareya.
+                    </p>
+                    
+                    <div class="grip-types" style="margin-top: 40px;">
+                        <div class="grip-card">
+                            <div class="grip-icon">
+                                <i class="fas fa-hand-paper"></i>
+                            </div>
+                            <div class="grip-name">Palm Grip</div>
+                            <div class="grip-desc">Butun qo'l bilan ushlash</div>
+                        </div>
+                        
+                        <div class="grip-card">
+                            <div class="grip-icon">
+                                <i class="fas fa-hand-peace"></i>
+                            </div>
+                            <div class="grip-name">Claw Grip</div>
+                            <div class="grip-desc">Tirnoq usuli</div>
+                        </div>
+                        
+                        <div class="grip-card">
+                            <div class="grip-icon">
+                                <i class="fas fa-hand-point-up"></i>
+                            </div>
+                            <div class="grip-name">Fingertip</div>
+                            <div class="grip-desc">Barmoq uchlarida</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="accuracy-features">
+                    <div class="acc-feature-item">
+                        <div class="acc-feature-icon">
+                            <i class="fas fa-battery-full"></i>
+                        </div>
+                        <div class="acc-feature-text">
+                            <h4>80 Soat Batareya</h4>
+                            <p>Bir hafta gaming uchun etarli batareya. Fast charging - 15 daqiqa 10 soat.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="acc-feature-item">
+                        <div class="acc-feature-icon">
+                            <i class="fas fa-weight-hanging"></i>
+                        </div>
+                        <div class="acc-feature-text">
+                            <h4>Adjustable Weight</h4>
+                            <p>96 grammdan 128 grammgacha vazn sozlash. Har bir gamer uchun ideal.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="acc-feature-item">
+                        <div class="acc-feature-icon">
+                            <i class="fas fa-hands"></i>
+                        </div>
+                        <div class="acc-feature-text">
+                            <h4>TrueMove3+ Sensor</h4>
+                            <p>1-to-1 tracking. Zero acceleration. Perfect for RPG exploration.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="acc-feature-item">
+                        <div class="acc-feature-icon">
+                            <i class="fas fa-ruler-combined"></i>
+                        </div>
+                        <div class="acc-feature-text">
+                            <h4>Dual Sensor System</h4>
+                            <p>Primary sensor + lift-off distance sensor. Perfect tracking har qanday sirtda.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Comparison Table -->
+        <section class="comparison-section">
+            <h2 class="comparison-title">
+                <i class="fas fa-balance-scale"></i>
+                Batafsil Taqqoslash Jadvali
+            </h2>
+            
+            <div class="comparison-table">
+                <div class="table-header">
+                    <div class="header-cell">Xususiyat</div>
+                    <div class="header-cell">FPS Mouse</div>
+                    <div class="header-cell">MOBA Mouse</div>
+                    <div class="header-cell">RPG Mouse</div>
+                </div>
+                
+                <div class="table-row">
+                    <div class="row-label">
+                        <i class="fas fa-weight row-icon"></i>
+                        <span>Vazn</span>
+                    </div>
+                    <div class="row-value">
+                        63g
+                        <span class="winner fps-winner">ENGIL</span>
+                    </div>
+                    <div class="row-value">120g</div>
+                    <div class="row-value">96-128g</div>
+                </div>
+                
+                <div class="table-row">
+                    <div class="row-label">
+                        <i class="fas fa-th-large row-icon"></i>
+                        <span>Tugmalar</span>
+                    </div>
+                    <div class="row-value">5-6</div>
+                    <div class="row-value">
+                        19+
+                        <span class="winner moba-winner">KO'P</span>
+                    </div>
+                    <div class="row-value">7-8</div>
+                </div>
+                
+                <div class="table-row">
+                    <div class="row-label">
+                        <i class="fas fa-battery-full row-icon"></i>
+                        <span>Batareya</span>
+                    </div>
+                    <div class="row-value">70 soat</div>
+                    <div class="row-value">50 soat</div>
+                    <div class="row-value">
+                        80 soat
+                        <span class="winner rpg-winner">UZOQ</span>
+                    </div>
+                </div>
+                
+                <div class="table-row">
+                    <div class="row-label">
+                        <i class="fas fa-bullseye row-icon"></i>
+                        <span>DPI</span>
+                    </div>
+                    <div class="row-value">
+                        25,600
+                        <span class="winner fps-winner">YUQORI</span>
+                    </div>
+                    <div class="row-value">16,000</div>
+                    <div class="row-value">12,000</div>
+                </div>
+                
+                <div class="table-row">
+                    <div class="row-label">
+                        <i class="fas fa-couch row-icon"></i>
+                        <span>Qulaylik</span>
+                    </div>
+                    <div class="row-value">7/10</div>
+                    <div class="row-value">8/10</div>
+                    <div class="row-value">
+                        9.5/10
+                        <span class="winner rpg-winner">QULAY</span>
+                    </div>
+                </div>
+                
+                <div class="table-row">
+                    <div class="row-label">
+                        <i class="fas fa-dollar-sign row-icon"></i>
+                        <span>Narx</span>
+                    </div>
+                    <div class="row-value">$150</div>
+                    <div class="row-value">
+                        $100
+                        <span class="winner moba-winner">ARZON</span>
+                    </div>
+                    <div class="row-value">$80</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Ad Section -->
+        <div class="ad-section">
+            <div class="ad-label">Gaming Mouse Padlar</div>
+            <div class="ad-placeholder" style="height: 250px;">
+                AdSense Vertical Banner (300x250) - Mouse Pads & Accessories
+            </div>
+        </div>
+
+        <!-- Recommendation Section -->
+        <section class="recommendation-section">
+            <h2 class="recommendation-title">
+                <i class="fas fa-trophy"></i>
+                Yakuniy Tavsiyalar
+            </h2>
+            
+            <div class="recommendation-grid">
+                <div class="recommendation-card">
+                    <h3 class="rec-genre">FPS Gaming</h3>
+                    <div class="rec-mouse">Logitech G Pro X Superlight</div>
+                    <ul class="rec-points">
+                        <li>63g - eng yengil mouse</li>
+                        <li>25,600 DPI HERO sensor</li>
+                        <li>70 soat batareya</li>
+                        <li>Esport professional</li>
+                        <li>Perfect for CS:GO, Valorant</li>
+                    </ul>
+                    <div style="margin-top: 30px; padding: 20px; background: rgba(9, 132, 227, 0.1); border-radius: 15px;">
+                        <p style="color: var(--fps); font-weight: 900; font-size: 1.3rem;">
+                            🎯 Aniqlik G'olibi
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="recommendation-card">
+                    <h3 class="rec-genre">MOBA Gaming</h3>
+                    <div class="rec-mouse">Razer Naga Trinity</div>
+                    <ul class="rec-points">
+                        <li>19+ programmable buttons</li>
+                        <li>3 interchangeable side plates</li>
+                        <li>Razer Chroma RGB</li>
+                        <li>Mechanical switches</li>
+                        <li>Perfect for LoL, Dota 2</li>
+                    </ul>
+                    <div style="margin-top: 30px; padding: 20px; background: rgba(225, 112, 85, 0.1); border-radius: 15px;">
+                        <p style="color: var(--moba); font-weight: 900; font-size: 1.3rem;">
+                            ⚔️ Ko'p Tugmalar G'olibi
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="recommendation-card">
+                    <h3 class="rec-genre">RPG Gaming</h3>
+                    <div class="rec-mouse">SteelSeries Rival 600</div>
+                    <ul class="rec-points">
+                        <li>Ergonomic design</li>
+                        <li>80 soat batareya</li>
+                        <li>Adjustable weight system</li>
+                        <li>Dual sensor system</li>
+                        <li>Perfect for WoW, FFXIV</li>
+                    </ul>
+                    <div style="margin-top: 30px; padding: 20px; background: rgba(0, 206, 201, 0.1); border-radius: 15px;">
+                        <p style="color: var(--rpg); font-weight: 900; font-size: 1.3rem;">
+                            🏹 Qulaylik G'olibi
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 60px; padding: 40px; background: linear-gradient(135deg, rgba(9, 132, 227, 0.1), rgba(225, 112, 85, 0.1), rgba(0, 206, 201, 0.1)); border-radius: 25px; border: 3px solid rgba(255, 255, 255, 0.1);">
+                <h3 style="color: var(--secondary); font-size: 2.5rem; margin-bottom: 25px;">
+                    <i class="fas fa-lightbulb"></i>
+                    Yakuniy Xulosa
+                </h3>
+                <p style="color: var(--text); font-size: 1.5rem; line-height: 1.7; max-width: 900px; margin: 0 auto 30px;">
+                    Agar siz <strong>aniqlik</strong> kerak bo'lsa - <span style="color: var(--fps); font-weight: 900;">FPS Mouse</span> tanlang.<br>
+                    Agar sizga <strong>ko'p tugmalar</strong> kerak bo'lsa - <span style="color: var(--moba); font-weight: 900;">MOBA Mouse</span> tanlang.<br>
+                    Agar sizga <strong>qulaylik</strong> kerak bo'lsa - <span style="color: var(--rpg); font-weight: 900;">RPG Mouse</span> tanlang.
+                </p>
+                <div style="display: inline-block; background: rgba(255, 255, 255, 0.1); padding: 20px 40px; border-radius: 20px; margin-top: 20px;">
+                    <p style="color: var(--secondary); font-weight: 900; font-size: 1.3rem;">
+                        🖱️ 3.5/5 Gaming Mouse Reyting
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Gaming Mouse Test</h3>
+                    <p>40 soatlik gaming test natijalari asosida tayyorlangan. Har bir janr uchun optimal mouse tanlandi.</p>
+                    <ul class="footer-links">
+                        <li><a href="faq.html"><i class="fas fa-vial"></i> Tez-tez so'raladigan savollar</a></li>
+                        <li><a href="funding.html"><i class="fas fa-gamepad"></i> Moliyalashtirish</a></li>
+                        <li><a href="test-equipment.html"><i class="fas fa-chart-line"></i> Sinov Uskunalari</a></li>
+                        <li><a href="test-process.html"><i class="fas fa-chart-line"></i> Sinov Jarayoni</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Mouse Technology</h3>
+                    <p>DPI, polling rate, sensor technology, wireless latency va boshqa muhim texnologiyalar.</p>
+                    <ul class="footer-links">
+                        <li><a href="#"><i class="fas fa-bullseye"></i> DPI & Sensitivity</a></li>
+                        <li><a href="#"><i class="fas fa-bolt"></i> Polling Rate</a></li>
+                        <li><a href="#"><i class="fas fa-satellite-dish"></i> Wireless Tech</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Gaming Genres</h3>
+                    <p>Har bir gaming janri uchun optimal mouse xususiyatlari va tavsiyalar.</p>
+                    <ul class="footer-links">
+                        <li><a href="#"><i class="fas fa-crosshairs"></i> FPS Gaming</a></li>
+                        <li><a href="#"><i class="fas fa-users"></i> MOBA Gaming</a></li>
+                        <li><a href="#"><i class="fas fa-dragon"></i> RPG Gaming</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>© 2025-2026 Gaming Sichqonchalar Taqqoslash | 3.5/5 Gaming Mouse Reyting</p>
+                <p style="margin-top: 15px; font-size: 1rem; color: var(--light-text);">
+                    FPS - aniqlik uchun | MOBA - ko'p tugmalar uchun | RPG - qulaylik uchun
+                </p>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // Genre card hover effects
+        document.querySelectorAll('.genre-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-15px)';
+                this.style.boxShadow = '0 30px 60px rgba(0, 0, 0, 0.5)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+                this.style.boxShadow = 'none';
+            });
+        });
+
+        // Button card hover effects
+        document.querySelectorAll('.button-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-12px)';
+                this.style.boxShadow = '0 25px 50px rgba(225, 112, 85, 0.3)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+                this.style.boxShadow = 'none';
+            });
+        });
+
+        // Grip card hover effects
+        document.querySelectorAll('.grip-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-8px)';
+                this.style.borderColor = 'var(--rpg)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+                this.style.borderColor = 'transparent';
+            });
+        });
+
+        // Recommendation card hover effects
+        document.querySelectorAll('.recommendation-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-18px)';
+                this.style.boxShadow = '0 35px 70px rgba(0, 0, 0, 0.6)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+                this.style.boxShadow = 'none';
+            });
+        });
+
+        // Table row hover effects
+        document.querySelectorAll('.table-row').forEach(row => {
+            row.addEventListener('mouseenter', function() {
+                this.style.background = 'rgba(255, 255, 255, 0.08)';
+            });
+            
+            row.addEventListener('mouseleave', function() {
+                this.style.background = '';
+            });
+        });
+
+        // Add floating animation to genre icons
+        const genreIcons = document.querySelectorAll('.genre-icon');
+        genreIcons.forEach((icon, index) => {
+            icon.style.animation = `float 3s ease-in-out ${index * 0.5}s infinite`;
+        });
+
+        // Add CSS animation for pulse effect
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes rainbow {
+                0% { background-position: 0% 50%; }
+                50% { background-position: 100% 50%; }
+                100% { background-position: 0% 50%; }
+            }
+        `;
+        document.head.appendChild(style);
+
+        // Add rainbow effect to header gradient
+        const header = document.querySelector('.main-header');
+        header.style.animation = 'rainbow 6s ease infinite';
+        header.style.backgroundSize = '400% 400%';
+
+     
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Initialize animations on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add initial animation to rating badge
+            const ratingBadge = document.querySelector('.rating-badge');
+            ratingBadge.style.animation = 'pulse 2s 1';
+            
+            // Add hover effect to DPI values
+            const dpiValues = document.querySelectorAll('.dpi-value');
+            dpiValues.forEach(value => {
+                value.addEventListener('mouseenter', function() {
+                    this.style.transform = 'scale(1.2)';
+                    this.style.transition = 'transform 0.3s ease';
+                });
+                
+                value.addEventListener('mouseleave', function() {
+                    this.style.transform = 'scale(1)';
+                });
+            });
+            
+            // Add click effect to button counts
+            const buttonCounts = document.querySelectorAll('.button-count');
+            buttonCounts.forEach(count => {
+                count.addEventListener('click', function() {
+                    this.style.transform = 'scale(1.1)';
+                    setTimeout(() => {
+                        this.style.transform = 'scale(1)';
+                    }, 300);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
