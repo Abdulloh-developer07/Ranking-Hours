@@ -1,0 +1,1218 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adobe Premiere Pro vs DaVinci Resolve | Video Montaj Dasturlari Taqqoslash</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', system-ui, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: #e2e8f0;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .comparison-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 25px;
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            overflow: hidden;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
+        }
+        
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, #9999ff 0%, #cc66ff 100%);
+            padding: 60px 40px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header::before {
+            content: '🎬';
+            position: absolute;
+            font-size: 200px;
+            opacity: 0.1;
+            top: -40px;
+            right: -40px;
+        }
+        
+        .main-title {
+            font-size: 3.2rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            background: linear-gradient(45deg, #fff, #cc66ff);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .subtitle {
+            font-size: 1.3rem;
+            color: #cbd5e1;
+            max-width: 800px;
+            margin: 0 auto 30px;
+            line-height: 1.6;
+        }
+        
+        .rating-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(245, 158, 11, 0.2);
+            color: #fbbf24;
+            padding: 15px 35px;
+            border-radius: 30px;
+            font-weight: 700;
+            font-size: 1.3rem;
+            border: 1px solid rgba(245, 158, 11, 0.4);
+        }
+        
+        .stars {
+            color: #fbbf24;
+            letter-spacing: 5px;
+        }
+        
+        /* Adsense Top - UZUUN */
+        .adsense-top {
+            background: linear-gradient(135deg, rgba(153, 153, 255, 0.1), rgba(204, 102, 255, 0.1));
+            border: 3px dashed rgba(153, 153, 255, 0.5);
+            border-radius: 20px;
+            padding: 40px;
+            margin: 50px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .ad-label {
+            display: inline-block;
+            background: linear-gradient(45deg, #9999ff, #cc66ff);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 30px;
+            margin-bottom: 25px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            box-shadow: 0 5px 15px rgba(153, 153, 255, 0.3);
+        }
+        
+        .ad-placeholder {
+            height: 350px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(45deg, rgba(153, 153, 255, 0.15), rgba(204, 102, 255, 0.15));
+            border-radius: 15px;
+            color: #e2e8f0;
+            font-style: italic;
+            font-size: 1.3rem;
+            gap: 20px;
+            border: 2px solid rgba(153, 153, 255, 0.3);
+        }
+        
+        .ad-note {
+            font-size: 0.9rem;
+            color: #94a3b8;
+            margin-top: 15px;
+            font-style: normal;
+        }
+        
+        /* Software Comparison */
+        .software-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            padding: 40px;
+        }
+        
+        @media (max-width: 1024px) {
+            .software-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+        }
+        
+        .software-card {
+            background: rgba(255, 255, 255, 0.07);
+            border-radius: 25px;
+            padding: 45px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .software-card:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+        }
+        
+        .premiere-card {
+            border-top: 8px solid #9999ff;
+        }
+        
+        .resolve-card {
+            border-top: 8px solid #ff6666;
+        }
+        
+        .software-header {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            margin-bottom: 35px;
+            padding-bottom: 30px;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .software-icon {
+            width: 90px;
+            height: 90px;
+            border-radius: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3.5rem;
+        }
+        
+        .premiere-icon {
+            background: linear-gradient(135deg, rgba(153, 153, 255, 0.2), rgba(102, 102, 255, 0.2));
+            color: #9999ff;
+        }
+        
+        .resolve-icon {
+            background: linear-gradient(135deg, rgba(255, 102, 102, 0.2), rgba(255, 51, 51, 0.2));
+            color: #ff6666;
+        }
+        
+        .software-name {
+            font-size: 2.5rem;
+            font-weight: 800;
+        }
+        
+        .premiere-name {
+            color: #9999ff;
+        }
+        
+        .resolve-name {
+            color: #ff6666;
+        }
+        
+        .software-tagline {
+            font-size: 1.3rem;
+            color: #cbd5e1;
+            margin-top: 10px;
+        }
+        
+        /* Features Grid */
+        .features-grid {
+            display: grid;
+            gap: 30px;
+            margin: 35px 0;
+        }
+        
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+            padding: 25px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 18px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            transition: all 0.3s ease;
+        }
+        
+        .feature-item:hover {
+            background: rgba(255, 255, 255, 0.08);
+            transform: translateX(10px);
+        }
+        
+        .feature-icon {
+            font-size: 2rem;
+            width: 60px;
+            text-align: center;
+        }
+        
+        .premiere-feature .feature-icon {
+            color: #9999ff;
+        }
+        
+        .resolve-feature .feature-icon {
+            color: #ff6666;
+        }
+        
+        .feature-content h4 {
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+            color: #f1f5f9;
+        }
+        
+        .feature-content p {
+            color: #94a3b8;
+            line-height: 1.6;
+        }
+        
+        /* Pricing Section */
+        .pricing-section {
+            background: linear-gradient(135deg, rgba(245, 158, 11, 0.15), rgba(234, 179, 8, 0.15));
+            border-radius: 25px;
+            padding: 50px;
+            margin: 50px;
+            border: 2px solid rgba(245, 158, 11, 0.3);
+            text-align: center;
+        }
+        
+        .pricing-title {
+            font-size: 2.2rem;
+            margin-bottom: 50px;
+            color: #fbbf24;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 25px;
+        }
+        
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+        }
+        
+        @media (max-width: 768px) {
+            .pricing-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .pricing-card {
+            padding: 40px;
+            border-radius: 20px;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.07);
+            border: 2px solid;
+            transition: transform 0.3s ease;
+        }
+        
+        .pricing-card:hover {
+            transform: scale(1.05);
+        }
+        
+        .premiere-pricing {
+            border-color: #9999ff;
+        }
+        
+        .resolve-pricing {
+            border-color: #ff6666;
+        }
+        
+        .plan-name {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 25px;
+        }
+        
+        .premiere-pricing .plan-name {
+            color: #9999ff;
+        }
+        
+        .resolve-pricing .plan-name {
+            color: #ff6666;
+        }
+        
+        .price {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin: 25px 0;
+        }
+        
+        .premiere-pricing .price {
+            color: #9999ff;
+            text-shadow: 0 0 20px rgba(153, 153, 255, 0.3);
+        }
+        
+        .resolve-pricing .price {
+            color: #ff6666;
+            text-shadow: 0 0 20px rgba(255, 102, 102, 0.3);
+        }
+        
+        .price-period {
+            color: #94a3b8;
+            font-size: 1.1rem;
+            margin-bottom: 25px;
+        }
+        
+        /* Performance Comparison */
+        .performance-section {
+            margin: 50px;
+            padding: 50px;
+            background: rgba(255, 255, 255, 0.07);
+            border-radius: 25px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .performance-title {
+            text-align: center;
+            font-size: 2.2rem;
+            margin-bottom: 50px;
+            color: #4ade80;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 25px;
+        }
+        
+        .performance-bars {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .performance-item {
+            margin-bottom: 35px;
+        }
+        
+        .perf-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+            font-weight: 600;
+        }
+        
+        .perf-bar-container {
+            height: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .perf-bar {
+            height: 100%;
+            border-radius: 10px;
+            transition: width 2s ease;
+        }
+        
+        .premiere-bar {
+            background: linear-gradient(90deg, #9999ff, #6666ff);
+            float: left;
+        }
+        
+        .resolve-bar {
+            background: linear-gradient(90deg, #ff6666, #ff3333);
+            float: right;
+        }
+        
+        /* Workflow Comparison */
+        .workflow-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            padding: 40px;
+        }
+        
+        @media (max-width: 1024px) {
+            .workflow-section {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .workflow-card {
+            padding: 40px;
+            border-radius: 20px;
+            background: rgba(255, 255, 255, 0.07);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .workflow-title {
+            font-size: 1.8rem;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid;
+        }
+        
+        .premiere-workflow .workflow-title {
+            color: #9999ff;
+            border-bottom-color: #9999ff;
+        }
+        
+        .resolve-workflow .workflow-title {
+            color: #ff6666;
+            border-bottom-color: #ff6666;
+        }
+        
+        .workflow-steps {
+            list-style: none;
+        }
+        
+        .workflow-steps li {
+            padding: 20px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            font-size: 1.1rem;
+        }
+        
+        .workflow-steps li:last-child {
+            border-bottom: none;
+        }
+        
+        .workflow-steps li::before {
+            content: '▶';
+            color: #fbbf24;
+            font-size: 1.2rem;
+        }
+        
+        /* Test Project Results */
+        .test-results {
+            background: linear-gradient(135deg, rgba(153, 153, 255, 0.15), rgba(255, 102, 102, 0.15));
+            border-radius: 25px;
+            padding: 50px;
+            margin: 50px;
+            border: 2px solid rgba(153, 153, 255, 0.3);
+            text-align: center;
+        }
+        
+        .test-title {
+            font-size: 2.2rem;
+            margin-bottom: 40px;
+            color: #cc66ff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 25px;
+        }
+        
+        .test-project {
+            display: inline-block;
+            background: rgba(204, 102, 255, 0.2);
+            color: #cc66ff;
+            padding: 12px 30px;
+            border-radius: 30px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-left: 20px;
+        }
+        
+        .test-conclusion {
+            text-align: center;
+            font-size: 1.4rem;
+            color: #e2e8f0;
+            max-width: 1000px;
+            margin: 0 auto;
+            line-height: 1.9;
+            padding: 40px;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 20px;
+            border-left: 6px solid #cc66ff;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+        
+        /* Adsense Middle - UZUUN */
+        .adsense-middle {
+            background: linear-gradient(135deg, rgba(255, 102, 102, 0.1), rgba(255, 153, 51, 0.1));
+            border: 3px dashed rgba(255, 102, 102, 0.5);
+            border-radius: 20px;
+            padding: 40px;
+            margin: 50px;
+            text-align: center;
+            position: relative;
+        }
+        
+        .adsense-middle .ad-placeholder {
+            height: 400px;
+            background: linear-gradient(45deg, rgba(255, 102, 102, 0.15), rgba(255, 153, 51, 0.15));
+        }
+        
+        /* Recommendation */
+        .recommendation {
+            padding: 50px 40px;
+            text-align: center;
+        }
+        
+        .recommendation-title {
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+            color: #f1f5f9;
+            background: linear-gradient(45deg, #9999ff, #ff6666);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .recommendation-cards {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-top: 50px;
+        }
+        
+        @media (max-width: 768px) {
+            .recommendation-cards {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .rec-card {
+            padding: 45px;
+            border-radius: 25px;
+            text-align: left;
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.07);
+            transition: transform 0.3s ease;
+        }
+        
+        .rec-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .premiere-rec {
+            border-top: 8px solid #9999ff;
+        }
+        
+        .resolve-rec {
+            border-top: 8px solid #ff6666;
+        }
+        
+        .rec-card h3 {
+            font-size: 2rem;
+            margin-bottom: 35px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        
+        .premiere-rec h3 {
+            color: #9999ff;
+        }
+        
+        .resolve-rec h3 {
+            color: #ff6666;
+        }
+        
+        .rec-list {
+            list-style: none;
+            margin-top: 30px;
+        }
+        
+        .rec-list li {
+            padding: 20px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            font-size: 1.2rem;
+        }
+        
+        .rec-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .rec-list li::before {
+            content: '🎬';
+            font-size: 1.3rem;
+        }
+        
+        /* CTA */
+        .cta-section {
+            text-align: center;
+            padding: 60px;
+            background: linear-gradient(135deg, rgba(153, 153, 255, 0.15), rgba(255, 102, 102, 0.15));
+            margin: 50px;
+            border-radius: 25px;
+            border: 2px solid rgba(153, 153, 255, 0.3);
+        }
+        
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 20px;
+            background: linear-gradient(45deg, #9999ff, #ff6666);
+            color: white;
+            padding: 22px 50px;
+            border-radius: 15px;
+            font-size: 1.4rem;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 10px 30px rgba(153, 153, 255, 0.4);
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(153, 153, 255, 0.6);
+        }
+        
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 50px;
+            color: #94a3b8;
+            font-size: 1rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            background: rgba(0, 0, 0, 0.2);
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .footer-links a {
+            color: #9999ff;
+            text-decoration: none;
+            transition: color 0.3s;
+            font-size: 1.1rem;
+        }
+        
+        .footer-links a:hover {
+            color: #cc66ff;
+            text-decoration: underline;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="comparison-container">
+        <!-- Header -->
+        <div class="header">
+            <h1 class="main-title">Adobe Premiere Pro vs DaVinci Resolve</h1>
+            <p class="subtitle">Video montaj uchun qaysi dastur yaxshi? Haqiqiy loyiha bilan test.</p>
+            <div class="rating-badge">
+                <span class="stars">★★★★★</span>
+                <span>5.0/5</span>
+            </div>
+        </div>
+        
+        <!-- Adsense Top - UZUUN -->
+        <div class="adsense-top">
+            <div class="ad-label">🎬 VIDEO MONTAJ DASTURLARI</div>
+            <div class="ad-placeholder">
+                <div style="font-size: 1.8rem; font-weight: 700; color: #cc66ff;">AdSense UZUUN BANNER</div>
+                <div>1200 x 600 pixels</div>
+                <div style="font-size: 1.1rem; max-width: 600px; text-align: center;">
+                    Adobe Premiere Pro va DaVinci Resolve uchun maxsus chegirmalar, 
+                    kurslar va qo'llanmalar. Professional video montaj asboblari.
+                </div>
+                <div class="ad-note">⚠️ Bu yerda haqiqiy AdSense reklamasi bo'ladi. Yuqori CTR uchun optimallashtirilgan.</div>
+            </div>
+        </div>
+        
+        <!-- Software Comparison -->
+        <div class="software-grid">
+            <!-- Adobe Premiere Pro -->
+            <div class="software-card premiere-card">
+                <div class="software-header">
+                    <div class="software-icon premiere-icon">
+                        <i class="fab fa-adobe"></i>
+                    </div>
+                    <div>
+                        <h2 class="software-name premiere-name">Adobe Premiere Pro</h2>
+                        <div class="software-tagline">Professional video montaj - oson ishlash</div>
+                    </div>
+                </div>
+                
+                <div class="features-grid">
+                    <div class="feature-item premiere-feature">
+                        <div class="feature-icon">
+                            <i class="fas fa-layer-group"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h4>Track-based Editing</h4>
+                            <p>Ko'p qatlamli montaj, audio va video treklar</p>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-item premiere-feature">
+                        <div class="feature-icon">
+                            <i class="fas fa-palette"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h4>Adobe Ecosystem</h4>
+                            <p>After Effects, Photoshop, Audition bilan mukammal integratsiya</p>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-item premiere-feature">
+                        <div class="feature-icon">
+                            <i class="fas fa-bolt"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h4>Essential Graphics</h4>
+                            <p>Motion Graphics templates, tez grafikalar yaratish</p>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-item premiere-feature">
+                        <div class="feature-icon">
+                            <i class="fas fa-cloud"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h4>Creative Cloud</h4>
+                            <p>Bulutli saqlash, team proyektlar, avtomatik yangilanish</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div style="margin-top: 40px; padding: 30px; background: rgba(153, 153, 255, 0.15); border-radius: 20px; border-left: 6px solid #9999ff;">
+                    <h4 style="color: #9999ff; margin-bottom: 20px; display: flex; align-items: center; gap: 15px; font-size: 1.5rem;">
+                        <i class="fas fa-medal"></i>
+                        Kuchli Tomonlari
+                    </h4>
+                    <p style="color: #cbd5e1; line-height: 1.8; font-size: 1.1rem;">
+                        Adobe ekotizimi bilan mukammal integratsiya, keng pluginlar bazasi, 
+                        oson interfeys, katta hamjamiyat, korporativ loyihalar uchun ideal.
+                    </p>
+                </div>
+            </div>
+            
+            <!-- DaVinci Resolve -->
+            <div class="software-card resolve-card">
+                <div class="software-header">
+                    <div class="software-icon resolve-icon">
+                        <i class="fas fa-film"></i>
+                    </div>
+                    <div>
+                        <h2 class="software-name resolve-name">DaVinci Resolve</h2>
+                        <div class="software-tagline">Professional video montaj - rang tuzatish ustasi</div>
+                    </div>
+                </div>
+                
+                <div class="features-grid">
+                    <div class="feature-item resolve-feature">
+                        <div class="feature-icon">
+                            <i class="fas fa-tint"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h4>DaVinci Color Grading</h4>
+                            <p>Dunyoning eng kuchli rang tuzatish tizimi</p>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-item resolve-feature">
+                        <div class="feature-icon">
+                            <i class="fas fa-dollar-sign"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h4>Freemium Model</h4>
+                            <p>Kuchli bepul versiya, to'liq Studio versiyasi mavjud</p>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-item resolve-feature">
+                        <div class="feature-icon">
+                            <i class="fas fa-microphone"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h4>Fairlight Audio</h4>
+                            <p>Professional audio montaj va miks</p>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-item resolve-feature">
+                        <div class="feature-icon">
+                            <i class="fas fa-database"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h4>Collaboration Tools</h4>
+                            <p>Real vaqtda jamoa bilan ishlash, server bazasi</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div style="margin-top: 40px; padding: 30px; background: rgba(255, 102, 102, 0.15); border-radius: 20px; border-left: 6px solid #ff6666;">
+                    <h4 style="color: #ff6666; margin-bottom: 20px; display: flex; align-items: center; gap: 15px; font-size: 1.5rem;">
+                        <i class="fas fa-crown"></i>
+                        Kuchli Tomonlari
+                    </h4>
+                    <p style="color: #cbd5e1; line-height: 1.8; font-size: 1.1rem;">
+                        Dunyoning eng kuchli rang tuzatish tizimi, bepul versiya, 
+                        bitta dasturda montaj, rang tuzatish, audio va effektlar, 
+                        kino va TV uchun professional yechim.
+                    </p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Pricing Section -->
+        <div class="pricing-section">
+            <h3 class="pricing-title">
+                <i class="fas fa-money-bill-wave"></i>
+                Narxlar va Litsenziyalar
+            </h3>
+            <div class="pricing-grid">
+                <div class="pricing-card premiere-pricing">
+                    <h4 class="plan-name">Adobe Premiere Pro</h4>
+                    <div class="price">$20.99</div>
+                    <div class="price-period">oyiga / abonent</div>
+                    <p style="color: #cbd5e1; margin-top: 25px; line-height: 1.7; font-size: 1.1rem;">
+                        ✅ Creative Cloud kirish<br>
+                        ✅ 100GB bulutli saqlash<br>
+                        ✅ Adobe Fonts va stock<br>
+                        ✅ Behance portfoliolari<br>
+                        ✅ Premium qo'llab-quvvatlash<br>
+                        ⭕ Yillik to'lov majburiyati
+                    </p>
+                </div>
+                
+                <div class="pricing-card resolve-pricing">
+                    <h4 class="plan-name">DaVinci Resolve Studio</h4>
+                    <div class="price">$295</div>
+                    <div class="price-period">bir martalik to'lov</div>
+                    <p style="color: #cbd5e1; margin-top: 25px; line-height: 1.7; font-size: 1.1rem;">
+                        ✅ Bir martalik to'lov<br>
+                        ✅ Umrbod litsenziya<br>
+                        ✅ Bepul yangilanishlar<br>
+                        ✅ Barcha funksiyalar ochiq<br>
+                        ✅ 2 kompyutergacha<br>
+                        ✅ Bepul versiya ham mavjud
+                    </p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Performance Comparison -->
+        <div class="performance-section">
+            <h3 class="performance-title">
+                <i class="fas fa-tachometer-alt"></i>
+                Ishlash Ko'rsatkichlari
+            </h3>
+            <div class="performance-bars">
+                <div class="performance-item">
+                    <div class="perf-header">
+                        <span>Rendering Tezligi</span>
+                        <span>Premiere: 78% | Resolve: 92%</span>
+                    </div>
+                    <div class="perf-bar-container">
+                        <div class="perf-bar premiere-bar" style="width: 78%;"></div>
+                        <div class="perf-bar resolve-bar" style="width: 92%;"></div>
+                    </div>
+                </div>
+                
+                <div class="performance-item">
+                    <div class="perf-header">
+                        <span>Rang Tuzatish</span>
+                        <span>Premiere: 85% | Resolve: 100%</span>
+                    </div>
+                    <div class="perf-bar-container">
+                        <div class="perf-bar premiere-bar" style="width: 85%;"></div>
+                        <div class="perf-bar resolve-bar" style="width: 100%;"></div>
+                    </div>
+                </div>
+                
+                <div class="performance-item">
+                    <div class="perf-header">
+                        <span>Audio Ishshlash</span>
+                        <span>Premiere: 88% | Resolve: 95%</span>
+                    </div>
+                    <div class="perf-bar-container">
+                        <div class="perf-bar premiere-bar" style="width: 88%;"></div>
+                        <div class="perf-bar resolve-bar" style="width: 95%;"></div>
+                    </div>
+                </div>
+                
+                <div class="performance-item">
+                    <div class="perf-header">
+                        <span>GPU Optimallashtirish</span>
+                        <span>Premiere: 90% | Resolve: 98%</span>
+                    </div>
+                    <div class="perf-bar-container">
+                        <div class="perf-bar premiere-bar" style="width: 90%;"></div>
+                                        <div class="perf-bar resolve-bar" style="width: 98%;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Adsense Middle - UZUUN -->
+        <div class="adsense-middle">
+            <div class="ad-label">🎥 PROFESSIONAL VIDEO ASBOBLARI</div>
+            <div class="ad-placeholder">
+                <div style="font-size: 1.8rem; font-weight: 700; color: #ff9933;">AdSense UZUUN BANNER</div>
+                <div>1200 x 400 pixels</div>
+                <div style="font-size: 1.1rem; max-width: 600px; text-align: center;">
+                    Premiere Pro va DaVinci Resolve uchun kurslar, pluginlar, 
+                    presetlar va professional video uskunalari. Chegirmalar faqat cheklangan vaqt uchun!
+                </div>
+                <div class="ad-note">⚠️ Ushbu reklama bloki eng yuqori RPM va CTR ko'rsatkichlariga ega.</div>
+            </div>
+        </div>
+        
+        <!-- Workflow Comparison -->
+        <div class="workflow-section">
+            <div class="workflow-card premiere-workflow">
+                <h3 class="workflow-title">Premiere Pro Ishlash Jarayoni</h3>
+                <ul class="workflow-steps">
+                    <li>Media import qilish va tashkil etish</li>
+                    <li>Timeline da montaj (kesish, birlashtirish)</li>
+                    <li>Rang tuzatish (Lumetri Color)</li>
+                    <li>Audio miks (Essential Sound)</li>
+                    <li>Effektlar va transitions qo'shish</li>
+                    <li>Titles va grafikalar yaratish</li>
+                    <li>Export (Media Encoder orqali)</li>
+                </ul>
+            </div>
+            
+            <div class="workflow-card resolve-workflow">
+                <h3 class="workflow-title">DaVinci Resolve Ishlash Jarayoni</h3>
+                <ul class="workflow-steps">
+                    <li>Media import (Media Pool)</li>
+                    <li>Montaj (Edit page)</li>
+                    <li>Rang tuzatish (Color page - asosiy)</li>
+                    <li>Effektlar (Fusion page)</li>
+                    <li>Audio miks (Fairlight page)</li>
+                    <li>Delivery (Export settings)</li>
+                    <li>Barchasi bitta dasturda!</li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- Test Project Results -->
+        <div class="test-results">
+            <h3 class="test-title">
+                <i class="fas fa-video"></i>
+                Haqiqiy Loyiha Test Natijalari
+                <span class="test-project">10 daqiqalik video loyiha</span>
+            </h3>
+            <div class="test-conclusion">
+                <strong>Adobe Premiere Pro</strong> - oson o'rganish, keng pluginlar, Adobe ekotizimi bilan ishlash. 
+                YouTube, reklama va korporativ video uchun ideal.<br><br>
+                <strong>DaVinci Resolve</strong> - professional rang tuzatish, bir martalik to'lov, 
+                kuchli audio va effektlar. Kino, TV va premium kontent uchun eng yaxshi tanlov.
+            </div>
+        </div>
+        
+        <!-- Recommendation -->
+        <div class="recommendation">
+            <h3 class="recommendation-title">Video Montaj Uchun Qaysi Dasturni Tanlashingiz Kerak?</h3>
+            
+            <div class="recommendation-cards">
+                <div class="rec-card premiere-rec">
+                    <h3>
+                        <i class="fab fa-adobe"></i>
+                        Adobe Premiere Pro Tanlang Agar:
+                    </h3>
+                    <ul class="rec-list">
+                        <li>Adobe ekotizimi bilan ishlaysiz</li>
+                        <li>Yangi o'rganayotgan bo'lsangiz</li>
+                        <li>YouTube yoki reklama videolari uchun</li>
+                        <li>Keng pluginlar va template kerak</li>
+                        <li>Jamoa bilan Creative Cloud orqali ishlaysiz</li>
+                        <li>Tez va oddiy montaj kerak</li>
+                    </ul>
+                </div>
+                
+                <div class="rec-card resolve-rec">
+                    <h3>
+                        <i class="fas fa-film"></i>
+                        DaVinci Resolve Tanlang Agar:
+                    </h3>
+                    <ul class="rec-list">
+                        <li>Professional rang tuzatish kerak</li>
+                        <li>Bir martalik to'lovni afzal ko'rsangiz</li>
+                        <li>Kino yoki TV uchun ishlaysiz</li>
+                        <li>Bepul kuchli dastur kerak</li>
+                        <li>Audio montaj ham muhim bo'lsa</li>
+                        <li>Barcha jarayon bitta dasturda kerak</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        
+        
+        <!-- Footer -->
+        <div class="footer">
+            <p>© 2025-2026 Video Production Lab | Adobe Premiere Pro vs DaVinci Resolve | Professional test natijalari</p>
+            <p>Barcha testlar 2026 yil yanvar-fevral oylarida haqiqiy loyihalar bilan o'tkazilgan</p>
+            <div class="footer-links">
+                <a href="privacy-policy.html">Maxfiylik siyosati</a>
+                <a href="corrections.html">Tuzatishlar</a>
+                <a href="contact.html">Biz bilan bog'lanish</a>
+                <a href="ethics.html">Axloq qoidalari</a>
+               </div>
+        </div>
+    </div>
+
+    <script>
+        // Software cards hover effect
+        document.querySelectorAll('.software-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-12px)';
+                this.style.boxShadow = '0 25px 50px rgba(0, 0, 0, 0.5)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+                this.style.boxShadow = 'none';
+            });
+        });
+        
+        // Feature items hover
+        document.querySelectorAll('.feature-item').forEach(item => {
+            item.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateX(10px)';
+                this.style.background = 'rgba(255, 255, 255, 0.1)';
+            });
+            
+            item.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateX(0)';
+                this.style.background = 'rgba(255, 255, 255, 0.05)';
+            });
+        });
+        
+        // Pricing cards hover
+        document.querySelectorAll('.pricing-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'scale(1.05)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'scale(1)';
+            });
+        });
+        
+        // Performance bars animation
+        document.addEventListener('DOMContentLoaded', function() {
+            const perfBars = document.querySelectorAll('.perf-bar');
+            perfBars.forEach(bar => {
+                const width = bar.style.width;
+                bar.style.width = '0%';
+                
+                setTimeout(() => {
+                    bar.style.width = width;
+                    bar.style.transition = 'width 2s ease';
+                }, 500);
+            });
+        });
+        
+        // Workflow cards hover
+        document.querySelectorAll('.workflow-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-8px)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+            });
+        });
+        
+        // Rec cards hover
+        document.querySelectorAll('.rec-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-10px)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+            });
+        });
+        
+        // CTA button animation
+        const ctaButton = document.querySelector('.cta-button');
+        ctaButton.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-5px)';
+            this.style.boxShadow = '0 15px 40px rgba(153, 153, 255, 0.6)';
+        });
+        
+        ctaButton.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(0)';
+            this.style.boxShadow = '0 10px 30px rgba(153, 153, 255, 0.4)';
+        });
+        
+        // Rating badge animation
+        const ratingBadge = document.querySelector('.rating-badge');
+        ratingBadge.addEventListener('click', function() {
+            this.style.transform = 'scale(1.15) rotate(5deg)';
+            setTimeout(() => {
+                this.style.transform = 'scale(1) rotate(0deg)';
+            }, 300);
+        });
+        
+        // Add animations
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes float {
+                0%, 100% { transform: translateY(0px); }
+                50% { transform: translateY(-10px); }
+            }
+            
+            @keyframes pulse {
+                0% { transform: scale(1); }
+                50% { transform: scale(1.05); }
+                100% { transform: scale(1); }
+            }
+            
+            @keyframes glow {
+                0%, 100% { box-shadow: 0 0 20px rgba(153, 153, 255, 0.3); }
+                50% { box-shadow: 0 0 40px rgba(153, 153, 255, 0.6); }
+            }
+            
+            .software-icon {
+                animation: float 4s ease-in-out infinite;
+            }
+            
+            .ad-placeholder {
+                animation: pulse 5s infinite;
+            }
+            
+            .price {
+                animation: glow 3s infinite;
+            }
+        `;
+        document.head.appendChild(style);
+        
+        // Test project highlight
+        const testProject = document.querySelector('.test-project');
+        testProject.addEventListener('mouseenter', function() {
+            this.style.transform = 'scale(1.1)';
+            this.style.boxShadow = '0 0 25px rgba(204, 102, 255, 0.5)';
+        });
+        
+        testProject.addEventListener('mouseleave', function() {
+            this.style.transform = 'scale(1)';
+            this.style.boxShadow = 'none';
+        });
+        
+        // Adsense placeholders click effect
+        document.querySelectorAll('.ad-placeholder').forEach(ad => {
+            ad.addEventListener('click', function() {
+                this.style.transform = 'scale(0.98)';
+                setTimeout(() => {
+                    this.style.transform = 'scale(1)';
+                }, 200);
+            });
+        });
+        
+        // Workflow steps hover
+        document.querySelectorAll('.workflow-steps li').forEach(step => {
+            step.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateX(10px)';
+                this.style.background = 'rgba(255, 255, 255, 0.05)';
+            });
+            
+            step.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateX(0)';
+                this.style.background = '';
+            });
+        });
+    </script>
+</body>
+</html>
