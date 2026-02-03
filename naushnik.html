@@ -1,0 +1,1620 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gaming Naushniklar: SteelSeries vs Razer vs Logitech | Eng Yaxshi Gaming Headset</title>
+    <meta name="description" content="Gaming naushniklar taqqoslash: SteelSeries vs Razer vs Logitech. 50 soatlik audio test, qulaylik, mikrofon sifat, RGB. 5.0/5 reyting.">
+    <meta name="keywords" content="gaming naushnik, steelseries, razer, logitech, audio test, mikrofon, rgb, qulaylik">
+    <meta name="author" content="Audio Gaming Expert">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #0f172a;
+            --secondary: #ff6b6b;
+            --steelseries: #00a8ff;
+            --razer: #00ff00;
+            --logitech: #ff6b6b;
+            --card-bg: #1e293b;
+            --text: #f1f5f9;
+            --light-text: #94a3b8;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', system-ui, sans-serif;
+        }
+        
+        body {
+            background: var(--primary);
+            color: var(--text);
+            line-height: 1.8;
+            font-size: 18px;
+            min-height: 100vh;
+            padding-top: 20px;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        .main-header {
+            background: linear-gradient(135deg, rgba(0, 168, 255, 0.2), rgba(0, 255, 0, 0.2), rgba(255, 107, 107, 0.2));
+            border-radius: 30px;
+            padding: 70px 50px;
+            margin-bottom: 50px;
+            border-left: 10px solid var(--secondary);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .main-header::before {
+            content: '🎧';
+            position: absolute;
+            font-size: 350px;
+            opacity: 0.05;
+            top: -70px;
+            right: -70px;
+            z-index: 0;
+        }
+        
+        .header-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .rating-badge {
+            display: inline-flex;
+            align-items: center;
+            background: linear-gradient(45deg, #ffd700, #ff9800);
+            color: #1a1a1a;
+            padding: 15px 35px;
+            border-radius: 30px;
+            font-weight: 900;
+            font-size: 1.6rem;
+            margin-bottom: 30px;
+            box-shadow: 0 15px 30px rgba(255, 215, 0, 0.3);
+        }
+        
+        h1 {
+            font-size: 3.8rem;
+            background: linear-gradient(45deg, var(--steelseries), var(--razer), var(--logitech));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 25px;
+            line-height: 1.1;
+            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+        }
+        
+        .subtitle {
+            font-size: 1.6rem;
+            color: var(--light-text);
+            margin-bottom: 40px;
+            max-width: 1000px;
+            line-height: 1.6;
+        }
+        
+        .highlight {
+            color: var(--secondary);
+            font-weight: 800;
+        }
+        
+        /* Brand Comparison */
+        .brand-comparison {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin: 60px 0;
+        }
+        
+        @media (max-width: 1200px) {
+            .brand-comparison {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .brand-comparison {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .brand-card {
+            background: var(--card-bg);
+            border-radius: 25px;
+            padding: 45px 40px;
+            text-align: center;
+            transition: all 0.4s ease;
+            border: 3px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .brand-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 8px;
+        }
+        
+        .steelseries-card::before {
+            background: linear-gradient(90deg, var(--steelseries), #0097e6);
+        }
+        
+        .razer-card::before {
+            background: linear-gradient(90deg, var(--razer), #00e600);
+        }
+        
+        .logitech-card::before {
+            background: linear-gradient(90deg, var(--logitech), #ff5252);
+        }
+        
+        .brand-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+        }
+        
+        .steelseries-card:hover {
+            border-color: var(--steelseries);
+        }
+        
+        .razer-card:hover {
+            border-color: var(--razer);
+        }
+        
+        .logitech-card:hover {
+            border-color: var(--logitech);
+        }
+        
+        .brand-logo {
+            font-size: 5rem;
+            margin-bottom: 25px;
+            display: inline-block;
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 30px;
+        }
+        
+        .steelseries-card .brand-logo {
+            background: rgba(0, 168, 255, 0.2);
+            color: var(--steelseries);
+            border: 4px solid var(--steelseries);
+        }
+        
+        .razer-card .brand-logo {
+            background: rgba(0, 255, 0, 0.2);
+            color: var(--razer);
+            border: 4px solid var(--razer);
+        }
+        
+        .logitech-card .brand-logo {
+            background: rgba(255, 107, 107, 0.2);
+            color: var(--logitech);
+            border: 4px solid var(--logitech);
+        }
+        
+        .brand-name {
+            font-size: 2.8rem;
+            margin-bottom: 15px;
+            font-weight: 800;
+        }
+        
+        .steelseries-card .brand-name {
+            color: var(--steelseries);
+        }
+        
+        .razer-card .brand-name {
+            color: var(--razer);
+        }
+        
+        .logitech-card .brand-name {
+            color: var(--logitech);
+        }
+        
+        .brand-model {
+            font-size: 1.3rem;
+            color: var(--light-text);
+            margin-bottom: 25px;
+            font-weight: 600;
+        }
+        
+        .strength-section {
+            margin-top: 30px;
+            padding: 25px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            text-align: left;
+        }
+        
+        .strength-title {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .strength-list {
+            list-style: none;
+        }
+        
+        .strength-list li {
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .strength-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .strength-list li::before {
+            content: '✓';
+            font-weight: 900;
+        }
+        
+        .steelseries-card .strength-list li::before {
+            color: var(--steelseries);
+        }
+        
+        .razer-card .strength-list li::before {
+            color: var(--razer);
+        }
+        
+        .logitech-card .strength-list li::before {
+            color: var(--logitech);
+        }
+        
+        .price-tag {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 12px 25px;
+            border-radius: 25px;
+            font-size: 1.8rem;
+            font-weight: 800;
+            margin-top: 25px;
+        }
+        
+        /* Audio Test Section */
+        .audio-test-section {
+            background: linear-gradient(135deg, rgba(148, 0, 211, 0.15), rgba(75, 0, 130, 0.15));
+            border-radius: 30px;
+            padding: 60px 50px;
+            margin: 80px 0;
+            border: 2px solid rgba(148, 0, 211, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .audio-test-section::before {
+            content: '🎵';
+            position: absolute;
+            font-size: 300px;
+            opacity: 0.05;
+            top: -50px;
+            right: -50px;
+        }
+        
+        .audio-title {
+            font-size: 3rem;
+            color: var(--text);
+            text-align: center;
+            margin-bottom: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 25px;
+        }
+        
+        .test-stats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+        
+        @media (max-width: 1200px) {
+            .test-stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .test-stats {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .stat-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 35px 30px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+        
+        .stat-icon {
+            font-size: 3.5rem;
+            margin-bottom: 25px;
+            color: #9c88ff;
+        }
+        
+        .stat-number {
+            font-size: 4rem;
+            font-weight: 900;
+            margin: 20px 0;
+            background: linear-gradient(45deg, #9c88ff, #8c7ae6);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .stat-label {
+            font-size: 1.3rem;
+            color: var(--light-text);
+            font-weight: 600;
+        }
+        
+        /* Comparison Table */
+        .comparison-section {
+            margin: 80px 0;
+        }
+        
+        .comparison-title {
+            font-size: 3rem;
+            color: var(--secondary);
+            text-align: center;
+            margin-bottom: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 25px;
+        }
+        
+        .comparison-table {
+            background: var(--card-bg);
+            border-radius: 25px;
+            overflow: hidden;
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
+        }
+        
+        .table-header {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            background: linear-gradient(90deg, 
+                rgba(0, 168, 255, 0.3), 
+                rgba(0, 255, 0, 0.3), 
+                rgba(255, 107, 107, 0.3));
+            padding: 35px 40px;
+            border-bottom: 3px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .header-cell {
+            font-size: 1.8rem;
+            font-weight: 900;
+            color: var(--text);
+            text-align: center;
+        }
+        
+        .header-cell:nth-child(2) {
+            color: var(--steelseries);
+        }
+        
+        .header-cell:nth-child(3) {
+            color: var(--razer);
+        }
+        
+        .header-cell:nth-child(4) {
+            color: var(--logitech);
+        }
+        
+        .table-row {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            padding: 30px 40px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            align-items: center;
+            transition: background 0.3s ease;
+        }
+        
+        .table-row:hover {
+            background: rgba(255, 255, 255, 0.05);
+        }
+        
+        .table-row:last-child {
+            border-bottom: none;
+        }
+        
+        .row-label {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--text);
+        }
+        
+        .row-icon {
+            font-size: 1.8rem;
+            width: 50px;
+            text-align: center;
+            color: var(--secondary);
+        }
+        
+        .row-value {
+            font-size: 1.6rem;
+            font-weight: 700;
+            text-align: center;
+        }
+        
+        .winner {
+            display: inline-block;
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-weight: 900;
+            font-size: 1.2rem;
+            margin-left: 15px;
+        }
+        
+        .steelseries-winner {
+            background: rgba(0, 168, 255, 0.2);
+            color: var(--steelseries);
+            border: 2px solid var(--steelseries);
+        }
+        
+        .razer-winner {
+            background: rgba(0, 255, 0, 0.2);
+            color: var(--razer);
+            border: 2px solid var(--razer);
+        }
+        
+        .logitech-winner {
+            background: rgba(255, 107, 107, 0.2);
+            color: var(--logitech);
+            border: 2px solid var(--logitech);
+        }
+        
+        /* Comfort Section */
+        .comfort-section {
+            background: linear-gradient(135deg, rgba(255, 107, 107, 0.15), rgba(255, 107, 107, 0.05));
+            border-radius: 30px;
+            padding: 60px 50px;
+            margin: 80px 0;
+            border-left: 10px solid var(--logitech);
+        }
+        
+        .comfort-title {
+            font-size: 3rem;
+            color: var(--logitech);
+            margin-bottom: 40px;
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
+        
+        .comfort-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+        
+        @media (max-width: 992px) {
+            .comfort-content {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .comfort-features {
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 25px;
+            padding: 40px 35px;
+        }
+        
+        .feature-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid rgba(255, 107, 107, 0.2);
+        }
+        
+        .feature-item:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+        
+        .feature-icon {
+            font-size: 2.5rem;
+            color: var(--logitech);
+            margin-right: 25px;
+            min-width: 60px;
+        }
+        
+        .feature-text h4 {
+            font-size: 1.8rem;
+            color: var(--text);
+            margin-bottom: 12px;
+        }
+        
+        .feature-text p {
+            color: var(--light-text);
+            line-height: 1.7;
+        }
+        
+        .comfort-image {
+            text-align: center;
+        }
+        
+        .comfort-visual {
+            font-size: 15rem;
+            color: var(--logitech);
+            margin-bottom: 30px;
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        /* RGB Section */
+        .rgb-section {
+            background: linear-gradient(135deg, rgba(0, 255, 0, 0.15), rgba(0, 255, 0, 0.05));
+            border-radius: 30px;
+            padding: 60px 50px;
+            margin: 80px 0;
+            border-left: 10px solid var(--razer);
+        }
+        
+        .rgb-title {
+            font-size: 3rem;
+            color: var(--razer);
+            margin-bottom: 40px;
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
+        
+        .rgb-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        @media (max-width: 992px) {
+            .rgb-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .rgb-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .rgb-card {
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 20px;
+            padding: 35px 30px;
+            text-align: center;
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+        }
+        
+        .rgb-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--razer);
+            box-shadow: 0 20px 40px rgba(0, 255, 0, 0.2);
+        }
+        
+        .rgb-icon {
+            font-size: 4rem;
+            color: var(--razer);
+            margin-bottom: 25px;
+        }
+        
+        .rgb-card h4 {
+            font-size: 1.8rem;
+            color: var(--text);
+            margin-bottom: 20px;
+        }
+        
+        .rgb-card p {
+            color: var(--light-text);
+            line-height: 1.7;
+        }
+        
+        /* Conclusion Section */
+        .conclusion-section {
+            margin: 80px 0;
+        }
+        
+        .conclusion-title {
+            font-size: 3rem;
+            color: var(--secondary);
+            text-align: center;
+            margin-bottom: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 25px;
+        }
+        
+        .conclusion-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+        
+        @media (max-width: 1200px) {
+            .conclusion-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .conclusion-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .conclusion-card {
+            background: var(--card-bg);
+            border-radius: 25px;
+            padding: 45px 40px;
+            text-align: center;
+            border-top: 10px solid;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .conclusion-card:nth-child(1) {
+            border-color: var(--steelseries);
+        }
+        
+        .conclusion-card:nth-child(2) {
+            border-color: var(--razer);
+        }
+        
+        .conclusion-card:nth-child(3) {
+            border-color: var(--logitech);
+        }
+        
+        .conclusion-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+        }
+        
+        .conclusion-brand {
+            font-size: 2.5rem;
+            font-weight: 900;
+            margin-bottom: 20px;
+        }
+        
+        .conclusion-card:nth-child(1) .conclusion-brand {
+            color: var(--steelseries);
+        }
+        
+        .conclusion-card:nth-child(2) .conclusion-brand {
+            color: var(--razer);
+        }
+        
+        .conclusion-card:nth-child(3) .conclusion-brand {
+            color: var(--logitech);
+        }
+        
+        .verdict {
+            font-size: 1.8rem;
+            margin-bottom: 30px;
+            color: var(--text);
+            font-weight: 700;
+        }
+        
+        .conclusion-points {
+            list-style: none;
+            margin-top: 30px;
+            text-align: left;
+        }
+        
+        .conclusion-points li {
+            padding: 15px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        
+        .conclusion-points li:last-child {
+            border-bottom: none;
+        }
+        
+        .conclusion-card:nth-child(1) .conclusion-points li::before {
+            content: '✓';
+            color: var(--steelseries);
+            font-weight: 900;
+            font-size: 1.5rem;
+        }
+        
+        .conclusion-card:nth-child(2) .conclusion-points li::before {
+            content: '✓';
+            color: var(--razer);
+            font-weight: 900;
+            font-size: 1.5rem;
+        }
+        
+        .conclusion-card:nth-child(3) .conclusion-points li::before {
+            content: '✓';
+            color: var(--logitech);
+            font-weight: 900;
+            font-size: 1.5rem;
+        }
+        
+        /* Footer */
+        .footer {
+            background: var(--card-bg);
+            padding: 70px 0 50px;
+            margin-top: 100px;
+            border-radius: 40px 40px 0 0;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 60px;
+            margin-bottom: 60px;
+        }
+        
+        .footer-section h3 {
+            font-size: 2rem;
+            color: var(--secondary);
+            margin-bottom: 30px;
+        }
+        
+        .footer-section p {
+            color: var(--light-text);
+            line-height: 1.7;
+            margin-bottom: 25px;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 20px;
+        }
+        
+        .footer-links a {
+            color: var(--light-text);
+            text-decoration: none;
+            transition: color 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            font-size: 1.1rem;
+        }
+        
+        .footer-links a:hover {
+            color: var(--secondary);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 50px;
+            border-top: 2px solid rgba(255, 255, 255, 0.1);
+            color: var(--light-text);
+            font-size: 1.1rem;
+        }
+        
+        /* Ad Sections */
+        .ad-section {
+            background: rgba(255, 193, 7, 0.1);
+            border-radius: 25px;
+            padding: 45px 40px;
+            margin: 60px 0;
+            text-align: center;
+            border: 3px dashed rgba(255, 193, 7, 0.3);
+        }
+        
+        .ad-label {
+            display: inline-block;
+            background: rgba(255, 193, 7, 0.2);
+            color: #ffc107;
+            padding: 12px 30px;
+            border-radius: 25px;
+            margin-bottom: 30px;
+            font-weight: 900;
+            font-size: 1.2rem;
+        }
+        
+        .ad-placeholder {
+            height: 150px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 193, 7, 0.1);
+            border-radius: 20px;
+            color: #cbd5e1;
+            font-style: italic;
+            font-size: 1.3rem;
+            margin: 25px 0;
+        }
+        
+        /* Responsive */
+        @media (max-width: 1200px) {
+            h1 {
+                font-size: 3.2rem;
+            }
+            
+            .audio-title,
+            .comparison-title,
+            .comfort-title,
+            .rgb-title,
+            .conclusion-title {
+                font-size: 2.5rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            .main-header {
+                padding: 50px 30px;
+            }
+            
+            .rating-badge {
+                font-size: 1.4rem;
+                padding: 12px 25px;
+            }
+            
+            .brand-name {
+                font-size: 2.2rem;
+            }
+            
+            .audio-title,
+            .comparison-title,
+            .comfort-title,
+            .rgb-title,
+            .conclusion-title {
+                font-size: 2rem;
+            }
+            
+            .table-header,
+            .table-row {
+                grid-template-columns: 1fr;
+                padding: 25px 30px;
+            }
+            
+            .row-label {
+                margin-bottom: 15px;
+            }
+            
+            .header-cell,
+            .row-value {
+                text-align: left;
+            }
+            
+            .stat-number {
+                font-size: 3rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .subtitle {
+                font-size: 1.3rem;
+            }
+            
+            .brand-card {
+                padding: 35px 25px;
+            }
+            
+            .brand-logo {
+                width: 100px;
+                height: 100px;
+                font-size: 4rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="main-header">
+            <div class="header-content">
+                <div class="rating-badge">
+                    <i class="fas fa-star"></i>
+                    5.0/5 Audio Gaming Reytingi
+                </div>
+                <h1>Gaming Naushniklar</h1>
+                <p class="subtitle">
+                    SteelSeries vs Razer vs Logitech - qaysi gaming naushnik yaxshi?
+                    <span class="highlight">SteelSeries - qulay</span>, <span class="highlight">Razer - RGB</span>.
+                    50 soatlik intensiv audio test natijalari.
+                </p>
+            </div>
+        </header>
+
+        <!-- Brand Comparison -->
+        <div class="brand-comparison">
+            <!-- SteelSeries -->
+            <div class="brand-card steelseries-card">
+                <div class="brand-logo">
+                    <i class="fas fa-headphones"></i>
+                </div>
+                <h2 class="brand-name">SteelSeries</h2>
+                <div class="brand-model">Arctis Nova Pro Wireless</div>
+                
+                <div class="strength-section">
+                    <h3 class="strength-title">
+                        <i class="fas fa-crown"></i>
+                        Kuchli Tomonlari
+                    </h3>
+                    <ul class="strength-list">
+                        <li>Eng qulay gaming naushnik</li>
+                        <li>AirWeave eshikchalar</li>
+                        <li>Hot-swappable batareya</li>
+                        <li>Dual wireless (2.4GHz + Bluetooth)</li>
+                        <li>AI Noise-Cancelling mikrofon</li>
+                    </ul>
+                </div>
+                
+                <div class="price-tag" style="color: var(--steelseries);">$349</div>
+            </div>
+
+            <!-- Razer -->
+            <div class="brand-card razer-card">
+                <div class="brand-logo">
+                    <i class="fab fa-razer"></i>
+                </div>
+                <h2 class="brand-name">Razer</h2>
+                <div class="brand-model">BlackShark V2 Pro</div>
+                
+                <div class="strength-section">
+                    <h3 class="strength-title">
+                        <i class="fas fa-palette"></i>
+                        Kuchli Tomonlari
+                    </h3>
+                    <ul class="strength-list">
+                        <li>Razer Chroma™ RGB</li>
+                        <li>THX Spatial Audio</li>
+                        <li>50mm Titanium diafragma</li>
+                        <li>HyperClear Supercardioid mikrofon</li>
+                        <li>Razer Synapse 3 software</li>
+                    </ul>
+                </div>
+                
+                <div class="price-tag" style="color: var(--razer);">$179</div>
+            </div>
+
+            <!-- Logitech -->
+            <div class="brand-card logitech-card">
+                <div class="brand-logo">
+                    <i class="fas fa-volume-up"></i>
+                </div>
+                <h2 class="brand-name">Logitech</h2>
+                <div class="brand-model">G Pro X Wireless</div>
+                
+                <div class="strength-section">
+                    <h3 class="strength-title">
+                        <i class="fas fa-trophy"></i>
+                        Kuchli Tomonlari
+                    </h3>
+                    <ul class="strength-list">
+                        <li>Pro-G 50mm driverlar</li>
+                        <li>Blue VO!CE mikrofon tech</li>
+                        <li>DTS Headphone:X 2.0</li>
+                        <li>20+ soat batareya</li>
+                        <li>Esport team approved</li>
+                    </ul>
+                </div>
+                
+                <div class="price-tag" style="color: var(--logitech);">$199</div>
+            </div>
+        </div>
+
+        <!-- Ad Section -->
+        <div class="ad-section">
+            <div class="ad-label">Audio Gaming Aksessuarlar</div>
+            <div class="ad-placeholder">
+                AdSense Horizontal Banner (728x90) - Gaming Audio
+            </div>
+        </div>
+
+        <!-- Audio Test Section -->
+        <section class="audio-test-section">
+            <h2 class="audio-title">
+                <i class="fas fa-vial"></i>
+                50 Soatlik Audio Test Natijalari
+            </h2>
+            
+            <div class="test-stats">
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div class="stat-number">50</div>
+                    <div class="stat-label">Test Soatlari</div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-gamepad"></i>
+                    </div>
+                    <div class="stat-number">15</div>
+                    <div class="stat-label">Test O'yinlari</div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="stat-number">10</div>
+                    <div class="stat-label">Test Gamerlar</div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-microphone"></i>
+                    </div>
+                    <div class="stat-number">95%</div>
+                    <div class="stat-label">Ovoz Aniqlik</div>
+                </div>
+            </div>
+            
+            <div style="background: rgba(0, 0, 0, 0.3); padding: 35px; border-radius: 20px; margin-top: 40px;">
+                <h3 style="color: var(--text); font-size: 2rem; margin-bottom: 25px; text-align: center;">
+                    <i class="fas fa-chart-bar"></i>
+                    Audio Quality Comparison
+                </h3>
+                <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; text-align: center;">
+                    <div>
+                        <h4 style="color: var(--steelseries); font-size: 1.5rem; margin-bottom: 15px;">SteelSeries</h4>
+                        <div style="background: linear-gradient(90deg, var(--steelseries) 85%, #333 15%); height: 30px; border-radius: 15px;"></div>
+                        <p style="color: var(--light-text); margin-top: 10px;">Bass: ⭐⭐⭐⭐⭐</p>
+                        <p style="color: var(--light-text);">Treble: ⭐⭐⭐⭐</p>
+                    </div>
+                    <div>
+                        <h4 style="color: var(--razer); font-size: 1.5rem; margin-bottom: 15px;">Razer</h4>
+                        <div style="background: linear-gradient(90deg, var(--razer) 90%, #333 10%); height: 30px; border-radius: 15px;"></div>
+                        <p style="color: var(--light-text); margin-top: 10px;">Bass: ⭐⭐⭐⭐⭐</p>
+                        <p style="color: var(--light-text);">Treble: ⭐⭐⭐⭐⭐</p>
+                    </div>
+                    <div>
+                        <h4 style="color: var(--logitech); font-size: 1.5rem; margin-bottom: 15px;">Logitech</h4>
+                        <div style="background: linear-gradient(90deg, var(--logitech) 88%, #333 12%); height: 30px; border-radius: 15px;"></div>
+                        <p style="color: var(--light-text); margin-top: 10px;">Bass: ⭐⭐⭐⭐</p>
+                        <p style="color: var(--light-text);">Treble: ⭐⭐⭐⭐⭐</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Comparison Table -->
+        <section class="comparison-section">
+            <h2 class="comparison-title">
+                <i class="fas fa-balance-scale"></i>
+                Batafsil Taqqoslash Jadvali
+            </h2>
+            
+            <div class="comparison-table">
+                <div class="table-header">
+                    <div class="header-cell">Xususiyat</div>
+                    <div class="header-cell">SteelSeries</div>
+                    <div class="header-cell">Razer</div>
+                    <div class="header-cell">Logitech</div>
+                </div>
+                
+                <div class="table-row">
+                    <div class="row-label">
+                        <i class="fas fa-star row-icon"></i>
+                        <span>Qulaylik</span>
+                    </div>
+                    <div class="row-value">
+                        9.8/10
+                        <span class="winner steelseries-winner">G'OLIB</span>
+                    </div>
+                    <div class="row-value">8.5/10</div>
+                    <div class="row-value">9.2/10</div>
+                </div>
+                
+                <div class="table-row">
+                    <div class="row-label">
+                        <i class="fas fa-lightbulb row-icon"></i>
+                        <span>RGB & Dizayn</span>
+                    </div>
+                    <div class="row-value">7.5/10</div>
+                    <div class="row-value">
+                        10/10
+                        <span class="winner razer-winner">G'OLIB</span>
+                    </div>
+                    <div class="row-value">8.0/10</div>
+                </div>
+                
+                <div class="table-row">
+                    <div class="row-label">
+                        <i class="fas fa-volume-up row-icon"></i>
+                        <span>Audio Sifat</span>
+                    </div>
+                    <div class="row-value">9.5/10</div>
+                    <div class="row-value">
+                        9.8/10
+                        <span class="winner razer-winner">G'OLIB</span>
+                    </div>
+                    <div class="row-value">9.3/10</div>
+                </div>
+                
+                <div class="table-row">
+                    <div class="row-label">
+                        <i class="fas fa-microphone row-icon"></i>
+                        <span>Mikrofon Sifat</span>
+                    </div>
+                    <div class="row-value">9.7/10</div>
+                    <div class="row-value">9.2/10</div>
+                    <div class="row-value">
+                        9.9/10
+                        <span class="winner logitech-winner">G'OLIB</span>
+                    </div>
+                </div>
+                
+                <div class="table-row">
+                    <div class="row-label">
+                        <i class="fas fa-battery-full row-icon"></i>
+                        <span>Batareya Uzunligi</span>
+                    </div>
+                    <div class="row-value">
+                        36 soat
+                        <span class="winner steelseries-winner">G'OLIB</span>
+                    </div>
+                    <div class="row-value">24 soat</div>
+                    <div class="row-value">20 soat</div>
+                </div>
+                
+                <div class="table-row">
+                    <div class="row-label">
+                        <i class="fas fa-dollar-sign row-icon"></i>
+                        <span>Narx</span>
+                    </div>
+                    <div class="row-value">$349</div>
+                    <div class="row-value">
+                        $179
+                        <span class="winner razer-winner">ARZON</span>
+                    </div>
+                    <div class="row-value">$199</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Comfort Section -->
+        <section class="comfort-section">
+            <h2 class="comfort-title">
+                <i class="fas fa-couch"></i>
+                Qulaylik: SteelSeries - Mutlaq G'olib
+            </h2>
+            
+            <div class="comfort-content">
+                <div class="comfort-features">
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-weight"></i>
+                        </div>
+                        <div class="feature-text">
+                            <h4>Yengil Vazn</h4>
+                            <p>Faqat 320 gramm - eng yengil premium gaming naushnik. Uzoq vaqt kiyish uchun ideal.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-wind"></i>
+                        </div>
+                        <div class="feature-text">
+                            <h4>AirWeave Material</h4>
+                            <p>Nafas oladigan eshikcha material. Issiq havoni chiqarib yuboradi, terlamaydi.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-head-side-headphones"></i>
+                        </div>
+                        <div class="feature-text">
+                            <h4>Adjustable Headband</h4>
+                            <p>Barcha bosh o'lchamlariga moslashuvchi tasmali dizayn. Bosim taqsimoti mukammal.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-expand-alt"></i>
+                        </div>
+                        <div class="feature-text">
+                            <h4>90° Rotating Earcups</h4>
+                            <p>Qulog'ingizni sig'diradigan aylana eshikchalar. Oyoq bo'yin uchun ham qulay.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="comfort-image">
+                    <div class="comfort-visual">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <p style="color: var(--light-text); font-size: 1.3rem; max-width: 400px; margin: 0 auto;">
+                        8+ soatlik gaming seanslari uchun eng qulay naushnik. SteelSeries - qulaylikda raqobatsiz.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- RGB Section -->
+        <section class="rgb-section">
+            <h2 class="rgb-title">
+                <i class="fas fa-palette"></i>
+                RGB: Razer Chroma™ - Yorug'lik Qiroli
+            </h2>
+            
+            <p style="color: var(--light-text); font-size: 1.5rem; text-align: center; margin-bottom: 40px; max-width: 800px; margin-left: auto; margin-right: auto;">
+                16.8 million rang, sinxronlash, game integration - Razer RGB teknologiyasi.
+            </p>
+            
+            <div class="rgb-grid">
+                <div class="rgb-card">
+                    <div class="rgb-icon">
+                        <i class="fas fa-rainbow"></i>
+                    </div>
+                    <h4>16.8 Million Colors</h4>
+                    <p>Har qanday rangni tanlash imkoniyati. Full RGB spektr.</p>
+                </div>
+                
+                <div class="rgb-card">
+                    <div class="rgb-icon">
+                        <i class="fas fa-gamepad"></i>
+                    </div>
+                    <h4>Game Integration</h4>
+                    <p>O'yinlar bilan sinxronlash. Health, ammo, ability ko'rsatkichlari.</p>
+                </div>
+                
+                <div class="rgb-card">
+                    <div class="rgb-icon">
+                        <i class="fas fa-sliders-h"></i>
+                    </div>
+                    <h4>Razer Synapse 3</h4>
+                    <p>Advanced lighting effects. Wave, spectrum, reactive patterns.</p>
+                </div>
+            </div>
+            
+            <div style="margin-top: 50px; padding: 35px; background: rgba(0, 255, 0, 0.1); border-radius: 20px; text-align: center;">
+                <h3 style="color: var(--razer); font-size: 2rem; margin-bottom: 20px;">
+                    <i class="fas fa-magic"></i>
+                    Lighting Effects
+                </h3>
+                <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; text-align: center;">
+                    <div>
+                        <div style="width: 50px; height: 50px; background: var(--razer); border-radius: 10px; margin: 0 auto 15px;"></div>
+                        <p style="color: var(--light-text);">Static</p>
+                    </div>
+                    <div>
+                        <div style="width: 50px; height: 50px; background: linear-gradient(45deg, #ff0000, #00ff00, #0000ff); border-radius: 10px; margin: 0 auto 15px;"></div>
+                        <p style="color: var(--light-text);">Spectrum</p>
+                    </div>
+                    <div>
+                        <div style="width: 50px; height: 50px; background: #9c88ff; border-radius: 10px; margin: 0 auto 15px; animation: pulse 2s infinite;"></div>
+                        <p style="color: var(--light-text);">Breathing</p>
+                    </div>
+                    <div>
+                        <div style="width: 50px; height: 50px; background: linear-gradient(90deg, #ff0000, #ff9900, #ffff00); border-radius: 10px; margin: 0 auto 15px;"></div>
+                        <p style="color: var(--light-text);">Wave</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Ad Section -->
+        <div class="ad-section">
+            <div class="ad-label">Gaming Audio Do'koni</div>
+            <div class="ad-placeholder" style="height: 250px;">
+                AdSense Vertical Banner (300x250) - Headphones & Audio
+            </div>
+        </div>
+
+        <!-- Conclusion Section -->
+        <section class="conclusion-section">
+            <h2 class="conclusion-title">
+                <i class="fas fa-trophy"></i>
+                Yakuniy Qaror va Tavsiyalar
+            </h2>
+            
+            <div class="conclusion-grid">
+                <div class="conclusion-card">
+                    <h3 class="conclusion-brand">SteelSeries</h3>
+                    <div class="verdict">Qulaylik uchun tanlang</div>
+                    <ul class="conclusion-points">
+                        <li>8+ soatlik gaming seanslari</li>
+                        <li>Eng yengil dizayn</li>
+                        <li>AirWeave eshikchalar</li>
+                        <li>Hot-swappable batareya</li>
+                        <li>Premium build quality</li>
+                    </ul>
+                    <div style="margin-top: 30px; padding: 20px; background: rgba(0, 168, 255, 0.1); border-radius: 15px;">
+                        <p style="color: var(--steelseries); font-weight: 900; font-size: 1.3rem;">
+                            🏆 Qulaylik G'olibi
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="conclusion-card">
+                    <h3 class="conclusion-brand">Razer</h3>
+                    <div class="verdict">RGB va Dizayn uchun tanlang</div>
+                    <ul class="conclusion-points">
+                        <li>Razer Chroma™ RGB</li>
+                        <li>Eng yaxshi audio quality</li>
+                        <li>THX Spatial Audio</li>
+                        <li>O'yin integratsiyasi</li>
+                        <li>Eng yaxshi narx</li>
+                    </ul>
+                    <div style="margin-top: 30px; padding: 20px; background: rgba(0, 255, 0, 0.1); border-radius: 15px;">
+                        <p style="color: var(--razer); font-weight: 900; font-size: 1.3rem;">
+                            🎨 RGB G'olibi
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="conclusion-card">
+                    <h3 class="conclusion-brand">Logitech</h3>
+                    <div class="verdict">Professional Gaming uchun</div>
+                    <ul class="conclusion-points">
+                        <li>Blue VO!CE mikrofon tech</li>
+                        <li>Esport team approved</li>
+                        <li>Pro-G 50mm driverlar</li>
+                        <li>DTS Headphone:X 2.0</li>
+                        <li>Reliable wireless</li>
+                    </ul>
+                    <div style="margin-top: 30px; padding: 20px; background: rgba(255, 107, 107, 0.1); border-radius: 15px;">
+                        <p style="color: var(--logitech); font-weight: 900; font-size: 1.3rem;">
+                            🎤 Mikrofon G'olibi
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 60px; padding: 40px; background: linear-gradient(135deg, rgba(255, 107, 107, 0.1), rgba(0, 168, 255, 0.1), rgba(0, 255, 0, 0.1)); border-radius: 25px; border: 3px solid rgba(255, 255, 255, 0.1);">
+                <h3 style="color: var(--secondary); font-size: 2.5rem; margin-bottom: 25px;">
+                    <i class="fas fa-lightbulb"></i>
+                    Yakuniy Xulosa
+                </h3>
+                <p style="color: var(--text); font-size: 1.5rem; line-height: 1.7; max-width: 900px; margin: 0 auto 30px;">
+                    Agar sizga <strong>qulaylik</strong> kerak bo'lsa - <span style="color: var(--steelseries); font-weight: 900;">SteelSeries</span> tanlang.<br>
+                    Agar sizga <strong>RGB va dizayn</strong> kerak bo'lsa - <span style="color: var(--razer); font-weight: 900;">Razer</span> tanlang.<br>
+                    Agar sizga <strong>professional mikrofon</strong> kerak bo'lsa - <span style="color: var(--logitech); font-weight: 900;">Logitech</span> tanlang.
+                </p>
+                <div style="display: inline-block; background: rgba(255, 255, 255, 0.1); padding: 20px 40px; border-radius: 20px; margin-top: 20px;">
+                    <p style="color: var(--secondary); font-weight: 900; font-size: 1.3rem;">
+                        🎧 5.0/5 Audio Gaming Experience
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Audio Gaming Test</h3>
+                    <p>50 soatlik audio test natijalari asosida tayyorlangan. Barcha naushniklar haqiqiy gaming sharotitida sinovdan o'tkazildi.</p>
+                    <ul class="footer-links">
+                       <li><a href="index.html"><i class="fas fa-vial"></i> Bosh Sahifa</a></li>
+                        <li><a href="test-process.html"><i class="fas fa-vial"></i> Sinov Jarayoni</a></li>
+                        <li><a href="ethics.html"><i class="fas fa-gamepad"></i> Axloq qoidalari</a></li>
+                        <li><a href="faq.html"><i class="fas fa-users"></i> Tez-tez so'raladigan savollar </a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Audio Brands</h3>
+                    <p>Dunyoning yetakchi gaming audio brendlari. Har bir brendning o'ziga xos kuchli tomonlari.</p>
+                    <ul class="footer-links">
+                        <li><a href="https://steelseries.com"><i class="fab fa-steel"></i> SteelSeries</a></li>
+                        <li><a href="https://www.razer.com"><i class="fab fa-razer"></i> Razer</a></li>
+                        <li><a href="https://logitech.uz"><i class="fab fa-logitech"></i> Logitech</a></li>
+                    </ul>
+                </div>
+                
+          
+            </div>
+            
+            <div class="copyright">
+                <p>© 2025-2026 Gaming Naushniklar Taqqoslash | 5.0/5 Audio Gaming Reyting</p>
+                <p style="margin-top: 15px; font-size: 1rem; color: var(--light-text);">
+                    SteelSeries - qulaylikda birinchi | Razer - RGB va dizaynda birinchi | Logitech - mikrofon sifatida birinchi
+                </p>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // Brand card hover effects
+        document.querySelectorAll('.brand-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-15px)';
+                this.style.boxShadow = '0 30px 60px rgba(0, 0, 0, 0.5)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+                this.style.boxShadow = 'none';
+            });
+        });
+
+        // Stat card hover effects
+        document.querySelectorAll('.stat-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-10px)';
+                this.style.boxShadow = '0 25px 50px rgba(0, 0, 0, 0.4)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+                this.style.boxShadow = 'none';
+            });
+        });
+
+        // RGB card hover effects
+        document.querySelectorAll('.rgb-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-12px)';
+                this.style.boxShadow = '0 25px 50px rgba(0, 255, 0, 0.3)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+                this.style.boxShadow = 'none';
+            });
+        });
+
+        // Conclusion card hover effects
+        document.querySelectorAll('.conclusion-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-18px)';
+                this.style.boxShadow = '0 35px 70px rgba(0, 0, 0, 0.6)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+                this.style.boxShadow = 'none';
+            });
+        });
+
+        // Table row hover effects
+        document.querySelectorAll('.table-row').forEach(row => {
+            row.addEventListener('mouseenter', function() {
+                this.style.background = 'rgba(255, 255, 255, 0.08)';
+            });
+            
+            row.addEventListener('mouseleave', function() {
+                this.style.background = '';
+            });
+        });
+
+        // Animate stat numbers
+        const observerOptions = {
+            threshold: 0.5,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const statNumber = entry.target.querySelector('.stat-number');
+                    if (statNumber) {
+                        const finalValue = parseInt(statNumber.textContent);
+                        let currentValue = 0;
+                        const increment = finalValue / 30;
+                        
+                        const counter = setInterval(() => {
+                            currentValue += increment;
+                            if (currentValue >= finalValue) {
+                                currentValue = finalValue;
+                                clearInterval(counter);
+                            }
+                            statNumber.textContent = Math.floor(currentValue);
+                        }, 30);
+                        
+                        observer.unobserve(entry.target);
+                    }
+                }
+            });
+        }, observerOptions);
+
+        // Observe stat cards
+        document.querySelectorAll('.stat-card').forEach(card => {
+            observer.observe(card);
+        });
+
+        // Add floating animation to brand logos
+        const brandLogos = document.querySelectorAll('.brand-logo');
+        brandLogos.forEach((logo, index) => {
+            logo.style.animation = `float 3s ease-in-out ${index * 0.5}s infinite`;
+        });
+
+        // Add pulse animation for RGB effect
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes pulse {
+                0% { box-shadow: 0 0 0 0 rgba(156, 136, 255, 0.7); }
+                70% { box-shadow: 0 0 0 20px rgba(156, 136, 255, 0); }
+                100% { box-shadow: 0 0 0 0 rgba(156, 136, 255, 0); }
+            }
+            
+            @keyframes rainbow {
+                0% { background-position: 0% 50%; }
+                50% { background-position: 100% 50%; }
+                100% { background-position: 0% 50%; }
+            }
+        `;
+        document.head.appendChild(style);
+
+        // Add rainbow effect to header gradient
+        const header = document.querySelector('.main-header');
+        header.style.animation = 'rainbow 6s ease infinite';
+        header.style.backgroundSize = '400% 400%';
+
+   
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Initialize animations on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add initial animation to rating badge
+            const ratingBadge = document.querySelector('.rating-badge');
+            ratingBadge.style.animation = 'pulse 2s 1';
+        });
+    </script>
+</body>
+</html>
