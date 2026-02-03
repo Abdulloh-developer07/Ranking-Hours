@@ -1,0 +1,1146 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Microsoft Office vs Google Workspace | Ofis Dasturlari Taqqoslash</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', system-ui, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: #e2e8f0;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .comparison-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 25px;
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            overflow: hidden;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
+        }
+        
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, #d44638 0%, #4285f4 100%);
+            padding: 50px 40px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header::before {
+            content: '📊';
+            position: absolute;
+            font-size: 180px;
+            opacity: 0.1;
+            top: -30px;
+            right: -30px;
+        }
+        
+        .main-title {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            background: linear-gradient(45deg, #fff, #fbbc05);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .subtitle {
+            font-size: 1.3rem;
+            color: #cbd5e1;
+            max-width: 800px;
+            margin: 0 auto 30px;
+            line-height: 1.6;
+        }
+        
+        .rating-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(245, 158, 11, 0.2);
+            color: #fbbf24;
+            padding: 12px 30px;
+            border-radius: 30px;
+            font-weight: 700;
+            font-size: 1.2rem;
+            border: 1px solid rgba(245, 158, 11, 0.4);
+        }
+        
+        .stars {
+            color: #fbbf24;
+            letter-spacing: 5px;
+        }
+        
+        /* Adsense Top */
+        .adsense-top {
+            background: rgba(255, 255, 255, 0.08);
+            border: 2px dashed rgba(66, 133, 244, 0.5);
+            border-radius: 15px;
+            padding: 30px;
+            margin: 40px;
+            text-align: center;
+        }
+        
+        .ad-label {
+            display: inline-block;
+            background: linear-gradient(45deg, #4285f4, #34a853);
+            color: white;
+            padding: 10px 25px;
+            border-radius: 25px;
+            margin-bottom: 20px;
+            font-size: 1rem;
+            font-weight: 700;
+        }
+        
+        .ad-placeholder {
+            height: 280px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(45deg, rgba(66, 133, 244, 0.1), rgba(52, 168, 83, 0.1));
+            border-radius: 10px;
+            color: #94a3b8;
+            font-style: italic;
+            font-size: 1.1rem;
+            gap: 15px;
+        }
+        
+        /* Platform Comparison */
+        .platform-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            padding: 40px;
+        }
+        
+        @media (max-width: 1024px) {
+            .platform-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+        }
+        
+        .platform-card {
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 40px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .platform-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        }
+        
+        .office-card {
+            border-top: 6px solid #d44638;
+        }
+        
+        .workspace-card {
+            border-top: 6px solid #4285f4;
+        }
+        
+        .platform-header {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+            margin-bottom: 30px;
+            padding-bottom: 25px;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .platform-icon {
+            width: 80px;
+            height: 80px;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+        }
+        
+        .office-icon {
+            background: rgba(212, 70, 56, 0.2);
+            color: #f28b82;
+        }
+        
+        .workspace-icon {
+            background: rgba(66, 133, 244, 0.2);
+            color: #8ab4f8;
+        }
+        
+        .platform-name {
+            font-size: 2.2rem;
+            font-weight: 800;
+        }
+        
+        .office-name {
+            color: #f28b82;
+        }
+        
+        .workspace-name {
+            color: #8ab4f8;
+        }
+        
+        .platform-tagline {
+            font-size: 1.2rem;
+            color: #cbd5e1;
+            margin-top: 5px;
+        }
+        
+        /* App Features */
+        .apps-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+            margin: 30px 0;
+        }
+        
+        @media (max-width: 768px) {
+            .apps-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .app-item {
+            text-align: center;
+            padding: 25px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: transform 0.3s ease;
+        }
+        
+        .app-item:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.08);
+        }
+        
+        .app-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+        
+        .office-app .app-icon {
+            color: #f28b82;
+        }
+        
+        .workspace-app .app-icon {
+            color: #8ab4f8;
+        }
+        
+        .app-name {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: #f1f5f9;
+        }
+        
+        .app-desc {
+            color: #94a3b8;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+        
+        /* Pricing Comparison */
+        .pricing-section {
+            background: linear-gradient(135deg, rgba(245, 158, 11, 0.1), rgba(234, 179, 8, 0.1));
+            border-radius: 20px;
+            padding: 40px;
+            margin: 40px;
+            border: 1px solid rgba(245, 158, 11, 0.3);
+        }
+        
+        .pricing-title {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 40px;
+            color: #fbbf24;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+        }
+        
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
+        
+        @media (max-width: 768px) {
+            .pricing-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .pricing-card {
+            padding: 35px;
+            border-radius: 15px;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.05);
+        }
+        
+        .office-pricing {
+            border: 2px solid #d44638;
+        }
+        
+        .workspace-pricing {
+            border: 2px solid #4285f4;
+        }
+        
+        .plan-name {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+        
+        .office-pricing .plan-name {
+            color: #f28b82;
+        }
+        
+        .workspace-pricing .plan-name {
+            color: #8ab4f8;
+        }
+        
+        .price {
+            font-size: 3rem;
+            font-weight: 800;
+            margin: 20px 0;
+        }
+        
+        .office-pricing .price {
+            color: #f28b82;
+        }
+        
+        .workspace-pricing .price {
+            color: #8ab4f8;
+        }
+        
+        .price-period {
+            color: #94a3b8;
+            font-size: 1rem;
+        }
+        
+        /* Collaboration Features */
+        .collab-section {
+            margin: 40px;
+            padding: 40px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .collab-title {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 40px;
+            color: #34a853;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+        }
+        
+        .collab-features {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+        
+        @media (max-width: 992px) {
+            .collab-features {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .collab-features {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .collab-feature {
+            text-align: center;
+            padding: 25px;
+            border-radius: 15px;
+            background: rgba(255, 255, 255, 0.03);
+        }
+        
+        .collab-icon {
+            font-size: 2.5rem;
+            color: #34a853;
+            margin-bottom: 20px;
+        }
+        
+        .collab-feature h4 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: #f1f5f9;
+        }
+        
+        .collab-feature p {
+            color: #94a3b8;
+            line-height: 1.6;
+        }
+        
+        /* Comparison Table */
+        .comparison-table {
+            margin: 40px;
+            overflow: hidden;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .table-header {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            background: linear-gradient(90deg, rgba(212, 70, 56, 0.3), rgba(66, 133, 244, 0.3));
+            padding: 25px;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .header-cell {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #f1f5f9;
+        }
+        
+        .table-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            padding: 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            align-items: center;
+        }
+        
+        .table-row:last-child {
+            border-bottom: none;
+        }
+        
+        .row-label {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+        
+        .row-icon {
+            color: #fbbf24;
+            font-size: 1.3rem;
+        }
+        
+        .row-value {
+            font-size: 1.1rem;
+            padding: 8px 15px;
+            border-radius: 8px;
+            display: inline-block;
+        }
+        
+        .office-value {
+            background: rgba(212, 70, 56, 0.1);
+            color: #f28b82;
+        }
+        
+        .workspace-value {
+            background: rgba(66, 133, 244, 0.1);
+            color: #8ab4f8;
+        }
+        
+        /* Test Results */
+        .test-results {
+            background: linear-gradient(135deg, rgba(66, 133, 244, 0.1), rgba(52, 168, 83, 0.1));
+            border-radius: 20px;
+            padding: 40px;
+            margin: 40px;
+            border: 1px solid rgba(66, 133, 244, 0.3);
+        }
+        
+        .test-title {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 30px;
+            color: #8ab4f8;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+        }
+        
+        .test-duration {
+            display: inline-block;
+            background: rgba(66, 133, 244, 0.2);
+            color: #8ab4f8;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-left: 15px;
+        }
+        
+        .test-conclusion {
+            text-align: center;
+            font-size: 1.3rem;
+            color: #e2e8f0;
+            max-width: 900px;
+            margin: 0 auto;
+            line-height: 1.8;
+            padding: 25px;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 15px;
+            border-left: 4px solid #34a853;
+        }
+        
+        /* Adsense Middle */
+        .adsense-middle {
+            background: rgba(255, 255, 255, 0.08);
+            border: 2px dashed rgba(251, 188, 5, 0.5);
+            border-radius: 15px;
+            padding: 30px;
+            margin: 40px;
+            text-align: center;
+        }
+        
+        .adsense-middle .ad-placeholder {
+            height: 200px;
+            background: linear-gradient(45deg, rgba(251, 188, 5, 0.1), rgba(234, 67, 53, 0.1));
+        }
+        
+        /* Recommendation */
+        .recommendation {
+            padding: 40px;
+            text-align: center;
+        }
+        
+        .recommendation-title {
+            font-size: 2.2rem;
+            margin-bottom: 30px;
+            color: #f1f5f9;
+        }
+        
+        .recommendation-cards {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        @media (max-width: 768px) {
+            .recommendation-cards {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .rec-card {
+            padding: 35px;
+            border-radius: 20px;
+            text-align: left;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .office-rec {
+            background: linear-gradient(135deg, rgba(212, 70, 56, 0.1), rgba(212, 70, 56, 0.05));
+            border-top: 6px solid #d44638;
+        }
+        
+        .workspace-rec {
+            background: linear-gradient(135deg, rgba(66, 133, 244, 0.1), rgba(66, 133, 244, 0.05));
+            border-top: 6px solid #4285f4;
+        }
+        
+        .rec-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .office-rec h3 {
+            color: #f28b82;
+        }
+        
+        .workspace-rec h3 {
+            color: #8ab4f8;
+        }
+        
+        .rec-list {
+            list-style: none;
+            margin-top: 20px;
+        }
+        
+        .rec-list li {
+            padding: 15px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .rec-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .rec-list li::before {
+            content: '✓';
+            color: #34a853;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        
+        /* CTA */
+        .cta-section {
+            text-align: center;
+            padding: 40px;
+            background: linear-gradient(135deg, rgba(52, 168, 83, 0.1), rgba(66, 133, 244, 0.1));
+            margin: 40px;
+            border-radius: 20px;
+            border: 1px solid rgba(52, 168, 83, 0.3);
+        }
+        
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 15px;
+            background: linear-gradient(45deg, #34a853, #4285f4);
+            color: white;
+            padding: 18px 40px;
+            border-radius: 12px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(52, 168, 83, 0.4);
+        }
+        
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 40px;
+            color: #94a3b8;
+            font-size: 0.9rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 25px;
+            flex-wrap: wrap;
+        }
+        
+        .footer-links a {
+            color: #8ab4f8;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: #aecbfa;
+            text-decoration: underline;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="comparison-container">
+        <!-- Header -->
+        <div class="header">
+            <h1 class="main-title">Microsoft Office vs Google Workspace</h1>
+            <p class="subtitle">Ofis dasturlari qaysi biri yaxshi? Hamkorlikda ishlash testi.</p>
+            <div class="rating-badge">
+                <span class="stars">★★★★☆</span>
+                <span>4.0/5</span>
+            </div>
+        </div>
+        
+        <!-- Adsense Top -->
+        <div class="adsense-top">
+            <div class="ad-label">📈 OFIS DASTURLARI</div>
+            <div class="ad-placeholder">
+                <div>AdSense Banner (728x280)</div>
+                <div style="font-size: 0.9rem; color: #64748b;">Office va Workspace uchun maxsus takliflar</div>
+            </div>
+        </div>
+        
+        <!-- Platform Comparison -->
+        <div class="platform-grid">
+            <!-- Microsoft Office -->
+            <div class="platform-card office-card">
+                <div class="platform-header">
+                    <div class="platform-icon office-icon">
+                        <i class="fab fa-microsoft"></i>
+                    </div>
+                    <div>
+                        <h2 class="platform-name office-name">Microsoft Office</h2>
+                        <div class="platform-tagline">Professional, kuchli funksiyalar</div>
+                    </div>
+                </div>
+                
+                <div class="apps-grid">
+                    <div class="app-item office-app">
+                        <div class="app-icon">
+                            <i class="fas fa-file-word"></i>
+                        </div>
+                        <h4 class="app-name">Word</h4>
+                        <p class="app-desc">Professional hujjat tahrirlash</p>
+                    </div>
+                    
+                    <div class="app-item office-app">
+                        <div class="app-icon">
+                            <i class="fas fa-file-excel"></i>
+                        </div>
+                        <h4 class="app-name">Excel</h4>
+                        <p class="app-desc">Murakkab ma'lumotlar tahlili</p>
+                    </div>
+                    
+                    <div class="app-item office-app">
+                        <div class="app-icon">
+                            <i class="fas fa-file-powerpoint"></i>
+                        </div>
+                        <h4 class="app-name">PowerPoint</h4>
+                        <p class="app-desc">Professional presentatsiyalar</p>
+                    </div>
+                    
+                    <div class="app-item office-app">
+                        <div class="app-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <h4 class="app-name">Outlook</h4>
+                        <p class="app-desc">Email va kalendar boshqaruv</p>
+                    </div>
+                </div>
+                
+                <div style="margin-top: 30px; padding: 25px; background: rgba(212, 70, 56, 0.1); border-radius: 15px;">
+                    <h4 style="color: #f28b82; margin-bottom: 15px; display: flex; align-items: center; gap: 10px;">
+                        <i class="fas fa-crown"></i>
+                        Asosiy Afzallik
+                    </h4>
+                    <p style="color: #cbd5e1; line-height: 1.7;">
+                        Kuchli offline funksiyalar, professional formatlash, murakkab 
+                        hisob-kitoblar, to'liq Microsoft ekotizimi bilan integratsiya.
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Google Workspace -->
+            <div class="platform-card workspace-card">
+                <div class="platform-header">
+                    <div class="platform-icon workspace-icon">
+                        <i class="fab fa-google"></i>
+                    </div>
+                    <div>
+                        <h2 class="platform-name workspace-name">Google Workspace</h2>
+                        <div class="platform-tagline">Bulutli, real vaqtda hamkorlik</div>
+                    </div>
+                </div>
+                
+                <div class="apps-grid">
+                    <div class="app-item workspace-app">
+                        <div class="app-icon">
+                            <i class="fas fa-file-alt"></i>
+                        </div>
+                        <h4 class="app-name">Google Docs</h4>
+                        <p class="app-desc">Real vaqtda hujjat tahrirlash</p>
+                    </div>
+                    
+                    <div class="app-item workspace-app">
+                        <div class="app-icon">
+                            <i class="fas fa-table"></i>
+                        </div>
+                        <h4 class="app-name">Google Sheets</h4>
+                        <p class="app-desc">Hamkorlikda jadvallar</p>
+                    </div>
+                    
+                    <div class="app-item workspace-app">
+                        <div class="app-icon">
+                            <i class="fas fa-presentation"></i>
+                        </div>
+                        <h4 class="app-name">Google Slides</h4>
+                        <p class="app-desc">Real vaqtda presentatsiya</p>
+                    </div>
+                    
+                    <div class="app-item workspace-app">
+                        <div class="app-icon">
+                            <i class="fas fa-mail-bulk"></i>
+                        </div>
+                        <h4 class="app-name">Gmail</h4>
+                        <p class="app-desc">Smart email va chat</p>
+                    </div>
+                </div>
+                
+                <div style="margin-top: 30px; padding: 25px; background: rgba(66, 133, 244, 0.1); border-radius: 15px;">
+                    <h4 style="color: #8ab4f8; margin-bottom: 15px; display: flex; align-items: center; gap: 10px;">
+                        <i class="fas fa-users"></i>
+                        Asosiy Afzallik
+                    </h4>
+                    <p style="color: #cbd5e1; line-height: 1.7;">
+                        Real vaqtda hamkorlik, avtomatik saqlash, istalgan qurilmadan kirish, 
+                        Google Drive bilan integratsiya. Masofadan ishlash uchun ideal.
+                    </p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Pricing Comparison -->
+        <div class="pricing-section">
+            <h3 class="pricing-title">
+                <i class="fas fa-tags"></i>
+                Narxlar Taqqoslash
+            </h3>
+            <div class="pricing-grid">
+                <div class="pricing-card office-pricing">
+                    <h4 class="plan-name">Microsoft 365 Personal</h4>
+                    <div class="price">$69.99</div>
+                    <div class="price-period">yillik / 1 foydalanuvchi</div>
+                    <p style="color: #cbd5e1; margin-top: 20px; line-height: 1.6;">
+                        ✅ 1TB OneDrive saqlash<br>
+                        ✅ Premium Office dasturlari<br>
+                        ✅ Outlook, Teams, Skype<br>
+                        ✅ 60 daqiqalik Skype qo'ng'iroq<br>
+                        ✅ Microsoft Editor
+                    </p>
+                </div>
+                
+                <div class="pricing-card workspace-pricing">
+                    <h4 class="plan-name">Google Workspace Business</h4>
+                    <div class="price">$12</div>
+                    <div class="price-period">oylik / foydalanuvchi</div>
+                    <p style="color: #cbd5e1; margin-top: 20px; line-height: 1.6;">
+                        ✅ 2TB Google Drive<br>
+                        ✅ Professional Gmail<br>
+                        ✅ Meet video konferensiya<br>
+                        ✅ Smart hamkorlik vositalari<br>
+                        ✅ 24/7 qo'llab-quvvatlash
+                    </p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Collaboration Features -->
+        <div class="collab-section">
+            <h3 class="collab-title">
+                <i class="fas fa-handshake"></i>
+                Hamkorlikda Ishlash Xususiyatlari
+            </h3>
+            <div class="collab-features">
+                <div class="collab-feature">
+                    <div class="collab-icon">
+                        <i class="fas fa-comments"></i>
+                    </div>
+                    <h4>Real Vaqtda Kommentlar</h4>
+                    <p>Bir vaqtning o'zida ko'plab foydalanuvchilar bilan ishlash</p>
+                </div>
+                
+                <div class="collab-feature">
+                    <div class="collab-icon">
+                        <i class="fas fa-history"></i>
+                    </div>
+                    <h4>Versiya Tarixi</h4>
+                    <p>Barcha o'zgarishlarni kuzatish va oldingi versiyaga qaytish</p>
+                </div>
+                
+                <div class="collab-feature">
+                    <div class="collab-icon">
+                        <i class="fas fa-cloud"></i>
+                    </div>
+                    <h4>Bulutli Saqlash</h4>
+                    <p>Avtomatik saqlash, istalgan joydan kirish imkoniyati</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Comparison Table -->
+        <div class="comparison-table">
+            <div class="table-header">
+                <div class="header-cell">Xususiyat</div>
+                <div class="header-cell office-name">Microsoft Office</div>
+                <div class="header-cell workspace-name">Google Workspace</div>
+            </div>
+            
+            <div class="table-row">
+                <div class="row-label">
+                    <i class="fas fa-cloud row-icon"></i>
+                    <span>Bulutli Saqlash</span>
+                </div>
+                <div class="row-value office-value">1TB OneDrive</div>
+                <div class="row-value workspace-value">2TB Google Drive</div>
+            </div>
+            
+            <div class="table-row">
+                <div class="row-label">
+                    <i class="fas fa-users row-icon"></i>
+                    <span>Real Vaqtda Hamkorlik</span>
+                </div>
+                <div class="row-value office-value">Cheklangan</div>
+                <div class="row-value workspace-value">✅ Mukammal</div>
+            </div>
+            
+            <div class="table-row">
+                <div class="row-label">
+                    <i class="fas fa-desktop row-icon"></i>
+                    <span>Offline Ishlash</span>
+                </div>
+                <div class="row-value office-value">✅ To'liq</div>
+                <div class="row-value workspace-value">Cheklangan</div>
+            </div>
+            
+            <div class="table-row">
+                <div class="row-label">
+                    <i class="fas fa-video row-icon"></i>
+                    <span>Video Konferensiya</span>
+                </div>
+                <div class="row-value office-value">Microsoft Teams</div>
+                <div class="row-value workspace-value">Google Meet</div>
+            </div>
+            
+            <div class="table-row">
+                <div class="row-label">
+                    <i class="fas fa-mobile-alt row-icon"></i>
+                    <span>Mobil Ilovalar</span>
+                </div>
+                <div class="row-value office-value">✅ Windows, iOS, Android</div>
+                <div class="row-value workspace-value">✅ iOS, Android, Web</div>
+            </div>
+        </div>
+        
+        <!-- Adsense Middle -->
+        <div class="adsense-middle">
+            <div class="ad-label">💼 BIZNES UCHUN DASTURLAR</div>
+            <div class="ad-placeholder">
+                <div>AdSense Rectangle (300x250)</div>
+                <div style="font-size: 0.9rem; color: #64748b;">Office 365 va Workspace takliflari</div>
+            </div>
+        </div>
+        
+        <!-- Test Results -->
+        <div class="test-results">
+            <h3 class="test-title">
+                <i class="fas fa-chart-bar"></i>
+                Hamkorlik Testi Natijalari
+                <span class="test-duration">Real loyiha bilan</span>
+            </h3>
+            <div class="test-conclusion">
+                <strong>Microsoft Office</strong> - professional hujjatlar, murakkab hisob-kitoblar, 
+                keng funksiyalar uchun ideal. <strong>Google Workspace</strong> - real vaqtda hamkorlik, 
+                masofadan ishlash, jamoa loyihalari uchun eng yaxshi.
+            </div>
+        </div>
+        
+        <!-- Recommendation -->
+        <div class="recommendation">
+            <h3 class="recommendation-title">Qaysi Platformani Tanlashingiz Kerak?</h3>
+            
+            <div class="recommendation-cards">
+                <div class="rec-card office-rec">
+                    <h3>
+                        <i class="fab fa-microsoft"></i>
+                        Microsoft Office Tanlang Agar:
+                    </h3>
+                    <ul class="rec-list">
+                        <li>Professional hujjatlar tayyorlaysiz</li>
+                        <li>Murakkab Excel formulalari kerak</li>
+                        <li>Offline ishlash muhim</li>
+                        <li>Microsoft ekotizimi bilan ishlaysiz</li>
+                        <li>Keng formatlash imkoniyatlari kerak</li>
+                    </ul>
+                </div>
+                
+                <div class="rec-card workspace-rec">
+                    <h3>
+                        <i class="fab fa-google"></i>
+                        Google Workspace Tanlang Agar:
+                    </h3>
+                    <ul class="rec-list">
+                        <li>Jamoa bilan real vaqtda ishlaysiz</li>
+                        <li>Masofadan ishlash kerak</li>
+                        <li>Avtomatik saqlash va versiya nazorati kerak</li>
+                        <li>Google ekotizimi bilan ishlaysiz</li>
+                        <li>Oddiy va tez hamkorlik kerak</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <!-- CTA -->
+        <div class="cta-section">
+            <p style="font-size: 1.3rem; color: #e2e8f0; margin-bottom: 25px; max-width: 700px; margin-left: auto; margin-right: auto;">
+                Batafsil test natijalari, ishlash grafiklari va haqiqiy foydalanuvchilar sharhlari
+            </p>
+            <a href="#" class="cta-button">
+                <i class="fas fa-chart-line"></i>
+                Hamkorlik Testi Natijalarini Ko'rish
+            </a>
+        </div>
+        
+        <!-- Footer -->
+        <div class="footer">
+            <p>© 2025-2026 Productivity Tools Lab | Microsoft Office vs Google Workspace | Real hamkorlik testi</p>
+            <p>Barcha testlar 2026 yil yanvar-fevral oylarida o'tkazilgan</p>
+            <div class="footer-links">
+                <a href="privacy-policy.html">Maxfiylik siyosati</a>
+                <a href="corrections.html">Tuzatishlar</a>
+                <a href="contact.html">Biz bilan bog'lanish</a>
+                <a href="cookies.html">Kukilar</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Platform cards hover effect
+        document.querySelectorAll('.platform-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-10px)';
+                this.style.boxShadow = '0 20px 40px rgba(0, 0, 0, 0.4)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+                this.style.boxShadow = 'none';
+            });
+        });
+        
+        // App items hover
+        document.querySelectorAll('.app-item').forEach(item => {
+            item.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-5px)';
+                this.style.background = 'rgba(255, 255, 255, 0.1)';
+            });
+            
+            item.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+                this.style.background = 'rgba(255, 255, 255, 0.05)';
+            });
+        });
+        
+        // Pricing cards hover
+        document.querySelectorAll('.pricing-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'scale(1.05)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'scale(1)';
+            });
+        });
+        
+        // Collab features hover
+        document.querySelectorAll('.collab-feature').forEach(feature => {
+            feature.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-5px)';
+                this.style.background = 'rgba(255, 255, 255, 0.08)';
+            });
+            
+            feature.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+                this.style.background = 'rgba(255, 255, 255, 0.03)';
+            });
+        });
+        
+        // CTA button animation
+        const ctaButton = document.querySelector('.cta-button');
+        ctaButton.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-3px)';
+            this.style.boxShadow = '0 10px 25px rgba(52, 168, 83, 0.4)';
+        });
+        
+        ctaButton.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(0)';
+            this.style.boxShadow = 'none';
+        });
+        
+        // Rating badge animation
+        const ratingBadge = document.querySelector('.rating-badge');
+        ratingBadge.addEventListener('click', function() {
+            this.style.transform = 'scale(1.1)';
+            setTimeout(() => {
+                this.style.transform = 'scale(1)';
+            }, 300);
+        });
+        
+        // Add float animation for icons
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes float {
+                0%, 100% { transform: translateY(0px); }
+                50% { transform: translateY(-5px); }
+            }
+            
+            .platform-icon {
+                animation: float 3s ease-in-out infinite;
+            }
+            
+            @keyframes pulse {
+                0% { transform: scale(1); }
+                50% { transform: scale(1.05); }
+                100% { transform: scale(1); }
+            }
+            
+            .collab-icon {
+                animation: pulse 2s infinite;
+            }
+        `;
+        document.head.appendChild(style);
+        
+        // Rec cards hover
+        document.querySelectorAll('.rec-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-5px)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+            });
+        });
+        
+        // Table rows highlight
+        document.querySelectorAll('.table-row').forEach(row => {
+            row.addEventListener('mouseenter', function() {
+                this.style.background = 'rgba(255, 255, 255, 0.07)';
+            });
+            
+            row.addEventListener('mouseleave', function() {
+                this.style.background = '';
+            });
+        });
+        
+        // Price animation
+        document.addEventListener('DOMContentLoaded', function() {
+            const prices = document.querySelectorAll('.price');
+            prices.forEach(price => {
+                const originalText = price.textContent;
+                price.textContent = '$0';
+                
+                setTimeout(() => {
+                    price.textContent = originalText;
+                    price.style.transition = 'all 1s ease';
+                }, 500);
+            });
+        });
+    </script>
+</body>
+</html>
