@@ -3,10 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gaming PC Build 2026: $1000-$2000 Byudjetlar Uchun To'liq Qurilma</title>
-    <meta name="description" content="2026-yil uchun eng yaxshi Gaming PC konfiguratsiyalari. $1000, $1500, $2000 byudjetlar uchun to'liq qurilma va tavsiyalar. RTX 4060 qiymati.">
-    <meta name="keywords" content="gaming pc 2026, pc build, rtx 4060, amd ryzen, intel core, gaming kompyuter, byudjet pc">
-    <meta name="author" content="Gaming PC Expert">
+    <title>Gaming PC Build 2026: $1000-$2000 To'liq Konfiguratsiya</title>
+    <meta name="description" content="2026-yil uchun eng yaxshi Gaming PC konfiguratsiyalari. $1000, $1500, $2000 byudjetlar uchun to'liq qurilma. RTX 4060 qiymati.">
+    <meta name="keywords" content="gaming pc 2026, pc build, rtx 4060, gaming kompyuter, byudjet pc, intel, amd">
+    <meta name="author" content="PC Building Expert">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
             --primary: #0a192f;
@@ -15,548 +16,1483 @@
             --budget1: #00a8ff;
             --budget2: #9c88ff;
             --budget3: #fbc531;
-            --light: #112240;
+            --card-bg: #112240;
             --text: #ccd6f6;
+            --light-text: #8892b0;
         }
         
         * {
-            margin: 0; padding: 0; box-sizing: border-box;
-            font-family: 'Segoe UI', 'Fira Code', monospace;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', 'Fira Code', monospace, sans-serif;
         }
         
         body {
-            background: var(--primary); color: var(--text);
-            line-height: 1.8; font-size: 18px;
-            min-height: 100vh; padding: 20px 0;
+            background: var(--primary);
+            color: var(--text);
+            line-height: 1.8;
+            font-size: 18px;
+            min-height: 100vh;
+            padding-top: 20px;
         }
         
         .container {
-            max-width: 1200px; margin: 0 auto; padding: 0 20px;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
         }
         
+        /* Header */
         .main-header {
-            background: var(--light); border-radius: 15px;
-            padding: 50px; margin-bottom: 40px;
-            border-left: 5px solid var(--secondary);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            background: var(--card-bg);
+            border-radius: 25px;
+            padding: 60px 50px;
+            margin-bottom: 50px;
+            border-left: 8px solid var(--secondary);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .main-header::before {
+            content: '⚡';
+            position: absolute;
+            font-size: 300px;
+            opacity: 0.03;
+            top: -50px;
+            right: -50px;
+            z-index: 0;
+        }
+        
+        .header-content {
+            position: relative;
+            z-index: 1;
         }
         
         .rating-badge {
-            display: inline-block; background: var(--accent);
-            color: white; padding: 8px 20px; border-radius: 25px;
-            font-weight: 600; margin-bottom: 20px;
+            display: inline-flex;
+            align-items: center;
+            background: linear-gradient(45deg, var(--accent), #0055aa);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 30px;
+            font-weight: 800;
+            font-size: 1.4rem;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 25px rgba(0, 122, 204, 0.3);
         }
         
         h1 {
-            font-size: 42px; color: var(--secondary);
-            margin-bottom: 15px; text-shadow: 0 2px 5px rgba(0,0,0,0.3);
+            font-size: 3.5rem;
+            color: var(--secondary);
+            margin-bottom: 20px;
+            line-height: 1.2;
+            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
         }
         
         .subtitle {
-            font-size: 22px; color: #8892b0; margin-bottom: 30px;
+            font-size: 1.5rem;
+            color: var(--light-text);
+            margin-bottom: 40px;
+            max-width: 900px;
+            line-height: 1.6;
         }
         
+        .highlight {
+            color: var(--secondary);
+            font-weight: 700;
+        }
+        
+        /* Budget Selector */
         .budget-selector {
-            display: grid; grid-template-columns: repeat(3, 1fr);
-            gap: 20px; margin: 40px 0;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            margin: 50px 0;
+        }
+        
+        @media (max-width: 992px) {
+            .budget-selector {
+                grid-template-columns: repeat(2, 1fr);
+            }
         }
         
         @media (max-width: 768px) {
-            .budget-selector { grid-template-columns: 1fr; }
+            .budget-selector {
+                grid-template-columns: 1fr;
+            }
         }
         
         .budget-card {
-            background: rgba(17, 34, 64, 0.7); border-radius: 12px;
-            padding: 30px; text-align: center; cursor: pointer;
-            transition: all 0.3s; border: 2px solid transparent;
+            background: rgba(17, 34, 64, 0.8);
+            border-radius: 20px;
+            padding: 35px 30px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            border: 2px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .budget-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+        }
+        
+        .budget-card:nth-child(1)::before {
+            background: linear-gradient(90deg, var(--budget1), #0097e6);
+        }
+        
+        .budget-card:nth-child(2)::before {
+            background: linear-gradient(90deg, var(--budget2), #8c7ae6);
+        }
+        
+        .budget-card:nth-child(3)::before {
+            background: linear-gradient(90deg, var(--budget3), #e1b12c);
         }
         
         .budget-card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-10px);
             border-color: var(--secondary);
-            box-shadow: 0 10px 25px rgba(100, 255, 218, 0.1);
+            box-shadow: 0 15px 35px rgba(100, 255, 218, 0.15);
         }
         
         .budget-card.active {
-            border-color: var(--secondary);
             background: rgba(100, 255, 218, 0.1);
+            border-color: var(--secondary);
         }
         
         .budget-price {
-            font-size: 36px; font-weight: 700;
+            font-size: 3rem;
+            font-weight: 800;
             margin-bottom: 10px;
         }
         
-        .budget-label {
-            font-size: 14px; color: #8892b0;
-            text-transform: uppercase; letter-spacing: 1px;
+        .budget-card:nth-child(1) .budget-price {
+            color: var(--budget1);
         }
         
+        .budget-card:nth-child(2) .budget-price {
+            color: var(--budget2);
+        }
+        
+        .budget-card:nth-child(3) .budget-price {
+            color: var(--budget3);
+        }
+        
+        .budget-label {
+            font-size: 1.1rem;
+            color: var(--light-text);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+        
+        .budget-desc {
+            font-size: 0.95rem;
+            color: var(--light-text);
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid rgba(136, 146, 176, 0.2);
+        }
+        
+        /* PC Configuration */
         .pc-config {
-            background: var(--light); border-radius: 15px;
-            padding: 40px; margin: 40px 0;
+            background: var(--card-bg);
+            border-radius: 25px;
+            padding: 50px 45px;
+            margin: 50px 0;
             display: none;
+            animation: fadeIn 0.6s ease;
+            border: 1px solid rgba(100, 255, 218, 0.1);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
         
         .pc-config.active {
             display: block;
-            animation: fadeIn 0.5s ease;
         }
         
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
+        .config-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 40px;
+            padding-bottom: 30px;
+            border-bottom: 2px solid rgba(136, 146, 176, 0.2);
         }
         
         .config-title {
-            font-size: 28px; color: var(--secondary);
-            margin-bottom: 30px; display: flex;
-            align-items: center; gap: 15px;
+            font-size: 2.5rem;
+            color: var(--secondary);
+            display: flex;
+            align-items: center;
+            gap: 20px;
         }
         
+        .config-icon {
+            font-size: 2.5rem;
+        }
+        
+        .config-subtitle {
+            font-size: 1.3rem;
+            color: var(--light-text);
+            margin-top: 10px;
+        }
+        
+        .total-price {
+            background: linear-gradient(45deg, var(--accent), #0055aa);
+            color: white;
+            padding: 15px 35px;
+            border-radius: 15px;
+            font-size: 2rem;
+            font-weight: 800;
+        }
+        
+        /* Component Grid */
         .component-grid {
-            display: grid; grid-template-columns: repeat(2, 1fr);
-            gap: 25px; margin: 30px 0;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            margin: 40px 0;
         }
         
         @media (max-width: 768px) {
-            .component-grid { grid-template-columns: 1fr; }
+            .component-grid {
+                grid-template-columns: 1fr;
+            }
         }
         
         .component-card {
-            background: rgba(0, 0, 0, 0.2); border-radius: 10px;
-            padding: 25px; border-left: 4px solid var(--accent);
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 18px;
+            padding: 35px 30px;
+            border-left: 6px solid var(--accent);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
         }
         
-        .component-name {
-            color: var(--secondary); font-size: 20px;
-            margin-bottom: 10px; display: flex;
-            align-items: center; gap: 10px;
+        .component-card:hover {
+            transform: translateY(-5px);
+            background: rgba(0, 122, 204, 0.1);
         }
         
-        .benchmark-section {
-            background: linear-gradient(135deg, #0c2d48 0%, #145da0 100%);
-            border-radius: 15px; padding: 40px; margin: 50px 0;
-        }
-        
-        .benchmark-title {
-            font-size: 32px; color: white;
-            margin-bottom: 30px; text-align: center;
-        }
-        
-        .benchmark-grid {
-            display: grid; grid-template-columns: repeat(3, 1fr);
-            gap: 20px; margin-top: 30px;
-        }
-        
-        .benchmark-card {
-            background: rgba(255, 255, 255, 0.1); padding: 25px;
-            border-radius: 10px; text-align: center;
-            backdrop-filter: blur(10px);
-        }
-        
-        .fps-number {
-            font-size: 48px; color: var(--secondary);
-            font-weight: 700; margin: 15px 0;
-        }
-        
-        .rtx-section {
-            background: linear-gradient(135deg, #76b852 0%, #8DC26F 100%);
-            border-radius: 15px; padding: 40px; margin: 50px 0;
-            color: #333;
-        }
-        
-        .rtx-title {
-            font-size: 32px; color: #0a192f;
+        .component-header {
+            display: flex;
+            align-items: center;
             margin-bottom: 20px;
         }
         
+        .component-icon {
+            font-size: 2.2rem;
+            color: var(--secondary);
+            margin-right: 20px;
+            width: 70px;
+            height: 70px;
+            background: rgba(100, 255, 218, 0.1);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .component-name {
+            font-size: 1.8rem;
+            color: var(--text);
+            margin-bottom: 5px;
+        }
+        
+        .component-model {
+            color: var(--light-text);
+            font-size: 1.1rem;
+        }
+        
+        .component-specs {
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(136, 146, 176, 0.2);
+        }
+        
+        .spec-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(136, 146, 176, 0.1);
+        }
+        
+        .spec-item:last-child {
+            border-bottom: none;
+        }
+        
+        .spec-label {
+            color: var(--light-text);
+        }
+        
+        .spec-value {
+            color: var(--secondary);
+            font-weight: 600;
+        }
+        
+        .component-price {
+            position: absolute;
+            top: 30px;
+            right: 30px;
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--secondary);
+        }
+        
+        /* Performance Section */
+        .performance-section {
+            background: linear-gradient(135deg, rgba(0, 168, 255, 0.15), rgba(9, 132, 227, 0.15));
+            border-radius: 25px;
+            padding: 50px 45px;
+            margin: 60px 0;
+            border: 1px solid rgba(0, 168, 255, 0.2);
+        }
+        
+        .performance-title {
+            font-size: 2.5rem;
+            color: var(--text);
+            text-align: center;
+            margin-bottom: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+        }
+        
+        .fps-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            margin-top: 30px;
+        }
+        
+        @media (max-width: 992px) {
+            .fps-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .fps-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .fps-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 18px;
+            padding: 30px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .fps-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        .game-title {
+            font-size: 1.3rem;
+            color: var(--text);
+            margin-bottom: 15px;
+            min-height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .fps-value {
+            font-size: 4rem;
+            font-weight: 800;
+            margin: 20px 0;
+            color: var(--secondary);
+        }
+        
+        .fps-resolution {
+            color: var(--light-text);
+            font-size: 1.1rem;
+        }
+        
+        .settings-info {
+            margin-top: 15px;
+            font-size: 0.9rem;
+            color: var(--light-text);
+            padding: 10px;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+        }
+        
+        /* RTX 4060 Section */
+        .rtx-section {
+            background: linear-gradient(135deg, rgba(0, 122, 204, 0.15), rgba(0, 85, 170, 0.15));
+            border-radius: 25px;
+            padding: 50px 45px;
+            margin: 60px 0;
+            border: 1px solid rgba(0, 122, 204, 0.3);
+        }
+        
+        .rtx-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 40px;
+            padding-bottom: 30px;
+            border-bottom: 2px solid rgba(0, 122, 204, 0.3);
+        }
+        
+        .rtx-title {
+            font-size: 2.5rem;
+            color: var(--secondary);
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        
+        .rtx-badge {
+            background: linear-gradient(45deg, #76ff03, #00e676);
+            color: var(--primary);
+            padding: 12px 25px;
+            border-radius: 20px;
+            font-weight: 800;
+            font-size: 1.3rem;
+        }
+        
+        .rtx-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+        
+        @media (max-width: 992px) {
+            .rtx-content {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .rtx-features {
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 20px;
+            padding: 35px;
+        }
+        
+        .feature-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 25px;
+            padding-bottom: 25px;
+            border-bottom: 1px solid rgba(136, 146, 176, 0.2);
+        }
+        
+        .feature-item:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+        
+        .feature-icon {
+            font-size: 2rem;
+            color: var(--secondary);
+            margin-right: 20px;
+            min-width: 50px;
+        }
+        
+        .feature-text h4 {
+            font-size: 1.5rem;
+            color: var(--text);
+            margin-bottom: 8px;
+        }
+        
+        .feature-text p {
+            color: var(--light-text);
+            line-height: 1.6;
+        }
+        
+        .rtx-comparison {
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 20px;
+            padding: 35px;
+        }
+        
         .comparison-table {
-            width: 100%; border-collapse: collapse;
-            margin: 40px 0; background: white;
-            border-radius: 10px; overflow: hidden;
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
         }
         
         .comparison-table th {
-            background: var(--primary); color: white;
-            padding: 20px; text-align: left;
+            background: rgba(0, 122, 204, 0.2);
+            color: var(--text);
+            padding: 20px;
+            text-align: left;
+            font-weight: 600;
+            border-bottom: 2px solid rgba(0, 122, 204, 0.3);
         }
         
         .comparison-table td {
-            padding: 20px; border-bottom: 1px solid #ddd;
-            color: #333;
+            padding: 18px 20px;
+            border-bottom: 1px solid rgba(136, 146, 176, 0.2);
+            color: var(--light-text);
         }
         
-        .recommendation {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            border-radius: 15px; padding: 40px; margin: 50px 0;
-            color: white;
+        .comparison-table tr:hover {
+            background: rgba(0, 122, 204, 0.05);
+        }
+        
+        .winner {
+            color: var(--secondary);
+            font-weight: 800;
+        }
+        
+        /* Recommendation Section */
+        .recommendation-section {
+            margin: 60px 0;
         }
         
         .recommendation-title {
-            font-size: 28px; margin-bottom: 20px;
+            font-size: 2.5rem;
+            color: var(--secondary);
+            text-align: center;
+            margin-bottom: 50px;
         }
         
-        footer {
-            background: var(--light); padding: 50px 0;
-            margin-top: 60px; border-radius: 15px 15px 0 0;
+        .recommendation-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+        
+        @media (max-width: 992px) {
+            .recommendation-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .recommendation-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .recommendation-card {
+            background: var(--card-bg);
+            border-radius: 20px;
+            padding: 40px 35px;
+            text-align: center;
+            border-top: 6px solid;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .recommendation-card:nth-child(1) {
+            border-color: var(--budget1);
+        }
+        
+        .recommendation-card:nth-child(2) {
+            border-color: var(--budget2);
+        }
+        
+        .recommendation-card:nth-child(3) {
+            border-color: var(--budget3);
+        }
+        
+        .recommendation-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+        
+        .rec-budget {
+            font-size: 2.2rem;
+            font-weight: 800;
+            margin-bottom: 15px;
+        }
+        
+        .recommendation-card:nth-child(1) .rec-budget {
+            color: var(--budget1);
+        }
+        
+        .recommendation-card:nth-child(2) .rec-budget {
+            color: var(--budget2);
+        }
+        
+        .recommendation-card:nth-child(3) .rec-budget {
+            color: var(--budget3);
+        }
+        
+        .rec-label {
+            font-size: 1.2rem;
+            color: var(--light-text);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 25px;
+            font-weight: 600;
+        }
+        
+        .rec-points {
+            list-style: none;
+            margin-top: 25px;
+            text-align: left;
+        }
+        
+        .rec-points li {
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(136, 146, 176, 0.2);
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .rec-points li:last-child {
+            border-bottom: none;
+        }
+        
+        .rec-points li::before {
+            content: '✓';
+            color: var(--secondary);
+            font-weight: 800;
+            font-size: 1.2rem;
+        }
+        
+        .rec-verdict {
+            margin-top: 25px;
+            padding: 15px;
+            background: rgba(100, 255, 218, 0.1);
+            border-radius: 12px;
+            color: var(--secondary);
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+        
+        /* Footer */
+        .footer {
+            background: var(--card-bg);
+            padding: 60px 0 40px;
+            margin-top: 80px;
+            border-radius: 25px 25px 0 0;
         }
         
         .footer-content {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px; margin-bottom: 40px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 50px;
+            margin-bottom: 50px;
         }
         
+        .footer-section h3 {
+            font-size: 1.8rem;
+            color: var(--secondary);
+            margin-bottom: 25px;
+        }
+        
+        .footer-section p {
+            color: var(--light-text);
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 15px;
+        }
+        
+        .footer-links a {
+            color: var(--light-text);
+            text-decoration: none;
+            transition: color 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .footer-links a:hover {
+            color: var(--secondary);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 40px;
+            border-top: 1px solid rgba(136, 146, 176, 0.2);
+            color: var(--light-text);
+            font-size: 1rem;
+        }
+        
+        /* Ad Sections */
+        .ad-section {
+            background: rgba(251, 197, 49, 0.1);
+            border-radius: 20px;
+            padding: 40px;
+            margin: 50px 0;
+            text-align: center;
+            border: 2px dashed rgba(251, 197, 49, 0.3);
+        }
+        
+        .ad-label {
+            display: inline-block;
+            background: rgba(251, 197, 49, 0.2);
+            color: #fbc531;
+            padding: 10px 25px;
+            border-radius: 20px;
+            margin-bottom: 25px;
+            font-weight: 800;
+        }
+        
+        .ad-placeholder {
+            height: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(251, 197, 49, 0.1);
+            border-radius: 15px;
+            color: #cbd5e1;
+            font-style: italic;
+            font-size: 1.2rem;
+            margin: 20px 0;
+        }
+        
+        /* Responsive */
         @media (max-width: 768px) {
-            h1 { font-size: 32px; }
-            .main-header { padding: 30px; }
-            .benchmark-grid { grid-template-columns: 1fr; }
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            .main-header {
+                padding: 40px 30px;
+            }
+            
+            .config-title {
+                font-size: 2rem;
+            }
+            
+            .performance-title,
+            .rtx-title,
+            .recommendation-title {
+                font-size: 2rem;
+            }
+            
+            .rtx-header {
+                flex-direction: column;
+                text-align: center;
+                gap: 20px;
+            }
+            
+            .total-price {
+                font-size: 1.8rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .rating-badge {
+                font-size: 1.2rem;
+                padding: 10px 20px;
+            }
+            
+            .budget-price {
+                font-size: 2.5rem;
+            }
+            
+            .config-title {
+                font-size: 1.8rem;
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
+        <!-- Header -->
         <header class="main-header">
-            <div class="rating-badge">4.0/5 Reyting</div>
-            <h1>Gaming PC Build 2026</h1>
-            <p class="subtitle">$1000, $1500, $2000 - har bir byudjet uchun eng yaxshi konfiguratsiya</p>
-            
-            <div class="budget-selector">
-                <div class="budget-card active" data-budget="1000">
-                    <div class="budget-price" style="color: var(--budget1);">$1000</div>
-                    <div class="budget-label">Entry Level Gaming</div>
-                    <div style="margin-top: 15px; font-size: 14px; color: #8892b0;">
-                        1080p Gaming • 60-100 FPS
-                    </div>
+            <div class="header-content">
+                <div class="rating-badge">
+                    <i class="fas fa-star"></i>
+                    4.0/5 Gaming PC Build Reytingi
                 </div>
+                <h1>Gaming PC Build 2026</h1>
+                <p class="subtitle">
+                    $1000, $1500, $2000 - har bir byudjet uchun eng yaxshi konfiguratsiya.
+                    <span class="highlight">RTX 4060 - eng yaxshi qiymat</span> video kartasi.
+                </p>
                 
-                <div class="budget-card" data-budget="1500">
-                    <div class="budget-price" style="color: var(--budget2);">$1500</div>
-                    <div class="budget-label">Mid-Range Gaming</div>
-                    <div style="margin-top: 15px; font-size: 14px; color: #8892b0;">
-                        1440p Gaming • 100-144 FPS
+                <div class="budget-selector">
+                    <div class="budget-card active" data-budget="1000">
+                        <div class="budget-price">$1000</div>
+                        <div class="budget-label">Entry Level Gaming</div>
+                        <p>1080p Ultra Gaming</p>
+                        <p>60-100 FPS</p>
+                        <div class="budget-desc">
+                            RTX 4060 + AMD Ryzen 5 7600
+                        </div>
                     </div>
-                </div>
-                
-                <div class="budget-card" data-budget="2000">
-                    <div class="budget-price" style="color: var(--budget3);">$2000</div>
-                    <div class="budget-label">High-End Gaming</div>
-                    <div style="margin-top: 15px; font-size: 14px; color: #8892b0;">
-                        4K Gaming • 144+ FPS
+                    
+                    <div class="budget-card" data-budget="1500">
+                        <div class="budget-price">$1500</div>
+                        <div class="budget-label">Mid-Range Gaming</div>
+                        <p>1440p High Gaming</p>
+                        <p>100-144 FPS</p>
+                        <div class="budget-desc">
+                            RTX 4070 + Intel i5-14600K
+                        </div>
+                    </div>
+                    
+                    <div class="budget-card" data-budget="2000">
+                        <div class="budget-price">$2000</div>
+                        <div class="budget-label">High-End Gaming</div>
+                        <p>4K Gaming</p>
+                        <p>144+ FPS</p>
+                        <div class="budget-desc">
+                            RTX 4080 Super + AMD Ryzen 7 7800X3D
+                        </div>
                     </div>
                 </div>
             </div>
         </header>
 
-        <!-- $1000 Konfiguratsiya -->
+        <!-- $1000 PC Configuration -->
         <div class="pc-config active" id="config-1000">
-            <h2 class="config-title">
-                <i class="fas fa-gamepad"></i> $1000 - Entry Level Gaming PC
-            </h2>
-            <p>Ushbu konfiguratsiya 1080p gaming uchun ideal, barcha zamonaviy o'yinlarni yuqori sozlamalarda ishlatadi.</p>
+            <div class="config-header">
+                <div>
+                    <h2 class="config-title">
+                        <i class="fas fa-gamepad config-icon"></i>
+                        $1000 - Entry Level Gaming PC
+                    </h2>
+                    <p class="config-subtitle">
+                        1080p Ultra Settings • 60-100 FPS • RTX 4060
+                    </p>
+                </div>
+                <div class="total-price">$987</div>
+            </div>
             
             <div class="component-grid">
                 <div class="component-card">
-                    <h3 class="component-name">
-                        <i class="fas fa-microchip"></i> Protsessor
-                    </h3>
-                    <p><strong>AMD Ryzen 5 7600</strong></p>
-                    <p>6 yadro / 12 thread • 4.7 GHz Boost</p>
-                    <p style="color: var(--secondary); margin-top: 10px;">$199</p>
-                </div>
-                
-                <div class="component-card">
-                    <h3 class="component-name">
-                        <i class="fas fa-sd-card"></i> Video Karta
-                    </h3>
-                    <p><strong>NVIDIA RTX 4060 8GB</strong></p>
-                    <p>DLSS 3.0 • 3072 CUDA yadrolari</p>
-                    <p style="color: var(--secondary); margin-top: 10px;">$299</p>
-                </div>
-                
-                <div class="component-card">
-                    <h3 class="component-name">
-                        <i class="fas fa-memory"></i> RAM
-                    </h3>
-                    <p><strong>16GB DDR5 6000MHz</strong></p>
-                    <p>CL36 • 2x8GB kit • RGB</p>
-                    <p style="color: var(--secondary); margin-top: 10px;">$89</p>
-                </div>
-                
-                <div class="component-card">
-                    <h3 class="component-name">
-                        <i class="fas fa-hdd"></i> SSD
-                    </h3>
-                    <p><strong>1TB NVMe SSD</strong></p>
-                    <p>7000 MB/s o'qish • 5000 MB/s yozish</p>
-                    <p style="color: var(--secondary); margin-top: 10px;">$79</p>
-                </div>
-            </div>
-            
-            <div style="background: rgba(0, 122, 204, 0.1); padding: 25px; border-radius: 10px; margin: 30px 0;">
-                <h3 style="color: var(--accent); margin-bottom: 15px;">📊 1080p Gaming Performance</h3>
-                <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px;">
-                    <div>
-                        <p><strong>Cyberpunk 2077</strong></p>
-                        <p style="color: var(--secondary); font-size: 24px;">72 FPS</p>
-                        <p style="font-size: 14px; color: #8892b0;">High Settings + DLSS Quality</p>
+                    <div class="component-price">$199</div>
+                    <div class="component-header">
+                        <div class="component-icon">
+                            <i class="fas fa-microchip"></i>
+                        </div>
+                        <div>
+                            <h3 class="component-name">Protsessor</h3>
+                            <p class="component-model">AMD Ryzen 5 7600</p>
+                        </div>
                     </div>
-                    <div>
-                        <p><strong>Call of Duty: Warzone</strong></p>
-                        <p style="color: var(--secondary); font-size: 24px;">98 FPS</p>
-                        <p style="font-size: 14px; color: #8892b0;">Competitive Settings</p>
+                    <div class="component-specs">
+                        <div class="spec-item">
+                            <span class="spec-label">Yadrolar/Threadlar:</span>
+                            <span class="spec-value">6/12</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Base Clock:</span>
+                            <span class="spec-value">3.8 GHz</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Boost Clock:</span>
+                            <span class="spec-value">5.1 GHz</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Cache:</span>
+                            <span class="spec-value">38MB</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="component-card">
+                    <div class="component-price">$299</div>
+                    <div class="component-header">
+                        <div class="component-icon">
+                            <i class="fas fa-video"></i>
+                        </div>
+                        <div>
+                            <h3 class="component-name">Video Karta</h3>
+                            <p class="component-model">NVIDIA RTX 4060 8GB</p>
+                        </div>
+                    </div>
+                    <div class="component-specs">
+                        <div class="spec-item">
+                            <span class="spec-label">CUDA Cores:</span>
+                            <span class="spec-value">3072</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Boost Clock:</span>
+                            <span class="spec-value">2.46 GHz</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Memory:</span>
+                            <span class="spec-value">8GB GDDR6</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">TDP:</span>
+                            <span class="spec-value">115W</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="component-card">
+                    <div class="component-price">$89</div>
+                    <div class="component-header">
+                        <div class="component-icon">
+                            <i class="fas fa-memory"></i>
+                        </div>
+                        <div>
+                            <h3 class="component-name">RAM</h3>
+                            <p class="component-model">16GB DDR5 6000MHz</p>
+                        </div>
+                    </div>
+                    <div class="component-specs">
+                        <div class="spec-item">
+                            <span class="spec-label">Capacity:</span>
+                            <span class="spec-value">16GB (2x8GB)</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Speed:</span>
+                            <span class="spec-value">6000 MHz</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Latency:</span>
+                            <span class="spec-value">CL36</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Type:</span>
+                            <span class="spec-value">DDR5</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="component-card">
+                    <div class="component-price">$79</div>
+                    <div class="component-header">
+                        <div class="component-icon">
+                            <i class="fas fa-hdd"></i>
+                        </div>
+                        <div>
+                            <h3 class="component-name">SSD</h3>
+                            <p class="component-model">1TB NVMe PCIe 4.0</p>
+                        </div>
+                    </div>
+                    <div class="component-specs">
+                        <div class="spec-item">
+                            <span class="spec-label">Capacity:</span>
+                            <span class="spec-value">1TB</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Read Speed:</span>
+                            <span class="spec-value">7000 MB/s</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Write Speed:</span>
+                            <span class="spec-value">5000 MB/s</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Interface:</span>
+                            <span class="spec-value">PCIe 4.0 x4</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="component-card">
+                    <div class="component-price">$99</div>
+                    <div class="component-header">
+                        <div class="component-icon">
+                            <i class="fas fa-server"></i>
+                        </div>
+                        <div>
+                            <h3 class="component-name">Motherboard</h3>
+                            <p class="component-model">B650M</p>
+                        </div>
+                    </div>
+                    <div class="component-specs">
+                        <div class="spec-item">
+                            <span class="spec-label">Chipset:</span>
+                            <span class="spec-value">B650</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Form Factor:</span>
+                            <span class="spec-value">Micro-ATX</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">WiFi:</span>
+                            <span class="spec-value">WiFi 6</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">PCIe:</span>
+                            <span class="spec-value">PCIe 4.0</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="component-card">
+                    <div class="component-price">$89</div>
+                    <div class="component-header">
+                        <div class="component-icon">
+                            <i class="fas fa-bolt"></i>
+                        </div>
+                        <div>
+                            <h3 class="component-name">Power Supply</h3>
+                            <p class="component-model">650W 80+ Bronze</p>
+                        </div>
+                    </div>
+                    <div class="component-specs">
+                        <div class="spec-item">
+                            <span class="spec-label">Wattage:</span>
+                            <span class="spec-value">650W</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Efficiency:</span>
+                            <span class="spec-value">80+ Bronze</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Modular:</span>
+                            <span class="spec-value">Semi</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">PCIe Cables:</span>
+                            <span class="spec-value">2x 8-pin</span>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- $1500 Konfiguratsiya -->
+        <!-- $1500 PC Configuration -->
         <div class="pc-config" id="config-1500">
-            <h2 class="config-title">
-                <i class="fas fa-rocket"></i> $1500 - Mid-Range Gaming PC
-            </h2>
-            <p>1440p gaming uchun mukammal, yuqori refresh rate monitorlar bilan ishlash uchun mo'ljallangan.</p>
+            <div class="config-header">
+                <div>
+                    <h2 class="config-title">
+                        <i class="fas fa-rocket config-icon"></i>
+                        $1500 - Mid-Range Gaming PC
+                    </h2>
+                    <p class="config-subtitle">
+                        1440p High Settings • 100-144 FPS • RTX 4070
+                    </p>
+                </div>
+                <div class="total-price">$1,497</div>
+            </div>
             
             <div class="component-grid">
                 <div class="component-card">
-                    <h3 class="component-name">
-                        <i class="fas fa-microchip"></i> Protsessor
-                    </h3>
-                    <p><strong>Intel Core i5-14600K</strong></p>
-                    <p>14 yadro / 20 thread • 5.3 GHz Boost</p>
-                    <p style="color: var(--secondary); margin-top: 10px;">$329</p>
-                </div>
-                
-                <div class="component-card">
-                    <h3 class="component-name">
-                        <i class="fas fa-sd-card"></i> Video Karta
-                    </h3>
-                    <p><strong>NVIDIA RTX 4070 12GB</strong></p>
-                    <p>DLSS 3.5 • 5888 CUDA yadrolari</p>
-                    <p style="color: var(--secondary); margin-top: 10px;">$599</p>
-                </div>
-                
-                <div class="component-card">
-                    <h3 class="component-name">
-                        <i class="fas fa-memory"></i> RAM
-                    </h3>
-                    <p><strong>32GB DDR5 6400MHz</strong></p>
-                    <p>CL32 • 2x16GB kit • RGB</p>
-                    <p style="color: var(--secondary); margin-top: 10px;">$149</p>
-                </div>
-                
-                <div class="component-card">
-                    <h3 class="component-name">
-                        <i class="fas fa-hdd"></i> SSD
-                    </h3>
-                    <p><strong>2TB NVMe SSD</strong></p>
-                    <p>7300 MB/s o'qish • 6800 MB/s yozish</p>
-                    <p style="color: var(--secondary); margin-top: 10px;">$129</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- $2000 Konfiguratsiya -->
-        <div class="pc-config" id="config-2000">
-            <h2 class="config-title">
-                <i class="fas fa-crown"></i> $2000 - High-End Gaming PC
-            </h2>
-            <p>4K gaming va streaming uchun eng yaxshi konfiguratsiya, barcha o'yinlarni max sozlamalarda.</p>
-            
-            <div class="component-grid">
-                <div class="component-card">
-                    <h3 class="component-name">
-                        <i class="fas fa-microchip"></i> Protsessor
-                    </h3>
-                    <p><strong>AMD Ryzen 7 7800X3D</strong></p>
-                    <p>8 yadro / 16 thread • 5.0 GHz • 96MB 3D V-Cache</p>
-                    <p style="color: var(--secondary); margin-top: 10px;">$449</p>
-                </div>
-                
-                <div class="component-card">
-                    <h3 class="component-name">
-                        <i class="fas fa-sd-card"></i> Video Karta
-                    </h3>
-                    <p><strong>NVIDIA RTX 4080 Super 16GB</strong></p>
-                    <p>DLSS 3.5 • 10240 CUDA yadrolari</p>
-                    <p style="color: var(--secondary); margin-top: 10px;">$999</p>
-                </div>
-                
-                <div class="component-card">
-                    <h3 class="component-name">
-                        <i class="fas fa-memory"></i> RAM
-                    </h3>
-                    <p><strong>32GB DDR5 7200MHz</strong></p>
-                    <p>CL34 • 2x16GB kit • RGB</p>
-                    <p style="color: var(--secondary); margin-top: 10px;">$179</p>
-                </div>
-                
-                <div class="component-card">
-                    <h3 class="component-name">
-                        <i class="fas fa-hdd"></i> SSD
-                    </h3>
-                    <p><strong>2TB Gen5 NVMe SSD</strong></p>
-                    <p>12,000 MB/s o'qish • 10,000 MB/s yozish</p>
-                    <p style="color: var(--secondary); margin-top: 10px;">$249</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="benchmark-section">
-            <h2 class="benchmark-title">🎮 Gaming Performance Benchmarks</h2>
-            
-            <div class="benchmark-grid">
-                <div class="benchmark-card">
-                    <h3 style="color: white; margin-bottom: 15px;">1080p Gaming</h3>
-                    <div class="fps-number">95</div>
-                    <p style="color: rgba(255,255,255,0.8);">O'rtacha FPS</p>
-                    <p style="margin-top: 15px; font-size: 14px;">$1000 Build</p>
-                </div>
-                
-                <div class="benchmark-card">
-                    <h3 style="color: white; margin-bottom: 15px;">1440p Gaming</h3>
-                    <div class="fps-number">124</div>
-                    <p style="color: rgba(255,255,255,0.8);">O'rtacha FPS</p>
-                    <p style="margin-top: 15px; font-size: 14px;">$1500 Build</p>
-                </div>
-                
-                <div class="benchmark-card">
-                    <h3 style="color: white; margin-bottom: 15px;">4K Gaming</h3>
-                    <div class="fps-number">86</div>
-                    <p style="color: rgba(255,255,255,0.8);">O'rtacha FPS</p>
-                    <p style="margin-top: 15px; font-size: 14px;">$2000 Build</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="rtx-section">
-            <h2 class="rtx-title">🌟 RTX 4060 - Eng Yaxshi Qiymat</h2>
-            <p style="margin-bottom: 20px; font-size: 20px;">$1000 byudjetda eng yaxshi video karta - NVIDIA RTX 4060</p>
-            
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin: 30px 0;">
-                <div>
-                    <h3 style="color: #0a192f; margin-bottom: 15px;">✅ Afzalliklari</h3>
-                    <ul style="margin-left: 20px; color: #333;">
-                        <li>DLSS 3.0 - Frame Generation</li>
-                        <li>Faoliyat samaradorligi yuqori</li>
-                        <li>Ray Tracing ishlashi yaxshi</li>
-                        <li>1080p gaming uchun mukammal</li>
-                        <li>Narxi $300 atrofida</li>
-                    </ul>
-                </div>
-                
-                <div>
-                    <h3 style="color: #0a192f; margin-bottom: 15px;">📊 Performance</h3>
-                    <div style="background: white; padding: 20px; border-radius: 8px;">
-                        <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
-                            <span>1080p Ultra</span>
-                            <span style="font-weight: 600;">85+ FPS</span>
+                    <div class="component-price">$329</div>
+                    <div class="component-header">
+                        <div class="component-icon">
+                            <i class="fas fa-microchip"></i>
                         </div>
-                        <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
-                            <span>1440p High</span>
-                            <span style="font-weight: 600;">65+ FPS</span>
+                        <div>
+                            <h3 class="component-name">Protsessor</h3>
+                            <p class="component-model">Intel Core i5-14600K</p>
                         </div>
-                        <div style="display: flex; justify-content: space-between;">
-                            <span>Energiya iste'moli</span>
-                            <span style="font-weight: 600;">115W</span>
+                    </div>
+                    <div class="component-specs">
+                        <div class="spec-item">
+                            <span class="spec-label">Yadrolar/Threadlar:</span>
+                            <span class="spec-value">14/20</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">P-Core Clock:</span>
+                            <span class="spec-value">3.5 GHz</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Boost Clock:</span>
+                            <span class="spec-value">5.3 GHz</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Cache:</span>
+                            <span class="spec-value">24MB</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="component-card">
+                    <div class="component-price">$599</div>
+                    <div class="component-header">
+                        <div class="component-icon">
+                            <i class="fas fa-video"></i>
+                        </div>
+                        <div>
+                            <h3 class="component-name">Video Karta</h3>
+                            <p class="component-model">NVIDIA RTX 4070 12GB</p>
+                        </div>
+                    </div>
+                    <div class="component-specs">
+                        <div class="spec-item">
+                            <span class="spec-label">CUDA Cores:</span>
+                            <span class="spec-value">5888</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Boost Clock:</span>
+                            <span class="spec-value">2.48 GHz</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Memory:</span>
+                            <span class="spec-value">12GB GDDR6X</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">TDP:</span>
+                            <span class="spec-value">200W</span>
                         </div>
                     </div>
                 </div>
             </div>
-            
-            <table class="comparison-table">
-                <thead>
-                    <tr>
-                        <th>Video Karta</th>
-                        <th>Narxi</th>
-                        <th>1080p FPS</th>
-                        <th>1440p FPS</th>
-                        <th>Energiya</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><strong>RTX 4060</strong></td>
-                        <td>$299</td>
-                        <td style="color: green; font-weight: 600;">85</td>
-                        <td>65</td>
-                        <td>115W</td>
-                    </tr>
-                    <tr>
-                        <td>RTX 3060</td>
-                        <td>$329</td>
-                        <td>72</td>
-                        <td>52</td>
-                        <td>170W</td>
-                    </tr>
-                    <tr>
-                        <td>RX 7600</td>
-                        <td>$269</td>
-                        <td>81</td>
-                        <td>61</td>
-                        <td>165W</td>
-                    </tr>
-                </tbody>
-            </table>
         </div>
 
-        <div class="recommendation">
-            <h2 class="recommendation-title">🎯 Yakuniy Tavsiya</h2>
-            <p style="margin-bottom: 20px; font-size: 20px;">Qaysi byudjet siz uchun?</p>
+        <!-- $2000 PC Configuration -->
+        <div class="pc-config" id="config-2000">
+            <div class="config-header">
+                <div>
+                    <h2 class="config-title">
+                        <i class="fas fa-crown config-icon"></i>
+                        $2000 - High-End Gaming PC
+                    </h2>
+                    <p class="config-subtitle">
+                        4K Gaming • 144+ FPS • RTX 4080 Super
+                    </p>
+                </div>
+                <div class="total-price">$1,985</div>
+            </div>
             
-            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 30px;">
-                <div style="background: rgba(255,255,255,0.1); padding: 25px; border-radius: 10px;">
-                    <h3 style="margin-bottom: 15px;">$1000 Build</h3>
-                    <p style="font-size: 14px; margin-bottom: 15px;">1080p gaming, eski monitor, cheklangan byudjet</p>
-                    <div style="color: var(--budget1); font-size: 24px; font-weight: 700;">Tavsiya etiladi</div>
+            <div class="component-grid">
+                <div class="component-card">
+                    <div class="component-price">$449</div>
+                    <div class="component-header">
+                        <div class="component-icon">
+                            <i class="fas fa-microchip"></i>
+                        </div>
+                        <div>
+                            <h3 class="component-name">Protsessor</h3>
+                            <p class="component-model">AMD Ryzen 7 7800X3D</p>
+                        </div>
+                    </div>
+                    <div class="component-specs">
+                        <div class="spec-item">
+                            <span class="spec-label">Yadrolar/Threadlar:</span>
+                            <span class="spec-value">8/16</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Base Clock:</span>
+                            <span class="spec-value">4.2 GHz</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Boost Clock:</span>
+                            <span class="spec-value">5.0 GHz</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">3D V-Cache:</span>
+                            <span class="spec-value">96MB</span>
+                        </div>
+                    </div>
                 </div>
                 
-                <div style="background: rgba(255,255,255,0.1); padding: 25px; border-radius: 10px;">
-                    <h3 style="margin-bottom: 15px;">$1500 Build</h3>
-                    <p style="font-size: 14px; margin-bottom: 15px;">1440p gaming, streaming, future-proof</p>
-                    <div style="color: var(--budget2); font-size: 24px; font-weight: 700;">Eng yaxshi qiymat</div>
-                </div>
-                
-                <div style="background: rgba(255,255,255,0.1); padding: 25px; border-radius: 10px;">
-                    <h3 style="margin-bottom: 15px;">$2000 Build</h3>
-                    <p style="font-size: 14px; margin-bottom: 15px;">4K gaming, kontent yaratish, max performance</p>
-                    <div style="color: var(--budget3); font-size: 24px; font-weight: 700;">Premium variant</div>
+                <div class="component-card">
+                    <div class="component-price">$999</div>
+                    <div class="component-header">
+                        <div class="component-icon">
+                            <i class="fas fa-video"></i>
+                        </div>
+                        <div>
+                            <h3 class="component-name">Video Karta</h3>
+                            <p class="component-model">NVIDIA RTX 4080 Super 16GB</p>
+                        </div>
+                    </div>
+                    <div class="component-specs">
+                        <div class="spec-item">
+                            <span class="spec-label">CUDA Cores:</span>
+                            <span class="spec-value">10240</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Boost Clock:</span>
+                            <span class="spec-value">2.55 GHz</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Memory:</span>
+                            <span class="spec-value">16GB GDDR6X</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">TDP:</span>
+                            <span class="spec-value">320W</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
 
-        <footer>
-            <div class="footer-content">
-                <div>
-                    <h3 style="color: var(--secondary); margin-bottom: 20px;">PC Build Resources</h3>
-                    <p>Gaming PC qurish bo'yicha qo'llanmalar, driverlar va optimallashtirish maslahatlari.</p>
+        <!-- Ad Section -->
+        <div class="ad-section">
+            <div class="ad-label">PC Komponentlar Do'koni</div>
+            <div class="ad-placeholder">
+                AdSense Banner (728x90) - Gaming PC Parts
+            </div>
+        </div>
+
+        <!-- Performance Section -->
+        <section class="performance-section">
+            <h2 class="performance-title">
+                <i class="fas fa-tachometer-alt"></i>
+                Gaming Performance Benchmarks
+            </h2>
+            
+            <div class="fps-grid">
+                <div class="fps-card">
+                    <div class="game-title">Cyberpunk 2077</div>
+                    <div class="fps-value">72</div>
+                    <div class="fps-resolution">1080p Ultra</div>
+                    <div class="settings-info">RT Medium, DLSS Quality</div>
                 </div>
                 
-                <div>
-                    <h3 style="color: var(--secondary); margin-bottom: 20px;">Komponentlar Bozori</h3>
-                    <ul style="list-style: none; color: #8892b0;">
-                        <li>🇺🇸 Amazon</li>
-                        <li>🇺🇸 Newegg</li>
-                        <li>🇺🇿 O'zbekiston bozorlari</li>
+                <div class="fps-card">
+                    <div class="game-title">Call of Duty: Warzone</div>
+                    <div class="fps-value">98</div>
+                    <div class="fps-resolution">1080p Competitive</div>
+                    <div class="settings-info">High Settings, DLSS Balanced</div>
+                </div>
+                
+                <div class="fps-card">
+                    <div class="game-title">Fortnite</div>
+                    <div class="fps-value">144</div>
+                    <div class="fps-resolution">1080p Epic</div>
+                    <div class="settings-info">Lumen High, DLSS Performance</div>
+                </div>
+                
+                <div class="fps-card">
+                    <div class="game-title">Elden Ring</div>
+                    <div class="fps-value">85</div>
+                    <div class="fps-resolution">1080p Max</div>
+                    <div class="settings-info">Maximum Settings</div>
+                </div>
+                
+                <div class="fps-card">
+                    <div class="game-title">Apex Legends</div>
+                    <div class="fps-value">165</div>
+                    <div class="fps-resolution">1080p Low</div>
+                    <div class="settings-info">Competitive Settings</div>
+                </div>
+                
+                <div class="fps-card">
+                    <div class="game-title">Hogwarts Legacy</div>
+                    <div class="fps-value">68</div>
+                    <div class="fps-resolution">1080p Ultra</div>
+                    <div class="settings-info">RT On, DLSS Quality</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- RTX 4060 Section -->
+        <section class="rtx-section">
+            <div class="rtx-header">
+                <h2 class="rtx-title">
+                    <i class="fas fa-gem"></i>
+                    RTX 4060 - Eng Yaxshi Qiymat
+                </h2>
+                <div class="rtx-badge">
+                    <i class="fas fa-award"></i>
+                    VALUE KING 2026
+                </div>
+            </div>
+            
+            <div class="rtx-content">
+                <div class="rtx-features">
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-bolt"></i>
+                        </div>
+                        <div class="feature-text">
+                            <h4>DLSS 3.0 Technology</h4>
+                            <p>Frame Generation texnologiyasi bilan 2x FPS oshishi. AI asosida freymlar yaratish.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-leaf"></i>
+                        </div>
+                        <div class="feature-text">
+                            <h4>Energy Efficiency</h4>
+                            <p>Faqat 115W quvvat iste'moli. Oldingi avlod karta bilan solishtirganda 50% tejash.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-dollar-sign"></i>
+                        </div>
+                        <div class="feature-text">
+                            <h4>Best Price/Performance</h4>
+                            <p>$299 narxda 1080p Ultra gaming. Ray Tracing va DLSS 3.0 bilan to'liq jihozlangan.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-gamepad"></i>
+                        </div>
+                        <div class="feature-text">
+                            <h4>1080p Gaming Champion</h4>
+                            <p>Barcha zamonaviy o'yinlarni 1080p Ultra sozlamalarda 60+ FPS ishlatadi.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="rtx-comparison">
+                    <h3 style="color: var(--text); font-size: 1.8rem; margin-bottom: 20px;">Graphics Card Comparison</h3>
+                    <table class="comparison-table">
+                        <thead>
+                            <tr>
+                                <th>Model</th>
+                                <th>Price</th>
+                                <th>1080p FPS</th>
+                                <th>TDP</th>
+                                <th>Value</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>RTX 4060</strong></td>
+                                <td class="winner">$299</td>
+                                <td class="winner">85</td>
+                                <td class="winner">115W</td>
+                                <td class="winner">⭐ 9.5/10</td>
+                            </tr>
+                            <tr>
+                                <td>RTX 3060</td>
+                                <td>$329</td>
+                                <td>72</td>
+                                <td>170W</td>
+                                <td>⭐ 7/10</td>
+                            </tr>
+                            <tr>
+                                <td>RX 7600</td>
+                                <td>$269</td>
+                                <td>81</td>
+                                <td>165W</td>
+                                <td>⭐ 8/10</td>
+                            </tr>
+                            <tr>
+                                <td>RTX 3060 Ti</td>
+                                <td>$399</td>
+                                <td>88</td>
+                                <td>200W</td>
+                                <td>⭐ 8.5/10</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- Ad Section -->
+        <div class="ad-section">
+            <div class="ad-label">Gaming Aksessuarlar</div>
+            <div class="ad-placeholder" style="height: 250px;">
+                AdSense Vertical Banner (300x250) - Gaming Monitors & Accessories
+            </div>
+        </div>
+
+        <!-- Recommendation Section -->
+        <section class="recommendation-section">
+            <h2 class="recommendation-title">
+                <i class="fas fa-lightbulb"></i>
+                Qaysi Byudjet Sizga Mos?
+            </h2>
+            
+            <div class="recommendation-grid">
+                <div class="recommendation-card">
+                    <div class="rec-budget">$1000</div>
+                    <div class="rec-label">Entry Level</div>
+                    <p style="color: var(--light-text); margin-bottom: 20px;">
+                        1080p gaming, yangi boshlovchilar, cheklangan byudjet
+                    </p>
+                    <ul class="rec-points">
+                        <li>RTX 4060 - eng yaxshi qiymat</li>
+                        <li>1080p Ultra 60+ FPS</li>
+                        <li>Energy efficient - 115W</li>
+                        <li>DLSS 3.0 technology</li>
+                        <li>Yangi o'yinlarni 2-3 yil</li>
                     </ul>
+                    <div class="rec-verdict">
+                        Eng yaxshi qiymat - 1080p gaming
+                    </div>
                 </div>
                 
-                <div>
-                    <h3 style="color: var(--secondary); margin-bottom: 20px;">Monitoring Tools</h3>
-                    <p>MSI Afterburner, HWMonitor, GPU-Z kabi dasturlar.</p>
+                <div class="recommendation-card">
+                    <div class="rec-budget">$1500</div>
+                    <div class="rec-label">Mid-Range</div>
+                    <p style="color: var(--light-text); margin-bottom: 20px;">
+                        1440p gaming, streaming, future-proof build
+                    </p>
+                    <ul class="rec-points">
+                        <li>RTX 4070 - 1440p performance</li>
+                        <li>100-144 FPS 1440p</li>
+                        <li>Streaming va kontent yaratish</li>
+                        <li>4-5 yil future-proof</li>
+                        <li>Ray Tracing yuqori sozlamalar</li>
+                    </ul>
+                    <div class="rec-verdict">
+                        Eng balans - 1440p gaming
+                    </div>
+                </div>
+                
+                <div class="recommendation-card">
+                    <div class="rec-budget">$2000</div>
+                    <div class="rec-label">High-End</div>
+                    <p style="color: var(--light-text); margin-bottom: 20px;">
+                        4K gaming, content creation, max performance
+                    </p>
+                    <ul class="rec-points">
+                        <li>RTX 4080 Super - 4K performance</li>
+                        <li>4K 60+ FPS gaming</li>
+                        <li>Professional kontent yaratish</li>
+                        <li>5-6 yil future-proof</li>
+                        <li>Max Ray Tracing performance</li>
+                    </ul>
+                    <div class="rec-verdict">
+                        Premium - 4K gaming & creation
+                    </div>
                 </div>
             </div>
+        </section>
+
+                
             
-            <div style="text-align: center; padding-top: 30px; border-top: 1px solid rgba(100, 255, 218, 0.1);">
-                <p>© 2026 Gaming PC Build Guide | Barcha narxlar taxminiy va bozor sharotitga bog'liq</p>
-                <p style="margin-top: 10px; font-size: 14px; color: #8892b0;">RTX 4060 - 2026-yilning eng yaxshi qiymat video kartasi</p>
+                
+                         
+            <div class="copyright">
+                <p>© 2025-2026 Gaming PC Build Guide | Barcha narxlar taxminiy va bozor sharotitiga bog'liq</p>
+                <p style="margin-top: 10px; font-size: 0.9rem; color: var(--light-text);">
+                    RTX 4060 - 2026-yilning eng yaxshi qiymat video kartasi | $1000 byudjetda eng yaxshi konfiguratsiya
+                </p>
             </div>
         </footer>
     </div>
 
     <script>
-        // Budget selector functionality
+        // Budget Selector Functionality
         document.querySelectorAll('.budget-card').forEach(card => {
             card.addEventListener('click', function() {
                 // Remove active class from all cards
@@ -578,37 +1514,138 @@
                 // Show selected config
                 document.getElementById(`config-${budget}`).classList.add('active');
                 
-                // Scroll to config
-                document.getElementById(`config-${budget}`).scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
+                // Scroll to config with smooth animation
+                setTimeout(() => {
+                    document.getElementById(`config-${budget}`).scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }, 300);
             });
         });
 
-        // Performance charts animation
+        // Component card hover effects
+        document.querySelectorAll('.component-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-8px)';
+                this.style.boxShadow = '0 15px 30px rgba(0, 122, 204, 0.2)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+                this.style.boxShadow = 'none';
+            });
+        });
+
+        // FPS card hover effects
+        document.querySelectorAll('.fps-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-8px)';
+                this.style.boxShadow = '0 20px 40px rgba(0, 0, 0, 0.3)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+                this.style.boxShadow = 'none';
+            });
+        });
+
+        // Recommendation card hover effects
+        document.querySelectorAll('.recommendation-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-12px)';
+                this.style.boxShadow = '0 25px 50px rgba(0, 0, 0, 0.4)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+                this.style.boxShadow = 'none';
+            });
+        });
+
+        // Animate FPS numbers
         const observerOptions = {
             threshold: 0.5,
-            rootMargin: '0px 0px -50px 0px'
+            rootMargin: '0px 0px -100px 0px'
         };
 
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
+                    const fpsValue = entry.target.querySelector('.fps-value');
+                    if (fpsValue) {
+                        const finalValue = parseInt(fpsValue.textContent);
+                        let currentValue = 0;
+                        const increment = finalValue / 50;
+                        
+                        const counter = setInterval(() => {
+                            currentValue += increment;
+                            if (currentValue >= finalValue) {
+                                currentValue = finalValue;
+                                clearInterval(counter);
+                            }
+                            fpsValue.textContent = Math.floor(currentValue);
+                        }, 20);
+                        
+                        // Stop observing after animation
+                        observer.unobserve(entry.target);
+                    }
                 }
             });
         }, observerOptions);
 
-        // Observe benchmark cards
-        document.querySelectorAll('.benchmark-card').forEach(card => {
-            card.style.opacity = '0';
-            card.style.transform = 'translateY(20px)';
-            card.style.transition = 'all 0.5s ease';
+        // Observe FPS cards
+        document.querySelectorAll('.fps-card').forEach(card => {
             observer.observe(card);
         });
+
+        // Add floating animation to budget cards
+        const budgetCards = document.querySelectorAll('.budget-card');
+        budgetCards.forEach((card, index) => {
+            card.style.animation = `float 3s ease-in-out ${index * 0.3}s infinite`;
+        });
+
+        // Add CSS animation for floating effect
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes float {
+                0% { transform: translateY(0px); }
+                50% { transform: translateY(-10px); }
+                100% { transform: translateY(0px); }
+            }
+            
+            @keyframes pulse {
+                0% { box-shadow: 0 0 0 0 rgba(100, 255, 218, 0.4); }
+                70% { box-shadow: 0 0 0 15px rgba(100, 255, 218, 0); }
+                100% { box-shadow: 0 0 0 0 rgba(100, 255, 218, 0); }
+            }
+        `;
+        document.head.appendChild(style);
+
+        // Add pulse animation to RTX badge
+        const rtxBadge = document.querySelector('.rtx-badge');
+        rtxBadge.style.animation = 'pulse 2s infinite';
+
+       
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 100,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Initialize with first budget active
+        document.querySelector('.budget-card.active').click();
     </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
 </body>
 </html>
