@@ -1,0 +1,1736 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mexanik Klaviaturalar: Cherry MX Switch | Gaming uchun eng yaxshi</title>
+    <meta name="description" content="Cherry MX Red vs Blue vs Brown switch taqqoslash. 4.0/5 reyting. FPS, yozish, universal gaming uchun eng yaxshi switch.">
+    <meta name="keywords" content="mexanik klaviatura, cherry mx, red switch, blue switch, brown switch, gaming klaviatura, mechanical keyboard">
+    <meta name="author" content="Keyboard Gaming Expert">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #0c2461;
+            --secondary: #f6b93b;
+            --red: #e55039;
+            --blue: #4a69bd;
+            --brown: #b71540;
+            --card-bg: #1e3799;
+            --text: #f5f6fa;
+            --light-text: #dcdde1;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', system-ui, sans-serif;
+        }
+        
+        body {
+            background: var(--primary);
+            color: var(--text);
+            line-height: 1.8;
+            font-size: 18px;
+            min-height: 100vh;
+            padding-top: 20px;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        .main-header {
+            background: linear-gradient(135deg, 
+                rgba(229, 80, 57, 0.2), 
+                rgba(74, 105, 189, 0.2), 
+                rgba(183, 21, 64, 0.2));
+            border-radius: 30px;
+            padding: 70px 50px;
+            margin-bottom: 50px;
+            border-left: 10px solid var(--secondary);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .main-header::before {
+            content: '⌨️';
+            position: absolute;
+            font-size: 350px;
+            opacity: 0.05;
+            top: -70px;
+            right: -70px;
+            z-index: 0;
+        }
+        
+        .header-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .rating-badge {
+            display: inline-flex;
+            align-items: center;
+            background: linear-gradient(45deg, #f6b93b, #e58e26);
+            color: #1a1a1a;
+            padding: 12px 35px;
+            border-radius: 30px;
+            font-weight: 900;
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            box-shadow: 0 15px 30px rgba(246, 185, 59, 0.3);
+        }
+        
+        h1 {
+            font-size: 3.8rem;
+            background: linear-gradient(45deg, var(--red), var(--blue), var(--brown));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 25px;
+            line-height: 1.1;
+            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+        }
+        
+        .subtitle {
+            font-size: 1.6rem;
+            color: var(--light-text);
+            margin-bottom: 40px;
+            max-width: 1000px;
+            line-height: 1.6;
+        }
+        
+        .highlight {
+            color: var(--secondary);
+            font-weight: 800;
+        }
+        
+        /* Switch Comparison */
+        .switch-comparison {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin: 60px 0;
+        }
+        
+        @media (max-width: 1200px) {
+            .switch-comparison {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .switch-comparison {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .switch-card {
+            background: var(--card-bg);
+            border-radius: 25px;
+            padding: 45px 40px;
+            text-align: center;
+            transition: all 0.4s ease;
+            border: 3px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .switch-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 8px;
+        }
+        
+        .red-card::before {
+            background: linear-gradient(90deg, var(--red), #eb2f06);
+        }
+        
+        .blue-card::before {
+            background: linear-gradient(90deg, var(--blue), #1e3799);
+        }
+        
+        .brown-card::before {
+            background: linear-gradient(90deg, var(--brown), #6f1e51);
+        }
+        
+        .switch-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+        }
+        
+        .red-card:hover {
+            border-color: var(--red);
+        }
+        
+        .blue-card:hover {
+            border-color: var(--blue);
+        }
+        
+        .brown-card:hover {
+            border-color: var(--brown);
+        }
+        
+        .switch-icon {
+            font-size: 5rem;
+            margin-bottom: 25px;
+            display: inline-block;
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 30px;
+        }
+        
+        .red-card .switch-icon {
+            background: rgba(229, 80, 57, 0.2);
+            color: var(--red);
+            border: 4px solid var(--red);
+        }
+        
+        .blue-card .switch-icon {
+            background: rgba(74, 105, 189, 0.2);
+            color: var(--blue);
+            border: 4px solid var(--blue);
+        }
+        
+        .brown-card .switch-icon {
+            background: rgba(183, 21, 64, 0.2);
+            color: var(--brown);
+            border: 4px solid var(--brown);
+        }
+        
+        .switch-name {
+            font-size: 2.8rem;
+            margin-bottom: 15px;
+            font-weight: 800;
+        }
+        
+        .red-card .switch-name {
+            color: var(--red);
+        }
+        
+        .blue-card .switch-name {
+            color: var(--blue);
+        }
+        
+        .brown-card .switch-name {
+            color: var(--brown);
+        }
+        
+        .switch-type {
+            font-size: 1.3rem;
+            color: var(--light-text);
+            margin-bottom: 25px;
+            font-weight: 600;
+        }
+        
+        .switch-specs {
+            margin-top: 30px;
+            padding: 25px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            text-align: left;
+        }
+        
+        .spec-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .spec-item:last-child {
+            border-bottom: none;
+        }
+        
+        .spec-label {
+            color: var(--light-text);
+        }
+        
+        .spec-value {
+            color: var(--secondary);
+            font-weight: 700;
+        }
+        
+        .best-for {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 12px 25px;
+            border-radius: 25px;
+            font-size: 1.5rem;
+            font-weight: 800;
+            margin-top: 25px;
+        }
+        
+        .red-card .best-for {
+            color: var(--red);
+            border: 2px solid var(--red);
+        }
+        
+        .blue-card .best-for {
+            color: var(--blue);
+            border: 2px solid var(--blue);
+        }
+        
+        .brown-card .best-for {
+            color: var(--brown);
+            border: 2px solid var(--brown);
+        }
+        
+        /* FPS Section */
+        .fps-section {
+            background: linear-gradient(135deg, rgba(229, 80, 57, 0.15), rgba(235, 47, 6, 0.15));
+            border-radius: 30px;
+            padding: 60px 50px;
+            margin: 80px 0;
+            border-left: 10px solid var(--red);
+        }
+        
+        .fps-title {
+            font-size: 3rem;
+            color: var(--red);
+            margin-bottom: 40px;
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
+        
+        .fps-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+        
+        @media (max-width: 992px) {
+            .fps-content {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .fps-features {
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 25px;
+            padding: 40px 35px;
+        }
+        
+        .fps-feature-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid rgba(229, 80, 57, 0.2);
+        }
+        
+        .fps-feature-item:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+        
+        .fps-feature-icon {
+            font-size: 2.5rem;
+            color: var(--red);
+            margin-right: 25px;
+            min-width: 60px;
+        }
+        
+        .fps-feature-text h4 {
+            font-size: 1.8rem;
+            color: var(--text);
+            margin-bottom: 12px;
+        }
+        
+        .fps-feature-text p {
+            color: var(--light-text);
+            line-height: 1.7;
+        }
+        
+        .fps-visual {
+            text-align: center;
+        }
+        
+        .keyboard-visual {
+            font-size: 15rem;
+            color: var(--red);
+            margin-bottom: 30px;
+            animation: pulse 2s ease-in-out infinite;
+        }
+        
+        .fps-games {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .game-item {
+            background: rgba(229, 80, 57, 0.1);
+            padding: 20px 15px;
+            border-radius: 15px;
+            text-align: center;
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+        }
+        
+        .game-item:hover {
+            transform: translateY(-5px);
+            border-color: var(--red);
+        }
+        
+        .game-icon {
+            font-size: 2.5rem;
+            color: var(--red);
+            margin-bottom: 15px;
+        }
+        
+        .game-name {
+            font-size: 1.2rem;
+            color: var(--text);
+            font-weight: 600;
+        }
+        
+        /* Typing Section */
+        .typing-section {
+            background: linear-gradient(135deg, rgba(74, 105, 189, 0.15), rgba(30, 55, 153, 0.15));
+            border-radius: 30px;
+            padding: 60px 50px;
+            margin: 80px 0;
+            border-left: 10px solid var(--blue);
+        }
+        
+        .typing-title {
+            font-size: 3rem;
+            color: var(--blue);
+            margin-bottom: 40px;
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
+        
+        .typing-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        @media (max-width: 992px) {
+            .typing-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .typing-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .typing-card {
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 20px;
+            padding: 35px 30px;
+            text-align: center;
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+        }
+        
+        .typing-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--blue);
+            box-shadow: 0 20px 40px rgba(74, 105, 189, 0.2);
+        }
+        
+        .typing-icon {
+            font-size: 4rem;
+            color: var(--blue);
+            margin-bottom: 25px;
+        }
+        
+        .typing-card h4 {
+            font-size: 1.8rem;
+            color: var(--text);
+            margin-bottom: 20px;
+        }
+        
+        .typing-card p {
+            color: var(--light-text);
+            line-height: 1.7;
+        }
+        
+        .clicky-badge {
+            display: inline-block;
+            background: rgba(74, 105, 189, 0.2);
+            color: var(--blue);
+            padding: 10px 25px;
+            border-radius: 20px;
+            font-weight: 900;
+            font-size: 1.3rem;
+            margin-top: 20px;
+        }
+        
+        /* Universal Section */
+        .universal-section {
+            background: linear-gradient(135deg, rgba(183, 21, 64, 0.15), rgba(111, 30, 81, 0.15));
+            border-radius: 30px;
+            padding: 60px 50px;
+            margin: 80px 0;
+            border-left: 10px solid var(--brown);
+        }
+        
+        .universal-title {
+            font-size: 3rem;
+            color: var(--brown);
+            margin-bottom: 40px;
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
+        
+        .universal-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+        
+        @media (max-width: 992px) {
+            .universal-content {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .universal-stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+            margin-top: 30px;
+        }
+        
+        .stat-card {
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 15px;
+            padding: 25px 20px;
+            text-align: center;
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--brown);
+        }
+        
+        .stat-icon {
+            font-size: 3rem;
+            color: var(--brown);
+            margin-bottom: 15px;
+        }
+        
+        .stat-value {
+            font-size: 2.5rem;
+            color: var(--text);
+            font-weight: 900;
+            margin-bottom: 10px;
+        }
+        
+        .stat-label {
+            font-size: 1.1rem;
+            color: var(--light-text);
+        }
+        
+        .universal-visual {
+            text-align: center;
+        }
+        
+        .switch-visual {
+            font-size: 15rem;
+            color: var(--brown);
+            margin-bottom: 30px;
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        /* Comparison Table */
+        .comparison-section {
+            margin: 80px 0;
+        }
+        
+        .comparison-title {
+            font-size: 3rem;
+            color: var(--secondary);
+            text-align: center;
+            margin-bottom: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 25px;
+        }
+        
+        .comparison-table {
+            background: var(--card-bg);
+            border-radius: 25px;
+            overflow: hidden;
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
+        }
+        
+        .table-header {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            background: linear-gradient(90deg, 
+                rgba(229, 80, 57, 0.3), 
+                rgba(74, 105, 189, 0.3), 
+                rgba(183, 21, 64, 0.3));
+            padding: 35px 40px;
+            border-bottom: 3px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .header-cell {
+            font-size: 1.8rem;
+            font-weight: 900;
+            color: var(--text);
+            text-align: center;
+        }
+        
+        .header-cell:nth-child(2) {
+            color: var(--red);
+        }
+        
+        .header-cell:nth-child(3) {
+            color: var(--blue);
+        }
+        
+        .header-cell:nth-child(4) {
+            color: var(--brown);
+        }
+        
+        .table-row {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            padding: 30px 40px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            align-items: center;
+            transition: background 0.3s ease;
+        }
+        
+        .table-row:hover {
+            background: rgba(255, 255, 255, 0.05);
+        }
+        
+        .table-row:last-child {
+            border-bottom: none;
+        }
+        
+        .row-label {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--text);
+        }
+        
+        .row-icon {
+            font-size: 1.8rem;
+            width: 50px;
+            text-align: center;
+            color: var(--secondary);
+        }
+        
+        .row-value {
+            font-size: 1.6rem;
+            font-weight: 700;
+            text-align: center;
+        }
+        
+        .winner {
+            display: inline-block;
+            padding: 8px 18px;
+            border-radius: 20px;
+            font-weight: 900;
+            font-size: 1.1rem;
+            margin-left: 10px;
+        }
+        
+        .red-winner {
+            background: rgba(229, 80, 57, 0.2);
+            color: var(--red);
+            border: 2px solid var(--red);
+        }
+        
+        .blue-winner {
+            background: rgba(74, 105, 189, 0.2);
+            color: var(--blue);
+            border: 2px solid var(--blue);
+        }
+        
+        .brown-winner {
+            background: rgba(183, 21, 64, 0.2);
+            color: var(--brown);
+            border: 2px solid var(--brown);
+        }
+        
+        /* Recommendation Section */
+        .recommendation-section {
+            margin: 80px 0;
+        }
+        
+        .recommendation-title {
+            font-size: 3rem;
+            color: var(--secondary);
+            text-align: center;
+            margin-bottom: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 25px;
+        }
+        
+        .recommendation-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+        
+        @media (max-width: 1200px) {
+            .recommendation-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .recommendation-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .recommendation-card {
+            background: var(--card-bg);
+            border-radius: 25px;
+            padding: 45px 40px;
+            text-align: center;
+            border-top: 10px solid;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .recommendation-card:nth-child(1) {
+            border-color: var(--red);
+        }
+        
+        .recommendation-card:nth-child(2) {
+            border-color: var(--blue);
+        }
+        
+        .recommendation-card:nth-child(3) {
+            border-color: var(--brown);
+        }
+        
+        .recommendation-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+        }
+        
+        .rec-switch {
+            font-size: 2.5rem;
+            font-weight: 900;
+            margin-bottom: 20px;
+        }
+        
+        .recommendation-card:nth-child(1) .rec-switch {
+            color: var(--red);
+        }
+        
+        .recommendation-card:nth-child(2) .rec-switch {
+            color: var(--blue);
+        }
+        
+        .recommendation-card:nth-child(3) .rec-switch {
+            color: var(--brown);
+        }
+        
+        .rec-usage {
+            font-size: 1.8rem;
+            margin-bottom: 30px;
+            color: var(--text);
+            font-weight: 700;
+        }
+        
+        .rec-points {
+            list-style: none;
+            margin-top: 30px;
+            text-align: left;
+        }
+        
+        .rec-points li {
+            padding: 15px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        
+        .rec-points li:last-child {
+            border-bottom: none;
+        }
+        
+        .recommendation-card:nth-child(1) .rec-points li::before {
+            content: '🎯';
+            font-size: 1.5rem;
+            color: var(--red);
+        }
+        
+        .recommendation-card:nth-child(2) .rec-points li::before {
+            content: '✍️';
+            font-size: 1.5rem;
+            color: var(--blue);
+        }
+        
+        .recommendation-card:nth-child(3) .rec-points li::before {
+            content: '🔄';
+            font-size: 1.5rem;
+            color: var(--brown);
+        }
+        
+        /* Footer */
+        .footer {
+            background: var(--card-bg);
+            padding: 70px 0 50px;
+            margin-top: 100px;
+            border-radius: 40px 40px 0 0;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 60px;
+            margin-bottom: 60px;
+        }
+        
+        .footer-section h3 {
+            font-size: 2rem;
+            color: var(--secondary);
+            margin-bottom: 30px;
+        }
+        
+        .footer-section p {
+            color: var(--light-text);
+            line-height: 1.7;
+            margin-bottom: 25px;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 20px;
+        }
+        
+        .footer-links a {
+            color: var(--light-text);
+            text-decoration: none;
+            transition: color 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            font-size: 1.1rem;
+        }
+        
+        .footer-links a:hover {
+            color: var(--secondary);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 50px;
+            border-top: 2px solid rgba(255, 255, 255, 0.1);
+            color: var(--light-text);
+            font-size: 1.1rem;
+        }
+        
+        /* Ad Sections */
+        .ad-section {
+            background: rgba(255, 193, 7, 0.1);
+            border-radius: 25px;
+            padding: 45px 40px;
+            margin: 60px 0;
+            text-align: center;
+            border: 3px dashed rgba(255, 193, 7, 0.3);
+        }
+        
+        .ad-label {
+            display: inline-block;
+            background: rgba(255, 193, 7, 0.2);
+            color: #ffc107;
+            padding: 12px 30px;
+            border-radius: 25px;
+            margin-bottom: 30px;
+            font-weight: 900;
+            font-size: 1.2rem;
+        }
+        
+        .ad-placeholder {
+            height: 150px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 193, 7, 0.1);
+            border-radius: 20px;
+            color: #cbd5e1;
+            font-style: italic;
+            font-size: 1.3rem;
+            margin: 25px 0;
+        }
+        
+        /* Responsive */
+        @media (max-width: 1200px) {
+            h1 {
+                font-size: 3.2rem;
+            }
+            
+            .fps-title,
+            .typing-title,
+            .universal-title,
+            .comparison-title,
+            .recommendation-title {
+                font-size: 2.5rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            .main-header {
+                padding: 50px 30px;
+            }
+            
+            .rating-badge {
+                font-size: 1.3rem;
+                padding: 10px 25px;
+            }
+            
+            .switch-name {
+                font-size: 2.2rem;
+            }
+            
+            .fps-title,
+            .typing-title,
+            .universal-title,
+            .comparison-title,
+            .recommendation-title {
+                font-size: 2rem;
+            }
+            
+            .table-header,
+            .table-row {
+                grid-template-columns: 1fr;
+                padding: 25px 30px;
+            }
+            
+            .row-label {
+                margin-bottom: 15px;
+            }
+            
+            .header-cell,
+            .row-value {
+                text-align: left;
+            }
+            
+            .keyboard-visual,
+            .switch-visual {
+                font-size: 10rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .subtitle {
+                font-size: 1.3rem;
+            }
+            
+            .switch-card {
+                padding: 35px 25px;
+            }
+            
+            .switch-icon {
+                width: 100px;
+                height: 100px;
+                font-size: 4rem;
+            }
+        }
+        
+        /* Animations */
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.1); opacity: 0.8; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="main-header">
+            <div class="header-content">
+                <div class="rating-badge">
+                    <i class="fas fa-star"></i>
+                    4.0/5 Klaviatura Reytingi
+                </div>
+                <h1>Mexanik Klaviaturalar</h1>
+                <p class="subtitle">
+                    Cherry MX Red vs Blue vs Brown - qaysi switch gaming uchun?
+                    <span class="highlight">Red - FPS</span>, <span class="highlight">Brown - universal</span>.
+                    35 soatlik typing test natijalari.
+                </p>
+            </div>
+        </header>
+
+        <!-- Switch Comparison -->
+        <div class="switch-comparison">
+            <!-- Red Switch -->
+            <div class="switch-card red-card">
+                <div class="switch-icon">
+                    <i class="fas fa-fire"></i>
+                </div>
+                <h2 class="switch-name">Cherry MX Red</h2>
+                <div class="switch-type">Linear Switch • 45g • Sessiz</div>
+                
+                <div class="switch-specs">
+                    <div class="spec-item">
+                        <span class="spec-label">Actuation Force:</span>
+                        <span class="spec-value">45g</span>
+                    </div>
+                    <div class="spec-item">
+                        <span class="spec-label">Actuation Point:</span>
+                        <span class="spec-value">2.0mm</span>
+                    </div>
+                    <div class="spec-item">
+                        <span class="spec-label">Total Travel:</span>
+                        <span class="spec-value">4.0mm</span>
+                    </div>
+                    <div class="spec-item">
+                        <span class="spec-label">Tactile Bump:</span>
+                        <span class="spec-value">Yo'q</span>
+                    </div>
+                    <div class="spec-item">
+                        <span class="spec-label">Clicky Sound:</span>
+                        <span class="spec-value">Yo'q</span>
+                    </div>
+                </div>
+                
+                <div class="best-for">
+                    FPS Gaming uchun
+                </div>
+            </div>
+
+            <!-- Blue Switch -->
+            <div class="switch-card blue-card">
+                <div class="switch-icon">
+                    <i class="fas fa-volume-up"></i>
+                </div>
+                <h2 class="switch-name">Cherry MX Blue</h2>
+                <div class="switch-type">Clicky Switch • 50g • Ovozli</div>
+                
+                <div class="switch-specs">
+                    <div class="spec-item">
+                        <span class="spec-label">Actuation Force:</span>
+                        <span class="spec-value">50g</span>
+                    </div>
+                    <div class="spec-item">
+                        <span class="spec-label">Actuation Point:</span>
+                        <span class="spec-value">2.2mm</span>
+                    </div>
+                    <div class="spec-item">
+                        <span class="spec-label">Total Travel:</span>
+                        <span class="spec-value">4.0mm</span>
+                    </div>
+                    <div class="spec-item">
+                        <span class="spec-label">Tactile Bump:</span>
+                        <span class="spec-value">Bor</span>
+                    </div>
+                    <div class="spec-item">
+                        <span class="spec-label">Clicky Sound:</span>
+                        <span class="spec-value">Kuchli</span>
+                    </div>
+                </div>
+                
+                <div class="best-for">
+                    Yozish va Programlash
+                </div>
+            </div>
+
+            <!-- Brown Switch -->
+            <div class="switch-card brown-card">
+                <div class="switch-icon">
+                    <i class="fas fa-balance-scale"></i>
+                </div>
+                <h2 class="switch-name">Cherry MX Brown</h2>
+                <div class="switch-type">Tactile Switch • 45g • O'rtacha</div>
+                
+                <div class="switch-specs">
+                    <div class="spec-item">
+                        <span class="spec-label">Actuation Force:</span>
+                        <span class="spec-value">45g</span>
+                    </div>
+                    <div class="spec-item">
+                        <span class="spec-label">Actuation Point:</span>
+                        <span class="spec-value">2.0mm</span>
+                    </div>
+                    <div class="spec-item">
+                        <span class="spec-label">Total Travel:</span>
+                        <span class="spec-value">4.0mm</span>
+                    </div>
+                    <div class="spec-item">
+                        <span class="spec-label">Tactile Bump:</span>
+                        <span class="spec-value">Yumshoq</span>
+                    </div>
+                    <div class="spec-item">
+                        <span class="spec-label">Clicky Sound:</span>
+                        <span class="spec-value">Past</span>
+                    </div>
+                </div>
+                
+                <div class="best-for">
+                    Universal Gaming
+                </div>
+            </div>
+        </div>
+
+        <!-- Ad Section -->
+        <div class="ad-section">
+            <div class="ad-label">Klaviatura Aksessuarlar</div>
+            <div class="ad-placeholder">
+                AdSense Horizontal Banner (728x90) - Mechanical Keyboards
+            </div>
+        </div>
+
+        <!-- FPS Section -->
+        <section class="fps-section">
+            <h2 class="fps-title">
+                <i class="fas fa-crosshairs"></i>
+                Cherry MX Red - FPS Gaming uchun ideal
+            </h2>
+            
+            <div class="fps-content">
+                <div class="fps-features">
+                    <div class="fps-feature-item">
+                        <div class="fps-feature-icon">
+                            <i class="fas fa-bolt"></i>
+                        </div>
+                        <div class="fps-feature-text">
+                            <h4>Rapid Fire Gaming</h4>
+                            <p>Linear harakat - hech qanday tactile bump. O'yinlarda tez va oson multiple key presses.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="fps-feature-item">
+                        <div class="fps-feature-icon">
+                            <i class="fas fa-volume-mute"></i>
+                        </div>
+                        <div class="fps-feature-text">
+                            <h4>Sessiz Operation</h4>
+                            <p>Yo'q tactile bump va clicky sound. Uy atrofida yoki kechqurun gaming uchun ideal.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="fps-feature-item">
+                        <div class="fps-feature-icon">
+                            <i class="fas fa-running"></i>
+                        </div>
+                        <div class="fps-feature-text">
+                            <h4>45g Light Actuation</h4>
+                            <p>Eng yengil switch. Uzoq gaming seanslari uchun kam charchash. Tez WASD harakatlari.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="fps-feature-item">
+                        <div class="fps-feature-icon">
+                            <i class="fas fa-gamepad"></i>
+                        </div>
+                        <div class="fps-feature-text">
+                            <h4>Esport Approved</h4>
+                            <p>Ko'plab professional FPS o'yinchilar tomonidan ishlatiladi. CS:GO, Valorant, Call of Duty.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="fps-visual">
+                    <div class="keyboard-visual">
+                        <i class="fas fa-keyboard"></i>
+                    </div>
+                    <p style="color: var(--light-text); font-size: 1.3rem; max-width: 400px; margin: 0 auto;">
+                        FPS gaming uchun eng yaxshi switch. Rapid fire, quick strafing, fast reactions.
+                    </p>
+                    
+                    <div class="fps-games">
+                        <div class="game-item">
+                            <div class="game-icon">
+                                <i class="fas fa-crosshairs"></i>
+                            </div>
+                            <div class="game-name">CS:GO</div>
+                        </div>
+                        
+                        <div class="game-item">
+                            <div class="game-icon">
+                                <i class="fas fa-mask"></i>
+                            </div>
+                            <div class="game-name">Valorant</div>
+                        </div>
+                        
+                        <div class="game-item">
+                            <div class="game-icon">
+                                <i class="fas fa-fighter-jet"></i>
+                            </div>
+                            <div class="game-name">CoD: Warzone</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Typing Section -->
+        <section class="typing-section">
+            <h2 class="typing-title">
+                <i class="fas fa-keyboard"></i>
+                Cherry MX Blue - Yozish qiroli
+            </h2>
+            
+            <p style="color: var(--light-text); font-size: 1.5rem; text-align: center; margin-bottom: 40px; max-width: 800px; margin-left: auto; margin-right: auto;">
+                Audible click + tactile bump. Perfect for typing, programming, office work.
+            </p>
+            
+            <div class="typing-grid">
+                <div class="typing-card">
+                    <div class="typing-icon">
+                        <i class="fas fa-music"></i>
+                    </div>
+                    <h4>Audible Feedback</h4>
+                    <p>Har bir bosishda audible click sound. Yozishda qoniqarli feedback.</p>
+                    <div class="clicky-badge">CLICKY SOUND</div>
+                </div>
+                
+                <div class="typing-card">
+                    <div class="typing-icon">
+                        <i class="fas fa-hand-point-up"></i>
+                    </div>
+                    <h4>Tactile Bump</h4>
+                    <p>Actuation nuqtasida aniq tactile bump. Hech qachon miss click bo'lmaydi.</p>
+                    <div class="clicky-badge">TACTILE</div>
+                </div>
+                
+                <div class="typing-card">
+                    <div class="typing-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h4>Programming Perfect</h4>
+                    <p>Kod yozish, long documents, data entry uchun mukammal.</p>
+                    <div class="clicky-badge">50g FORCE</div>
+                </div>
+            </div>
+            
+            <div style="margin-top: 50px; padding: 35px; background: rgba(74, 105, 189, 0.1); border-radius: 20px; text-align: center;">
+                <h3 style="color: var(--blue); font-size: 2rem; margin-bottom: 20px;">
+                    <i class="fas fa-chart-bar"></i>
+                    Typing Speed Test
+                </h3>
+                <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; text-align: center;">
+                    <div>
+                        <div style="font-size: 3rem; color: var(--blue); font-weight: 900; margin-bottom: 10px;">85</div>
+                        <p style="color: var(--light-text);">WPM Average</p>
+                    </div>
+                    <div>
+                        <div style="font-size: 3rem; color: var(--blue); font-weight: 900; margin-bottom: 10px;">98%</div>
+                        <p style="color: var(--light-text);">Accuracy Rate</p>
+                    </div>
+                    <div>
+                        <div style="font-size: 3rem; color: var(--blue); font-weight: 900; margin-bottom: 10px;">72dB</div>
+                        <p style="color: var(--light-text);">Sound Level</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Universal Section -->
+        <section class="universal-section">
+            <h2 class="universal-title">
+                <i class="fas fa-balance-scale"></i>
+                Cherry MX Brown - Universal Gaming
+            </h2>
+            
+            <div class="universal-content">
+                <div class="universal-visual">
+                    <div class="switch-visual">
+                        <i class="fas fa-sliders-h"></i>
+                    </div>
+                    <p style="color: var(--light-text); font-size: 1.3rem; max-width: 400px; margin: 0 auto;">
+                        Har qanday gaming va ish uchun ideal. Tactile bump lekin sessiz.
+                    </p>
+                    
+                    <div class="universal-stats" style="margin-top: 40px;">
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-gamepad"></i>
+                            </div>
+                            <div class="stat-value">8.5/10</div>
+                            <div class="stat-label">Gaming</div>
+                        </div>
+                        
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-keyboard"></i>
+                            </div>
+                            <div class="stat-value">9.0/10</div>
+                            <div class="stat-label">Typing</div>
+                        </div>
+                        
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <div class="stat-value">9.5/10</div>
+                            <div class="stat-label">Office</div>
+                        </div>
+                        
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-volume-down"></i>
+                            </div>
+                            <div class="stat-value">7.0/10</div>
+                            <div class="stat-label">Sound</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="fps-features">
+                    <div class="fps-feature-item">
+                        <div class="fps-feature-icon">
+                            <i class="fas fa-hands-helping"></i>
+                        </div>
+                        <div class="fps-feature-text">
+                            <h4>Best of Both Worlds</h4>
+                            <p>Tactile bump + low noise. Gaming va yozish o'rtasidagi mukammal balans.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="fps-feature-item">
+                        <div class="fps-feature-icon">
+                            <i class="fas fa-layer-group"></i>
+                        </div>
+                        <div class="fps-feature-text">
+                            <h4>Multiple Game Genres</h4>
+                            <p>FPS, MOBA, RPG, Strategy - har qanday janr uchun yaxshi ishlaydi.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="fps-feature-item">
+                        <div class="fps-feature-icon">
+                            <i class="fas fa-home"></i>
+                        </div>
+                        <div class="fps-feature-text">
+                            <h4>Home Office Friendly</h4>
+                            <p>O'rtacha ovozli. Oilada yoki ofisda foydalanish uchun qulay.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="fps-feature-item">
+                        <div class="fps-feature-icon">
+                            <i class="fas fa-user-graduate"></i>
+                        </div>
+                        <div class="fps-feature-text">
+                            <h4>Beginner Friendly</h4>
+                            <p>Mexanik klaviaturaya yangi boshlovchilar uchun eng yaxshi tanlov.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Comparison Table -->
+        <section class="comparison-section">
+            <h2 class="comparison-title">
+                <i class="fas fa-balance-scale"></i>
+                Batafsil Taqqoslash Jadvali
+            </h2>
+            
+            <div class="comparison-table">
+                <div class="table-header">
+                    <div class="header-cell">Xususiyat</div>
+                    <div class="header-cell">MX Red</div>
+                    <div class="header-cell">MX Blue</div>
+                    <div class="header-cell">MX Brown</div>
+                </div>
+                
+                <div class="table-row">
+                    <div class="row-label">
+                        <i class="fas fa-weight row-icon"></i>
+                        <span>Actuation Force</span>
+                    </div>
+                    <div class="row-value">
+                        45g
+                        <span class="winner red-winner">ENGIL</span>
+                    </div>
+                    <div class="row-value">50g</div>
+                    <div class="row-value">45g</div>
+                </div>
+                
+                <div class="table-row">
+                    <div class="row-label">
+                        <i class="fas fa-volume-up row-icon"></i>
+                        <span>Ovoz Darajasi</span>
+                    </div>
+                    <div class="row-value">
+                        Sessiz
+                        <span class="winner red-winner">QUIET</span>
+                    </div>
+                    <div class="row-value">Kuchli</div>
+                    <div class="row-value">O'rtacha</div>
+                </div>
+                
+                <div class="table-row">
+                    <div class="row-label">
+                        <i class="fas fa-hand-paper row-icon"></i>
+                        <span>Tactile Bump</span>
+                    </div>
+                    <div class="row-value">Yo'q</div>
+                    <div class="row-value">
+                        Kuchli
+                        <span class="winner blue-winner">TACTILE</span>
+                    </div>
+                    <div class="row-value">Yumshoq</div>
+                </div>
+                
+                <div class="table-row">
+                    <div class="row-label">
+                        <i class="fas fa-gamepad row-icon"></i>
+                        <span>FPS Gaming</span>
+                    </div>
+                    <div class="row-value">
+                        9.5/10
+                        <span class="winner red-winner">YAXSHI</span>
+                    </div>
+                    <div class="row-value">6.5/10</div>
+                    <div class="row-value">8.0/10</div>
+                </div>
+                
+                <div class="table-row">
+                    <div class="row-label">
+                        <i class="fas fa-keyboard row-icon"></i>
+                        <span>Yozish</span>
+                    </div>
+                    <div class="row-value">7.0/10</div>
+                    <div class="row-value">
+                        9.5/10
+                        <span class="winner blue-winner">YAXSHI</span>
+                    </div>
+                    <div class="row-value">8.5/10</div>
+                </div>
+                
+                <div class="table-row">
+                    <div class="row-label">
+                        <i class="fas fa-users row-icon"></i>
+                        <span>Universal</span>
+                    </div>
+                    <div class="row-value">7.5/10</div>
+                    <div class="row-value">6.0/10</div>
+                    <div class="row-value">
+                        9.0/10
+                        <span class="winner brown-winner">YAXSHI</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Ad Section -->
+        <div class="ad-section">
+            <div class="ad-label">Klaviatura Keycaps & Aksessuarlar</div>
+            <div class="ad-placeholder" style="height: 250px;">
+                AdSense Vertical Banner (300x250) - Keyboard Accessories
+            </div>
+        </div>
+
+        <!-- Recommendation Section -->
+        <section class="recommendation-section">
+            <h2 class="recommendation-title">
+                <i class="fas fa-trophy"></i>
+                Yakuniy Tavsiyalar
+            </h2>
+            
+            <div class="recommendation-grid">
+                <div class="recommendation-card">
+                    <h3 class="rec-switch">Cherry MX Red</h3>
+                    <div class="rec-usage">FPS Gaming uchun</div>
+                    <ul class="rec-points">
+                        <li>Linear harakat - rapid fire</li>
+                        <li>Sessiz - kechqurun gaming</li>
+                        <li>45g engil bosish</li>
+                        <li>Esport approved</li>
+                        <li>Perfect for CS:GO, Valorant</li>
+                    </ul>
+                    <div style="margin-top: 30px; padding: 20px; background: rgba(229, 80, 57, 0.1); border-radius: 15px;">
+                        <p style="color: var(--red); font-weight: 900; font-size: 1.3rem;">
+                            🎯 FPS Gaming uchun
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="recommendation-card">
+                    <h3 class="rec-switch">Cherry MX Blue</h3>
+                    <div class="rec-usage">Yozish va Programlash</div>
+                    <ul class="rec-points">
+                        <li>Tactile bump + audible click</li>
+                        <li>Perfect typing feedback</li>
+                        <li>50g force - aniq bosish</li>
+                        <li>Programming, office work</li>
+                        <li>Not for multiplayer gaming</li>
+                    </ul>
+                    <div style="margin-top: 30px; padding: 20px; background: rgba(74, 105, 189, 0.1); border-radius: 15px;">
+                        <p style="color: var(--blue); font-weight: 900; font-size: 1.3rem;">
+                            ✍️ Yozish uchun
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="recommendation-card">
+                    <h3 class="rec-switch">Cherry MX Brown</h3>
+                    <div class="rec-usage">Universal Gaming</div>
+                    <ul class="rec-points">
+                        <li>Tactile bump + low noise</li>
+                        <li>Gaming & typing balance</li>
+                        <li>Home office friendly</li>
+                        <li>Beginner friendly</li>
+                        <li>All game genres</li>
+                    </ul>
+                    <div style="margin-top: 30px; padding: 20px; background: rgba(183, 21, 64, 0.1); border-radius: 15px;">
+                        <p style="color: var(--brown); font-weight: 900; font-size: 1.3rem;">
+                            🔄 Universal uchun
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 60px; padding: 40px; background: linear-gradient(135deg, rgba(229, 80, 57, 0.1), rgba(74, 105, 189, 0.1), rgba(183, 21, 64, 0.1)); border-radius: 25px; border: 3px solid rgba(255, 255, 255, 0.1);">
+                <h3 style="color: var(--secondary); font-size: 2.5rem; margin-bottom: 25px;">
+                    <i class="fas fa-lightbulb"></i>
+                    Yakuniy Xulosa
+                </h3>
+                <p style="color: var(--text); font-size: 1.5rem; line-height: 1.7; max-width: 900px; margin: 0 auto 30px;">
+                    Agar siz <strong>FPS gaming</strong> o'ynasangiz - <span style="color: var(--red); font-weight: 900;">Cherry MX Red</span> tanlang.<br>
+                    Agar siz <strong>ko'p yozish</strong> ishlaringiz bo'lsa - <span style="color: var(--blue); font-weight: 900;">Cherry MX Blue</span> tanlang.<br>
+                    Agar siz <strong>universal foydalanuvchi</strong> bo'lsangiz - <span style="color: var(--brown); font-weight: 900;">Cherry MX Brown</span> tanlang.
+                </p>
+                <div style="display: inline-block; background: rgba(255, 255, 255, 0.1); padding: 20px 40px; border-radius: 20px; margin-top: 20px;">
+                    <p style="color: var(--secondary); font-weight: 900; font-size: 1.3rem;">
+                        ⌨️ 4.0/5 Klaviatura Reyting
+                    </p>
+                </div>
+            </div>
+        </section>
+
+      
+                <div class="footer-section">
+                    <h3>Keyboard Brands</h3>
+                    <p>Cherry MX switch ishlatadigan eng yaxshi klaviatura brendlari.</p>
+                    <ul class="footer-links">
+                        <li><a href="https://www.razer.com"><i class="fab fa-razer"></i> Razer</a></li>
+                        <li><a href="https://www.corsair.com"><i class="fab fa-corsair"></i> Corsair</a></li>
+                        <li><a href="https://steelseries.com"><i class="fab fa-steel"></i> SteelSeries</a></li>
+                    </ul>
+                </div>
+                
+                
+            </div>
+            
+            <div class="copyright">
+                <p>© 2025-2026 Mexanik Klaviaturalar Taqqoslash | 4.0/5 Klaviatura Reyting</p>
+                <p style="margin-top: 15px; font-size: 1rem; color: var(--light-text);">
+                    Cherry MX Red - FPS gaming uchun | Cherry MX Blue - yozish uchun | Cherry MX Brown - universal uchun
+                </p>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // Switch card hover effects
+        document.querySelectorAll('.switch-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-15px)';
+                this.style.boxShadow = '0 30px 60px rgba(0, 0, 0, 0.5)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+                this.style.boxShadow = 'none';
+            });
+        });
+
+        // Typing card hover effects
+        document.querySelectorAll('.typing-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-12px)';
+                this.style.boxShadow = '0 25px 50px rgba(74, 105, 189, 0.3)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+                this.style.boxShadow = 'none';
+            });
+        });
+
+        // Stat card hover effects
+        document.querySelectorAll('.stat-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-8px)';
+                this.style.borderColor = 'var(--brown)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+                this.style.borderColor = 'transparent';
+            });
+        });
+
+        // Game item hover effects
+        document.querySelectorAll('.game-item').forEach(item => {
+            item.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-8px)';
+                this.style.borderColor = 'var(--red)';
+            });
+            
+            item.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+                this.style.borderColor = 'transparent';
+            });
+        });
+
+        // Recommendation card hover effects
+        document.querySelectorAll('.recommendation-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-18px)';
+                this.style.boxShadow = '0 35px 70px rgba(0, 0, 0, 0.6)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+                this.style.boxShadow = 'none';
+            });
+        });
+
+        // Table row hover effects
+        document.querySelectorAll('.table-row').forEach(row => {
+            row.addEventListener('mouseenter', function() {
+                this.style.background = 'rgba(255, 255, 255, 0.08)';
+            });
+            
+            row.addEventListener('mouseleave', function() {
+                this.style.background = '';
+            });
+        });
+
+        // Add floating animation to switch icons
+        const switchIcons = document.querySelectorAll('.switch-icon');
+        switchIcons.forEach((icon, index) => {
+            icon.style.animation = `float 3s ease-in-out ${index * 0.5}s infinite`;
+        });
+
+        // Add CSS animation for rainbow effect
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes rainbow {
+                0% { background-position: 0% 50%; }
+                50% { background-position: 100% 50%; }
+                100% { background-position: 0% 50%; }
+            }
+        `;
+        document.head.appendChild(style);
+
+        // Add rainbow effect to header gradient
+        const header = document.querySelector('.main-header');
+        header.style.animation = 'rainbow 6s ease infinite';
+        header.style.backgroundSize = '400% 400%';
+
+        
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Initialize animations on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add initial animation to rating badge
+            const ratingBadge = document.querySelector('.rating-badge');
+            ratingBadge.style.animation = 'pulse 2s 1';
+            
+            // Add click effect to best-for badges
+            const bestForBadges = document.querySelectorAll('.best-for');
+            bestForBadges.forEach(badge => {
+                badge.addEventListener('click', function() {
+                    this.style.transform = 'scale(1.1)';
+                    setTimeout(() => {
+                        this.style.transform = 'scale(1)';
+                    }, 300);
+                });
+            });
+            
+            // Add click effect to clicky badges
+            const clickyBadges = document.querySelectorAll('.clicky-badge');
+            clickyBadges.forEach(badge => {
+                badge.addEventListener('click', function() {
+                    this.style.transform = 'scale(1.1)';
+                    setTimeout(() => {
+                        this.style.transform = 'scale(1)';
+                    }, 300);
+                });
+            });
+            
+            // Simulate typing sound on Blue switch hover
+            const blueCard = document.querySelector('.blue-card');
+            blueCard.addEventListener('mouseenter', function() {
+                // Visual feedback for clicky sound
+                const icon = this.querySelector('.switch-icon');
+                icon.style.transform = 'scale(1.2)';
+                icon.style.transition = 'transform 0.1s ease';
+                
+                setTimeout(() => {
+                    icon.style.transform = 'scale(1)';
+                }, 100);
+            });
+        });
+    </script>
+</body>
+</html>
