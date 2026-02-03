@@ -1,0 +1,996 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Windows 11 vs macOS Sonoma - Qaysi OS yaxshiroq? | 2024 Test</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', system-ui, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: #e2e8f0;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .comparison-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 25px;
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            overflow: hidden;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+        }
+        
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, #0066cc 0%, #107c10 100%);
+            padding: 50px 40px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header::before {
+            content: '💻';
+            position: absolute;
+            font-size: 180px;
+            opacity: 0.1;
+            top: -30px;
+            right: -30px;
+        }
+        
+        .main-title {
+            font-size: 3.2rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            background: linear-gradient(45deg, #fff, #60a5fa);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .subtitle {
+            font-size: 1.3rem;
+            color: #cbd5e1;
+            max-width: 800px;
+            margin: 0 auto 30px;
+            line-height: 1.6;
+        }
+        
+        .rating-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(245, 158, 11, 0.2);
+            color: #fbbf24;
+            padding: 12px 30px;
+            border-radius: 30px;
+            font-weight: 700;
+            font-size: 1.2rem;
+            border: 1px solid rgba(245, 158, 11, 0.4);
+        }
+        
+        .stars {
+            color: #fbbf24;
+            letter-spacing: 5px;
+        }
+        
+        /* Adsense Top */
+        .adsense-top {
+            background: rgba(255, 255, 255, 0.05);
+            border: 2px dashed rgba(59, 130, 246, 0.5);
+            border-radius: 15px;
+            padding: 30px;
+            margin: 40px;
+            text-align: center;
+        }
+        
+        .ad-label {
+            display: inline-block;
+            background: linear-gradient(45deg, #3b82f6, #8b5cf6);
+            color: white;
+            padding: 10px 25px;
+            border-radius: 25px;
+            margin-bottom: 20px;
+            font-size: 1rem;
+            font-weight: 700;
+        }
+        
+        .ad-placeholder {
+            height: 280px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(45deg, rgba(59, 130, 246, 0.1), rgba(139, 92, 246, 0.1));
+            border-radius: 10px;
+            color: #94a3b8;
+            font-style: italic;
+            font-size: 1.1rem;
+            gap: 15px;
+        }
+        
+        /* OS Comparison Grid */
+        .os-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            padding: 40px;
+        }
+        
+        @media (max-width: 1024px) {
+            .os-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+        }
+        
+        .os-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 40px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .os-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        }
+        
+        .windows-card {
+            border-top: 6px solid #0066cc;
+        }
+        
+        .macos-card {
+            border-top: 6px solid #107c10;
+        }
+        
+        .os-header {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+            margin-bottom: 30px;
+            padding-bottom: 25px;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .os-icon {
+            width: 80px;
+            height: 80px;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+        }
+        
+        .windows-icon {
+            background: rgba(0, 102, 204, 0.2);
+            color: #60a5fa;
+        }
+        
+        .macos-icon {
+            background: rgba(16, 124, 16, 0.2);
+            color: #4ade80;
+        }
+        
+        .os-name {
+            font-size: 2.2rem;
+            font-weight: 800;
+        }
+        
+        .windows-name {
+            color: #60a5fa;
+        }
+        
+        .macos-name {
+            color: #4ade80;
+        }
+        
+        .os-tagline {
+            font-size: 1.2rem;
+            color: #cbd5e1;
+            margin-top: 5px;
+        }
+        
+        /* Features Grid */
+        .features-grid {
+            display: grid;
+            gap: 25px;
+            margin: 30px 0;
+        }
+        
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: background 0.3s ease;
+        }
+        
+        .feature-item:hover {
+            background: rgba(255, 255, 255, 0.07);
+        }
+        
+        .feature-icon {
+            font-size: 1.8rem;
+            width: 50px;
+            text-align: center;
+        }
+        
+        .windows-feature .feature-icon {
+            color: #60a5fa;
+        }
+        
+        .macos-feature .feature-icon {
+            color: #4ade80;
+        }
+        
+        .feature-content h4 {
+            font-size: 1.3rem;
+            margin-bottom: 8px;
+            color: #f1f5f9;
+        }
+        
+        .feature-content p {
+            color: #94a3b8;
+            line-height: 1.6;
+        }
+        
+        /* Performance Stats */
+        .performance-stats {
+            margin: 40px 0;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .stats-title {
+            text-align: center;
+            font-size: 1.8rem;
+            margin-bottom: 30px;
+            color: #fbbf24;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
+        
+        @media (max-width: 768px) {
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .stat-item {
+            text-align: center;
+            padding: 25px;
+            border-radius: 15px;
+            background: rgba(255, 255, 255, 0.03);
+        }
+        
+        .stat-value {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin: 15px 0;
+        }
+        
+        .windows-stat .stat-value {
+            color: #60a5fa;
+        }
+        
+        .macos-stat .stat-value {
+            color: #4ade80;
+        }
+        
+        .stat-label {
+            color: #cbd5e1;
+            font-size: 1.1rem;
+        }
+        
+        /* Comparison Table */
+        .comparison-table {
+            margin: 40px;
+            overflow: hidden;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .table-header {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            background: linear-gradient(90deg, rgba(0, 102, 204, 0.3), rgba(16, 124, 16, 0.3));
+            padding: 25px;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .header-cell {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #f1f5f9;
+        }
+        
+        .table-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            padding: 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            align-items: center;
+            transition: background 0.3s ease;
+        }
+        
+        .table-row:hover {
+            background: rgba(255, 255, 255, 0.05);
+        }
+        
+        .table-row:last-child {
+            border-bottom: none;
+        }
+        
+        .row-label {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+        
+        .row-icon {
+            color: #fbbf24;
+            font-size: 1.3rem;
+        }
+        
+        .row-value {
+            font-size: 1.2rem;
+            font-weight: 500;
+        }
+        
+        .windows-value {
+            color: #60a5fa;
+        }
+        
+        .macos-value {
+            color: #4ade80;
+        }
+        
+        /* Test Results */
+        .test-results {
+            background: linear-gradient(135deg, rgba(245, 158, 11, 0.1), rgba(234, 179, 8, 0.1));
+            border-radius: 20px;
+            padding: 40px;
+            margin: 40px;
+            border: 1px solid rgba(245, 158, 11, 0.3);
+        }
+        
+        .test-title {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 30px;
+            color: #fbbf24;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+        }
+        
+        .test-duration {
+            display: inline-block;
+            background: rgba(245, 158, 11, 0.2);
+            color: #fbbf24;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-left: 15px;
+        }
+        
+        .test-conclusion {
+            text-align: center;
+            font-size: 1.3rem;
+            color: #e2e8f0;
+            max-width: 900px;
+            margin: 0 auto;
+            line-height: 1.8;
+            padding: 25px;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 15px;
+            border-left: 4px solid #fbbf24;
+        }
+        
+        /* Recommendation */
+        .recommendation {
+            padding: 40px;
+            text-align: center;
+        }
+        
+        .recommendation-title {
+            font-size: 2.2rem;
+            margin-bottom: 30px;
+            color: #f1f5f9;
+        }
+        
+        .recommendation-cards {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        @media (max-width: 768px) {
+            .recommendation-cards {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .rec-card {
+            padding: 35px;
+            border-radius: 20px;
+            text-align: left;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .windows-rec {
+            background: linear-gradient(135deg, rgba(0, 102, 204, 0.1), rgba(0, 102, 204, 0.05));
+            border-top: 6px solid #0066cc;
+        }
+        
+        .macos-rec {
+            background: linear-gradient(135deg, rgba(16, 124, 16, 0.1), rgba(16, 124, 16, 0.05));
+            border-top: 6px solid #107c10;
+        }
+        
+        .rec-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .windows-rec h3 {
+            color: #60a5fa;
+        }
+        
+        .macos-rec h3 {
+            color: #4ade80;
+        }
+        
+        .rec-list {
+            list-style: none;
+            margin-top: 20px;
+        }
+        
+        .rec-list li {
+            padding: 15px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .rec-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .rec-list li::before {
+            content: '🎯';
+            font-size: 1.1rem;
+        }
+        
+        /* Adsense Bottom */
+        .adsense-bottom {
+            background: rgba(255, 255, 255, 0.05);
+            border: 2px dashed rgba(139, 92, 246, 0.5);
+            border-radius: 15px;
+            padding: 30px;
+            margin: 40px;
+            text-align: center;
+        }
+        
+        .adsense-bottom .ad-placeholder {
+            height: 200px;
+            background: linear-gradient(45deg, rgba(139, 92, 246, 0.1), rgba(236, 72, 153, 0.1));
+        }
+        
+        /* CTA */
+        .cta-section {
+            text-align: center;
+            padding: 40px;
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(16, 124, 16, 0.1));
+            margin: 40px;
+            border-radius: 20px;
+            border: 1px solid rgba(59, 130, 246, 0.3);
+        }
+        
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 15px;
+            background: linear-gradient(45deg, #3b82f6, #8b5cf6);
+            color: white;
+            padding: 18px 40px;
+            border-radius: 12px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(59, 130, 246, 0.4);
+        }
+        
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 40px;
+            color: #94a3b8;
+            font-size: 0.9rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 25px;
+            flex-wrap: wrap;
+        }
+        
+        .footer-links a {
+            color: #60a5fa;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: #93c5fd;
+            text-decoration: underline;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="comparison-container">
+        <!-- Header -->
+        <div class="header">
+            <h1 class="main-title">Windows 11 vs macOS Sonoma</h1>
+            <p class="subtitle">Ikki operatsion tizimni 1 oylik real ishlatishda sinab ko'rdik. Qaysi biri qulayroq?</p>
+            <div class="rating-badge">
+                <span class="stars">★★★★☆</span>
+                <span>4.5/5</span>
+            </div>
+        </div>
+        
+        <!-- Adsense Top -->
+        <div class="adsense-top">
+            <div class="ad-label">🖥️ KOMPYUTER AKSSESSUARLARI</div>
+            <div class="ad-placeholder">
+                <div>AdSense Banner (728x280)</div>
+                <div style="font-size: 0.9rem; color: #64748b;">Windows va Mac uchun maxsus aksessuarlar</div>
+            </div>
+        </div>
+        
+        <!-- OS Comparison Grid -->
+        <div class="os-grid">
+            <!-- Windows 11 -->
+            <div class="os-card windows-card">
+                <div class="os-header">
+                    <div class="os-icon windows-icon">
+                        <i class="fab fa-windows"></i>
+                    </div>
+                    <div>
+                        <h2 class="os-name windows-name">Windows 11</h2>
+                        <div class="os-tagline">Universal, har qanday kompyuter uchun</div>
+                    </div>
+                </div>
+                
+                <div class="features-grid">
+                    <div class="feature-item windows-feature">
+                        <div class="feature-icon">
+                            <i class="fas fa-desktop"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h4>Yangi Start Menu</h4>
+                            <p>Markazlashtirilgan tugmalar, tavsiya etilgan fayllar, tezkor kirish</p>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-item windows-feature">
+                        <div class="feature-icon">
+                            <i class="fas fa-window-restore"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h4>Snap Layouts</h4>
+                            <p>Bir nechta oynalarni tartibga solishning yangi usullari</p>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-item windows-feature">
+                        <div class="feature-icon">
+                            <i class="fas fa-shopping-cart"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h4>Microsoft Store</h4>
+                            <p>Yangi dizayn, Android ilovalarini qo'llab-quvvatlash</p>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-item windows-feature">
+                        <div class="feature-icon">
+                            <i class="fas fa-gamepad"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h4>Gaming Features</h4>
+                            <p>Auto HDR, DirectStorage, Xbox Game Pass integratsiyasi</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div style="margin-top: 30px; padding: 25px; background: rgba(0, 102, 204, 0.1); border-radius: 15px;">
+                    <h4 style="color: #60a5fa; margin-bottom: 15px; display: flex; align-items: center; gap: 10px;">
+                        <i class="fas fa-chart-line"></i>
+                        Asosiy Afzallik
+                    </h4>
+                    <p style="color: #cbd5e1; line-height: 1.7;">
+                        Dasturiy ta'minotning keng tanlovi, o'ynaladigan o'yinlar, 
+                        har qanday apparat bilan mos kelishi. Gaming va biznes uchun ideal.
+                    </p>
+                </div>
+            </div>
+            
+            <!-- macOS Sonoma -->
+            <div class="os-card macos-card">
+                <div class="os-header">
+                    <div class="os-icon macos-icon">
+                        <i class="fab fa-apple"></i>
+                    </div>
+                    <div>
+                        <h2 class="os-name macos-name">macOS Sonoma</h2>
+                        <div class="os-tagline">Optimallashtirilgan, Apple ekotizimi uchun</div>
+                    </div>
+                </div>
+                
+                <div class="features-grid">
+                    <div class="feature-item macos-feature">
+                        <div class="feature-icon">
+                            <i class="fas fa-tv"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h4>Widgetlar Desktopda</h4>
+                            <p>Widgetlarni to'g'ridan-to'g'ri desktopga qo'yish imkoniyati</p>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-item macos-feature">
+                        <div class="feature-icon">
+                            <i class="fas fa-video"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h4>Video Conferencing</h4>
+                            <p>Presentatsiya rejimlari, ekran effektlari</p>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-item macos-feature">
+                        <div class="feature-icon">
+                            <i class="fas fa-gamepad"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h4>Game Mode</h4>
+                            <p>O'yin rejimi, past kechikish, yuqori samaradorlik</p>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-item macos-feature">
+                        <div class="feature-icon">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h4>Apple Ekotizimi</h4>
+                            <p>iPhone, iPad, Apple Watch bilan mukammal integratsiya</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div style="margin-top: 30px; padding: 25px; background: rgba(16, 124, 16, 0.1); border-radius: 15px;">
+                    <h4 style="color: #4ade80; margin-bottom: 15px; display: flex; align-items: center; gap: 10px;">
+                        <i class="fas fa-bolt"></i>
+                        Asosiy Afzallik
+                    </h4>
+                    <p style="color: #cbd5e1; line-height: 1.7;">
+                        Mukammal optimallashtirish, Apple qurilmalari bilan integratsiya, 
+                        yuqori xavfsizlik. Dizayn va media ishlab chiqarish uchun ideal.
+                    </p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Performance Stats -->
+        <div class="performance-stats">
+            <h3 class="stats-title">
+                <i class="fas fa-tachometer-alt"></i>
+                Ishlash Ko'rsatkichlari
+            </h3>
+            <div class="stats-grid">
+                <div class="stat-item windows-stat">
+                    <div class="stat-value">98%</div>
+                    <div class="stat-label">Dastur mavjudligi</div>
+                </div>
+                
+                <div class="stat-item macos-stat">
+                    <div class="stat-value">95%</div>
+                    <div class="stat-label">Mijoz mamnunligi</div>
+                </div>
+                
+                <div class="stat-item windows-stat">
+                    <div class="stat-value">8.9/10</div>
+                    <div class="stat-label">Gaming ishlashi</div>
+                </div>
+                
+                <div class="stat-item macos-stat">
+                    <div class="stat-value">9.2/10</div>
+                    <div class="stat-label">Dizayn ishlari</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Comparison Table -->
+        <div class="comparison-table">
+            <div class="table-header">
+                <div class="header-cell">Xususiyat</div>
+                <div class="header-cell windows-name">Windows 11</div>
+                <div class="header-cell macos-name">macOS Sonoma</div>
+            </div>
+            
+            <div class="table-row">
+                <div class="row-label">
+                    <i class="fas fa-lock row-icon"></i>
+                    <span>Xavfsizlik</span>
+                </div>
+                <div class="row-value windows-value">Windows Defender, BitLocker</div>
+                <div class="row-value macos-value">Gatekeeper, XProtect, SIP</div>
+            </div>
+            
+            <div class="table-row">
+                <div class="row-label">
+                    <i class="fas fa-users row-icon"></i>
+                    <span>Hamkorlik</span>
+                </div>
+                <div class="row-value windows-value">Microsoft Teams integratsiyasi</div>
+                <div class="row-value macos-value">FaceTime, iMessage, Continuity</div>
+            </div>
+            
+            <div class="table-row">
+                <div class="row-label">
+                    <i class="fas fa-gamepad row-icon"></i>
+                    <span>Gaming</span>
+                </div>
+                <div class="row-value windows-value">✅ DirectX 12 Ultimate, Game Pass</div>
+                <div class="row-value macos-value">⭕ Cheklangan, Metal 3</div>
+            </div>
+            
+            <div class="table-row">
+                <div class="row-label">
+                    <i class="fas fa-mobile-alt row-icon"></i>
+                    <span>Mobil integratsiya</span>
+                </div>
+                <div class="row-value windows-value">Your Phone app, Android</div>
+                <div class="row-value macos-value">✅ iPhone, iPad, Apple Watch</div>
+            </div>
+            
+            <div class="table-row">
+                <div class="row-label">
+                    <i class="fas fa-dollar-sign row-icon"></i>
+                    <span>Narx</span>
+                </div>
+                <div class="row-value windows-value">Bepul yangilanish</div>
+                <div class="row-value macos-value">Bepul (faqat Mac uchun)</div>
+            </div>
+        </div>
+        
+        <!-- Test Results -->
+        <div class="test-results">
+            <h3 class="test-title">
+                <i class="fas fa-flask"></i>
+                1 Oylik Test Natijalari
+                <span class="test-duration">30 kun davomida</span>
+            </h3>
+            <div class="test-conclusion">
+                <strong>Windows 11</strong> - universal yechim, keng dasturiy ta'minot tanlovi, 
+                gaming uchun ideal. <strong>macOS Sonoma</strong> - optimallashtirilgan ishlash, 
+                Apple ekotizimi bilan mukammal integratsiya, dizayn va media uchun eng yaxshi.
+            </div>
+        </div>
+        
+        <!-- Recommendation -->
+        <div class="recommendation">
+            <h3 class="recommendation-title">Qaysi OSni Tanlashingiz Kerak?</h3>
+            
+            <div class="recommendation-cards">
+                <div class="rec-card windows-rec">
+                    <h3>
+                        <i class="fab fa-windows"></i>
+                        Windows 11 Tanlang Agar:
+                    </h3>
+                    <ul class="rec-list">
+                        <li>Gaming bilan shug'ullanasiz</li>
+                        <li>Keng dasturiy ta'minot tanlovi kerak</li>
+                        <li>Har qanday kompyuterda ishlay olishni xohlaysiz</li>
+                        <li>Microsoft Office bilan intensiv ishlaysiz</li>
+                        <li>Arzon apparat variantlari kerak</li>
+                    </ul>
+                </div>
+                
+                <div class="rec-card macos-rec">
+                    <h3>
+                        <i class="fab fa-apple"></i>
+                        macOS Sonoma Tanlang Agar:
+                    </h3>
+                    <ul class="rec-list">
+                        <li>Apple qurilmalari egasisiz</li>
+                        <li>Dizayn yoki media ishlab chiqarasiz</li>
+                        <li>Yuqori xavfsizlik va stabililik kerak</li>
+                        <li>iPhone va iPad bilan integratsiya kerak</li>
+                        <li>Premium tajriba xohlaysiz</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Adsense Bottom -->
+        <div class="adsense-bottom">
+            <div class="ad-label">💻 KOMPYUTER MAHSULOTLARI</div>
+            <div class="ad-placeholder">
+                <div>AdSense Rectangle (300x250)</div>
+                <div style="font-size: 0.9rem; color: #64748b;">Windows va MacBook narxlari</div>
+            </div>
+        </div>
+        
+        <!-- CTA -->
+        <div class="cta-section">
+            <p style="font-size: 1.3rem; color: #e2e8f0; margin-bottom: 25px; max-width: 700px; margin-left: auto; margin-right: auto;">
+                Batafsil test natijalari, ishlash grafiklari va haqiqiy foydalanuvchilar sharhlari
+            </p>
+            <a href="#" class="cta-button">
+                <i class="fas fa-eye"></i>
+                To'liq Test Natijalarini Ko'rish
+            </a>
+        </div>
+        
+        <!-- Footer -->
+        <div class="footer">
+            <p>© 2025-2026 OS Comparison Lab | Windows 11 vs macOS Sonoma | 1 oylik real test natijalari</p>
+            <p>Barcha testlar 2024 yil yanvar-fevral oylarida o'tkazilgan</p>
+            <div class="footer-links">
+                <a href="privacy-policy.html">Maxfiylik siyosati</a>
+                <a href="methodology.html">Test metodologiyasi</a>
+                <a href="contact.html">Biz bilan bog'lanish</a>
+                <a href="AFFILIATE-DISCLOSURE.html">Sheriklik haqida</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // OS cards hover effect
+        document.querySelectorAll('.os-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-10px)';
+                this.style.boxShadow = '0 20px 40px rgba(0, 0, 0, 0.4)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+                this.style.boxShadow = 'none';
+            });
+        });
+        
+        // Feature items hover
+        document.querySelectorAll('.feature-item').forEach(item => {
+            item.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateX(5px)';
+            });
+            
+            item.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateX(0)';
+            });
+        });
+        
+        // Table rows hover
+        document.querySelectorAll('.table-row').forEach(row => {
+            row.addEventListener('mouseenter', function() {
+                this.style.background = 'rgba(255, 255, 255, 0.07)';
+            });
+            
+            row.addEventListener('mouseleave', function() {
+                this.style.background = '';
+            });
+        });
+        
+        // Stat items animation
+        document.addEventListener('DOMContentLoaded', function() {
+            const statValues = document.querySelectorAll('.stat-value');
+            statValues.forEach(value => {
+                const originalText = value.textContent;
+                value.textContent = '0%';
+                
+                setTimeout(() => {
+                    value.textContent = originalText;
+                    value.style.transition = 'all 1s ease';
+                }, 500);
+            });
+        });
+        
+        // CTA button animation
+        const ctaButton = document.querySelector('.cta-button');
+        ctaButton.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-3px)';
+            this.style.boxShadow = '0 10px 25px rgba(59, 130, 246, 0.4)';
+        });
+        
+        ctaButton.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(0)';
+            this.style.boxShadow = 'none';
+        });
+        
+        // Rating badge animation
+        const ratingBadge = document.querySelector('.rating-badge');
+        ratingBadge.addEventListener('click', function() {
+            this.style.transform = 'scale(1.1)';
+            setTimeout(() => {
+                this.style.transform = 'scale(1)';
+            }, 300);
+        });
+        
+        // Add float animation for icons
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes float {
+                0%, 100% { transform: translateY(0px); }
+                50% { transform: translateY(-5px); }
+            }
+            
+            .os-icon {
+                animation: float 3s ease-in-out infinite;
+            }
+        `;
+        document.head.appendChild(style);
+        
+        // Rec cards hover
+        document.querySelectorAll('.rec-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-5px)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+            });
+        });
+    </script>
+</body>
+</html>
