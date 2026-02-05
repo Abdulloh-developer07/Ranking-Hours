@@ -1,0 +1,1783 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VR O'yinlar Uchun Qurilmalar: Oculus vs HTC | VR Gaming Taqqoslash</title>
+    <meta name="description" content="Oculus Quest 2 vs HTC Vive taqqoslash. VR gaming uchun eng yaxshi qurilma. 3.5/5 reyting. Simsiz vs yuqori sifat.">
+    <meta name="keywords" content="vr gaming, oculus quest 2, htc vive, virtual reality, vr headset, vr o'yinlar, meta quest">
+    <meta name="author" content="VR Gaming Expert">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #1a237e;
+            --secondary: #00e5ff;
+            --oculus: #0084ff;
+            --vive: #ff4081;
+            --card-bg: #283593;
+            --text: #e8eaf6;
+            --light-text: #c5cae9;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', system-ui, sans-serif;
+        }
+        
+        body {
+            background: var(--primary);
+            color: var(--text);
+            line-height: 1.8;
+            font-size: 18px;
+            min-height: 100vh;
+            padding-top: 20px;
+            background-image: radial-gradient(circle at 20% 80%, rgba(0, 229, 255, 0.1) 0%, transparent 20%),
+                            radial-gradient(circle at 80% 20%, rgba(255, 64, 129, 0.1) 0%, transparent 20%);
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        .main-header {
+            background: linear-gradient(135deg, 
+                rgba(0, 132, 255, 0.2), 
+                rgba(255, 64, 129, 0.2));
+            border-radius: 30px;
+            padding: 70px 50px;
+            margin-bottom: 50px;
+            border-left: 10px solid var(--secondary);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .main-header::before {
+            content: '🥽';
+            position: absolute;
+            font-size: 350px;
+            opacity: 0.05;
+            top: -70px;
+            right: -70px;
+            z-index: 0;
+        }
+        
+        .header-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .rating-badge {
+            display: inline-flex;
+            align-items: center;
+            background: linear-gradient(45deg, #7b1fa2, #e91e63);
+            color: white;
+            padding: 12px 35px;
+            border-radius: 30px;
+            font-weight: 900;
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            box-shadow: 0 15px 30px rgba(123, 31, 162, 0.3);
+        }
+        
+        h1 {
+            font-size: 3.8rem;
+            background: linear-gradient(45deg, var(--oculus), var(--vive));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 25px;
+            line-height: 1.1;
+            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+        }
+        
+        .subtitle {
+            font-size: 1.6rem;
+            color: var(--light-text);
+            margin-bottom: 40px;
+            max-width: 1000px;
+            line-height: 1.6;
+        }
+        
+        .highlight {
+            color: var(--secondary);
+            font-weight: 800;
+        }
+        
+        /* VR Comparison */
+        .vr-comparison {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            margin: 60px 0;
+        }
+        
+        @media (max-width: 1200px) {
+            .vr-comparison {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .vr-card {
+            background: var(--card-bg);
+            border-radius: 25px;
+            padding: 45px 40px;
+            text-align: center;
+            transition: all 0.4s ease;
+            border: 3px solid transparent;
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .vr-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 8px;
+        }
+        
+        .oculus-card::before {
+            background: linear-gradient(90deg, var(--oculus), #0066cc);
+        }
+        
+        .vive-card::before {
+            background: linear-gradient(90deg, var(--vive), #c51162);
+        }
+        
+        .vr-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+        }
+        
+        .oculus-card:hover {
+            border-color: var(--oculus);
+            box-shadow: 0 30px 60px rgba(0, 132, 255, 0.3);
+        }
+        
+        .vive-card:hover {
+            border-color: var(--vive);
+            box-shadow: 0 30px 60px rgba(255, 64, 129, 0.3);
+        }
+        
+        .vr-icon {
+            font-size: 5rem;
+            margin-bottom: 25px;
+            display: inline-block;
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 30px;
+        }
+        
+        .oculus-card .vr-icon {
+            background: rgba(0, 132, 255, 0.2);
+            color: var(--oculus);
+            border: 4px solid var(--oculus);
+        }
+        
+        .vive-card .vr-icon {
+            background: rgba(255, 64, 129, 0.2);
+            color: var(--vive);
+            border: 4px solid var(--vive);
+        }
+        
+        .vr-name {
+            font-size: 2.8rem;
+            margin-bottom: 15px;
+            font-weight: 800;
+        }
+        
+        .oculus-card .vr-name {
+            color: var(--oculus);
+        }
+        
+        .vive-card .vr-name {
+            color: var(--vive);
+        }
+        
+        .vr-model {
+            font-size: 1.3rem;
+            color: var(--light-text);
+            margin-bottom: 25px;
+            font-weight: 600;
+        }
+        
+        .key-feature {
+            margin-top: 30px;
+            padding: 25px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            text-align: left;
+            border-left: 4px solid;
+        }
+        
+        .oculus-card .key-feature {
+            border-color: var(--oculus);
+        }
+        
+        .vive-card .key-feature {
+            border-color: var(--vive);
+        }
+        
+        .feature-title {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--secondary);
+        }
+        
+        .feature-list {
+            list-style: none;
+        }
+        
+        .feature-list li {
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .feature-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .feature-list li::before {
+            content: '✨';
+            font-size: 1.2rem;
+        }
+        
+        .price-tag {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 12px 25px;
+            border-radius: 25px;
+            font-size: 1.8rem;
+            font-weight: 800;
+            margin-top: 25px;
+        }
+        
+        .oculus-card .price-tag {
+            color: var(--oculus);
+            border: 2px solid var(--oculus);
+        }
+        
+        .vive-card .price-tag {
+            color: var(--vive);
+            border: 2px solid var(--vive);
+        }
+        
+        /* Wireless Section */
+        .wireless-section {
+            background: linear-gradient(135deg, rgba(0, 132, 255, 0.15), rgba(0, 102, 204, 0.15));
+            border-radius: 30px;
+            padding: 60px 50px;
+            margin: 80px 0;
+            border-left: 10px solid var(--oculus);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .wireless-title {
+            font-size: 3rem;
+            color: var(--oculus);
+            margin-bottom: 40px;
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
+        
+        .wireless-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+        
+        @media (max-width: 992px) {
+            .wireless-content {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .wireless-features {
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 25px;
+            padding: 40px 35px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .wireless-feature-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid rgba(0, 132, 255, 0.2);
+        }
+        
+        .wireless-feature-item:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+        
+        .wireless-feature-icon {
+            font-size: 2.5rem;
+            color: var(--oculus);
+            margin-right: 25px;
+            min-width: 60px;
+        }
+        
+        .wireless-feature-text h4 {
+            font-size: 1.8rem;
+            color: var(--text);
+            margin-bottom: 12px;
+        }
+        
+        .wireless-feature-text p {
+            color: var(--light-text);
+            line-height: 1.7;
+        }
+        
+        .wireless-visual {
+            text-align: center;
+        }
+        
+        .freedom-visual {
+            font-size: 15rem;
+            color: var(--oculus);
+            margin-bottom: 30px;
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        .battery-info {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .battery-item {
+            background: rgba(0, 132, 255, 0.1);
+            padding: 20px 15px;
+            border-radius: 15px;
+            text-align: center;
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+        }
+        
+        .battery-item:hover {
+            transform: translateY(-5px);
+            border-color: var(--oculus);
+        }
+        
+        .battery-icon {
+            font-size: 2.5rem;
+            color: var(--oculus);
+            margin-bottom: 15px;
+        }
+        
+        .battery-value {
+            font-size: 2rem;
+            font-weight: 900;
+            color: var(--text);
+            margin-bottom: 10px;
+        }
+        
+        .battery-label {
+            color: var(--light-text);
+            font-size: 1.1rem;
+        }
+        
+        /* Quality Section */
+        .quality-section {
+            background: linear-gradient(135deg, rgba(255, 64, 129, 0.15), rgba(197, 17, 98, 0.15));
+            border-radius: 30px;
+            padding: 60px 50px;
+            margin: 80px 0;
+            border-left: 10px solid var(--vive);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .quality-title {
+            font-size: 3rem;
+            color: var(--vive);
+            margin-bottom: 40px;
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
+        
+        .quality-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        @media (max-width: 992px) {
+            .quality-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .quality-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .quality-card {
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 20px;
+            padding: 35px 30px;
+            text-align: center;
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .quality-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--vive);
+            box-shadow: 0 20px 40px rgba(255, 64, 129, 0.2);
+        }
+        
+        .quality-icon {
+            font-size: 4rem;
+            color: var(--vive);
+            margin-bottom: 25px;
+        }
+        
+        .quality-card h4 {
+            font-size: 1.8rem;
+            color: var(--text);
+            margin-bottom: 20px;
+        }
+        
+        .quality-card p {
+            color: var(--light-text);
+            line-height: 1.7;
+        }
+        
+        .quality-badge {
+            display: inline-block;
+            background: rgba(255, 64, 129, 0.2);
+            color: var(--vive);
+            padding: 10px 25px;
+            border-radius: 20px;
+            font-weight: 900;
+            font-size: 1.3rem;
+            margin-top: 20px;
+        }
+        
+        /* Games Library */
+        .games-section {
+            background: linear-gradient(135deg, rgba(123, 31, 162, 0.15), rgba(233, 30, 99, 0.15));
+            border-radius: 30px;
+            padding: 60px 50px;
+            margin: 80px 0;
+            border-left: 10px solid var(--secondary);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .games-title {
+            font-size: 3rem;
+            color: var(--secondary);
+            margin-bottom: 40px;
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
+        
+        .games-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: start;
+        }
+        
+        @media (max-width: 992px) {
+            .games-content {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .platform-games {
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 25px;
+            padding: 40px 35px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .platform-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid;
+        }
+        
+        .oculus-header {
+            border-color: var(--oculus);
+        }
+        
+        .vive-header {
+            border-color: var(--vive);
+        }
+        
+        .platform-icon {
+            font-size: 2.5rem;
+            margin-right: 20px;
+        }
+        
+        .oculus-header .platform-icon {
+            color: var(--oculus);
+        }
+        
+        .vive-header .platform-icon {
+            color: var(--vive);
+        }
+        
+        .platform-name {
+            font-size: 2rem;
+            color: var(--text);
+            font-weight: 800;
+        }
+        
+        .game-list {
+            list-style: none;
+        }
+        
+        .game-list li {
+            padding: 15px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .game-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .game-icon {
+            font-size: 1.5rem;
+            width: 40px;
+            text-align: center;
+        }
+        
+        .game-name {
+            font-size: 1.3rem;
+            color: var(--text);
+        }
+        
+        .game-type {
+            color: var(--light-text);
+            font-size: 0.9rem;
+            margin-left: auto;
+        }
+        
+        .games-stats {
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 25px;
+            padding: 40px 35px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .stats-visual {
+            font-size: 10rem;
+            color: var(--secondary);
+            margin-bottom: 30px;
+            animation: pulse 2s ease-in-out infinite;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+            margin-top: 30px;
+        }
+        
+        .stat-item {
+            background: rgba(0, 229, 255, 0.1);
+            padding: 25px 20px;
+            border-radius: 15px;
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: var(--secondary);
+            margin-bottom: 10px;
+        }
+        
+        .stat-label {
+            color: var(--light-text);
+            font-size: 1.1rem;
+        }
+        
+        /* Comparison Table */
+        .comparison-section {
+            margin: 80px 0;
+        }
+        
+        .comparison-title {
+            font-size: 3rem;
+            color: var(--secondary);
+            text-align: center;
+            margin-bottom: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 25px;
+        }
+        
+        .comparison-table {
+            background: var(--card-bg);
+            border-radius: 25px;
+            overflow: hidden;
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(10px);
+        }
+        
+        .table-header {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            background: linear-gradient(90deg, 
+                rgba(0, 132, 255, 0.3), 
+                rgba(255, 64, 129, 0.3));
+            padding: 35px 40px;
+            border-bottom: 3px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .header-cell {
+            font-size: 1.8rem;
+            font-weight: 900;
+            color: var(--text);
+            text-align: center;
+        }
+        
+        .header-cell:nth-child(2) {
+            color: var(--oculus);
+        }
+        
+        .header-cell:nth-child(3) {
+            color: var(--vive);
+        }
+        
+        .table-row {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            padding: 30px 40px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            align-items: center;
+            transition: background 0.3s ease;
+        }
+        
+        .table-row:hover {
+            background: rgba(255, 255, 255, 0.05);
+        }
+        
+        .table-row:last-child {
+            border-bottom: none;
+        }
+        
+        .row-label {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--text);
+        }
+        
+        .row-icon {
+            font-size: 1.8rem;
+            width: 50px;
+            text-align: center;
+            color: var(--secondary);
+        }
+        
+        .row-value {
+            font-size: 1.6rem;
+            font-weight: 700;
+            text-align: center;
+        }
+        
+        .winner {
+            display: inline-block;
+            padding: 8px 18px;
+            border-radius: 20px;
+            font-weight: 900;
+            font-size: 1.1rem;
+            margin-left: 10px;
+        }
+        
+        .oculus-winner {
+            background: rgba(0, 132, 255, 0.2);
+            color: var(--oculus);
+            border: 2px solid var(--oculus);
+        }
+        
+        .vive-winner {
+            background: rgba(255, 64, 129, 0.2);
+            color: var(--vive);
+            border: 2px solid var(--vive);
+        }
+        
+        /* Recommendation Section */
+        .recommendation-section {
+            margin: 80px 0;
+        }
+        
+        .recommendation-title {
+            font-size: 3rem;
+            color: var(--secondary);
+            text-align: center;
+            margin-bottom: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 25px;
+        }
+        
+        .recommendation-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
+        
+        @media (max-width: 768px) {
+            .recommendation-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .recommendation-card {
+            background: var(--card-bg);
+            border-radius: 25px;
+            padding: 45px 40px;
+            text-align: center;
+            border-top: 10px solid;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .recommendation-card:nth-child(1) {
+            border-color: var(--oculus);
+        }
+        
+        .recommendation-card:nth-child(2) {
+            border-color: var(--vive);
+        }
+        
+        .recommendation-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+        }
+        
+        .recommendation-card:nth-child(1):hover {
+            box-shadow: 0 30px 60px rgba(0, 132, 255, 0.3);
+        }
+        
+        .recommendation-card:nth-child(2):hover {
+            box-shadow: 0 30px 60px rgba(255, 64, 129, 0.3);
+        }
+        
+        .rec-device {
+            font-size: 2.5rem;
+            font-weight: 900;
+            margin-bottom: 20px;
+        }
+        
+        .recommendation-card:nth-child(1) .rec-device {
+            color: var(--oculus);
+        }
+        
+        .recommendation-card:nth-child(2) .rec-device {
+            color: var(--vive);
+        }
+        
+        .rec-verdict {
+            font-size: 1.8rem;
+            margin-bottom: 30px;
+            color: var(--text);
+            font-weight: 700;
+        }
+        
+        .rec-points {
+            list-style: none;
+            margin-top: 30px;
+            text-align: left;
+        }
+        
+        .rec-points li {
+            padding: 15px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        
+        .rec-points li:last-child {
+            border-bottom: none;
+        }
+        
+        .recommendation-card:nth-child(1) .rec-points li::before {
+            content: '🔵';
+            font-size: 1.5rem;
+            color: var(--oculus);
+        }
+        
+        .recommendation-card:nth-child(2) .rec-points li::before {
+            content: '🔴';
+            font-size: 1.5rem;
+            color: var(--vive);
+        }
+        
+        /* Footer */
+        .footer {
+            background: var(--card-bg);
+            padding: 70px 0 50px;
+            margin-top: 100px;
+            border-radius: 40px 40px 0 0;
+            backdrop-filter: blur(10px);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 60px;
+            margin-bottom: 60px;
+        }
+        
+        .footer-section h3 {
+            font-size: 2rem;
+            color: var(--secondary);
+            margin-bottom: 30px;
+        }
+        
+        .footer-section p {
+            color: var(--light-text);
+            line-height: 1.7;
+            margin-bottom: 25px;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 20px;
+        }
+        
+        .footer-links a {
+            color: var(--light-text);
+            text-decoration: none;
+            transition: color 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            font-size: 1.1rem;
+        }
+        
+        .footer-links a:hover {
+            color: var(--secondary);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 50px;
+            border-top: 2px solid rgba(255, 255, 255, 0.1);
+            color: var(--light-text);
+            font-size: 1.1rem;
+        }
+        
+        /* Ad Sections */
+        .ad-section {
+            background: rgba(255, 193, 7, 0.1);
+            border-radius: 25px;
+            padding: 45px 40px;
+            margin: 60px 0;
+            text-align: center;
+            border: 3px dashed rgba(255, 193, 7, 0.3);
+            backdrop-filter: blur(10px);
+        }
+        
+        .ad-label {
+            display: inline-block;
+            background: rgba(255, 193, 7, 0.2);
+            color: #ffc107;
+            padding: 12px 30px;
+            border-radius: 25px;
+            margin-bottom: 30px;
+            font-weight: 900;
+            font-size: 1.2rem;
+        }
+        
+        .ad-placeholder {
+            height: 150px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 193, 7, 0.1);
+            border-radius: 20px;
+            color: #cbd5e1;
+            font-style: italic;
+            font-size: 1.3rem;
+            margin: 25px 0;
+        }
+        
+        /* Responsive */
+        @media (max-width: 1200px) {
+            h1 {
+                font-size: 3.2rem;
+            }
+            
+            .wireless-title,
+            .quality-title,
+            .games-title,
+            .comparison-title,
+            .recommendation-title {
+                font-size: 2.5rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            .main-header {
+                padding: 50px 30px;
+            }
+            
+            .rating-badge {
+                font-size: 1.3rem;
+                padding: 10px 25px;
+            }
+            
+            .vr-name {
+                font-size: 2.2rem;
+            }
+            
+            .wireless-title,
+            .quality-title,
+            .games-title,
+            .comparison-title,
+            .recommendation-title {
+                font-size: 2rem;
+            }
+            
+            .table-header,
+            .table-row {
+                grid-template-columns: 1fr;
+                padding: 25px 30px;
+            }
+            
+            .row-label {
+                margin-bottom: 15px;
+            }
+            
+            .header-cell,
+            .row-value {
+                text-align: left;
+            }
+            
+            .freedom-visual {
+                font-size: 10rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .subtitle {
+                font-size: 1.3rem;
+            }
+            
+            .vr-card {
+                padding: 35px 25px;
+            }
+            
+            .vr-icon {
+                width: 100px;
+                height: 100px;
+                font-size: 4rem;
+            }
+        }
+        
+        /* Animations */
+        @keyframes float {
+            0% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(5deg); }
+            100% { transform: translateY(0px) rotate(0deg); }
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.1); opacity: 0.8; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+        
+        @keyframes glow {
+            0% { box-shadow: 0 0 10px rgba(0, 229, 255, 0.5); }
+            50% { box-shadow: 0 0 20px rgba(0, 229, 255, 0.8); }
+            100% { box-shadow: 0 0 10px rgba(0, 229, 255, 0.5); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="main-header">
+            <div class="header-content">
+                <div class="rating-badge">
+                    <i class="fas fa-star"></i>
+                    3.5/5 VR Gaming Reytingi
+                </div>
+                <h1>VR O'yinlar Uchun Qurilmalar</h1>
+                <p class="subtitle">
+                    Oculus Quest 2 vs HTC Vive - VR gaming uchun qaysi qurilma?
+                    <span class="highlight">Quest 2 - simsiz</span>, <span class="highlight">Vive - yuqori sifat</span>.
+                    50 soatlik VR gaming test natijalari.
+                </p>
+            </div>
+        </header>
+
+        <!-- VR Comparison -->
+        <div class="vr-comparison">
+            <!-- Oculus Quest 2 -->
+            <div class="vr-card oculus-card">
+                <div class="vr-icon">
+                    <i class="fab fa-oculus"></i>
+                </div>
+                <h2 class="vr-name">Oculus Quest 2</h2>
+                <div class="vr-model">Standalone VR • 128GB/256GB</div>
+                
+                <div class="key-feature">
+                    <h3 class="feature-title">
+                        <i class="fas fa-wifi"></i>
+                        Asosiy Afzalliklar
+                    </h3>
+                    <ul class="feature-list">
+                        <li>To'liq simsiz VR tajriba</li>
+                        <li>Standalone - PC kerak emas</li>
+                        <li>Oculus Store - 500+ o'yin</li>
+                        <li>Hand tracking teknologiyasi</li>
+                        <li>Meta (Facebook) ecosystem</li>
+                    </ul>
+                </div>
+                
+                <div class="price-tag">
+                    $299 boshlang'ich
+                </div>
+            </div>
+
+            <!-- HTC Vive -->
+            <div class="vr-card vive-card">
+                <div class="vr-icon">
+                    <i class="fas fa-vr-cardboard"></i>
+                </div>
+                <h2 class="vr-name">HTC Vive</h2>
+                <div class="vr-model">PC VR System • Pro Series</div>
+                
+                <div class="key-feature">
+                    <h3 class="feature-title">
+                        <i class="fas fa-tachometer-alt"></i>
+                        Asosiy Afzalliklar
+                    </h3>
+                    <ul class="feature-list">
+                        <li>Premium VR sifati</li>
+                        <li>Room-scale tracking</li>
+                        <li>SteamVR integratsiyasi</li>
+                        <li>Professional VR uchun</li>
+                        <li>Yuqori resolution displays</li>
+                    </ul>
+                </div>
+                
+                <div class="price-tag">
+                    $799 boshlang'ich
+                </div>
+            </div>
+        </div>
+
+        <!-- Ad Section -->
+        <div class="ad-section">
+            <div class="ad-label">VR Gaming Aksessuarlar</div>
+            <div class="ad-placeholder">
+                AdSense Horizontal Banner (728x90) - VR Headsets & Accessories
+            </div>
+        </div>
+
+        <!-- Wireless Section -->
+        <section class="wireless-section">
+            <h2 class="wireless-title">
+                <i class="fas fa-wifi"></i>
+                Oculus Quest 2 - Simsiz Erkinlik
+            </h2>
+            
+            <div class="wireless-content">
+                <div class="wireless-features">
+                    <div class="wireless-feature-item">
+                        <div class="wireless-feature-icon">
+                            <i class="fas fa-running"></i>
+                        </div>
+                        <div class="wireless-feature-text">
+                            <h4>To'liq Harakat Erkinligi</h4>
+                            <p>Hech qanday sim, hech qanday PC. Har qanday joyda VR gaming. Xonada erkin harakatlanish.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="wireless-feature-item">
+                        <div class="wireless-feature-icon">
+                            <i class="fas fa-plug"></i>
+                        </div>
+                        <div class="wireless-feature-text">
+                            <h4>5 daqiqada tayyor</h4>
+                            <p>Unboxing dan 5 daqiqada gaming. Hech qanday setup yo'q, hech qanday sensor installation.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="wireless-feature-item">
+                        <div class="wireless-feature-icon">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <div class="wireless-feature-text">
+                            <h4>Mobile Processor Power</h4>
+                            <p>Qualcomm Snapdragon XR2. Mobile VR gaming uchun yetarli quvvat. O'z-o'zidan ishlaydi.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="wireless-feature-item">
+                        <div class="wireless-feature-icon">
+                            <i class="fas fa-gamepad"></i>
+                        </div>
+                        <div class="wireless-feature-text">
+                            <h4>Oculus Touch Controllers</h4>
+                            <p>Ergonomik, wireless kontrollerlar. Natural hand tracking. Haptik feedback.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="wireless-visual">
+                    <div class="freedom-visual">
+                        <i class="fas fa-walking"></i>
+                    </div>
+                    <p style="color: var(--light-text); font-size: 1.3rem; max-width: 400px; margin: 0 auto;">
+                        Simsiz VR - haqiqiy erkinlik. Har qanday joyda, har qanday vaqtda VR gaming.
+                    </p>
+                    
+                    <div class="battery-info">
+                        <div class="battery-item">
+                            <div class="battery-icon">
+                                <i class="fas fa-battery-full"></i>
+                            </div>
+                            <div class="battery-value">2-3 soat</div>
+                            <div class="battery-label">Gaming Time</div>
+                        </div>
+                        
+                        <div class="battery-item">
+                            <div class="battery-icon">
+                                <i class="fas fa-bolt"></i>
+                            </div>
+                            <div class="battery-value">2 soat</div>
+                            <div class="battery-label">Fast Charge</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quality Section -->
+        <section class="quality-section">
+            <h2 class="quality-title">
+                <i class="fas fa-crown"></i>
+                HTC Vive - Yuqori Sifat Qiroli
+            </h2>
+            
+            <p style="color: var(--light-text); font-size: 1.5rem; text-align: center; margin-bottom: 40px; max-width: 800px; margin-left: auto; margin-right: auto;">
+                Premium VR tajribasi. PC quvvatida yuqori sifatli VR gaming.
+            </p>
+            
+            <div class="quality-grid">
+                <div class="quality-card">
+                    <div class="quality-icon">
+                        <i class="fas fa-expand-alt"></i>
+                    </div>
+                    <h4>Room-Scale VR</h4>
+                    <p>4x4 metr xonada to'liq harakat. Lighthouse tracking - 1mm aniqlik.</p>
+                    <div class="quality-badge">PRECISION</div>
+                </div>
+                
+                <div class="quality-card">
+                    <div class="quality-icon">
+                        <i class="fas fa-desktop"></i>
+                    </div>
+                    <h4>PC Power</h4>
+                    <p>RTX 3060+ video karta quvvati. Yuqori texture, yuqori FPS, kam latency.</p>
+                    <div class="quality-badge">POWER</div>
+                </div>
+                
+                <div class="quality-card">
+                    <div class="quality-icon">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <h4>1440×1600 per Eye</h4>
+                    <p>Dunyodagi eng yaxshi VR displays. 90Hz refresh rate, minimal screen door.</p>
+                    <div class="quality-badge">CLARITY</div>
+                </div>
+            </div>
+            
+            <div style="margin-top: 50px; padding: 35px; background: rgba(255, 64, 129, 0.1); border-radius: 20px; text-align: center;">
+                <h3 style="color: var(--vive); font-size: 2rem; margin-bottom: 20px;">
+                    <i class="fas fa-chart-line"></i>
+                    Premium Specs
+                </h3>
+                <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; text-align: center;">
+                    <div>
+                        <div style="font-size: 3rem; color: var(--vive); font-weight: 900; margin-bottom: 10px;">90Hz</div>
+                        <p style="color: var(--light-text);">Refresh Rate</p>
+                    </div>
+                    <div>
+                        <div style="font-size: 3rem; color: var(--vive); font-weight: 900; margin-bottom: 10px;">110°</div>
+                        <p style="color: var(--light-text);">Field of View</p>
+                    </div>
+                    <div>
+                        <div style="font-size: 3rem; color: var(--vive); font-weight: 900; margin-bottom: 10px;">1ms</div>
+                        <p style="color: var(--light-text);">Tracking Latency</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Games Library -->
+        <section class="games-section">
+            <h2 class="games-title">
+                <i class="fas fa-gamepad"></i>
+                VR Games Libraries Taqqoslash
+            </h2>
+            
+            <div class="games-content">
+                <div class="platform-games">
+                    <div class="platform-header oculus-header">
+                        <div class="platform-icon">
+                            <i class="fab fa-oculus"></i>
+                        </div>
+                        <div class="platform-name">Oculus Store</div>
+                    </div>
+                    
+                    <ul class="game-list">
+                        <li>
+                            <div class="game-icon">🎮</div>
+                            <div class="game-name">Beat Saber</div>
+                            <div class="game-type">Rhythm</div>
+                        </li>
+                        <li>
+                            <div class="game-icon">🧙‍♂️</div>
+                            <div class="game-name">The Walking Dead: Saints & Sinners</div>
+                            <div class="game-type">Survival</div>
+                        </li>
+                        <li>
+                            <div class="game-icon">⚔️</div>
+                            <div class="game-name">Blade & Sorcery</div>
+                            <div class="game-type">Action</div>
+                        </li>
+                        <li>
+                            <div class="game-icon">🏃‍♂️</div>
+                            <div class="game-name">Superhot VR</div>
+                            <div class="game-type">Shooter</div>
+                        </li>
+                        <li>
+                            <div class="game-icon">🤖</div>
+                            <div class="game-name">Population: One</div>
+                            <div class="game-type">Battle Royale</div>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="platform-games">
+                    <div class="platform-header vive-header">
+                        <div class="platform-icon">
+                            <i class="fab fa-steam"></i>
+                        </div>
+                        <div class="platform-name">SteamVR</div>
+                    </div>
+                    
+                    <ul class="game-list">
+                        <li>
+                            <div class="game-icon">🚀</div>
+                            <div class="game-name">Half-Life: Alyx</div>
+                            <div class="game-type">AAA FPS</div>
+                        </li>
+                        <li>
+                            <div class="game-icon">🌌</div>
+                            <div class="game-name">Skyrim VR</div>
+                            <div class="game-type">RPG</div>
+                        </li>
+                        <li>
+                            <div class="game-icon">👻</div>
+                            <div class="game-name">Phasmophobia</div>
+                            <div class="game-type">Horror</div>
+                        </li>
+                        <li>
+                            <div class="game-icon">🎣</div>
+                            <div class="game-name">The Lab</div>
+                            <div class="game-type">Experience</div>
+                        </li>
+                        <li>
+                            <div class="game-icon">🏛️</div>
+                            <div class="game-name">Boneworks</div>
+                            <div class="game-type">Physics</div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="games-stats" style="margin-top: 40px;">
+                <div class="stats-visual">
+                    <i class="fas fa-dice"></i>
+                </div>
+                <p style="color: var(--light-text); font-size: 1.3rem; max-width: 500px; margin: 0 auto 30px;">
+                    Har ikki platformada 500+ VR o'yinlar. Oculus - standalone, SteamVR - PC gaming.
+                </p>
+                
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <div class="stat-number">500+</div>
+                        <div class="stat-label">Oculus Games</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">6000+</div>
+                        <div class="stat-label">SteamVR Games</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">$15-40</div>
+                        <div class="stat-label">Average Price</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">25%</div>
+                        <div class="stat-label">Cross-Platform</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Comparison Table -->
+        <section class="comparison-section">
+            <h2 class="comparison-title">
+                <i class="fas fa-balance-scale"></i>
+                Texnik Xususiyatlar Taqqoslash
+            </h2>
+            
+            <div class="comparison-table">
+                <div class="table-header">
+                    <div class="header-cell">Xususiyat</div>
+                    <div class="header-cell">Oculus Quest 2</div>
+                    <div class="header-cell">HTC Vive</div>
+                </div>
+                
+                <div class="table-row">
+                    <div class="row-label">
+                        <i class="fas fa-sitemap row-icon"></i>
+                        <span>Platforma</span>
+                    </div>
+                    <div class="row-value">
+                        Standalone
+                        <span class="winner oculus-winner">SIMSIZ</span>
+                    </div>
+                    <div class="row-value">PC Required</div>
+                </div>
+                
+                <div class="table-row">
+                    <div class="row-label">
+                        <i class="fas fa-dollar-sign row-icon"></i>
+                        <span>Boshlang'ich Narx</span>
+                    </div>
+                    <div class="row-value">
+                        $299
+                        <span class="winner oculus-winner">ARZON</span>
+                    </div>
+                    <div class="row-value">$799+</div>
+                </div>
+                
+                <div class="table-row">
+                    <div class="row-label">
+                        <i class="fas fa-eye row-icon"></i>
+                        <span>Resolution</span>
+                    </div>
+                    <div class="row-value">1832×1920 per eye</div>
+                    <div class="row-value">
+                        1440×1600 per eye
+                        <span class="winner vive-winner">YUQORI</span>
+                    </div>
+                </div>
+                
+                <div class="table-row">
+                    <div class="row-label">
+                        <i class="fas fa-tachometer-alt row-icon"></i>
+                        <span>Refresh Rate</span>
+                    </div>
+                    <div class="row-value">90Hz</div>
+                    <div class="row-value">
+                        90Hz (120Hz OC)
+                        <span class="winner vive-winner">YUQORI</span>
+                    </div>
+                </div>
+                
+                <div class="table-row">
+                    <div class="row-label">
+                        <i class="fas fa-gamepad row-icon"></i>
+                        <span>O'yin Kutubxonasi</span>
+                    </div>
+                    <div class="row-value">Oculus Store</div>
+                    <div class="row-value">
+                        SteamVR
+                        <span class="winner vive-winner">KENG</span>
+                    </div>
+                </div>
+                
+                <div class="table-row">
+                    <div class="row-label">
+                        <i class="fas fa-battery-full row-icon"></i>
+                        <span>Batareya Hayoti</span>
+                    </div>
+                    <div class="row-value">
+                        2-3 soat
+                        <span class="winner oculus-winner">PORTABLE</span>
+                    </div>
+                    <div class="row-value">No Limit (PC)</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Ad Section -->
+        <div class="ad-section">
+            <div class="ad-label">VR Aksessuarlar Do'koni</div>
+            <div class="ad-placeholder" style="height: 250px;">
+                AdSense Vertical Banner (300x250) - VR Accessories
+            </div>
+        </div>
+
+        <!-- Recommendation Section -->
+        <section class="recommendation-section">
+            <h2 class="recommendation-title">
+                <i class="fas fa-trophy"></i>
+                Yakuniy Tavsiyalar
+            </h2>
+            
+            <div class="recommendation-grid">
+                <div class="recommendation-card">
+                    <h3 class="rec-device">Oculus Quest 2</h3>
+                    <div class="rec-verdict">Boshqalar uchun tanlang</div>
+                    <ul class="rec-points">
+                        <li>Simsiz va standalone</li>
+                        <li>Arzon boshlang'ich narx</li>
+                        <li>Oson setup va foydalanish</li>
+                        <li>Har qanday joyda VR</li>
+                        <li>Perfect for beginners</li>
+                    </ul>
+                    <div style="margin-top: 30px; padding: 20px; background: rgba(0, 132, 255, 0.1); border-radius: 15px;">
+                        <p style="color: var(--oculus); font-weight: 900; font-size: 1.3rem;">
+                            🥽 Simsiz Erkinlik
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="recommendation-card">
+                    <h3 class="rec-device">HTC Vive</h3>
+                    <div class="rec-verdict">Ixtisoslashganlar uchun tanlang</div>
+                    <ul class="rec-points">
+                        <li>Premium VR sifat</li>
+                        <li>PC quvvatida gaming</li>
+                        <li>Room-scale tracking</li>
+                        <li>SteamVR kutubxonasi</li>
+                        <li>Professional VR</li>
+                    </ul>
+                    <div style="margin-top: 30px; padding: 20px; background: rgba(255, 64, 129, 0.1); border-radius: 15px;">
+                        <p style="color: var(--vive); font-weight: 900; font-size: 1.3rem;">
+                            👑 Yuqori Sifat
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 60px; padding: 40px; background: linear-gradient(135deg, rgba(0, 132, 255, 0.1), rgba(255, 64, 129, 0.1)); border-radius: 25px; border: 3px solid rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px);">
+                <h3 style="color: var(--secondary); font-size: 2.5rem; margin-bottom: 25px; animation: glow 2s ease-in-out infinite;">
+                    <i class="fas fa-lightbulb"></i>
+                    Yakuniy Xulosa
+                </h3>
+                <p style="color: var(--text); font-size: 1.5rem; line-height: 1.7; max-width: 900px; margin: 0 auto 30px;">
+                    Agar sizga <strong>simsiz erkinlik va osonlik</strong> kerak bo'lsa - <span style="color: var(--oculus); font-weight: 900;">Oculus Quest 2</span> tanlang.<br>
+                    Agar sizga <strong>yuqori sifat va PC quvvati</strong> kerak bo'lsa - <span style="color: var(--vive); font-weight: 900;">HTC Vive</span> tanlang.<br>
+                </p>
+                <div style="display: inline-block; background: rgba(255, 255, 255, 0.1); padding: 20px 40px; border-radius: 20px; margin-top: 20px; backdrop-filter: blur(10px);">
+                    <p style="color: var(--secondary); font-weight: 900; font-size: 1.3rem;">
+                        🎮 3.5/5 VR Gaming Reyting
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>VR Gaming Test</h3>
+                    <p>50 soatlik VR gaming test natijalari asosida tayyorlangan. Har ikki qurilma haqiqiy VR sharotitida sinovdan o'tkazildi.</p>
+                    <ul class="footer-links">
+                        <li><a href="methodology.html"><i class="fas fa-vial"></i> Test Metodologiyasi</a></li>
+                        <li><a href="test-equipment.html"><i class="fas fa-gamepad"></i> Test Jihozlari</a></li>
+                        <li><a href="test-process.html"><i class="fas fa-users"></i> Test Jarayoni</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>VR Technology</h3>
+                    <p>Virtual Reality texnologiyasi haqida batafsil ma'lumot. </p>
+                    <ul class="footer-links">
+                        <li><a href="#"><i class="fas fa-satellite-dish"></i> Tracking Technology</a></li>
+                        <li><a href="#"><i class="fas fa-eye"></i> Display Technology</a></li>
+                        <li><a href="#"><i class="fas fa-wifi"></i> Wireless VR</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>VR Platforms</h3>
+                    <p>VR gaming platformalari va o'yin kutubxonalari haqida ma'lumot.</p>
+                    <ul class="footer-links">
+                        <li><a href="https://www.meta.com"><i class="fab fa-oculus"></i> Oculus Store</a></li>
+                        <li><a href=""><i class="fab fa-steam"></i> SteamVR</a></li>
+                        <li><a href="#"><i class="fab fa-windows"></i> Windows Mixed Reality</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>© 2024 VR Gaming Qurilmalari Taqqoslash | 3.5/5 VR Gaming Reyting</p>
+                <p style="margin-top: 15px; font-size: 1rem; color: var(--light-text);">
+                    Oculus Quest 2 - simsiz erkinlik uchun | HTC Vive - yuqori sifat uchun
+                </p>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // VR card hover effects
+        document.querySelectorAll('.vr-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-15px)';
+                this.style.boxShadow = '0 30px 60px rgba(0, 0, 0, 0.5)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+                this.style.boxShadow = 'none';
+            });
+        });
+
+        // Quality card hover effects
+        document.querySelectorAll('.quality-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-12px)';
+                this.style.boxShadow = '0 25px 50px rgba(255, 64, 129, 0.3)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+                this.style.boxShadow = 'none';
+            });
+        });
+
+        // Battery item hover effects
+        document.querySelectorAll('.battery-item').forEach(item => {
+            item.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-8px)';
+                this.style.borderColor = 'var(--oculus)';
+            });
+            
+            item.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+                this.style.borderColor = 'transparent';
+            });
+        });
+
+        // Stat item hover effects
+        document.querySelectorAll('.stat-item').forEach(item => {
+            item.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-8px)';
+                this.style.boxShadow = '0 10px 20px rgba(0, 229, 255, 0.3)';
+            });
+            
+            item.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+                this.style.boxShadow = 'none';
+            });
+        });
+
+        // Recommendation card hover effects
+        document.querySelectorAll('.recommendation-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-18px)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+            });
+        });
+
+        // Table row hover effects
+        document.querySelectorAll('.table-row').forEach(row => {
+            row.addEventListener('mouseenter', function() {
+                this.style.background = 'rgba(255, 255, 255, 0.08)';
+            });
+            
+            row.addEventListener('mouseleave', function() {
+                this.style.background = '';
+            });
+        });
+
+        // Add floating animation to VR icons
+        const vrIcons = document.querySelectorAll('.vr-icon');
+        vrIcons.forEach((icon, index) => {
+            icon.style.animation = `float 3s ease-in-out ${index * 0.5}s infinite`;
+        });
+
+        // Add CSS animation for glowing effect
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes rainbow {
+                0% { background-position: 0% 50%; }
+                50% { background-position: 100% 50%; }
+                100% { background-position: 0% 50%; }
+            }
+        `;
+        document.head.appendChild(style);
+
+        // Add rainbow effect to header gradient
+        const header = document.querySelector('.main-header');
+        header.style.animation = 'rainbow 6s ease infinite';
+        header.style.backgroundSize = '400% 400%';
+
+    
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Initialize animations on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add initial animation to rating badge
+            const ratingBadge = document.querySelector('.rating-badge');
+            ratingBadge.style.animation = 'pulse 2s 1';
+            
+            // Add click effect to price tags
+            const priceTags = document.querySelectorAll('.price-tag');
+            priceTags.forEach(tag => {
+                tag.addEventListener('click', function() {
+                    this.style.transform = 'scale(1.1)';
+                    setTimeout(() => {
+                        this.style.transform = 'scale(1)';
+                    }, 300);
+                });
+            });
+            
+            // Add click effect to quality badges
+            const qualityBadges = document.querySelectorAll('.quality-badge');
+            qualityBadges.forEach(badge => {
+                badge.addEventListener('click', function() {
+                    this.style.transform = 'scale(1.1)';
+                    setTimeout(() => {
+                        this.style.transform = 'scale(1)';
+                    }, 300);
+                });
+            });
+            
+            // Simulate VR headset glow on hover
+            const vrCards = document.querySelectorAll('.vr-card');
+            vrCards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    const icon = this.querySelector('.vr-icon');
+                    if (icon) {
+                        icon.style.boxShadow = '0 0 20px currentColor';
+                        icon.style.transition = 'box-shadow 0.3s ease';
+                    }
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    const icon = this.querySelector('.vr-icon');
+                    if (icon) {
+                        icon.style.boxShadow = 'none';
+                    }
+                });
+            });
+            
+            // Add parallax effect to background
+            document.addEventListener('mousemove', function(e) {
+                const x = (e.clientX / window.innerWidth) * 10;
+                const y = (e.clientY / window.innerHeight) * 10;
+                
+                document.body.style.backgroundPosition = `${x}% ${y}%`;
+            });
+        });
+        
+        // Add immersive VR sound effect on game list hover
+        const gameItems = document.querySelectorAll('.game-list li');
+        gameItems.forEach(item => {
+            item.addEventListener('mouseenter', function() {
+                const icon = this.querySelector('.game-icon');
+                if (icon) {
+                    icon.style.transform = 'scale(1.3) rotate(10deg)';
+                    icon.style.transition = 'transform 0.3s ease';
+                }
+            });
+            
+            item.addEventListener('mouseleave', function() {
+                const icon = this.querySelector('.game-icon');
+                if (icon) {
+                    icon.style.transform = 'scale(1) rotate(0deg)';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
