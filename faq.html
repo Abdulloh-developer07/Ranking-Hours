@@ -3,1600 +3,572 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ko'p So'raladigan Savollar - Ranking Hours</title>
-    <meta name="description" content="Ranking Hours sayti haqida tez-tez so'raladigan savollarga javoblar. Sayt, test usullari, hamkorlik va boshqa masalalar.">
-    
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/responsive.css">
-    <link rel="stylesheet" href="css/faq.css">
+    <title>FAQ - Savol va Javoblar | Ranking Hours</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-</head>
-<body>
-    <!-- Til tanlash -->
-    <div class="language-switcher">
-        <div class="container">
-            <button class="lang-btn active" data-lang="uz">🇺🇿 O'zbek</button>
-            <button class="lang-btn" data-lang="en">🇬🇧 English</button>
-            <button class="lang-btn" data-lang="ru">🇷🇺 Русский</button>
-        </div>
-    </div>
-
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="container">
-            <a href="index.html" class="logo">
-                <img src="images/logo.png" alt="Ranking Hours Logo" width="40">
-                <span>Ranking<span class="highlight">Hours</span></span>
-            </a>
-            <div class="nav-menu">
-                <a href="index.html">Bosh Sahifa</a>
-                <a href="comparisons.html">Solishtirishlar</a>
-                <a href="categories.html">Kategoriyalar</a>
-                <a href="about.html">Biz Haqimizda</a>
-                <a href="faq.html" class="active">FAQ</a>
-                <a href="contact.html">Bog'lanish</a>
-            </div>
-        </div>
-    </nav>
-
-    <!-- FAQ Hero -->
-    <section class="faq-hero">
-        <div class="container">
-            <div class="hero-content">
-                <h1>Ko'p So'raladigan Savollar</h1>
-                <p class="hero-subtitle">Ranking Hours haqida eng ko'p so'raladigan savollarga javoblar</p>
-                
-                <div class="search-box">
-                    <input type="text" id="faqSearch" placeholder="Savolingizni yozing...">
-                    <button id="searchFaqBtn"><i class="fas fa-search"></i> Qidirish</button>
-                </div>
-                
-                <div class="quick-stats">
-                    <div class="stat">
-                        <i class="fas fa-question-circle"></i>
-                        <div>
-                            <h3>50+</h3>
-                            <p>Savolga javob</p>
-                        </div>
-                    </div>
-                    <div class="stat">
-                        <i class="fas fa-clock"></i>
-                        <div>
-                            <h3>24 soat</h3>
-                            <p>Javob berish vaqti</p>
-                        </div>
-                    </div>
-                    <div class="stat">
-                        <i class="fas fa-check-circle"></i>
-                        <div>
-                            <h3>95%</h3>
-                            <p>Mijozlar mamnunligi</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- FAQ Categories -->
-    <section class="faq-categories">
-        <div class="container">
-            <div class="categories-nav">
-                <button class="category-btn active" data-category="all">
-                    <i class="fas fa-th-large"></i> Hammasi
-                </button>
-                <button class="category-btn" data-category="general">
-                    <i class="fas fa-info-circle"></i> Umumiy
-                </button>
-                <button class="category-btn" data-category="testing">
-                    <i class="fas fa-flask"></i> Test Usullari
-                </button>
-                <button class="category-btn" data-category="products">
-                    <i class="fas fa-shopping-cart"></i> Mahsulotlar
-                </button>
-                <button class="category-btn" data-category="partnership">
-                    <i class="fas fa-handshake"></i> Hamkorlik
-                </button>
-                <button class="category-btn" data-category="technical">
-                    <i class="fas fa-cogs"></i> Texnik Masalalar
-                </button>
-                <button class="category-btn" data-category="legal">
-                    <i class="fas fa-gavel"></i> Huquqiy Masalalar
-                </button>
-            </div>
-        </div>
-    </section>
-
-    <!-- FAQ Content -->
-    <main class="faq-content">
-        <div class="container">
-            <div class="faq-grid">
-                <!-- General Questions -->
-                <div class="faq-category" id="general-category">
-                    <h2 class="category-title">
-                        <i class="fas fa-info-circle"></i>
-                        Umumiy Savollar
-                    </h2>
-                    
-                    <div class="faq-list">
-                        <!-- Question 1 -->
-                        <div class="faq-item" data-category="general">
-                            <button class="faq-question">
-                                <span class="question-text">Ranking Hours nima?</span>
-                                <i class="fas fa-chevron-down"></i>
-                            </button>
-                            <div class="faq-answer">
-                                <p>Ranking Hours - bu turli mahsulotlarni haqiqiy hayotda test qilib, ularni solishtiradigan va oddiy tilda tavsiyalar beradigan veb-sayt. Biz smartfonlar, noutbuklar, avtomobillar, maishiy texnika va boshqa mahsulotlarni sinab ko'ramiz, keyin sizga qaysi biri yaxshiligi haqida aytamiz.</p>
-                                <p>Bizning maqsadimiz - foydalanuvchilarga haqiqiy, xolis va tushunarli maslahatlar berish. Biz kompaniyalar uchun emas, siz uchun ishlaymiz.</p>
-                            </div>
-                        </div>
-
-                        <!-- Question 2 -->
-                        <div class="faq-item" data-category="general">
-                            <button class="faq-question">
-                                <span class="question-text">Sayt kimga tegishli?</span>
-                                <i class="fas fa-chevron-down"></i>
-                            </button>
-                            <div class="faq-answer">
-                                <p>Ranking Hours sayti <strong>Dostlon Abdurahmonov</strong> ga tegishli. Men 10 yildan beri texnika muxlisiman va 150+ mahsulotni sinab ko'rganman. Sayt 2023 yilda ochilgan.</p>
-                                <p>Biz mustaqil jamoamiz. Biz hech qanday kompaniya yoki brend tomonidan moliyalashtirilmaymiz. Bu bizning xolisligimizni kafolatlaydi.</p>
-                            </div>
-                        </div>
-
-                        <!-- Question 3 -->
-                        <div class="faq-item" data-category="general">
-                            <button class="faq-question">
-                                <span class="question-text">Qanday kontakt qilish mumkin?</span>
-                                <i class="fas fa-chevron-down"></i>
-                            </button>
-                            <div class="faq-answer">
-                                <p>Biz bilan quyidagi usullar orqali bog'lanishingiz mumkin:</p>
-                                <ul>
-                                    <li><strong>Elektron pochta:</strong> info@ranking-hours.uz</li>
-                                    <li><strong>Telefon:</strong> +998 90 123 45 67 (ish vaqti: 9:00-18:00)</li>
-                                    <li><strong>Kontakt forma:</strong> <a href="contact.html">Bog'lanish sahifasi</a></li>
-                                    <li><strong>Ijtimoiy tarmoqlar:</strong> Telegram, YouTube, Instagram</li>
-                                </ul>
-                                <p>Javob berish vaqti: 24 soat ichida. Shoshilinch masalalar uchun telefon qiling.</p>
-                            </div>
-                        </div>
-
-                        <!-- Question 4 -->
-                        <div class="faq-item" data-category="general">
-                            <button class="faq-question">
-                                <span class="question-text">Maqolalarni qancha vaqtda yangilaysiz?</span>
-                                <i class="fas fa-chevron-down"></i>
-                            </button>
-                            <div class="faq-answer">
-                                <p>Biz maqolalarni quyidagi holatlarda yangilaymiz:</p>
-                                <ul>
-                                    <li><strong>Yangi model chiqqanda:</strong> Masalan, iPhone 16 chiqqanda, iPhone 15 maqolasini yangilaymiz</li>
-                                    <li><strong>Narx o'zgarganda:</strong> Mahsulot narxi sezilarli o'zgarganda</li>
-                                    <li><strong>Muhim yangilik bo'lsa:</strong> Mahsulotda muhim yangilanish bo'lsa</li>
-                                    <li><strong>Har 6 oyda:</strong> Muntazam ravishda tekshirib, yangilaymiz</li>
-                                </ul>
-                                <p>Har bir maqolaning oxirida "Oxirgi yangilanish" sanasi ko'rsatilgan.</p>
-                            </div>
-                        </div>
-
-                        <!-- Question 5 -->
-                        <div class="faq-item" data-category="general">
-                            <button class="faq-question">
-                                <span class="question-text">Saytda reklama bormi?</span>
-                                <i class="fas fa-chevron-down"></i>
-                            </button>
-                            <div class="faq-answer">
-                                <p>Ha, saytimizda reklamalar bo'lishi mumkin. Reklamalar asosan:</p>
-                                <ul>
-                                    <li><strong>Google Adsense</strong> orqali ko'rsatiladi</li>
-                                    <li><strong>Affiliate linklar</strong> (Amazon, AliExpress va boshqalar)</li>
-                                    <li><strong>Mahalliy hamkorlar</strong> reklamalari</li>
-                                </ul>
-                                <p><strong>Muhim:</strong> Reklamalar bizning baholarimizga ta'sir qilmaydi. Biz faqat haqiqiy fikrlarni bildiramiz. To'liq ma'lumot uchun <a href="affiliate-disclosure.html">Affiliate Oshkor Qilish</a> sahifasini o'qing.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Testing Methods -->
-                <div class="faq-category" id="testing-category">
-                    <h2 class="category-title">
-                        <i class="fas fa-flask"></i>
-                        Test Usullari
-                    </h2>
-                    
-                    <div class="faq-list">
-                        <!-- Question 1 -->
-                        <div class="faq-item" data-category="testing">
-                            <button class="faq-question">
-                                <span class="question-text">Qanday test qilasiz?</span>
-                                <i class="fas fa-chevron-down"></i>
-                            </button>
-                            <div class="faq-answer">
-                                <p>Bizning test usullarimiz:</p>
-                                <ol>
-                                    <li><strong>Haqiqiy hayotda test:</strong> Laboratoriyada emas, kundalik hayotda sinaymiz</li>
-                                    <li><strong>Uzoq muddatli test:</strong> 1-4 hafta davomida ishlatamiz</li>
-                                    <li><strong>Ko'p odam tajribasi:</strong> Jamoa a'zolari, do'stlar, oila a'zolari ham fikr bildiradi</li>
-                                    <li><strong>Batafsil ma'lumot yig'ish:</strong> Har kuni natijalarni yozib boramiz</li>
-                                    <li><strong>Xolis baholash:</strong> Hech kim bizga nima deb yozishimizni aytolmaydi</li>
-                                </ol>
-                                <p>To'liq ma'lumot uchun <a href="methodology.html">Metodologiya</a> sahifasini o'qing.</p>
-                            </div>
-                        </div>
-
-                        <!-- Question 2 -->
-                        <div class="faq-item" data-category="testing">
-                            <button class="faq-question">
-                                <span class="question-text">Mahsulotlarni qayerdan olasiz?</span>
-                                <i class="fas fa-chevron-down"></i>
-                            </button>
-                            <div class="faq-answer">
-                                <p>Mahsulotlarni quyidagi usullar bilan olamiz:</p>
-                                <ul>
-                                    <li><strong>Do'konlardan sotib olish:</strong> Asosan oddiy mijoz sifatida do'konlardan sotib olamiz</li>
-                                    <li><strong>Test uchun olish:</strong> Ba'zi kompaniyalar test uchun mahsulot yuboradi (lekin bu baholarga ta'sir qilmaydi)</li>
-                                    <li><strong>Ijaraga olish:</strong> Qimmat mahsulotlarni (avtomobil kabi) ijaraga olamiz</li>
-                                    <li><strong>Foydalanuvchilardan:</strong> Ba'zan foydalanuvchilar o'z mahsulotlarini test uchun beradi</li>
-                                </ul>
-                                <p>Biz har doim ochiq va shaffofmiz. Agar mahsulot test uchun berilgan bo'lsa, buni maqolada ko'rsatamiz.</p>
-                            </div>
-                        </div>
-
-                        <!-- Question 3 -->
-                        <div class="faq-item" data-category="testing">
-                            <button class="faq-question">
-                                <span class="question-text">Test qancha vaqt davom etadi?</span>
-                                <i class="fas fa-chevron-down"></i>
-                            </button>
-                            <div class="faq-answer">
-                                <p>Test davri mahsulot turiga qarab:</p>
-                                <ul>
-                                    <li><strong>Smartfonlar:</strong> 2 hafta</li>
-                                    <li><strong>Noutbuklar:</strong> 3-4 hafta</li>
-                                    <li><strong>Avtomobillar:</strong> 1 oy</li>
-                                    <li><strong>Maishiy texnika:</strong> 2-3 hafta</li>
-                                    <li><strong>Kichik mahsulotlar:</strong> 1 hafta</li>
-                                </ul>
-                                <p>Bu vaqt ichida biz mahsulotni har turli sharoitda sinab ko'ramiz: uyda, ishda, sayohatda, turli ob-havo sharoitida.</p>
-                            </div>
-                        </div>
-
-                        <!-- Question 4 -->
-                        <div class="faq-item" data-category="testing">
-                            <button class="faq-question">
-                                <span class="question-text">Reytingni qanday berasiz?</span>
-                                <i class="fas fa-chevron-down"></i>
-                            </button>
-                            <div class="faq-answer">
-                                <p>Biz 5 balldan reyting beramiz. Har bir ball quyidagi mezonlarga asoslanadi:</p>
-                                <div class="scoring-breakdown">
-                                    <div class="score-item">
-                                        <span class="score-label">Ishlash va funksional:</span>
-                                        <div class="score-bar">
-                                            <div class="score-fill" style="width: 30%"></div>
-                                        </div>
-                                        <span class="score-percent">30%</span>
-                                    </div>
-                                    <div class="score-item">
-                                        <span class="score-label">Dizayn va qurilish:</span>
-                                        <div class="score-bar">
-                                            <div class="score-fill" style="width: 20%"></div>
-                                        </div>
-                                        <span class="score-percent">20%</span>
-                                    </div>
-                                    <div class="score-item">
-                                        <span class="score-label">Foydalanish qulayligi:</span>
-                                        <div class="score-bar">
-                                            <div class="score-fill" style="width: 20%"></div>
-                                        </div>
-                                        <span class="score-percent">20%</span>
-                                    </div>
-                                    <div class="score-item">
-                                        <span class="score-label">Narx va qiymat:</span>
-                                        <div class="score-bar">
-                                            <div class="score-fill" style="width: 20%"></div>
-                                        </div>
-                                        <span class="score-percent">20%</span>
-                                    </div>
-                                    <div class="score-item">
-                                        <span class="score-label">Kafolat va qo'llab-quvvatlash:</span>
-                                        <div class="score-bar">
-                                            <div class="score-fill" style="width: 10%"></div>
-                                        </div>
-                                        <span class="score-percent">10%</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Question 5 -->
-                        <div class="faq-item" data-category="testing">
-                            <button class="faq-question">
-                                <span class="question-text">Test cheklovlaringiz bormi?</span>
-                                <i class="fas fa-chevron-down"></i>
-                            </button>
-                            <div class="faq-answer">
-                                <p>Ha, bizning testlarimizda quyidagi cheklovlar mavjud:</p>
-                                <ul>
-                                    <li><strong>Vaqt cheklovi:</strong> Har bir mahsulotni cheklangan vaqtda test qilamiz</li>
-                                    <li><strong>Namona o'lchami:</strong> Faqat 1-2 dona mahsulotni sinaymiz</li>
-                                    <li><strong>Muhit cheklovi:</strong> Faqat bizning sharoitimizda test qilamiz</li>
-                                    <li><strong>Subyektivlik:</strong> Ba'zi baholar shaxsiy afzalliklarga bog'liq</li>
-                                    <li><strong>Moliya cheklovi:</strong> Hammasini sotib olishimiz mumkin emas</li>
-                                </ul>
-                                <p>Biz bu cheklovlarni har bir maqolada ochiq aytamiz. Siz haqiqatni bilishingiz kerak.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Products Questions -->
-                <div class="faq-category" id="products-category">
-                    <h2 class="category-title">
-                        <i class="fas fa-shopping-cart"></i>
-                        Mahsulotlar
-                    </h2>
-                    
-                    <div class="faq-list">
-                        <!-- Question 1 -->
-                        <div class="faq-item" data-category="products">
-                            <button class="faq-question">
-                                <span class="question-text">Qaysi mahsulotlarni test qilasiz?</span>
-                                <i class="fas fa-chevron-down"></i>
-                            </button>
-                            <div class="faq-answer">
-                                <p>Biz quyidagi turdagi mahsulotlarni test qilamiz:</p>
-                                <div class="product-categories">
-                                    <div class="product-cat">
-                                        <i class="fas fa-mobile-alt"></i>
-                                        <h4>Smartfonlar va planshetlar</h4>
-                                        <p>iPhone, Samsung, Xiaomi, Google, Huawei</p>
-                                    </div>
-                                    <div class="product-cat">
-                                        <i class="fas fa-laptop"></i>
-                                        <h4>Noutbuklar va kompyuterlar</h4>
-                                        <p>MacBook, Windows laptop, gaming PC</p>
-                                    </div>
-                                    <div class="product-cat">
-                                        <i class="fas fa-car"></i>
-                                        <h4>Avtomobillar</h4>
-                                        <p>Elektromobillar, benzin, dizel, gibrid</p>
-                                    </div>
-                                    <div class="product-cat">
-                                        <i class="fas fa-home"></i>
-                                        <h4>Maishiy texnika</h4>
-                                        <p>Muzlatgich, kir yuvish mashinasi, changyutgich</p>
-                                    </div>
-                                    <div class="product-cat">
-                                        <i class="fas fa-headphones"></i>
-                                        <h4>Audio uskunalar</h4>
-                                        <p>Naushniklar, kolonkalar, mikrofoniar</p>
-                                    </div>
-                                    <div class="product-cat">
-                                        <i class="fas fa-gamepad"></i>
-                                        <h4>O'yin uskunalari</h4>
-                                        <p>PlayStation, Xbox, gaming aksessuarlar</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Question 2 -->
-                        <div class="faq-item" data-category="products">
-                            <button class="faq-question">
-                                <span class="question-text">Yangi model chiqqanda eski maqolani yangilaysizmi?</span>
-                                <i class="fas fa-chevron-down"></i>
-                            </button>
-                            <div class="faq-answer">
-                                <p>Ha, yangi model chiqqanda biz:</p>
-                                <ol>
-                                    <li><strong>Yangi solishtirish yozamiz:</strong> Yangi modelni eski model bilan solishtiramiz</li>
-                                    <li><strong>Eski maqolani yangilaymiz:</strong> Agar kerak bo'lsa, eski maqolaga yangi ma'lumot qo'shamiz</li>
-                                    <li><strong>Yangilanish haqida xabar beramiz:</strong> Yangilangan maqolalarni social media orqali xabar qilamiz</li>
-                                    <li><strong>Reytingni yangilaymiz:</strong> Yangi model chiqqanda eski model reytingini qayta ko'rib chiqamiz</li>
-                                </ol>
-                                <p>Har bir maqolaning oxirida "Oxirgi yangilanish" sanasi bor. Agar siz eski maqolani ko'rsangiz, sanaga qarang.</p>
-                            </div>
-                        </div>
-
-                        <!-- Question 3 -->
-                        <div class="faq-item" data-category="products">
-                            <button class="faq-question">
-                                <span class="question-text">Narxlar to'g'rimi?</span>
-                                <i class="fas fa-chevron-down"></i>
-                            </button>
-                            <div class="faq-answer">
-                                <p>Biz maqolalarda ko'rsatgan narxlar:</p>
-                                <ul>
-                                    <li><strong>Vaqtida to'g'ri:</strong> Maqola yozilgan vaqtda to'g'ri narxlar</li>
-                                    <li><strong>Rasmiy narxlar:</strong> Ishlab chiqaruvchining rasmiy narxlari</li>
-                                    <li><strong>O'zbekiston narxlari:</strong> Agar mavjud bo'lsa, O'zbekistondagi narxlar</li>
-                                    <li><strong>AQSh dollarida:</strong> Asosan $ dollarida ko'rsatamiz</li>
-                                </ul>
-                                <p><strong>Muhim:</strong> Narxlar tez o'zgarishi mumkin. Har qanday xarim qilishdan oldin joriy narxlarni tekshiring. Biz maqola oxirida "Narxlar o'zgarishi mumkin" deb ogohlantiramiz.</p>
-                            </div>
-                        </div>
-
-                        <!-- Question 4 -->
-                        <div class="faq-item" data-category="products">
-                            <button class="faq-question">
-                                <span class="question-text">Qaysi mamlakat mahsulotlarini test qilasiz?</span>
-                                <i class="fas fa-chevron-down"></i>
-                            </button>
-                            <div class="faq-answer">
-                                <p>Biz asosan quyidagi mamlakatlar mahsulotlarini test qilamiz:</p>
-                                <div class="country-list">
-                                    <div class="country">
-                                        <span class="flag">🇺🇸</span>
-                                        <span class="name">AQSh</span>
-                                        <span class="products">Apple, Tesla, Google</span>
-                                    </div>
-                                    <div class="country">
-                                        <span class="flag">🇰🇷</span>
-                                        <span class="name">Koreya</span>
-                                        <span class="products">Samsung, LG, Hyundai</span>
-                                    </div>
-                                    <div class="country">
-                                        <span class="flag">🇨🇳</span>
-                                        <span class="name">Xitoy</span>
-                                        <span class="products">Xiaomi, Huawei, BYD</span>
-                                    </div>
-                                    <div class="country">
-                                        <span class="flag">🇯🇵</span>
-                                        <span class="name">Yaponiya</span>
-                                        <span class="products">Sony, Toyota, Nikon</span>
-                                    </div>
-                                    <div class="country">
-                                        <span class="flag">🇩🇪</span>
-                                        <span class="name">Germaniya</span>
-                                        <span class="products">BMW, Bosch, Siemens</span>
-                                    </div>
-                                    <div class="country">
-                                        <span class="flag">🇺🇿</span>
-                                        <span class="name">O'zbekiston</span>
-                                        <span class="products">Mahalliy ishlab chiqaruvchilar</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Question 5 -->
-                        <div class="faq-item" data-category="products">
-                            <button class="faq-question">
-                                <span class="question-text">O'zbekistonda mavjud bo'lmagan mahsulotlarni ham test qilasizmi?</span>
-                                <i class="fas fa-chevron-down"></i>
-                            </button>
-                            <div class="faq-answer">
-                                <p>Ha, ba'zida O'zbekistonda mavjud bo'lmagan mahsulotlarni ham test qilamiz. Buning sabablari:</p>
-                                <ul>
-                                    <li><strong>Kelajak uchun ma'lumot:</strong> Mahsulot O'zbekistonga kelishi mumkin</li>
-                                    <li><strong>Xalqaro foydalanuvchilar uchun:</strong> Saytimizni xalqaro foydalanuvchilar ham o'qiydi</li>
-                                    <li><strong>Texnologiya trendlari:</strong> Yangi texnologiyalarni kuzatish</li>
-                                    <li><strong>Sayyohlar uchun:</strong> Chet eldan olib kelishni rejalashtirayotganlar uchun</li>
-                                </ul>
-                                <p>Bunday holatlarda biz maqolada "O'zbekistonda mavjud emas" deb alohida ogohlantiramiz.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Partnership Questions -->
-                <div class="faq-category" id="partnership-category">
-                    <h2 class="category-title">
-                        <i class="fas fa-handshake"></i>
-                        Hamkorlik
-                    </h2>
-                    
-                    <div class="faq-list">
-                        <!-- Question 1 -->
-                        <div class="faq-item" data-category="partnership">
-                            <button class="faq-question">
-                                <span class="question-text">Hamkorlik qilishni xohlasam nima qilishim kerak?</span>
-                                <i class="fas fa-chevron-down"></i>
-                            </button>
-                            <div class="faq-answer">
-                                <p>Hamkorlik qilish uchun quyidagi qadamlarni bajaring:</p>
-                                <ol>
-                                    <li><strong>Biz bilan bog'laning:</strong> partnership@ranking-hours.uz yoki <a href="contact.html">kontakt forma</a> orqali</li>
-                                    <li><strong>Hamkorlik turini tanlang:</strong>
-                                        <ul>
-                                            <li>Mahsulot testi</li>
-                                            <li>Reklama</li>
-                                            <li>Kontent hamkorligi</li>
-                                            <li>Affiliate hamkorlik</li>
-                                            <li>Maxsus loyiha</li>
-                                        </ul>
-                                    </li>
-                                    <li><strong>Ma'lumotlaringizni bering:</strong> Kompaniya haqida, mahsulot haqida, maqsadlaringiz</li>
-                                    <li><strong>Uchrashuv belgilang:</strong> Onlayn uchrashuv yoki telefon suhbati</li>
-                                    <li><strong>Shartnoma tuzamiz:</strong> Hamkorlik shartlarini kelishib olamiz</li>
-                                </ol>
-                            </div>
-                        </div>
-
-                        <!-- Question 2 -->
-                        <div class="faq-item" data-category="partnership">
-                            <button class="faq-question">
-                                <span class="question-text">Mahsulotimni test qildirishni xohlasam?</span>
-                                <i class="fas fa-chevron-down"></i>
-                            </button>
-                            <div class="faq-answer">
-                                <p>Agar mahsulotingizni test qildirishni istasangiz:</p>
-                                <div class="testing-process">
-                                    <div class="step">
-                                        <div class="step-number">1</div>
-                                        <div class="step-content">
-                                            <h4>Mahsulot yuborish</h4>
-                                            <p>Mahsulotni test uchun yuboring (bepul yoki sotib olish)</p>
-                                        </div>
-                                    </div>
-                                    <div class="step">
-                                        <div class="step-number">2</div>
-                                        <div class="step-content">
-                                            <h4>Test jarayoni</h4>
-                                            <p>1-4 hafta davomida haqiqiy hayotda test qilamiz</p>
-                                        </div>
-                                    </div>
-                                    <div class="step">
-                                        <div class="step-number">3</div>
-                                        <div class="step-content">
-                                            <h4>Maqola yozish</h4>
-                                            <p>Xolis va haqiqiy baholar asosida maqola yozamiz</p>
-                                        </div>
-                                    </div>
-                                    <div class="step">
-                                        <div class="step-number">4</div>
-                                        <div class="step-content">
-                                            <h4>Nashr qilish</h4>
-                                            <p>Saytda nashr qilamiz va social mediada targ'ib qilamiz</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <p><strong>Muhim:</strong> Biz faqat haqiqiy baholar beramiz. Agar mahsulotingiz yomon bo'lsa, buni ham aytamiz.</p>
-                            </div>
-                        </div>
-
-                        <!-- Question 3 -->
-                        <div class="faq-item" data-category="partnership">
-                            <button class="faq-question">
-                                <span class="question-text">Reklama berish narxi qancha?</span>
-                                <i class="fas fa-chevron-down"></i>
-                            </button>
-                            <div class="faq-answer">
-                                <p>Reklama narxi quyidagi omillarga bog'liq:</p>
-                                <div class="pricing-table">
-                                    <table>
-                                        <thead>
-                                            <tr>
-                                                <th>Reklama turi</th>
-                                                <th>Davomiylik</th>
-                                                <th>Narx</th>
-                                                <th>Qamrovi</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>Banner reklama</td>
-                                                <td>1 oy</td>
-                                                <td>$200-$500</td>
-                                                <td>50K-100K ko'rish</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Maqola ichida reklama</td>
-                                                <td>Doimiy</td>
-                                                <td>$300-$800</td>
-                                                <td>Maqola mavjud bo'lgan muddat</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Sponsorlik maqola</td>
-                                                <td>Doimiy</td>
-                                                <td>$500-$1,500</td>
-                                                <td>Maxsus maqola + targ'ib</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Email marketing</td>
-                                                <td>1 kampaniya</td>
-                                                <td>$100-$300</td>
-                                                <td>10K obunachiga</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Social media post</td>
-                                                <td>1 post</td>
-                                                <td>$50-$150</td>
-                                                <td>20K-50K ko'rish</td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                                <p>Aniq narxni kelishish uchun biz bilan bog'laning. Narxlar o'zgarishi mumkin.</p>
-                            </div>
-                        </div>
-
-                        <!-- Question 4 -->
-                        <div class="faq-item" data-category="partnership">
-                            <button class="faq-question">
-                                <span class="question-text">Affiliate hamkorlik qanday ishlaydi?</span>
-                                <i class="fas fa-chevron-down"></i>
-                            </button>
-                            <div class="faq-answer">
-                                <p>Affiliate hamkorlikda:</p>
-                                <ol>
-                                    <li><strong>Sizning mahsulotingizni tavsiya qilamiz</strong> - maqolalarimizda haqiqiy baholar asosida</li>
-                                    <li><strong>Maxsus affiliate link berasiz</strong> - bu link orqali sotib olingan mahsulotlar uchun komissiya olamiz</li>
-                                    <li><strong>Sotish kuzatiladi</strong> - qancha sotilganligini ko'ramiz</li>
-                                    <li><strong>Komissiya to'lanadi</strong> - har oy yoki har chorakda komissiya to'lanadi</li>
-                                </ol>
-                                <p>Affiliate komissiyasi odatda 5-15% oralig'ida. Aniq foizni kelishib olamiz.</p>
-                                <p>Bizning affiliate hamkorlarimiz: Amazon Associates, AliExpress, mahalliy do'konlar.</p>
-                            </div>
-                        </div>
-
-                        <!-- Question 5 -->
-                        <div class="faq-item" data-category="partnership">
-                            <button class="faq-question">
-                                <span class="question-text">Hamkorlikda nimalarga e'tibor berasiz?</span>
-                                <i class="fas fa-chevron-down"></i>
-                            </button>
-                            <div class="faq-answer">
-                                <p>Hamkorlik qilishdan oldin biz quyidagilarni tekshiramiz:</p>
-                                <ul>
-                                    <li><strong>Mahsulot sifati:</strong> Mahsulot yaxshi va ishonchli bo'lishi kerak</li>
-                                    <li><strong>Kompaniya obro'si:</strong> Kompaniya yaxshi obro'ga ega bo'lishi kerak</li>
-                                    <li><strong>Qonuniylik:</strong> Barcha litsenziya va sertifikatlarga ega bo'lishi</li>
-                                    <li><strong>Mijozlar xizmati:</strong> Yaxshi mijozlar xizmati bo'lishi</li>
-                                    <li><strong>Qadriyatlar mosligi:</strong> Kompaniya qadriyatlari biznikiga mos kelishi</li>
-                                </ul>
-                                <p>Biz faqat ishonchli kompaniyalar bilan hamkorlik qilamiz. Agar kompaniya yomon obro'ga ega bo'lsa, hamkorlikdan bosh tortamiz.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Ask Question Form -->
-            <section class="ask-question">
-                <div class="container">
-                    <h2 class="section-title">Savolingiz Javobsiz Qoldimi?</h2>
-                    
-                    <div class="ask-form-container">
-                        <div class="form-intro">
-                            <h3><i class="fas fa-question-circle"></i> Yangi Savol Berish</h3>
-                            <p>Agar sizning savolingiz ushbu ro'yxatda bo'lmasa, bu yerga yozing. Biz 24 soat ichida javob beramiz va savolingizni FAQ ga qo'shamiz.</p>
-                            <div class="form-tips">
-                                <h4><i class="fas fa-lightbulb"></i> Yaxshi savol yozish uchun maslahatlar:</h4>
-                                <ul>
-                                    <li>Savolingiz aniq va qisqa bo'lsin</li>
-                                    <li>Qaysi kategoriyaga tegishli ekanligini ko'rsating</li>
-                                    <li>Ilova sifatida rasm yoki skrinshot qo'shishingiz mumkin</li>
-                                    <li>Telefon raqamingizni ham qo'shsangiz, tezroq javob beramiz</li>
-                                </ul>
-                            </div>
-                        </div>
-                        
-                        <form id="askQuestionForm" class="ask-form">
-                            <div class="form-group">
-                                <label for="questionCategory">Savol Kategoriyasi *</label>
-                                <select id="questionCategory" name="category" required>
-                                    <option value="">Tanlang</option>
-                                    <option value="general">Umumiy savollar</option>
-                                    <option value="testing">Test usullari</option>
-                                    <option value="products">Mahsulotlar</option>
-                                    <option value="partnership">Hamkorlik</option>
-                                    <option value="technical">Texnik masalalar</option>
-                                    <option value="legal">Huquqiy masalalar</option>
-                                    <option value="other">Boshqa</option>
-                                </select>
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="questionTitle">Savol Sarlavhasi *</label>
-                                <input type="text" id="questionTitle" name="title" required placeholder="Masalan: iPhone 15 narxi qancha?">
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="questionDetail">Savol Batafsil *</label>
-                                <textarea id="questionDetail" name="detail" rows="5" required placeholder="Savolingizni batafsil yozing..."></textarea>
-                            </div>
-                            
-                            <div class="form-row">
-                                <div class="form-group">
-                                    <label for="userName">Ismingiz *</label>
-                                    <input type="text" id="userName" name="name" required>
-                                </div>
-                                <div class="form-group">
-                                    <label for="userEmail">Elektron pochta *</label>
-                                    <input type="email" id="userEmail" name="email" required>
-                                </div>
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="attachment">Fayl biriktirish (ixtiyoriy)</label>
-                                <input type="file" id="attachment" name="attachment" accept="image/*,.pdf">
-                                <small>Rasm yoki PDF fayl (max: 5MB)</small>
-                            </div>
-                            
-                            <div class="form-group checkbox-group">
-                                <input type="checkbox" id="addToFaq" name="addToFaq">
-                                <label for="addToFaq">Savolim FAQ ro'yxatiga qo'shilsin (boshqa foydalanuvchilar ham foydalansin)</label>
-                            </div>
-                            
-                            <div class="form-group checkbox-group">
-                                <input type="checkbox" id="newsletter" name="newsletter" checked>
-                                <label for="newsletter">Javob va yangiliklarga obuna bo'lishni istayman</label>
-                            </div>
-                            
-                            <div class="form-actions">
-                                <button type="submit" class="btn btn-primary">
-                                    <i class="fas fa-paper-plane"></i> Savolni Yuborish
-                                </button>
-                                <button type="reset" class="btn btn-secondary">
-                                    <i class="fas fa-redo"></i> Tozalash
-                                </button>
-                            </div>
-                        </form>
-                    </div>
-                    
-                    <div class="response-time">
-                        <div class="time-card">
-                            <i class="fas fa-clock"></i>
-                            <div>
-                                <h4>Javob vaqti</h4>
-                                <p>24 soat ichida (dushanba-juma)</p>
-                            </div>
-                        </div>
-                        <div class="time-card">
-                            <i class="fas fa-check-circle"></i>
-                            <div>
-                                <h4>Kafolat</h4>
-                                <p>Har bir savolga javob beramiz</p>
-                            </div>
-                        </div>
-                        <div class="time-card">
-                            <i class="fas fa-shield-alt"></i>
-                            <div>
-                                <h4>Maxfiylik</h4>
-                                <p>Shaxsiy ma'lumotlaringiz himoyalangan</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </div>
-    </main>
-
-    <!-- Related Pages -->
-    <section class="related-pages">
-        <div class="container">
-            <h2 class="section-title">Bog'liq Sahifalar</h2>
-            
-            <div class="pages-grid">
-                <a href="contact.html" class="page-card">
-                    <div class="page-icon">
-                        <i class="fas fa-envelope"></i>
-                    </div>
-                    <h3>Bog'lanish</h3>
-                    <p>To'g'ridan-to'g'ri aloqa uchun</p>
-                </a>
-                
-                <a href="methodology.html" class="page-card">
-                    <div class="page-icon">
-                        <i class="fas fa-flask"></i>
-                    </div>
-                    <h3>Metodologiya</h3>
-                    <p>Test usullarimiz haqida</p>
-                </a>
-                
-                <a href="about.html" class="page-card">
-                    <div class="page-icon">
-                        <i class="fas fa-users"></i>
-                    </div>
-                    <h3>Biz Haqimizda</h3>
-                    <p>Jamoa va maqsadlarimiz</p>
-                </a>
-                
-                <a href="privacy-policy.html" class="page-card">
-                    <div class="page-icon">
-                        <i class="fas fa-shield-alt"></i>
-                    </div>
-                    <h3>Maxfiylik Siyosati</h3>
-                    <p>Ma'lumotlaringiz qanday ishlatiladi</p>
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-col">
-                    <a href="index.html" class="footer-logo">
-                        <img src="images/logo.png" alt="Ranking Hours" width="40">
-                        <span>Ranking<span class="highlight">Hours</span></span>
-                    </a>
-                    <p class="footer-description">
-                        Biz haqiqiy odamlardan haqiqiy maslahatlar. 
-                        Har bir mahsulotni o'zimiz sinab ko'ramiz.
-                    </p>
-                </div>
-                
-                <div class="footer-col">
-                    <h3>Yordam va Qo'llab-quvvatlash</h3>
-                    <ul class="footer-links">
-                        <li><a href="faq.html" class="active">FAQ (Ko'p So'raladigan Savollar)</a></li>
-                        <li><a href="contact.html">Bog'lanish</a></li>
-                        <li><a href="support.html">Texnik Yordam</a></li>
-                        <li><a href="tutorials.html">O'quv Qo'llanmalar</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-col">
-                    <h3>Ma'lumotlar</h3>
-                    <ul class="footer-links">
-                        <li><a href="privacy-policy.html">Maxfiylik Siyosati</a></li>
-                        <li><a href="terms-of-service.html">Foydalanish Shartlari</a></li>
-                        <li><a href="disclaimer.html">Mas'uliyatdan Voz Kechish</a></li>
-                        <li><a href="cookies.html">Cookie Siyosati</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-col">
-                    <h3>Biz Bilan Bog'lanish</h3>
-                    <ul class="footer-links">
-                        <li><a href="contact.html">Kontakt Formasi</a></li>
-                        <li><a href="mailto:support@ranking-hours.uz">support@ranking-hours.uz</a></li>
-                        <li><a href="tel:+998901234567">+998 90 123 45 67</a></li>
-                        <li><a href="#"><i class="fas fa-comments"></i> Onlayn Chat</a></li>
-                    </ul>
-                </div>
-            </div>
-            
-            <div class="footer-bottom">
-                <p>&copy; 2024 RankingHours.uz - Barcha huquqlar himoyalangan.</p>
-                <p class="footer-note">
-                    FAQ sahifasi doim yangilanadi. Agar sizda savolingiz bo'lsa, doimo bepul so'rashingiz mumkin.
-                </p>
-            </div>
-        </div>
-    </footer>
-
-    <script src="js/main.js"></script>
-    <script src="js/faq.js"></script>
-    
-    <script>
-        // FAQ Page Functionality
-        document.addEventListener('DOMContentLoaded', function() {
-            // FAQ Accordion
-            const faqQuestions = document.querySelectorAll('.faq-question');
-            
-            faqQuestions.forEach(question => {
-                question.addEventListener('click', function() {
-                    const answer = this.nextElementSibling;
-                    const icon = this.querySelector('i');
-                    
-                    // Close other answers
-                    if (!answer.classList.contains('active')) {
-                        document.querySelectorAll('.faq-answer.active').forEach(activeAnswer => {
-                            activeAnswer.classList.remove('active');
-                            activeAnswer.previousElementSibling.querySelector('i').className = 'fas fa-chevron-down';
-                        });
-                    }
-                    
-                    // Toggle current answer
-                    answer.classList.toggle('active');
-                    icon.className = answer.classList.contains('active') 
-                        ? 'fas fa-chevron-up' 
-                        : 'fas fa-chevron-down';
-                });
-            });
-            
-            // Category filtering
-            const categoryBtns = document.querySelectorAll('.category-btn');
-            const faqItems = document.querySelectorAll('.faq-item');
-            
-            categoryBtns.forEach(btn => {
-                btn.addEventListener('click', function() {
-                    const category = this.dataset.category;
-                    
-                    // Update active button
-                    categoryBtns.forEach(b => b.classList.remove('active'));
-                    this.classList.add('active');
-                    
-                    // Filter FAQ items
-                    faqItems.forEach(item => {
-                        if (category === 'all' || item.dataset.category === category) {
-                            item.style.display = 'block';
-                        } else {
-                            item.style.display = 'none';
-                        }
-                    });
-                    
-                    // Show/hide categories
-                    document.querySelectorAll('.faq-category').forEach(cat => {
-                        const visibleItems = cat.querySelectorAll('.faq-item[style*="block"], .faq-item:not([style])');
-                        if (visibleItems.length > 0) {
-                            cat.style.display = 'block';
-                        } else {
-                            cat.style.display = 'none';
-                        }
-                    });
-                });
-            });
-            
-            // Search functionality
-            const searchInput = document.getElementById('faqSearch');
-            const searchBtn = document.getElementById('searchFaqBtn');
-            
-            function performSearch() {
-                const query = searchInput.value.toLowerCase().trim();
-                
-                if (query.length < 2) {
-                    alert('Iltimos, kamida 2 ta harf kiriting');
-                    return;
-                }
-                
-                faqItems.forEach(item => {
-                    const question = item.querySelector('.question-text').textContent.toLowerCase();
-                    const answer = item.querySelector('.faq-answer').textContent.toLowerCase();
-                    
-                    if (question.includes(query) || answer.includes(query)) {
-                        item.style.display = 'block';
-                        item.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                        
-                        // Highlight search term
-                        const questionText = item.querySelector('.question-text');
-                        const originalText = questionText.textContent;
-                        const highlightedText = originalText.replace(
-                            new RegExp(query, 'gi'),
-                            match => `<span class="highlight-text">${match}</span>`
-                        );
-                        questionText.innerHTML = highlightedText;
-                    } else {
-                        item.style.display = 'none';
-                    }
-                });
-                
-                // Show/hide categories based on visible items
-                document.querySelectorAll('.faq-category').forEach(cat => {
-                    const visibleItems = cat.querySelectorAll('.faq-item[style*="block"]');
-                    if (visibleItems.length > 0) {
-                        cat.style.display = 'block';
-                    } else {
-                        cat.style.display = 'none';
-                    }
-                });
-                
-                // Show message if no results
-                const visibleItems = document.querySelectorAll('.faq-item[style*="block"]');
-                if (visibleItems.length === 0) {
-                    alert('Hech narsa topilmadi. Boshqa so'z bilan qidiring.');
-                }
-            }
-            
-            searchBtn.addEventListener('click', performSearch);
-            searchInput.addEventListener('keyup', function(e) {
-                if (e.key === 'Enter') {
-                    performSearch();
-                }
-            });
-            
-            // Ask question form
-            const askForm = document.getElementById('askQuestionForm');
-            
-            askForm.addEventListener('submit', function(e) {
-                e.preventDefault();
-                
-                // Form validation
-                const title = document.getElementById('questionTitle').value;
-                const detail = document.getElementById('questionDetail').value;
-                const name = document.getElementById('userName').value;
-                const email = document.getElementById('userEmail').value;
-                
-                if (!title || !detail || !name || !email) {
-                    alert('Iltimos, barcha kerakli maydonlarni to\'ldiring');
-                    return;
-                }
-                
-                // Email validation
-                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-                if (!emailRegex.test(email)) {
-                    alert('Iltimos, to\'g\'ri elektron pochta manzilini kiriting');
-                    return;
-                }
-                
-                // File validation
-                const fileInput = document.getElementById('attachment');
-                if (fileInput.files.length > 0) {
-                    const file = fileInput.files[0];
-                    const maxSize = 5 * 1024 * 1024; // 5MB
-                    
-                    if (file.size > maxSize) {
-                        alert('Fayl hajmi 5MB dan oshmasligi kerak');
-                        return;
-                    }
-                }
-                
-                // Show success message
-                alert('Rahmat! Savolingiz qabul qilindi. Biz sizga 24 soat ichida javob beramiz.\n\nJavob elektron pochtangizga yuboriladi.');
-                
-                // Reset form
-                this.reset();
-                
-                // In a real implementation, you would send the form data to a server
-                // Example: fetch('/api/ask-question', { method: 'POST', body: new FormData(this) })
-            });
-            
-            // Auto-expand category based on URL hash
-            const hash = window.location.hash;
-            if (hash) {
-                const targetCategory = hash.substring(1); // Remove # symbol
-                const categoryBtn = document.querySelector(`[data-category="${targetCategory}"]`);
-                if (categoryBtn) {
-                    categoryBtn.click();
-                }
-                
-                // Scroll to category
-                const targetElement = document.getElementById(targetCategory + '-category');
-                if (targetElement) {
-                    setTimeout(() => {
-                        targetElement.scrollIntoView({ behavior: 'smooth' });
-                    }, 300);
-                }
-            }
-        });
-    </script>
-    
     <style>
-        /* FAQ Page Specific Styles */
-        .faq-hero {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 80px 0;
-            text-align: center;
-        }
-        .faq-hero h1 {
-            font-size: 3rem;
-            margin-bottom: 20px;
-        }
-        .hero-subtitle {
-            font-size: 1.2rem;
-            opacity: 0.9;
-            margin-bottom: 40px;
-        }
-        .search-box {
-            max-width: 600px;
-            margin: 0 auto 40px;
-            display: flex;
-            gap: 10px;
-        }
-        .search-box input {
-            flex: 1;
-            padding: 15px 20px;
-            border: none;
-            border-radius: 8px;
-            font-size: 1rem;
-        }
-        .search-box button {
-            padding: 15px 30px;
-            background: #4caf50;
-            color: white;
-            border: none;
-            border-radius: 8px;
-            font-size: 1rem;
-            font-weight: 600;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            white-space: nowrap;
-        }
-        .quick-stats {
-            display: flex;
-            justify-content: center;
-            gap: 40px;
-            flex-wrap: wrap;
-        }
-        .stat {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-        .stat i {
-            font-size: 2rem;
-            opacity: 0.8;
-        }
-        .stat h3 {
-            font-size: 2rem;
-            margin-bottom: 5px;
-        }
-        .stat p {
-            font-size: 0.9rem;
-            opacity: 0.8;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
         
-        .faq-categories {
-            padding: 30px 0;
-            background: #f8f9fa;
-            border-bottom: 1px solid #e0e0e0;
-        }
-        .categories-nav {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            justify-content: center;
-        }
-        .category-btn {
-            padding: 12px 24px;
-            background: white;
-            border: 2px solid #e0e0e0;
-            border-radius: 25px;
-            font-size: 0.95rem;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            transition: all 0.3s;
-        }
-        .category-btn:hover {
-            border-color: #667eea;
-        }
-        .category-btn.active {
-            background: #667eea;
-            color: white;
-            border-color: #667eea;
+        body {
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
         }
         
-        .faq-content {
-            padding: 60px 0;
-            background: white;
-        }
-        .faq-grid {
+        .container {
             max-width: 1000px;
             margin: 0 auto;
-        }
-        .faq-category {
-            margin-bottom: 60px;
-        }
-        .category-title {
-            color: #2c3e50;
-            margin-bottom: 30px;
-            padding-bottom: 15px;
-            border-bottom: 3px solid #667eea;
-            font-size: 2rem;
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-        .category-title i {
-            color: #667eea;
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
         }
         
-        .faq-list {
+        header {
+            background: linear-gradient(135deg, #4f46e5, #7c3aed);
+            color: white;
+            padding: 40px 30px;
+            text-align: center;
+        }
+        
+        header h1 {
+            font-size: 2.8rem;
+            margin-bottom: 10px;
+        }
+        
+        header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        .logo {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: #fbbf24;
+        }
+        
+        .faq-section, .ask-section {
+            padding: 40px 30px;
+        }
+        
+        .section-title {
+            font-size: 1.8rem;
+            margin-bottom: 25px;
+            color: #4f46e5;
+            border-bottom: 3px solid #e5e7eb;
+            padding-bottom: 10px;
             display: flex;
-            flex-direction: column;
-            gap: 20px;
+            align-items: center;
+            gap: 10px;
         }
+        
+        .section-title i {
+            color: #7c3aed;
+        }
+        
+        .faq-container {
+            margin-bottom: 40px;
+        }
+        
         .faq-item {
-            border: 2px solid #f0f0f0;
+            border: 1px solid #e5e7eb;
             border-radius: 10px;
+            margin-bottom: 15px;
             overflow: hidden;
-            transition: all 0.3s;
+            transition: all 0.3s ease;
         }
+        
         .faq-item:hover {
-            border-color: #667eea;
-            box-shadow: 0 5px 15px rgba(102,126,234,0.1);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
         }
+        
         .faq-question {
-            width: 100%;
-            padding: 25px;
-            background: #f8f9fa;
-            border: none;
-            text-align: left;
-            font-size: 1.1rem;
+            padding: 20px;
+            background-color: #f9fafb;
+            font-size: 1.2rem;
             font-weight: 600;
-            color: #2c3e50;
             cursor: pointer;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            transition: background 0.3s;
+            user-select: none;
         }
-        .faq-question:hover {
-            background: #eef2ff;
+        
+        .faq-question i {
+            transition: transform 0.3s ease;
+            color: #7c3aed;
         }
+        
         .faq-answer {
-            padding: 0 25px;
+            padding: 0 20px;
             max-height: 0;
             overflow: hidden;
-            transition: all 0.3s ease;
+            transition: all 0.4s ease;
+            background-color: white;
         }
+        
         .faq-answer.active {
-            padding: 25px;
-            max-height: 1000px;
-        }
-        .faq-answer p {
-            line-height: 1.8;
-            margin-bottom: 15px;
-            color: #555;
-        }
-        .faq-answer ul, .faq-answer ol {
-            padding-left: 20px;
-            margin-bottom: 20px;
-        }
-        .faq-answer li {
-            margin-bottom: 10px;
-            line-height: 1.6;
-            color: #555;
-        }
-        .faq-answer a {
-            color: #667eea;
-            text-decoration: none;
-            font-weight: 600;
-        }
-        .faq-answer a:hover {
-            text-decoration: underline;
-        }
-        
-        .scoring-breakdown {
-            max-width: 500px;
-            margin: 20px 0;
-        }
-        .score-item {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            margin-bottom: 15px;
-        }
-        .score-label {
-            width: 180px;
-            font-size: 0.9rem;
-            color: #555;
-        }
-        .score-bar {
-            flex: 1;
-            height: 8px;
-            background: #f0f0f0;
-            border-radius: 4px;
-            overflow: hidden;
-        }
-        .score-fill {
-            height: 100%;
-            background: #667eea;
-            border-radius: 4px;
-        }
-        .score-percent {
-            width: 40px;
-            text-align: right;
-            font-weight: 600;
-            color: #667eea;
-        }
-        
-        .product-categories {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            margin: 20px 0;
-        }
-        .product-cat {
             padding: 20px;
-            background: #f8f9fa;
+            max-height: 500px;
+        }
+        
+        .ask-form {
+            background-color: #f9fafb;
             border-radius: 10px;
-            text-align: center;
-        }
-        .product-cat i {
-            font-size: 2rem;
-            color: #667eea;
-            margin-bottom: 15px;
-        }
-        .product-cat h4 {
-            margin-bottom: 10px;
-            color: #2c3e50;
-        }
-        .product-cat p {
-            font-size: 0.9rem;
-            color: #666;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
         }
         
-        .country-list {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 15px;
-            margin: 20px 0;
-        }
-        .country {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            padding: 15px;
-            background: #f8f9fa;
-            border-radius: 8px;
-        }
-        .flag {
-            font-size: 1.5rem;
-        }
-        .name {
-            font-weight: 600;
-            color: #2c3e50;
-            width: 80px;
-        }
-        .products {
-            font-size: 0.9rem;
-            color: #666;
-            flex: 1;
-        }
-        
-        .testing-process {
-            max-width: 600px;
-            margin: 20px 0;
-        }
-        .step {
-            display: flex;
-            gap: 20px;
-            margin-bottom: 30px;
-            position: relative;
-        }
-        .step:not(:last-child)::after {
-            content: '';
-            position: absolute;
-            left: 25px;
-            top: 50px;
-            bottom: -30px;
-            width: 2px;
-            background: #e0e0e0;
-        }
-        .step-number {
-            width: 50px;
-            height: 50px;
-            background: #667eea;
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-            font-size: 1.2rem;
-            flex-shrink: 0;
-            z-index: 1;
-        }
-        .step-content h4 {
-            margin-bottom: 10px;
-            color: #2c3e50;
-        }
-        .step-content p {
-            color: #666;
-            line-height: 1.6;
-        }
-        
-        .pricing-table {
-            overflow-x: auto;
-            margin: 20px 0;
-        }
-        .pricing-table table {
-            width: 100%;
-            border-collapse: collapse;
-            background: white;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-        .pricing-table th {
-            background: #667eea;
-            color: white;
-            padding: 15px;
-            text-align: left;
-            font-weight: 600;
-        }
-        .pricing-table td {
-            padding: 15px;
-            border-bottom: 1px solid #f0f0f0;
-            color: #555;
-        }
-        .pricing-table tr:last-child td {
-            border-bottom: none;
-        }
-        .pricing-table tr:hover {
-            background: #f8f9fa;
-        }
-        
-        .ask-question {
-            padding: 80px 0;
-            background: #f8f9fa;
-        }
-        .ask-form-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            max-width: 1200px;
-            margin: 0 auto 40px;
-        }
-        .form-intro h3 {
-            color: #2c3e50;
-            margin-bottom: 20px;
-            font-size: 1.8rem;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        .form-intro p {
-            line-height: 1.8;
-            color: #555;
-            margin-bottom: 30px;
-        }
-        .form-tips {
-            background: #fff8e1;
-            border-left: 4px solid #ffd54f;
-            padding: 20px;
-            border-radius: 8px;
-        }
-        .form-tips h4 {
-            color: #e65100;
-            margin-bottom: 15px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        .form-tips ul {
-            padding-left: 20px;
-        }
-        .form-tips li {
-            margin-bottom: 8px;
-            color: #5d4037;
-        }
-        
-        .ask-form .form-group {
+        .form-group {
             margin-bottom: 25px;
         }
-        .ask-form label {
+        
+        .form-group label {
             display: block;
             margin-bottom: 8px;
             font-weight: 600;
-            color: #2c3e50;
+            color: #4b5563;
+            display: flex;
+            align-items: center;
+            gap: 8px;
         }
-        .ask-form input,
-        .ask-form select,
-        .ask-form textarea {
+        
+        .form-group label i {
+            color: #7c3aed;
+            width: 20px;
+        }
+        
+        .form-control {
             width: 100%;
-            padding: 12px 15px;
-            border: 2px solid #e0e0e0;
+            padding: 15px;
+            border: 2px solid #e5e7eb;
             border-radius: 8px;
             font-size: 1rem;
-            transition: border-color 0.3s;
+            transition: border 0.3s ease;
         }
-        .ask-form input:focus,
-        .ask-form select:focus,
-        .ask-form textarea:focus {
-            border-color: #667eea;
+        
+        .form-control:focus {
             outline: none;
+            border-color: #7c3aed;
         }
-        .form-row {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
+        
+        select.form-control {
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%237c3aed' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 15px center;
+            padding-right: 40px;
         }
+        
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
         .checkbox-group {
             display: flex;
             align-items: center;
             gap: 10px;
+            margin-bottom: 15px;
         }
-        .checkbox-group input[type="checkbox"] {
-            width: auto;
+        
+        .checkbox-group input {
+            width: 18px;
+            height: 18px;
         }
-        .form-actions {
+        
+        .form-buttons {
             display: flex;
             gap: 15px;
             margin-top: 30px;
         }
         
-        .response-time {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        .time-card {
+        .btn {
+            padding: 15px 30px;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            border: none;
+            transition: all 0.3s ease;
             display: flex;
-            gap: 15px;
             align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        
+        .btn-primary {
+            background-color: #4f46e5;
+            color: white;
+            flex: 2;
+        }
+        
+        .btn-primary:hover {
+            background-color: #4338ca;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(79, 70, 229, 0.3);
+        }
+        
+        .btn-secondary {
+            background-color: #e5e7eb;
+            color: #4b5563;
+            flex: 1;
+        }
+        
+        .btn-secondary:hover {
+            background-color: #d1d5db;
+        }
+        
+        .file-upload {
+            border: 2px dashed #d1d5db;
+            border-radius: 8px;
             padding: 20px;
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-        }
-        .time-card i {
-            font-size: 2rem;
-            color: #667eea;
-        }
-        .time-card h4 {
-            margin-bottom: 5px;
-            color: #2c3e50;
-        }
-        
-        .related-pages {
-            padding: 60px 0;
-            background: white;
-        }
-        .pages-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-        }
-        .page-card {
-            background: #f8f9fa;
-            padding: 30px;
-            border-radius: 10px;
-            text-decoration: none;
-            color: #2c3e50;
             text-align: center;
-            transition: all 0.3s;
+            color: #6b7280;
         }
-        .page-card:hover {
-            background: #667eea;
-            color: white;
-            transform: translateY(-10px);
+        
+        .file-upload:hover {
+            border-color: #7c3aed;
         }
-        .page-card:hover .page-icon i {
-            color: white;
+        
+        footer {
+            text-align: center;
+            padding: 30px;
+            background-color: #f9fafb;
+            color: #6b7280;
+            border-top: 1px solid #e5e7eb;
+            margin-top: 40px;
         }
-        .page-icon {
-            font-size: 2.5rem;
+        
+        .notification {
+            padding: 15px;
+            border-radius: 8px;
             margin-bottom: 20px;
-        }
-        .page-icon i {
-            color: #667eea;
-        }
-        .page-card h3 {
-            margin-bottom: 10px;
-            font-size: 1.3rem;
+            display: none;
         }
         
-        .highlight-text {
-            background: #fff3cd;
-            color: #856404;
-            padding: 2px 5px;
-            border-radius: 4px;
-            font-weight: bold;
+        .notification.success {
+            background-color: #d1fae5;
+            color: #065f46;
+            border: 1px solid #a7f3d0;
         }
         
-        @media (max-width: 992px) {
-            .ask-form-container {
-                grid-template-columns: 1fr;
-            }
+        .notification.error {
+            background-color: #fee2e2;
+            color: #991b1b;
+            border: 1px solid #fecaca;
         }
         
         @media (max-width: 768px) {
-            .faq-hero h1 {
-                font-size: 2rem;
+            header h1 {
+                font-size: 2.2rem;
             }
-            .search-box {
+            
+            .faq-section, .ask-section {
+                padding: 25px 20px;
+            }
+            
+            .form-buttons {
                 flex-direction: column;
             }
-            .quick-stats {
-                flex-direction: column;
-                align-items: center;
-                gap: 20px;
-            }
-            .categories-nav {
-                flex-direction: column;
-                align-items: center;
-            }
-            .category-btn {
+            
+            .btn {
                 width: 100%;
-                max-width: 300px;
-                justify-content: center;
-            }
-            .product-categories,
-            .country-list {
-                grid-template-columns: 1fr;
-            }
-            .form-row {
-                grid-template-columns: 1fr;
-            }
-            .pages-grid {
-                grid-template-columns: 1fr;
             }
         }
     </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <i class="fas fa-question-circle"></i>
+            </div>
+            <h1>FAQ - Savol va Javoblar</h1>
+            <p>ranking-hours.uz sayti haqida tez-tez so'raladigan savollarga javoblar</p>
+        </header>
+        
+        <section class="faq-section">
+            <h2 class="section-title"><i class="fas fa-comments"></i> Tez-tez So'raladigan Savollar</h2>
+            
+            <div class="faq-container">
+                <!-- FAQ 1 -->
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>ranking-hours.uz sayti nima uchun kerak?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>ranking-hours.uz - bu veb-saytlar, online do'konlar va bizneslar uchun trafik va reytingni oshirishga yordam beradigan platforma. Biz sizning saytingizni qidiruv tizimlarida yuqori pozitsiyalarga olib chiqamiz, bu esa mijozlar soni va daromadingizni oshirishga yordam beradi.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ 2 -->
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Qancha vaqt ichida natijalarni ko'rish mumkin?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Natijalar saytingizning turi, raqobat darajasi va tanlangan paketingizga bog'liq. Odatda, birinchi o'zgarishlarni 2-4 hafta ichida ko'rish mumkin. To'liq natijalar esa 3-6 oy ichida seziladi.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ 3 -->
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Narxlar qanday belgilanadi?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Narxlar saytingizning murakkabligi, raqobat darajasi va kerakli xizmatlar (SEO, kontekstli reklama, kontent yaratish, ijtimoiy tarmoqlar) asosida belgilanadi. Biz har bir mijozga individual yondashamiz va bepul tahlil taklif etamiz.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ 4 -->
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Saytim Google'da birinchi sahifaga chiqadimi?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Biz har doim eng yaxshi natijalarga erishish uchun ishlaymiz, ammo Google algoritmlari doim o'zgarib turadi. Har bir so'z birinchi sahifaga chiqishini kafolatlay olmaymiz, lekin biz sizning saytingizning ko'rinishi va trafigini sezilarli darajada oshirishimizga ishonamiz.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ 5 -->
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>To'lov usullari qanday?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Biz bank kartalari orqali to'lovni (Visa, Mastercard, Humo, Uzcard), Click, Payme va bank o'tkazmasi qabul qilamiz. Hamkorlik davomida hisobotlar va to'lovlar haqida sizni doim xabardor qilamiz.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="ask-section">
+            <h2 class="section-title"><i class="fas fa-paper-plane"></i> Savol Berish</h2>
+            
+            <div id="notification" class="notification"></div>
+            
+            <form id="questionForm" class="ask-form">
+                <div class="form-group">
+                    <label for="category"><i class="fas fa-list"></i> Savol Kategoriyasi *</label>
+                    <select id="category" class="form-control" required>
+                        <option value="" disabled selected>Tanlang</option>
+                        <option value="narx">Narxlar va To'lov</option>
+                        <option value="texnik">Texnik Savollar</option>
+                        <option value="hamkorlik">Hamkorlik Shartlari</option>
+                        <option value="boshqa">Boshqa Savollar</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="title"><i class="fas fa-heading"></i> Savol Sarlavhasi *</label>
+                    <input type="text" id="title" class="form-control" placeholder="Masalan: iPhone 15 narxi qancha?" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="details"><i class="fas fa-edit"></i> Savol Batafsil *</label>
+                    <textarea id="details" class="form-control" placeholder="Savolingizni batafsil yozing..." required></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="name"><i class="fas fa-user"></i> Ismingiz *</label>
+                    <input type="text" id="name" class="form-control" placeholder="Ismingizni kiriting" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email"><i class="fas fa-envelope"></i> Elektron pochta *</label>
+                    <input type="email" id="email" class="form-control" placeholder="Email manzilingiz" required>
+                </div>
+                
+                <div class="form-group">
+                    <label><i class="fas fa-paperclip"></i> Fayl biriktirish (ixtiyoriy)</label>
+                    <div class="file-upload">
+                        <input type="file" id="file" accept="image/*,.pdf" style="display:none;">
+                        <label for="file" style="cursor:pointer;">
+                            <i class="fas fa-cloud-upload-alt" style="font-size: 2rem; margin-bottom: 10px; display:block;"></i>
+                            <span id="fileName">Choose File No file chosen</span><br>
+                            <small>Rasm yoki PDF fayl (max: 5MB)</small>
+                        </label>
+                    </div>
+                </div>
+                
+                <div class="checkbox-group">
+                    <input type="checkbox" id="faq" checked>
+                    <label for="faq">Savolim FAQ ro'yxatiga qo'shilsin (boshqa foydalanuvchilar ham foydalansin)</label>
+                </div>
+                
+                <div class="checkbox-group">
+                    <input type="checkbox" id="subscribe" checked>
+                    <label for="subscribe">Javob va yangiliklarga obuna bo'lishni istayman</label>
+                </div>
+                
+                <div class="form-buttons">
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fas fa-paper-plane"></i> Savolni Yuborish
+                    </button>
+                    <button type="button" class="btn btn-secondary" onclick="clearForm()">
+                        <i class="fas fa-broom"></i> Tozalash
+                    </button>
+                </div>
+            </form>
+        </section>
+        
+        <footer>
+            <p>© 2023 ranking-hours.uz - Barcha huquqlar himoyalangan</p>
+            <p>Savollaringiz bo'lsa: info@ranking-hours.uz | +998 90 123 45 67</p>
+        </footer>
+    </div>
+
+    <script>
+        // FAQ ochish/yopish
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const answer = question.nextElementSibling;
+                const icon = question.querySelector('i');
+                
+                // Faqat bir savol ochiq bo'lishi
+                document.querySelectorAll('.faq-answer').forEach(item => {
+                    if (item !== answer && item.classList.contains('active')) {
+                        item.classList.remove('active');
+                        item.previousElementSibling.querySelector('i').style.transform = 'rotate(0deg)';
+                    }
+                });
+                
+                // Joriy savolni ochish/yopish
+                answer.classList.toggle('active');
+                icon.style.transform = answer.classList.contains('active') ? 'rotate(180deg)' : 'rotate(0deg)';
+            });
+        });
+        
+        // Fayl yuklash ko'rsatkichi
+        document.getElementById('file').addEventListener('change', function(e) {
+            const fileName = e.target.files.length > 0 ? e.target.files[0].name : 'No file chosen';
+            document.getElementById('fileName').textContent = fileName;
+        });
+        
+        // Formani tozalash
+        function clearForm() {
+            document.getElementById('questionForm').reset();
+            document.getElementById('fileName').textContent = 'Choose File No file chosen';
+            document.getElementById('notification').style.display = 'none';
+        }
+        
+        // Formani yuborish
+        document.getElementById('questionForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Ma'lumotlarni yig'ish
+            const formData = {
+                category: document.getElementById('category').value,
+                title: document.getElementById('title').value,
+                details: document.getElementById('details').value,
+                name: document.getElementById('name').value,
+                email: document.getElementById('email').value,
+                addToFaq: document.getElementById('faq').checked,
+                subscribe: document.getElementById('subscribe').checked
+            };
+            
+            // Fayl yuklash (agar mavjud bo'lsa)
+            const fileInput = document.getElementById('file');
+            if (fileInput.files.length > 0) {
+                // Bu yerda faylni serverga yuborish logikasi bo'ladi
+                console.log('Fayl yuklandi:', fileInput.files[0].name);
+            }
+            
+            // Email yuborish - BU QISMI O'ZGARTIRILADI
+            sendQuestion(formData);
+        });
+        
+        // Savolni yuborish funksiyasi
+        function sendQuestion(formData) {
+            const notification = document.getElementById('notification');
+            
+            // Bu sizning backend URL manzilingiz bo'ladi
+            // 1-VARIANT: Agar Formspree ishlatsangiz
+            // const backendURL = "https://formspree.io/f/xoqgvakv";
+            
+            // 2-VARIANT: Agar o'zingizning PHP script ishlatsangiz
+            // const backendURL = "https://ranking-hours.uz/api/send-question.php";
+            
+            // 3-VARIANT: Agar Getform ishlatsangiz
+            // const backendURL = "https://getform.io/f/your-form-id";
+            
+            // Hozircha demo rejimda ishlaymiz
+            setTimeout(() => {
+                notification.textContent = "Savolingiz yuborildi! Tez orada javobni email orqali olasiz.";
+                notification.className = "notification success";
+                notification.style.display = "block";
+                
+                // Formani tozalash (ixtiyoriy)
+                clearForm();
+            }, 1000);
+            
+            // Aslida backendga yuborish:
+            /*
+            fetch(backendURL, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData)
+            })
+            .then(response => {
+                if (response.ok) {
+                    notification.textContent = "Savolingiz yuborildi! Tez orada javobni email orqali olasiz.";
+                    notification.className = "notification success";
+                    notification.style.display = "block";
+                    clearForm();
+                } else {
+                    throw new Error('Serverda xatolik');
+                }
+            })
+            .catch(error => {
+                notification.textContent = "Xatolik yuz berdi. Iltimos, keyinroq urinib ko'ring.";
+                notification.className = "notification error";
+                notification.style.display = "block";
+            });
+            */
+        }
+        
+        // Saytga oid bir nechta savol qo'shish
+        const additionalFaqs = [
+            {
+                question: "SEO xizmatlari qancha vaqt davom etadi?",
+                answer: "SEO - bu uzluksiz jarayon. Biz minimal 6 oylik shartnoma taklif etamiz, chuningda qidiruv tizimlari algoritmlari doim o'zgarib turadi va saytni yangilab turish zarur."
+            },
+            {
+                question: "Reporting (hisobot) qanday berilasiz?",
+                answer: "Har oy sizga batafsil hisobot yuboramiz. Unda trafik o'sishi, kalit so'zlar pozitsiyasi, konversiya darajasi va boshqa muhim ko'rsatkichlar ko'rsatiladi. Shuningdek, har chorakda onlayn yoki offline uchrashuv o'tkazamiz."
+            }
+        ];
+        
+        // Qo'shimcha FAQ'larni qo'shish (agar kerak bo'lsa)
+        // additionalFaqs.forEach(faq => {
+        //     const faqContainer = document.querySelector('.faq-container');
+        //     const newFaq = document.createElement('div');
+        //     newFaq.className = 'faq-item';
+        //     newFaq.innerHTML = `
+        //         <div class="faq-question">
+        //             <span>${faq.question}</span>
+        //             <i class="fas fa-chevron-down"></i>
+        //         </div>
+        //         <div class="faq-answer">
+        //             <p>${faq.answer}</p>
+        //         </div>
+        //     `;
+        //     faqContainer.appendChild(newFaq);
+        // });
+    </script>
 </body>
 </html>
