@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grafik Dizayn Dasturlari Solishtirish | Ranking Hours</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #8e24aa, #ab47bc);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            border-radius: 15px;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .logo {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: #ffd54f;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .breadcrumb {
+            background-color: white;
+            padding: 15px 25px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .breadcrumb a {
+            color: #8e24aa;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: color 0.3s;
+        }
+        
+        .breadcrumb a:hover {
+            color: #6a1b9a;
+            text-decoration: underline;
+        }
+        
+        .breadcrumb span {
+            color: #666;
+        }
+        
+        .rating {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 15px;
+        }
+        
+        .stars {
+            color: #ffc107;
+            font-size: 1.2rem;
+        }
+        
+        .rating-value {
+            font-weight: bold;
+            font-size: 1.3rem;
+            color: #333;
+        }
+        
+        .main-content {
+            display: flex;
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+        
+        .comparison-table {
+            flex: 2;
+            background-color: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        }
+        
+        .table-header {
+            background: linear-gradient(135deg, #8e24aa, #ab47bc);
+            color: white;
+            padding: 25px;
+            text-align: center;
+        }
+        
+        .table-header h2 {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+        
+        .table-body {
+            padding: 30px;
+        }
+        
+        .comparison-row {
+            display: flex;
+            border-bottom: 1px solid #eee;
+            padding: 20px 0;
+        }
+        
+        .row-title {
+            flex: 1;
+            font-weight: 600;
+            color: #8e24aa;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .row-title i {
+            color: #8e24aa;
+            width: 25px;
+        }
+        
+        .row-values {
+            flex: 2;
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .software-value {
+            flex: 1;
+            text-align: center;
+            padding: 0 15px;
+        }
+        
+        .software-name {
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: #333;
+        }
+        
+        .software-detail {
+            color: #555;
+        }
+        
+        .recommendation {
+            background-color: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            margin-bottom: 40px;
+        }
+        
+        .rec-title {
+            font-size: 1.8rem;
+            color: #8e24aa;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #f3e5f5;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .rec-title i {
+            color: #ffd54f;
+        }
+        
+        .rec-content {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        }
+        
+        .rec-icon {
+            flex-shrink: 0;
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(135deg, #ffd54f, #ffb300);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2.5rem;
+        }
+        
+        .rec-text {
+            flex: 1;
+        }
+        
+        .rec-text p {
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+        }
+        
+        .highlight {
+            background-color: #f3e5f5;
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 5px solid #8e24aa;
+            margin-top: 20px;
+        }
+        
+        .software-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+        
+        .software-card {
+            background-color: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .software-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+        }
+        
+        .card-header {
+            padding: 25px;
+            color: white;
+            text-align: center;
+        }
+        
+        .photoshop .card-header {
+            background: linear-gradient(135deg, #001e36, #31a8ff);
+        }
+        
+        .canva .card-header {
+            background: linear-gradient(135deg, #00b4d8, #0077b6);
+        }
+        
+        .figma .card-header {
+            background: linear-gradient(135deg, #f24e1e, #a259ff);
+        }
+        
+        .card-icon {
+            font-size: 3rem;
+            margin-bottom: 15px;
+        }
+        
+        .card-title {
+            font-size: 1.8rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        
+        .card-body {
+            padding: 25px;
+        }
+        
+        .feature-list {
+            list-style: none;
+        }
+        
+        .feature-list li {
+            padding: 12px 0;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .feature-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .feature-list i {
+            color: #8e24aa;
+            width: 20px;
+        }
+        
+        .pros-cons {
+            display: flex;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .pros, .cons {
+            flex: 1;
+            padding: 15px;
+            border-radius: 10px;
+        }
+        
+        .pros {
+            background-color: #e8f5e9;
+            border-left: 4px solid #4caf50;
+        }
+        
+        .cons {
+            background-color: #ffebee;
+            border-left: 4px solid #f44336;
+        }
+        
+        .pros h4, .cons h4 {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .pricing-table {
+            background-color: white;
+            border-radius: 15px;
+            padding: 30px;
+            margin-top: 50px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        }
+        
+        .pricing-title {
+            font-size: 1.8rem;
+            color: #8e24aa;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        
+        .price-card {
+            background-color: #f9f9f9;
+            border-radius: 10px;
+            padding: 25px;
+            text-align: center;
+            border: 2px solid #e0e0e0;
+            transition: border-color 0.3s, transform 0.3s;
+        }
+        
+        .price-card:hover {
+            border-color: #8e24aa;
+            transform: translateY(-5px);
+        }
+        
+        .price-card.popular {
+            border-color: #8e24aa;
+            background-color: #f3e5f5;
+            position: relative;
+            transform: scale(1.05);
+        }
+        
+        .popular-badge {
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #ffd54f;
+            color: #333;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+        
+        .price-name {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 15px;
+        }
+        
+        .price-amount {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #8e24aa;
+            margin-bottom: 20px;
+        }
+        
+        .price-period {
+            font-size: 1rem;
+            color: #666;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            background-color: #6a1b9a;
+            color: white;
+            border-radius: 15px;
+            margin-top: 50px;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .footer-links a {
+            color: #e1bee7;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: white;
+            text-decoration: underline;
+        }
+        
+        @media (max-width: 992px) {
+            .main-content {
+                flex-direction: column;
+            }
+            
+            .rec-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .row-values {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .software-value {
+                text-align: left;
+                padding: 0;
+            }
+            
+            .price-card.popular {
+                transform: none;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .software-grid, .pricing-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .pros-cons {
+                flex-direction: column;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <i class="fas fa-paint-brush"></i>
+            </div>
+            <h1>Grafik Dizayn Dasturlari Solishtirish</h1>
+            <p class="subtitle">Photoshop, Canva va Figma - dizaynerga qaysi biri mos keladi va ularning farqlari</p>
+            
+            <div class="rating">
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                    <i class="far fa-star"></i>
+                </div>
+                <div class="rating-value">3.5/5</div>
+            </div>
+        </header>
+        
+        <div class="breadcrumb">
+            <a href="index.html"><i class="fas fa-home"></i> Bosh Sahifa</a>
+            <i class="fas fa-chevron-right"></i>
+            <a href="categories.html"><i class="fas fa-th-large"></i> Kategoriyalar</a>
+            <i class="fas fa-chevron-right"></i>
+            <span><i class="fas fa-paint-brush"></i> Grafik Dizayn</span>
+        </div>
+        
+        <div class="main-content">
+            <div class="comparison-table">
+                <div class="table-header">
+                    <h2>Photoshop vs Canva vs Figma</h2>
+                    <p>Dizayn dunyosining eng yaxshi vositalari</p>
+                </div>
+                
+                <div class="table-body">
+                    <div class="comparison-row">
+                        <div class="row-title">
+                            <i class="fas fa-user-tie"></i>
+                            <span>Maqsadli auditoriya</span>
+                        </div>
+                        <div class="row-values">
+                            <div class="software-value">
+                                <div class="software-name">Photoshop</div>
+                                <div class="software-detail">Professional dizaynerlar</div>
+                            </div>
+                            <div class="software-value">
+                                <div class="software-name">Canva</div>
+                                <div class="software-detail">Boshlang'ichlar, biznes egalari</div>
+                            </div>
+                            <div class="software-value">
+                                <div class="software-name">Figma</div>
+                                <div class="software-detail">UI/UX dizaynerlar, jamoa</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="comparison-row">
+                        <div class="row-title">
+                            <i class="fas fa-graduation-cap"></i>
+                            <span>O'rganish qiyinligi</span>
+                        </div>
+                        <div class="row-values">
+                            <div class="software-value">
+                                <div class="software-name">Photoshop</div>
+                                <div class="software-detail">Yuqori (6+ oy)</div>
+                            </div>
+                            <div class="software-value">
+                                <div class="software-name">Canva</div>
+                                <div class="software-detail">Past (bir necha soat)</div>
+                            </div>
+                            <div class="software-value">
+                                <div class="software-name">Figma</div>
+                                <div class="software-detail">O'rtacha (1-2 hafta)</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="comparison-row">
+                        <div class="row-title">
+                            <i class="fas fa-wallet"></i>
+                            <span>Narx</span>
+                        </div>
+                        <div class="row-values">
+                            <div class="software-value">
+                                <div class="software-name">Photoshop</div>
+                                <div class="software-detail">$20.99/oy (Creative Cloud)</div>
+                            </div>
+                            <div class="software-value">
+                                <div class="software-name">Canva</div>
+                                <div class="software-detail">Bepul va $12.99/oy (Pro)</div>
+                            </div>
+                            <div class="software-value">
+                                <div class="software-name">Figma</div>
+                                <div class="software-detail">Bepul va $12/oy (Professional)</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="comparison-row">
+                        <div class="row-title">
+                            <i class="fas fa-laptop"></i>
+                            <span>Platforma</span>
+                        </div>
+                        <div class="row-values">
+                            <div class="software-value">
+                                <div class="software-name">Photoshop</div>
+                                <div class="software-detail">Windows, Mac</div>
+                            </div>
+                            <div class="software-value">
+                                <div class="software-name">Canva</div>
+                                <div class="software-detail">Veb, iOS, Android</div>
+                            </div>
+                            <div class="software-value">
+                                <div class="software-name">Figma</div>
+                                <div class="software-detail">Veb, Windows, Mac</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="comparison-row">
+                        <div class="row-title">
+                            <i class="fas fa-users"></i>
+                            <span>Jamoa ishi</span>
+                        </div>
+                        <div class="row-values">
+                            <div class="software-value">
+                                <div class="software-name">Photoshop</div>
+                                <div class="software-detail">Cheklangan</div>
+                            </div>
+                            <div class="software-value">
+                                <div class="software-name">Canva</div>
+                                <div class="software-detail">Yaxshi (Canva Teams)</div>
+                            </div>
+                            <div class="software-value">
+                                <div class="software-name">Figma</div>
+                                <div class="software-detail">A'lo (real vaqtda)</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="recommendation">
+                <h2 class="rec-title"><i class="fas fa-trophy"></i> Qaysi Biri Dizaynerga Mos?</h2>
+                <div class="rec-content">
+                    <div class="rec-icon">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <div class="rec-text">
+                        <p><strong>Adobe Photoshop</strong> - professional grafik dizaynerlar, fotosuratchilar va illustratoryorlar uchun. 30 yillik tarix, cheksiz imkoniyatlar, ammo o'rganishi qiyin.</p>
+                        <p><strong>Canva</strong> - biznes egalari, blogerlar, boshlang'ichlar uchun. 5000+ template, oson interfeys, ammo cheklangan kreativ erkinlik.</p>
+                        <p><strong>Figma</strong> - UI/UX dizaynerlar, veb-dizayn jamoalari uchun. Real vaqtda hammualliflik, prototiplash, dizayn tizimlari.</p>
+                        
+                        <div class="highlight">
+                            <p><strong>Xulosa:</strong> <strong>Photoshop</strong> - professional grafik dizayn uchun, <strong>Canva</strong> - tez va oson dizaynlar uchun, <strong>Figma</strong> - veb va mobil interfeyslar uchun eng yaxshi.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <h2 style="color: #8e24aa; margin: 40px 0 20px; font-size: 1.8rem;">Dasturlar haqida batafsil</h2>
+        
+        <div class="software-grid">
+            <div class="software-card photoshop">
+                <div class="card-header">
+                    <div class="card-icon">
+                        <i class="fab fa-adobe"></i>
+                    </div>
+                    <div class="card-title">Adobe Photoshop</div>
+                    <div>Adobe Inc.</div>
+                </div>
+                <div class="card-body">
+                    <ul class="feature-list">
+                        <li><i class="fas fa-check"></i> Raster grafikalar uchun standart</li>
+                        <li><i class="fas fa-check"></i> Kengaytirilgan filtrlar va effektlar</li>
+                        <li><i class="fas fa-check"></i> AI asosli vositalar (Neural Filters)</li>
+                        <li><i class="fas fa-check"></i> 3D modellashtirish</li>
+                        <li><i class="fas fa-check"></i> 1000+ plaginlar</li>
+                    </ul>
+                    
+                    <div class="pros-cons">
+                        <div class="pros">
+                            <h4><i class="fas fa-plus-circle"></i> Kuchli tomonlar</h4>
+                            <p>• Professional darajadagi vositalar</p>
+                            <p>• Kengaytirish imkoniyatlari</p>
+                            <p>• Sanoat standarti</p>
+                        </div>
+                        <div class="cons">
+                            <h4><i class="fas fa-minus-circle"></i> Zaif tomonlar</h4>
+                            <p>• Qimmat va obuna talab qiladi</p>
+                            <p>• O'rganish qiyin</p>
+                            <p>• Veb-dizayn uchun optimal emas</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="software-card canva">
+                <div class="card-header">
+                    <div class="card-icon">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <div class="card-title">Canva</div>
+                    <div>Canva Pty Ltd</div>
+                </div>
+                <div class="card-body">
+                    <ul class="feature-list">
+                        <li><i class="fas fa-check"></i> Oson "sudrab tashlash" interfeysi</li>
+                        <li><i class="fas fa-check"></i> 5000+ professional shablonlar</li>
+                        <li><i class="fas fa-check"></i> 100 million+ stock fotosuratlar</li>
+                        <li><i class="fas fa-check"></i> Jamoa ishi va sharhlash</li>
+                        <li><i class="fas fa-check"></i> 100+ til qo'llab-quvvatlashi</li>
+                    </ul>
+                    
+                    <div class="pros-cons">
+                        <div class="pros">
+                            <h4><i class="fas fa-plus-circle"></i> Kuchli tomonlar</h4>
+                            <p>• Boshlang'ichlar uchun juda oson</p>
+                            <p>• Ko'p bepul kontent</p>
+                            <p>• Tez natijalar</p>
+                        </div>
+                        <div class="cons">
+                            <h4><i class="fas fa-minus-circle"></i> Zaif tomonlar</h4>
+                            <p>• Cheklangan kreativ erkinlik</p>
+                            <p>• Professional dizayn uchun etarli emas</p>
+                            <p>• Ofllayn rejimda cheklangan</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="software-card figma">
+                <div class="card-header">
+                    <div class="card-icon">
+                        <i class="fab fa-figma"></i>
+                    </div>
+                    <div class="card-title">Figma</div>
+                    <div>Figma, Inc.</div>
+                </div>
+                <div class="card-body">
+                    <ul class="feature-list">
+                        <li><i class="fas fa-check"></i> Real vaqtda hammualliflik</li>
+                        <li><i class="fas fa-check"></i> Prototiplash va animatsiyalar</li>
+                        <li><i class="fas fa-check"></i> Dizayn tizimlari (Design Systems)</li>
+                        <li><i class="fas fa-check"></i> Avtomatik maketlar (Auto Layout)</li>
+                        <li><i class="fas fa-check"></i> Kengaytirilgan plaginlar</li>
+                    </ul>
+                    
+                    <div class="pros-cons">
+                        <div class="pros">
+                            <h4><i class="fas fa-plus-circle"></i> Kuchli tomonlar</h4>
+                            <p>• Mukammal jamoa ishi</p>
+                            <p>• Veb-dizayn uchun ideal</p>
+                            <p>• Kod generatsiyasi</p>
+                        </div>
+                        <div class="cons">
+                            <h4><i class="fas fa-minus-circle"></i> Zaif tomonlar</h4>
+                            <p>• Raster tasvirlar uchun yaxshi emas</p>
+                            <p>• Ofllayn ishlash cheklangan</p>
+                            <p>• Adobe ekotizimidagi kabi emas</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="pricing-table">
+            <h2 class="pricing-title">Narxlar Solishtirishi (2024)</h2>
+            <div class="pricing-grid">
+                <div class="price-card">
+                    <div class="price-name">Photoshop</div>
+                    <div class="price-amount">$20.99<span class="price-period">/oy</span></div>
+                    <p>Creative Cloud obunasi</p>
+                    <p>Yoki $52.99/oy butun Adobe paketi</p>
+                    <p>7 kunlik bepul sinov</p>
+                </div>
+                
+                <div class="price-card popular">
+                    <div class="popular-badge">Eng Mashhur</div>
+                    <div class="price-name">Canva Pro</div>
+                    <div class="price-amount">$12.99<span class="price-period">/oy</span></div>
+                    <p>Bepul versiya mavjud</p>
+                    <p>1 oylik bepul sinov</p>
+                    <p>Jamoa: $14.99/kishi</p>
+                </div>
+                
+                <div class="price-card">
+                    <div class="price-name">Figma Professional</div>
+                    <div class="price-amount">$12<span class="price-period">/oy</span></div>
+                    <p>Bepul versiya mavjud</p>
+                    <p>3 ta loyiha chegarasi</p>
+                    <p>Organizatsiya: $45/kishi</p>
+                </div>
+            </div>
+        </div>
+        
+        <footer>
+            <p>© 2024 ranking-hours.uz - Barcha huquqlar himoyalangan</p>
+            <p>Dasturiy ta'minotni haqiqiy testlar asosida solishtiring</p>
+            <div class="footer-links">
+                <a href="index.html"><i class="fas fa-home"></i> Bosh Sahifa</a>
+                <a href="categories.html"><i class="fas fa-th-large"></i> Kategoriyalar</a>
+                <a href="bulut.html"><i class="fas fa-cloud"></i> Bulut Xizmatlar</a>
+                <a href="contact.html"><i class="fas fa-envelope"></i> Bog'lanish</a>
+            </div>
+        </footer>
+    </div>
+    
+    <script>
+        // Faqat kerak bo'lganda JavaScript qo'shing
+        document.addEventListener('DOMContentLoaded', function() {
+            // Fayl yuklanishi uchun animatsiya
+            const cards = document.querySelectorAll('.software-card');
+            cards.forEach((card, index) => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                
+                setTimeout(() => {
+                    card.style.transition = 'opacity 0.5s, transform 0.5s';
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }, index * 200);
+            });
+        });
+    </script>
+</body>
+</html>
