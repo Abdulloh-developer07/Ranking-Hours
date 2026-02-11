@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tesla Model Y vs BYD Atto 3 - O'zbekistonda Elektromobillar Solishtirishi</title>
+    <meta name="description" content="O'zbekiston bozorida Tesla Model Y va BYD Atto 3 elektromobillarini batafsil solishtirish. Narx, zaryad masofasi, servis va boshqa muhim parametrlar.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+        
+        body {
+            background-color: #f0f2f5;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+            border-radius: 0 0 20px 20px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+        }
+        
+        .logo {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        
+        .logo-icon {
+            color: #00ff88;
+            font-size: 2.5rem;
+        }
+        
+        .subtitle {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .comparison-title {
+            text-align: center;
+            margin: 2.5rem 0;
+            color: #1e3c72;
+        }
+        
+        .comparison-title h1 {
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+        }
+        
+        .comparison-title p {
+            color: #666;
+            font-size: 1.1rem;
+        }
+        
+        .cars-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .car-card {
+            flex: 1;
+            min-width: 300px;
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease;
+        }
+        
+        .car-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .car-header {
+            padding: 25px;
+            color: white;
+            text-align: center;
+        }
+        
+        .tesla-header {
+            background: linear-gradient(135deg, #e63946 0%, #c1121f 100%);
+        }
+        
+        .byd-header {
+            background: linear-gradient(135deg, #003049 0%, #00509e 100%);
+        }
+        
+        .car-logo {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+        
+        .car-name {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+        
+        .car-price {
+            font-size: 1.3rem;
+            opacity: 0.9;
+        }
+        
+        .car-specs {
+            padding: 25px;
+        }
+        
+        .spec-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .spec-item:last-child {
+            border-bottom: none;
+        }
+        
+        .spec-label {
+            font-weight: 600;
+            color: #555;
+        }
+        
+        .spec-value {
+            font-weight: 700;
+            color: #1e3c72;
+            font-size: 1.1rem;
+        }
+        
+        .highlight-spec {
+            background-color: #f0f7ff;
+            padding: 12px 15px;
+            border-radius: 10px;
+            margin-top: 5px;
+        }
+        
+        .side-by-side-comparison {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            margin: 40px 0;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        }
+        
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        
+        .comparison-table th {
+            background-color: #1e3c72;
+            color: white;
+            padding: 15px;
+            text-align: left;
+        }
+        
+        .comparison-table td {
+            padding: 15px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .comparison-table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        
+        .winner-cell {
+            background-color: #e7f7e7 !important;
+            font-weight: bold;
+            color: #2e7d32;
+        }
+        
+        .rating-section {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin: 40px 0;
+            gap: 20px;
+        }
+        
+        .rating-card {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            text-align: center;
+            flex: 1;
+            min-width: 250px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        }
+        
+        .rating-title {
+            font-size: 1.3rem;
+            color: #1e3c72;
+            margin-bottom: 15px;
+        }
+        
+        .rating-score {
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: #1e3c72;
+            margin: 15px 0;
+        }
+        
+        .rating-bar {
+            height: 20px;
+            background-color: #e0e0e0;
+            border-radius: 10px;
+            overflow: hidden;
+            margin: 15px 0;
+        }
+        
+        .rating-fill {
+            height: 100%;
+            border-radius: 10px;
+        }
+        
+        .tesla-rating {
+            width: 90%;
+            background: linear-gradient(90deg, #e63946, #ff6b6b);
+        }
+        
+        .byd-rating {
+            width: 85%;
+            background: linear-gradient(90deg, #003049, #00509e);
+        }
+        
+        .verdict-section {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 40px;
+            border-radius: 15px;
+            margin: 40px 0;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .verdict-title {
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 25px;
+            color: #00ff88;
+        }
+        
+        .verdict-content {
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+        
+        .verdict-winner {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 25px;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+        }
+        
+        .winner-icon {
+            font-size: 3rem;
+            color: gold;
+        }
+        
+        .winner-name {
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+        
+        .pros-cons-section {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin: 40px 0;
+        }
+        
+        .pros-cons-card {
+            flex: 1;
+            min-width: 300px;
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        }
+        
+        .pros-card {
+            border-top: 5px solid #2ecc71;
+        }
+        
+        .cons-card {
+            border-top: 5px solid #e74c3c;
+        }
+        
+        .pros-cons-title {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .pros-title {
+            color: #2ecc71;
+        }
+        
+        .cons-title {
+            color: #e74c3c;
+        }
+        
+        .pros-cons-list {
+            list-style-type: none;
+        }
+        
+        .pros-cons-list li {
+            padding: 12px 0;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .pros-cons-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .pros-icon {
+            color: #2ecc71;
+            font-size: 1.2rem;
+        }
+        
+        .cons-icon {
+            color: #e74c3c;
+            font-size: 1.2rem;
+        }
+        
+        .adsense-placeholder {
+            background-color: #f8f9fa;
+            border: 2px dashed #ccc;
+            padding: 40px;
+            text-align: center;
+            margin: 40px 0;
+            border-radius: 10px;
+            color: #666;
+        }
+        
+        footer {
+            background-color: #1a1a2e;
+            color: white;
+            padding: 40px 0;
+            margin-top: 50px;
+            border-radius: 20px 20px 0 0;
+        }
+        
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+        
+        .footer-section {
+            flex: 1;
+            min-width: 250px;
+        }
+        
+        .footer-title {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            color: #00ff88;
+        }
+        
+        @media (max-width: 768px) {
+            .cars-container {
+                flex-direction: column;
+            }
+            
+            .comparison-title h1 {
+                font-size: 1.8rem;
+            }
+            
+            .car-name {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <span class="logo-icon">⚡</span>
+                <span>ElektroAvto.uz</span>
+            </div>
+            <p class="subtitle">O'zbekistonda elektromobillar bo'yicha eng ishonchli manba. Batafsil solishtirishlar, narxlar va tavsiyalar.</p>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="comparison-title">
+            <h1>Tesla Model Y vs BYD Atto 3</h1>
+            <p>O'zbekiston sharoitida elektromobillar jangi - qaysi biri sizga mos keladi?</p>
+        </div>
+
+        <!-- AdSense placeholder 1 -->
+        <div class="adsense-placeholder">
+            <h3>Reklama joyi (728x90)</h3>
+            <p>Bu yerda Google AdSense reklamasi joylashadi</p>
+        </div>
+
+        <div class="cars-container">
+            <!-- Tesla Model Y Card -->
+            <div class="car-card">
+                <div class="car-header tesla-header">
+                    <div class="car-logo">🚗</div>
+                    <div class="car-name">Tesla Model Y</div>
+                    <div class="car-price">Boshlang'ich narxi: $50,000</div>
+                </div>
+                <div class="car-specs">
+                    <div class="spec-item">
+                        <div class="spec-label">Zaryad Masofasi</div>
+                        <div class="spec-value">533 km</div>
+                    </div>
+                    <div class="spec-item">
+                        <div class="spec-label">0-100 km/soat</div>
+                        <div class="spec-value">4.8 soniya</div>
+                    </div>
+                    <div class="spec-item highlight-spec">
+                        <div class="spec-label">80% Zaryad Vaqti</div>
+                        <div class="spec-value">15 daqiqa</div>
+                    </div>
+                    <div class="spec-item">
+                        <div class="spec-label">Batareya Kafolati</div>
+                        <div class="spec-value">8 yil / 192,000 km</div>
+                    </div>
+                    <div class="spec-item">
+                        <div class="spec-label">Yoqilg'i Tejash</div>
+                        <div class="spec-value">Oylik $30-40</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- BYD Atto 3 Card -->
+            <div class="car-card">
+                <div class="car-header byd-header">
+                    <div class="car-logo">🔋</div>
+                    <div class="car-name">BYD Atto 3</div>
+                    <div class="car-price">Boshlang'ich narxi: $35,000</div>
+                </div>
+                <div class="car-specs">
+                    <div class="spec-item">
+                        <div class="spec-label">Zaryad Masofasi</div>
+                        <div class="spec-value">520 km</div>
+                    </div>
+                    <div class="spec-item">
+                        <div class="spec-label">0-100 km/soat</div>
+                        <div class="spec-value">7.3 soniya</div>
+                    </div>
+                    <div class="spec-item highlight-spec">
+                        <div class="spec-label">80% Zaryad Vaqti</div>
+                        <div class="spec-value">30 daqiqa</div>
+                    </div>
+                    <div class="spec-item">
+                        <div class="spec-label">Batareya Kafolati</div>
+                        <div class="spec-value">8 yil / 150,000 km</div>
+                    </div>
+                    <div class="spec-item">
+                        <div class="spec-label">Yoqilg'i Tejash</div>
+                        <div class="spec-value">Oylik $25-35</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Side by Side Comparison Table -->
+        <div class="side-by-side-comparison">
+            <h2 style="color: #1e3c72; margin-bottom: 20px;">Batafsil Solishtirish Jadvali</h2>
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Parametr</th>
+                        <th>Tesla Model Y</th>
+                        <th>BYD Atto 3</th>
+                        <th>G'olib</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Narx (O'zbekistonda)</td>
+                        <td>$50,000 - $65,000</td>
+                        <td>$35,000 - $45,000</td>
+                        <td class="winner-cell">BYD Atto 3</td>
+                    </tr>
+                    <tr>
+                        <td>Maksimal Masofa</td>
+                        <td>533 km</td>
+                        <td>520 km</td>
+                        <td class="winner-cell">Tesla Model Y</td>
+                    </tr>
+                    <tr>
+                        <td>Tezlanish (0-100 km/soat)</td>
+                        <td>4.8 s</td>
+                        <td>7.3 s</td>
+                        <td class="winner-cell">Tesla Model Y</td>
+                    </tr>
+                    <tr>
+                        <td>Tez Zaryadlash (80%)</td>
+                        <td>15 daqiqa</td>
+                        <td>30 daqiqa</td>
+                        <td class="winner-cell">Tesla Model Y</td>
+                    </tr>
+                    <tr>
+                        <td>O'zbekistonda Servis</td>
+                        <td>Cheklangan</td>
+                        <td>Rasmiy dilerlar</td>
+                        <td class="winner-cell">BYD Atto 3</td>
+                    </tr>
+                    <tr>
+                        <td>Batareya Texnologiyasi</td>
+                        <td>LFP batareya</td>
+                        <td>Blade batareya</td>
+                        <td>Teng</td>
+                    </tr>
+                    <tr>
+                        <td>Ichki Makon</td>
+                        <td>2,158 litr</td>
+                        <td>1,340 litr</td>
+                        <td class="winner-cell">Tesla Model Y</td>
+                    </tr>
+                    <tr>
+                        <td>Avtopilot</td>
+                        <td>Full Self-Driving</td>
+                        <td>ADAS tizimi</td>
+                        <td class="winner-cell">Tesla Model Y</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Rating Section -->
+        <div class="rating-section">
+            <div class="rating-card">
+                <div class="rating-title">Tesla Model Y Reytingi</div>
+                <div class="rating-score">90%</div>
+                <div class="rating-bar">
+                    <div class="rating-fill tesla-rating"></div>
+                </div>
+                <p>Ishlash tezligi: 95%</p>
+                <p>Texnologiya: 92%</p>
+                <p>Qulaylik: 88%</p>
+            </div>
+            
+            <div class="rating-card">
+                <div class="rating-title">BYD Atto 3 Reytingi</div>
+                <div class="rating-score">85%</div>
+                <div class="rating-bar">
+                    <div class="rating-fill byd-rating"></div>
+                </div>
+                <p>Narx-sifat: 90%</p>
+                <p>Xizmat ko'rsatish: 87%</p>
+                <p>Iqtisodiylik: 88%</p>
+            </div>
+        </div>
+
+        <!-- AdSense placeholder 2 -->
+        <div class="adsense-placeholder">
+            <h3>Reklama joyi (300x250)</h3>
+            <p>Bu yerda Google AdSense reklamasi joylashadi</p>
+        </div>
+
+        <!-- Pros and Cons Section -->
+        <div class="pros-cons-section">
+            <div class="pros-cons-card pros-card">
+                <h3 class="pros-cons-title pros-title">✅ Tesla Model Y Afzalliklari</h3>
+                <ul class="pros-cons-list">
+                    <li><span class="pros-icon">✓</span> Dunyodagi eng tez Supercharger tarmog'i</li>
+                    <li><span class="pros-icon">✓</span> Aqlli Full Self-Driving tizimi</li>
+                    <li><span class="pros-icon">✓</span> Ajoyib ishlash tezligi va dinamikasi</li>
+                    <li><span class="pros-icon">✓</span> Yuqori sifatli interyer va ekranlar</li>
+                    <li><span class="pros-icon">✓</span> Keng va ko'p funksiyali bagaj</li>
+                    <li><span class="pros-icon">✓</span> Butun dunyo bo'ylab kengayib borayotgan zaryad stansiyalari tarmog'i</li>
+                </ul>
+            </div>
+            
+            <div class="pros-cons-card cons-card">
+                <h3 class="pros-cons-title cons-title">❌ Tesla Model Y Kamchiliklari</h3>
+                <ul class="pros-cons-list">
+                    <li><span class="cons-icon">✗</span> Juda yuqori narx (O'zbekiston bozori uchun)</li>
+                    <li><span class="cons-icon">✗</span> O'zbekistonda cheklangan servis markazlari</li>
+                    <li><span class="cons-icon">✗</span> Ehtiyot qismlar yetkazib berish uzoq vaqt talab qilishi</li>
+                    <li><span class="cons-icon">✗</span> Issiq ob-havoda batareya quvvati tez tushishi</li>
+                    <li><span class="cons-icon">✗</span> Mahalliy bozorda qayta sotish qiymati noma'lum</li>
+                    <li><span class="cons-icon">✗</span> Supercharger stansiyalarining cheklanganligi</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="pros-cons-section">
+            <div class="pros-cons-card pros-card">
+                <h3 class="pros-cons-title pros-title">✅ BYD Atto 3 Afzalliklari</h3>
+                <ul class="pros-cons-list">
+                    <li><span class="pros-icon">✓</span> Aqlli narx-sifat nisbati</li>
+                    <li><span class="pros-icon">✓</span> O'zbekistonda rasmiy dilerlar va servis markazlari</li>
+                    <li><span class="pros-icon">✓</span> Innovatsion Blade batareya texnologiyasi</li>
+                    <li><span class="pros-icon">✓</span> Issiq iqlim uchun moslashtirilgan</li>
+                    <li><span class="pros-icon">✓</span> 8 yilgacha batareya kafolati</li>
+                    <li><span class="pros-icon">✓</span> Zamonaviy va ergonomik interyer dizayni</li>
+                </ul>
+            </div>
+            
+            <div class="pros-cons-card cons-card">
+                <h3 class="pros-cons-title cons-title">❌ BYD Atto 3 Kamchiliklari</h3>
+                <ul class="pros-cons-list">
+                    <li><span class="cons-icon">✗</span> Tesla bilan solishtirganda pastroq tezlanish</li>
+                    <li><span class="cons-icon">✗</span> Cheklangan tez zaryadlash tarmog'i</li>
+                    <li><span class="cons-icon">✗</span> Avtopilot tizimi unchalik rivojlanmagan</li>
+                    <li><span class="cons-icon">✗</span> Brend qiymati va obro'si pastroq</li>
+                    <li><span class="cons-icon">✗</span> Ichki makon bir oz torroq</li>
+                    <li><span class="cons-icon">✗</span> Infotainment tizimi cheklangan tillarda</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Final Verdict -->
+        <div class="verdict-section">
+            <h2 class="verdict-title">Yakuniy Qaror</h2>
+            <div class="verdict-content">
+                <p>O'zbekiston bozori va sharoitlarini hisobga olgan holda, BYD Atto 3 ancha afzal variant hisoblanadi. Sabablari:</p>
+                <br>
+                <p><strong>1. Narx-sifat nisbati:</strong> BYD Atto 3 Tesla Model Y dan $15,000 gacha arzonroq, bu O'zbekiston bozori uchun juda muhim omil.</p>
+                <p><strong>2. Servis va texnik xizmat:</strong> BYD O'zbekistonda rasmiy dilerlar tarmog'iga ega bo'lib, bu texnik xizmat ko'rsatish va ehtiyot qismlar olishni osonlashtiradi.</p>
+                <p><strong>3. Iqlimga moslashuvchanlik:</strong> BYD Atto 3 issiq ob-havoda batareya samaradorligini saqlash uchun maxsus tizimlarga ega.</p>
+                <p><strong>4. Batareya texnologiyasi:</strong> Blade batareya texnologiyasi xavfsizlik va uzoq muddatli ishlash vaqtini ta'minlaydi.</p>
+                <br>
+                <p>Tesla Model Y esa yuqori texnologiyalar, ajoyib ishlash tezligi va Supercharger tarmog'i bilan ajralib turadi, ammo O'zbekiston sharoitida yuqori narxi va cheklangan servis imkoniyatlari uni kamroq jozibador qiladi.</p>
+            </div>
+            
+            <div class="verdict-winner">
+                <div class="winner-icon">🏆</div>
+                <div>
+                    <div class="winner-name">BYD Atto 3</div>
+                    <p>O'zbekiston sharoitida yutuqchi</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- AdSense placeholder 3 -->
+        <div class="adsense-placeholder">
+            <h3>Reklama joyi (336x280)</h3>
+            <p>Bu yerda Google AdSense reklamasi joylashadi</p>
+        </div>
+
+        <!-- O'zbekiston bozorida qo'shimcha ma'lumotlar -->
+        <div style="background: white; padding: 30px; border-radius: 15px; margin: 40px 0; box-shadow: 0 10px 30px rgba(0,0,0,0.08);">
+            <h2 style="color: #1e3c72; margin-bottom: 20px;">O'zbekiston Bozorida Elektromobillar</h2>
+            <p>O'zbekiston hukumati elektromobillarni rag'batlantirish uchun quyidagi imtiyozlarni joriy qilgan:</p>
+            <br>
+            <ul style="list-style-type: none;">
+                <li style="padding: 10px 0; border-bottom: 1px solid #eee;">✅ 2025-yilgacha elektr transport vositalariga boj soliqlari olinmaydi</li>
+                <li style="padding: 10px 0; border-bottom: 1px solid #eee;">✅ Davlat elektr zaryad stansiyalarini qurishni rag'batlantirmoqda</li>
+                <li style="padding: 10px 0; border-bottom: 1px solid #eee;">✅ Elektr avtomobillar uchun maxsus yo'l harakati imtiyozlari</li>
+                <li style="padding: 10px 0;">✅ "Yashil" kreditlar - elektr avtomobillar uchun arzon kreditlar</li>
+            </ul>
+            <br>
+            <p><strong>Qaysi zaryad stansiyalari mavjud?</strong> O'zbekistonda hozirda asosan Toshkent va yirik shaharlarda zaryad stansiyalari mavjud. BYD o'z mijozlari uchun maxsus zaryad stansiyalarini qurish rejasida.</p>
+            <p><strong>Elektr avtomobil uchun sug'urta:</strong> Sug'urta kompaniyalari elektr avtomobillar uchun maxsus sug'urta paketlarini taklif qilmoqda, ular an'anaviy avtomobillarga qaraganda 10-15% arzonroq.</p>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 class="footer-title">ElektroAvto.uz</h3>
+                    <p>O'zbekistonda elektromobillar bo'yicha eng ishonchli va batafsil manba. Barcha ma'lumotlar yangilanadi va tekshiriladi.</p>
+                </div>
+                <div class="footer-section">
+                    <h3 class="footer-title">Boshqa Solishtirishlar</h3>
+                    <ul style="list-style-type: none;">
+                        <li style="padding: 8px 0;">⚡ Tesla Model 3 vs Hyundai Ioniq 6</li>
+                        <li style="padding: 8px 0;">🔋 Nissan Leaf vs Chevrolet Bolt</li>
+                        <li style="padding: 8px 0;">🚗 Elektromobil vs Gibrid avtomobillar</li>
+                        <li style="padding: 8px 0;">🏆 O'zbekiston bozoridagi eng yaxshi 5 elektromobil</li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3 class="footer-title">Aloqa</h3>
+                    <p>Taklif va shikoyatlar uchun:</p>
+                    <p style="margin-top: 10px;">📧 abdullohmahmudov660@gmail.com</p>
+                    <p>📞 +998 88 565 06 04</p>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 30px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1);">
+                <p>© 2025-2026 ranking-hours.uz - Barcha huquqlar himoyalangan. Sayt materiallaridan foydalanganda manba ko'rsatilishi shart.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
