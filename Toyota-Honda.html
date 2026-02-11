@@ -1,0 +1,877 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toyota RAV4 vs Honda CR-V - Oila uchun SUV Solishtirishi</title>
+    <meta name="description" content="O'zbekiston bozorida Toyota RAV4 va Honda CR-V SUV modellarini batafsil solishtirish. Xavfsizlik, qulaylik, narx va boshqa muhim parametrlar.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+        
+        body {
+            background-color: #f5f7fa;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+            border-radius: 0 0 20px 20px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+        }
+        
+        .logo {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        
+        .logo-icon {
+            color: #fbbf24;
+            font-size: 2.5rem;
+        }
+        
+        .subtitle {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .comparison-title {
+            text-align: center;
+            margin: 2.5rem 0;
+            color: #1e293b;
+        }
+        
+        .comparison-title h1 {
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+            background: linear-gradient(135deg, #dc2626 0%, #1e293b 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .comparison-title p {
+            color: #666;
+            font-size: 1.1rem;
+        }
+        
+        .cars-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .car-card {
+            flex: 1;
+            min-width: 300px;
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease;
+        }
+        
+        .car-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .car-header {
+            padding: 25px;
+            color: white;
+            text-align: center;
+        }
+        
+        .toyota-header {
+            background: linear-gradient(135deg, #dc2626 0%, #ef4444 100%);
+        }
+        
+        .honda-header {
+            background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+        }
+        
+        .car-logo {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+        
+        .car-name {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+        
+        .car-price {
+            font-size: 1.3rem;
+            opacity: 0.9;
+        }
+        
+        .car-specs {
+            padding: 25px;
+        }
+        
+        .spec-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .spec-item:last-child {
+            border-bottom: none;
+        }
+        
+        .spec-label {
+            font-weight: 600;
+            color: #555;
+        }
+        
+        .spec-value {
+            font-weight: 700;
+            color: #dc2626;
+            font-size: 1.1rem;
+        }
+        
+        .honda-value {
+            color: #1e40af;
+        }
+        
+        .highlight-spec {
+            background-color: #fef2f2;
+            padding: 12px 15px;
+            border-radius: 10px;
+            margin-top: 5px;
+        }
+        
+        .honda-highlight {
+            background-color: #eff6ff;
+        }
+        
+        .side-by-side-comparison {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            margin: 40px 0;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        }
+        
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        
+        .comparison-table th {
+            background: linear-gradient(135deg, #dc2626 0%, #1e40af 100%);
+            color: white;
+            padding: 15px;
+            text-align: left;
+        }
+        
+        .comparison-table td {
+            padding: 15px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .comparison-table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        
+        .winner-cell {
+            background-color: #dcfce7 !important;
+            font-weight: bold;
+            color: #166534;
+        }
+        
+        .rating-section {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin: 40px 0;
+            gap: 20px;
+        }
+        
+        .rating-card {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            text-align: center;
+            flex: 1;
+            min-width: 250px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        }
+        
+        .rating-title {
+            font-size: 1.3rem;
+            color: #1e293b;
+            margin-bottom: 15px;
+        }
+        
+        .rating-score {
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: #dc2626;
+            margin: 15px 0;
+        }
+        
+        .honda-rating-score {
+            color: #1e40af;
+        }
+        
+        .rating-bar {
+            height: 20px;
+            background-color: #e0e0e0;
+            border-radius: 10px;
+            overflow: hidden;
+            margin: 15px 0;
+        }
+        
+        .rating-fill {
+            height: 100%;
+            border-radius: 10px;
+        }
+        
+        .toyota-rating {
+            width: 88%;
+            background: linear-gradient(90deg, #dc2626, #ef4444);
+        }
+        
+        .honda-rating {
+            width: 85%;
+            background: linear-gradient(90deg, #1e40af, #3b82f6);
+        }
+        
+        .verdict-section {
+            background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+            color: white;
+            padding: 40px;
+            border-radius: 15px;
+            margin: 40px 0;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .verdict-title {
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 25px;
+            color: #fbbf24;
+        }
+        
+        .verdict-content {
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+        
+        .verdict-winner {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 25px;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+        }
+        
+        .winner-icon {
+            font-size: 3rem;
+            color: gold;
+        }
+        
+        .winner-name {
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+        
+        .pros-cons-section {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin: 40px 0;
+        }
+        
+        .pros-cons-card {
+            flex: 1;
+            min-width: 300px;
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        }
+        
+        .pros-card {
+            border-top: 5px solid #10b981;
+        }
+        
+        .cons-card {
+            border-top: 5px solid #ef4444;
+        }
+        
+        .pros-cons-title {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .pros-title {
+            color: #10b981;
+        }
+        
+        .cons-title {
+            color: #ef4444;
+        }
+        
+        .pros-cons-list {
+            list-style-type: none;
+        }
+        
+        .pros-cons-list li {
+            padding: 12px 0;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .pros-cons-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .pros-icon {
+            color: #10b981;
+            font-size: 1.2rem;
+        }
+        
+        .cons-icon {
+            color: #ef4444;
+            font-size: 1.2rem;
+        }
+        
+        .adsense-placeholder {
+            background-color: #f8f9fa;
+            border: 2px dashed #ccc;
+            padding: 40px;
+            text-align: center;
+            margin: 40px 0;
+            border-radius: 10px;
+            color: #666;
+        }
+        
+        .family-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin: 40px 0;
+        }
+        
+        .feature-card {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            text-align: center;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            color: #dc2626;
+        }
+        
+        .honda-feature .feature-icon {
+            color: #1e40af;
+        }
+        
+        .feature-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: #1e293b;
+        }
+        
+        footer {
+            background-color: #1e293b;
+            color: white;
+            padding: 40px 0;
+            margin-top: 50px;
+            border-radius: 20px 20px 0 0;
+        }
+        
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+        
+        .footer-section {
+            flex: 1;
+            min-width: 250px;
+        }
+        
+        .footer-title {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            color: #fbbf24;
+        }
+        
+        @media (max-width: 768px) {
+            .cars-container {
+                flex-direction: column;
+            }
+            
+            .comparison-title h1 {
+                font-size: 1.8rem;
+            }
+            
+            .car-name {
+                font-size: 1.5rem;
+            }
+            
+            .family-features {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <span class="logo-icon">🏆</span>
+                <span>ranking-hours.uz</span>
+            </div>
+            <p class="subtitle">Oila uchun eng yaxshi SUV modellarini tanlashda yordam. Batafsil solishtirishlar va professional tavsiyalar.</p>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="comparison-title">
+            <h1>Toyota RAV4 vs Honda CR-V</h1>
+            <p>Oila uchun eng yaxshi SUV tanlovi - qaysi biri sizning oilangizga mos keladi?</p>
+        </div>
+
+        <!-- AdSense placeholder 1 -->
+        <div class="adsense-placeholder">
+            <h3>Reklama joyi (728x90)</h3>
+            <p>Bu yerda Google AdSense reklamasi joylashadi</p>
+        </div>
+
+        <div class="cars-container">
+            <!-- Toyota RAV4 Card -->
+            <div class="car-card">
+                <div class="car-header toyota-header">
+                    <div class="car-logo">🚙</div>
+                    <div class="car-name">Toyota RAV4</div>
+                    <div class="car-price">Boshlang'ich narxi: $32,000</div>
+                </div>
+                <div class="car-specs">
+                    <div class="spec-item">
+                        <div class="spec-label">Yoqilg'i Sarfi</div>
+                        <div class="spec-value">7.5 L/100km</div>
+                    </div>
+                    <div class="spec-item">
+                        <div class="spec-label">Oʻrindiqlar Soni</div>
+                        <div class="spec-value">5 kishi</div>
+                    </div>
+                    <div class="spec-item highlight-spec">
+                        <div class="spec-label">Yukxona Hajmi</div>
+                        <div class="spec-value">580 litr</div>
+                    </div>
+                    <div class="spec-item">
+                        <div class="spec-label">Xavfsizlik Reytingi</div>
+                        <div class="spec-value">5 yulduz</div>
+                    </div>
+                    <div class="spec-item">
+                        <div class="spec-label">Dvigatel Hajmi</div>
+                        <div class="spec-value">2.5 L</div>
+                    </div>
+                    <div class="spec-item">
+                        <div class="spec-label">Quvvat</div>
+                        <div class="spec-value">203 ot kuchi</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Honda CR-V Card -->
+            <div class="car-card">
+                <div class="car-header honda-header">
+                    <div class="car-logo">🚗</div>
+                    <div class="car-name">Honda CR-V</div>
+                    <div class="car-price">Boshlang'ich narxi: $31,500</div>
+                </div>
+                <div class="car-specs">
+                    <div class="spec-item">
+                        <div class="spec-label">Yoqilg'i Sarfi</div>
+                        <div class="spec-value honda-value">7.8 L/100km</div>
+                    </div>
+                    <div class="spec-item">
+                        <div class="spec-label">Oʻrindiqlar Soni</div>
+                        <div class="spec-value honda-value">5 kishi</div>
+                    </div>
+                    <div class="spec-item highlight-spec honda-highlight">
+                        <div class="spec-label">Yukxona Hajmi</div>
+                        <div class="spec-value honda-value">600 litr</div>
+                    </div>
+                    <div class="spec-item">
+                        <div class="spec-label">Xavfsizlik Reytingi</div>
+                        <div class="spec-value honda-value">5 yulduz</div>
+                    </div>
+                    <div class="spec-item">
+                        <div class="spec-label">Dvigatel Hajmi</div>
+                        <div class="spec-value honda-value">1.5 L Turbo</div>
+                    </div>
+                    <div class="spec-item">
+                        <div class="spec-label">Quvvat</div>
+                        <div class="spec-value honda-value">190 ot kuchi</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Family Features Section -->
+        <div style="text-align: center; margin: 40px 0;">
+            <h2 style="color: #1e293b; font-size: 1.8rem; margin-bottom: 20px;">Oila uchun Muhim Xususiyatlar</h2>
+            <p style="color: #666; max-width: 800px; margin: 0 auto;">SUV tanlashda oilaviy ehtiyojlarni hisobga olish juda muhim. Quyidagi xususiyatlar oila uchun eng zarur hisoblanadi.</p>
+        </div>
+
+        <div class="family-features">
+            <div class="feature-card">
+                <div class="feature-icon">👶</div>
+                <div class="feature-title">Bolalar Xavfsizligi</div>
+                <p>Bolalar qulfi, orqa ko'rish kameralari, yon xavfsizlik yostiqchalari</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">🧳</div>
+                <div class="feature-title">Keng Yukxona</div>
+                <p>Bolalar aravachalari, sumkalar, sport anjomlari uchun yetarli joy</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">🛋️</div>
+                <div class="feature-title">Qulay Ichki Makon</div>
+                <p>Uzoq safarlar uchun qulay o'rindiqlar va klimat nazorati</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">⛽</div>
+                <div class="feature-title">Iqtisodiy Yoqilg'i Sarfi</div>
+                <p>Oylik yoqilg'i xarajatlarini kamaytirish oila byudjeti uchun muhim</p>
+            </div>
+        </div>
+
+        <!-- Side by Side Comparison Table -->
+        <div class="side-by-side-comparison">
+            <h2 style="color: #1e293b; margin-bottom: 20px;">Batafsil Solishtirish Jadvali</h2>
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Parametr</th>
+                        <th>Toyota RAV4</th>
+                        <th>Honda CR-V</th>
+                        <th>Oila uchun Afzal</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Narx (O'zbekistonda)</td>
+                        <td>$32,000 - $40,000</td>
+                        <td>$31,500 - $39,000</td>
+                        <td class="winner-cell">Honda CR-V</td>
+                    </tr>
+                    <tr>
+                        <td>Yoqilg'i Sarfi (Shahar)</td>
+                        <td>8.5 L/100km</td>
+                        <td>8.8 L/100km</td>
+                        <td class="winner-cell">Toyota RAV4</td>
+                    </tr>
+                    <tr>
+                        <td>Yukxona Hajmi</td>
+                        <td>580 litr</td>
+                        <td>600 litr</td>
+                        <td class="winner-cell">Honda CR-V</td>
+                    </tr>
+                    <tr>
+                        <td>Orqa O'rindiq Kengligi</td>
+                        <td>142 cm</td>
+                        <td>145 cm</td>
+                        <td class="winner-cell">Honda CR-V</td>
+                    </tr>
+                    <tr>
+                        <td>Xavfsizlik Tizimlari</td>
+                        <td>Toyota Safety Sense 2.5</td>
+                        <td>Honda Sensing</td>
+                        <td>Teng</td>
+                    </tr>
+                    <tr>
+                        <td>O'zbekistonda Servis</td>
+                        <td>Keng tarmoq</td>
+                        <td>Cheklangan tarmoq</td>
+                        <td class="winner-cell">Toyota RAV4</td>
+                    </tr>
+                    <tr>
+                        <td>Qayta Sotish Qiymati</td>
+                        <td>3 yildan keyin 75%</td>
+                        <td>3 yildan keyin 70%</td>
+                        <td class="winner-cell">Toyota RAV4</td>
+                    </tr>
+                    <tr>
+                        <td>Garantiya (O'zbekistonda)</td>
+                        <td>3 yil / 100,000 km</td>
+                        <td>3 yil / 100,000 km</td>
+                        <td>Teng</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Rating Section -->
+        <div class="rating-section">
+            <div class="rating-card">
+                <div class="rating-title">Toyota RAV4 Reytingi</div>
+                <div class="rating-score">88%</div>
+                <div class="rating-bar">
+                    <div class="rating-fill toyota-rating"></div>
+                </div>
+                <p>Ishonchlilik: 95%</p>
+                <p>Qayta sotish: 92%</p>
+                <p>Xavfsizlik: 90%</p>
+                <p>Servis tarmog'i: 94%</p>
+            </div>
+            
+            <div class="rating-card">
+                <div class="rating-title">Honda CR-V Reytingi</div>
+                <div class="rating-score honda-rating-score">85%</div>
+                <div class="rating-bar">
+                    <div class="rating-fill honda-rating"></div>
+                </div>
+                <p>Qulaylik: 92%</p>
+                <p>Ichki makon: 94%</p>
+                <p>Yo'l ushlashi: 88%</p>
+                <p>Texnologiya: 86%</p>
+            </div>
+        </div>
+
+        <!-- AdSense placeholder 2 -->
+        <div class="adsense-placeholder">
+            <h3>Reklama joyi (300x250)</h3>
+            <p>Bu yerda Google AdSense reklamasi joylashadi</p>
+        </div>
+
+        <!-- Pros and Cons Section -->
+        <div class="pros-cons-section">
+            <div class="pros-cons-card pros-card">
+                <h3 class="pros-cons-title pros-title">✅ Toyota RAV4 Afzalliklari</h3>
+                <ul class="pros-cons-list">
+                    <li><span class="pros-icon">✓</span> Dunyoga mashhur Toyota ishonchliligi</li>
+                    <li><span class="pros-icon">✓</span> O'zbekistonda eng keng servis tarmog'i</li>
+                    <li><span class="pros-icon">✓</span> Yuqori qayta sotish qiymati (3 yildan keyin 75%)</li>
+                    <li><span class="pros-icon">✓</span> Iqtisodiy yoqilg'i sarfi</li>
+                    <li><span class="pros-icon">✓</span> Mukammal xavfsizlik reytingi (5 yulduz)</li>
+                    <li><span class="pros-icon">✓</span> O'zbekiston yo'llari uchun moslashtirilgan</li>
+                </ul>
+            </div>
+            
+            <div class="pros-cons-card cons-card">
+                <h3 class="pros-cons-title cons-title">❌ Toyota RAV4 Kamchiliklari</h3>
+                <ul class="pros-cons-list">
+                    <li><span class="cons-icon">✗</span> Ichki makon dizayni an'anaviy va oddiy</li>
+                    <li><span class="cons-icon">✗</span> Yo'l ushlashi bir oz qattiq</li>
+                    <li><span class="cons-icon">✗</span> Infotainment tizimi sekin ishlashi mumkin</li>
+                    <li><span class="cons-icon">✗</span> Honda CR-V ga qaraganda kichikroq yukxona</li>
+                    <li><span class="cons-icon">✗</span> Ba'zi versiyalarda yuqori boshlang'ich narx</li>
+                    <li><span class="cons-icon">✗</span> Shovqin izolyatsiyasi yaxshi emas</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="pros-cons-section">
+            <div class="pros-cons-card pros-card">
+                <h3 class="pros-cons-title pros-title">✅ Honda CR-V Afzalliklari</h3>
+                <ul class="pros-cons-list">
+                    <li><span class="pros-icon">✓</span> Juda qulay va keng ichki makon</li>
+                    <li><span class="pros-icon">✓</span> Yumshoq va qulay yo'l ushlashi</li>
+                    <li><span class="pros-icon">✓</span> Katta yukxona hajmi (600 litr)</li>
+                    <li><span class="pros-icon">✓</span> Zamonaviy turbo dvigatel texnologiyasi</li>
+                    <li><span class="pros-icon">✓</span> Samarali Honda Sensing xavfsizlik tizimi</li>
+                    <li><span class="pros-icon">✓</span> Ergonomik va foydali interyer dizayni</li>
+                </ul>
+            </div>
+            
+            <div class="pros-cons-card cons-card">
+                <h3 class="pros-cons-title cons-title">❌ Honda CR-V Kamchiliklari</h3>
+                <ul class="pros-cons-list">
+                    <li><span class="cons-icon">✗</span> Toyota ga qaraganda pastroq qayta sotish qiymati</li>
+                    <li><span class="cons-icon">✗</span> O'zbekistonda cheklangan servis tarmog'i</li>
+                    <li><span class="cons-icon">✗</span> Turbo dvigatelga maxsus texnik xizmat talabi</li>
+                    <li><span class="cons-icon">✗</span> Orqa oynaning ko'rish maydoni cheklangan</li>
+                    <li><span class="cons-icon">✗</span> Ba'zi modellar transmissiya muammolari</li>
+                    <li><span class="cons-icon">✗</span> RAV4 ga qaraganda yuqoriroq yoqilg'i sarfi</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Oilaviy Foydalanish Bo'yicha Maslahatlar -->
+        <div style="background: white; padding: 30px; border-radius: 15px; margin: 40px 0; box-shadow: 0 10px 30px rgba(0,0,0,0.08);">
+            <h2 style="color: #1e293b; margin-bottom: 20px;">Oila uchun SUV Tanlashda 5 Muhim Maslahat</h2>
+            <br>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
+                <div style="background: #f0f9ff; padding: 20px; border-radius: 10px; border-left: 4px solid #3b82f6;">
+                    <h3 style="color: #1e40af; margin-bottom: 10px;">1. Bolalar Xavfsizligi</h3>
+                    <p>Bolalar qulfi, orqa ko'rish kameralari, orqa eshik blokirovkasi, yon xavfsizlik yostiqchalari mavjudligini tekshiring.</p>
+                </div>
+                
+                <div style="background: #f0fdf4; padding: 20px; border-radius: 10px; border-left: 4px solid #10b981;">
+                    <h3 style="color: #166534; margin-bottom: 10px;">2. Yukxona Hajmi</h3>
+                    <p>Bolalar aravachasi, sumkalar, o'yinchoqlar va safar anjomlarini sig'dira olish uchun kamida 500 litr yukxona kerak.</p>
+                </div>
+                
+                <div style="background: #fef3c7; padding: 20px; border-radius: 10px; border-left: 4px solid #f59e0b;">
+                    <h3 style="color: #92400e; margin-bottom: 10px;">3. Oylik Xarajatlar</h3>
+                    <p>Yoqilg'i sarfi, sug'urta, texnik xizmat - oila byudjetiga ta'sirini hisoblang. RAV4 o'rtacha 8.5 L/100km, CR-V 8.8 L/100km.</p>
+                </div>
+                
+                <div style="background: #f3e8ff; padding: 20px; border-radius: 10px; border-left: 4px solid #8b5cf6;">
+                    <h3 style="color: #5b21b6; margin-bottom: 10px;">4. Uzoq Muddatti Foydalanish</h3>
+                    <p>SUV ni 5-7 yil foydalanishni rejalashtiring. Toyota RAV4 ishonchliligi va qayta sotish qiymati bilan afzal.</p>
+                </div>
+                
+                <div style="background: #fce7f3; padding: 20px; border-radius: 10px; border-left: 4px solid #ec4899;">
+                    <h3 style="color: #9d174d; margin-bottom: 10px;">5. O'zbekiston Sharoitlari</h3>
+                    <p>Issiq ob-havo, yo'l sifati, servis markazlarining mavjudligini hisobga oling. Toyota O'zbekistonda eng keng servis tarmog'iga ega.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- AdSense placeholder 3 -->
+        <div class="adsense-placeholder">
+            <h3>Reklama joyi (336x280)</h3>
+            <p>Bu yerda Google AdSense reklamasi joylashadi</p>
+        </div>
+
+        <!-- Final Verdict -->
+        <div class="verdict-section">
+            <h2 class="verdict-title">Yakuniy Qaror va Tavsiya</h2>
+            <div class="verdict-content">
+                <p>Oila uchun SUV tanlashda quyidagi omillarni hisobga olish kerak: xavfsizlik, qulaylik, ishonchlilik va uzoq muddatli xarajatlar. Ikki modelni solishtirganda:</p>
+                <br>
+                <p><strong>✅ Toyota RAV4 tanlash sabablari:</strong></p>
+                <p>• Ishkonchlilik va uzoq muddatli ishlash - Toyota brendining asosiy afzalligi</p>
+                <p>• O'zbekistonda keng servis tarmog'i - har qanday shaharda texnik xizmat</p>
+                <p>• Yuqori qayta sotish qiymati - 3 yildan keyin boshlang'ich narxining 75% ni saqlaydi</p>
+                <p>• Iqtisodiy yoqilg'i sarfi - oila byudjeti uchun muhim</p>
+                <br>
+                <p><strong>✅ Honda CR-V tanlash sabablari:</strong></p>
+                <p>• Juda qulay va keng ichki makon - oila a'zolari uchun qulaylik</p>
+                <p>• Yumshoq yo'l ushlashi - uzoq safarlar uchun qulay</p>
+                <p>• Katta yukxona hajmi - oilaviy ehtiyojlar uchun yetarli</p>
+                <p>• Zamonaviy texnologiyalar - infotainment tizimi va xavfsizlik tizimlari</p>
+                <br>
+                <p><strong>🏆 Yakuniy g'olib:</strong> Agar siz ishonchlilik, qayta sotish qiymati va keng servis tarmog'ini afzal ko'rsangiz - Toyota RAV4. Agar qulaylik, keng makon va zamonaviy texnologiyalarni afzal ko'rsangiz - Honda CR-V.</p>
+            </div>
+            
+            <div class="verdict-winner">
+                <div class="winner-icon">👑</div>
+                <div>
+                    <div class="winner-name">Toyota RAV4</div>
+                    <p>O'zbekiston sharoitida oila uchun eng yaxshi tanlov</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- O'zbekiston bozorida qo'shimcha ma'lumotlar -->
+        <div style="background: white; padding: 30px; border-radius: 15px; margin: 40px 0; box-shadow: 0 10px 30px rgba(0,0,0,0.08);">
+            <h2 style="color: #1e293b; margin-bottom: 20px;">O'zbekiston Bozorida SUV Narxlari va Xizmatlar</h2>
+            <p>O'zbekistonda SUV bozori 2023-yilga kelib sezilarli o'sishni qayd etdi. Toyota RAV4 eng ko'p sotiladigan SUV modellardan biri hisoblanadi.</p>
+            <br>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
+                <div style="background: #fef2f2; padding: 20px; border-radius: 10px;">
+                    <h3 style="color: #dc2626; margin-bottom: 10px;">Toyota RAV4 Narxlari</h3>
+                    <p>• Boshlang'ich versiya: $32,000</p>
+                    <p>• O'rtacha to'ldirilgan: $36,000</p>
+                    <p>• Yuqori darajali: $40,000</p>
+                    <p>• Gibrid versiya: $42,000+</p>
+                </div>
+                
+                <div style="background: #eff6ff; padding: 20px; border-radius: 10px;">
+                    <h3 style="color: #1e40af; margin-bottom: 10px;">Honda CR-V Narxlari</h3>
+                    <p>• Boshlang'ich versiya: $31,500</p>
+                    <p>• O'rtacha to'ldirilgan: $35,000</p>
+                    <p>• Yuqori darajali: $38,500</p>
+                    <p>• Gibrid versiya: $41,000+</p>
+                </div>
+                
+                <div style="background: #f0f9ff; padding: 20px; border-radius: 10px;">
+                    <h3 style="color: #0c4a6e; margin-bottom: 10px;">Oylik Xarajatlar</h3>
+                    <p>• Yoqilg'i (1000 km): $80-100</p>
+                    <p>• Sug'urta (yillik): $400-600</p>
+                    <p>• Texnik xizmat (yillik): $200-300</p>
+                    <p>• Ehtiyot qismlar: $100-200</p>
+                </div>
+            </div>
+            <br>
+            <p><strong>Muhim maslahat:</strong> SUV sotib olayotganda rasmiy dilerlardan sotib olish afzal. Bu kafolat va servis xizmatlarini kafolatlaydi. O'zbekistonda Toyota 10 dan ortiq rasmiy diler markaziga ega, Honda esa 3 ta markazga ega.</p>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 class="footer-title">SUV-Solishtirish.uz</h3>
+                    <p>Oila uchun SUV tanlashda yordamchi platforma. Barcha ma'lumotlar O'zbekiston bozori uchun maxsus tayyorlangan.</p>
+                </div>
+                <div class="footer-section">
+                    <h3 class="footer-title">Boshqa SUV Solishtirishlar</h3>
+                    <ul style="list-style-type: none;">
+                        <li style="padding: 8px 0;">🚙 Hyundai Tucson vs Kia Sportage</li>
+                        <li style="padding: 8px 0;">🏔️ Mazda CX-5 vs Subaru Forester</li>
+                        <li style="padding: 8px 0;">⚡ Toyota RAV4 Gibrid vs Honda CR-V Gibrid</li>
+                        <li style="padding: 8px 0;">🏆 $30,000 dan arzon SUV lar solishtirishi</li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3 class="footer-title">Foydali Havolalar</h3>
+                    <p>SUV lar bo'yicha maslahatlar va yo'riqnomalar:</p>
+                    <p style="margin-top: 10px;">📊 SUV solishtirish kalkulyatori</p>
+                    <p>📝 SUV tanlash yo'riqnomasi</p>
+                    <p>💰 SUV narxlari monitori</p>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 30px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1);">
+                <p>© 2025-2026 ranking-hours.uz - Barcha huquqlar himoyalangan. Sayt materiallaridan foydalanganda manba ko'rsatilishi shart.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
