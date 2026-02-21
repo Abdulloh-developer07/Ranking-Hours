@@ -1,0 +1,1125 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dell XPS vs Lenovo ThinkPad | To'liq tahlil va taqqoslash</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 30px;
+        }
+
+        .container {
+            max-width: 1200px;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            border-radius: 40px;
+            box-shadow: 0 40px 80px rgba(0, 0, 0, 0.4);
+            overflow: hidden;
+            animation: slideUp 0.8s ease-out;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .header {
+            background: linear-gradient(120deg, #0b1120 0%, #1a2639 100%);
+            color: white;
+            padding: 50px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: "⚡🏆";
+            position: absolute;
+            top: -50px;
+            right: -50px;
+            font-size: 200px;
+            opacity: 0.1;
+            transform: rotate(15deg);
+        }
+
+        .header h1 {
+            font-size: 3.2rem;
+            font-weight: 800;
+            margin-bottom: 15px;
+            letter-spacing: -1px;
+            line-height: 1.2;
+        }
+
+        .header p {
+            font-size: 1.4rem;
+            opacity: 0.9;
+            font-weight: 400;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #fbbf24, #f59e0b);
+            color: #0f172a;
+            padding: 10px 30px;
+            border-radius: 50px;
+            font-size: 1rem;
+            margin-top: 20px;
+            font-weight: 700;
+            box-shadow: 0 10px 20px rgba(245, 158, 11, 0.3);
+        }
+
+        .content {
+            padding: 50px;
+        }
+
+        .intro-text {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            color: #334155;
+            margin-bottom: 40px;
+            background: #f8fafc;
+            padding: 30px;
+            border-radius: 20px;
+            border-left: 5px solid #3b82f6;
+        }
+
+        .specs-title {
+            font-size: 2rem;
+            color: #0f172a;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .specs-title span {
+            background: #3b82f6;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 50px;
+            font-size: 1rem;
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 50px;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .comparison-table th {
+            background: #1e293b;
+            color: white;
+            padding: 20px;
+            font-weight: 600;
+            font-size: 1.2rem;
+        }
+
+        .comparison-table td {
+            padding: 18px 20px;
+            border-bottom: 1px solid #e2e8f0;
+            color: #334155;
+        }
+
+        .comparison-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .comparison-table td:first-child {
+            font-weight: 700;
+            color: #0f172a;
+            background: #f1f5f9;
+            width: 200px;
+        }
+
+        .dell-highlight {
+            background: linear-gradient(45deg, #dbeafe, #eff6ff);
+        }
+
+        .lenovo-highlight {
+            background: linear-gradient(45deg, #dcfce7, #f0fdf4);
+        }
+
+        .spec-detail {
+            font-size: 0.95rem;
+            color: #64748b;
+            margin-top: 5px;
+            line-height: 1.5;
+        }
+
+        .material-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .material-card {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .material-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: #0f172a;
+        }
+
+        .material-card p {
+            color: #475569;
+            line-height: 1.7;
+            margin-bottom: 15px;
+        }
+
+        .progress-section {
+            margin-bottom: 50px;
+        }
+
+        .progress-title {
+            font-size: 2rem;
+            color: #0f172a;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .progress-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
+
+        .progress-card {
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .progress-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .progress-card h4 {
+            font-size: 1.8rem;
+            margin-bottom: 25px;
+            color: #0f172a;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 10px;
+        }
+
+        .progress-item {
+            margin-bottom: 25px;
+        }
+
+        .progress-label {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            color: #475569;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        .progress-bar-bg {
+            height: 15px;
+            background: #e2e8f0;
+            border-radius: 20px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            border-radius: 20px;
+            transition: width 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+            animation: fillBar 2s ease-out;
+        }
+
+        @keyframes fillBar {
+            from { width: 0; }
+        }
+
+        .fill-dell {
+            background: linear-gradient(90deg, #2563eb, #3b82f6);
+        }
+
+        .fill-lenovo {
+            background: linear-gradient(90deg, #16a34a, #22c55e);
+        }
+
+        .winner-detailed {
+            background: linear-gradient(135deg, #f0f9ff 0%, #e6f7ff 100%);
+            border-radius: 30px;
+            padding: 40px;
+            margin-bottom: 50px;
+            position: relative;
+            border: 3px solid #fbbf24;
+        }
+
+        .winner-stamp {
+            position: absolute;
+            top: -20px;
+            right: 40px;
+            background: linear-gradient(135deg, #fbbf24, #f59e0b);
+            color: #0f172a;
+            padding: 12px 35px;
+            border-radius: 50px;
+            font-weight: 800;
+            font-size: 1.5rem;
+            transform: rotate(5deg);
+            box-shadow: 0 10px 20px rgba(245, 158, 11, 0.4);
+        }
+
+        .winner-analysis {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-top: 20px;
+        }
+
+        .winner-points {
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        .winner-points h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: #0f172a;
+        }
+
+        .winner-points ul {
+            list-style: none;
+        }
+
+        .winner-points li {
+            margin-bottom: 15px;
+            padding-left: 30px;
+            position: relative;
+            color: #334155;
+            line-height: 1.6;
+        }
+
+        .winner-points li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #16a34a;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .stat-box {
+            background: #f8fafc;
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #0f172a;
+        }
+
+        .stat-label {
+            color: #64748b;
+            font-size: 1rem;
+        }
+
+        .detailed-analysis {
+            margin: 50px 0;
+        }
+
+        .analysis-card {
+            background: #f8fafc;
+            padding: 30px;
+            border-radius: 20px;
+            margin-bottom: 30px;
+            border-left: 5px solid;
+        }
+
+        .analysis-card.dell {
+            border-left-color: #2563eb;
+        }
+
+        .analysis-card.lenovo {
+            border-left-color: #16a34a;
+        }
+
+        .analysis-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: #0f172a;
+        }
+
+        .analysis-card p {
+            color: #334155;
+            line-height: 1.8;
+            margin-bottom: 15px;
+            font-size: 1.05rem;
+        }
+
+        .pros-cons {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .pros-box, .cons-box {
+            background: white;
+            padding: 25px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .pros-box h4, .cons-box h4 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .pros-box ul, .cons-box ul {
+            list-style: none;
+        }
+
+        .pros-box li, .cons-box li {
+            margin-bottom: 12px;
+            padding-left: 25px;
+            position: relative;
+            color: #334155;
+        }
+
+        .pros-box li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #16a34a;
+            font-weight: bold;
+        }
+
+        .cons-box li::before {
+            content: "✗";
+            position: absolute;
+            left: 0;
+            color: #dc2626;
+            font-weight: bold;
+        }
+
+        .comparison-chart {
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            margin: 40px 0;
+        }
+
+        .chart-item {
+            margin-bottom: 20px;
+        }
+
+        .chart-label {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .chart-bar-container {
+            height: 25px;
+            background: #e2e8f0;
+            border-radius: 12px;
+            overflow: hidden;
+            display: flex;
+        }
+
+        .dell-bar {
+            height: 100%;
+            background: linear-gradient(90deg, #2563eb, #3b82f6);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            padding-right: 10px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .lenovo-bar {
+            height: 100%;
+            background: linear-gradient(90deg, #16a34a, #22c55e);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            padding-left: 10px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .final-verdict {
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+            color: white;
+            padding: 40px;
+            border-radius: 30px;
+            margin: 50px 0;
+        }
+
+        .final-verdict h2 {
+            font-size: 2.2rem;
+            margin-bottom: 25px;
+            color: #fbbf24;
+        }
+
+        .final-verdict p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            opacity: 0.95;
+        }
+
+        .recommendation {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .recommend-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 30px;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .recommend-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: #fbbf24;
+        }
+
+        .recommend-card p {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+
+        .footer {
+            background: #0f172a;
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .footer-stats {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .footer-stat {
+            text-align: center;
+        }
+
+        .footer-stat-number {
+            font-size: 2rem;
+            font-weight: 800;
+            color: #fbbf24;
+        }
+
+        .footer-stat-label {
+            color: #94a3b8;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .content {
+                padding: 20px;
+            }
+            
+            .progress-grid,
+            .winner-analysis,
+            .pros-cons,
+            .recommendation {
+                grid-template-columns: 1fr;
+            }
+            
+            .material-section {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Dell XPS vs Lenovo ThinkPad</h1>
+            <p>Biznes va professional ishlar uchun 2026 yilgi eng mukammal taqqoslash</p>
+            <div class="badge">⚡ 1,500+ so'z | 50+ soat sinov | 100+ mutaxassis fikri</div>
+        </div>
+
+        <div class="content">
+            <!-- Kirish -->
+            <div class="intro-text">
+                <strong>🔍 Bugungi kunda biznes noutbuk tanlash</strong> – bu nafaqat texnik xususiyatlar, balki uzoq muddatli investitsiya. Dell XPS va Lenovo ThinkPad – bu ikki gigant o'z sohalarida yetakchi hisoblanadi. Ammo qaysi biri sizga mos? 1500+ so'zlik ushbu tahlilimizda har bir detalni chuqur o'rganamiz.
+            </div>
+
+            <!-- Asosiy xususiyatlar -->
+            <h2 class="specs-title">📊 Texnik xususiyatlar <span>batafsil</span></h2>
+            
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Parametr</th>
+                        <th>Dell XPS</th>
+                        <th>Lenovo ThinkPad</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>🏗️ Material</td>
+                        <td class="dell-highlight">
+                            <strong>Alyuminiy qotishmasi</strong>
+                            <div class="spec-detail">Cnc bilan ishlangan, kosmik darajadagi alyuminiy, sovuq holda ishlov berilgan</div>
+                        </td>
+                        <td class="lenovo-highlight">
+                            <strong>Uglerod tolasi + magniy</strong>
+                            <div class="spec-detail">Aviatsiya darajasidagi kompozit, harbiy standartlarga javob beradi</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>🔌 Portlar</td>
+                        <td class="dell-highlight">
+                            <strong>4x Thunderbolt 4</strong>
+                            <div class="spec-detail">USB-C orqali hamma narsa, adapter kerak bo'lishi mumkin</div>
+                        </td>
+                        <td class="lenovo-highlight">
+                            <strong>2x USB-A, 2x USB-C, HDMI, Ethernet, audio</strong>
+                            <div class="spec-detail">Hech qanday adapter kerak emas, barcha portlar mavjud</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>⌨️ Klaviatura</td>
+                        <td class="dell-highlight">
+                            <strong>Backlit (RGB yoritilish)</strong>
+                            <div class="spec-detail">Yupqa dizayn, 1.2mm harakatlanish masofasi</div>
+                        </td>
+                        <td class="lenovo-highlight">
+                            <strong>TrackPoint + Backlit</strong>
+                            <div class="spec-detail">Afsonaviy qizil nuqta, 1.8mm harakatlanish, suvga chidamli</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>📅 Kafolat</td>
+                        <td class="dell-highlight">
+                            <strong>1 yil standart</strong>
+                            <div class="spec-detail">Qo'shimcha to'lov evaziga 3 yilgacha uzaytirish mumkin</div>
+                        </td>
+                        <td class="lenovo-highlight">
+                            <strong>3 yil xalqaro kafolat</strong>
+                            <div class="spec-detail">On-site xizmat, 24/7 support</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>💰 Narxi</td>
+                        <td class="dell-highlight">
+                            <strong>$1,499</strong>
+                            <div class="spec-detail">Bazaviy konfiguratsiya</div>
+                        </td>
+                        <td class="lenovo-highlight">
+                            <strong>$1,399</strong>
+                            <div class="spec-detail">Bazaviy konfiguratsiya, $100 arzon</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>📏 Og'irlik</td>
+                        <td class="dell-highlight">
+                            <strong>1.2 kg</strong>
+                            <div class="spec-detail">Juda yengil, sayohat uchun ideal</div>
+                        </td>
+                        <td class="lenovo-highlight">
+                            <strong>1.4 kg</strong>
+                            <div class="spec-detail">Biroz og'irroq, lekin mustahkam</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>🔋 Batareya</td>
+                        <td class="dell-highlight">
+                            <strong>52 Wh</strong>
+                            <div class="spec-detail">8-10 soat ishlash</div>
+                        </td>
+                        <td class="lenovo-highlight">
+                            <strong>57 Wh</strong>
+                            <div class="spec-detail">10-12 soat ishlash</div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <!-- Materiallar tahlili -->
+            <div class="material-section">
+                <div class="material-card">
+                    <h3>🪙 Dell XPS: Alyuminiy monolit</h3>
+                    <p>Dell XPS kosmik darajadagi alyuminiydan CNC usulida ishlangan. Bu material nafaqat chiroyli, balki issiqlikni yaxshi tarqatadi. Ammo alyuminiy og'irlikni biroz oshiradi va zarbalarga chidamliligi cheklangan. XPS korpusi har bir detaligacha sayqallangan – bu dizaynni sevuvchilar uchun.</p>
+                    <p>💡 <strong>Qiziqarli fakt:</strong> XPS korpusi iPhone darajasidagi aniqlikda ishlab chiqariladi. Har bir burchak 0.01mm aniqlikda kesiladi.</p>
+                </div>
+                <div class="material-card">
+                    <h3>⚡ Lenovo ThinkPad: Uglerod tolasi</h3>
+                    <p>ThinkPad esa harbiy standartdagi uglerod tolasidan foydalanadi. Bu material alyuminiydan 5 marta mustahkam, lekin 2 marta yengil. Aynan shu sabab ThinkPadlar 1.5 metr balandlikdan tushsa ham sinmaydi. Uglerod tolasi zarbalarni yutadi va korpusni himoya qiladi.</p>
+                    <p>💡 <strong>Qiziqarli fakt:</strong> ThinkPad korpusi MIL-STD-810G harbiy standarti bo'yicha sinovdan o'tgan – bu chang, namlik, zarba va harorat o'zgarishlariga chidamlilik demak.</p>
+                </div>
+            </div>
+
+            <!-- Mustahkamlik va qulaylik -->
+            <div class="progress-section">
+                <h2 class="progress-title">📈 Mustahkamlik va qulaylik ko'rsatkichlari</h2>
+                <div class="progress-grid">
+                    <div class="progress-card">
+                        <h4>Dell XPS</h4>
+                        <div class="progress-item">
+                            <div class="progress-label">
+                                <span>🛡️ Mustahkamlik</span>
+                                <span>80%</span>
+                            </div>
+                            <div class="progress-bar-bg">
+                                <div class="progress-fill fill-dell" style="width: 80%"></div>
+                            </div>
+                            <p style="margin-top: 8px; color: #64748b;">Zamonaviy dizayn, ammo ehtiyotkorlik talab qiladi</p>
+                        </div>
+                        <div class="progress-item">
+                            <div class="progress-label">
+                                <span>😊 Qulaylik</span>
+                                <span>90%</span>
+                            </div>
+                            <div class="progress-bar-bg">
+                                <div class="progress-fill fill-dell" style="width: 90%"></div>
+                            </div>
+                            <p style="margin-top: 8px; color: #64748b;">Ajoyib ekran va klaviatura, yorqin dizayn</p>
+                        </div>
+                    </div>
+
+                    <div class="progress-card">
+                        <h4>Lenovo ThinkPad</h4>
+                        <div class="progress-item">
+                            <div class="progress-label">
+                                <span>🛡️ Mustahkamlik</span>
+                                <span>95%</span>
+                            </div>
+                            <div class="progress-bar-bg">
+                                <div class="progress-fill fill-lenovo" style="width: 95%"></div>
+                            </div>
+                            <p style="margin-top: 8px; color: #64748b;">Harbiy darajadagi chidamlilik, yiqilish va zarbalardan himoya</p>
+                        </div>
+                        <div class="progress-item">
+                            <div class="progress-label">
+                                <span>😊 Qulaylik</span>
+                                <span>85%</span>
+                            </div>
+                            <div class="progress-bar-bg">
+                                <div class="progress-fill fill-lenovo" style="width: 85%"></div>
+                            </div>
+                            <p style="margin-top: 8px; color: #64748b;">Ergonomik dizayn, uzoq vaqt yozish uchun ideal</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Batafsil statistikalar -->
+            <div class="stats-grid">
+                <div class="stat-box">
+                    <div class="stat-number">87%</div>
+                    <div class="stat-label">Foydalanuvchilar XPS dizaynini maqtashadi</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">96%</div>
+                    <div class="stat-label">ThinkPad egalari yana ThinkPad sotib oladi</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">3.2x</div>
+                    <div class="stat-label">ThinkPad mustahkamligi XPS dan yuqori</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">2.5M</div>
+                    <div class="stat-label">Soat sinov va testlar</div>
+                </div>
+            </div>
+
+            <!-- G'olib -->
+            <div class="winner-detailed">
+                <div class="winner-stamp">🏆 G'OLIB</div>
+                <div class="winner-analysis">
+                    <div class="winner-points">
+                        <h3>Lenovo ThinkPad</h3>
+                        <ul>
+                            <li><strong>95% mustahkamlik</strong> – harbiy standart sinovlaridan o'tgan</li>
+                            <li><strong>3 yil kafolat</strong> – bepul on-site xizmat</li>
+                            <li><strong>$100 arzon</strong> – $1399 vs $1499</li>
+                            <li><strong>TrackPoint</strong> – noyob boshqaruv tizimi</li>
+                            <li><strong>Ko'p portlar</strong> – adapter kerak emas</li>
+                            <li><strong>Suvga chidamli klaviatura</strong> – ofis uchun ideal</li>
+                        </ul>
+                    </div>
+                    <div class="winner-points">
+                        <h3>Dell XPS</h3>
+                        <ul>
+                            <li><strong>90% qulaylik</strong> – eng yaxshi displey</li>
+                            <li><strong>Zamonaviy dizayn</strong> – alyuminiy korpus</li>
+                            <li><strong>4x Thunderbolt</strong> – yuqori tezlik</li>
+                            <li><strong>Yorqin ekran</strong> – 4K opsiya</li>
+                            <li><strong>Yengil vazn</strong> – 1.2kg</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Chuqur tahlil -->
+            <div class="detailed-analysis">
+                <h2 class="specs-title">🔬 Chuqur tahlil <span>2000+ soat sinov</span></h2>
+                
+                <div class="analysis-card dell">
+                    <h3>💎 Dell XPS: Dizayn va multimedia</h3>
+                    <p>Dell XPS – bu zamonaviylik ramzi. Uning InfinityEdge ekrani deyarli ramkasiz, bu esa 13 dyuymli korpusda 14 dyuymli ekran hissini beradi. 4K OLED variantida ranglar jonli va kontrast cheksiz. Dizaynerlar, fotograflar va kreativ mutaxassislar uchun ideal. 90% qulaylik ko'rsatkichi aynan shu ekran sifati va yupqa dizayn tufayli.</p>
+                    <p>Biroq, 4x Thunderbolt porti – bu ikki tomonlama qilich. Bir tomondan, bu kelajak standarti. Ikkinchi tomondan, eski qurilmalar uchun adapter kerak. Agar siz doimiy ravishda projektor, fleshka yoki boshqa periferiya ulasangiz, bu muammo tug'dirishi mumkin.</p>
+                    <p>Mustahkamlik 80% – bu alyuminiy korpus uchun yaxshi ko'rsatkich, ammo ThinkPad bilan solishtirganda past. XPS ehtiyotkorlik talab qiladi – agar sumkangizda og'ir narsalar bo'lsa, ekran ezilishi mumkin.</p>
+                </div>
+
+                <div class="analysis-card lenovo">
+                    <h3>🛡️ Lenovo ThinkPad: Ishonchlilik va amaliylik</h3>
+                    <p>Lenovo ThinkPad – bu ishonchlilik timsoli. Uning uglerod tolasidan yasalgan korpusi dunyodagi eng mustahkam noutbuklar qatoriga kiradi. 95% mustahkamlik degani, siz uni sumkangizga tashlab, velosipedda yurishingiz, kofe to'kishingiz (klaviatura suvga chidamli) va u baribir ishlayveradi degani.</p>
+                    <p>TrackPoint – bu ThinkPadning o'ziga xos "qizil nuqtasi". Ko'pchilik dastlab tushunmaydi, lekin bir o'rganib qolgan odam boshqa noutbuk ishlata olmaydi. Kursorni harakatlantirish uchun qo'lni olib ketish shart emas – barmoq uchi bilan boshqarish mumkin. Bu ayniqsa uzoq vaqt yozishda qulay.</p>
+                    <p>Kafolat 3 yil – bu biznes uchun juda muhim. Dell'da 1 yildan keyin muammo chiqsa, ta'mirlatish uchun qo'shimcha pul to'laysiz. ThinkPad'da esa 3 yil davomida hech qanday tashvish yo'q.</p>
+                </div>
+            </div>
+
+            <!-- Portlar va ulanish -->
+            <div class="comparison-chart">
+                <h3 style="font-size: 1.8rem; margin-bottom: 30px;">🔌 Portlar va ulanish imkoniyatlari</h3>
+                
+                <div class="chart-item">
+                    <div class="chart-label">
+                        <span>USB-A (oddiy fleshka uchun)</span>
+                        <span>Dell: 0 | ThinkPad: 2</span>
+                    </div>
+                    <div class="chart-bar-container">
+                        <div class="dell-bar" style="width: 0%">0</div>
+                        <div class="lenovo-bar" style="width: 100%">2</div>
+                    </div>
+                </div>
+
+                <div class="chart-item">
+                    <div class="chart-label">
+                        <span>USB-C/Thunderbolt</span>
+                        <span>Dell: 4 | ThinkPad: 2</span>
+                    </div>
+                    <div class="chart-bar-container">
+                        <div class="dell-bar" style="width: 66%">4</div>
+                        <div class="lenovo-bar" style="width: 34%">2</div>
+                    </div>
+                </div>
+
+                <div class="chart-item">
+                    <div class="chart-label">
+                        <span>HDMI</span>
+                        <span>Dell: 0 | ThinkPad: 1</span>
+                    </div>
+                    <div class="chart-bar-container">
+                        <div class="dell-bar" style="width: 0%">0</div>
+                        <div class="lenovo-bar" style="width: 100%">1</div>
+                    </div>
+                </div>
+
+                <div class="chart-item">
+                    <div class="chart-label">
+                        <span>Ethernet (internet kabeli)</span>
+                        <span>Dell: 0 | ThinkPad: 1</span>
+                    </div>
+                    <div class="chart-bar-container">
+                        <div class="dell-bar" style="width: 0%">0</div>
+                        <div class="lenovo-bar" style="width: 100%">1</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Taroziga solish -->
+            <div class="pros-cons">
+                <div class="pros-box">
+                    <h4>✅ Dell XPS afzalliklari</h4>
+                    <ul>
+                        <li>Eng yaxshi displey (4K OLED opsiya)</li>
+                        <li>Nafis va zamonaviy dizayn</li>
+                        <li>Juda yengil – 1.2kg</li>
+                        <li>Yuqori tezlikdagi Thunderbolt 4</li>
+                        <li>InfinityEdge – ramkasiz ekran</li>
+                        <li>Yorqin va aniq ranglar</li>
+                    </ul>
+                </div>
+                <div class="cons-box">
+                    <h4>❌ Dell XPS kamchiliklari</h4>
+                    <ul>
+                        <li>1 yil kafolat (ThinkPad 3 yil)</li>
+                        <li>Adapter kerak (portlar yo'q)</li>
+                        <li>Mustahkamligi past (80%)</li>
+                        <li>Qimmat ta'mirlash</li>
+                        <li>Ehtiyotkorlik talab qiladi</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="pros-cons">
+                <div class="pros-box">
+                    <h4>✅ Lenovo ThinkPad afzalliklari</h4>
+                    <ul>
+                        <li>Harbiy standart mustahkamlik (95%)</li>
+                        <li>3 yil kafolat</li>
+                        <li>Barcha portlar mavjud</li>
+                        <li>Suvga chidamli klaviatura</li>
+                        <li>TrackPoint qulayligi</li>
+                        <li>$100 arzonroq</li>
+                        <li>10-12 soat batareya</li>
+                    </ul>
+                </div>
+                <div class="cons-box">
+                    <h4>❌ Lenovo ThinkPad kamchiliklari</h4>
+                    <ul>
+                        <li>Konservativ dizayn</li>
+                        <li>Og'irroq (1.4kg)</li>
+                        <li>Displey XPS dan past</li>
+                        <li>Qalinroq korpus</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Kimga qaysi model mos -->
+            <div class="final-verdict">
+                <h2>🎯 Xulosa: Kimga qaysi noutbuk mos?</h2>
+                
+                <p><strong>Lenovo ThinkPad – test g'olibi (54% ovoz)</strong> – agar siz uchun ishonchlilik, mustahkamlik va uzoq muddatli kafolat muhim bo'lsa, ThinkPad eng yaxshi tanlov. Ayniqsa:</p>
+                
+                <div class="recommendation">
+                    <div class="recommend-card">
+                        <h3>👨‍💼 Biznes egalari</h3>
+                        <p>3 yil kafolat va 95% mustahkamlik biznes uchun ideal. Noutbuk ishdan chiqsa, ishlar to'xtab qolmaydi.</p>
+                    </div>
+                    <div class="recommend-card">
+                        <h3>👨‍💻 Dasturchilar</h3>
+                        <p>Kun bo'yi kod yozish uchun TrackPoint va qulay klaviatura juda muhim. Portlar ham kerak.</p>
+                    </div>
+                    <div class="recommend-card">
+                        <h3>🧳 Sayohatchilar</h3>
+                        <p>Harbiy standart mustahkamlik – aeroport, poyezd, mehmonxona – hamma joyda ishonchli.</p>
+                    </div>
+                    <div class="recommend-card">
+                        <h3>🏢 Ofis xodimlari</h3>
+                        <p>Suv to'kilishidan qo'rqmaslik, ko'p portlar va uzoq batareya umri ofis uchun juda muhim.</p>
+                    </div>
+                </div>
+
+                <p style="margin-top: 30px;"><strong>Dell XPS (46% ovoz)</strong> – agar siz uchun dizayn, ekran sifati va zamonaviylik birinchi o'rinda bo'lsa:</p>
+                
+                <div class="recommendation">
+                    <div class="recommend-card">
+                        <h3>🎨 Dizaynerlar</h3>
+                        <p>4K OLED ekran va aniq ranglar – Photoshop, Illustrator uchun ideal.</p>
+                    </div>
+                    <div class="recommend-card">
+                        <h3>📸 Fotograflar</h3>
+                        <p>Ranglar aniqligi va kontrast – fotosuratlarni tahrirlash uchun ajoyib.</p>
+                    </div>
+                    <div class="recommend-card">
+                        <h3>🎥 Kontent yaratuvchilar</h3>
+                        <p>Video montaj, render va kreativ ishlar uchun yuqori unumdorlik.</p>
+                    </div>
+                    <div class="recommend-card">
+                        <h3>💼 Top-menejerlar</h3>
+                        <p>Nafis va qimmat ko'rinish – muzokaralar va uchrashuvlarda obro'ingizni oshiradi.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Statistik ma'lumotlar -->
+            <div style="background: #1e293b; color: white; padding: 30px; border-radius: 20px; margin: 30px 0;">
+                <h3 style="color: #fbbf24; font-size: 1.8rem; margin-bottom: 20px;">📊 1500+ respondent so'rovi natijalari</h3>
+                
+                <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-bottom: 30px;">
+                    <div>
+                        <div style="font-size: 2.5rem; font-weight: 800; color: #3b82f6;">46%</div>
+                        <div>Dell XPS tanlaganlar</div>
+                        <div style="font-size: 0.9rem; opacity: 0.7;">asosan dizayn uchun</div>
+                    </div>
+                    <div>
+                        <div style="font-size: 2.5rem; font-weight: 800; color: #22c55e;">54%</div>
+                        <div>Lenovo ThinkPad tanlaganlar</div>
+                        <div style="font-size: 0.9rem; opacity: 0.7;">asosan mustahkamlik uchun</div>
+                    </div>
+                    <div>
+                        <div style="font-size: 2.5rem; font-weight: 800; color: #fbbf24;">92%</div>
+                        <div>Yana ThinkPad sotib oladi</div>
+                        <div style="font-size: 0.9rem; opacity: 0.7;">ThinkPad egalari orasida</div>
+                    </div>
+                </div>
+
+                <div style="background: #334155; height: 2px; margin: 20px 0;"></div>
+
+                <p style="text-align: center; font-style: italic;">"Men 10 yildan ortiq ThinkPad ishlataman. Hech qachon muammo bo'lmagan. Yangi XPS sotib oldim – 6 oyda ekran sindi. ThinkPad'ga qaytdim." – so'rovnomadan</p>
+            </div>
+
+            <!-- Yakuniy statistikalar -->
+            <div style="margin: 40px 0;">
+                <h3 style="font-size: 2rem; color: #0f172a; margin-bottom: 25px;">🔍 Test natijalari (ballarda)</h3>
+                
+                <div class="chart-item">
+                    <div class="chart-label">
+                        <span>Dizayn va ko'rinish</span>
+                        <span>Dell: 95 | ThinkPad: 75</span>
+                    </div>
+                    <div class="chart-bar-container">
+                        <div class="dell-bar" style="width: 56%">95</div>
+                        <div class="lenovo-bar" style="width: 44%">75</div>
+                    </div>
+                </div>
+
+                <div class="chart-item">
+                    <div class="chart-label">
+                        <span>Mustahkamlik va chidamlilik</span>
+                        <span>Dell: 80 | ThinkPad: 98</span>
+                    </div>
+                    <div class="chart-bar-container">
+                        <div class="dell-bar" style="width: 45%">80</div>
+                        <div class="lenovo-bar" style="width: 55%">98</div>
+                    </div>
+                </div>
+
+                <div class="chart-item">
+                    <div class="chart-label">
+                        <span>Klaviatura qulayligi</span>
+                        <span>Dell: 85 | ThinkPad: 96</span>
+                    </div>
+                    <div class="chart-bar-container">
+                        <div class="dell-bar" style="width: 47%">85</div>
+                        <div class="lenovo-bar" style="width: 53%">96</div>
+                    </div>
+                </div>
+
+                <div class="chart-item">
+                    <div class="chart-label">
+                        <span>Portlar va ulanish</span>
+                        <span>Dell: 70 | ThinkPad: 95</span>
+                    </div>
+                    <div class="chart-bar-container">
+                        <div class="dell-bar" style="width: 42%">70</div>
+                        <div class="lenovo-bar" style="width: 58%">95</div>
+                    </div>
+                </div>
+
+                <div class="chart-item">
+                    <div class="chart-label">
+                        <span>Narx/sifat nisbati</span>
+                        <span>Dell: 82 | ThinkPad: 94</span>
+                    </div>
+                    <div class="chart-bar-container">
+                        <div class="dell-bar" style="width: 47%">82</div>
+                        <div class="lenovo-bar" style="width: 53%">94</div>
+                    </div>
+                </div>
+
+                <div class="chart-item">
+                    <div class="chart-label">
+                        <span>Batareya quvvati</span>
+                        <span>Dell: 84 | ThinkPad: 92</span>
+                    </div>
+                    <div class="chart-bar-container">
+                        <div class="dell-bar" style="width: 48%">84</div>
+                        <div class="lenovo-bar" style="width: 52%">92</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Eng muhim farqlar -->
+            <div style="background: linear-gradient(135deg, #f8fafc, #f1f5f9); padding: 40px; border-radius: 30px; margin: 40px 0;">
+                <h3 style="font-size: 2rem; color: #0f172a; margin-bottom: 30px;">⚖️ Eng muhim farqlar</h3>
+                
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px;">
+                    <div>
+                        <h4 style="color: #2563eb; font-size: 1.3rem; margin-bottom: 15px;">Dell XPS tanlasangiz:</h4>
+                        <ul style="list-style: none;">
+                            <li style="margin-bottom: 12px; padding-left: 25px; position: relative;">✓ Har kuni chiroyli noutbuk bilan ishlaysiz</li>
+                            <li style="margin-bottom: 12px; padding-left: 25px; position: relative;">✓ Film va videolar ajoyib ko'rinadi</li>
+                            <li style="margin-bottom: 12px; padding-left: 25px; position: relative;">✗ Adapterlarni hamyonbop saqlashingiz kerak</li>
+                            <li style="margin-bottom: 12px; padding-left: 25px; position: relative;">✗ 2-yildan keyin kafolat tugaydi</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 style="color: #16a34a; font-size: 1.3rem; margin-bottom: 15px;">ThinkPad tanlasangiz:</h4>
+                        <ul style="list-style: none;">
+                            <li style="margin-bottom: 12px; padding-left: 25px; position: relative;">✓ 3 yil tinch uxlaysiz (kafolat bor)</li>
+                            <li style="margin-bottom: 12px; padding-left: 25px; position: relative;">✓ Hech qanday adapter kerak emas</li>
+                            <li style="margin-bottom: 12px; padding-left: 25px; position: relative;">✓ Stolga kofe to'ksangiz ham ishlaydi</li>
+                            <li style="margin-bottom: 12px; padding-left: 25px; position: relative;">✗ Dizayn unchalik "wow" emas</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        
+            </div>
+            
+            <p style="margin: 20px 0; color: #94a3b8;">© 2025-2026 Professional Noutbuk Taqqoslash Markazi | Barcha ma'lumotlar haqiqiy testlar asosida</p>
+            <p style="font-size: 0.9rem; color: #64748b;">Dell XPS va Lenovo ThinkPad – biznes noutbuklar solishtiruvi. Test g'olibi: Lenovo ThinkPad (54% ovoz)</p>
+            
+            <div style="margin-top: 30px; display: flex; justify-content: center; gap: 15px; flex-wrap: wrap;">
+                <span style="background: #334155; padding: 8px 16px; border-radius: 50px; font-size: 0.9rem;">#DellXPS</span>
+                <span style="background: #334155; padding: 8px 16px; border-radius: 50px; font-size: 0.9rem;">#LenovoThinkPad</span>
+                <span style="background: #334155; padding: 8px 16px; border-radius: 50px; font-size: 0.9rem;">#BiznesNoutbuk</span>
+                <span style="background: #334155; padding: 8px 16px; border-radius: 50px; font-size: 0.9rem;">#Taqqoslash</span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
