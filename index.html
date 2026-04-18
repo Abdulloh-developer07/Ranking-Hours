@@ -23,11 +23,161 @@
             text-align: center;
             align-items: center
           }
+        @media (max-width: 992px) {
+            .content-grid { grid-template-columns: 1fr; }
+        }
+        
+        .main-content {
+            background: white; border-radius: var(--radius);
+            box-shadow: var(--shadow); padding: 40px;
+        }
+        
+        .section-title {
+            font-size: 28px; color: var(--primary);
+            margin: 40px 0 25px; padding-bottom: 15px;
+            border-bottom: 2px solid var(--border);
+        }
+        
+        .section-title:first-child { margin-top: 0; }
+        
+        .comparison-table {
+            width: 100%; border-collapse: collapse; margin: 30px 0;
+        }
+        
+        .comparison-table th {
+            background: var(--light); padding: 20px;
+            text-align: left; font-weight: 600; border: 1px solid var(--border);
+        }
+        
+        .comparison-table td {
+            padding: 20px; border: 1px solid var(--border);
+        }
+        
+        .winner {
+            color: var(--success); font-weight: 600;
+        }
+        
+        .ad-unit {
+            background: var(--light); border: 2px dashed var(--secondary);
+            border-radius: var(--radius); padding: 30px;
+            margin: 40px 0; text-align: center; color: #666;
+        }
+        
+        .ad-label {
+            display: inline-block; background: var(--secondary);
+            color: white; padding: 5px 15px; border-radius: 20px;
+            font-size: 14px; margin-bottom: 15px;
+        }
+        
+        .product-card {
+            background: var(--light); border-radius: var(--radius);
+            padding: 30px; margin: 30px 0;
+            border-left: 5px solid var(--success);
+        }
+        
+        .product-title {
+            font-size: 24px; color: var(--primary);
+            margin-bottom: 20px; display: flex;
+            align-items: center; gap: 15px;
+        }
+        
+        .air-test {
+            background: linear-gradient(135deg, #f0fff0 0%, #e8f5e8 100%);
+            border-radius: var(--radius); padding: 30px; margin: 40px 0;
+        }
+        
+        .test-title {
+            color: var(--primary); font-size: 22px; margin-bottom: 20px;
+        }
+        
+        .filter-comparison {
+            display: grid; grid-template-columns: 1fr 1fr; gap: 30px;
+            margin: 30px 0;
+        }
+        
+        @media (max-width: 768px) {
+            .filter-comparison { grid-template-columns: 1fr; }
+        }
+        
+        .filter-card {
+            background: white; border: 2px solid var(--border);
+            border-radius: var(--radius); padding: 25px; text-align: center;
+        }
+        
+        .conclusion-box {
+            background: linear-gradient(135deg, #e8f5e8 0%, #f0fff0 100%);
+            border-left: 5px solid var(--success); padding: 30px;
+            border-radius: var(--radius); margin: 40px 0;
+        }
+        
+        .conclusion-title {
+            color: var(--primary); font-size: 26px;
+            margin-bottom: 20px; display: flex;
+            align-items: center; gap: 15px;
+        }
+        
+        .sidebar {
+            background: white; border-radius: var(--radius);
+            box-shadow: var(--shadow); padding: 30px;
+            position: sticky; top: 20px;
+        }
+        
+        .sidebar-title {
+            font-size: 22px; color: var(--primary);
+            margin-bottom: 25px; text-align: center;
+        }
+        
+        .product-card-sidebar {
+            background: var(--light); border-radius: var(--radius);
+            padding: 25px; margin-bottom: 25px; text-align: center;
+        }
+        
+        .product-name {
+            font-size: 24px; color: var(--primary); margin-bottom: 15px;
+        }
+        
+        .product-price {
+            color: var(--accent); font-size: 20px;
+            font-weight: 600; margin-bottom: 15px;
+        }
+        
+        .winner-badge {
+            background: var(--success); color: white;
+            padding: 10px 20px; border-radius: 50px;
+            font-weight: 600; display: inline-block; margin-top: 15px;
+        }
+        
+        footer {
+            background: var(--primary); color: white;
+            padding: 50px 0; margin-top: 60px;
+            border-radius: var(--radius) var(--radius) 0 0;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px; margin-bottom: 40px;
+        }
+        
+        .footer-section h3 {
+            font-size: 20px; margin-bottom: 20px;
+            color: var(--secondary);
+        }
+        
+        .copyright {
+            text-align: center; padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: #bdc3c7;
+        }
+        
+        @media (max-width: 768px) {
+            h1 { font-size: 28px; }
+            .main-header, .main-content, .sidebar { padding: 25px; }
+            .meta-stats { flex-direction: column; gap: 15px; }
+        }
     </style>
 </head>
 <body>
-
-
     <!-- Navigation -->
     <nav class="navbar">
         <div class="logo">
