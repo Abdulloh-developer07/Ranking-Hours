@@ -334,6 +334,63 @@
                 gap: 15px;
             }
         }
+        /* 🚨 GLOBAL FIX (ENG MUHIM) */
+html, body {
+  overflow-x: hidden;
+}
+
+/* HAMMA ELEMENTLAR SIG‘SIN */
+* {
+  box-sizing: border-box;
+}
+
+/* CONTAINER TOSHMASIN */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+/* RASM TOSHMASIN */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* TABLE ENG KO‘P MUAMMO BERADI */
+table {
+  display: block;
+  width: 100%;
+  overflow-x: auto;
+}
+
+/* UZOQ TEXTLAR */
+p, h1, h2, h3, span {
+  overflow-wrap: break-word;
+}
+
+/* GRID YIQILMASIN */
+.content-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 20px;
+}
+
+@media (max-width: 900px) {
+  .content-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* SIDEBAR TELEFONDA */
+@media (max-width: 768px) {
+  .sidebar {
+    position: static;
+    width: 100%;
+  }
+}
     </style>
 </head>
 <body>
