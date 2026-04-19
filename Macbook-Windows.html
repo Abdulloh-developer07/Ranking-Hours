@@ -11,134 +11,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         /* Base Styles */
-        /* =========================
-  /* ===== RESET ===== */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: Arial, sans-serif;
-  background: #f1f5f9;
-  color: #1e293b;
-  line-height: 1.6;
-}
-
-/* ===== CONTAINER ===== */
-.container {
-  width: 92%;
-  max-width: 1100px;
-  margin: auto;
-}
-
-/* ===== HEADER ===== */
-.main-header {
-  background: white;
-  padding: 20px;
-  margin: 20px 0;
-  border-radius: 15px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-}
-
-h1 {
-  font-size: 26px;
-  margin-bottom: 10px;
-}
-
-.subtitle {
-  color: #64748b;
-  margin-bottom: 15px;
-}
-
-/* ===== META INFO ===== */
-.meta-stats {
-  display: flex;
-  gap: 15px;
-  flex-wrap: wrap;
-  font-size: 14px;
-  margin-top: 10px;
-}
-
-/* ===== MAIN GRID ===== */
-.content-grid {
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-  gap: 20px;
-}
-
-/* ===== MAIN CONTENT ===== */
-.main-content {
-  background: white;
-  padding: 25px;
-  border-radius: 15px;
-}
-
-.section-title {
-  font-size: 22px;
-  margin: 20px 0;
-}
-
-p {
-  margin-bottom: 15px;
-}
-
-/* ===== SIDEBAR ===== */
-.sidebar {
-  background: white;
-  padding: 20px;
-  border-radius: 15px;
-  height: fit-content;
-}
-
-/* ===== TABLE FIX ===== */
-table {
-  width: 100%;
-  border-collapse: collapse;
-}
-
-table th, table td {
-  padding: 10px;
-  border: 1px solid #e2e8f0;
-  text-align: left;
-}
-
-/* ===== MOBILE ===== */
-@media (max-width: 768px) {
-
-  .content-grid {
-    display: flex;
-    flex-direction: column;
-  }
-
-  h1 {
-    font-size: 20px;
-  }
-
-  .section-title {
-    font-size: 18px;
-  }
-
-  .main-content {
-    padding: 20px;
-  }
-
-  .sidebar {
-    margin-top: 15px;
-  }
-
-  .meta-stats {
-    flex-direction: column;
-    gap: 8px;
-  }
-
-  table {
-    display: block;
-    overflow-x: auto;
-    white-space: nowrap;
-  }
-}
+        /* ========================= */
         :root {
             --primary: #2c3e50;
             --secondary: #3498db;
@@ -474,6 +347,57 @@ table th, table td {
                 gap: 15px;
             }
         }
+        /* 🔥 TEXT OVERFLOW FIX */
+* {
+  max-width: 100%;
+}
+
+body, html {
+  overflow-x: hidden;
+}
+
+/* MATNLAR SIG‘SIN */
+p, h1, h2, h3, h4, span, li {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+/* CONTAINER TO‘G‘RI */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 15px;
+}
+
+/* GRID FIX */
+.content-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 20px;
+}
+
+@media (max-width: 900px) {
+  .content-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* TABLE MOBILE FIX */
+.comparison-table {
+  display: block;
+  overflow-x: auto;
+  width: 100%;
+}
+
+/* HEADER TEXT */
+h1 {
+  font-size: clamp(20px, 5vw, 36px);
+}
+
+/* SUBTITLE */
+.subtitle {
+  font-size: clamp(14px, 4vw, 20px);
+}
     </style>
 </head>
 <body>
