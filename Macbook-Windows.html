@@ -7,7 +7,7 @@
     <meta name="description" content="MacBook Air vs Windows noutbuklar: Dizayn, ishlash tezligi, batareya quvvati, narx va qaysi biri ish uchun yaxshiroq? 8 soatlik kundalik foydalanish tajribasi.">
     <meta name="keywords" content="macbook air, windows noutbuk, laptop taqqoslash, ish uchun laptop, apple vs windows, batareya davomiyligi, dizayn, narx">
     <meta name="author" content="Tech Expert Uz">
-    <link rel="canonical" href="https://yourdomain.com/macbook-windows.html">
+    <link rel="canonical" href="https://ranking-hours.uz/macbook-windows.html">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         /* Base Styles */
@@ -50,8 +50,8 @@
         .main-header {
             background: white;
             border-radius: var(--radius);
-            box-shadow: var(--shadow);
-            padding: 40px;
+            box-shadow: var(--shadow);        
+            padding: clamp(20px, 5vw, 40px);
             margin-bottom: 40px;
             border-bottom: 5px solid var(--accent);
         }
@@ -347,11 +347,7 @@
                 gap: 15px;
             }
         }
-        /* 🔥 TEXT OVERFLOW FIX */
-* {
-  max-width: 100%;
-}
-
+  
 body, html {
   overflow-x: hidden;
 }
@@ -397,6 +393,19 @@ h1 {
 /* SUBTITLE */
 .subtitle {
   font-size: clamp(14px, 4vw, 20px);
+}
+        @media (max-width: 768px) {
+  .sidebar {
+    position: static;
+  }
+}
+        img {
+  max-width: 100%;
+  height: auto;
+}
+
+table {
+  font-size: 14px;
 }
     </style>
 </head>
@@ -912,7 +921,7 @@ h1 {
                 </div>
             </aside>
         </div>
-
+    </div>
         <!-- Footer -->
         <footer>
             <div class="container">
@@ -945,8 +954,6 @@ h1 {
                 </div>
             </div>
         </footer>
-    </div>
-
     <script>
         // FAQ toggle functionality
         document.querySelectorAll('.faq-question').forEach(question => {
