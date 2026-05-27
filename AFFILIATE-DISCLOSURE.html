@@ -1,22 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
 
-  <title>iPhone 15 vs Samsung Galaxy S24 – Ultimate Real-World Comparison (2026)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <meta name="description" content="Complete iPhone 15 vs Samsung Galaxy S24 comparison in 2026. Discover which flagship smartphone offers better performance, battery life, gaming, camera quality, software experience, and long-term value.">
+  <title>Affiliate Disclosure | Ranking-Hours</title>
 
-  <meta name="keywords" content="iPhone 15 vs Samsung Galaxy S24, best smartphone 2026, flagship phone comparison, iPhone or Samsung, smartphone review">
+  <meta name="description"
+    content="Official Affiliate Disclosure policy for Ranking-Hours. Learn how affiliate partnerships work, how recommendations are created, and how editorial independence is maintained.">
+
+  <meta name="keywords"
+    content="Affiliate Disclosure, affiliate policy, Ranking-Hours transparency, affiliate marketing disclosure">
 
   <meta name="robots" content="index, follow">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
 
   <style>
 
@@ -24,11 +29,12 @@
       --bg:#020617;
       --card:#0f172a;
       --card2:#111827;
-      --text:#f1f5f9;
+      --text:#f8fafc;
       --muted:#94a3b8;
       --accent:#38bdf8;
+      --accent2:#0ea5e9;
       --border:#1e293b;
-      --shadow:0 15px 40px rgba(0,0,0,.45);
+      --shadow:0 20px 45px rgba(0,0,0,.45);
     }
 
     *{
@@ -43,90 +49,178 @@
 
     body{
       font-family:'Inter',sans-serif;
-      background:linear-gradient(to bottom,#020617,#0f172a);
+      background:
+      radial-gradient(circle at top left, rgba(56,189,248,.15), transparent 30%),
+      radial-gradient(circle at bottom right, rgba(14,165,233,.12), transparent 30%),
+      linear-gradient(to bottom,#020617,#0f172a);
       color:var(--text);
       line-height:1.9;
+      overflow-x:hidden;
+    }
+
+    a{
+      text-decoration:none;
+      color:inherit;
     }
 
     .container{
       width:100%;
-      max-width:1150px;
+      max-width:1180px;
       margin:auto;
       padding:20px;
     }
 
-    header{
-      padding:80px 20px 60px;
+    /* HEADER */
+
+    .main-header{
+      position:sticky;
+      top:0;
+      z-index:999;
+      background:rgba(2,6,23,.85);
+      backdrop-filter:blur(14px);
+      border-bottom:1px solid rgba(255,255,255,.06);
+    }
+
+    .header-wrapper{
+      max-width:1180px;
+      margin:auto;
+      padding:18px 20px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+    }
+
+    .logo a{
+      font-size:1.7rem;
+      font-weight:800;
+      color:white;
+      letter-spacing:.5px;
+    }
+
+    .navbar{
+      display:flex;
+      align-items:center;
+      gap:24px;
+    }
+
+    .navbar a{
+      color:#cbd5e1;
+      font-size:.95rem;
+      transition:.3s;
+      position:relative;
+    }
+
+    .navbar a:hover{
+      color:var(--accent);
+    }
+
+    /* HERO */
+
+    .hero{
+      padding:100px 20px 80px;
       text-align:center;
+      position:relative;
+    }
+
+    .hero::before{
+      content:"";
+      position:absolute;
+      width:350px;
+      height:350px;
+      background:rgba(56,189,248,.08);
+      filter:blur(100px);
+      top:0;
+      left:50%;
+      transform:translateX(-50%);
+      z-index:-1;
     }
 
     .tag{
       display:inline-block;
-      background:rgba(56,189,248,.15);
-      color:var(--accent);
-      padding:8px 16px;
+      padding:10px 18px;
       border-radius:50px;
+      border:1px solid rgba(56,189,248,.25);
+      background:rgba(56,189,248,.12);
+      color:var(--accent);
       font-size:.9rem;
-      margin-bottom:20px;
-      border:1px solid rgba(56,189,248,.3);
+      margin-bottom:25px;
+      font-weight:600;
+      letter-spacing:.4px;
     }
 
-    header h1{
-      font-size:3rem;
-      line-height:1.2;
-      margin-bottom:20px;
+    .hero h1{
+      font-size:3.5rem;
+      line-height:1.15;
+      margin-bottom:28px;
       font-weight:800;
     }
 
-    header p{
-      max-width:850px;
+    .hero p{
+      max-width:900px;
       margin:auto;
       color:var(--muted);
-      font-size:1.05rem;
+      font-size:1.08rem;
     }
 
-    .hero-box{
-      margin-top:40px;
+    /* STATS */
+
+    .stats{
       display:grid;
       grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
       gap:20px;
+      margin-top:50px;
     }
 
-    .hero-card{
-      background:rgba(15,23,42,.7);
-      border:1px solid var(--border);
-      padding:24px;
-      border-radius:18px;
+    .stat-box{
+      background:rgba(15,23,42,.8);
+      border:1px solid rgba(255,255,255,.06);
+      border-radius:24px;
+      padding:30px;
       box-shadow:var(--shadow);
-      backdrop-filter:blur(8px);
+      backdrop-filter:blur(10px);
     }
 
-    .hero-card h3{
+    .stat-box h3{
       color:var(--accent);
+      font-size:2rem;
       margin-bottom:10px;
-      font-size:1rem;
     }
 
-    .hero-card p{
+    .stat-box p{
       color:var(--muted);
       font-size:.95rem;
     }
 
-    section{
-      margin-bottom:30px;
+    /* CONTENT */
+
+    .content-section{
+      margin-bottom:35px;
       background:linear-gradient(180deg,var(--card),var(--card2));
-      border:1px solid var(--border);
-      border-radius:24px;
-      padding:40px;
+      border:1px solid rgba(255,255,255,.05);
+      border-radius:30px;
+      padding:50px;
       box-shadow:var(--shadow);
+      position:relative;
+      overflow:hidden;
+    }
+
+    .content-section::before{
+      content:"";
+      position:absolute;
+      width:250px;
+      height:250px;
+      background:rgba(56,189,248,.05);
+      border-radius:50%;
+      top:-120px;
+      right:-100px;
     }
 
     .section-title{
-      font-size:2rem;
-      margin-bottom:25px;
+      font-size:2.2rem;
+      margin-bottom:28px;
       line-height:1.3;
       position:relative;
-      padding-left:18px;
+      padding-left:20px;
     }
 
     .section-title::before{
@@ -134,88 +228,135 @@
       position:absolute;
       left:0;
       top:0;
-      width:5px;
+      width:6px;
       height:100%;
-      background:var(--accent);
+      background:linear-gradient(to bottom,var(--accent),var(--accent2));
       border-radius:20px;
     }
 
     p{
-      margin-bottom:20px;
+      margin-bottom:24px;
       color:#dbe4ee;
       font-size:1rem;
     }
 
     ul{
       padding-left:20px;
-      margin-bottom:25px;
+      margin-bottom:30px;
     }
 
     ul li{
-      margin-bottom:14px;
+      margin-bottom:16px;
       color:var(--muted);
     }
 
-    .comparison-grid{
+    /* RELATED */
+
+    .related-title{
+      font-size:2rem;
+      margin-bottom:25px;
+    }
+
+    .related-grid{
       display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-      gap:20px;
-      margin-top:25px;
+      grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+      gap:24px;
+      margin-bottom:50px;
     }
 
-    .compare-box{
+    .related-card{
       background:#0b1220;
-      border:1px solid var(--border);
-      border-radius:18px;
-      padding:25px;
+      border:1px solid rgba(255,255,255,.06);
+      border-radius:24px;
+      overflow:hidden;
+      transition:.35s;
+      box-shadow:var(--shadow);
     }
 
-    .compare-box h3{
-      margin-bottom:15px;
-      color:var(--accent);
+    .related-card:hover{
+      transform:translateY(-8px);
+      border-color:var(--accent);
     }
 
-    .faq{
-      margin-top:25px;
+    .related-card img{
+      width:100%;
+      height:190px;
+      object-fit:cover;
     }
 
-    .faq-item{
-      margin-bottom:20px;
+    .related-card h3{
       padding:20px;
-      border-radius:16px;
-      background:#0b1220;
-      border:1px solid var(--border);
+      color:white;
+      font-size:1rem;
+      line-height:1.5;
     }
 
-    .faq-item h3{
-      margin-bottom:10px;
+    /* FOOTER */
+
+    .footer{
+      margin-top:40px;
+      padding:60px 20px;
+      border-top:1px solid rgba(255,255,255,.05);
+      background:rgba(2,6,23,.7);
+    }
+
+    .footer-grid{
+      max-width:1180px;
+      margin:auto;
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+      gap:40px;
+    }
+
+    .footer h3{
+      margin-bottom:18px;
+      font-size:1.1rem;
+    }
+
+    .footer p{
+      color:var(--muted);
+    }
+
+    .footer a{
+      display:block;
+      margin-bottom:12px;
+      color:#cbd5e1;
+      transition:.3s;
+    }
+
+    .footer a:hover{
       color:var(--accent);
-      font-size:1.05rem;
     }
 
-    footer{
+    .footer-bottom{
       text-align:center;
-      padding:40px 20px 60px;
+      margin-top:45px;
       color:var(--muted);
       font-size:.95rem;
     }
 
     @media(max-width:768px){
 
-      header{
-        padding-top:60px;
+      .navbar{
+        gap:12px;
+        flex-wrap:wrap;
+        justify-content:center;
       }
 
-      header h1{
-        font-size:2rem;
+      .hero{
+        padding-top:80px;
+      }
+
+      .hero h1{
+        font-size:2.2rem;
+      }
+
+      .content-section{
+        padding:30px;
       }
 
       .section-title{
-        font-size:1.5rem;
-      }
-
-      section{
-        padding:25px;
+        font-size:1.6rem;
       }
 
     }
@@ -226,359 +367,355 @@
 
 <body>
 
-<div class="container">
+  <!-- HEADER -->
 
-<header>
+  <header class="main-header">
 
-  <div class="tag">
-    2026 FLAGSHIP SMARTPHONE COMPARISON
-  </div>
+    <div class="header-wrapper">
 
-  <h1>
-    iPhone 15 vs Samsung Galaxy S24
-  </h1>
+      <div class="logo">
+        <a href="index.html">Ranking-Hours</a>
+      </div>
 
-  <p>
-    A complete real-world comparison between two of the most popular flagship smartphones in 2026. 
-    This detailed review covers performance, battery life, cameras, gaming, software experience, 
-    display quality, productivity, long-term value, and everyday usability.
-  </p>
+      <nav class="navbar">
 
-  <div class="hero-box">
+        <a href="index.html">Home</a>
+        <a href="comparisons.html">Comparisons</a>
+        <a href="technology.html">Technology</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
 
-    <div class="hero-card">
-      <h3>Performance</h3>
-      <p>
-        Powerful flagship-level processors designed for gaming, multitasking, and long-term speed.
-      </p>
+      </nav>
+
     </div>
 
-    <div class="hero-card">
-      <h3>Battery Life</h3>
+  </header>
+
+  <div class="container">
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+      <div class="tag">
+        OFFICIAL TRANSPARENCY POLICY
+      </div>
+
+      <h1>
+        Affiliate Disclosure
+      </h1>
+
       <p>
-        Real-world endurance testing during gaming, streaming, navigation, and social media usage.
+        Ranking-Hours is committed to transparency, editorial independence,
+        and honest recommendations. This Affiliate Disclosure explains how affiliate partnerships work,
+        how affiliate links may appear throughout the website,
+        and how our editorial process remains independent from advertisers,
+        manufacturers, retailers, and affiliate programs.
       </p>
-    </div>
 
-    <div class="hero-card">
-      <h3>Camera System</h3>
+      <div class="stats">
+
+        <div class="stat-box">
+          <h3>100%</h3>
+          <p>
+            Independent editorial opinions and comparison articles.
+          </p>
+        </div>
+
+        <div class="stat-box">
+          <h3>0%</h3>
+          <p>
+            Paid influence on rankings, conclusions, or recommendations.
+          </p>
+        </div>
+
+        <div class="stat-box">
+          <h3>24/7</h3>
+          <p>
+            Continuous focus on transparency and user trust.
+          </p>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- SECTION -->
+
+    <section class="content-section">
+
+      <h2 class="section-title">
+        Introduction
+      </h2>
+
       <p>
-        Detailed comparison of photography quality, video recording, stabilization, and night mode.
+        Ranking-Hours participates in affiliate marketing programs that allow websites to earn commissions through referral links. Some pages on this website may contain affiliate links directing users to online retailers, marketplaces, software providers, or technology-related services. If users click these links and complete purchases, Ranking-Hours may receive a small commission from the retailer or affiliate platform.
       </p>
-    </div>
 
-    <div class="hero-card">
-      <h3>User Experience</h3>
       <p>
-        Software smoothness, customization, ecosystem advantages, and long-term reliability.
+        These commissions help support the operation and growth of Ranking-Hours. Running a modern comparison website involves many expenses including hosting, design improvements, performance optimization, software subscriptions, testing equipment, content research, image creation, and long-term website maintenance.
       </p>
-    </div>
 
-  </div>
+      <p>
+        Affiliate revenue allows us to continue producing free content without charging readers for access. Our goal is to create helpful and informative articles that assist users when researching smartphones, laptops, gaming products, software, consumer electronics, and modern technology.
+      </p>
 
-</header>
+      <p>
+        Transparency is extremely important to our platform. Rather than hiding affiliate relationships, we openly explain how they work and how they support our ability to create high-quality content for readers around the world.
+      </p>
 
-<section>
+    </section>
 
-  <h2 class="section-title">
-    Complete Real-World Smartphone Experience
-  </h2>
+    <!-- SECTION -->
 
-  <p>
-    Modern smartphones have become much more than simple communication devices. In 2026, flagship smartphones are powerful enough to replace cameras, gaming systems, laptops, and even professional editing tools for many users. People now rely on smartphones for work, entertainment, content creation, navigation, online learning, business meetings, photography, artificial intelligence tools, and social media.
-  </p>
+    <section class="content-section">
 
-  <p>
-    Because of this evolution, comparing the iPhone 15 and Samsung Galaxy S24 requires far more than checking specifications. Real-world experience matters much more than numbers on paper. A smartphone may have a larger battery or more RAM, but software optimization and user experience can completely change how the device feels during everyday usage.
-  </p>
+      <h2 class="section-title">
+        Editorial Independence
+      </h2>
 
-  <p>
-    Both smartphones were tested as primary daily devices for more than two weeks. Testing included heavy gaming sessions, photography during daylight and nighttime conditions, long YouTube streaming sessions, social media browsing, multitasking, GPS navigation, productivity work, and video editing.
-  </p>
+      <p>
+        Editorial independence is one of the core principles behind Ranking-Hours. Affiliate relationships never directly influence article rankings, product ratings, opinions, recommendations, or final conclusions.
+      </p>
 
-  <p>
-    Apple continues focusing on simplicity, optimization, and ecosystem integration while Samsung pushes aggressive hardware improvements, customization, multitasking, and futuristic software features.
-  </p>
+      <p>
+        Every comparison article is created through independent research, real-world usage analysis, specification evaluation, software testing, long-term usability consideration, and overall user experience analysis.
+      </p>
 
-  <p>
-    At first glance, both devices feel premium and extremely powerful. However, after several days of intensive usage, major differences begin appearing in battery endurance, software behavior, gaming smoothness, multitasking performance, and camera processing.
-  </p>
+      <p>
+        Brands, manufacturers, retailers, and affiliate programs do not control the content published on this website. Receiving commissions from affiliate links does not guarantee positive reviews or higher rankings for any product or service.
+      </p>
 
-</section>
+      <p>
+        Products may still receive criticism if weaknesses, software limitations, poor value, performance issues, or usability problems are discovered during the evaluation process.
+      </p>
 
-<section>
-
-  <h2 class="section-title">
-    Design and Build Quality
-  </h2>
-
-  <p>
-    Design is one of the first things users notice when buying a smartphone. Both the iPhone 15 and Samsung Galaxy S24 offer premium flagship-level build quality, but they target different preferences.
-  </p>
-
-  <p>
-    The iPhone 15 follows Apple’s minimal and elegant design language. Flat aluminum edges, symmetrical proportions, and strong material quality make the phone feel clean and professional. Apple focuses heavily on consistency and comfort during long-term usage.
-  </p>
-
-  <p>
-    Samsung Galaxy S24 looks more futuristic with slimmer bezels, sharper edges, and a more aggressive modern appearance. Samsung’s display design immediately feels more immersive because of the smaller bezels and higher refresh rate.
-  </p>
-
-  <p>
-    During daily use, both smartphones feel durable and comfortable, but Samsung’s lighter feel and slightly curved design may be more comfortable for users who spend hours using their phone every day.
-  </p>
-
-  <div class="comparison-grid">
-
-    <div class="compare-box">
-      <h3>iPhone 15 Strengths</h3>
       <ul>
-        <li>Premium aluminum body</li>
-        <li>Clean minimalist design</li>
-        <li>Excellent long-term durability</li>
-        <li>Comfortable hand feel</li>
-      </ul>
-    </div>
 
-    <div class="compare-box">
-      <h3>Galaxy S24 Strengths</h3>
-      <ul>
-        <li>Modern futuristic appearance</li>
-        <li>Smaller bezels</li>
-        <li>More immersive display design</li>
-        <li>Lighter overall feeling</li>
+        <li>Affiliate partnerships do not guarantee positive coverage</li>
+
+        <li>Editorial decisions remain fully independent</li>
+
+        <li>User trust is prioritized over short-term revenue</li>
+
+        <li>Comparisons focus on real-world user experience</li>
+
+        <li>Transparency remains a permanent priority</li>
+
       </ul>
-    </div>
+
+      <p>
+        Maintaining credibility and reader trust is far more important than maximizing affiliate income. Our long-term goal is to build a reliable platform where users can discover useful information before making purchasing decisions.
+      </p>
+
+    </section>
+
+    <!-- SECTION -->
+
+    <section class="content-section">
+
+      <h2 class="section-title">
+        How Affiliate Links Work
+      </h2>
+
+      <p>
+        Affiliate links contain unique tracking identifiers provided by affiliate networks or partner retailers. When a visitor clicks one of these links and later purchases a product or service, the retailer may pay a small referral commission to Ranking-Hours.
+      </p>
+
+      <p>
+        Importantly, affiliate commissions do not increase the price users pay. Customers generally pay the exact same amount whether purchases are made through affiliate links or directly through retailer websites.
+      </p>
+
+      <p>
+        Affiliate tracking systems often rely on browser cookies or temporary session tracking technologies. These systems help retailers identify which websites referred customers to their platforms.
+      </p>
+
+      <p>
+        Depending on the retailer or affiliate program, tracking periods may vary. Some affiliate programs only track purchases for a few hours while others may track purchases for several days after users click referral links.
+      </p>
+
+      <p>
+        Additional details regarding cookies, tracking technologies, and user privacy can be found within our Cookies Policy and Privacy Policy pages.
+      </p>
+
+    </section>
+
+    <!-- SECTION -->
+
+    <section class="content-section">
+
+      <h2 class="section-title">
+        Product Recommendations and Research
+      </h2>
+
+      <p>
+        Product recommendations published on Ranking-Hours are based on multiple factors including specifications, software support, usability, design quality, battery performance, customer feedback, feature sets, long-term reliability, ecosystem integration, and overall value.
+      </p>
+
+      <p>
+        Our articles are designed to help readers understand differences between products in practical real-world situations rather than relying entirely on marketing claims or synthetic benchmark numbers.
+      </p>
+
+      <p>
+        Smartphones, laptops, gaming consoles, headphones, software tools, and automotive technologies are evaluated based on how users actually interact with them during everyday life.
+      </p>
+
+      <p>
+        We continuously improve our content structure, readability, research process, and design quality to create a better experience for users visiting Ranking-Hours from desktop computers, tablets, and mobile devices.
+      </p>
+
+      <p>
+        Recommendations may evolve over time as new products are released, software updates improve performance, or market conditions change.
+      </p>
+
+    </section>
+
+    <!-- SECTION -->
+
+    <section class="content-section">
+
+      <h2 class="section-title">
+        Commitment to Transparency
+      </h2>
+
+      <p>
+        Transparency plays a major role in maintaining long-term trust with readers. We believe users deserve to understand how online publishing works and how websites generate revenue through affiliate partnerships and advertising relationships.
+      </p>
+
+      <p>
+        Rather than hiding monetization methods, Ranking-Hours openly explains how affiliate links support the website. Our goal is to remain honest about how revenue is generated while continuing to prioritize helpful content and positive user experience.
+      </p>
+
+      <p>
+        The internet contains large amounts of misleading or overly promotional content. Because of this, we work to create articles that remain informative, readable, and balanced for readers researching modern technology products.
+      </p>
+
+      <p>
+        User trust is far more valuable than temporary traffic spikes or short-term affiliate earnings. We aim to build a platform focused on credibility, consistency, and long-term quality.
+      </p>
+
+      <p>
+        By continuing to improve content quality, design standards, accessibility, mobile responsiveness, and editorial accuracy, Ranking-Hours hopes to remain a trusted technology comparison platform for years to come.
+      </p>
+
+    </section>
+
+    <!-- RELATED -->
+
+    <section>
+
+      <h2 class="related-title">
+        Popular Comparisons
+      </h2>
+
+      <div class="related-grid">
+
+        <a href="Iphone-Samsung.html" class="related-card">
+
+          <img src="iphone-15.jpg" alt="iPhone vs Samsung">
+
+          <h3>
+            iPhone 15 vs Samsung Galaxy S24
+          </h3>
+
+        </a>
+
+        <a href="Macbook-Windows.html" class="related-card">
+
+          <img src="macbook-air.jpg" alt="MacBook vs Windows">
+
+          <h3>
+            MacBook Air vs Windows Laptops
+          </h3>
+
+        </a>
+
+        <a href="Playstation-Xbox.html" class="related-card">
+
+          <img src="PlayStation 5.jpg" alt="PlayStation vs Xbox">
+
+          <h3>
+            PlayStation 5 vs Xbox Series X
+          </h3>
+
+        </a>
+
+        <a href="Tesla-Byd.html" class="related-card">
+
+          <img src="tesla-model-3.jpg" alt="Tesla vs BYD">
+
+          <h3>
+            Tesla Model 3 vs BYD
+          </h3>
+
+        </a>
+
+      </div>
+
+    </section>
 
   </div>
 
-</section>
+  <!-- FOOTER -->
 
-<section>
+  <footer class="footer">
 
-  <h2 class="section-title">
-    Display Quality and Multimedia Experience
-  </h2>
+    <div class="footer-grid">
 
-  <p>
-    Display quality plays a huge role in modern smartphones because users spend hours every day watching videos, gaming, scrolling social media, and reading content.
-  </p>
+      <div>
 
-  <p>
-    Samsung continues dominating the smartphone display industry with the Galaxy S24. The AMOLED panel delivers extremely vibrant colors, deep blacks, outstanding brightness levels, and smoother animations thanks to the 120Hz refresh rate.
-  </p>
+        <h3>
+          Ranking-Hours
+        </h3>
 
-  <p>
-    Watching Netflix, YouTube, and HDR content feels incredibly immersive on Samsung. Outdoor visibility is also excellent even under strong sunlight.
-  </p>
+        <p>
+          Independent technology comparison platform focused on smartphones,
+          laptops, gaming, software, audio devices,
+          and modern consumer electronics.
+        </p>
 
-  <p>
-    The iPhone 15 still offers a beautiful display with excellent color accuracy and impressive brightness. Apple focuses more on natural color reproduction rather than exaggerated saturation.
-  </p>
+      </div>
 
-  <p>
-    However, the lack of a 120Hz refresh rate on the standard iPhone 15 becomes noticeable when compared directly against Samsung. Scrolling through social media and navigating the interface simply feels smoother on the Galaxy S24.
-  </p>
+      <div>
 
-  <p>
-    For users who consume large amounts of media or mobile gaming content, Samsung clearly delivers the more visually impressive experience.
-  </p>
+        <h3>
+          Main Pages
+        </h3>
 
-</section>
+        <a href="about.html">About</a>
 
-<section>
+        <a href="contact.html">Contact</a>
 
-  <h2 class="section-title">
-    Gaming Performance and Thermal Stability
-  </h2>
+        <a href="faq.html">FAQ</a>
 
-  <p>
-    Mobile gaming has become one of the biggest parts of the smartphone industry. Popular games such as PUBG Mobile, Genshin Impact, Call of Duty Mobile, Fortnite Mobile, and EA FC Mobile require powerful hardware and stable cooling systems.
-  </p>
+        <a href="categories.html">Categories</a>
 
-  <p>
-    The iPhone 15 performs extremely well during gaming sessions. Apple’s A16 Bionic processor remains one of the fastest mobile chips available, and game optimization on iOS is excellent.
-  </p>
+      </div>
 
-  <p>
-    Games launch quickly, touch response feels responsive, and frame rates remain stable even during longer sessions. Apple’s optimization helps maintain consistency over time.
-  </p>
+      <div>
 
-  <p>
-    Samsung Galaxy S24, however, creates a more immersive gaming experience overall. The 120Hz display makes movement feel smoother, while the brighter display and larger battery improve long-term comfort.
-  </p>
+        <h3>
+          Policies
+        </h3>
 
-  <p>
-    Samsung also handles multitasking better during gaming. Users can quickly switch between applications, record gameplay, respond to messages, or stream content more comfortably.
-  </p>
+        <a href="privacy-policy.html">Privacy Policy</a>
 
-  <ul>
-    <li>Samsung offers smoother scrolling and gaming visuals</li>
-    <li>Apple provides stronger game optimization</li>
-    <li>Samsung handles multitasking better</li>
-    <li>Both devices become warm during heavy gaming</li>
-    <li>Samsung battery lasts longer during extended sessions</li>
-  </ul>
+        <a href="terms-of-service.html">Terms of Service</a>
 
-</section>
+        <a href="cookies.html">Cookies Policy</a>
 
-<section>
+        <a href="disclaimer.html">Disclaimer</a>
 
-  <h2 class="section-title">
-    Battery Life and Charging Speed
-  </h2>
+      </div>
 
-  <p>
-    Battery performance remains one of the most important factors when choosing a smartphone. Modern users expect their phones to survive long workdays, gaming sessions, travel usage, and social media browsing without constant charging.
-  </p>
-
-  <p>
-    Apple continues focusing heavily on software efficiency. Despite using a smaller battery, the iPhone 15 still delivers reliable all-day performance for most users.
-  </p>
-
-  <p>
-    Samsung Galaxy S24 clearly dominates in raw battery capacity. Heavy users will immediately notice the advantage during gaming, streaming, and multitasking.
-  </p>
-
-  <p>
-    Charging speeds are also significantly faster on Samsung. Recharging the Galaxy S24 feels quicker and more convenient for users who are constantly moving throughout the day.
-  </p>
-
-  <p>
-    Travelers, gamers, and power users will likely appreciate Samsung’s stronger battery performance, while casual users may still find Apple’s optimization more than enough.
-  </p>
-
-</section>
-
-<section>
-
-  <h2 class="section-title">
-    Camera Quality and Video Recording
-  </h2>
-
-  <p>
-    Smartphone cameras have become one of the biggest deciding factors for consumers. Both Apple and Samsung deliver flagship-level photography systems capable of producing excellent results.
-  </p>
-
-  <p>
-    Apple focuses on consistency and realistic color reproduction. Photos taken on the iPhone 15 often look natural, balanced, and ready for social media without requiring additional editing.
-  </p>
-
-  <p>
-    Video recording remains one of Apple’s biggest strengths. Stabilization quality, cinematic mode, and overall video smoothness are among the best available on any smartphone.
-  </p>
-
-  <p>
-    Samsung Galaxy S24 focuses more on detail, zoom performance, and vibrant image processing. Photos often appear sharper and more dramatic, especially in bright outdoor conditions.
-  </p>
-
-  <p>
-    Night mode photography on Samsung is also highly impressive thanks to aggressive AI image processing and strong sensor performance.
-  </p>
-
-  <p>
-    Users who prioritize video recording may prefer the iPhone 15, while users who enjoy vibrant photography and zoom capabilities may prefer Samsung.
-  </p>
-
-</section>
-
-<section>
-
-  <h2 class="section-title">
-    Software Experience and Long-Term Support
-  </h2>
-
-  <p>
-    Software quality heavily impacts the overall smartphone experience. Fast hardware means little if the operating system feels unstable or inconsistent.
-  </p>
-
-  <p>
-    Apple’s iOS remains one of the smoothest and most polished smartphone operating systems. Animations are fluid, applications rarely crash, and long-term software support remains excellent.
-  </p>
-
-  <p>
-    Samsung’s One UI has improved dramatically over recent years. It now offers a powerful balance between customization and usability.
-  </p>
-
-  <p>
-    Samsung users can customize nearly every part of the interface including widgets, themes, multitasking layouts, lock screens, and notifications.
-  </p>
-
-  <p>
-    Apple focuses more on simplicity and ecosystem integration with devices such as MacBooks, iPads, AirPods, and Apple Watches.
-  </p>
-
-  <p>
-    Samsung, meanwhile, offers stronger flexibility and productivity tools for advanced users who enjoy customization.
-  </p>
-
-</section>
-
-<section>
-
-  <h2 class="section-title">
-    Frequently Asked Questions
-  </h2>
-
-  <div class="faq">
-
-    <div class="faq-item">
-      <h3>Which phone is better for gaming?</h3>
-      <p>
-        Samsung Galaxy S24 generally provides the better gaming experience because of its 120Hz display, larger battery, and stronger multitasking capabilities.
-      </p>
     </div>
 
-    <div class="faq-item">
-      <h3>Does the iPhone 15 have better cameras?</h3>
-      <p>
-        The iPhone 15 delivers more consistent and natural photos while offering industry-leading video recording quality.
-      </p>
+    <div class="footer-bottom">
+      © 2026 Ranking-Hours · All Rights Reserved
     </div>
 
-    <div class="faq-item">
-      <h3>Which phone has better battery life?</h3>
-      <p>
-        Samsung Galaxy S24 offers stronger battery endurance and faster charging during heavy daily usage.
-      </p>
-    </div>
-
-    <div class="faq-item">
-      <h3>Which smartphone is better overall?</h3>
-      <p>
-        Both devices are excellent flagship smartphones. The best choice depends on whether users prefer Apple’s simplicity and ecosystem or Samsung’s customization and hardware advantages.
-      </p>
-    </div>
-
-  </div>
-
-</section>
-
-<section>
-
-  <h2 class="section-title">
-    Final Verdict
-  </h2>
-
-  <p>
-    The iPhone 15 and Samsung Galaxy S24 represent two different visions of the modern smartphone experience. Apple prioritizes optimization, stability, simplicity, and ecosystem integration, while Samsung pushes hardware innovation, multitasking, display quality, and customization.
-  </p>
-
-  <p>
-    Users who want a reliable, smooth, and polished long-term experience may prefer the iPhone 15. Meanwhile, users who enjoy advanced features, customization, gaming, and stronger battery performance will likely prefer the Samsung Galaxy S24.
-  </p>
-
-  <p>
-    Regardless of the final choice, both smartphones remain among the best flagship devices available in 2026 and are capable of delivering premium experiences for years to come.
-  </p>
-
-</section>
-
-<footer>
-  © 2026 Ranking-Hours • All Rights Reserved
-</footer>
-
-</div>
+  </footer>
 
 </body>
+
 </html>
