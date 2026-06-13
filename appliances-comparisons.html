@@ -1,36 +1,57 @@
 <!DOCTYPE html>
-<html lang="uz">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Maishiy texnika solishtirishlari - Muzlatgichlar, kir yuvish mashinalari, konditsionerlar va boshqalar">
-    <title>Maishiy Texnika Solishtirishlari | Eng Yaxshisini Tanlang</title>
+    <meta name="description" content="Home appliance comparisons - Refrigerators, washing machines, air conditioners and more">
+    <title>Home Appliance Comparisons | Choose the Best</title>
+    <!-- Google Fonts & FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
     <style>
+        :root {
+            --primary: #6A1B9A;
+            --primary-light: #9C27B0;
+            --secondary: #4A148C;
+            --bg-main: #f8fafc;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --card-bg: #ffffff;
+            --accent: #FF9800;
+        }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Plus Jakarta Sans', sans-serif;
         }
 
         body {
-            background-color: #f5f7fa;
-            color: #333;
+            background-color: var(--bg-main);
+            color: var(--text-main);
             line-height: 1.6;
+            overflow-x: hidden;
         }
 
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 24px;
         }
 
+        /* Header */
         header {
-            background: linear-gradient(135deg, #9C27B0 0%, #6A1B9A 100%);
+            background: rgba(106, 27, 154, 0.95);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
             color: white;
-            padding: 20px 0;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            padding: 16px 0;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .header-container {
@@ -39,124 +60,146 @@
             align-items: center;
         }
 
-        .logo {
-            font-size: 1.8rem;
-            font-weight: 700;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
         .logo a {
             color: white;
             text-decoration: none;
+            font-size: 1.5rem;
+            font-weight: 700;
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
+            letter-spacing: -0.5px;
         }
 
         .logo i {
-            font-size: 2rem;
+            color: #FFD700;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
         }
 
         nav ul {
             display: flex;
             list-style: none;
-            gap: 25px;
+            gap: 15px;
+            align-items: center;
         }
 
         nav a {
-            color: white;
+            color: rgba(255, 255, 255, 0.8);
             text-decoration: none;
             font-weight: 500;
-            padding: 8px 15px;
-            border-radius: 20px;
-            transition: all 0.3s;
+            font-size: 0.95rem;
+            padding: 10px 18px;
+            border-radius: 12px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            display: flex;
+            align-items: center;
+            gap: 8px;
         }
 
         nav a:hover, nav a.active {
+            color: white;
             background-color: rgba(255, 255, 255, 0.15);
+            transform: translateY(-1px);
         }
 
+        /* Page Header */
         .page-header {
-            background: linear-gradient(rgba(156, 39, 176, 0.9), rgba(106, 27, 154, 0.9));
+            background: linear-gradient(135deg, var(--secondary) 0%, var(--primary-light) 100%);
             color: white;
             text-align: center;
-            padding: 80px 20px 60px;
-            margin-bottom: 40px;
-            border-radius: 0 0 30px 30px;
+            padding: 80px 24px;
+            position: relative;
+            border-radius: 0 0 40px 40px;
+            box-shadow: 0 20px 40px rgba(106, 27, 154, 0.15);
         }
 
         .page-header h1 {
-            font-size: 2.8rem;
-            margin-bottom: 15px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 16px;
+            letter-spacing: -1px;
         }
 
         .page-header .subtitle {
             font-size: 1.2rem;
-            max-width: 700px;
-            margin: 0 auto 30px;
+            max-width: 650px;
+            margin: 0 auto;
             opacity: 0.9;
+            font-weight: 300;
         }
 
         .category-icon {
-            font-size: 4rem;
-            margin-bottom: 25px;
-            animation: float 3s ease-in-out infinite;
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.15);
+            padding: 20px;
+            border-radius: 24px;
+            backdrop-filter: blur(5px);
+            animation: float 4s ease-in-out infinite;
         }
 
         @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-12px) rotate(5deg); }
         }
 
+        /* Grid & Cards */
         .comparison-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+            gap: 32px;
             margin: 40px 0;
         }
 
         .comparison-card {
-            background: white;
-            border-radius: 20px;
+            background: var(--card-bg);
+            border-radius: 24px;
             overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-            transition: all 0.3s;
-            border: 1px solid #e0e0e0;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid rgba(0, 0, 0, 0.04);
+            display: flex;
+            flex-direction: column;
         }
 
         .comparison-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(156, 39, 176, 0.15);
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(106, 27, 154, 0.12);
+            border-color: rgba(156, 39, 176, 0.2);
         }
 
         .card-header {
-            background: linear-gradient(135deg, #9C27B0 0%, #6A1B9A 100%);
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
             color: white;
-            padding: 25px;
+            padding: 28px;
             text-align: center;
         }
 
         .card-header h3 {
-            font-size: 1.5rem;
-            margin-bottom: 10px;
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .card-header p {
+            font-size: 0.9rem;
+            opacity: 0.85;
         }
 
         .card-content {
-            padding: 30px;
-        }
-
-        .specs-list {
-            margin: 20px 0;
+            padding: 28px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
         }
 
         .spec-item {
             display: flex;
             justify-content: space-between;
-            padding: 12px 0;
-            border-bottom: 1px solid #eee;
+            align-items: center;
+            padding: 14px 0;
+            border-bottom: 1px solid #f1f5f9;
         }
 
         .spec-item:last-child {
@@ -164,84 +207,139 @@
         }
 
         .spec-label {
-            color: #666;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .spec-label i {
+            color: var(--primary-light);
+            width: 20px;
+        }
+
+        .spec-value {
+            font-weight: 600;
+            color: var(--text-main);
+            background: #f1f5f9;
+            padding: 4px 12px;
+            border-radius: 8px;
+            font-size: 0.9rem;
+        }
+
+        /* Energy & Noise UX */
+        .energy-rating {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: #faf5ff;
+            border-radius: 16px;
+            padding: 14px 20px;
+            margin: 20px 0 12px;
+            border: 1px solid #f3e8ff;
+        }
+
+        .energy-label {
+            font-weight: 600;
+            color: var(--secondary);
+            font-size: 0.9rem;
+        }
+
+        .energy-stars {
+            color: #FFB300;
+            font-size: 1.1rem;
+            letter-spacing: 2px;
+        }
+
+        .noise-level {
+            background: #f8fafc;
+            border-radius: 16px;
+            padding: 14px 20px;
+            margin-bottom: 20px;
+            border: 1px solid #f1f5f9;
+        }
+
+        .noise-meta {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            margin-bottom: 8px;
+        }
+
+        .noise-bar {
+            width: 100%;
+            height: 8px;
+            background: #e2e8f0;
+            border-radius: 6px;
+            overflow: hidden;
+        }
+
+        .noise-fill {
+            height: 100%;
+            border-radius: 6px;
+            width: 0; /* Dynamic JS animation */
+            transition: width 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* Verdict Box */
+        .verdict {
+            background: #f0fdf4;
+            border-left: 4px solid #22c55e;
+            padding: 18px;
+            border-radius: 12px;
+            margin-bottom: 24px;
+        }
+
+        .verdict h4 {
+            color: #166534;
+            margin-bottom: 6px;
+            font-size: 1.1rem;
             display: flex;
             align-items: center;
             gap: 8px;
         }
 
-        .spec-value {
-            font-weight: bold;
-            color: #9C27B0;
-        }
-
-        .energy-rating {
-            display: flex;
-            align-items: center;
-            background: #F3E5F5;
-            border-radius: 10px;
-            padding: 15px;
-            margin: 20px 0;
-        }
-
-        .energy-label {
-            font-weight: bold;
-            margin-right: 15px;
-            color: #6A1B9A;
-        }
-
-        .energy-stars {
-            color: #FFC107;
-            font-size: 1.3rem;
-        }
-
-        .verdict {
-            background: #F3E5F5;
-            border-left: 4px solid #9C27B0;
-            padding: 20px;
-            border-radius: 8px;
-            margin: 20px 0;
-        }
-
-        .verdict h4 {
-            color: #6A1B9A;
-            margin-bottom: 10px;
-            font-size: 1.2rem;
+        .verdict p {
+            font-size: 0.9rem;
+            color: #1e3a1e;
         }
 
         .btn {
-            display: inline-block;
-            padding: 14px 30px;
-            background: linear-gradient(135deg, #9C27B0 0%, #6A1B9A 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 14px;
+            background: linear-gradient(135deg, var(--primary-light) 0%, var(--primary) 100%);
             color: white;
             text-decoration: none;
-            border-radius: 30px;
+            border-radius: 16px;
             font-weight: 600;
             transition: all 0.3s;
             border: none;
             cursor: pointer;
-            text-align: center;
-            width: 100%;
+            margin-top: auto;
+            box-shadow: 0 4px 12px rgba(156, 39, 176, 0.2);
         }
 
         .btn:hover {
             transform: translateY(-2px);
-            box-shadow: 0 10px 20px rgba(156, 39, 176, 0.3);
+            box-shadow: 0 6px 20px rgba(156, 39, 176, 0.3);
+            filter: brightness(1.1);
         }
 
+        /* Ad Units */
         .ad-unit {
-            background: linear-gradient(135deg, #f5f7fa 0%, #e4e8f0 100%);
-            border-radius: 15px;
-            padding: 30px;
+            background: linear-gradient(135deg, #ffffff 0%, #f1f5f9 100%);
+            border-radius: 24px;
+            padding: 32px;
             text-align: center;
-            margin: 50px 0;
-            border: 2px dashed #c5cae9;
+            margin: 40px 0;
+            border: 2px dashed #cbd5e1;
             position: relative;
-        }
-
-        .ad-unit h3 {
-            color: #5C6BC0;
-            margin-bottom: 15px;
         }
 
         .ad-badge {
@@ -249,104 +347,139 @@
             top: -12px;
             left: 50%;
             transform: translateX(-50%);
-            background: #FF9800;
+            background: var(--accent);
             color: white;
-            padding: 5px 20px;
+            padding: 4px 16px;
             border-radius: 20px;
-            font-size: 0.9rem;
-            font-weight: 600;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
+        /* Categories Grid */
         .appliance-categories {
-            margin: 60px 0;
+            margin: 80px 0;
         }
 
         .category-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 25px;
-            margin-top: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 24px;
+            margin-top: 32px;
         }
 
         .category-card {
             background: white;
-            border-radius: 15px;
-            padding: 30px;
+            border-radius: 24px;
+            padding: 32px 24px;
             text-align: center;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
-            transition: all 0.3s;
-            border-top: 4px solid #9C27B0;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border-bottom: 5px solid var(--primary);
         }
 
         .category-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            transform: translateY(-6px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
         }
 
         .category-icon-small {
-            font-size: 3rem;
-            margin-bottom: 20px;
-            color: #9C27B0;
+            font-size: 2.5rem;
+            margin-bottom: 16px;
         }
 
-        .category-card.fridge .category-icon-small { color: #2196F3; }
-        .category-card.fridge { border-top-color: #2196F3; }
-        .category-card.washing .category-icon-small { color: #4CAF50; }
-        .category-card.washing { border-top-color: #4CAF50; }
-        .category-card.ac .category-icon-small { color: #FF9800; }
-        .category-card.ac { border-top-color: #FF9800; }
-        .category-card.tv .category-icon-small { color: #F44336; }
-        .category-card.tv { border-top-color: #F44336; }
+        .category-card.fridge { border-bottom-color: #2196F3; }
+        .category-card.washing { border-bottom-color: #4CAF50; }
+        .category-card.ac { border-bottom-color: #FF9800; }
+        .category-card.tv { border-bottom-color: #F44336; }
 
+        /* Brand Ratings */
         .brand-comparison {
             background: white;
-            border-radius: 15px;
-            padding: 30px;
-            margin: 40px 0;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+            border-radius: 24px;
+            padding: 32px;
+            margin: 60px 0;
+            box-shadow: 0 4px 25px rgba(0,0,0,0.02);
         }
 
         .brand-row {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 15px 0;
-            border-bottom: 1px solid #eee;
+            padding: 16px 0;
+            border-bottom: 1px solid #f1f5f9;
         }
 
-        .brand-row:last-child {
-            border-bottom: none;
-        }
+        .brand-row:last-child { border-bottom: none; }
 
         .brand-info {
             display: flex;
             align-items: center;
-            gap: 15px;
+            gap: 16px;
+        }
+
+        .brand-avatar {
+            width: 44px;
+            height: 44px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
         }
 
         .brand-rating {
-            font-weight: bold;
-            color: #9C27B0;
+            font-weight: 700;
+            color: white;
+            background: var(--primary);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.9rem;
         }
 
+        /* Guide Features */
+        .guide-box {
+            background: white;
+            padding: 40px;
+            border-radius: 24px;
+            box-shadow: 0 4px 25px rgba(0,0,0,0.02);
+        }
+
+        .guide-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+            margin-top: 28px;
+        }
+
+        .guide-item {
+            padding: 24px;
+            border-radius: 16px;
+            border: 1px solid rgba(0,0,0,0.02);
+        }
+
+        /* Footer */
         footer {
-            background: linear-gradient(135deg, #4A148C 0%, #6A1B9A 100%);
+            background: linear-gradient(135deg, var(--secondary) 0%, #1e0b30 100%);
             color: white;
-            padding: 50px 0 20px;
-            margin-top: 80px;
+            padding: 70px 0 24px;
+            margin-top: 100px;
         }
 
         .footer-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
             gap: 40px;
-            margin-bottom: 30px;
+            margin-bottom: 40px;
         }
 
         .footer-column h3 {
-            font-size: 1.3rem;
-            margin-bottom: 25px;
-            color: #E1BEE7;
+            font-size: 1.2rem;
+            margin-bottom: 24px;
+            color: #e9d5ff;
+            font-weight: 700;
         }
 
         .footer-column ul {
@@ -354,150 +487,112 @@
         }
 
         .footer-column li {
-            margin-bottom: 12px;
+            margin-bottom: 14px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #cbd5e1;
         }
 
         .footer-column a {
-            color: #F3E5F5;
+            color: #cbd5e1;
             text-decoration: none;
-            transition: color 0.3s;
-            display: flex;
+            transition: color 0.3s, transform 0.2s;
+            display: inline-flex;
             align-items: center;
             gap: 10px;
         }
 
         .footer-column a:hover {
-            color: #FFFFFF;
-            text-decoration: underline;
+            color: white;
+            transform: translateX(4px);
         }
+
+        .footer-column input {
+            padding: 14px;
+            width: 100%;
+            border-radius: 12px;
+            border: 1px solid rgba(255,255,255,0.1);
+            margin-bottom: 12px;
+            background: rgba(255,255,255,0.08);
+            color: white;
+            outline: none;
+        }
+
+        .footer-column input::placeholder { color: #94a3b8; }
 
         .copyright {
             text-align: center;
-            padding-top: 30px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            color: #E1BEE7;
+            padding-top: 24px;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            color: #a78bfa;
             font-size: 0.9rem;
         }
 
+        /* Mobile Menu trigger */
         .mobile-menu-btn {
             display: none;
-            background: none;
+            background: rgba(255,255,255,0.1);
             border: none;
             color: white;
-            font-size: 1.5rem;
+            font-size: 1.3rem;
             cursor: pointer;
+            padding: 8px 12px;
+            border-radius: 8px;
         }
 
-        .noise-level {
-            display: flex;
-            align-items: center;
-            background: #f5f5f5;
-            border-radius: 10px;
-            padding: 15px;
-            margin: 15px 0;
-        }
-
-        .noise-bar {
-            flex-grow: 1;
-            height: 10px;
-            background: #ddd;
-            border-radius: 5px;
-            overflow: hidden;
-            margin: 0 15px;
-        }
-
-        .noise-fill {
-            height: 100%;
-            border-radius: 5px;
-            transition: width 1s ease;
-        }
-
+        /* Responsive */
         @media (max-width: 992px) {
-            .comparison-grid {
-                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            }
+            .comparison-grid { grid-template-columns: 1fr 1fr; }
         }
 
         @media (max-width: 768px) {
-            .header-container {
-                flex-direction: column;
-                text-align: center;
-                gap: 20px;
-            }
-
-            .mobile-menu-btn {
-                display: block;
-                position: absolute;
-                top: 25px;
-                right: 20px;
-            }
-
+            .header-container { position: relative; }
+            .mobile-menu-btn { display: block; }
+            
             nav ul {
                 display: none;
                 flex-direction: column;
+                position: absolute;
+                top: 60px;
+                left: 0;
                 width: 100%;
-                margin-top: 20px;
+                background: #511477;
+                padding: 20px;
+                border-radius: 16px;
+                box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+                border: 1px solid rgba(255,255,255,0.1);
             }
 
-            nav ul.active {
-                display: flex;
-            }
-
-            .page-header h1 {
-                font-size: 2.2rem;
-            }
-
-            .page-header .subtitle {
-                font-size: 1.1rem;
-            }
-        }
-
-        @media (max-width: 576px) {
-            .comparison-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .category-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .page-header {
-                padding: 60px 20px 40px;
-            }
-
-            .page-header h1 {
-                font-size: 1.8rem;
-            }
-
-            .brand-row {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 10px;
-            }
+            nav ul.active { display: flex; }
+            nav a { width: 100%; }
+            .comparison-grid { grid-template-columns: 1fr; }
+            .page-header h1 { font-size: 2.2rem; }
         }
     </style>
 </head>
 <body>
+
     <header>
         <div class="container header-container">
             <div class="logo">
                 <a href="index.html">
-                    <i class="fas fa-star"></i>
-                    <span>Eng Yaxshisini Tanlang</span>
+                    <i class="fas fa-bolt"></i>
+                    <span>Choose the Best</span>
                 </a>
             </div>
             
-            <button class="mobile-menu-btn" id="mobileMenuBtn">
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menu">
                 <i class="fas fa-bars"></i>
             </button>
             
             <nav>
                 <ul id="mainNav">
-                    <li><a href="index.html"><i class="fas fa-home"></i> Bosh Sahifa</a></li>
-                    <li><a href="smartphone-comparisons.html"><i class="fas fa-mobile-alt"></i> Smartfonlar</a></li>
-                    <li><a href="laptop-comparisons.html"><i class="fas fa-laptop"></i> Noutbuklar</a></li>
-                    <li><a href="automotive-comparisons.html"><i class="fas fa-car"></i> Avtomobillar</a></li>
-                    <li><a href="appliances-comparisons.html" class="active"><i class="fas fa-blender"></i> Maishiy Texnika</a></li>
+                    <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="smartphone-comparisons.html"><i class="fas fa-mobile-alt"></i> Smartphones</a></li>
+                    <li><a href="laptop-comparisons.html"><i class="fas fa-laptop"></i> Laptops</a></li>
+                    <li><a href="automotive-comparisons.html"><i class="fas fa-car"></i> Automotive</a></li>
+                    <li><a href="appliances-comparisons.html" class="active"><i class="fas fa-blender"></i> Appliances</a></li>
                 </ul>
             </nav>
         </div>
@@ -506,453 +601,386 @@
     <div class="page-header">
         <div class="container">
             <div class="category-icon">
-                <i class="fas fa-blender"></i>
+                <i class="fas fa-sink"></i>
             </div>
-            <h1>Maishiy Texnika Solishtirishlari</h1>
-            <p class="subtitle">Muzlatgichlar, kir yuvish mashinalari, konditsionerlar va boshqa maishiy texnikani haqiqiy testlar asosida solishtiring</p>
+            <h1>Home Appliance Comparisons</h1>
+            <p class="subtitle">Unbiased ratings and tech battles based on real-world testing and laboratory data</p>
         </div>
     </div>
 
     <div class="container">
-        <!-- Adsense Banner -->
+        
+        <!-- Ad Banner -->
         <div class="ad-unit">
-            <div class="ad-badge">Reklama</div>
-            <h3>Maishiy texnika aksessuarlari</h3>
-            <p>Tozalash vositalari, filtrlar, himoya qoplamalari</p>
-            <p style="color: #666; margin-top: 15px;">300x250 | 728x90 | 300x600</p>
+            <div class="ad-badge">Recommended</div>
+            <h3>Premium Home Appliance Accessories</h3>
+            <p style="color: var(--text-muted); margin-top: 6px;">Get 20% off on specialized maintenance kits and replacement filters</p>
         </div>
 
         <div class="comparison-grid">
-            <!-- Comparison 1 -->
+            <!-- Card 1 -->
             <div class="comparison-card">
                 <div class="card-header">
-                    <h3>Samsung vs Artel Muzlatgichlar</h3>
-                    <p>Inverter texnologiyali no-frost muzlatgichlar</p>
+                    <h3>Samsung vs Artel</h3>
+                    <p>Inverter Technology No-Frost Refrigerators</p>
                 </div>
                 <div class="card-content">
                     <div class="specs-list">
                         <div class="spec-item">
-                            <div class="spec-label"><i class="fas fa-snowflake"></i> Hajmi:</div>
+                            <div class="spec-label"><i class="fas fa-cube"></i> Total Capacity:</div>
                             <div class="spec-value">350L vs 320L</div>
                         </div>
                         <div class="spec-item">
-                            <div class="spec-label"><i class="fas fa-bolt"></i> Energiya sarfi:</div>
+                            <div class="spec-label"><i class="fas fa-charging-station"></i> Energy Rating:</div>
                             <div class="spec-value">A++ vs A+</div>
                         </div>
                         <div class="spec-item">
-                            <div class="spec-label"><i class="fas fa-volume-up"></i> Shovqin:</div>
-                            <div class="spec-value">39 dB vs 42 dB</div>
+                            <div class="spec-label"><i class="fas fa-leaf"></i> Warranty Period:</div>
+                            <div class="spec-value">10 Years vs 3 Years</div>
                         </div>
                         <div class="spec-item">
-                            <div class="spec-label"><i class="fas fa-dollar-sign"></i> Narxi:</div>
-                            <div class="spec-value">$850 vs $550</div>
+                            <div class="spec-label"><i class="fas fa-tag"></i> Average Price:</div>
+                            <div class="spec-value" style="color: #22c55e;">$850 vs $550</div>
                         </div>
                     </div>
                     
                     <div class="energy-rating">
-                        <div class="energy-label">Energiya klassi:</div>
+                        <span class="energy-label">Eco-Score:</span>
                         <div class="energy-stars">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="far fa-star"></i>
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
                         </div>
                     </div>
                     
                     <div class="noise-level">
-                        <span>Shovqin darajasi:</span>
-                        <div class="noise-bar">
-                            <div class="noise-fill" style="background: #2196F3; width: 70%;"></div>
+                        <div class="noise-meta">
+                            <span>Noise Level (Low)</span>
+                            <span>39 dB</span>
                         </div>
-                        <span>39 dB</span>
+                        <div class="noise-bar">
+                            <div class="noise-fill" style="background: #2196F3; width: 40%;"></div>
+                        </div>
                     </div>
                     
                     <div class="verdict">
-                        <h4><i class="fas fa-trophy"></i> Test G'olibi: Artel</h4>
-                        <p>Artel narx-sifat nisbati va O'zbekiston sharoitidagi servislari bilan g'olib. Samsung esa energiya tejash va smart funksiyalari bilan.</p>
+                        <h4><i class="fas fa-award"></i> Winner: Artel (Value Pick)</h4>
+                        <p>Artel dominates with an affordable price tag and exceptional local service networks. Choose Samsung for premium smart features.</p>
                     </div>
                     
-                    <a href="samsung-artel.html"><button class="btn"><i class="fas fa-chart-bar"></i> Batafsil Solishtirishni Ko'rish</button></a>
+                    <a href="samsung-artel.html" class="btn"><i class="fas fa-chart-pie"></i> View Detailed Breakdown</a>
                 </div>
             </div>
 
-            <!-- Comparison 2 -->
+            <!-- Card 2 -->
             <div class="comparison-card">
                 <div class="card-header">
-                    <h3>LG vs Bosch Kir Yuvish Mashinalari</h3>
-                    <p>Yuk og'irligi 7-8 kg, inverter motorli</p>
+                    <h3>LG vs Bosch</h3>
+                    <p>Smart Inverter Washing Machines (7-8 kg)</p>
                 </div>
                 <div class="card-content">
                     <div class="specs-list">
                         <div class="spec-item">
-                            <div class="spec-label"><i class="fas fa-tint"></i> Suv sarfi:</div>
+                            <div class="spec-label"><i class="fas fa-faucet"></i> Water Consumption:</div>
                             <div class="spec-value">45L vs 50L</div>
                         </div>
                         <div class="spec-item">
-                            <div class="spec-label"><i class="fas fa-cogs"></i> Aylanish tezligi:</div>
-                            <div class="spec-value">1400 rpm vs 1200 rpm</div>
+                            <div class="spec-label"><i class="fas fa-tachometer-alt"></i> Spin Speed:</div>
+                            <div class="spec-value">1400 vs 1200 rpm</div>
                         </div>
                         <div class="spec-item">
-                            <div class="spec-label"><i class="fas fa-clock"></i> Dasturlar:</div>
-                            <div class="spec-value">14 ta vs 12 ta</div>
+                            <div class="spec-label"><i class="fas fa-heart"></i> Motor Type:</div>
+                            <div class="spec-value">Direct Drive vs EcoSilence</div>
                         </div>
                         <div class="spec-item">
-                            <div class="spec-label"><i class="fas fa-dollar-sign"></i> Narxi:</div>
-                            <div class="spec-value">$600 vs $650</div>
+                            <div class="spec-label"><i class="fas fa-tag"></i> Average Price:</div>
+                            <div class="spec-value" style="color: #22c55e;">$600 vs $650</div>
                         </div>
                     </div>
                     
                     <div class="energy-rating">
-                        <div class="energy-label">Energiya klassi:</div>
+                        <span class="energy-label">Eco-Score:</span>
                         <div class="energy-stars">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star-half-alt"></i>
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
                         </div>
                     </div>
                     
                     <div class="noise-level">
-                        <span>Shovqin darajasi:</span>
-                        <div class="noise-bar">
-                            <div class="noise-fill" style="background: #4CAF50; width: 65%;"></div>
+                        <div class="noise-meta">
+                            <span>Noise Level (Medium)</span>
+                            <span>47 dB</span>
                         </div>
-                        <span>47 dB</span>
+                        <div class="noise-bar">
+                            <div class="noise-fill" style="background: #4CAF50; width: 55%;"></div>
+                        </div>
                     </div>
                     
                     <div class="verdict">
-                        <h4><i class="fas fa-trophy"></i> Test G'olibi: LG</h4>
-                        <p>LG ko'p funksiyalari va tez yuvish dasturlari bilan g'olib. Bosch esa sifat va uzoq muddatli ishlash davomiyligi bilan.</p>
+                        <h4><i class="fas fa-award"></i> Winner: LG</h4>
+                        <p>LG wins due to its innovative "Steam" cycle and exceptionally quiet Direct Drive motor technology.</p>
                     </div>
                     
-                   <a href="lg-bosch.html"><button class="btn"><i class="fas fa-chart-bar"></i> Batafsil Solishtirishni Ko'rish</button></a>
+                    <a href="lg-bosch.html" class="btn"><i class="fas fa-chart-pie"></i> View Detailed Breakdown</a>
                 </div>
             </div>
 
-            <!-- Comparison 3 -->
+            <!-- Card 3 -->
             <div class="comparison-card">
                 <div class="card-header">
-                    <h3>Gree vs Samsung Konditsionerlar</h3>
-                    <p>Inverter konditsionerlar, 12000 BTU</p>
+                    <h3>Gree vs Samsung</h3>
+                    <p>Inverter Air Conditioners (12000 BTU)</p>
                 </div>
                 <div class="card-content">
                     <div class="specs-list">
                         <div class="spec-item">
-                            <div class="spec-label"><i class="fas fa-wind"></i> Havoni tozalash:</div>
-                            <div class="spec-value">Hepa filter vs Anti-virus</div>
+                            <div class="spec-label"><i class="fas fa-wind"></i> Filtration System:</div>
+                            <div class="spec-value">Hepa vs Anti-bacterial</div>
                         </div>
                         <div class="spec-item">
-                            <div class="spec-label"><i class="fas fa-mobile-alt"></i> Smart boshqaruv:</div>
-                            <div class="spec-value">WiFi + App vs Bluetooth</div>
+                            <div class="spec-label"><i class="fas fa-wifi"></i> Smart Control:</div>
+                            <div class="spec-value">Wi-Fi App vs Remote Only</div>
                         </div>
                         <div class="spec-item">
-                            <div class="spec-label"><i class="fas fa-thermometer-half"></i> Isitish:</div>
-                            <div class="spec-value">-15°C gacha vs -10°C gacha</div>
+                            <div class="spec-label"><i class="fas fa-snowflake"></i> Low-Temp Heating:</div>
+                            <div class="spec-value">Down to -15°C vs -10°C</div>
                         </div>
                         <div class="spec-item">
-                            <div class="spec-label"><i class="fas fa-dollar-sign"></i> Narxi:</div>
-                            <div class="spec-value">$450 vs $550</div>
+                            <div class="spec-label"><i class="fas fa-tag"></i> Average Price:</div>
+                            <div class="spec-value" style="color: #22c55e;">$450 vs $550</div>
                         </div>
                     </div>
                     
                     <div class="energy-rating">
-                        <div class="energy-label">Energiya klassi:</div>
+                        <span class="energy-label">Eco-Score:</span>
                         <div class="energy-stars">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="far fa-star"></i>
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
                         </div>
                     </div>
                     
                     <div class="noise-level">
-                        <span>Shovqin darajasi:</span>
-                        <div class="noise-bar">
-                            <div class="noise-fill" style="background: #FF9800; width: 60%;"></div>
+                        <div class="noise-meta">
+                            <span>Noise Level (Ultra Quiet)</span>
+                            <span>23 dB</span>
                         </div>
-                        <span>23 dB</span>
+                        <div class="noise-bar">
+                            <div class="noise-fill" style="background: #FF9800; width: 25%;"></div>
+                        </div>
                     </div>
                     
                     <div class="verdict">
-                        <h4><i class="fas fa-trophy"></i> Test G'olibi: Samsung</h4>
-                        <p>Samsung smart funksiyalari va energiya tejamkorligi bilan g'olib. Gree esa narxi va sovutish samaradorligi bilan.</p>
+                        <h4><i class="fas fa-award"></i> Winner: Samsung</h4>
+                        <p>Samsung takes the crown with superior multi-directional air distribution (WindFree) and robust smart ecosystem integration.</p>
                     </div>
                     
-                    <a href="gree-samsung.html"><button class="btn"><i class="fas fa-chart-bar"></i> Batafsil Solishtirishni Ko'rish</button></a>
+                    <a href="gree-samsung.html" class="btn"><i class="fas fa-chart-pie"></i> View Detailed Breakdown</a>
                 </div>
             </div>
         </div>
 
-        <!-- Adsense In-Article -->
+        <!-- Ad Break -->
         <div class="ad-unit">
-            <div class="ad-badge">Tavsiya etilgan</div>
-            <h3>Maishiy texnika ehtiyot qismlari</h3>
-            <p>Filtrlar, lampochkalar, datchiklar va boshqa almashtirish qismlari</p>
+            <div class="ad-badge">Sponsored</div>
+            <h3>Verified Authorized Retailers</h3>
+            <p style="color: var(--text-muted); margin-top: 6px;">Find authentic stores near your location offering full legal warranties.</p>
         </div>
 
+        <!-- Categories Section -->
         <div class="appliance-categories">
-            <h2 style="text-align: center; color: #6A1B9A; margin-bottom: 40px;">Maishiy Texnika Turlari</h2>
+            <h2 style="text-align: center; color: var(--secondary); font-size: 2rem; font-weight: 800;">Browse by Category</h2>
             
             <div class="category-grid">
                 <div class="category-card fridge">
-                    <div class="category-icon-small">
-                        <i class="fas fa-snowflake"></i>
-                    </div>
-                    <h3>❄️ Muzlatgichlar</h3>
-                    <p style="margin: 15px 0;">No-frost, Side-by-Side, Inverter texnologiya</p>
-                    <div style="color: #9C27B0; font-weight: bold;">
-                        <i class="fas fa-star"></i> Samsung, Artel, LG, Bosch
-                    </div>
+                    <div class="category-icon-small" style="color: #2196F3;"><i class="fas fa-snowflake"></i></div>
+                    <h3 style="font-size: 1.2rem; margin-bottom: 8px;">Refrigerators</h3>
+                    <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 16px;">Side-by-side, French door, and smart compact model benchmarks.</p>
+                    <div style="font-size: 0.85rem; color: var(--primary); font-weight: 700;">42+ Models Tested</div>
                 </div>
                 
                 <div class="category-card washing">
-                    <div class="category-icon-small">
-                        <i class="fas fa-tint"></i>
-                    </div>
-                    <h3>🧼 Kir Yuvish Mashinalari</h3>
-                    <p style="margin: 15px 0;">Front-load, Top-load, Steam yuvish</p>
-                    <div style="color: #9C27B0; font-weight: bold;">
-                        <i class="fas fa-star"></i> LG, Samsung, Bosch, Artel
-                    </div>
+                    <div class="category-icon-small" style="color: #4CAF50;"><i class="fas fa-soap"></i></div>
+                    <h3 style="font-size: 1.2rem; margin-bottom: 8px;">Laundry</h3>
+                    <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 16px;">Front-load washing machines and energy-efficient dryers.</p>
+                    <div style="font-size: 0.85rem; color: var(--primary); font-weight: 700;">30+ Models Tested</div>
                 </div>
                 
                 <div class="category-card ac">
-                    <div class="category-icon-small">
-                        <i class="fas fa-wind"></i>
-                    </div>
-                    <h3>🌬️ Konditsionerlar</h3>
-                    <p style="margin: 15px 0;">Inverter, Smart, Havoni tozalash</p>
-                    <div style="color: #9C27B0; font-weight: bold;">
-                        <i class="fas fa-star"></i> Gree, Samsung, LG, Midea
-                    </div>
+                    <div class="category-icon-small" style="color: #FF9800;"><i class="fas fa-wind"></i></div>
+                    <h3 style="font-size: 1.2rem; margin-bottom: 8px;">Climate Control</h3>
+                    <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 16px;">Inverter ACs and split-system seasonal power usage analytics.</p>
+                    <div style="font-size: 0.85rem; color: var(--primary); font-weight: 700;">18+ Models Tested</div>
                 </div>
                 
                 <div class="category-card tv">
-                    <div class="category-icon-small">
-                        <i class="fas fa-tv"></i>
-                    </div>
-                    <h3>📺 Televizorlar</h3>
-                    <p style="margin: 15px 0;">OLED, QLED, Smart TV, 4K/8K</p>
-                    <div style="color: #9C27B0; font-weight: bold;">
-                        <i class="fas fa-star"></i> Samsung, LG, Sony, Artel
-                    </div>
+                    <div class="category-icon-small" style="color: #F44336;"><i class="fas fa-tv"></i></div>
+                    <h3 style="font-size: 1.2rem; margin-bottom: 8px;">Televisions</h3>
+                    <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 16px;">Battle of the displays: QLED, OLED, and Mini-LED Smart TVs.</p>
+                    <div style="font-size: 0.85rem; color: var(--primary); font-weight: 700;">55+ Models Tested</div>
                 </div>
             </div>
         </div>
 
+        <!-- Brand Rank Table alternative -->
         <div class="brand-comparison">
-            <h3 style="color: #6A1B9A; margin-bottom: 25px; text-align: center;"><i class="fas fa-crown"></i> Maishiy Texnika Brendlari Reytingi</h3>
+            <h3 style="color: var(--secondary); margin-bottom: 24px; font-size: 1.5rem; font-weight: 800; text-align: center;"><i class="fas fa-crown" style="color: #FFD700;"></i> Global Brand Reliability Ratings</h3>
             
             <div class="brand-row">
                 <div class="brand-info">
-                    <div style="background: #9C27B0; color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
-                        <i class="fas fa-snowflake"></i>
-                    </div>
+                    <div class="brand-avatar" style="background: #3b82f6;"><i class="fab fa-samsung"></i></div>
                     <div>
-                        <div style="font-weight: bold;">Samsung</div>
-                        <div style="font-size: 0.9rem; color: #666;">Smart funksiyalar, dizayn</div>
+                        <div style="font-weight: 700;">Samsung</div>
+                        <div style="font-size: 0.85rem; color: var(--text-muted);">Leader in smart ecosystem integration and design</div>
                     </div>
                 </div>
-                <div class="brand-rating">4.7/5</div>
+                <div class="brand-rating">4.8 / 5</div>
             </div>
             
             <div class="brand-row">
                 <div class="brand-info">
-                    <div style="background: #2196F3; color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
-                        <i class="fas fa-tint"></i>
-                    </div>
+                    <div class="brand-avatar" style="background: #ef4444;"><i class="fas fa-shield-alt"></i></div>
                     <div>
-                        <div style="font-weight: bold;">LG</div>
-                        <div style="font-size: 0.9rem; color: #666;">Ishonchlilik, ko'p funksiyalar</div>
+                        <div style="font-weight: 700;">Bosch</div>
+                        <div style="font-size: 0.85rem; color: var(--text-muted);">Premium German build quality and long-term endurance</div>
                     </div>
                 </div>
-                <div class="brand-rating">4.5/5</div>
+                <div class="brand-rating">4.7 / 5</div>
             </div>
             
             <div class="brand-row">
                 <div class="brand-info">
-                    <div style="background: #4CAF50; color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
-                        <i class="fas fa-home"></i>
-                    </div>
+                    <div class="brand-avatar" style="background: #ec4899;"><i class="fas fa-gem"></i></div>
                     <div>
-                        <div style="font-weight: bold;">Artel</div>
-                        <div style="font-size: 0.9rem; color: #666;">Narx-sifat, mahalliy servis</div>
+                        <div style="font-weight: 700;">LG</div>
+                        <div style="font-size: 0.85rem; color: var(--text-muted);">Top-tier motor lifespans and ergonomic features</div>
                     </div>
                 </div>
-                <div class="brand-rating">4.3/5</div>
+                <div class="brand-rating">4.5 / 5</div>
             </div>
-            
+
             <div class="brand-row">
                 <div class="brand-info">
-                    <div style="background: #FF9800; color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
-                        <i class="fas fa-cogs"></i>
-                    </div>
+                    <div class="brand-avatar" style="background: #a855f7;"><i class="fas fa-store"></i></div>
                     <div>
-                        <div style="font-weight: bold;">Bosch</div>
-                        <div style="font-size: 0.9rem; color: #666;">Sifat, uzoq muddatli ishlash</div>
+                        <div style="font-weight: 700;">Artel</div>
+                        <div style="font-size: 0.85rem; color: var(--text-muted);">Unmatched local service availability and budget pricing</div>
                     </div>
                 </div>
-                <div class="brand-rating">4.6/5</div>
+                <div class="brand-rating">4.3 / 5</div>
             </div>
         </div>
 
-        <div style="text-align: center; margin: 50px 0;">
-            <h2 style="color: #6A1B9A; margin-bottom: 20px;">Maishiy Texnika Tanlash Qo'llanmasi</h2>
-            <div style="max-width: 800px; margin: 0 auto; text-align: left;">
-                <div style="background: white; padding: 30px; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.05);">
-                    <h3 style="color: #6A1B9A; margin-bottom: 20px;"><i class="fas fa-lightbulb"></i> Qanday Maishiy Texnika Tanlash Kerak?</h3>
-                    
-                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-top: 25px;">
-                        <div style="background: #F3E5F5; padding: 20px; border-radius: 10px;">
-                            <h4 style="color: #6A1B9A;"><i class="fas fa-bolt"></i> Energiya Klassi</h4>
-                            <p>A++ va A+++ klass energiya tejamkor. Yiliga 50-100$ gacha tejashingiz mumkin.</p>
-                        </div>
-                        
-                        <div style="background: #E8F5E9; padding: 20px; border-radius: 10px;">
-                            <h4 style="color: #2E7D32;"><i class="fas fa-volume-up"></i> Shovqin Darajasi</h4>
-                            <p>Muzlatgich uchun 40 dB dan past, konditsioner uchun 25 dB dan past shovqin qulay.</p>
-                        </div>
-                        
-                        <div style="background: #E3F2FD; padding: 20px; border-radius: 10px;">
-                            <h4 style="color: #1565C0;"><i class="fas fa-wrench"></i> Servis va Kafolat</h4>
-                            <p>Mahalliy servis tarmog'i bo'lgan brendlarni tanlang. Kamida 2 yil kafolat talab qiling.</p>
-                        </div>
-                        
-                        <div style="background: #FFF3E0; padding: 20px; border-radius: 10px;">
-                            <h4 style="color: #EF6C00;"><i class="fas fa-expand"></i> O'lcham va Sig'im</h4>
-                            <p>4 kishilik oila uchun 300-350L muzlatgich, 7-8 kg kir yuvish mashinasi yetarli.</p>
-                        </div>
-                    </div>
+        <!-- Buyers Guide -->
+        <div class="guide-box">
+            <h3 style="color: var(--secondary); font-size: 1.5rem; font-weight: 800; display: flex; align-items: center; gap: 12px;">
+                <i class="fas fa-lightbulb" style="color: #FFB300;"></i> Smart Buyer's Guide
+            </h3>
+            
+            <div class="guide-grid">
+                <div class="guide-item" style="background: #eff6ff;">
+                    <h4 style="color: #1e40af; margin-bottom: 8px;"><i class="fas fa-bolt"></i> Efficiency Class</h4>
+                    <p style="font-size: 0.9rem; color: #1e3a8a;">Always look for A+++ or A++ labels. They reduce annual electricity costs by up to 40%.</p>
+                </div>
+                <div class="guide-item" style="background: #f0fdf4;">
+                    <h4 style="color: #166534; margin-bottom: 8px;"><i class="fas fa-volume-mute"></i> Noise Metrics</h4>
+                    <p style="font-size: 0.9rem; color: #14532d;">For bedrooms or open studio plans, look for appliances rated strictly under 40 dB.</p>
+                </div>
+                <div class="guide-item" style="background: #fff7ed;">
+                    <h4 style="color: #9a3412; margin-bottom: 8px;"><i class="fas fa-tools"></i> Local Service</h4>
+                    <p style="font-size: 0.9rem; color: #7c2d12;">Prioritize brands with dedicated, authorized local service centers and a minimum 2-year warranty.</p>
                 </div>
             </div>
         </div>
+
     </div>
 
     <footer>
         <div class="container">
             <div class="footer-container">
                 <div class="footer-column">
-                    <h3>Eng Yaxshisini Tanlang</h3>
-                    <p style="color: #E1BEE7; margin-bottom: 20px;">Biz haqiqiy odamlardan haqiqiy maslahatlar. Har bir mahsulotni o'zimiz sinab ko'ramiz.</p>
-                    
+                    <h3>About Us</h3>
+                    <p style="font-size: 0.9rem; color: #cbd5e1; line-height: 1.8;">"Choose the Best" runs hardware benchmarks and intensive field tests. We filter out marketing fluff to give you empirical data.</p>
                 </div>
                 
                 <div class="footer-column">
-                    <h3>Mashhur Solishtirishlar</h3>
+                    <h3>Navigation</h3>
                     <ul>
-                        <li><a href="smartphone-comparisons.html"><i class="fas fa-mobile-alt"></i> Smartfon Solishtirishlari</a></li>
-                        <li><a href="laptop-comparisons.html"><i class="fas fa-laptop"></i> Noutbuk Solishtirishlari</a></li>
-                        <li><a href="automotive-comparisons.html"><i class="fas fa-car"></i> Avtomobil Solishtirishlari</a></li>
-                        <li><a href="appliances-comparisons.html"><i class="fas fa-blender"></i> Maishiy Texnika Solishtirishlari</a></li>
+                        <li><a href="smartphone-comparisons.html"><i class="fas fa-chevron-right"></i> Smartphone Battles</a></li>
+                        <li><a href="laptop-comparisons.html"><i class="fas fa-chevron-right"></i> Laptop Rankings</a></li>
+                        <li><a href="automotive-comparisons.html"><i class="fas fa-chevron-right"></i> Auto Comparisons</a></li>
+                        <li><a href="appliances-comparisons.html"><i class="fas fa-chevron-right"></i> Home Appliances</a></li>
                     </ul>
                 </div>
                 
                 <div class="footer-column">
-                    <h3>Yordam</h3>
+                    <h3>Helpful Links</h3>
                     <ul>
-                        <li><a href="how-to-choose.html"><i class="fas fa-question-circle"></i> Qanday Tanlash Kerak?</a></li>
-                        <li><a href="independence.html"><i class="fas fa-shopping-cart"></i> Mustaqillik</a></li>
-                        <li><a href="contact.html"><i class="fas fa-bell"></i> Bog'lanish</a></li>
-                        <li><a href="sitemap.html"><i class="fas fa-newspaper"></i> Sayt Xaritasi</a></li>
+                        <li><a href="how-to-choose.html"><i class="fas fa-question-circle"></i> Testing Methodology</a></li>
+                        <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact Us</a></li>
+                        <li><a href="sitemap.html"><i class="fas fa-sitemap"></i> Site Map</a></li>
                     </ul>
                 </div>
                 
                 <div class="footer-column">
-                    <h3>Aloqada bo'ling</h3>
-                    <ul>
-                        <li></i> abdullohmahmudov660@gmail.com</li>
-                        <li></i> +998 88 565 06 04</li>
-                        <li></i> Toshkent, O'zbekiston</li>
-                    </ul>
-                    <form style="margin-top: 20px;">
-                        <input type="email" placeholder="Email manzilingiz" style="padding: 10px; width: 100%; border-radius: 5px; border: none; margin-bottom: 10px; background: rgba(255,255,255,0.1); color: white;">
-                        <button type="submit" style="background: #9C27B0; color: white; border: none; padding: 10px; border-radius: 5px; width: 100%; cursor: pointer;">Obuna bo'lish</button>
+                    <h3>Stay Tuned</h3>
+                    <p style="font-size: 0.85rem; color: #cbd5e1; margin-bottom: 12px;">Get weekly deal alerts and hardware updates directly to your inbox:</p>
+                    <form id="subscribeForm">
+                        <input type="email" placeholder="Your email address..." required>
+                        <button type="submit" class="btn" style="width: 100%;">Subscribe Now</button>
                     </form>
+                    <div style="margin-top: 15px; font-size: 0.85rem; color: #e9d5ff;">
+                        <p><i class="fas fa-phone-alt"></i> +998 88 565 06 04</p>
+                        <p><i class="fas fa-map-marker-alt"></i> Tashkent, Uzbekistan</p>
+                    </div>
                 </div>
             </div>
             
             <div class="copyright">
-                <p>&copy; 2025-2026 Eng Yaxshisini Tanlang. Barcha huquqlar himoyalangan.</p>
-                <p style="margin-top: 5px;">Biz haqiqiy testlar - haqiqiy tavsiyalar</p>
+                <p>&copy; 2025-2026 Choose the Best. All rights reserved.</p>
+                <p style="margin-top: 6px; font-size: 0.8rem; opacity: 0.7;">Independent consumer analytics portal.</p>
             </div>
         </div>
     </footer>
 
     <script>
-        // Mobile menu toggle
-        document.getElementById('mobileMenuBtn').addEventListener('click', function() {
-            document.getElementById('mainNav').classList.toggle('active');
+        // Mobile navigation control
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mainNav = document.getElementById('mainNav');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mainNav.classList.toggle('active');
+            const icon = mobileMenuBtn.querySelector('i');
+            if(mainNav.classList.contains('active')) {
+                icon.className = 'fas fa-times';
+            } else {
+                icon.className = 'fas fa-bars';
+            }
         });
-        
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                if(this.getAttribute('href') === '#') return;
-                
-                e.preventDefault();
-                
-                const targetId = this.getAttribute('href');
-                const targetElement = document.querySelector(targetId);
-                
-                if(targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 80,
-                        behavior: 'smooth'
-                    });
-                    
-                    // Close mobile menu if open
-                    document.getElementById('mainNav').classList.remove('active');
-                }
-            });
-        });
-        
-        // Form submission
-        document.querySelector('form').addEventListener('submit', function(e) {
+
+        // Form subscription UX feedback
+        document.getElementById('subscribeForm').addEventListener('submit', function(e) {
             e.preventDefault();
-            const email = this.querySelector('input[type="email"]').value;
-            if(email) {
-                alert('Maishiy texnika yangiliklari obunangiz qabul qilindi! Rahmat.');
+            const emailInput = this.querySelector('input[type="email"]');
+            if(emailInput.value) {
+                alert(`Thank you! ${emailInput.value} has been successfully registered. Stay tuned for our upcoming expert reviews.`);
                 this.reset();
             }
         });
-        
-              
-        // Animate noise bars on scroll
-        const observerOptions = {
-            threshold: 0.2,
-            rootMargin: '0px 0px -50px 0px'
-        };
-        
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const noiseFills = entry.target.querySelectorAll('.noise-fill');
-                    noiseFills.forEach(fill => {
-                        const width = fill.style.width;
-                        fill.style.width = '0';
-                        setTimeout(() => {
-                            fill.style.width = width;
-                        }, 300);
-                    });
+
+        // Smooth scroll bar threshold animation
+        const animateNoiseBars = () => {
+            const noiseBars = document.querySelectorAll('.noise-fill');
+            noiseBars.forEach(bar => {
+                const rect = bar.getBoundingClientRect();
+                if(rect.top < window.innerHeight && rect.bottom >= 0) {
+                    if(bar.style.width === '0px' || bar.style.width === '') {
+                        const targetWidth = bar.parentElement.previousElementSibling.querySelector('span:last-child').textContent;
+                        const dbValue = parseInt(targetWidth);
+                        bar.style.width = (dbValue * 1.8) + '%'; 
+                    }
                 }
             });
-        }, observerOptions);
-        
-        // Observe comparison cards for animation
-        document.querySelectorAll('.comparison-card').forEach(el => {
-            el.style.opacity = '0';
-            el.style.transform = 'translateY(20px)';
-            el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-            observer.observe(el);
-            
-            // Animate on load
-            setTimeout(() => {
-                el.style.opacity = '1';
-                el.style.transform = 'translateY(0)';
-            }, 100);
+        };
+
+        window.addEventListener('scroll', animateNoiseBars);
+        window.addEventListener('load', () => {
+            setTimeout(animateNoiseBars, 300);
         });
     </script>
 </body>
