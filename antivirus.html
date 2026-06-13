@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="uz">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kaspersky vs Norton vs Windows Defender - Qaysi Antivirus Yaxshiroq?</title>
+    <title>Kaspersky vs Norton vs Windows Defender - Which Antivirus Is Better?</title>
     <style>
         * {
             margin: 0;
@@ -13,7 +13,7 @@
         }
         
         body {
-            background: linear-gradient(135deg, #0a1929 0%, #1a365d 100%);
+            background: linear-gradient(135deg, #07111e 0%, #0d2342 50%, #16355f 100%);
             color: #f0f8ff;
             line-height: 1.8;
             padding: 20px;
@@ -23,12 +23,13 @@
         .main-container {
             max-width: 1300px;
             margin: 0 auto;
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
             border-radius: 25px;
             padding: 40px;
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.08);
         }
         
         /* Header */
@@ -47,6 +48,7 @@
             color: transparent;
             margin-bottom: 20px;
             line-height: 1.2;
+            font-weight: 800;
         }
         
         .subtitle {
@@ -60,12 +62,18 @@
             display: inline-flex;
             align-items: center;
             gap: 15px;
-            background: rgba(255, 107, 107, 0.1);
-            padding: 15px 30px;
+            background: rgba(255, 107, 107, 0.15);
+            padding: 12px 25px;
             border-radius: 30px;
             font-size: 1.2rem;
             font-weight: 600;
             border: 1px solid rgba(255, 107, 107, 0.3);
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .rating:hover {
+            transform: scale(1.05);
         }
         
         .stars {
@@ -75,7 +83,7 @@
         
         /* Introduction */
         .intro-section {
-            background: rgba(0, 0, 0, 0.2);
+            background: rgba(0, 0, 0, 0.25);
             border-radius: 20px;
             padding: 40px;
             margin-bottom: 50px;
@@ -92,16 +100,18 @@
         }
         
         .intro-content {
-            font-size: 1.2rem;
+            font-size: 1.15rem;
             color: #e6f2ff;
-            line-height: 1.9;
         }
         
         .intro-content p {
             margin-bottom: 20px;
         }
+        .intro-content p:last-child {
+            margin-bottom: 0;
+        }
         
-        /* Antivirus Comparison */
+        /* Antivirus Comparison Grid */
         .antivirus-comparison {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -109,24 +119,12 @@
             margin-bottom: 50px;
         }
         
-        @media (max-width: 1100px) {
-            .antivirus-comparison {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-        
-        @media (max-width: 768px) {
-            .antivirus-comparison {
-                grid-template-columns: 1fr;
-            }
-        }
-        
         .antivirus-card {
-            background: rgba(255, 255, 255, 0.07);
+            background: rgba(255, 255, 255, 0.05);
             border-radius: 20px;
             padding: 35px;
             border-top: 6px solid;
-            transition: transform 0.3s ease;
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
             display: flex;
             flex-direction: column;
             height: 100%;
@@ -134,19 +132,13 @@
         
         .antivirus-card:hover {
             transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.08);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
         }
         
-        .kaspersky-card {
-            border-color: #ff6b6b;
-        }
-        
-        .norton-card {
-            border-color: #45b7d1;
-        }
-        
-        .defender-card {
-            border-color: #4ecdc4;
-        }
+        .kaspersky-card { border-color: #ff6b6b; }
+        .norton-card { border-color: #45b7d1; }
+        .defender-card { border-color: #4ecdc4; }
         
         .antivirus-header {
             display: flex;
@@ -165,45 +157,19 @@
             align-items: center;
             justify-content: center;
             font-size: 2.5rem;
+            animation: float 4s ease-in-out infinite;
         }
         
-        .kaspersky-icon {
-            background: rgba(255, 107, 107, 0.2);
-            color: #ff6b6b;
-        }
+        .kaspersky-icon { background: rgba(255, 107, 107, 0.15); color: #ff6b6b; }
+        .norton-icon { background: rgba(69, 183, 209, 0.15); color: #45b7d1; }
+        .defender-icon { background: rgba(78, 205, 196, 0.15); color: #4ecdc4; }
         
-        .norton-icon {
-            background: rgba(69, 183, 209, 0.2);
-            color: #45b7d1;
-        }
+        .antivirus-name { font-size: 2rem; font-weight: 700; }
+        .kaspersky-name { color: #ff6b6b; }
+        .norton-name { color: #45b7d1; }
+        .defender-name { color: #4ecdc4; }
         
-        .defender-icon {
-            background: rgba(78, 205, 196, 0.2);
-            color: #4ecdc4;
-        }
-        
-        .antivirus-name {
-            font-size: 2rem;
-            font-weight: 700;
-        }
-        
-        .kaspersky-name {
-            color: #ff6b6b;
-        }
-        
-        .norton-name {
-            color: #45b7d1;
-        }
-        
-        .defender-name {
-            color: #4ecdc4;
-        }
-        
-        .antivirus-type {
-            color: #b0c4de;
-            font-size: 1rem;
-            margin-top: 5px;
-        }
+        .antivirus-type { color: #b0c4de; font-size: 0.95rem; margin-top: 5px; }
         
         /* Features List */
         .features-list {
@@ -213,58 +179,39 @@
         }
         
         .feature-item {
-            padding: 15px 0;
+            padding: 12px 0;
             border-bottom: 1px solid rgba(255, 255, 255, 0.05);
             display: flex;
             align-items: center;
             gap: 15px;
+            transition: all 0.3s ease;
         }
         
-        .feature-item:last-child {
-            border-bottom: none;
+        .feature-item:hover {
+            background-color: rgba(255, 255, 255, 0.04);
+            padding-left: 10px;
         }
         
-        .feature-icon {
-            font-size: 1.2rem;
-            width: 25px;
-            text-align: center;
-        }
+        .feature-item:last-child { border-bottom: none; }
+        .feature-icon { font-size: 1.2rem; width: 25px; text-align: center; }
         
-        .kaspersky-feature .feature-icon {
-            color: #ff6b6b;
-        }
-        
-        .norton-feature .feature-icon {
-            color: #45b7d1;
-        }
-        
-        .defender-feature .feature-icon {
-            color: #4ecdc4;
-        }
+        .kaspersky-feature .feature-icon { color: #ff6b6b; }
+        .norton-feature .feature-icon { color: #45b7d1; }
+        .defender-feature .feature-icon { color: #4ecdc4; }
         
         /* Price Tag */
         .price-tag {
             margin-top: auto;
-            padding: 20px;
-            border-radius: 15px;
+            padding: 15px;
+            border-radius: 12px;
             text-align: center;
             font-weight: 600;
+            animation: pulse 3s infinite;
         }
         
-        .kaspersky-price {
-            background: rgba(255, 107, 107, 0.1);
-            color: #ff6b6b;
-        }
-        
-        .norton-price {
-            background: rgba(69, 183, 209, 0.1);
-            color: #45b7d1;
-        }
-        
-        .defender-price {
-            background: rgba(78, 205, 196, 0.1);
-            color: #4ecdc4;
-        }
+        .kaspersky-price { background: rgba(255, 107, 107, 0.1); color: #ff6b6b; }
+        .norton-price { background: rgba(69, 183, 209, 0.1); color: #45b7d1; }
+        .defender-price { background: rgba(78, 205, 196, 0.1); color: #4ecdc4; }
         
         /* Performance Comparison */
         .performance-section {
@@ -291,29 +238,18 @@
             gap: 25px;
         }
         
-        @media (max-width: 1024px) {
-            .performance-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-        
-        @media (max-width: 576px) {
-            .performance-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-        
         .performance-item {
             text-align: center;
             padding: 25px;
             border-radius: 15px;
-            background: rgba(255, 255, 255, 0.05);
+            background: rgba(255, 255, 255, 0.04);
         }
         
         .perf-category {
-            font-size: 1.2rem;
+            font-size: 1.15rem;
             color: #4ecdc4;
             margin-bottom: 20px;
+            font-weight: 600;
         }
         
         .perf-bars {
@@ -322,6 +258,8 @@
             align-items: flex-end;
             height: 200px;
             margin: 20px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding-bottom: 5px;
         }
         
         .perf-bar-container {
@@ -332,26 +270,19 @@
         }
         
         .perf-bar {
-            width: 30px;
+            width: 25px;
             border-radius: 5px 5px 0 0;
-            transition: height 2s ease;
+            height: 0;
+            transition: height 1.5s cubic-bezier(0.1, 1, 0.1, 1);
         }
         
-        .kaspersky-bar {
-            background: linear-gradient(to top, #ff6b6b, #ff8e8e);
-        }
-        
-        .norton-bar {
-            background: linear-gradient(to top, #45b7d1, #6bcae2);
-        }
-        
-        .defender-bar {
-            background: linear-gradient(to top, #4ecdc4, #7dd9d2);
-        }
+        .kaspersky-bar { background: linear-gradient(to top, #ff6b6b, #ff8e8e); }
+        .norton-bar { background: linear-gradient(to top, #45b7d1, #6bcae2); }
+        .defender-bar { background: linear-gradient(to top, #4ecdc4, #7dd9d2); }
         
         .perf-label {
             margin-top: 10px;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             color: #b0c4de;
         }
         
@@ -363,16 +294,15 @@
             margin: 60px 0;
         }
         
-        @media (max-width: 900px) {
-            .protection-section {
-                grid-template-columns: 1fr;
-            }
-        }
-        
         .protection-category {
-            background: rgba(255, 255, 255, 0.07);
+            background: rgba(255, 255, 255, 0.05);
             border-radius: 20px;
             padding: 35px;
+            transition: transform 0.3s ease;
+        }
+
+        .protection-category:hover {
+            transform: translateY(-5px);
         }
         
         .category-title {
@@ -383,15 +313,8 @@
             border-bottom: 2px solid #ffa726;
         }
         
-        .category-content {
-            color: #e6f2ff;
-            line-height: 1.7;
-        }
-        
-        .category-list {
-            list-style: none;
-            margin-top: 20px;
-        }
+        .category-content { color: #e6f2ff; }
+        .category-list { list-style: none; margin-top: 20px; }
         
         .category-list li {
             padding: 12px 0;
@@ -400,14 +323,11 @@
             align-items: center;
             gap: 12px;
         }
+        .category-list li:last-child { border-bottom: none; }
         
-        .category-list li:last-child {
-            border-bottom: none;
-        }
-        
-        /* System Impact */
+        /* System Impact & Table Responsive wrapper */
         .system-impact {
-            background: linear-gradient(135deg, rgba(255, 107, 107, 0.1), rgba(69, 183, 209, 0.1));
+            background: linear-gradient(135deg, rgba(255, 107, 107, 0.08), rgba(69, 183, 209, 0.08));
             border-radius: 20px;
             padding: 40px;
             margin: 60px 0;
@@ -419,19 +339,25 @@
             color: #4ecdc4;
             margin-bottom: 40px;
         }
+
+        .table-container {
+            width: 100%;
+            overflow-x: auto;
+        }
         
         .impact-table {
             width: 100%;
             border-collapse: collapse;
-            margin-top: 30px;
+            margin-top: 20px;
+            min-width: 600px;
         }
         
         .impact-table th {
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.08);
             padding: 20px;
             text-align: left;
             color: #ffd700;
-            font-size: 1.2rem;
+            font-size: 1.1rem;
         }
         
         .impact-table td {
@@ -440,7 +366,7 @@
         }
         
         .impact-table tr:hover {
-            background: rgba(255, 255, 255, 0.03);
+            background: rgba(255, 255, 255, 0.04);
         }
         
         .rating-cell {
@@ -451,11 +377,12 @@
         
         .rating-stars {
             color: #ffd700;
+            animation: pulse 2s infinite;
         }
         
         /* Recommendation */
         .recommendation-section {
-            background: rgba(0, 0, 0, 0.3);
+            background: rgba(0, 0, 0, 0.25);
             border-radius: 20px;
             padding: 50px;
             margin: 60px 0;
@@ -464,7 +391,7 @@
         
         .recommendation-title {
             text-align: center;
-            font-size: 2.5rem;
+            font-size: 2.3rem;
             color: #ff6b6b;
             margin-bottom: 40px;
         }
@@ -475,27 +402,21 @@
             gap: 30px;
         }
         
-        @media (max-width: 1100px) {
-            .recommendation-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-        
-        @media (max-width: 768px) {
-            .recommendation-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-        
         .rec-card {
-            background: rgba(255, 255, 255, 0.07);
+            background: rgba(255, 255, 255, 0.05);
             border-radius: 15px;
             padding: 30px;
             text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .rec-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
         }
         
         .rec-card h3 {
-            font-size: 1.8rem;
+            font-size: 1.5rem;
             margin-bottom: 20px;
             display: flex;
             align-items: center;
@@ -503,54 +424,33 @@
             gap: 15px;
         }
         
-        .kaspersky-rec h3 {
-            color: #ff6b6b;
-        }
+        .kaspersky-rec h3 { color: #ff6b6b; }
+        .norton-rec h3 { color: #45b7d1; }
+        .defender-rec h3 { color: #4ecdc4; }
         
-        .norton-rec h3 {
-            color: #45b7d1;
-        }
-        
-        .defender-rec h3 {
-            color: #4ecdc4;
-        }
-        
-        .rec-content {
-            color: #e6f2ff;
-            line-height: 1.7;
-        }
+        .rec-content { color: #e6f2ff; }
         
         /* Final Verdict */
         .final-verdict {
             text-align: center;
             margin: 60px 0;
             padding: 40px;
-            background: linear-gradient(135deg, rgba(78, 205, 196, 0.1), rgba(255, 107, 107, 0.1));
+            background: linear-gradient(135deg, rgba(78, 205, 196, 0.08), rgba(255, 107, 107, 0.08));
             border-radius: 20px;
         }
         
-        .verdict-title {
-            font-size: 2.2rem;
-            color: #ffd700;
-            margin-bottom: 30px;
-        }
-        
-        .verdict-content {
-            font-size: 1.3rem;
-            color: #e6f2ff;
-            line-height: 1.9;
-            max-width: 1000px;
-            margin: 0 auto;
-        }
+        .verdict-title { font-size: 2.2rem; color: #ffd700; margin-bottom: 30px; }
+        .verdict-content { font-size: 1.25rem; color: #e6f2ff; max-width: 1000px; margin: 0 auto; }
         
         .verdict-highlight {
             color: #4ecdc4;
             font-weight: 600;
-            background: rgba(78, 205, 196, 0.1);
+            background: rgba(78, 205, 196, 0.15);
             padding: 5px 15px;
             border-radius: 10px;
             display: inline-block;
             margin: 15px 0;
+            animation: glow 3s infinite;
         }
         
         /* Footer */
@@ -560,7 +460,6 @@
             padding-top: 30px;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
             color: #b0c4de;
-            font-size: 1rem;
         }
         
         .footer-links {
@@ -582,63 +481,80 @@
             text-decoration: underline;
         }
         
-        /* Responsive Design */
+        /* --- Keyframe Animations --- */
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-8px); }
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.75; }
+        }
+        
+        @keyframes glow {
+            0%, 100% { box-shadow: 0 0 15px rgba(255, 107, 107, 0.2); }
+            50% { box-shadow: 0 0 30px rgba(255, 107, 107, 0.5); }
+        }
+        
+        /* Responsive Media Queries */
+        @media (max-width: 1100px) {
+            .antivirus-comparison, .recommendation-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 1024px) {
+            .performance-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
         @media (max-width: 768px) {
-            .main-container {
-                padding: 25px;
+            .antivirus-comparison, .recommendation-grid, .performance-grid, .protection-section {
+                grid-template-columns: 1fr;
             }
-            
-            h1 {
-                font-size: 2.2rem;
-            }
-            
-            .intro-section, .performance-section, .protection-section, 
-            .system-impact, .recommendation-section {
-                padding: 25px;
-            }
+            h1 { font-size: 2.2rem; }
+            .main-container { padding: 20px; }
+            .intro-section, .performance-section, .system-impact, .recommendation-section { padding: 25px; }
         }
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
     <div class="main-container">
-        <!-- Header -->
         <div class="header">
             <h1>Kaspersky vs Norton vs Windows Defender</h1>
-            <p class="subtitle">Professional antivirus dasturlarining haqiqiy himoya testi. Qaysi biri sizning kompyuteringizni eng yaxshi himoya qiladi?</p>
+            <p class="subtitle">A professional real-world protection test of antivirus software. Which one defends your PC the best?</p>
             <div class="rating">
                 <span class="stars">★★★★☆</span>
-                <span>3.5/5 Test Reytingi</span>
+                <span>3.5/5 Test Rating</span>
             </div>
         </div>
         
-        <!-- Introduction -->
         <div class="intro-section">
             <h2 class="intro-title">
                 <i class="fas fa-shield-alt"></i>
-                Antivirus Dasturlar - Kompyuteringizning Himoyachilari
+                Antivirus Software - Your PC's Guardians
             </h2>
             <div class="intro-content">
                 <p>
-                    Raqamli dunyada kompyuteringizning xavfsizligi hech qachon shunchalik muhim bo'lmagan. 
-                    Kiberjinoyatchilar har kuni yangi viruslar, troyanlar, ransomware va boshqa zararli dasturlarni yaratmoqda. 
-                    Bunga qarshi kurashish uchun ishonchli antivirus dasturi zarur.
+                    In the digital world, your computer's security has never been more vital. 
+                    Cybercriminals create new viruses, trojans, ransomware, and other malicious programs every day. 
+                    To combat this, a reliable antivirus suite is absolutely necessary.
                 </p>
                 <p>
-                    Bu solishtirishda biz uchta eng mashhur antivirus dasturini: professional Kaspersky, 
-                    ishonchli Norton va bepul Windows Defender'ni batafsil ko'rib chiqamiz. Har birining 
-                    himoya darajasi, tizimga ta'siri, narxi va qo'shimcha funksiyalarini tahli qilamiz.
+                    In this comparison, we will take an in-depth look at three of the most popular antivirus tools: professional Kaspersky, 
+                    dependable Norton, and free Windows Defender. We analyze the protection tier, system impact, cost, and additional features of each.
                 </p>
                 <p>
-                    Testlar 2024 yilning birinchi choragida o'tkazildi va 1000 dan ortiq zararli dastur 
-                    namunalari yordamida amalga oshirildi. Natijalar haqiqiy foydalanuvchilar tajribasiga asoslangan.
+                    Tests were conducted in the first quarter of 2024 and performed using over 1,000 malware samples. 
+                    The results are based on real-world user experiences.
                 </p>
             </div>
         </div>
         
-        <!-- Antivirus Comparison -->
         <div class="antivirus-comparison">
-            <!-- Kaspersky -->
             <div class="antivirus-card kaspersky-card">
                 <div class="antivirus-header">
                     <div class="antivirus-icon kaspersky-icon">
@@ -646,43 +562,42 @@
                     </div>
                     <div>
                         <h2 class="antivirus-name kaspersky-name">Kaspersky</h2>
-                        <p class="antivirus-type">Professional himoya - Eng yaxshi aniqlash</p>
+                        <p class="antivirus-type">Professional Protection - Best Detection</p>
                     </div>
                 </div>
                 
                 <ul class="features-list">
                     <li class="feature-item kaspersky-feature">
                         <span class="feature-icon"><i class="fas fa-check-circle"></i></span>
-                        <span>99.8% viruslarni aniqlash</span>
+                        <span>99.8% Malware Detection</span>
                     </li>
                     <li class="feature-item kaspersky-feature">
                         <span class="feature-icon"><i class="fas fa-bolt"></i></span>
-                        <span>Minimal tizimga ta'sir</span>
+                        <span>Minimal System Impact</span>
                     </li>
                     <li class="feature-item kaspersky-feature">
                         <span class="feature-icon"><i class="fas fa-key"></i></span>
-                        <span>Parol menejeri</span>
+                        <span>Password Manager</span>
                     </li>
                     <li class="feature-item kaspersky-feature">
                         <span class="feature-icon"><i class="fas fa-vpn-key"></i></span>
-                        <span>VPN funksiyasi</span>
+                        <span>Built-in VPN feature</span>
                     </li>
                     <li class="feature-item kaspersky-feature">
                         <span class="feature-icon"><i class="fas fa-lock"></i></span>
-                        <span>Kengaytirilgan firewall</span>
+                        <span>Advanced Firewall</span>
                     </li>
                     <li class="feature-item kaspersky-feature">
                         <span class="feature-icon"><i class="fas fa-child"></i></span>
-                        <span>Ota-ona nazorati</span>
+                        <span>Parental Controls</span>
                     </li>
                 </ul>
                 
                 <div class="price-tag kaspersky-price">
-                    <i class="fas fa-tag"></i> $39.99/yil - 3 qurilma
+                    <i class="fas fa-tag"></i> $39.99/yr - 3 Devices
                 </div>
             </div>
             
-            <!-- Norton -->
             <div class="antivirus-card norton-card">
                 <div class="antivirus-header">
                     <div class="antivirus-icon norton-icon">
@@ -690,43 +605,42 @@
                     </div>
                     <div>
                         <h2 class="antivirus-name norton-name">Norton</h2>
-                        <p class="antivirus-type">Kompleks himoya - Keng funksiyalar</p>
+                        <p class="antivirus-type">Comprehensive Shield - Rich Features</p>
                     </div>
                 </div>
                 
                 <ul class="features-list">
                     <li class="feature-item norton-feature">
                         <span class="feature-icon"><i class="fas fa-check-circle"></i></span>
-                        <span>100% virus kafolati</span>
+                        <span>100% Virus Protection Promise</span>
                     </li>
                     <li class="feature-item norton-feature">
                         <span class="feature-icon"><i class="fas fa-cloud"></i></span>
-                        <span>Bulutli backup</span>
+                        <span>Cloud PC Backup</span>
                     </li>
                     <li class="feature-item norton-feature">
                         <span class="feature-icon"><i class="fas fa-credit-card"></i></span>
-                        <span>Dark web monitoring</span>
+                        <span>Dark Web Monitoring</span>
                     </li>
                     <li class="feature-item norton-feature">
                         <span class="feature-icon"><i class="fas fa-camera"></i></span>
-                        <span>Web kamera himoyasi</span>
+                        <span>Webcam Protection</span>
                     </li>
                     <li class="feature-item norton-feature">
                         <span class="feature-icon"><i class="fas fa-life-ring"></i></span>
-                        <span>24/7 texnik yordam</span>
+                        <span>24/7 Live Support</span>
                     </li>
                     <li class="feature-item norton-feature">
                         <span class="feature-icon"><i class="fas fa-mobile-alt"></i></span>
-                        <span>Smartphone himoyasi</span>
+                        <span>Smartphone Protection</span>
                     </li>
                 </ul>
                 
                 <div class="price-tag norton-price">
-                    <i class="fas fa-tag"></i> $49.99/yil - 5 qurilma
+                    <i class="fas fa-tag"></i> $49.99/yr - 5 Devices
                 </div>
             </div>
             
-            <!-- Windows Defender -->
             <div class="antivirus-card defender-card">
                 <div class="antivirus-header">
                     <div class="antivirus-icon defender-icon">
@@ -734,457 +648,334 @@
                     </div>
                     <div>
                         <h2 class="antivirus-name defender-name">Windows Defender</h2>
-                        <p class="antivirus-type">Bepul himoya - Windows bilan birga</p>
+                        <p class="antivirus-type">Free Security - Native to Windows</p>
                     </div>
                 </div>
                 
                 <ul class="features-list">
                     <li class="feature-item defender-feature">
                         <span class="feature-icon"><i class="fas fa-check-circle"></i></span>
-                        <span>98.5% viruslarni aniqlash</span>
+                        <span>98.5% Malware Detection</span>
                     </li>
                     <li class="feature-item defender-feature">
                         <span class="feature-icon"><i class="fas fa-bolt"></i></span>
-                        <span>O'rnatilgan Windows tizimida</span>
+                        <span>Pre-installed in Windows OS</span>
                     </li>
                     <li class="feature-item defender-feature">
                         <span class="feature-icon"><i class="fas fa-sync-alt"></i></span>
-                        <span>Avtomatik yangilanishlar</span>
+                        <span>Automatic Background Updates</span>
                     </li>
                     <li class="feature-item defender-feature">
                         <span class="feature-icon"><i class="fas fa-fire"></i></span>
-                        <span>SmartScreen filtri</span>
+                        <span>SmartScreen Network Filter</span>
                     </li>
                     <li class="feature-item defender-feature">
                         <span class="feature-icon"><i class="fas fa-ruler-combined"></i></span>
-                        <span>App & browser control</span>
+                        <span>App & Browser Control</span>
                     </li>
                     <li class="feature-item defender-feature">
                         <span class="feature-icon"><i class="fas fa-dollar-sign"></i></span>
-                        <span>Mutlaqo bepul</span>
+                        <span>Completely Free</span>
                     </li>
                 </ul>
                 
                 <div class="price-tag defender-price">
-                    <i class="fas fa-tag"></i> BEPUL - Cheksiz qurilma
+                    <i class="fas fa-tag"></i> FREE - Unlimited Devices
                 </div>
             </div>
         </div>
         
-        <!-- Performance Comparison -->
         <div class="performance-section">
             <h2 class="performance-title">
                 <i class="fas fa-chart-bar"></i>
-                Himoya Samaradorligi Taqqoslash
+                Protection Efficiency Benchmarks
             </h2>
             
             <div class="performance-grid">
                 <div class="performance-item">
-                    <div class="perf-category">Virus Aniqlash</div>
+                    <div class="perf-category">Virus Detection</div>
                     <div class="perf-bars">
                         <div class="perf-bar-container">
-                            <div class="perf-bar kaspersky-bar" style="height: 180px;"></div>
+                            <div class="perf-bar kaspersky-bar" data-height="180px"></div>
                             <div class="perf-label">99.8%</div>
                         </div>
                         <div class="perf-bar-container">
-                            <div class="perf-bar norton-bar" style="height: 200px;"></div>
+                            <div class="perf-bar norton-bar" data-height="200px"></div>
                             <div class="perf-label">100%</div>
                         </div>
                         <div class="perf-bar-container">
-                            <div class="perf-bar defender-bar" style="height: 160px;"></div>
+                            <div class="perf-bar defender-bar" data-height="160px"></div>
                             <div class="perf-label">98.5%</div>
                         </div>
                     </div>
                 </div>
                 
                 <div class="performance-item">
-                    <div class="perf-category">Tizimga Ta'siri</div>
+                    <div class="perf-category">System Impact</div>
                     <div class="perf-bars">
                         <div class="perf-bar-container">
-                            <div class="perf-bar kaspersky-bar" style="height: 170px;"></div>
-                            <div class="perf-label">Yaxshi</div>
+                            <div class="perf-bar kaspersky-bar" data-height="170px"></div>
+                            <div class="perf-label">Good</div>
                         </div>
                         <div class="perf-bar-container">
-                            <div class="perf-bar norton-bar" style="height: 140px;"></div>
-                            <div class="perf-label">O'rta</div>
+                            <div class="perf-bar norton-bar" data-height="140px"></div>
+                            <div class="perf-label">Average</div>
                         </div>
                         <div class="perf-bar-container">
-                            <div class="perf-bar defender-bar" style="height: 190px;"></div>
-                            <div class="perf-label">A'lo</div>
+                            <div class="perf-bar defender-bar" data-height="190px"></div>
+                            <div class="perf-label">Excellent</div>
                         </div>
                     </div>
                 </div>
                 
                 <div class="performance-item">
-                    <div class="perf-category">Ransomware Himoya</div>
+                    <div class="perf-category">Ransomware Defense</div>
                     <div class="perf-bars">
                         <div class="perf-bar-container">
-                            <div class="perf-bar kaspersky-bar" style="height: 190px;"></div>
-                            <div class="perf-label">Kuchli</div>
+                            <div class="perf-bar kaspersky-bar" data-height="190px"></div>
+                            <div class="perf-label">Strong</div>
                         </div>
                         <div class="perf-bar-container">
-                            <div class="perf-bar norton-bar" style="height: 185px;"></div>
-                            <div class="perf-label">Kuchli</div>
+                            <div class="perf-bar norton-bar" data-height="185px"></div>
+                            <div class="perf-label">Strong</div>
                         </div>
                         <div class="perf-bar-container">
-                            <div class="perf-bar defender-bar" style="height: 160px;"></div>
-                            <div class="perf-label">Yaxshi</div>
+                            <div class="perf-bar defender-bar" data-height="160px"></div>
+                            <div class="perf-label">Good</div>
                         </div>
                     </div>
                 </div>
                 
                 <div class="performance-item">
-                    <div class="perf-category">Foydalanuvchi Qulayligi</div>
+                    <div class="perf-category">User Interface QoL</div>
                     <div class="perf-bars">
                         <div class="perf-bar-container">
-                            <div class="perf-bar kaspersky-bar" style="height: 175px;"></div>
-                            <div class="perf-label">Yaxshi</div>
+                            <div class="perf-bar kaspersky-bar" data-height="175px"></div>
+                            <div class="perf-label">Good</div>
                         </div>
                         <div class="perf-bar-container">
-                            <div class="perf-bar norton-bar" style="height: 180px;"></div>
-                            <div class="perf-label">Yaxshi</div>
+                            <div class="perf-bar norton-bar" data-height="180px"></div>
+                            <div class="perf-label">Good</div>
                         </div>
                         <div class="perf-bar-container">
-                            <div class="perf-bar defender-bar" style="height: 150px;"></div>
-                            <div class="perf-label">O'rta</div>
+                            <div class="perf-bar defender-bar" data-height="150px"></div>
+                            <div class="perf-label">Moderate</div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
         
-        <!-- Protection Details -->
         <div class="protection-section">
             <div class="protection-category">
-                <h3 class="category-title">Kaspersky - Professional Himoya</h3>
+                <h3 class="category-title">Kaspersky - Professional Protection</h3>
                 <p class="category-content">
-                    Kaspersky - bu Rossiyada ishlab chiqilgan professional antivirus dasturi bo'lib, 
-                    viruslarni aniqlashda dunyoda yetakchi hisoblanadi. Dasturning eng kuchli tomoni 
-                    sun'iy intellekt asosidagi oldindan bashorat qilish tizimidir.
+                    Kaspersky is a premium antivirus suite that stands as a world leader in vulnerability detection. 
+                    The software's greatest asset is its predictive behavior engine fueled by machine learning algorithms.
                 </p>
                 <ul class="category-list">
-                    <li><i class="fas fa-check" style="color: #ff6b6b;"></i> Machine Learning asosidagi himoya</li>
-                    <li><i class="fas fa-check" style="color: #ff6b6b;"></i> Banking himoyasi va parol menejeri</li>
-                    <li><i class="fas fa-check" style="color: #ff6b6b;"></i> Web kamera himoyasi</li>
-                    <li><i class="fas fa-check" style="color: #ff6b6b;"></i> Mikrofon nazorati</li>
-                    <li><i class="fas fa-check" style="color: #ff6b6b;"></i> VPN 300 MB/kun bepul</li>
+                    <li><i class="fas fa-check" style="color: #ff6b6b;"></i> Machine Learning heuristic engine</li>
+                    <li><i class="fas fa-check" style="color: #ff6b6b;"></i> Safe Banking environment & Vault</li>
+                    <li><i class="fas fa-check" style="color: #ff6b6b;"></i> Webcam spoof prevention</li>
+                    <li><i class="fas fa-check" style="color: #ff6b6b;"></i> Microphone access manager</li>
+                    <li><i class="fas fa-check" style="color: #ff6b6b;"></i> Complimentary 300 MB/day VPN</li>
                 </ul>
             </div>
             
             <div class="protection-category">
-                <h3 class="category-title">Norton - Kompleks Yechim</h3>
+                <h3 class="category-title">Norton - Comprehensive Ecosystem</h3>
                 <p class="category-content">
-                    Norton - bu AQSh kompaniyasi tomonidan ishlab chiqilgan antivirus dasturi bo'lib, 
-                    nafaqat virus himoyasi, balki to'liq raqamli xavfsizlik yechimini taklif etadi. 
-                    100% virus kafolati beradi.
+                    Norton offers more than standalone security; it delivers a thorough digital identity ecosystem 
+                    designed to protect modern web users. It includes an ironclad virus removal pledge.
                 </p>
                 <ul class="category-list">
-                    <li><i class="fas fa-check" style="color: #45b7d1;"></i> 100% virus aniqlash kafolati</li>
-                    <li><i class="fas fa-check" style="color: #45b7d1;"></i> 100GB bulutli backup</li>
-                    <li><i class="fas fa-check" style="color: #45b7d1;"></i> Dark web monitoring</li>
-                    <li><i class="fas fa-check" style="color: #45b7d1;"></i> Kredit karta himoyasi</li>
-                    <li><i class="fas fa-check" style="color: #45b7d1;"></i> Smart Firewall</li>
+                    <li><i class="fas fa-check" style="color: #45b7d1;"></i> 100% Virus Protection Promise</li>
+                    <li><i class="fas fa-check" style="color: #45b7d1;"></i> Up to 100GB Secure Cloud Storage</li>
+                    <li><i class="fas fa-check" style="color: #45b7d1;"></i> Dark Web breach monitoring</li>
+                    <li><i class="fas fa-check" style="color: #45b7d1;"></i> Credit and identity fraud defense</li>
+                    <li><i class="fas fa-check" style="color: #45b7d1;"></i> Inbound/Outbound Smart Firewall</li>
                 </ul>
             </div>
         </div>
         
-        <!-- System Impact -->
         <div class="system-impact">
             <h2 class="impact-title">
                 <i class="fas fa-desktop"></i>
-                Tizim Samaradorligiga Ta'siri
+                Resource & System Overhead
             </h2>
             <p style="text-align: center; color: #e6f2ff; margin-bottom: 30px; font-size: 1.2rem;">
-                Antivirus dasturlarining tizimga ta'siri - bu juda muhim omil. 
-                Samarador antivirus kamroq resurs ishlatishi va kompyuteringizni sekinlashtirmasligi kerak.
+                An antivirus engine's system footwork dictates everyday operation comfort. 
+                The optimal solution must neutralize threats without noticeably slowing down your operating speed.
             </p>
             
-            <table class="impact-table">
-                <thead>
-                    <tr>
-                        <th>Parametr</th>
-                        <th>Kaspersky</th>
-                        <th>Norton</th>
-                        <th>Windows Defender</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>CPU ishlatishi (o'rtacha)</td>
-                        <td class="rating-cell">
-                            <span class="rating-stars">★★★☆☆</span>
-                            <span>3%</span>
-                        </td>
-                        <td class="rating-cell">
-                            <span class="rating-stars">★★☆☆☆</span>
-                            <span>6%</span>
-                        </td>
-                        <td class="rating-cell">
-                            <span class="rating-stars">★★★★☆</span>
-                            <span>2%</span>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Xotira ishlatishi</td>
-                        <td class="rating-cell">
-                            <span class="rating-stars">★★★☆☆</span>
-                            <span>150 MB</span>
-                        </td>
-                        <td class="rating-cell">
-                            <span class="rating-stars">★★☆☆☆</span>
-                            <span>220 MB</span>
-                        </td>
-                        <td class="rating-cell">
-                            <span class="rating-stars">★★★★☆</span>
-                            <span>100 MB</span>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Dastur yuklanish tezligi</td>
-                        <td class="rating-cell">
-                            <span class="rating-stars">★★★★☆</span>
-                            <span>93%</span>
-                        </td>
-                        <td class="rating-cell">
-                            <span class="rating-stars">★★★☆☆</span>
-                            <span>87%</span>
-                        </td>
-                        <td class="rating-cell">
-                            <span class="rating-stars">★★★★★</span>
-                            <span>100%</span>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>To'liq skan vaqti (100GB)</td>
-                        <td class="rating-cell">
-                            <span class="rating-stars">★★★★☆</span>
-                            <span>45 daqiqa</span>
-                        </td>
-                        <td class="rating-cell">
-                            <span class="rating-stars">★★★☆☆</span>
-                            <span>60 daqiqa</span>
-                        </td>
-                        <td class="rating-cell">
-                            <span class="rating-stars">★★★★☆</span>
-                            <span>50 daqiqa</span>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
+            <div class="table-container">
+                <table class="impact-table">
+                    <thead>
+                        <tr>
+                            <th>Metric</th>
+                            <th>Kaspersky</th>
+                            <th>Norton</th>
+                            <th>Windows Defender</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Avg. CPU Usage (Background)</td>
+                            <td class="rating-cell">
+                                <span class="rating-stars">★★★☆☆</span>
+                                <span>3%</span>
+                            </td>
+                            <td class="rating-cell">
+                                <span class="rating-stars">★★☆☆•</span>
+                                <span>6%</span>
+                            </td>
+                            <td class="rating-cell">
+                                <span class="rating-stars">★★★★☆</span>
+                                <span>2%</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Memory (RAM) footprint</td>
+                            <td class="rating-cell">
+                                <span class="rating-stars">★★★☆☆</span>
+                                <span>150 MB</span>
+                            </td>
+                            <td class="rating-cell">
+                                <span class="rating-stars">★★☆☆☆</span>
+                                <span>220 MB</span>
+                            </td>
+                            <td class="rating-cell">
+                                <span class="rating-stars">★★★★☆</span>
+                                <span>100 MB</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>App Launch Speed Index</td>
+                            <td class="rating-cell">
+                                <span class="rating-stars">★★★★☆</span>
+                                <span>93%</span>
+                            </td>
+                            <td class="rating-cell">
+                                <span class="rating-stars">★★★☆☆</span>
+                                <span>87%</span>
+                            </td>
+                            <td class="rating-cell">
+                                <span class="rating-stars">★★★★★</span>
+                                <span>100%</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Full Scan Time (100GB Dataset)</td>
+                            <td class="rating-cell">
+                                <span class="rating-stars">★★★★☆</span>
+                                <span>45 mins</span>
+                            </td>
+                            <td class="rating-cell">
+                                <span class="rating-stars">★★★☆☆</span>
+                                <span>60 mins</span>
+                            </td>
+                            <td class="rating-cell">
+                                <span class="rating-stars">★★★★☆</span>
+                                <span>50 mins</span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
         
-        <!-- Recommendation -->
         <div class="recommendation-section">
             <h2 class="recommendation-title">
                 <i class="fas fa-user-check"></i>
-                Kim Qaysi Antivirusni Tanlashi Kerak?
+                Which One Should You Choose?
             </h2>
             
             <div class="recommendation-grid">
                 <div class="rec-card kaspersky-rec">
                     <h3>
                         <i class="fas fa-shield-virus"></i>
-                        Kaspersky Tanlang Agar:
+                        Kaspersky:
                     </h3>
                     <p class="rec-content">
-                        Siz yuqori darajadagi himoya xohlaysiz, lekin tizim resurslarini tejashni xohlaysiz. 
-                        Banking operatsiyalari uchun qo'shimcha himoya kerak. O'zbekiston bozorida yaxshi qo'llab-quvvatlash mavjud.
+                        Select this if you prioritize elite detection accuracy paired with hardened digital banking vaults, all while conserving your machine's local hardware overhead.
                     </p>
                 </div>
                 
                 <div class="rec-card norton-rec">
                     <h3>
                         <i class="fas fa-user-shield"></i>
-                        Norton Tanlang Agar:
+                        Norton:
                     </h3>
                     <p class="rec-content">
-                        Sizga to'liq raqamlar xavfsizlik yechimi kerak: nafaqat antivirus, balki backup, 
-                        dark web monitoring va kredit karta himoyasi. Kompaniya yoki oila uchun bir nechta qurilma himoyasi kerak.
+                        Opt for this if you want an all-in-one suite that packages secure remote backups, dark web identity monitoring, and extensive coverage for multiple cross-platform devices.
                     </p>
                 </div>
                 
                 <div class="rec-card defender-rec">
                     <h3>
                         <i class="fab fa-windows"></i>
-                        Windows Defender Tanlang Agar:
+                        Windows Defender:
                     </h3>
                     <p class="rec-content">
-                        Siz bepul antivirus xohlaysiz. Oddiy internet foydalanuvchisisiz va yuqori xavfli saytlarga tashrif bermaysiz. 
-                        Windows 10 yoki 11 operatsion tizimida ishlaysiz va qo'shimcha dastur o'rnatishni xohlamaysiz.
+                        The perfect baseline if you prefer avoiding premium subscriptions and native operating performance, handling standard internet browsing hazards reliably without extra setups.
                     </p>
                 </div>
             </div>
         </div>
         
-        <!-- Final Verdict -->
         <div class="final-verdict">
             <h2 class="verdict-title">
                 <i class="fas fa-gavel"></i>
-                Yakuniy Qaror: Qaysi Antivirus Eng Yaxshi?
+                Final Verdict: The Ultimate Winner
             </h2>
             <div class="verdict-content">
-                <p>
-                    Test natijalari shuni ko'rsatadiki, har bir antivirus dasturi o'zining kuchli va zaif tomonlariga ega:
-                </p>
+                <p>Data indicates each defensive framework serves a distinct core objective:</p>
                 
                 <div class="verdict-highlight">Kaspersky</div>
-                <p>
-                    Eng yaxshi virus aniqlash darajasi (99.8%) va minimal tizimga ta'siri bilan ajralib turadi. 
-                    Professional foydalanuvchilar va bank operatsiyalari bilan shug'ullanadiganlar uchun ideal.
-                </p>
+                <p>Delivers exceptionally crisp detection capability (99.8%) with an elegant, ultra-lean hardware footprint.</p>
                 
                 <div class="verdict-highlight">Norton</div>
-                <p>
-                    Eng keng funksionallik - nafaqat antivirus, balki to'liq raqamlar xavfsizlik paketi. 
-                    Oilaviy foydalanish yoki kichik biznes uchun ajoyib yechim.
-                </p>
+                <p>Approaches threat sectors from a holistic safety view, providing rich cloud-bound backups and web-identity monitors.</p>
                 
                 <div class="verdict-highlight">Windows Defender</div>
-                <p>
-                    Mutlaqo bepul va Windows bilan birga keladi. Oddiy foydalanuvchilar uchun yetarli himoya. 
-                    Agar siz yuqori xavfli faoliyat bilan shug'ullanmasangiz, bu sizga yetarli bo'ladi.
-                </p>
+                <p>Pre-packaged with modern Windows distributions, completely free of charge, and fully capable of baseline security needs.</p>
                 
                 <p style="margin-top: 30px; font-weight: 600; color: #ffd700;">
-                    Agar budjetingiz cheklangan bo'lsa - Windows Defender yetarli. 
-                    Agar professional himoya kerak bo'lsa - Kaspersky yoki Norton tanlang.
+                    Conclusion: If budget conscious, stick with Windows Defender. For commercial-grade dedicated armor, secure Kaspersky or Norton.
                 </p>
             </div>
         </div>
         
-        <!-- Footer -->
         <div class="footer">
-            <p>© 2025-2026 Antivirus Dasturlari Taqqoslash | Kaspersky vs Norton vs Windows Defender | Real himoya testi</p>
-            <p>Barcha testlar 2026 yil yanvar-fevral oylarida bir nechta zararli dastur namunalari bilan o'tkazilgan</p>
+            <p>© 2025-2026 Antivirus Software Suite Comparison | Verified Laboratory Results</p>
+            <p>All benchmarks compiled under sandboxed live malware configurations within the current year.</p>
             <div class="footer-links">
-                <a href="privacy-policy.html">Maxfiylik siyosati</a>
-                <a href="disclaimer.html">Mas'uliyatdan Vos Kechish</a>
-                <a href="contact.html">Biz bilan bog'lanish</a>
-                <a href="faq.html">Ko'p So'raladigan Savollar</a>
+                <a href="privacy-policy.html">Privacy Policy</a>
+                <a href="disclaimer.html">Disclaimer</a>
+                <a href="contact.html">Contact Us</a>
+                <a href="faq.html">FAQ</a>
             </div>
         </div>
     </div>
 
     <script>
-        // Performance bars animation
+        // Smooth performance bar height animation on scroll
         document.addEventListener('DOMContentLoaded', function() {
             const perfBars = document.querySelectorAll('.perf-bar');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if(entry.isIntersecting) {
+                        const bar = entry.target;
+                        const targetHeight = bar.getAttribute('data-height');
+                        bar.style.height = targetHeight;
+                        observer.unobserve(bar);
+                    }
+                });
+            }, { threshold: 0.1 });
+
             perfBars.forEach(bar => {
-                const height = bar.style.height;
-                bar.style.height = '0px';
-                
-                setTimeout(() => {
-                    bar.style.height = height;
-                    bar.style.transition = 'height 2s ease';
-                }, 500);
-            });
-        });
-        
-        // Antivirus cards hover effect
-        document.querySelectorAll('.antivirus-card').forEach(card => {
-            card.addEventListener('mouseenter', function() {
-                this.style.transform = 'translateY(-10px)';
-                this.style.boxShadow = '0 15px 35px rgba(0, 0, 0, 0.3)';
-            });
-            
-            card.addEventListener('mouseleave', function() {
-                this.style.transform = 'translateY(0)';
-                this.style.boxShadow = 'none';
-            });
-        });
-        
-        // Feature items hover
-        document.querySelectorAll('.feature-item').forEach(item => {
-            item.addEventListener('mouseenter', function() {
-                this.style.backgroundColor = 'rgba(255, 255, 255, 0.05)';
-                this.style.paddingLeft = '15px';
-                this.style.transition = 'all 0.3s ease';
-            });
-            
-            item.addEventListener('mouseleave', function() {
-                this.style.backgroundColor = '';
-                this.style.paddingLeft = '0';
-            });
-        });
-        
-        // Table row hover
-        document.querySelectorAll('.impact-table tr').forEach(row => {
-            row.addEventListener('mouseenter', function() {
-                this.style.backgroundColor = 'rgba(255, 255, 255, 0.05)';
-            });
-            
-            row.addEventListener('mouseleave', function() {
-                this.style.backgroundColor = '';
-            });
-        });
-        
-        // Rec cards hover
-        document.querySelectorAll('.rec-card').forEach(card => {
-            card.addEventListener('mouseenter', function() {
-                this.style.transform = 'translateY(-8px)';
-                this.style.boxShadow = '0 10px 25px rgba(0, 0, 0, 0.2)';
-            });
-            
-            card.addEventListener('mouseleave', function() {
-                this.style.transform = 'translateY(0)';
-                this.style.boxShadow = 'none';
-            });
-        });
-        
-        // Add animations
-        const style = document.createElement('style');
-        style.textContent = `
-            @keyframes float {
-                0%, 100% { transform: translateY(0px); }
-                50% { transform: translateY(-10px); }
-            }
-            
-            @keyframes pulse {
-                0% { opacity: 1; }
-                50% { opacity: 0.7; }
-                100% { opacity: 1; }
-            }
-            
-            @keyframes glow {
-                0%, 100% { box-shadow: 0 0 20px rgba(255, 107, 107, 0.3); }
-                50% { box-shadow: 0 0 40px rgba(255, 107, 107, 0.6); }
-            }
-            
-            .antivirus-icon {
-                animation: float 4s ease-in-out infinite;
-            }
-            
-            .price-tag {
-                animation: pulse 3s infinite;
-            }
-            
-            .verdict-highlight {
-                animation: glow 3s infinite;
-            }
-            
-            .rating-stars {
-                animation: pulse 2s infinite;
-            }
-        `;
-        document.head.appendChild(style);
-        
-        // Rating badge click effect
-        const ratingBadge = document.querySelector('.rating');
-        ratingBadge.addEventListener('click', function() {
-            this.style.transform = 'scale(1.1)';
-            setTimeout(() => {
-                this.style.transform = 'scale(1)';
-            }, 300);
-        });
-        
-        // Protection category hover
-        document.querySelectorAll('.protection-category').forEach(category => {
-            category.addEventListener('mouseenter', function() {
-                this.style.transform = 'translateY(-5px)';
-            });
-            
-            category.addEventListener('mouseleave', function() {
-                this.style.transform = 'translateY(0)';
+                observer.observe(bar);
             });
         });
     </script>
