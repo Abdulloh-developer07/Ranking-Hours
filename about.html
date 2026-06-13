@@ -18,6 +18,35 @@
             padding: 0 20px;
         }
 
+        /* Emoji Instead of Image Styling */
+        .emoji-placeholder {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #f1f2f6;
+            font-size: 5rem;
+            width: 100%;
+            height: 100%;
+            min-height: 250px;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+        }
+        .story-image .emoji-placeholder {
+            min-height: 350px;
+            font-size: 8rem;
+            background: #eef2f7;
+        }
+        .testimonial-author .emoji-avatar {
+            font-size: 2.5rem;
+            background: #f1f2f6;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+        }
+
         /* Hero Section */
         .about-hero {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
@@ -72,11 +101,6 @@
             margin-bottom: 20px;
             line-height: 1.8;
             font-size: 1.1rem;
-        }
-        .story-image img {
-            width: 100%;
-            border-radius: 15px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
         }
         
         /* Our Mission */
@@ -138,11 +162,6 @@
             position: relative;
             min-height: 250px;
         }
-        .team-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
         .team-badge {
             position: absolute;
             top: 20px;
@@ -152,6 +171,7 @@
             padding: 5px 15px;
             border-radius: 20px;
             font-weight: bold;
+            z-index: 5;
         }
         .team-info {
             padding: 30px;
@@ -292,12 +312,6 @@
             display: flex;
             align-items: center;
             gap: 15px;
-        }
-        .testimonial-author img {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            object-fit: cover;
         }
         
         /* Call-To-Action Layout */
@@ -469,7 +483,8 @@
                     <p>That is how I launched Ranking Hours in 2025. My goal was simple: <strong>to give people honest advice in plain language.</strong> We work for the users, not for the corporations.</p>
                 </div>
                 <div class="story-image">
-                    <img src="Ranking-hours.jpg" alt="Ranking Hours Team">
+                    <!-- Updated with Team/Growth Emoji -->
+                    <div class="emoji-placeholder">🚀</div>
                 </div>
             </div>
         </div>
@@ -520,7 +535,8 @@
                 <!-- Founder -->
                 <div class="team-card founder">
                     <div class="team-image">
-                        <img src="https://via.placeholder.com/300x400" alt="Abdulloh Mahmudov">
+                        <!-- Updated with Tech Expert Emoji -->
+                        <div class="emoji-placeholder">👨‍💻</div>
                         <span class="team-badge">Founder</span>
                     </div>
                     <div class="team-info">
@@ -547,7 +563,8 @@
                 <!-- Team Member 1 -->
                 <div class="team-card">
                     <div class="team-image">
-                        <img src="https://via.placeholder.com/300x250" alt="Sarvar Xolmatov">
+                        <!-- Updated with Camera Expert Emoji -->
+                        <div class="emoji-placeholder">📸</div>
                     </div>
                     <div class="team-info">
                         <h3>Sarvar Xolmatov</h3>
@@ -564,7 +581,8 @@
                 <!-- Team Member 2 -->
                 <div class="team-card">
                     <div class="team-image">
-                        <img src="https://via.placeholder.com/300x250" alt="Aziza Raximova">
+                        <!-- Updated with Home Appliances Expert Emoji -->
+                        <div class="emoji-placeholder">👩‍🍳</div>
                     </div>
                     <div class="team-info">
                         <h3>Aziza Raximova</h3>
@@ -581,7 +599,8 @@
                 <!-- Team Member 3 -->
                 <div class="team-card">
                     <div class="team-image">
-                        <img src="https://via.placeholder.com/300x250" alt="Javohir Tursunov">
+                        <!-- Updated with Automotive Expert Emoji -->
+                        <div class="emoji-placeholder">👨‍🔧</div>
                     </div>
                     <div class="team-info">
                         <h3>Javohir Tursunov</h3>
@@ -689,7 +708,8 @@
                         <p>"I searched for a phone for 3 months. Thanks to Ranking Hours, I found the perfect one within a week!"</p>
                     </div>
                     <div class="testimonial-author">
-                        <img src="https://via.placeholder.com/50" alt="Ali">
+                        <!-- Updated with Gamer Avatar Emoji -->
+                        <div class="emoji-avatar">🎮</div>
                         <div>
                             <h4>Ali</h4>
                             <span>Gamer</span>
@@ -701,7 +721,8 @@
                         <p>"I was totally lost looking for a laptop. Abdulloh broke it down so simply that choosing was a breeze."</p>
                     </div>
                     <div class="testimonial-author">
-                        <img src="https://via.placeholder.com/50" alt="Sevara">
+                        <!-- Updated with Teacher Avatar Emoji -->
+                        <div class="emoji-avatar">👩‍🏫</div>
                         <div>
                             <h4>Sevara</h4>
                             <span>Teacher</span>
@@ -713,7 +734,8 @@
                         <p>"When buying a vehicle, Abdulloh's transparent breakdowns kept me from making an expensive mistake."</p>
                     </div>
                     <div class="testimonial-author">
-                        <img src="https://via.placeholder.com/50" alt="Bekzod">
+                        <!-- Updated with Banker Avatar Emoji -->
+                        <div class="emoji-avatar">💼</div>
                         <div>
                             <h4>Bekzod</h4>
                             <span>Banker</span>
