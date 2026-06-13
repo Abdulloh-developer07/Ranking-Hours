@@ -88,6 +88,27 @@
             border: 2px dashed rgba(255,255,255,0.1);
             margin-bottom: 20px;
             transition: all 0.3s ease;
+            position: relative; /* Ichidagi rasm mutanosib turishi uchun */
+            overflow: hidden;
+        }
+
+        /* RASMLAR CHIQIB KETMASLIGI UCHUN YANGI QO'SHILGAN STYLING */
+        .device-image-placeholder img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Rasmni placeholder ichiga buzilmasdan moslaydi */
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1;
+        }
+
+        /* Agar rasm bor bo'lsa, ikonka va matn uning ostida chiroyli turishi yoki ko'rinishi uchun z-index */
+        .device-image-placeholder i, 
+        .device-image-placeholder span {
+            position: relative;
+            z-index: 2;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.8); /* Rasm ustida matn o'qilishi uchun */
         }
 
         .device-image-container:hover .device-image-placeholder {
@@ -531,11 +552,6 @@
             transition: color 0.3s ease, transform 0.2s ease;
         }
 
-        .footer-link:hover {
-            color: #60a5fa;
-            transform: translateY(-2px);
-        }
-
         .footer-link i {
             margin-right: 6px;
         }
@@ -605,14 +621,16 @@
             <div class="device-image-container">
                 <div class="device-image-placeholder">
                     <i class="fab fa-apple"></i>
-                    <img src="Apple Watch Series 9 Design.jpg">
+                    <span>Apple Watch</span>
+                    <img src="Apple Watch Series 9 Design.jpg" alt="Apple Watch Series 9">
                 </div>
                 <div class="device-caption apple">Apple Watch Series 9 Design & Display Profile</div>
             </div>
             <div class="device-image-container">
                 <div class="device-image-placeholder">
                     <i class="fas fa-clock"></i>
-                   <img src="Samsung Galaxy Watch 6 Design.jpg">
+                    <span>Galaxy Watch</span>
+                   <img src="Samsung Galaxy Watch 6 Design.jpg" alt="Samsung Galaxy Watch 6">
                 </div>
                 <div class="device-caption samsung">Samsung Galaxy Watch 6 Design & Display Profile</div>
             </div>
