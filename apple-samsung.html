@@ -502,6 +502,50 @@
             font-size: 1.2rem;
             line-height: 1.8;
         }
+
+        /* Modern Footer Section */
+        .site-footer {
+            margin-top: 80px;
+            padding: 40px 20px;
+            background: rgba(15, 23, 42, 0.8);
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 24px 24px 0 0;
+            text-align: center;
+            backdrop-filter: blur(10px);
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+            margin-bottom: 25px;
+            flex-wrap: wrap;
+        }
+
+        .footer-link {
+            color: #94a3b8;
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 500;
+            transition: color 0.3s ease, transform 0.2s ease;
+        }
+
+        .footer-link:hover {
+            color: #60a5fa;
+            transform: translateY(-2px);
+        }
+
+        .footer-link i {
+            margin-right: 6px;
+        }
+
+        .copyright-text {
+            color: #64748b;
+            font-size: 0.95rem;
+            letter-spacing: 0.5px;
+            margin-top: 15px;
+        }
         
         /* Responsive Overrides */
         @media (max-width: 992px) {
@@ -543,6 +587,7 @@
                 text-transform: uppercase;
             }
             .summary-content { grid-template-columns: 1fr; }
+            .footer-links { gap: 15px; flex-direction: column; }
         }
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -560,14 +605,14 @@
             <div class="device-image-container">
                 <div class="device-image-placeholder">
                     <i class="fab fa-apple"></i>
-                    <span>IMAGE PLACEHOLDER: APPLE WATCH SERIES 9</span>
+                    <img src="Apple Watch Series 9 Design.jpg">
                 </div>
                 <div class="device-caption apple">Apple Watch Series 9 Design & Display Profile</div>
             </div>
             <div class="device-image-container">
                 <div class="device-image-placeholder">
                     <i class="fas fa-clock"></i>
-                    <span>IMAGE PLACEHOLDER: GALAXY WATCH 6</span>
+                   <img src="Samsung Galaxy Watch 6 Design.jpg">
                 </div>
                 <div class="device-caption samsung">Samsung Galaxy Watch 6 Design & Display Profile</div>
             </div>
@@ -900,6 +945,19 @@
                 </p>
             </div>
         </section>
+
+        <!-- Footer Section with Links and Copyright -->
+        <footer class="site-footer">
+            <div class="footer-links">
+                <a href="index.html" class="footer-link"><i class="fas fa-home"></i> Home</a>
+                <a href="privacy.html" class="footer-link"><i class="fas fa-user-shield"></i> Privacy Policy</a>
+                <a href="terms.html" class="footer-link"><i class="fas fa-file-contract"></i> Terms of Service</a>
+                <a href="contact.html" class="footer-link"><i class="fas fa-envelope"></i> Contact Us</a>
+            </div>
+            <p class="copyright-text">
+                &copy; 2026 Ranking Hours. All Rights Reserved.
+            </p>
+        </footer>
     </div>
 
     <script>
