@@ -182,7 +182,7 @@
             text-align: justify;
         }
 
-        /* Side-by-Side Horizontal Layout Components for Images */
+        /* Side-by-Side Horizontal Image Matrix */
         .double-image-matrix {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -190,36 +190,44 @@
             margin: 40px 0;
         }
 
-        .wireframe-placeholder {
+        .car-image-container {
             background: #090d16;
-            border: 2px dashed #334155;
+            border: 1px solid var(--border-element);
             border-radius: 20px;
-            height: 300px;
+            overflow: hidden;
             display: flex;
             flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            color: var(--text-muted);
-            text-align: center;
-            padding: 30px;
             transition: border-color 0.3s;
         }
 
-        .wireframe-placeholder:hover {
+        .car-image-container:hover {
             border-color: var(--brand-primary);
         }
 
-        .wireframe-placeholder span {
+        .car-image-container img {
+            width: 100%;
+            height: 240px;
+            object-fit: cover;
+            border-bottom: 1px solid var(--border-element);
+        }
+
+        .car-image-info {
+            padding: 15px 20px;
+            text-align: center;
+        }
+
+        .car-image-info span {
             font-weight: 700;
             font-size: 1.15rem;
             color: var(--text-primary);
-            margin-top: 10px;
+            display: block;
+            margin-bottom: 5px;
         }
 
-        .wireframe-placeholder p {
+        .car-image-info p {
             font-size: 0.85rem;
             color: var(--text-muted);
-            margin-top: 10px;
+            margin-bottom: 0;
             text-align: center;
         }
 
@@ -345,17 +353,40 @@
             font-weight: 700;
         }
 
-        /* AdSense Units */
-        .adsense-fluid-node {
+        /* Safe Native Ad Layout (Won't get blocked by AdBlockers) */
+        .native-ad-container {
             background: #090d16;
-            border: 1px dashed #334155;
+            border: 1px solid var(--border-element);
             border-radius: 16px;
-            padding: 28px;
-            text-align: center;
+            padding: 24px;
             margin: 40px 0;
-            color: var(--text-muted);
-            font-size: 0.85rem;
+        }
+
+        .native-ad-label {
+            font-size: 0.75rem;
             text-transform: uppercase;
+            color: var(--text-muted);
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .native-ad-content {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .native-ad-text h5 {
+            color: var(--text-primary);
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+
+        .native-ad-text p {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-bottom: 0;
         }
 
         footer {
@@ -408,6 +439,7 @@
             .analysis-block { padding: 32px; }
             .double-image-matrix { grid-template-columns: 1fr; }
             nav ul { display: none; }
+            .native-ad-content { flex-direction: column; align-items: flex-start; }
         }
     </style>
 </head>
@@ -456,45 +488,57 @@
                     <p>When high currents pass through dense lithium-ion matrices, localized heat generation creates thermal gradients that can accelerate anode breakdown. Active thermal management loops mitigate these gradients by continuously adjusting coolant flow velocity based on real-time sensory inputs. In high-output configurations, if the thermal control system cannot dissipate heat rapidly enough, defensive software routines reduce current delivery to protect the cell structures. This optimization trade-off determines the vehicle's sustained power capabilities during long high-load cycles.</p>
                 </div>
 
-                <!-- ADSENSE UNIT -->
-                <div class="adsense-fluid-node">
-                    <p>Google AdSense — Premium In-Article Header Unit — Placement Code: Auto_Top_728x90</p>
+                <!-- SAFE NATIVE AD ELEMENT (Won't be blocked by standard AdBlock filters) -->
+                <div class="native-ad-container">
+                    <span class="native-ad-label">Sponsored Context</span>
+                    <div class="native-ad-content">
+                        <div class="native-ad-text">
+                            <h5>Advanced Diagnostic Instrumentation Matrices</h5>
+                            <p>Explore high-fidelity diagnostic calibration apparatus engineered for automated validation loops across solid-state architecture grids.</p>
+                        </div>
+                    </div>
                 </div>
 
                 <!-- SECTION 2: TESLA MODEL Y VS BYD ATTO 3 -->
                 <div id="ev-propulsion" class="analysis-block">
                     <h2>2. Battery Vehicle Systems: Tesla Model Y vs. BYD Atto 3</h2>
-                    <p>The premium and mid-range battery electric vehicle (BEV) sectors demonstrate competing paths in structural pack engineering and cell layout strategies[cite: 5]. The Tesla Model Y heavily relies on an advanced structural pack architecture featuring cylindrical cells bonded together with structural polyurethane foam, serving as a load-bearing element of the vehicle chassis. Conversely, the BYD Atto 3 uses a long-cell structural layout known as the Blade Battery, utilizing lithium iron phosphate (LFP) chemistry organized directly into a rigid protective cage that eliminates traditional module enclosures[cite: 5].</p>
+                    <p>The premium and mid-range battery electric vehicle (BEV) sectors demonstrate competing paths in structural pack engineering and cell layout strategies. The Tesla Model Y heavily relies on an advanced structural pack architecture featuring cylindrical cells bonded together with structural polyurethane foam, serving as a load-bearing element of the vehicle chassis. Conversely, the BYD Atto 3 uses a long-cell structural layout known as the Blade Battery, utilizing lithium iron phosphate (LFP) chemistry organized directly into a rigid protective cage that eliminates traditional module enclosures.</p>
                     
-                    <!-- Rule 3: Side-by-Side Horizontal Layout Components for Images -->
+                    <!-- Side-by-Side Horizontal Image Grid -->
                     <div class="double-image-matrix">
-                        <div class="wireframe-placeholder">
-                            <span>Tesla Model Y</span>
-                            <p>Cylindrical Cell Matrix & Structural Floorpack Optimization</p>
+                        <div class="car-image-container">
+                            <img src="https://images.unsplash.com/photo-1619767886558-efdc259cde1a?auto=format&fit=crop&w=600&q=80" alt="Tesla Model Y">
+                            <div class="car-image-info">
+                                <span>Tesla Model Y</span>
+                                <p>Cylindrical Cell Matrix & Structural Floorpack</p>
+                            </div>
                         </div>
-                        <div class="wireframe-placeholder">
-                            <span>BYD Atto 3</span>
-                            <p>Linear LFP Blade Battery Direct-to-Chassis Structural Beam Matrix</p>
+                        <div class="car-image-container">
+                            <img src="https://images.unsplash.com/photo-1709405672205-d68a9fc4d707?auto=format&fit=crop&w=600&q=80" alt="BYD Atto 3">
+                            <div class="car-image-info">
+                                <span>BYD Atto 3</span>
+                                <p>Linear LFP Blade Battery Architecture</p>
+                            </div>
                         </div>
                     </div>
 
                     <h3>2.1 Chemical Composition & Heat Compression Dynamics</h3>
-                    <p>The Tesla Model Y utilizes Nickel-Manganese-Cobalt (NMC) chemistries inside its cylindrical cells. This formulation yields exceptional volumetric energy density, allowing longer range within a smaller physical footprint. However, NMC chemistry generates substantial heat during fast-charging cycles, necessitating specialized serpentine cooling ribbons that snake between the cylindrical walls to maintain safe operating temperatures[cite: 5].</p>
-                    <p>The BYD Atto 3 uses Lithium Iron Phosphate (LFP) chemistry within its proprietary Blade long-cell form factor[cite: 5]. LFP chemistry offers lower raw energy density than NMC configurations, meaning a larger, heavier pack is required to match the same overall capacity. However, LFP delivers superior thermal stability and a significantly longer cycle life, maintaining performance across thousands of charge-discharge cycles without substantial degradation. This structural resilience allows it to function optimally under varied stress parameters[cite: 5].</p>
+                    <p>The Tesla Model Y utilizes Nickel-Manganese-Cobalt (NMC) chemistries inside its cylindrical cells. This formulation yields exceptional volumetric energy density, allowing longer range within a smaller physical footprint. However, NMC chemistry generates substantial heat during fast-charging cycles, necessitating specialized serpentine cooling ribbons that snake between the cylindrical walls to maintain safe operating temperatures.</p>
+                    <p>The BYD Atto 3 uses Lithium Iron Phosphate (LFP) chemistry within its proprietary Blade long-cell form factor. LFP chemistry offers lower raw energy density than NMC configurations, meaning a larger, heavier pack is required to match the same overall capacity. However, LFP delivers superior thermal stability and a significantly longer cycle life, maintaining performance across thousands of charge-discharge cycles without substantial degradation.</p>
 
                     <table class="engineering-table">
                         <thead>
                             <tr>
                                 <th>Engineering Parameter</th>
                                 <th>Tesla Model Y Architecture</th>
-                                <th>BYD Atto 3 Structural Framework[cite: 5]</th>
+                                <th>BYD Atto 3 Structural Framework</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
                                 <td>Cell Formulation</td>
                                 <td>Cylindrical NMC Matrix</td>
-                                <td>Linear Structural LFP Blade[cite: 5]</td>
+                                <td>Linear Structural LFP Blade</td>
                             </tr>
                             <tr>
                                 <td>Thermal Management Integration</td>
@@ -504,81 +548,99 @@
                             <tr>
                                 <td>Structural Intention</td>
                                 <td>Load-Bearing Structural Floorpack</td>
-                                <td>Direct-to-Chassis Integrated Beam[cite: 5]</td>
+                                <td>Direct-to-Chassis Integrated Beam</td>
                             </tr>
                             <tr>
                                 <td>Observed Local Service Reliability</td>
                                 <td>Limited Independent Infrastructure</td>
-                                <td>Widespread Regional Support Network[cite: 5]</td>
+                                <td>Widespread Regional Support Network</td>
                             </tr>
                         </tbody>
                     </table>
 
                     <div class="synthesis-block">
                         <h4>Tesla Model Y vs BYD Atto 3 Test Conclusion</h4>
-                        <p><strong>Test G'olibi: BYD Atto 3</strong>[cite: 5]<br>
-                        <strong>Sababi:</strong> BYD narx-sifat nisbati hamda O'zbekiston sharoitida unga tegishli servislarning mavjudligi tufayli g'olib deb topilgan (garchi Tesla Supercharger tarmog'i va tezkorligida ustun bo'lsa ham)[cite: 5].</p>
+                        <p><strong>Test G'olibi: BYD Atto 3</strong><br>
+                        <strong>Sababi:</strong> BYD narx-sifat nisbati hamda O'zbekiston sharoitida unga tegishli servislarning mavjudligi tufayli g'olib deb topilgan (garchi Tesla Supercharger tarmog'i va tezkorligida ustun bo'lsa ham).</p>
                     </div>
                 </div>
 
                 <!-- SECTION 3: TOYOTA RAV4 VS HONDA CR-V -->
                 <div id="suv-kinematics" class="analysis-block">
                     <h2>3. Utility Platforms: Toyota RAV4 vs. Honda CR-V</h2>
-                    <p>Compact and mid-size sport utility vehicles (SUVs) operate under demanding load requirements, needing to maintain stability across varying passenger configurations while handling uneven terrain and body roll[cite: 5]. Suspension geometries must balance compliance over road imperfections with stiffness under cornering loads to prevent excessive body lean.</p>
+                    <p>Compact and mid-size sport utility vehicles (SUVs) operate under demanding load requirements, needing to maintain stability across varying passenger configurations while handling uneven terrain and body roll. Suspension geometries must balance compliance over road imperfections with stiffness under cornering loads to prevent excessive body lean.</p>
                     
-                    <!-- Rule 3: Side-by-Side Horizontal Layout Components for Images -->
+                    <!-- Side-by-Side Horizontal Image Grid -->
                     <div class="double-image-matrix">
-                        <div class="wireframe-placeholder">
-                            <span>Toyota RAV4</span>
-                            <p>Trailing-Arm Multi-Link Suspension Layout & Rigid Chassis Stability Matrix</p>
+                        <div class="car-image-container">
+                            <img src="https://images.unsplash.com/photo-1669824967390-d4cf3e4d9b62?auto=format&fit=crop&w=600&q=80" alt="Toyota RAV4">
+                            <div class="car-image-info">
+                                <span>Toyota RAV4</span>
+                                <p>Trailing-Arm Multi-Link Suspension Layout</p>
+                            </div>
                         </div>
-                        <div class="wireframe-placeholder">
-                            <span>Honda CR-V</span>
-                            <p>Amplitude Reactive Dampers with Compliant Dual-Internal Fluid Chambers</p>
+                        <div class="car-image-container">
+                            <img src="https://images.unsplash.com/photo-1707923485743-34e8f3918f02?auto=format&fit=crop&w=600&q=80" alt="Honda CR-V">
+                            <div class="car-image-info">
+                                <span>Honda CR-V</span>
+                                <p>Amplitude Reactive Dampers Fluid Chamber</p>
+                            </div>
                         </div>
                     </div>
 
                     <h3>3.1 Suspension Geometry & Variable Body Roll Control</h3>
-                    <p>The Toyota RAV4 is built on a global platform featuring a trailing-arm multilink rear suspension layout[cite: 5]. This geometry separates lateral control forces from longitudinal responses, allowing the wheels to track smoothly over road imperfections without compromising lateral cornering stability. While this setup helps the RAV4 maintain its rated 580-liter cargo capacity, the stiff bushing tuning transmits minor high-frequency road vibrations into the cabin over rough pavement[cite: 5].</p>
-                    <p>The Honda CR-V utilizes a multi-link rear suspension setup paired with Amplitude Reactive Dampers[cite: 5]. These specialized dampers feature two separate fluid paths within the shock cylinder: a primary path that absorbs subtle, low-amplitude road ripples for a smooth ride, and a secondary path that restricts fluid flow during sharp cornering maneuvers to stiffen the suspension and minimize body roll. This adaptive fluid control gives the CR-V a smooth, compliant ride over varied surfaces, prioritizing inner cabin volume and passenger comfort[cite: 5].</p>
+                    <p>The Toyota RAV4 is built on a global platform featuring a trailing-arm multilink rear suspension layout. This geometry separates lateral control forces from longitudinal responses, allowing the wheels to track smoothly over road imperfections without compromising lateral cornering stability. While this setup helps the RAV4 maintain its rated 580-liter cargo capacity, the stiff bushing tuning transmits minor high-frequency road vibrations into the cabin over rough pavement.</p>
+                    <p>The Honda CR-V utilizes a multi-link rear suspension setup paired with Amplitude Reactive Dampers. These specialized dampers feature two separate fluid paths within the shock cylinder: a primary path that absorbs subtle, low-amplitude road ripples for a smooth ride, and a secondary path that restricts fluid flow during sharp cornering maneuvers to stiffen the suspension and minimize body roll.</p>
 
                     <div class="synthesis-block">
                         <h4>Toyota RAV4 vs Honda CR-V Test Conclusion</h4>
-                        <p><strong>Test G'olibi: Toyota RAV4</strong>[cite: 5]<br>
-                        <strong>Sababi:</strong> RAV4 o'zining ishonchliligi va qayta sotish qiymati yuqoriligi bilan ajralib turadi (CR-V esa shunchaki qulayligi va ichki makoni kengligi bilan ajralib turadi)[cite: 5].</p>
+                        <p><strong>Test G'olibi: Toyota RAV4</strong><br>
+                        <strong>Sababi:</strong> RAV4 o'zining ishonchliligi va qayta sotish qiymati yuqoriligi bilan ajralib turadi (CR-V esa shunchaki qulayligi va ichki makoni kengligi bilan ajralib turadi).</p>
                     </div>
                 </div>
 
-                <!-- ADSENSE UNIT -->
-                <div class="adsense-fluid-node">
-                    <p>Google AdSense — Mid-Article Native Feed Unit — Placement Code: Auto_Middle_Matched</p>
+                <!-- SAFE NATIVE AD ELEMENT (Won't be blocked by standard AdBlock filters) -->
+                <div class="native-ad-container">
+                    <span class="native-ad-label">Sponsored Context</span>
+                    <div class="native-ad-content">
+                        <div class="native-ad-text">
+                            <h5>High-Capacity Power Transfer Infrastructure</h5>
+                            <p>Ancillary thermal mitigation relays optimized for high-voltage industrial unibody connections.</p>
+                        </div>
+                    </div>
                 </div>
 
                 <!-- SECTION 4: CHEVROLET LACETTI VS RAVON NEXIA 3 -->
                 <div id="unibody-sedans" class="analysis-block">
                     <h2>4. Passenger Sedans: Chevrolet Lacetti vs. Ravon Nexia 3</h2>
-                    <p>High-volume passenger cars built for developing infrastructure require durable component engineering and cost-effective maintenance layouts[cite: 5]. The chassis structure must endure continuous vibration and uneven road surfaces without suffering premature weld fatigue or structural misalignment.</p>
+                    <p>High-volume passenger cars built for developing infrastructure require durable component engineering and cost-effective maintenance layouts. The chassis structure must endure continuous vibration and uneven road surfaces without suffering premature weld fatigue or structural misalignment.</p>
 
-                    <!-- Rule 3: Side-by-Side Horizontal Layout Components for Images -->
+                    <!-- Side-by-Side Horizontal Image Grid -->
                     <div class="double-image-matrix">
-                        <div class="wireframe-placeholder">
-                            <span>Chevrolet Lacetti</span>
-                            <p>Traditional Unibody Framework with Extended Wheelbase Stability</p>
+                        <div class="car-image-container">
+                            <img src="https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=600&q=80" alt="Chevrolet Lacetti">
+                            <div class="car-image-info">
+                                <span>Chevrolet Lacetti</span>
+                                <p>Unibody Framework with Extended Wheelbase</p>
+                            </div>
                         </div>
-                        <div class="wireframe-placeholder">
-                            <span>Ravon Nexia 3</span>
-                            <p>Compact Architecture with 1.5L Dual-VVT Engine Platform</p>
+                        <div class="car-image-container">
+                            <img src="https://images.unsplash.com/photo-1617469167446-80e3ae4570c8?auto=format&fit=crop&w=600&q=80" alt="Ravon Nexia 3">
+                            <div class="car-image-info">
+                                <span>Ravon Nexia 3</span>
+                                <p>Compact Architecture 1.5L Engine Platform</p>
+                            </div>
                         </div>
                     </div>
 
                     <h3>4.1 Component Accessibility and Long-Term Maintenance Costs</h3>
-                    <p>The engineering layouts of both vehicles emphasize mechanical simplicity and straightforward component access. The Lacetti features an open engine bay design with clear access to key maintenance points like the alternator, drive belts, and cooling lines[cite: 5]. This spacious layout allows technicians to perform routine maintenance and major repairs without requiring specialized tool sets or extensive disassembly. This accessibility keeps labor costs low and supports a widespread parts network, helping the vehicle maintain a strong 70% value retention rate in secondary markets[cite: 5].</p>
-                    <p>The Nexia 3 features a more tightly packed engine bay to fit its smaller exterior footprint[cite: 5]. Its 1.5-liter engine includes a durable timing chain system rather than a rubber belt, reducing the need for periodic teardowns and lowering long-term maintenance overhead. However, changing accessories like the air conditioning compressor or starter motor requires working within tighter clearances, slightly increasing service times for major repairs. This complexity is offset by the low cost of replacement components, making the vehicle an affordable option for high-mileage operations[cite: 5].</p>
+                    <p>The engineering layouts of both vehicles emphasize mechanical simplicity and straightforward component access. The Lacetti features an open engine bay design with clear access to key maintenance points like the alternator, drive belts, and cooling lines. This spacious layout allows technicians to perform routine maintenance and major repairs without requiring specialized tool sets or extensive disassembly. This accessibility keeps labor costs low and supports a widespread parts network, helping the vehicle maintain a strong 70% value retention rate in secondary markets.</p>
+                    <p>The Nexia 3 features a more tightly packed engine bay to fit its smaller exterior footprint. Its 1.5-liter engine includes a durable timing chain system rather than a rubber belt, reducing the need for periodic teardowns and lowering long-term maintenance overhead. However, changing accessories like the air conditioning compressor or starter motor requires working within tighter clearances, slightly increasing service times for major repairs.</p>
 
                     <div class="synthesis-block">
                         <h4>Chevrolet Lacetti vs Ravon Nexia 3 Test Conclusion</h4>
-                        <p><strong>Test G'olibi: Chevrolet Lacetti</strong>[cite: 5]<br>
-                        <strong>Sababi:</strong> Lacetti o'zining mustahkamligi va keng servis tarmog'iga egaligi bilan g'olib chiqqan (Nexia 3 esa arzon narxi va yengil boshqaruvi bilan ajralib turadi)[cite: 5].</p>
+                        <p><strong>Test G'olibi: Chevrolet Lacetti</strong><br>
+                        <strong>Sababi:</strong> Lacetti o'zining mustahkamligi va keng servis tarmog'iga egaligi bilan g'olib chiqqan (Nexia 3 esa arzon narxi va yengil boshqaruvi bilan ajralib turadi).</p>
                     </div>
                 </div>
 
@@ -605,7 +667,7 @@
             <div class="footer-matrix">
                 <div class="footer-column">
                     <h5>Independent Engineering Index</h5>
-                    <p style="font-size: 0.9rem; line-height: 1.65;">An independent, data-driven automotive and consumer electronics analysis index. We do not use external links, ensuring our published reports remain objective and technically verifiable[cite: 5].</p>
+                    <p style="font-size: 0.9rem; line-height: 1.65;">An independent, data-driven automotive and consumer electronics analysis index. We do not use external links, ensuring our published reports remain objective and technically verifiable.</p>
                 </div>
                 <div class="footer-column">
                     <h5>Active Indexes</h5>
@@ -625,7 +687,7 @@
                 </div>
             </div>
             <div class="footer-terminal">
-                <p>&copy; 2026 Independent Engineering Index. Non-Affiliated Consumer System Analysis. All rights reserved[cite: 5].</p>
+                <p>&copy; 2026 Independent Engineering Index. Non-Affiliated Consumer System Analysis. All rights reserved.</p>
             </div>
         </div>
     </footer>
