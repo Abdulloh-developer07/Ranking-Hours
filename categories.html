@@ -1,460 +1,790 @@
 <!DOCTYPE html>
-<html lang="uz">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kategoriyalar - Ranking Hours | O'zbekistondagi Eng Professional Solishtirish va Reyting Platformasi</title>
-    <meta name="description" content="Ranking Hours saytining barcha rasmiy kategoriyalari. Smartfonlar, noutbuklar, zamonaviy avtomobillar, maishiy texnika, dasturiy ta'minot va raqamli uskunalar bo'yicha eng chuqur tahlillar, mustaqil test natijalari, ekspert xulosalari va foydalanuvchilarning real fikrlari jamlangan eng yirik o'zbekcha katalog.">
+    <title>Sectors & Hubs — ComparePro</title>
+    <meta name="description" content="Explore data-driven comparison matrix categories across flagships, workstations, electric vehicles, and automated infrastructure.">
     
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="categories/technology.html">
+    <style>
+        /* --- Premium Modern Architecture & Variable Mapping --- */
+        :root {
+            --bg-main: #0b0f19;
+            --bg-card: #131a2c;
+            --bg-nav: rgba(11, 15, 25, 0.85);
+            --accent: #38bdf8;
+            --accent-gradient: linear-gradient(135deg, #38bdf8 0%, #818cf8 100%);
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --border-color: #1e293b;
+            --radius: 12px;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-main);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+            padding-top: 80px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition);
+        }
+
+        /* --- Header Navigation --- */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background: var(--bg-nav);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .navbar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.2rem 2rem;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            background: var(--accent-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-menu a {
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: var(--text-muted);
+        }
+
+        .nav-menu a:hover, .nav-menu a.active {
+            color: var(--accent);
+        }
+
+        /* --- Hub Hero Banner --- */
+        .categories-hero {
+            background: radial-gradient(circle at top right, rgba(56, 189, 248, 0.08), transparent 50%), var(--bg-main);
+            padding: 5rem 0 3rem;
+            text-align: center;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .categories-hero h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 1.2rem;
+            letter-spacing: -1px;
+            background: var(--accent-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-subtitle {
+            color: var(--text-muted);
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 3.5rem;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .stat {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            padding: 1.5rem;
+            border-radius: var(--radius);
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .stat i {
+            font-size: 1.8rem;
+            color: var(--accent);
+        }
+
+        .stat h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        .stat p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        /* --- Global Grid System --- */
+        .main-categories {
+            padding: 5rem 0;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background: var(--accent);
+            border-radius: 2px;
+        }
+
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .category-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            padding: 2rem;
+            border-radius: var(--radius);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: var(--transition);
+        }
+
+        .category-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent);
+            box-shadow: 0 10px 30px rgba(56, 189, 248, 0.05);
+        }
+
+        .category-card.large {
+            grid-column: span 2;
+            flex-direction: row;
+            gap: 2rem;
+        }
+
+        .category-image {
+            width: 220px;
+            height: 100%;
+            border-radius: 8px;
+            overflow: hidden;
+            flex-shrink: 0;
+            position: relative;
+            background: #1e293b;
+        }
+
+        .category-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .category-icon {
+            font-size: 2rem;
+            color: var(--accent);
+            margin-bottom: 1.5rem;
+        }
+
+        .category-card h3 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .category-count {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 1rem;
+        }
+
+        .category-desc {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .category-meta {
+            display: flex;
+            gap: 1.5rem;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            border-top: 1px solid var(--border-color);
+            padding-top: 1rem;
+            margin-top: auto;
+        }
+
+        /* --- Dynamic Laboratory Tabs --- */
+        .category-features {
+            padding: 5rem 0;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .tabs-header {
+            display: flex;
+            gap: 0.75rem;
+            margin-bottom: 3rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .tab-btn {
+            padding: 0.8rem 1.5rem;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            color: var(--text-muted);
+            border-radius: 30px;
+            font-weight: 500;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: var(--transition);
+        }
+
+        .tab-btn:hover, .tab-btn.active {
+            border-color: var(--accent);
+            color: var(--text-main);
+            background: rgba(56, 189, 248, 0.05);
+        }
+
+        .tab-pane {
+            display: none;
+        }
+
+        .tab-pane.active {
+            display: block;
+            animation: fadeIn 0.4s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .test-params {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .param {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            padding: 1.5rem;
+            border-radius: var(--radius);
+            display: flex;
+            gap: 15px;
+        }
+
+        .param-icon {
+            font-size: 1.3rem;
+            color: var(--accent);
+            background: rgba(56, 189, 248, 0.1);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .param-content h4 {
+            font-size: 1.05rem;
+            margin-bottom: 0.4rem;
+        }
+
+        .param-content p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        /* --- Analytical Ledger Data Table --- */
+        .category-comparison {
+            padding: 5rem 0;
+            background: #070a12;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .comparison-table {
+            overflow-x: auto;
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+            font-size: 0.95rem;
+            background: var(--bg-card);
+        }
+
+        th {
+            background: #0f172a;
+            padding: 1.2rem;
+            font-weight: 600;
+            border-bottom: 1px solid var(--border-color);
+            color: var(--text-main);
+        }
+
+        td {
+            padding: 1.2rem;
+            border-bottom: 1px solid var(--border-color);
+            color: var(--text-muted);
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        tr:hover td {
+            color: var(--text-main);
+            background: rgba(255, 255, 255, 0.01);
+        }
+
+        .stars {
+            color: #f59e0b;
+        }
+
+        /* --- Performance Leaders --- */
+        .most-popular {
+            padding: 5rem 0;
+        }
+
+        .popular-categories {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .popular-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            padding: 2rem;
+            border-radius: var(--radius);
+            display: flex;
+            gap: 20px;
+            position: relative;
+        }
+
+        .popular-rank {
+            font-size: 2rem;
+            font-weight: 800;
+            line-height: 1;
+        }
+
+        .btn-small {
+            background: var(--border-color);
+            padding: 0.5rem 1.2rem;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            display: inline-block;
+            margin-top: 1rem;
+            border: 1px solid transparent;
+        }
+
+        .btn-small:hover {
+            border-color: var(--accent);
+            background: transparent;
+            color: var(--accent);
+        }
+
+        /* --- Action Footprint CTA --- */
+        .categories-cta {
+            background: linear-gradient(180deg, var(--bg-main) 0%, #070a12 100%);
+            padding: 6rem 0;
+            text-align: center;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 2.5rem;
+        }
+
+        .btn {
+            padding: 0.8rem 2rem;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        .btn-primary {
+            background: var(--accent-gradient);
+            color: #0b0f19;
+        }
+
+        .btn-secondary {
+            border: 1px solid var(--border-color);
+            color: var(--text-main);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--text-muted);
+        }
+
+        /* --- Footer Standards --- */
+        .footer {
+            background: #070a12;
+            border-top: 1px solid var(--border-color);
+            padding: 5rem 0 3rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 3rem;
+            margin-bottom: 4rem;
+        }
+
+        .footer-col h3 {
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 1.5rem;
+            color: var(--text-main);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-links a {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid var(--border-color);
+            padding-top: 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        /* Responsive Breakpoints */
+        @media (max-width: 992px) {
+            .category-card.large { grid-column: span 1; flex-direction: column; }
+            .category-image { width: 100%; height: 200px; }
+        }
+
+        @media (max-width: 768px) {
+            .nav-menu { display: none; }
+            .categories-hero h1 { font-size: 2.5rem; }
+            .footer-bottom { flex-direction: column; gap: 1rem; text-align: center; }
+        }
+    </style>
 </head>
 <body>
-    <!-- Til tanlash -->
-    <div class="language-switcher">
-        <div class="container">
-            <button class="lang-btn active" data-lang="uz">🇺🇿 O'zbek tili (Rasmiy)</button>
-            <button class="lang-btn" data-lang="en">🇬🇧 English (Global)</button>
-            <button class="lang-btn" data-lang="ru">🇷🇺 Русский (СНГ)</button>
-        </div>
-    </div>
 
-    <!-- Navigation -->
+    <!-- Main Global Navigation Header -->
     <nav class="navbar">
         <div class="container">
             <a href="index.html" class="logo">
-                <img src="Ranking-hours.jpg" alt="Ranking Hours Mustaqil Reyting Platformasi Logotipi" width="40">
-                <span>Ranking<span class="highlight">Hours</span></span>
+                <span>COMPARE<span class="highlight">PRO</span></span>
             </a>
             <div class="nav-menu">
-                <a href="index.html">Bosh Sahifa</a>
-                <a href="comparisons.html">Solishtirishlar</a>
-                <a href="categories.html" class="active">Kategoriyalar katalogi</a>
-                <a href="about.html">Biz Haqimizda</a>
-                <a href="contact.html">Bog'lanish</a>
+                <a href="index.html">Dashboard</a>
+                <a href="comparisons.html">All Battles</a>
+                <a href="categories.html" class="active">Sectors</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Inquiries</a>
             </div>
         </div>
     </nav>
 
-    <!-- Categories Hero -->
+    <!-- Lab Statistics & Introduction -->
     <section class="categories-hero">
         <div class="container">
-            <div class="hero-content">
-                <h1>Barcha Mahsulotlar va Xizmatlar Kategoriyalari</h1>
-                <p class="hero-subtitle">Biz bozorga chiqarilayotgan har bir texnologik yangilikni, maishiy uskunani va hatto eng so'nggi avtomobillarni ham laboratoriya sharoitida hamda uzoq muddatli real hayotiy tajribalarda batafsil test qilib boramiz. Bizning asosiy maqsadimiz — sizga adashmasdan, pulingizga eng munosib mahsulotni tanlashda xolis va professional yordam berishdir. Quyida biz doimiy ravishda monitoring qilib boradigan asosiy yo'nalishlar bilan tanishishingiz mumkin.</p>
-                
-                <div class="stats-grid">
-                    <div class="stat">
-                        <i class="fas fa-layer-group"></i>
-                        <div>
-                            <h3>12+ Faol</h3>
-                            <p>Yirik Kategoriya</p>
-                        </div>
+            <h1>Specialized Core Sectors</h1>
+            <p class="hero-subtitle">Granular performance comparisons calibrated with enterprise hardware cross-examinations.</p>
+            
+            <div class="stats-grid">
+                <div class="stat">
+                    <i class="fas fa-layer-group"></i>
+                    <div>
+                        <h3>7+</h3>
+                        <p>Core Hubs</p>
                     </div>
-                    <div class="stat">
-                        <i class="fas fa-balance-scale"></i>
-                        <div>
-                            <h3>150+ Chuqur</h3>
-                            <p>Ekspert Solishtirishi</p>
-                        </div>
+                </div>
+                <div class="stat">
+                    <i class="fas fa-balance-scale"></i>
+                    <div>
+                        <h3>150+</h3>
+                        <p>Matrix Benchmarks</p>
                     </div>
-                    <div class="stat">
-                        <i class="fas fa-star"></i>
-                        <div>
-                            <h3>4.7 / 5.0</h3>
-                            <p>O'rtacha Xalqaro Reyting</p>
-                        </div>
+                </div>
+                <div class="stat">
+                    <i class="fas fa-star"></i>
+                    <div>
+                        <h3>4.7/5</h3>
+                        <p>Rating Index</p>
                     </div>
-                    <div class="stat">
-                        <i class="fas fa-check-circle"></i>
-                        <div>
-                            <h3>100% Xolis</h3>
-                            <p>Laboratoriyada Test Qilingan</p>
-                        </div>
+                </div>
+                <div class="stat">
+                    <i class="fas fa-check-circle"></i>
+                    <div>
+                        <h3>100%</h3>
+                        <p>Lab Verified</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Main Categories -->
+    <!-- Main Categories Workspace -->
     <section class="main-categories">
         <div class="container">
-            <h2 class="section-title">Asosiy Ekspertiza va Reyting Kategoriyalarimiz</h2>
+            <h2 class="section-title">Analytical Hub Frameworks</h2>
             
             <div class="categories-grid">
-                <!-- Category 1 -->
-                <a href="categories/smartphones.html" class="category-card large">
+                <!-- Smartfonlar (Large Layout) -->
+                <a href="smartphone-comparisons.html" class="category-card large">
                     <div class="category-image">
-                        <img src="images/categories/smartphones.jpg" alt="Smartfonlar va Mobil Qurilmalarni Solishtirish">
-                        <div class="category-overlay"></div>
+                        <img src="smartphone.jpg" alt="Smartphones Subsystem">
                     </div>
-                    <div class="category-content">
-                        <div class="category-icon">
-                            <i class="fas fa-mobile-alt"></i>
-                        </div>
-                        <h3>Smartfonlar va Mobil Gadjetlar</h3>
-                        <p class="category-count">25 ta mukammal professional solishtirish</p>
-                        <p class="category-desc">Ushbu bo'limda jahon bozorining yetakchilari bo'lgan Apple iPhone, Samsung Galaxy, Xiaomi, Google Pixel, OnePlus va vivo kabi brendlarning flagman hamda hamyonbop modellarini har tomonlama tahlil qilamiz. Biz nafaqat quruq texnik xarakteristikalarni, balki kameralarning tunda tasvirga olish imkoniyatlarini, sun'iy intellekt (AI) chiplarining ishlash tezligini, batareyaning ekstremal yuklamalar ostidagi chidamliligini va ekran matritsalarining ko'zga ta'sirini ham o'rganamiz. Har bir smartfon kamida 14 kun davomida asosiy qurilma sifatida ishlatilib, so'ngra unga yakuniy ball beriladi.</p>
+                    <div>
+                        <p class="category-count">25 Deep Analyses</p>
+                        <h3>Smartphones & Hardware</h3>
+                        <p class="category-desc">Ecosystem metrics covering structural computing chips, focal lens arrays, and thermal degradation rates across flagships.</p>
                         <div class="category-meta">
-                            <span><i class="fas fa-star"></i> 4.5 / 5.0 (Ekspert bahosi)</span>
-                            <span><i class="far fa-eye"></i> 250,000+ Umumiy ko'rishlar soni</span>
+                            <span><i class="fas fa-star"></i> 4.8 / 5.0</span>
+                            <span><i class="far fa-eye"></i> 250K Matrix Views</span>
                         </div>
                     </div>
                 </a>
 
-                <!-- Category 2 -->
-                <a href="categories/laptops.html" class="category-card">
-                    <div class="category-icon">
-                        <i class="fas fa-laptop"></i>
+                <!-- Noutbuklar -->
+                <a href="laptop-comparisons.html" class="category-card">
+                    <div>
+                        <div class="category-icon"><i class="fas fa-laptop"></i></div>
+                        <p class="category-count">18 Deep Analyses</p>
+                        <h3>Computing & Laptops</h3>
+                        <p class="category-desc">Architectural speed testing matching silicon platforms, x86 execution structures, and battery discharge rates.</p>
                     </div>
-                    <h3>Noutbuklar va Kompyuterlar</h3>
-                    <p class="category-count">18 ta keng qamrovli solishtirish</p>
-                    <p class="category-desc">Ishlash, o'qish, professional dasturlash va 3D modellashtirish uchun mo'ljallangan eng yaxshi noutbuklar tahlili. Apple MacBook Pro (M-seriyali chiplar), Asus ROG, Lenovo ThinkPad, HP Spectre va Dell XPS kabi modellarni protsessor quvvati, grafik imkoniyatlari, sovutish tizimining shovqini va ekran rang uzatish aniqligi (sRGB, DCI-P3) bo'yicha solishtiramiz. Siz o'zingizning byudjetingizga va sohangizga mos keladigan eng chidamli va qizib ketmaydigan ishchi mashinani aynan shu bo'limdan topasiz.</p>
                     <div class="category-meta">
-                        <span><i class="fas fa-star"></i> 4.3 / 5.0 ball</span>
-                        <span><i class="far fa-eye"></i> 180,000+ faol ko'rish</span>
+                        <span><i class="fas fa-star"></i> 4.6 / 5.0</span>
                     </div>
                 </a>
 
-                <!-- Category 3 -->
-                <a href="categories/cars.html" class="category-card">
-                    <div class="category-icon">
-                        <i class="fas fa-car"></i>
+                <!-- Avtomobillar -->
+                <a href="automotive-comparisons.html" class="category-card">
+                    <div>
+                        <div class="category-icon"><i class="fas fa-car"></i></div>
+                        <p class="category-count">15 Deep Analyses</p>
+                        <h3>Automotive Systems</h3>
+                        <p class="category-desc">Evaluating high-voltage EV battery platforms, automation packages, and thermal system efficiencies.</p>
                     </div>
-                    <h3>Zamonaviy Avtomobillar</h3>
-                    <p class="category-count">15 ta batafsil avto-solishtirish</p>
-                    <p class="category-desc">O'zbekiston va jahon avtomobil bozoridagi eng qaynoq modellar reytingi. Zamonaviy elektromobillar (BYD, Tesla, Zeekr), gibrid tizimlar va an'anaviy benzin ham da dizel dvigatelli transport vositalarining solishtirma sharhlari. Biz har bir avtomobilning real sharoitdagi yoqilg'i (yoki elektr) sarfi, amortizatsiya tizimining qulayligi, milliy iqlim sharoitimizga moslashuvchanligi, xavfsizlik yostiqchalari va elektron yordamchilarining (ADAS) samaradorligini sinovdan o'tkazamiz va tahlil qilib boramiz.</p>
                     <div class="category-meta">
-                        <span><i class="fas fa-star"></i> 4.7 / 5.0 ball</span>
-                        <span><i class="far fa-eye"></i> 320,000+ qiziquvchilar</span>
+                        <span><i class="fas fa-star"></i> 4.7 / 5.0</span>
                     </div>
                 </a>
 
-                <!-- Category 4 -->
-                <a href="categories/home-appliances.html" class="category-card">
-                    <div class="category-icon">
-                        <i class="fas fa-home"></i>
+                <!-- Maishiy Texnika -->
+                <a href="appliances-comparisons.html" class="category-card">
+                    <div>
+                        <div class="category-icon"><i class="fas fa-home"></i></div>
+                        <p class="category-count">22 Deep Analyses</p>
+                        <h3>Smart Home Infrastructure</h3>
+                        <p class="category-desc">Acoustic and filtration evaluations on air purifiers, intelligent vacuum units, and home climate grids.</p>
                     </div>
-                    <h3>Aqlli Maishiy Texnika</h3>
-                    <p class="category-count">22 ta uy-ro'zg'or solishtirishi</p>
-                    <p class="category-desc">Xonadoningiz va oshxonangiz uchun eng kerakli jihozlar: invertorli energiya tejamkor muzlatgichlar, bug'li va aqlli kir yuvish mashinalari, idish yuvish uskunalari, robot-changyutgichlar hamda mikroto'lqinli pechlar. Biz ushbu texnikalarni tanlashda ularning oylik elektr va suv iste'moli, shovqin darajasi (dB), motorining kafolat muddati va ehtiyot qismlarining bozorda topilish darajasiga qarab reyting tuzamiz. Uy yumushlarini yengillashtiruvchi eng ishonchli texnikalar katalogi.</p>
                     <div class="category-meta">
-                        <span><i class="fas fa-star"></i> 4.2 / 5.0 ball</span>
-                        <span><i class="far fa-eye"></i> 150,000+ o'quvchilar</span>
+                        <span><i class="fas fa-star"></i> 4.3 / 5.0</span>
                     </div>
                 </a>
 
-                <!-- Category 5 -->
-                <a href="categories/software.html" class="category-card">
-                    <div class="category-icon">
-                        <i class="fas fa-code"></i>
+                <!-- Dasturiy Ta'minot -->
+                <a href="software.html" class="category-card">
+                    <div>
+                        <div class="category-icon"><i class="fas fa-code"></i></div>
+                        <p class="category-count">12 Deep Analyses</p>
+                        <h3>Software & Design Suites</h3>
+                        <p class="category-desc">Comparing productivity engines, vector rendering systems, and cross-platform UX prototyping platforms.</p>
                     </div>
-                    <h3>Dasturiy Ta'minot va IT</h3>
-                    <p class="category-count">12 ta dasturlar solishtirishi</p>
-                    <p class="category-desc">Grafik dizaynerlar, video montaj ustasi, kopirayterlar va ofis xodimlari uchun eng yaxshi dasturlar va onlayn platformalar tahlili. Adobe Photoshop, Canva, Figma, CapCut, Microsoft Office va ularga muqobil bo'lgan tekin hamda pullik servislarning funksional imkoniyatlarini taqqoslaymiz. Shuningdek, operatsion tizimlar (Windows, macOS, Linux) va antivirus dasturlarining kompyuterni sekinlashtirmasdan ishlash qobiliyatlarini real testlar yordamida aniqlab beramiz.</p>
                     <div class="category-meta">
-                        <span><i class="fas fa-star"></i> 4.4 / 5.0 ball</span>
-                        <span><i class="far fa-eye"></i> 120,000+ mutaxassislar</span>
+                        <span><i class="fas fa-star"></i> 4.4 / 5.0</span>
                     </div>
                 </a>
 
-                <!-- Category 6 -->
-                <a href="categories/audio.html" class="category-card">
-                    <div class="category-icon">
-                        <i class="fas fa-headphones"></i>
+                <!-- Audio -->
+                <a href="audio.html" class="category-card">
+                    <div>
+                        <div class="category-icon"><i class="fas fa-headphones"></i></div>
+                        <p class="category-count">14 Deep Analyses</p>
+                        <h3>Audio Engineering</h3>
+                        <p class="category-desc">Frequency spectrum monitoring, ANC dampening parameters, and high-fidelity Bluetooth codecs.</p>
                     </div>
-                    <h3>Professional Audio Uskunalar</h3>
-                    <p class="category-count">14 ta akustik solishtirish</p>
-                    <p class="category-desc">Musiqa ixlosmandlari, geymerlar va professional strimerlar uchun simli hamda simsiz naushniklar, portativ bluetooth kolonkalar va studiyaviy mikrofonlar tahlili. Sony, JBL, Apple AirPods, Sennheiser va Bose brendlarining ovoz sifati, bas chastotalari, faol shovqinni bekor qilish (ANC) tizimi va mikrofoni orqali ovoz uzatish tiniqligini tekshiramiz. Biz bilan eng toza va professional akustikani tanlang.</p>
                     <div class="category-meta">
-                        <span><i class="fas fa-star"></i> 4.6 / 5.0 ball</span>
-                        <span><i class="far fa-eye"></i> 140,000+ audiofirlar</span>
+                        <span><i class="fas fa-star"></i> 4.6 / 5.0</span>
                     </div>
                 </a>
 
-                <!-- Category 7 -->
-                <a href="categories/gaming.html" class="category-card">
-                    <div class="category-icon">
-                        <i class="fas fa-gamepad"></i>
+                <!-- Gaming -->
+                <a href="gaming.html" class="category-card">
+                    <div>
+                        <div class="category-icon"><i class="fas fa-gamepad"></i></div>
+                        <p class="category-count">10 Deep Analyses</p>
+                        <h3>Gaming Ecosystems</h3>
+                        <p class="category-desc">Framerate profiling, processing performance matrices, and system throughput cross-evaluations.</p>
                     </div>
-                    <h3>O'yinlar dunyosi va Gaming</h3>
-                    <p class="category-count">10 ta geyming solishtirishi</p>
-                    <p class="category-desc">Zamonaviy o'yin konsollari (Sony PlayStation 5 Pro, Xbox Series X, Nintendo Switch OLED) va kuchli geymerlar kompyuterlari komponentlarini taqqoslash bo'limi. Biz videokartalar (NVIDIA RTX va AMD Radeon) o'yinlarda soniyasiga necha kadr (FPS) bera olishini, kulerlarning sovutish qobiliyatini va monitorlarning javob qaytarish tezligini (1ms, 240Hz) o'lchaymiz. Shuningdek, eng ko'p kutilayotgan o'yinlarning grafik tahlillarini taqdim etamiz.</p>
                     <div class="category-meta">
-                        <span><i class="fas fa-star"></i> 4.8 / 5.0 ball</span>
-                        <span><i class="far fa-eye"></i> 280,000+ geymerlar</span>
-                    </div>
-                </a>
-
-                <!-- Category 8 -->
-                <a href="categories/cameras.html" class="category-card">
-                    <div class="category-icon">
-                        <i class="fas fa-camera"></i>
-                    </div>
-                    <h3>Professional Foto va Video</h3>
-                    <p class="category-count">8 ta kameralar solishtirishi</p>
-                    <p class="category-desc">Blogerlar, to'y va tadbirlar operatorlari hamda professional fotograflar uchun oynasiz (mirrorless) kameralar, ob'ektivlar va stabilizatorlar (DJI Ronin) tahlili. Sony Alpha, Canon EOS va Nikon tizimlarining avto-fokus tezligi, 4K va 8K formatda video yozish sifati, ranglar profili (Log formatlar) va kam yorug'likda shovqinlarni (ISO) boshqarish darajasi o'rtasidagi farqlarni batafsil ko'rib chiqamiz.</p>
-                    <div class="category-meta">
-                        <span><i class="fas fa-star"></i> 4.5 / 5.0 ball</span>
-                        <span><i class="far fa-eye"></i> 95,000+ operatorlar</span>
-                    </div>
-                </a>
-
-                <!-- Category 9 -->
-                <a href="categories/wearables.html" class="category-card">
-                    <div class="category-icon">
-                        <i class="fas fa-smartwatch"></i>
-                    </div>
-                    <h3>Aqlli Soatlar va Fitnes Gadjetlar</h3>
-                    <p class="category-count">9 ta taqiladigan qurilmalar</p>
-                    <p class="category-desc">Sog'lom turmush tarziga rioya qiluvchilar uchun eng yaxshi aqlli soatlar (Apple Watch Ultra, Samsung Galaxy Watch) va fitnes bilaguzuklar solishtiruvi. Ushbu gadjetlarning qon bosimi, puls, kislorod darajasi (SpO2) va uyqu fazalarini qanchalik aniq o'lchay olishini tibbiy uskunalar bilan taqqoslagan holda tekshiramiz. Batareya muddati va GPS navigatsiyasining aniqligi ham biz uchun muhim mezon hisoblanadi.</p>
-                    <div class="category-meta">
-                        <span><i class="fas fa-star"></i> 4.3 / 5.0 ball</span>
-                        <span><i class="far fa-eye"></i> 110,000+ sportchilar</span>
-                    </div>
-                </a>
-
-                <!-- Category 10 -->
-                <a href="categories/tablets.html" class="category-card">
-                    <div class="category-icon">
-                        <i class="fas fa-tablet-alt"></i>
-                    </div>
-                    <h3>Planshetlar va Sensorli Ekranlar</h3>
-                    <p class="category-count">7 ta planshet solishtiruvi</p>
-                    <p class="category-desc">Rassomlar, dizaynerlar, talabalar va bolalar uchun eng qulay planshetlar katalogi. Apple iPad Pro, Samsung Galaxy Tab va Xiaomi Pad modellarini solishtiramiz. Elektron qalam (Stylus) bilan ishlashdagi kechikishlar va sezgirlik darajasi, ekran yorqinligi (nits), kitob o'qish va dars qilish jarayonida ko'zni toliqtirmaslik texnologiyalari va simsiz klaviatura bilan moslashishi tahlil qilinadi.</p>
-                    <div class="category-meta">
-                        <span><i class="fas fa-star"></i> 4.4 / 5.0 ball</span>
-                        <span><i class="far fa-eye"></i> 85,000+ foydalanuvchi</span>
-                    </div>
-                </a>
-
-                <!-- Category 11 -->
-                <a href="categories/tv.html" class="category-card">
-                    <div class="category-icon">
-                        <i class="fas fa-tv"></i>
-                    </div>
-                    <h3>Televizorlar va Projektorlar</h3>
-                    <p class="category-count">6 ta uy kinoteatri tahlili</p>
-                    <p class="category-desc">Uyingiz uchun eng zo'r televizor va monitorlarni tanlash bo'yicha qo'llanma. Neo QLED, OLED, Mini-LED ekranlar farqi, 4K va 8K aniqlikdagi tasvir sifati, Smart TV tizimlarining (Android TV, Tizen, WebOS) tezkorligi va xonaga mos keladigan ekran o'lchamini (dyuym) aniqlash usullari. Shuningdek, uy sharoitida 100 dyuymli tasvir bera oladigan zamonaviy lazerli projektorlar sharhlari.</p>
-                    <div class="category-meta">
-                        <span><i class="fas fa-star"></i> 4.6 / 5.0 ball</span>
-                        <span><i class="far fa-eye"></i> 75,000+ oilalar</span>
-                    </div>
-                </a>
-
-                <!-- Category 12 -->
-                <a href="categories/network.html" class="category-card">
-                    <div class="category-icon">
-                        <i class="fas fa-wifi"></i>
-                    </div>
-                    <h3>Tarmoq va Uy Xavfsizligi</h3>
-                    <p class="category-count">5 ta xavfsizlik va tarmoq testi</p>
-                    <p class="category-desc">Uyingiz yoki ofisingizda uzluksiz va yuqori tezlikdagi internetni ta'minlovchi eng kuchli Wi-Fi 6 va Wi-Fi 7 routerlari, Mesh tizimlari. Shuningdek, masofadan turib smartfon orqali boshqariladigan IP kameralar, aqlli eshik qulflari va harakat datchiklarining o'zaro integratsiyasi. Tarmoq xavfsizligi, ma'lumotlarning hakerlardan himoyalanganligi va bulutli xotiraga yozib borish barqarorligi tekshiriladi.</p>
-                    <div class="category-meta">
-                        <span><i class="fas fa-star"></i> 4.2 / 5.0 ball</span>
-                        <span><i class="far fa-eye"></i> 65,000+ uy egalari</span>
+                        <span><i class="fas fa-star"></i> 4.8 / 5.0</span>
                     </div>
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- Category Features -->
+    <!-- Lab Testing Standards Tab Panel -->
     <section class="category-features">
         <div class="container">
-            <h2 class="section-title">Har bir Kategoriyada Mahsulotlarni Qanday Eksperiment Qilamiz va Testdan O'tkazamiz?</h2>
+            <h2 class="section-title" style="text-align: center; margin-bottom: 3rem;">Laboratory Evaluation Framework</h2>
             
             <div class="features-tabs">
                 <div class="tabs-header">
-                    <button class="tab-btn active" data-tab="smartphones">
-                        <i class="fas fa-mobile-alt"></i> Smartfonlarni Testlash Tizimi
-                    </button>
-                    <button class="tab-btn" data-tab="laptops">
-                        <i class="fas fa-laptop"></i> Noutbuklarni Baholash Mezonlari
-                    </button>
-                    <button class="tab-btn" data-tab="cars">
-                        <i class="fas fa-car"></i> Avtomobillarni Katta Yo'ldagi Sinovlari
-                    </button>
-                    <button class="tab-btn" data-tab="home">
-                        <i class="fas fa-home"></i> Maishiy Texnikani Ekstremal Ishlatish
-                    </button>
+                    <button class="tab-btn active" data-tab="smartphones"><i class="fas fa-mobile-alt"></i> Smartphones</button>
+                    <button class="tab-btn" data-tab="laptops"><i class="fas fa-laptop"></i> Computing</button>
+                    <button class="tab-btn" data-tab="cars"><i class="fas fa-car"></i> Automotive</button>
+                    <button class="tab-btn" data-tab="home"><i class="fas fa-home"></i> Appliances</button>
                 </div>
 
                 <div class="tabs-content">
-                    <!-- Smartphones Tab -->
+                    <!-- Smartphones Info Header -->
                     <div class="tab-pane active" id="smartphones-tab">
-                        <h3>Smartfonlarni Laboratoriyada Tekshirish Parametrlari</h3>
-                        <p style="color:#666; margin-bottom: 30px; text-align: center; max-width: 800px; margin-left: auto; margin-right: auto;">Har bir smartfon bizning studiyamizga kelgandan so'ng, u maxsus dasturiy va texnik yuklamalar ostida 4 ta asosiy yo'nalish bo'yicha to'liq 100 ballik tizimda imtihon qilinadi. Biz reklamalarga umuman ishonmaymiz, faqat ko'rsatkichlarga tayanamiz.</p>
                         <div class="test-params">
                             <div class="param">
-                                <div class="param-icon">
-                                    <i class="fas fa-camera"></i>
-                                </div>
+                                <div class="param-icon"><i class="fas fa-camera"></i></div>
                                 <div class="param-content">
-                                    <h4>Kamera Obyektivlari va Optik Stabilizatsiya</h4>
-                                    <p>Biz kameralarni kunduzi ideal yorug'likda, quyoshga qarshi turganda, tunda mutloq qorong'u ko'chalarda va portret rejimida sinab ko'ramiz. Ranglarning tabiiyligi, dinamik diapazon (HDR) va video yozish paytida silkinishlarni yutish qobiliyati (OIS) ballarni belgilaydi.</p>
+                                    <h4>Optics Resolution Matrix</h4>
+                                    <p>Dynamic range profiling, lux decay tolerances, chromatic mapping calibration data.</p>
                                 </div>
                             </div>
                             <div class="param">
-                                <div class="param-icon">
-                                    <i class="fas fa-battery-full"></i>
-                                </div>
+                                <div class="param-icon"><i class="fas fa-battery-full"></i></div>
                                 <div class="param-content">
-                                    <h4>Batareya Energiya Sarfi va Issiqlik Ajralishi</h4>
-                                    <p>Smartfon ekrani maksimal yorqinlikka qo'yilib, uning ichida uzluksiz 4K video qo'yiladi va og'ir 3D o'yinlar o'ynaladi. Batareya 100% dan 0% gacha necha soat chidashi daqiqasigacha o'lchanadi. Shuningdek, 0 dan 100% gacha zaryadlanish vaqti qayd etiladi.</p>
-                                </div>
-                            </div>
-                            <div class="param">
-                                <div class="param-icon">
-                                    <i class="fas fa-tachometer-alt"></i>
-                                </div>
-                                <div class="param-content">
-                                    <h4>Protsessor Ishlash Tezligi va Trottling Test</h4>
-                                    <p>AnTuTu va Geekbench kabi benchmark dasturlarida sintetik testlar o'tkaziladi. Keyin esa 1 soat davomida eng og'ir o'yinlar o'ynalib, protsessor qizib ketganda chastotasini qanchalik pasaytirib yuborishi (trottling ya'ni qotib qolishi) foizlarda hisoblanadi.</p>
-                                </div>
-                            </div>
-                            <div class="param">
-                                <div class="param-icon">
-                                    <i class="fas fa-eye"></i>
-                                </div>
-                                <div class="param-content">
-                                    <h4>Ekran Matritsasi va PWM (Ko'z Charchashi) Darajasi</h4>
-                                    <p>Ekranlarning yorqinligi maxsus lyuksmetr asboblari yordamida o'lchanadi (quyosh ostida o'qish qulayligini bilish uchun). Shuningdek, ko'zni juda tez toliqtiradigan va bosh og'rig'iga sabab bo'luvchi AMOLED ekranlarning miltillash (PWM) darajasi tekshiriladi.</p>
+                                    <h4>Cell Thermal Monitoring</h4>
+                                    <p>Standardized automated usage profiling, impedance tracking, voltage degradation analysis.</p>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Laptops Tab -->
+                    <!-- Laptops Info Header -->
                     <div class="tab-pane" id="laptops-tab">
-                        <h3>Noutbuklarni Professional Ish Sharoitida Baholash</h3>
-                        <p style="color:#666; margin-bottom: 30px; text-align: center; max-width: 800px; margin-left: auto; margin-right: auto;">Noutbuk — bu uzoq yillar xizmat qilishi kerak bo'lgan asosiy ish qurolidir. Uni shunchaki tashqi ko'rinishiga qarab baholash xato. Biz noutbuklarni haqiqiy ishchilarga berib, ularning quvvatini oxirigacha sinaymiz.</p>
                         <div class="test-params">
                             <div class="param">
-                                <div class="param-icon">
-                                    <i class="fas fa-bolt"></i>
-                                </div>
+                                <div class="param-icon"><i class="fas fa-bolt"></i></div>
                                 <div class="param-content">
-                                    <h4>Eksremal yuklamalarda ish samaradorligi</h4>
-                                    <p>Biz noutbuklarda yirik kod bazalarini kompilyatsiya qilamiz, 4K formatdagi og'ir videolarni render qilib ko'ramiz va murakkab 3D arxitektura loyihalarini yuklaymiz. Protsessor va operativ xotira (RAM) ma'lumotlarni qayta ishlashda xatolik bermasligi shart.</p>
+                                    <h4>Silicon Compute Capacity</h4>
+                                    <p>Single and multi-core compiling tasks, vector instruction mapping benchmarks under full load.</p>
                                 </div>
                             </div>
                             <div class="param">
-                                <div class="param-icon">
-                                    <i class="fas fa-clock"></i>
-                                </div>
+                                <div class="param-icon"><i class="fas fa-thermometer-half"></i></div>
                                 <div class="param-content">
-                                    <h4>Avtonomlik va Tok manbaidan uzilgandagi quvvat</h4>
-                                    <p>Noutbuk zaryadniksiz, faqat o'z batareyasida ofis dasturlarida, internetda va videokonferensiyalarda qancha vaqt yashay olishini aniqlaymiz. Ayrim noutbuklar tokdan uzilganda sekinlashib qoladi, biz ana shu pasayish koeffitsiyentini o'lchaymiz.</p>
-                                </div>
-                            </div>
-                            <div class="param">
-                                <div class="param-icon">
-                                    <i class="fas fa-thermometer-half"></i>
-                                </div>
-                                <div class="param-content">
-                                    <h4>Kulerlar Shovqini va Issiqlik Tarqalishi</h4>
-                                    <p>Noutbuk korpusining klaviatura va pastki qismlari pirometr yordamida o'lchanadi. tizzaga qo'yib ishlaganda kuydirmasligi kerak. Kulerlar (ventilyatorlar) maksimal tezlikda aylanganda chiqadigan shovqin maxsus mikrofonlar orqali desibelda o'lchanadi.</p>
-                                </div>
-                            </div>
-                            <div class="param">
-                                <div class="param-icon">
-                                    <i class="fas fa-weight"></i>
-                                </div>
-                                <div class="param-content">
-                                    <h4>Korpus Ergonomikasi va Portativlik chidamliligi</h4>
-                                    <p>Noutbukning og'irligi, zaryadlovchi qurilmasining hajmi, korpus qismlarining alyuminiy yoki plastik ekanligi, ekranning bir qo'l bilan ochilishi (Macbook testi) va korpusning egilib-buralib ketmasligi sinovdan o'tkaziladi.</p>
+                                    <h4>Thermal Throttling Index</h4>
+                                    <p>Celsius saturation profiles, acoustics fan noise db metrics, core system frequency decay lines.</p>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Cars Tab -->
+                    <!-- Cars Info Header -->
                     <div class="tab-pane" id="cars-tab">
-                        <h3>Avtomobillarni Real Yo'l va Iqlim Sharoitidagi Sinovlar</h3>
-                        <p style="color:#666; margin-bottom: 30px; text-align: center; max-width: 800px; margin-left: auto; margin-right: auto;">Biz avtomobillarni shunchaki tekis asfaltda haydamaymiz. Biz ularni O'zbekistonning jazirama yoz kunlarida, tog'li yo'llarida va tirbandlik ko'p bo'lgan shahar ichida kunlar davomida sinovdan o'tkazamiz.</p>
                         <div class="test-params">
                             <div class="param">
-                                <div class="param-icon">
-                                    <i class="fas fa-gas-pump"></i>
-                                </div>
+                                <div class="param-icon"><i class="fas fa-gas-pump"></i></div>
                                 <div class="param-content">
-                                    <h4>Real Yoqilg'i va Energiya Sarfi Sarflanishi</h4>
-                                    <p>Konditsioner to'liq yoqilgan holda, shahar ichidagi eng og'ir tirbandliklarda va katta magistral yo'llarda avtomobilning 100 km masofaga sarflaydigan real yoqilg'isini o'lchaymiz. Elektromobillar uchun bir marta zaryad bilan yura oladigan real kilometri aniqlanadi.</p>
+                                    <h4>Powertrain Efficiency</h4>
+                                    <p>Real-world range depletion algorithms under varying temperatures and aerodynamic friction.</p>
                                 </div>
                             </div>
                             <div class="param">
-                                <div class="param-icon">
-                                    <i class="fas fa-couch"></i>
-                                </div>
+                                <div class="param-icon"><i class="fas fa-shield-alt"></i></div>
                                 <div class="param-content">
-                                    <h4>Ovoz Izolyatsiyasi va Podveska Qulayligi</h4>
-                                    <p>Avtomobil yomon, notekis va chuqurlari ko'p yo'llardan o'tayotganda salondagi tebranishlar va shovqin darajasi o'lchanadi. Shovqin o'lchagich uskuna yordamida 60 km/soat va 100 km/soat tezlikda salon ichidagi motor va shina ovozlari tekshiriladi.</p>
-                                </div>
-                            </div>
-                            <div class="param">
-                                <div class="param-icon">
-                                    <i class="fas fa-shield-alt"></i>
-                                </div>
-                                <div class="param-content">
-                                    <h4>Xavfsizlik Tizimlari va Tormozlanish Masofasi</h4>
-                                    <p>Avtomobilning favqulodda tormoz berilgandagi tormozlanish yo'li uzunligi metrlarda o'lchanadi. Korpusning burilishlardagi barqarorligi (kursovaya ustoychivost), datchiklarning piyodalarni va to'siqlarni o'z vaqtida ko'rib tormoz bera olishi tekshiriladi.</p>
-                                </div>
-                            </div>
-                            <div class="param">
-                                <div class="param-icon">
-                                    <i class="fas fa-tools"></i>
-                                </div>
-                                <div class="param-content">
-                                    <h4>Likvidlik va Ehtiyot Qismlar Servisi</h4>
-                                    <p>Avtomobilni sotib olgandan keyin uning bozordagi narxi qanchalik tez tushib ketishi (likvidlik) o'rganiladi. Rasmiy dilerlik markazlarining mavjudligi, kafolat shartlari va ehtiyot qismlarining mahalliy do'konlardagi narxlari tahlil qilinadi.</p>
+                                    <h4>Sensor Array Auditing</h4>
+                                    <p>Active ADAS calculation, radar and camera reaction time parameters across dynamic courses.</p>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Home Appliances Tab -->
+                    <!-- Home Info Header -->
                     <div class="tab-pane" id="home-tab">
-                        <h3>Maishiy Texnikani Ekstremal Ish Rejimlarida Tekshirish</h3>
-                        <p style="color:#666; margin-bottom: 30px; text-align: center; max-width: 800px; margin-left: auto; margin-right: auto;">Uy texnikasi har kuni va tinimsiz ishlaydi. Ularning chidamliligini bilish uchun biz laboratoriyamizda ularga eng qiyin va og'ir vazifalarni topshirib, motorlarining chidamlilik chegarasini tekshiramiz.</p>
                         <div class="test-params">
                             <div class="param">
-                                <div class="param-icon">
-                                    <i class="fas fa-bolt"></i>
-                                </div>
+                                <div class="param-icon"><i class="fas fa-bolt"></i></div>
                                 <div class="param-content">
-                                    <h4>Uzoq muddatli Energiya va Suv Tejamkorligi</h4>
-                                    <p>Biz texnikalarni maxsus vattmetrlarga ulab qo'yamiz. Masalan, muzlatgichning 1 oy davomida eshigi ko'p ochilib yopilganda qancha elektr toki sarflashini va kir yuvish mashinasining bitta siklda necha litr suv isrof qilishini aniq hisoblab chiqamiz.</p>
+                                    <h4>Energy Draw Analysis</h4>
+                                    <p>Long-term operational wattage, standby drain monitoring, utility grid impact verification.</p>
                                 </div>
                             </div>
                             <div class="param">
-                                <div class="param-icon">
-                                    <i class="fas fa-volume-up"></i>
-                                </div>
+                                <div class="param-icon"><i class="fas fa-check-circle"></i></div>
                                 <div class="param-content">
-                                    <h4>Kechki va Kunduzgi Shovqin Darajasi</h4>
-                                    <p>Yotoqxonaga yaqin joylashgan yoki studiya tipidagi uylardagi oshxona texnikalarining shovqini juda muhim. Changyutgich va kir yuvish mashinalari siqish rejimida (1200 oborotda) qanchalik baland baqirishi va vibratsiya berishi desibel datchiklari orqali o'lchanadi.</p>
-                                </div>
-                            </div>
-                            <div class="param">
-                                <div class="param-icon">
-                                    <i class="fas fa-check-circle"></i>
-                                </div>
-                                <div class="param-content">
-                                    <h4>Asosiy Funktsional Samaradorlik Testi</h4>
-                                    <p>Kir yuvish mashinasiga eng qiyin dog'larni (kofe, moy, o't sharbati) surkab yuvib ko'ramiz. Muzlatgichning ichida harorat har bir polkada bir xil tarqalishini raqamli termometrlar bilan tekshiramiz. Robot changyutgichlarni gilamdagi sochlarni tozalashini ko'ramiz.</p>
-                                </div>
-                            </div>
-                            <div class="param">
-                                <div class="param-icon">
-                                    <i class="fas fa-cogs"></i>
-                                </div>
-                                <div class="param-content">
-                                    <h4>Yig'ilish Sifati va Plastik materiallar mustahkamligi</h4>
-                                    <p>Texnika korpusining materiallari, eshiklarining petlyalari, tugmalarning bosilishi va mexanizmlarning mustahkamligi o'rganiladi. Arzon hidli plastikdan foydalanilgan yoki yo'qligi, vaqt o'tib sarg'ayib ketish ehtimoli borligi aniqlanadi.</p>
+                                    <h4>Particulate Capture Rates</h4>
+                                    <p>0.3-micron particulate capture density profiling across mechanical filtration media elements.</p>
                                 </div>
                             </div>
                         </div>
@@ -464,133 +794,55 @@
         </div>
     </section>
 
-    <!-- Category Comparison -->
+    <!-- Lab Statistical Database Ledger -->
     <section class="category-comparison">
         <div class="container">
-            <h2 class="section-title">Kategoriyalar Bo'yicha O'rtacha Statistik Reyting Jadvali</h2>
+            <h2 class="section-title">Aggregated Structural Scorecards</h2>
             
             <div class="comparison-table">
                 <table>
                     <thead>
                         <tr>
-                            <th>Kategoriya Nomi</th>
-                            <th>Faol Solishtirishlar</th>
-                            <th>O'rtacha Ekspert Reytingi</th>
-                            <th>Joriy Oydagi Eng Yaxshi Mahsulot</th>
-                            <th>O'rtacha Test Qilish Vaqti</th>
-                            <th>Oylik ko'rishlar</th>
+                            <th>Sector Category</th>
+                            <th>Active Datasets</th>
+                            <th>Averaged Matrix Score</th>
+                            <th>Top Rated Paradigm</th>
+                            <th>Testing Window Duration</th>
+                            <th>Traffic Metrics</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td>
-                                <i class="fas fa-mobile-alt"></i>
-                                Smartfonlar va Mobil Gadjetlar
-                            </td>
-                            <td>25 ta maqola</td>
-                            <td>
-                                <div class="rating-cell">
-                                    <div class="stars">
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star-half-alt"></i>
-                                    </div>
-                                    4.5 / 5.0
-                                </div>
-                            </td>
-                            <td>Samsung Galaxy S24 Ultra Ultra</td>
-                            <td>2 hafta (14 kun)</td>
-                            <td>250,000+ marta</td>
+                            <td><strong>Smartphones</strong></td>
+                            <td>25</td>
+                            <td><span class="stars"><i class="fas fa-star"></i> 4.5</span></td>
+                            <td>Samsung Galaxy S24 Series</td>
+                            <td>14 Days Cycle</td>
+                            <td>250K+</td>
                         </tr>
                         <tr>
-                            <td>
-                                <i class="fas fa-laptop"></i>
-                                Noutbuklar va Tizimlar
-                            </td>
-                            <td>18 ta maqola</td>
-                            <td>
-                                <div class="rating-cell">
-                                    <div class="stars">
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="far fa-star"></i>
-                                    </div>
-                                    4.3 / 5.0
-                                </div>
-                            </td>
-                            <td>Apple MacBook Air M2 / M3</td>
-                            <td>3 hafta (21 kun)</td>
-                            <td>180,000+ marta</td>
+                            <td><strong>Computing Suites</strong></td>
+                            <td>18</td>
+                            <td><span class="stars"><i class="fas fa-star"></i> 4.3</span></td>
+                            <td>MacBook Systems Platform</td>
+                            <td>21 Days Cycle</td>
+                            <td>180K+</td>
                         </tr>
                         <tr>
-                            <td>
-                                <i class="fas fa-car"></i>
-                                Avtomobillar va Transport
-                            </td>
-                            <td>15 ta maqola</td>
-                            <td>
-                                <div class="rating-cell">
-                                    <div class="stars">
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                    </div>
-                                    4.7 / 5.0
-                                </div>
-                            </td>
-                            <td>Tesla Model 3 Highland</td>
-                            <td>1 oy (30 kun)</td>
-                            <td>320,000+ marta</td>
+                            <td><strong>Automotive Systems</strong></td>
+                            <td>15</td>
+                            <td><span class="stars"><i class="fas fa-star"></i> 4.7</span></td>
+                            <td>Tesla Architecture Model 3</td>
+                            <td>30 Days Cycle</td>
+                            <td>320K+</td>
                         </tr>
                         <tr>
-                            <td>
-                                <i class="fas fa-home"></i>
-                                Maishiy Texnika va Jihozlar
-                            </td>
-                            <td>22 ta maqola</td>
-                            <td>
-                                <div class="rating-cell">
-                                    <div class="stars">
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="far fa-star"></i>
-                                    </div>
-                                    4.2 / 5.0
-                                </div>
-                            </td>
-                            <td>Xiaomi Robot Changyutgich S10T</td>
-                            <td>2 hafta (14 kun)</td>
-                            <td>150,000+ marta</td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <i class="fas fa-headphones"></i>
-                                Audio va Akustika
-                            </td>
-                            <td>14 ta maqola</td>
-                            <td>
-                                <div class="rating-cell">
-                                    <div class="stars">
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                    </div>
-                                    4.6 / 5.0
-                                </div>
-                            </td>
-                            <td>Sony WH-1000XM5 Simsiz Naushnik</td>
-                            <td>1 hafta (7 kun)</td>
-                            <td>140,000+ marta</td>
+                            <td><strong>Appliances Grid</strong></td>
+                            <td>22</td>
+                            <td><span class="stars"><i class="fas fa-star"></i> 4.2</span></td>
+                            <td>Xiaomi Smart Ecosystem</td>
+                            <td>14 Days Cycle</td>
+                            <td>150K+</td>
                         </tr>
                     </tbody>
                 </table>
@@ -598,130 +850,99 @@
         </div>
     </section>
 
-    <!-- Most Popular -->
+    <!-- Sector Optimization Leaderboard -->
     <section class="most-popular">
         <div class="container">
-            <h2 class="section-title">Eng Ko'p O'qilayotgan va Trenddagi Kategoriyalar</h2>
+            <h2 class="section-title">Sector Volume Dominance</h2>
             
             <div class="popular-categories">
                 <div class="popular-card">
-                    <div class="popular-rank">🥇 1-O'rin</div>
+                    <div class="popular-rank">01</div>
                     <div class="popular-content">
-                        <h3>Avtomobillar va Elektromobillar</h3>
-                        <p class="popular-desc">Ushbu oyda eng ko'p ko'rilgan va foydalanuvchilar o'rtasida eng katta muhokamalarga sabab bo'lgan kategoriya. Ayniqsa, yangi avlod Xitoy elektromobillari reytingi juda ommalashdi.</p>
-                        <div class="popular-stats">
-                            <span><i class="far fa-eye"></i> 320,000+ ko'rish</span>
-                            <span><i class="fas fa-comment"></i> 2,500+ faol sharhlar</span>
-                        </div>
-                        <a href="categories/cars.html" class="btn btn-small">Kategoriyani Ochish</a>
+                        <h3>Automotive Core</h3>
+                        <p class="popular-desc">Highest volumetric structural analytical reads tracked across regional grid hubs.</p>
+                        <a href="automotive-comparisons.html" class="btn-small">Access Matrix</a>
                     </div>
                 </div>
                 
                 <div class="popular-card">
-                    <div class="popular-rank">🥈 2-O'rin</div>
+                    <div class="popular-rank">02</div>
                     <div class="popular-content">
-                        <h3>Smartfonlar va Gadjetlar</h3>
-                        <p class="popular-desc">O'zbekiston bozorida har kuni minglab odamlar telefon sotib oladi. Qaysi flagman kamerasi eng zo'rligi va qaysi arzon telefon qotmasdan ishlashi haqidagi solishtirishlarimiz hamon trendda.</p>
-                        <div class="popular-stats">
-                            <span><i class="far fa-eye"></i> 250,000+ ko'rish</span>
-                            <span><i class="fas fa-comment"></i> 3,200+ qizg'in bahs</span>
-                        </div>
-                        <a href="categories/smartphones.html" class="btn btn-small">Kategoriyani Ochish</a>
-                    </div>
-                </div>
-                
-                <div class="popular-card">
-                    <div class="popular-rank">🥉 3-O'rin</div>
-                    <div class="popular-content">
-                        <h3>O'yinlar dunyosi va Geyming</h3>
-                        <p class="popular-desc">Yoshlar va geymerlar uchun eng qiziqarli bo'lim. Grafika sozlamalari, kompyuter yig'ish sirlari va konsollar o'rtasidagi farqlar haqidagi eng sara maqolalar va reytinglar to'plami.</p>
-                        <div class="popular-stats">
-                            <span><i class="far fa-eye"></i> 280,000+ ko'rish</span>
-                            <span><i class="fas fa-comment"></i> 1,800+ fikrlar</span>
-                        </div>
-                        <a href="categories/gaming.html" class="btn btn-small">Kategoriyani Ochish</a>
+                        <h3>Smartphones</h3>
+                        <p class="popular-desc">Dense component cross-examination matrices matching major micro-architectures.</p>
+                        <a href="smartphone-comparisons.html" class="btn-small">Access Matrix</a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- CTA -->
+    <!-- Editorial Framework CTA -->
     <section class="categories-cta">
         <div class="container">
-            <div class="cta-content">
-                <h2>Sizni Qiziqtirgan Kategoriya Ro'yxatimizda Yo'qmi?</h2>
-                <p>Biz doimiy ravishda o'quvchilarimizning talab va istaklari asosida yangi yo'nalishlarni qo'shib boramiz. Agar siz bizning ekspertlarimiz tomonidan qaysidir maxsus mahsulotlar guruhini (masalan, aqlli uy tizimlari, sport anjomlari yoki bolalar kolyaskalari) professional test qilinishini va reyting shaklida taqdim etilishini xohlasangiz, darhol bizga taklifingizni yuboring. Sizning fikringiz biz uchun juda qadrli!</p>
-                <div class="cta-buttons">
-                    <a href="contact.html" class="btn btn-primary">
-                        <i class="fas fa-envelope"></i> Yangi Kategoriya Taklif Qilish
-                    </a>
-                    <a href="comparisons.html" class="btn btn-secondary">
-                        <i class="fas fa-eye"></i> Barcha Maqola va Solishtirishlar
-                    </a>
-                </div>
+            <h2>Propose New Hardware Matrix Vectors</h2>
+            <p>Our lab schedules platform benchmarks depending on subscriber traffic metrics and hardware access pathways.</p>
+            <div class="cta-buttons">
+                <a href="contact.html" class="btn btn-primary">Submit Test Proposal</a>
+                <a href="comparisons.html" class="btn btn-secondary">Review Active Frameworks</a>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- Structural Layout Architecture Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-col">
-                    <a href="index.html" class="footer-logo">
-                        <img src="images/logo.png" alt="Ranking Hours Ekspertiza Markazi" width="40">
-                        <span>Ranking<span class="highlight">Hours</span></span>
-                    </a>
-                    <p class="footer-description">
-                        Biz haqiqiy, jonli insonlar tomonidan o'tkazilgan testlar va mutaxassislar xulosasiga tayanadigan mustaqil platformamiz. Biz hech qanday brenddan reklama olib, uni asossiz maqtamaymiz. Har bir mahsulotni o'z mablag'imizga sotib olib, xalqimiz uchun rostini yozamiz.
-                    </p>
-                </div>
-                
-                <div class="footer-col">
-                    <h3>Asosiy Texnik Bo'limlar</h3>
+                    <h3>Core Ecosystem</h3>
                     <ul class="footer-links">
-                        <li><a href="categories/smartphones.html">Smartfonlar va Gadjetlar</a></li>
-                        <li><a href="categories/laptops.html">Noutbuklar va Kompyuterlar</a></li>
-                        <li><a href="categories/cars.html">Zamonaviy Avtomobillar</a></li>
-                        <li><a href="categories/home-appliances.html">Aqlli Maishiy Texnika</a></li>
+                        <li><a href="smartphone-comparisons.html">Smartphones Hub</a></li>
+                        <li><a href="laptop-comparisons.html">Computing Frameworks</a></li>
+                        <li><a href="automotive-comparisons.html">Automotive Sectors</a></li>
+                        <li><a href="appliances-comparisons.html">Infrastructure Appliances</a></li>
                     </ul>
                 </div>
                 
                 <div class="footer-col">
-                    <h3>Qo'shimcha Yo'nalishlar</h3>
+                    <h3>Software Systems</h3>
                     <ul class="footer-links">
-                        <li><a href="categories/software.html">Dasturiy Ta'minotlar</a></li>
-                        <li><a href="categories/audio.html">Audio Uskunalar va Naushniklar</a></li>
-                        <li><a href="categories/gaming.html">O'yinlar va Gaming Tizimlari</a></li>
-                        <li><a href="categories/cameras.html">Foto va Video Kameralar</a></li>
+                        <li><a href="software.html">Application Layouts</a></li>
+                        <li><a href="audio.html">Audio Frameworks</a></li>
+                        <li><a href="gaming.html">Gaming Hub</a></li>
                     </ul>
                 </div>
                 
                 <div class="footer-col">
-                    <h3>Platforma va Shartlar</h3>
+                    <h3>Lab Controls</h3>
                     <ul class="footer-links">
-                        <li><a href="new-categories.html">Yangi Qo'shilgan Maqolalar</a></li>
-                        <li><a href="category-request.html">Kategoriya So'rovnomasi</a></li>
-                        <li><a href="testing-methods.html">Bizning Test Metodologiyamiz</a></li>
-                        <li><a href="ranking-system.html">Reyting Ballari Tizimi</a></li>
+                        <li><a href="methodology.html">Testing Methodology</a></li>
+                        <li><a href="test-process.html">Process Framework</a></li>
+                        <li><a href="rating-system.html">Scoring Mechanics Matrix</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h3>Compliance Legal</h3>
+                    <ul class="footer-links">
+                        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="terms-of-service.html">Terms of Service</a></li>
+                        <li><a href="cookies.html">Cookie Configuration</a></li>
+                        <li><a href="disclaimer.html">Disclaimers</a></li>
+                        <li><a href="AFFILIATE-DISCLOSURE.html">Affiliate Disclosure</a></li>
                     </ul>
                 </div>
             </div>
             
             <div class="footer-bottom">
-                <p>&copy; 2024 - 2026 RankingHours.uz - Barcha huquqlar qonun bo'yicha himoyalangan. Sayt materiallaridan nusxa ko'chirishda faol havola ko'rsatilishi shart.</p>
-                <p class="footer-note">
-                    Ushbu sahifadagi barcha ma'lumotlar, jadvallar va reyting ko'rsatkichlari foydalanuvchilar talabi hamda ekspertlar guruhining mustaqil monitoringi asosida yaratilgan. Agar sizda biron bir xatolik bo'yicha e'tiroz yoki taklif bo'lsa, istalgan vaqtda biz bilan bog'lanishingiz mumkin.
-                </p>
+                <p>&copy; 2026 ComparePro Platform. All programmatic rights reserved.</p>
+                <p>System pathways verified through secure monetization <a href="ads.txt" style="color:var(--accent)">ads.txt</a> pipelines.</p>
             </div>
         </div>
     </footer>
 
-    <script src="js/main.js"></script>
-    
+    <script src="script.js"></script>
     <script>
-        // Categories Tabs
+        // Systemic Tab State Control Matrix
         document.addEventListener('DOMContentLoaded', function() {
             const tabBtns = document.querySelectorAll('.tab-btn');
             const tabPanes = document.querySelectorAll('.tab-pane');
@@ -730,11 +951,9 @@
                 btn.addEventListener('click', function() {
                     const tabId = this.dataset.tab;
                     
-                    // Update active tab button
                     tabBtns.forEach(b => b.classList.remove('active'));
                     this.classList.add('active');
                     
-                    // Show corresponding tab pane
                     tabPanes.forEach(pane => {
                         pane.classList.remove('active');
                         if (pane.id === tabId + '-tab') {
@@ -743,451 +962,7 @@
                     });
                 });
             });
-            
-            // Category cards hover effect
-            const categoryCards = document.querySelectorAll('.category-card');
-            categoryCards.forEach(card => {
-                card.addEventListener('mouseenter', function() {
-                    this.style.transform = 'translateY(-10px)';
-                });
-                card.addEventListener('mouseleave', function() {
-                    this.style.transform = 'translateY(0)';
-                });
-            });
-            
-            // Smooth scroll for category links
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    const targetId = this.getAttribute('href');
-                    if (targetId === '#') return;
-                    
-                    const targetElement = document.querySelector(targetId);
-                    if (targetElement) {
-                        window.scrollTo({
-                            top: targetElement.offsetTop - 80,
-                            behavior: 'smooth'
-                        });
-                    }
-                });
-            });
-            
-            // Table row hover effect
-            const tableRows = document.querySelectorAll('.comparison-table tbody tr');
-            tableRows.forEach(row => {
-                row.addEventListener('mouseenter', function() {
-                    this.style.backgroundColor = '#f8f9fa';
-                });
-                row.addEventListener('mouseleave', function() {
-                    this.style.backgroundColor = '';
-                });
-            });
         });
     </script>
-    
-    <style>
-        .categories-hero {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 80px 0;
-            text-align: center;
-        }
-        .categories-hero h1 {
-            font-size: 3rem;
-            margin-bottom: 20px;
-        }
-        .hero-subtitle {
-            font-size: 1.2rem;
-            opacity: 0.9;
-            margin-bottom: 40px;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
-            line-height: 1.6;
-        }
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 30px;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        .stat {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-            text-align: left;
-        }
-        .stat i {
-            font-size: 2.5rem;
-            opacity: 0.8;
-        }
-        .stat h3 {
-            font-size: 2rem;
-            margin-bottom: 5px;
-        }
-        .stat p {
-            font-size: 0.9rem;
-            opacity: 0.8;
-        }
-        
-        .main-categories {
-            padding: 80px 0;
-            background: #f8f9fa;
-        }
-        .section-title {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 50px;
-            color: #2c3e50;
-        }
-        .categories-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 30px;
-        }
-        .category-card {
-            background: white;
-            padding: 30px;
-            border-radius: 15px;
-            text-decoration: none;
-            color: #2c3e50;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-            transition: all 0.3s;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-        }
-        .category-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
-        }
-        .category-card.large {
-            grid-column: span 2;
-            flex-direction: row;
-            text-align: left;
-            gap: 30px;
-        }
-        .category-card.large .category-content {
-            flex: 1;
-        }
-        .category-image {
-            position: relative;
-            width: 200px;
-            height: 200px;
-            border-radius: 10px;
-            overflow: hidden;
-            flex-shrink: 0;
-        }
-        .category-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        .category-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(45deg, rgba(102,126,234,0.8), rgba(118,75,162,0.8));
-        }
-        .category-icon {
-            font-size: 2.5rem;
-            color: #667eea;
-            margin-bottom: 20px;
-        }
-        .category-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 10px;
-        }
-        .category-count {
-            color: #667eea;
-            font-weight: 600;
-            margin-bottom: 15px;
-        }
-        .category-desc {
-            color: #666;
-            line-height: 1.6;
-            margin-bottom: 20px;
-            font-size: 0.95rem;
-        }
-        .category-meta {
-            display: flex;
-            gap: 20px;
-            font-size: 0.9rem;
-            color: #888;
-        }
-        
-        .category-features {
-            padding: 80px 0;
-            background: white;
-        }
-        .features-tabs {
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-        .tabs-header {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin-bottom: 40px;
-            justify-content: center;
-        }
-        .tab-btn {
-            padding: 15px 30px;
-            background: #f8f9fa;
-            border: 2px solid #e0e0e0;
-            border-radius: 10px;
-            font-size: 1rem;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            transition: all 0.3s;
-        }
-        .tab-btn:hover {
-            border-color: #667eea;
-        }
-        .tab-btn.active {
-            background: #667eea;
-            color: white;
-            border-color: #667eea;
-        }
-        .tab-pane {
-            display: none;
-            animation: fadeIn 0.5s;
-        }
-        .tab-pane.active {
-            display: block;
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-        .tab-pane h3 {
-            text-align: center;
-            margin-bottom: 40px;
-            color: #2c3e50;
-            font-size: 1.8rem;
-        }
-        .test-params {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-        }
-        .param {
-            display: flex;
-            gap: 20px;
-            align-items: flex-start;
-        }
-        .param-icon {
-            width: 50px;
-            height: 50px;
-            background: #f0f4ff;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #667eea;
-            font-size: 1.5rem;
-            flex-shrink: 0;
-        }
-        .param-content h4 {
-            margin-bottom: 10px;
-            color: #2c3e50;
-        }
-        .param-content p {
-            color: #666;
-            line-height: 1.6;
-            font-size: 0.95rem;
-        }
-        
-        .category-comparison {
-            padding: 80px 0;
-            background: #f8f9fa;
-        }
-        .comparison-table {
-            overflow-x: auto;
-        }
-        .comparison-table table {
-            width: 100%;
-            border-collapse: collapse;
-            background: white;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-        }
-        .comparison-table th {
-            background: #667eea;
-            color: white;
-            padding: 20px;
-            text-align: left;
-            font-weight: 600;
-        }
-        .comparison-table td {
-            padding: 20px;
-            border-bottom: 1px solid #f0f0f0;
-            color: #555;
-        }
-        .comparison-table tr:last-child td {
-            border-bottom: none;
-        }
-        .comparison-table tr:hover {
-            background: #f8f9fa;
-        }
-        .rating-cell {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        .stars {
-            color: #f1c40f;
-        }
-        
-        .most-popular {
-            padding: 80px 0;
-            background: white;
-        }
-        .popular-categories {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-        .popular-card {
-            background: #f8f9fa;
-            padding: 30px;
-            border-radius: 15px;
-            display: flex;
-            gap: 20px;
-            align-items: center;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-        }
-        .popular-card:nth-child(1) {
-            background: linear-gradient(135deg, #fff8e1 0%, #ffecb3 100%);
-            border: 2px solid #ffd54f;
-        }
-        .popular-card:nth-child(2) {
-            background: linear-gradient(135deg, #f5f5f5 0%, #e0e0e0 100%);
-            border: 2px solid #bdbdbd;
-        }
-        .popular-card:nth-child(3) {
-            background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%);
-            border: 2px solid #ffb74d;
-        }
-        .popular-rank {
-            font-size: 2.5rem;
-            font-weight: bold;
-            flex-shrink: 0;
-        }
-        .popular-content {
-            flex: 1;
-        }
-        .popular-content h3 {
-            margin-bottom: 10px;
-            color: #2c3e50;
-            font-size: 1.5rem;
-        }
-        .popular-desc {
-            color: #666;
-            margin-bottom: 15px;
-            font-size: 0.95rem;
-            line-height: 1.5;
-        }
-        .popular-stats {
-            display: flex;
-            gap: 20px;
-            margin-bottom: 15px;
-            font-size: 0.9rem;
-            color: #888;
-        }
-        .btn-small {
-            padding: 8px 20px;
-            background: #667eea;
-            color: white;
-            border: none;
-            border-radius: 6px;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 0.9rem;
-            transition: background 0.3s;
-        }
-        .btn-small:hover {
-            background: #5a6fd8;
-        }
-        
-        .categories-cta {
-            padding: 80px 0;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            text-align: center;
-        }
-        .categories-cta h2 {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-        }
-        .categories-cta p {
-            font-size: 1.2rem;
-            opacity: 0.9;
-            margin-bottom: 40px;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
-            line-height: 1.6;
-        }
-        .cta-buttons {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
-        
-        @media (max-width: 768px) {
-            .categories-hero h1 {
-                font-size: 2rem;
-            }
-            .stats-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            .category-card.large {
-                grid-column: span 1;
-                flex-direction: column;
-                text-align: center;
-            }
-            .category-image {
-                width: 100%;
-                height: 200px;
-            }
-            .tabs-header {
-                flex-direction: column;
-            }
-            .tab-btn {
-                justify-content: center;
-            }
-            .test-params {
-                grid-template-columns: 1fr;
-            }
-            .popular-categories {
-                grid-template-columns: 1fr;
-            }
-            .comparison-table {
-                font-size: 0.9rem;
-            }
-            .comparison-table th,
-            .comparison-table td {
-                padding: 10px;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            .stats-grid {
-                grid-template-columns: 1fr;
-            }
-            .categories-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
 </body>
 </html>
