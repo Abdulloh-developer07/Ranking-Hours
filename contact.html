@@ -511,7 +511,7 @@
         </div>
     </section>
 
-    <nav class="contact-main">
+    <section class="contact-main">
         <div class="container">
             <div class="contact-wrapper">
                 
@@ -551,11 +551,12 @@
                     </div>
                 </div>
 
+                <!-- Foydalanuvchining shaxsiy mwvjanwa havolasi o'rnatilgan xavfsiz forma -->
                 <div class="submission-panel">
                     <h3>Secure Metadata Transmission Pipeline</h3>
                     <p class="panel-desc">All tracking indicators remain anonymous. Submit structural dataset logs or test parameter verification requests below.</p>
                     
-                    <form class="secure-form" action="https://formspree.io/f/mqakpylg" method="POST" id="inquiryForm">
+                    <form class="secure-form" action="https://formspree.io/f/mwvjanwa" method="POST" id="inquiryForm">
                         <div class="form-row">
                             <div class="input-group">
                                 <label for="senderName">Identity Descriptor</label>
@@ -595,8 +596,9 @@
 
             </div>
         </div>
-    </nav>
+    </section>
 
+    <!-- Deep-Dive Editorial Knowledge Base Document Matrix (3000+ Words Optimization Profile) -->
     <section class="knowledge-architecture">
         <div class="container">
             <h2 class="section-title">Operational Communication Vectors and Telemetry Standards</h2>
@@ -758,15 +760,10 @@
 
     <script src="js/main.js"></script>
     <script>
-        // Form Success Handling Interceptor
         document.addEventListener('DOMContentLoaded', function() {
-            const form = document.getElementById('inquiryForm');
-            if(form) {
-                // Agar form yuborilganda foydalanuvchiga xabar chiqarmoqchi bo'lsangiz:
-                const urlParams = new URLSearchParams(window.location.search);
-                if (urlParams.has('success')) {
-                    alert('Metadata submission accepted into secure processing queue. Formspree node successfully delivered message to abdullohmahmudov660@gmail.com.');
-                }
+            const urlParams = new URLSearchParams(window.location.search);
+            if (urlParams.has('success')) {
+                alert('Metadata submission accepted into secure processing queue. Formspree node successfully delivered message.');
             }
         });
     </script>
