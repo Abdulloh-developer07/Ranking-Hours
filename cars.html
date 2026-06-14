@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Ultimate 2026 automotive engineering index. Deep-dive technical comparison of Tesla vs BYD, CR-V vs RAV4, Lacetti vs Nexia 3, Mercedes vs BMW, Damas vs Labo, and Tahoe vs Patrol.">
-    <title>🚗 AutoExpert | Premium Vehicle Engineering & Evaluation Index</title>
+    <meta name="description" content="Comprehensive automotive engineering comparisons. Detailed technical reviews on Tesla, BYD, Toyota, Honda, Chevrolet, Mercedes, BMW, and heavy commercial assets.">
+    <title>Automotive Comparisons & Engineering Index | AutoExpert Hub</title>
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
@@ -17,755 +18,210 @@
             --border: #e2e8f0;
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+        body { background-color: var(--bg-main); color: var(--text-dark); line-height: 1.8; font-size: 16px; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
 
-        body {
-            background-color: var(--bg-main);
-            color: var(--text-dark);
-            line-height: 1.8;
-            font-size: 16px;
-        }
+        header { background: #0f172a; color: white; padding: 20px 0; position: sticky; top: 0; z-index: 1000; }
+        .header-container { display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 1.5rem; font-weight: 800; color: white; text-decoration: none; display: flex; align-items: center; gap: 10px; }
+        .logo i { color: var(--accent); }
+        nav ul { display: flex; list-style: none; gap: 20px; }
+        nav a { color: #cbd5e1; text-decoration: none; font-weight: 600; padding: 8px 16px; border-radius: 6px; transition: 0.3s; }
+        nav a:hover, nav a.active { color: white; background: rgba(255,255,255,0.1); }
 
-        .container {
-            max-width: 1250px;
-            margin: 0 auto;
-            padding: 0 25px;
-        }
+        .hero { text-align: center; padding: 60px 20px; background: linear-gradient(rgba(15,23,42,0.95), rgba(15,23,42,0.95)); color: white; margin-bottom: 40px; border-radius: 0 0 20px 20px; }
+        .hero h1 { font-size: 2.7rem; margin-bottom: 10px; font-weight: 800; }
+        .hero p { color: #94a3b8; font-size: 1.2rem; }
 
-        header {
-            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
-            color: white;
-            padding: 20px 0;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
+        /* Grid Layout */
+        .car-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 40px; margin-bottom: 40px; }
+        .car-card { background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.02); border: 1px solid var(--border); display: flex; flex-direction: column; transition: transform 0.3s ease; }
+        .car-card:hover { transform: translateY(-5px); }
+        
+        .car-image { width: 100%; height: 240px; object-fit: cover; background-color: #cbd5e1; border-bottom: 1px solid var(--border); }
+        
+        .car-content { padding: 35px; display: flex; flex-direction: column; flex-grow: 1; }
+        .car-title { font-size: 1.6rem; color: var(--primary); margin-bottom: 15px; font-weight: 800; border-left: 4px solid var(--accent); padding-left: 12px; }
+        
+        /* Extended Text Styling */
+        .car-description { color: #334155; font-size: 1rem; margin-bottom: 25px; text-align: justify; flex-grow: 1; }
+        .car-description p { margin-bottom: 15px; }
+        .car-description strong { color: var(--primary); }
+        .tech-spec-list { margin: 15px 0; padding: 15px; background: var(--bg-main); border-radius: 10px; border: 1px solid var(--border); list-style: none; font-size: 0.9rem; }
+        .tech-spec-list li { margin-bottom: 8px; display: flex; justify-content: space-between; }
+        .tech-spec-list li span { font-weight: bold; color: var(--primary); }
 
-        .header-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+        .btn-read-more { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 14px 24px; background: var(--accent); color: white; text-decoration: none; border-radius: 8px; font-weight: 700; transition: 0.3s; width: 100%; box-shadow: 0 4px 12px rgba(220, 53, 69, 0.2); }
+        .btn-read-more:hover { background: var(--accent-hover); }
 
-        .logo {
-            font-size: 1.8rem;
-            font-weight: 800;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            color: white;
-            text-decoration: none;
-            letter-spacing: -0.5px;
-        }
+        .ad-placeholder { background: #f1f5f9; border: 2px dashed #cbd5e1; padding: 25px; text-align: center; color: #64748b; font-size: 0.9rem; margin: 40px 0; border-radius: 12px; font-weight: 600; }
 
-        .logo i {
-            color: var(--accent);
-        }
-
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: 20px;
-        }
-
-        nav a {
-            color: #cbd5e1;
-            text-decoration: none;
-            font-weight: 600;
-            padding: 10px 18px;
-            border-radius: 8px;
-            transition: all 0.3s ease;
-        }
-
-        nav a:hover, nav a.active {
-            color: white;
-            background-color: rgba(255, 255, 255, 0.1);
-        }
-
-        .hero-banner {
-            background: linear-gradient(rgba(15, 23, 42, 0.95), rgba(30, 41, 59, 0.9)), 
-                        url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="none" stroke="%23334155" stroke-width="0.5"/></svg>');
-            color: white;
-            text-align: center;
-            padding: 80px 20px;
-            margin-bottom: 50px;
-            border-radius: 0 0 30px 30px;
-        }
-
-        .hero-banner h1 {
-            font-size: 3rem;
-            font-weight: 800;
-            margin-bottom: 20px;
-            letter-spacing: -1px;
-        }
-
-        .hero-banner p {
-            color: #94a3b8;
-            font-size: 1.2rem;
-            max-width: 700px;
-            margin: 0 auto;
-        }
-
-        /* Technical Grid Setup */
-        .editorial-wrapper {
-            background: white;
-            border-radius: 24px;
-            padding: 50px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.03);
-            margin-bottom: 60px;
-        }
-
-        .section-title {
-            font-size: 2.2rem;
-            font-weight: 800;
-            color: var(--primary);
-            margin-top: 50px;
-            margin-bottom: 25px;
-            border-bottom: 3px solid var(--border);
-            padding-bottom: 12px;
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-
-        .section-title i {
-            color: var(--accent);
-        }
-
-        .meta-specs {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 20px;
-            margin: 25px 0;
-            background: var(--bg-main);
-            padding: 20px;
-            border-radius: 12px;
-            border: 1px solid var(--border);
-        }
-
-        .spec-item {
-            font-size: 0.95rem;
-        }
-
-        .spec-item strong {
-            color: var(--primary);
-            display: block;
-        }
-
-        /* Image Display Framework */
-        .article-media {
-            margin: 35px 0;
-            background: #e2e8f0;
-            border-radius: 16px;
-            overflow: hidden;
-            border: 1px solid var(--border);
-        }
-
-        .image-container {
-            width: 100%;
-            height: 480px;
-            background-color: #cbd5e1;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            color: var(--primary);
-            text-align: center;
-            padding: 30px;
-            position: relative;
-        }
-
-        .image-container i {
-            font-size: 4.5rem;
-            margin-bottom: 15px;
-            color: var(--accent);
-        }
-
-        .image-container p {
-            font-size: 1.1rem;
-            font-weight: 600;
-            max-width: 500px;
-        }
-
-        .image-container span {
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            margin-top: 8px;
-            display: block;
-        }
-
-        /* Extended Deep Copy Layout */
-        .rich-text {
-            font-size: 1.1rem;
-            color: #334155;
-            text-align: justify;
-        }
-
-        .rich-text p {
-            margin-bottom: 25px;
-        }
-
-        .rich-text h3 {
-            font-size: 1.4rem;
-            color: var(--primary);
-            margin: 35px 0 15px;
-            font-weight: 700;
-        }
-
-        /* Passive Adsense In-Article Partitions */
-        .adsense-native-box {
-            background: #fdfdfd;
-            border: 2px dashed #cbd5e1;
-            border-radius: 12px;
-            padding: 25px;
-            text-align: center;
-            margin: 40px 0;
-            color: var(--text-muted);
-        }
-
-        .adsense-native-box span {
-            font-size: 0.75rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            display: block;
-            margin-bottom: 5px;
-            color: #94a3b8;
-        }
-
-        .comparison-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 30px 0;
-            font-size: 0.95rem;
-        }
-
-        .comparison-table th, .comparison-table td {
-            padding: 14px 18px;
-            border: 1px solid var(--border);
-            text-align: left;
-        }
-
-        .comparison-table th {
-            background-color: var(--primary);
-            color: white;
-        }
-
-        .comparison-table tr:nth-child(even) {
-            background-color: var(--bg-main);
-        }
-
-        .verdict-banner {
-            background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
-            border-left: 6px solid #16a34a;
-            padding: 30px;
-            border-radius: 12px;
-            margin: 40px 0;
-        }
-
-        .verdict-banner h4 {
-            color: #14532d;
-            font-size: 1.25rem;
-            margin-bottom: 10px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .btn-action {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            padding: 14px 30px;
-            background: var(--accent);
-            color: white;
-            text-decoration: none;
-            border-radius: 8px;
-            font-weight: 700;
-            transition: all 0.3s;
-            border: none;
-            cursor: pointer;
-            box-shadow: 0 4px 14px rgba(220, 53, 69, 0.3);
-        }
-
-        .btn-action:hover {
-            background: var(--accent-hover);
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(220, 53, 69, 0.4);
-        }
-
-        footer {
-            background-color: #0f172a;
-            color: #94a3b8;
-            padding: 60px 0 30px;
-            margin-top: 80px;
-            border-top: 5px solid var(--accent);
-        }
-
-        .footer-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 40px;
-            margin-bottom: 40px;
-        }
-
-        .footer-column h3 {
-            color: white;
-            font-size: 1.3rem;
-            margin-bottom: 20px;
-            font-weight: 700;
-        }
-
-        .footer-column ul {
-            list-style: none;
-        }
-
-        .footer-column ul li {
-            margin-bottom: 12px;
-        }
-
-        .footer-column ul a {
-            color: #94a3b8;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-
-        .footer-column ul a:hover {
-            color: white;
-        }
-
-        .copyright {
-            text-align: center;
-            padding-top: 30px;
-            border-top: 1px solid #334155;
-            font-size: 0.9rem;
-            color: #64748b;
-        }
-
-        @media (max-width: 992px) {
-            .image-container { height: 350px; }
-            .hero-banner h1 { font-size: 2.4rem; }
-            .editorial-wrapper { padding: 30px; }
-        }
-
-        @media (max-width: 768px) {
-            .header-container {
-                flex-direction: column;
-                gap: 20px;
-            }
-            nav ul {
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-            .section-title { font-size: 1.8rem; }
-        }
+        footer { background: #0f172a; color: #94a3b8; padding: 40px 0; text-align: center; margin-top: 60px; border-top: 4px solid var(--accent); }
     </style>
 </head>
 <body>
 
     <header>
         <div class="container header-container">
-            <a href="index.html" class="logo">
-                <i class="fas fa-gauge-high"></i>
-                <div>AutoExpert Hub</div>
-            </a>
-            
+            <a href="index.html" class="logo"><i class="fas fa-gauge-high"></i> AutoExpert</a>
             <nav>
                 <ul>
-                    <li><a href="index.html"><i class="fas fa-house"></i> Home</a></li>
-                    <li><a href="technology.html"><i class="fas fa-mobile-screen-button"></i> Technology</a></li>
-                    <li><a href="software.html"><i class="fas fa-code"></i> Software</a></li>
-                    <li><a href="automotive.html" class="active"><i class="fas fa-car-side"></i> Automotive</a></li>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="technology.html">Technology</a></li>
+                    <li><a href="software.html">Software</a></li>
+                    <li><a href="cars.html" class="active">Automotive</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <div class="hero-banner">
+    <div class="hero">
         <div class="container">
-            <h1>Comprehensive Automotive Engineering Analysis</h1>
-            <p>An in-depth, empirical evaluation of modern powertrain frameworks, structural unibody platforms, and energy conversion systems.</p>
+            <h1>Automotive Mechanical Engineering & Platform Index</h1>
+            <p>An encyclopedic evaluation of modern vehicle architectures, thermal dynamics, and structural longevity components.</p>
         </div>
     </div>
 
     <div class="container">
 
-        <!-- Adsense Top Layout Frame Placeholder -->
-        <div class="adsense-native-box">
-            <span>Contextual Ad Placement Partition</span>
-            <p>Automotive Category Header Leaderboard Area - Responsive Unit</p>
+        <!-- Top Ad Placement Grid -->
+        <div class="ad-placeholder">
+            <i class="fas fa-rectangle-ad"></i> Responsive Header Advertising Space - Optimized for AdSense Approval
         </div>
 
-        <div class="editorial-wrapper">
-            <div class="rich-text">
+        <div class="car-grid">
 
-                <!-- ARTICLE 1: TESLA MODEL Y VS BYD ATTO 3 -->
-                <div class="section-title" id="tesla-byd">
-                    <i class="fas fa-bolt"></i>
-                    <h2>1. Electrochemical and Architectural Deconstruction: Tesla Model Y vs. BYD Atto 3</h2>
-                </div>
-
-                <div class="meta-specs">
-                    <div class="spec-item"><strong>Platform Chemistry</strong> NMC (Tesla) / LFP Blade (BYD)</div>
-                    <div class="spec-item"><strong>Testing Distance</strong> 2,500 Kilometers</div>
-                    <div class="spec-item"><strong>Primary Metric</strong> Thermal Efficiency & Pack Degradation</div>
-                </div>
-
-                <div class="article-media">
-                    <div class="image-container">
-                        <i class="fas fa-car-battery"></i>
-                        <p>Visual Asset Slot: EV Battery Pack Stress Test and Cell Integration Geometry</p>
-                        <span>Recommended Dimensions: 1200x480px | Format: WebP or JPEG</span>
+            <!-- CARD 1: TESLA VS BYD -->
+            <div class="car-card">
+                <img src="Tesla Model Y.jpg" alt="Tesla Model Y vs BYD Atto 3" class="car-image">
+                <div class="car-content">
+                    <div class="car-title">Tesla Model Y vs. BYD Atto 3</div>
+                    <div class="car-description">
+                        <p><strong>Electrochemical Infrastructure:</strong> The transition toward global electromobility highlights alternative battery pack form factors. Tesla uses highly integrated Lithium Nickel Manganese Cobalt (NMC) cylindrical cells, providing a volumetric energy density profile scaling near 650 Wh/L. This chemistry relies on precise active thermal fluid velocity patterns within its battery management system (BMS) infrastructure. When continuous DC fast-charging tracks surpass 150 kW thresholds, localized cathode resistance triggers electronic throttling layers to preserve the oxide layer integrity from micro-fracturing anomalies.</p>
+                        <p><strong>Structural Cell-to-Pack Architecture:</strong> BYD relies heavily on its proprietary Lithium Iron Phosphate (LFP) Blade battery topology, dropping localized module housings completely to gain a 30% spatial advantage. While LFP exhibits phenomenal thermal runaway thresholds exceeding 500°C, its inherent gravimetric limitations restrict operating potential under sub-zero climates due to internal resistance scaling. The drive layout pairs Tesla's highly efficient rear permanent magnet motor using Silicon Carbide (SiC) MOSFET switches against BYD's consolidated 8-in-1 assembly utilizing tight hair-pin winding stators for maximum flux density optimization.</p>
+                        <p><strong>Powertrain Longevity Factors:</strong> Long-term cycle fatigue analysis indicates distinct operational outcomes. The NMC chemistry deployed by Tesla delivers extreme acceleration profiles but demands strict software buffers between 20% and 80% state-of-charge states to eliminate high-voltage dwell degradation. BYD's structural LFP assembly exhibits unparalleled tolerance to 100% cyclical charging behaviors, rendering it exceptionally stable across high-frequency suburban commuting loops despite displaying higher voltage drop variations during steep sustained hill climbs.</p>
+                        <ul class="tech-spec-list">
+                            <li>Tesla Cell Matrix: <span>NMC Cylindrical Matrix</span></li>
+                            <li>BYD Cell Matrix: <span>LFP Monolithic Blade</span></li>
+                            <li>Inverter Architecture: <span>Silicon Carbide MOSFET vs IGBT</span></li>
+                        </ul>
                     </div>
+                    <a href="tesla-Byd-atto.html" class="btn-read-more">Read Full Analysis <i class="fas fa-arrow-right"></i></a>
                 </div>
-
-                <p>The contemporary electric vehicle marketplace in 2026 is driven by the battle between structural cell-to-pack architectures and varying chemical compositions. This deep dive evaluates the localized operational constraints of the Tesla Model Y (Long Range AWD variant utilizing Nickel-Manganese-Cobalt pouch/cylindrical matrix structures) and the BYD Atto 3 (utilizing the proprietary Lithium Iron Phosphate Blade battery topology). To provide authentic data, both configurations underwent a grueling 2,500-kilometer test across changing thermal climates, demanding high-velocity highway tracking, rapid DC fast-charging cycles, and localized urban stop-and-go load environments.</p>
-
-                <h3>Lithium Chemistry and Cathode Dynamics</h3>
-                <p>Tesla’s reliance on high-nickel ternary chemistry delivers structural advantages regarding absolute energy density. The raw volumetric energy density of the Model Y pack scales near 650 Wh/L, allowing the platform to store significant kinetic potential without increasing curb weight parameters. However, high-nickel formulations demand complex battery management software (BMS) controls. Under continuous 150 kW DC charging profiles, cell-level thermal accumulation requires active cooling loops running liquid glycol solutions at precise flow velocities. Our instrumentation observed that when internal temperatures hit 48°C, the Tesla BMS initiates thermal throttling, lowering the current input to protect the cathode from structural micro-cracking.</p>
-                
-                <p>Conversely, BYD’s Blade Battery utilizes a long, flat structural configuration integrated directly into the vehicle subframe. This cell-to-pack (CTP) methodology completely eliminates individual module housings, boosting space efficiency by nearly 30%. LFP chemistry inherently exhibits higher thermal stability, maintaining crystalline structure even when exposed to high ambient temperatures. The downside lies in cold-weather degradation and raw gravimetric density. At sub-zero limits, localized internal impedance within the LFP cells rises exponentially, restricting initial regenerative braking capture until the onboard PTC heaters raise pack core temperatures to at least 15°C.</p>
-
-                <h3>Powertrain and Inverter Topology</h3>
-                <p>Tesla leverages a dual-motor configuration combining a front induction motor with a highly efficient rear permanent magnet synchronous motor. The critical engineering edge comes from its Silicon Carbide (SiC) MOSFET inverters. Silicon Carbide reduces switching losses within the power electronics by up to 75% compared to classic Silicon IGBTs. This allows the Model Y to operate at higher switching frequencies, producing ultra-smooth torque vectors while boosting inverter efficiency to 98.4%. During high-speed highway tracking at constant speeds of 120 km/h, the SiC setup minimizes thermal waste, translating to superior highway range retention.</p>
-
-                <p>BYD implements an all-in-one 8-in-1 electric powertrain assembly that consolidates the VCU, BMS, MCU, PDU, DC-DC converter, onboard charger, drive motor, and reducer into a singular structural casting. This reduction in high-voltage wiring reduces electromagnetic interference and shaves off total system mass. The drive unit uses traditional Silicon IGBTs which exhibit slightly higher conversion losses at extreme loads than Tesla's SiC array, but provides unmatched cost efficiency. BYD's motor utilizes a hair-pin winding configuration, increasing the slot fill factor to maximize magnetic flux density within the stator core, enhancing low-end urban acceleration responses.</p>
-
-                <table class="comparison-table">
-                    <thead>
-                        <tr>
-                            <th>Technical Metrics</th>
-                            <th>Tesla Model Y (NMC)</th>
-                            <th>BYD Atto 3 (LFP Blade)</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Volumetric Pack Density</td>
-                            <td>~650 Wh/L</td>
-                            <td>~440 Wh/L</td>
-                        </tr>
-                    </tr>
-                        <tr>
-                            <td>Inverter Architecture</td>
-                            <td>Silicon Carbide (SiC) MOSFET</td>
-                            <td>Silicon IGBT / 8-in-1 Assembly</td>
-                        </tr>
-                        <tr>
-                            <td>Thermal Runaway Threshold</td>
-                            <td>210°C to 250°C</td>
-                            <td>Exceeds 500°C (Nail Penetration Verified)</td>
-                        </tr>
-                    </tbody>
-                </table>
-
-                <div class="verdict-banner">
-                    <h4><i class="fas fa-circle-check"></i> Analytical Conclusion: Electrical Architecture</h4>
-                    <p>For long-distance performance and high-speed energy optimization, the <strong>Tesla Model Y</strong> remains the engineering benchmark due to its Silicon Carbide inverter efficiency. However, for urban durability, localized cycling lifespans, and top-tier thermal safety metrics, the <strong>BYD Blade Platform</strong> delivers superior structural longevity per dollar spent.</p>
-                </div>
-
-
-                <!-- ADSENSE MIDDLE BANNER PLACEHOLDER -->
-                <div class="adsense-native-box">
-                    <span>Contextual Ad Placement Partition</span>
-                    <p>In-Article Mid-Content Responsive Block — Optimizes User Engagement Rates</p>
-                </div>
-
-
-                <!-- ARTICLE 2: CR-V VS RAV4 -->
-                <div class="section-title" id="crv-rav4">
-                    <i class="fas fa-gas-pump"></i>
-                    <h2>2. Internal Combustion and Hybrid Optimization Matrix: Honda CR-V vs. Toyota RAV4</h2>
-                </div>
-
-                <div class="meta-specs">
-                    <div class="spec-item"><strong>Combustion Cycle</strong> Atkinson Cycle (Toyota) / Otto-VTEC (Honda)</div>
-                    <div class="spec-item"><strong>Transmission Design</strong> e-CVT Planetary (RAV4) / Dual-Motor Direct Drive (CR-V)</div>
-                    <div class="spec-item"><strong>Evaluation Focus</strong> Fluid Shear and Volumetric Performance</div>
-                </div>
-
-                <div class="article-media">
-                    <div class="image-container">
-                        <i class="fas fa-engine"></i>
-                        <p>Visual Asset Slot: Planetary Gear System vs Direct-Drive Clutch Exploded View</p>
-                        <span>Recommended Dimensions: 1200x480px | Format: WebP or JPEG</span>
-                    </div>
-                </div>
-
-                <p>The compact crossover segment presents an intense clash between two highly refined mechanical methodologies: Toyota's power-split hybrid architecture and Honda's dual-motor direct-drive layout. Moving away from traditional torque-converter automatics, both manufacturers emphasize thermal efficiency optimizations. This section breaks down the internal combustion dynamics and power transmission fluids of the Honda CR-V 1.5L Turbo / Hybrid setups against the Toyota RAV4 2.5L Dynamic Force Hybrid configuration over a continuous 1,000-kilometer testing cycle.</p>
-
-                <h3>Thermodynamic Efficiency and Cylinder Design</h3>
-                <p>Toyota’s A25A-FXS engine represents a masterful execution of the Atkinson thermodynamic cycle. By utilizing an elongated expansion stroke relative to its compression stroke, the engine extracts extra energy from the combustion gases. The unit achieves a world-class 41% thermal efficiency rating. This performance is enabled by laser-clad valve seats, redesigned intake ports that generate high tumble flows inside the combustion chamber, and an electronic variable valve timing system (VVT-iE) operating on the intake camshaft. The engine features an ultra-high 14.0:1 compression ratio, managed by a combined direct and port fuel injection layout (D-4S) to suppress cylinder knock under high loads.</p>
-                
-                <p>Honda takes a different path in its standard internal combustion variants, employing a downsized 1.5-liter VTEC Turbo engine coupled with direct injection. This engine maximizes torque generation lower down the rev band, hitting peak torque at just 1,700 RPM. The cylinder head integrates an exhaust manifold cooled directly by the engine coolant jacket, significantly reducing exhaust gas temperatures before they enter the turbine housing. This setup allows the engine to run optimal air-fuel ratios without running rich to cool the catalytic converter under high engine loads. In hybrid layouts, Honda switches to a naturally aspirated 2.0-liter Atkinson cycle engine featuring high-pressure direct injection to match Toyota’s thermodynamic efficiency capabilities.</p>
-
-                <h3>Transmission Fluid Mechanical Stress and Gear Profiles</h3>
-                <p>Toyota's legendary hybrid system relies completely on an e-CVT setup utilizing a planetary gear configuration. This mechanism completely avoids belts or chains, instead using a sun gear, planet carriers, and an outer ring gear to constantly blend power inputs from the gasoline engine and two electric motors (MG1 and MG2). The mechanical stress within this planetary unit is distributed uniformly across multiple gear teeth contact lines. Fluid shear stress is minimized because the planetary gears stay permanently meshed, preventing sudden gear engagement shockwaves. The transmission fluid must offer excellent dielectric properties and thermal resilience to cool the integrated electric motor windings effectively.</p>
-                
-                <p>Honda’s two-motor hybrid setup completely removes the conventional transmission housing. Instead, the engine connects directly to a generator motor, which supplies electricity to a separate propulsion motor. At higher cruising velocities (above 80 km/h), a wet multi-plate lock-up clutch engages, locking the internal combustion engine directly to the front drive axle via a fixed-ratio gear configuration. This approach sidesteps the conversion losses found in typical CVT gearsets. The fluid demands inside Honda's casing require highly specialized low-viscosity formulations to lower churning losses while still providing exceptional anti-wear protection across the direct-drive gear faces during sudden clutch engagements.</p>
-
-                <div class="verdict-banner">
-                    <h4><i class="fas fa-circle-check"></i> Analytical Conclusion: Crossover Powertrains</h4>
-                    <p>The <strong>Toyota RAV4 Planetary Hybrid</strong> system provides peerless fuel economy figures in mixed urban environments, as the system constantly hunts for optimal engine operating RPMs. Meanwhile, the <strong>Honda CR-V Direct-Drive</strong> architecture delivers a more linear, engaging driving feel on open highways by eliminating the classic "rubber-band" engine drone common to traditional CVT layouts.</p>
-                </div>
-
-
-                <!-- ARTICLE 3: LACETTI VS NEXIA 3 -->
-                <div class="section-title" id="lacetti-nexia">
-                    <i class="fas fa-wrench"></i>
-                    <h2>3. Structural Engineering and Fleet Durability Analysis: Chevrolet Lacetti vs. Ravon Nexia 3</h2>
-                </div>
-
-                <div class="meta-specs">
-                    <div class="spec-item"><strong>Chassis Platform</strong> GM J200 (Lacetti) / GM T250 (Nexia 3)</div>
-                    <div class="spec-item"><strong>Suspension Assembly</strong> 4-Wheel Independent (Lacetti) / Torsion Beam (Nexia)</div>
-                    <div class="spec-item"><strong>Fatigue Validation</strong> 15-Year Fleet Lifespan Metrics</div>
-                </div>
-
-                <div class="article-media">
-                    <div class="image-container">
-                        <i class="fas fa-screwdriver-wrench"></i>
-                        <p>Visual Asset Slot: Multi-Link Geometry Rear Suspension vs Torsion Beam Stress Analysis</p>
-                        <span>Recommended Dimensions: 1200x480px | Format: WebP or JPEG</span>
-                    </div>
-                </div>
-
-                <p>For high-mileage fleet operations, individual vehicle selections directly determine long-term operational profitability. This section delivers a detailed engineering teardown comparing the GM J200 architecture (Chevrolet Lacetti / Gentra) against the compact GM T250 architecture (Ravon Nexia 3 / Chevrolet Aveo). These entry-level sedans represent highly popular utility solutions in developing automotive markets, requiring severe chassis, subframe, and drivetrain stress evaluations over extreme 300,000-plus kilometer lifespans.</p>
-
-                <h3>Suspension Geometry and Torsional Rigidity</h3>
-                <p>The engineering standout feature of the Chevrolet Lacetti is its independent rear suspension system, built on a proven dual-link configuration with MacPherson struts up front. Each rear wheel moves completely independent of the opposite side, allowing the chassis to handle uneven road joints and rough surfaces without upsetting body control. The rear subframe uses rubber insulation bushings to absorb high-frequency road vibrations before they transfer into the cabin unibody structure. The J200 chassis possesses high static torsional stiffness, distributing side loads evenly during high-speed cornering to minimize localized sheet metal fatigue around the pillar joints.</p>
-                
-                <p>The Ravon Nexia 3 utilizes a more cost-effective, semi-independent compound torsion beam rear axle configuration. The trailing arms are welded securely to a cross-member beam designed to twist under load, functioning as an integrated anti-roll bar. While this simple layout reduces components and maximizes trunk space, it inherently transmits single-wheel impact forces across the entire rear subframe assembly. Over long periods on rough roads, this continuous twisting stress concentrates high fatigue loads directly on the body mount attachment brackets. This structural feedback requires regular bushing inspections to prevent tracking alignment issues from developing over time.</p>
-
-                <h3>Drivetrain Adaptability and Lubrication Requirements</h3>
-                <p>The Lacetti typically features the venerable 1.5-liter dual overhead cam (DOHC) four-cylinder engine (B15D2), paired with a durable iron engine block casting. This engine uses a timing chain layout designed to last the full lifecycle of the engine block when maintained properly. The cylinder head casting features large cooling passages that prevent hot spots around the exhaust valve seats, which is crucial when vehicles are converted to run on compressed natural gas (CNG) or liquefied petroleum gas (LPG). Converting to dry gas fuels raises combustion temperatures by up to 150°C, requiring high-grade motor oils with robust anti-wear additive packages to protect the valve guides from premature recession.</p>
-                
-                <p>The Nexia 3 utilizes the same B15D2 power unit but pairs it with a compact engine bay layout that modifies under-hood airflow patterns. Because the engine compartment is tightly packaged, the exhaust manifold transfers more radiant heat toward the alternator and accessory belt drives. The Nexia 3 offers a modern 6-speed automatic transmission (6T30) that provides narrower gear ratios and improved fuel economy compared to the older 4-speed units used in early Lacetti models. However, this 6-speed transmission runs tight internal clearances and requires regular fluid changes to prevent clutch material contamination from clogging the sensitive fluid control solenoids.</p>
-
-                <table class="comparison-table">
-                    <thead>
-                        <tr>
-                            <th>Structural Component</th>
-                            <th>Chevrolet Lacetti (GM J200)</th>
-                            <th>Ravon Nexia 3 (GM T250)</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Rear Axle Architecture</td>
-                            <td>Fully Independent Dual-Link Type</td>
-                            <td>Semi-Independent Torsion Beam</td>
-                        </tr>
-                        <tr>
-                            <td>High-Mileage Alignment Stability</td>
-                            <td>High (Adjustable Toe/Camber Linkages)</td>
-                            <td>Medium (Fixed Rear Geometry)</td>
-                        </tr>
-                        <tr>
-                            <td>CNG Conversion Suitability</td>
-                            <td>Exceptional (Large Thermal Sink Engine Bay)</td>
-                            <td>Good (Tight Packaging Raises Underhood Temp)</td>
-                        </tr>
-                    </tbody>
-                </table>
-
-                <div class="verdict-banner">
-                    <h4><i class="fas fa-circle-check"></i> Analytical Conclusion: Fleet Asset Longevity</h4>
-                    <p>The <strong>Chevrolet Lacetti</strong> represents a superior long-term vehicle asset for intercity transit and rough road routes due to its highly complaint 4-wheel independent suspension system. The <strong>Ravon Nexia 3</strong> serves as an ideal urban commuter option, delivering lower maintenance overhead thanks to its simpler rear axle design and fuel-efficient 6-speed automatic transmission gear spacing.</p>
-                </div>
-
-
-                <!-- ADSENSE MIDDLE BANNER PLACEHOLDER 2 -->
-                <div class="adsense-native-box">
-                    <span>Contextual Ad Placement Partition</span>
-                    <p>In-Article Mid-Content Responsive Block — Maximizes Viewable Impression Metrics</p>
-                </div>
-
-
-                <!-- ARTICLE 4: MERCEDES C-CLASS VS BMW 3-SERIES -->
-                <div class="section-title" id="m3-cclass">
-                    <i class="fas fa-gauge"></i>
-                    <h2>4. Premium Compact Sedans: Mercedes-Benz C-Class vs. BMW 3-Series</h2>
-                </div>
-
-                <div class="meta-specs">
-                    <div class="spec-item"><strong>Engine Architecture</strong> Longitudinal Inline-4 Turbo / Mild Hybrid</div>
-                    <div class="spec-item"><strong>Chassis Controls</strong> Dynamic Damper Systems / Multi-Link Front</div>
-                    <div class="spec-item"><strong>Data Link Protocol</strong> FlexRay High-Speed Bus Architecture</div>
-                </div>
-
-                <div class="article-media">
-                    <div class="image-container">
-                        <i class="fas fa-microchip"></i>
-                        <p>Visual Asset Slot: Multi-Link Front Axle Control Arm and Electronic Damper Valving</p>
-                        <span>Recommended Dimensions: 1200x480px | Format: WebP or JPEG</span>
-                    </div>
-                </div>
-
-                <p>The executive compact sedan arena is defined by the contrast between luxurious ride comfort and driver-focused handling. Mercedes-Benz configures the C-Class to act as a scaled-down flagship luxury cruiser, while BMW focuses on optimizing the 3-Series as a highly responsive sports sedan. This engineering teardown examines the electronic damper valving, structural subframe mounts, and high-speed communication networks of these two premium German vehicle platforms.</p>
-
-                <h3>Chassis Kinematics and Electronic Damping</h3>
-                <p>BMW’s 3-Series relies on a signature double-pivot front suspension layout. By splitting the traditional lower control arm into two independent links, engineers move the virtual steering pivot axis closer to the wheel center line. This geometry minimizes steering kickback during hard braking maneuvers and provides crisp, immediate turn-in response. Models equipped with adaptive M suspension utilize high-frequency electromagnetic valves inside the dampers. These valves continuously adjust fluid flow restriction every few milliseconds based on data from wheel acceleration sensors, minimizing body roll without introducing harshness over sharp bumps.</p>
-                
-                <p>The Mercedes-Benz C-Class features a four-link front suspension layout designed to isolate steering control from vertical wheel travel. This design separates lateral cornering forces from longitudinal impact absorption, allowing the sedan to glide smoothly over broken pavement. The optional Agility Control suspension employs a selective passive damping system; a smaller bypass valve opens up during minor road vibrations to soften oil flow resistance for a smoother ride, then closes down during heavy chassis movements to maximize vehicle stability. The subframes are isolated from the main unibody structure using large liquid-filled hydro-bushings that isolate noise, vibration, and harshness (NVH) inputs.</p>
-
-                <h3>Data Bus Communication Networks</h3>
-                <p>Modern luxury vehicles require advanced electronic networking capabilities. The BMW 3-Series relies heavily on a high-speed FlexRay data bus network alongside standard CAN and LIN connections. FlexRay operates at bandwidth speeds up to 10 Mbps and uses a deterministic time-triggered communication cycle. This ultra-fast data transfer ensures that critical driving systems—such as electronic stability controls, variable steering assist, and active differential locks—receive vital safety parameters with zero network lag, preserving predictable vehicle handling even during extreme defensive driving maneuvers.</p>
-                
-                <p>Mercedes-Benz utilizes a highly integrated network topology centered around centralized high-performance computing zones. This layout reduces total wiring harness mass while allowing different software functions to interact seamlessly. The drive system uses high-speed CAN-FD (Flexible Data-rate) lines to transmit information between the engine ECU, the 9-speed automatic transmission controller, and the integrated 48V mild-hybrid starter-generator unit. This high bandwidth guarantees precise torque matching during engine start-stop transitions, though it requires specialized diagnostic tools to isolate sensor faults across the complex fiber-optic and copper networks.</p>
-
-                <div class="verdict-banner">
-                    <h4><i class="fas fa-circle-check"></i> Analytical Conclusion: Premium Dynamics</h4>
-                    <p>The <strong>BMW 3-Series</strong> remains the premier choice for driving enthusiasts, delivering superb front-axle feel and high-speed communication networks. The <strong>Mercedes-Benz C-Class</strong> wins on long-distance luxury, utilizing advanced isolation subframes and smart adaptive damping pathways to deliver exceptional passenger comfort.</p>
-                </div>
-
-
-                <!-- ARTICLE 5: DAMAS VS LABO -->
-                <div class="section-title" id="damas-labo">
-                    <i class="fas fa-truck"></i>
-                    <h2>5. Industrial Logistics and Commercial Utility Evaluation: Damas Van vs. Labo Pickup</h2>
-                </div>
-
-                <div class="meta-specs">
-                    <div class="spec-item"><strong>Engine Placement</strong> Mid-Engine Rear-Wheel Drive Layout</div>
-                    <div class="spec-item"><strong>Chassis Configuration</strong> Ladder Frame with Integrated Cabover Box</div>
-                    <div class="spec-item"><strong>Primary Metric</strong> Cargo Volume vs Concentrated Payload Management</div>
-                </div>
-
-                <div class="article-media">
-                    <div class="image-container">
-                        <i class="fas fa-truck-ramp-box"></i>
-                        <p>Visual Asset Slot: Mid-Engine Drivetrain Alignments and Rear Leaf Spring Shock Layout</p>
-                        <span>Recommended Dimensions: 1200x480px | Format: WebP or JPEG</span>
-                    </div>
-                </div>
-
-                <p>Kichik shahar logistikasida minimal xarajat evaziga maksimal yuk ko'tarish asosiy maqsad hisoblanadi. This comprehensive commercial analysis evaluates the mechanical packaging of the Damas passenger/cargo van and the Labo flatbed pickup. Both utility units are built on a classic Japanese micro-truck layout featuring a longitudinal mid-mounted engine that drives the rear axle. We analyze their structural loading capabilities, cooling system designs, and maintenance requirements under continuous payload conditions.</p>
-
-                <h3>Chassis Load Paths and Rear Leaf Springs</h3>
-                <p>The Damas van features an integrated unibody structure welded to a reinforced frame assembly. The cargo floor forms an enclosed steel box that increases the vehicle's torsional resistance to bending under load. The rear suspension utilizes a heavy-duty live axle suspended by multi-leaf semi-elliptic springs. When the van is loaded to capacity, stress forces travel from the rear axle up through the leaf shackles directly into reinforced structural frame channels. This layout distributes cargo weight evenly across the rear body structure, preventing localized panel buckling during hard compressions.</p>
-                
-                <p>The Labo pickup features a dedicated cab-forward design with a separate, open steel flatbed cargo area bolted directly onto a robust ladder-frame chassis. This layout completely isolates the passenger cabin from cargo bed twist and shifting loads. Because the cargo flatbed is open, weight can be stacked higher and further back over the rear axle line. The leaf spring packages on the Labo are tuned with a stiffer primary spring rate to counter concentrated top-heavy loads. This ensures the frame won't sag excessively even when carrying bulky industrial equipment or dense agricultural cargo over uneven surfaces.</p>
-
-                <h3>Cooling Systems and Mid-Engine Service Access</h3>
-                <p>Because the small 3-cylinder engine is mounted horizontally directly beneath the front driver and passenger seats, managing engine heat is a major engineering challenge. The cooling system uses a forward-mounted radiator connected to the midship engine block via long under-floor coolant pipes. This design requires a high-pressure radiator cap and a self-bleeding expansion tank to prevent vapor locks from trapping air pockets inside the cylinder head water jackets. Running clean, high-quality ethylene glycol coolant is critical; any internal scale buildup or corrosion inside the long coolant lines will cause rapid engine overheating under heavy summer delivery workloads.</p>
-                
-                <p>Servicing the engine requires flipping up the front seat cushions to access the cylinder head cover, spark plugs, and oil dipstick. This tight service space means basic maintenance operations require careful execution. The manual valvetrain adjustment must be performed every 30,000 kilometers using manual feeler gauges to maintain proper valve clearances and prevent exhaust valve burnout. The short manual transmission bolts directly to the rear of the engine block, sending torque down a short drive shaft to the rear differential housing. This simple, mechanical setup minimizes drivetrain parasitic power losses, ensuring every bit of torque reaches the road surface.</p>
-
-                <div class="verdict-banner">
-                    <h4><i class="fas fa-circle-check"></i> Analytical Conclusion: Commercial Assets</h4>
-                    <p>The <strong>Damas Van</strong> is the ideal choice for secure urban multi-stop delivery routes, protecting valuable cargo from weather elements within its rigid unibody box. The <strong>Labo Pickup</strong> excels at carrying irregular, heavy industrial materials, leveraging its independent ladder-frame construction to handle uneven payload distributions with ease.</p>
-                </div>
-
-
-                <!-- ARTICLE 6: TAHOE VS PATROL -->
-                <div class="section-title" id="tahoe-patrol">
-                    <i class="fas fa-mountain-sun"></i>
-                    <h2>6. Heavy-Duty Full-Size SUV Platforms: Chevrolet Tahoe vs. Nissan Patrol</h2>
-                </div>
-
-                <div class="meta-specs">
-                    <div class="spec-item"><strong>Frame Construction</strong> Body-on-Frame High-Strength Boxed Steel</div>
-                    <div class="spec-item"><strong>Powertrain Layout</strong> V8 Naturally Aspirated / Twin-Turbo V6 Variant</div>
-                    <div class="spec-item"><strong>Terrain Management</strong> Low-Range Transfer Case with Active Lockers</div>
-                </div>
-
-                <div class="article-media">
-                    <div class="image-container">
-                        <i class="fas fa-shield-cat"></i>
-                        <p>Visual Asset Slot: Heavy-Duty Fully Boxed Frame Rails and Independent Rear Axle Disconnect</p>
-                        <span>Recommended Dimensions: 1200x480px | Format: WebP or JPEG</span>
-                    </div>
-                </div>
-
-                <p>Full-size sport utility vehicles represent the peak of towing power, passenger space, and rugged off-road capability. This final section deconstructs the heavy-duty body-on-frame architectures of the Chevrolet Tahoe (utilizing GM's global full-size truck platform) and the Nissan Patrol (built on Nissan's legendary heavy-commercial off-road platform). We evaluate their frame designs, suspension articulating physics, and multi-mode four-wheel-drive transfer case mechanics.</p>
-
-                <h3>Boxed Frame Design and Suspension Articulation</h3>
-                <p>The Chevrolet Tahoe uses a fully boxed high-strength steel frame featuring hydroformed side rails. Hydroforming uses high-pressure hydraulic fluid to shape steel tubes into optimized structural profiles without creating weak welded seams, reducing weight while increasing front-end crash energy absorption. The Tahoe features an independent multi-link rear suspension system that mounts directly to the rear frame section. This layout significantly lowers the rear floor pan to expand third-row legroom, while offering excellent wheel travel and a smooth ride on pavement via optional magnetic ride control dampers.</p>
-                
-                <p>The Nissan Patrol is engineered around an ultra-heavy-duty ladder frame featuring thick steel cross-members designed to handle high stress loads. The Patrol uses a heavy-duty four-wheel independent suspension system managed by Nissan's Hydraulic Body Motion Control (HBMC) system. This hydraulic system replaces traditional mechanical anti-roll bars with cross-linked hydraulic piping and accumulation cylinders. On paved highways, the system increases hydraulic pressure to minimize body roll through corners; off-road, it bleeds off cross-axle pressure to allow maximum suspension articulation, keeping all four tires firmly planted over deep ruts and rocky steps.</p>
-
-                <h3>4WD Transfer Case Transfer and Gear Reduction Reduction</h3>
-                <p>The Tahoe features an advanced Autotrac active two-speed transfer case. This system offers an "Auto" mode that uses wheel speed sensors to detect early tire slip, instantly engaging a wet clutch pack to send up to 50% of available engine torque to the front axle ahead of wheel spin. For deep sand or heavy towing up steep grades, selecting 4-Low engages a 2.72:1 planetary gear reduction set, multiplying engine torque to ease strain on the 10-speed automatic transmission clutches during low-speed maneuvers.</p>
-                
-                <p>The Nissan Patrol implements a robust All-Mode 4x4 system utilizing a heavy-duty multi-plate transfer clutch alongside a mechanical low-range gearset offering a deep 2.68:1 reduction ratio. The Patrol features selectable terrain modes (Sand, On-Road, Snow, Rock) that alter throttle maps, transmission shift schedules, and ABS braking interventions to maximize traction. Additionally, a push-button mechanical rear differential lock forces both rear wheels to turn at identical speeds, providing reliable traction through deep mud holes or when crossing challenging trail obstacles.</p>
-
-                <table class="comparison-table">
-                    <thead>
-                        <tr>
-                            <th>Performance Metric</th>
-                            <th>Chevrolet Tahoe Platform</th>
-                            <th>Nissan Patrol Platform</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Frame Manufacturing Method</td>
-                            <td>Hydroformed Boxed Frame Assembly</td>
-                            <td>Heavy-Gauge Welded Ladder Architecture</td>
-                        </tr>
-                        <tr>
-                            <td>Suspension Control Method</td>
-                            <td>Magnetic Ride Control Damper Fluid Tuning</td>
-                            <td>Hydraulic Body Motion Control (HBMC) Cross-Linking</td>
-                        </tr>
-                        <tr>
-                            <td>Rear Differential Setup</td>
-                            <td>Electronic Limited-Slip (eLSD) Variant</td>
-                            <td>Selectable 100% Mechanical Locking Axle</td>
-                        </tr>
-                    </tbody>
-                </table>
-
-                <div class="verdict-banner">
-                    <h4><i class="fas fa-circle-check"></i> Analytical Conclusion: Full-Size SUV Class</h4>
-                    <p>The <strong>Chevrolet Tahoe</strong> delivers the ultimate premium highway cruising experience, combining space efficiency with smart magnetic ride tuning. For severe overland exploration and high-temperature desert sand running, the <strong>Nissan Patrol</strong> remains an unmatched off-road machine due to its heavy-duty commercial heritage and hydraulic cross-linked suspension system.</p>
-                </div>
-
             </div>
+
+            <!-- CARD 2: TOYOTA VS HONDA -->
+            <div class="car-card">
+                <img src="toyota rav 4.jpg" alt="Toyota RAV4 vs Honda CR-V" class="car-image">
+                <div class="car-content">
+                    <div class="car-title">Toyota RAV4 vs. Honda CR-V</div>
+                    <div class="car-description">
+                        <p><strong>Thermodynamic Cycle Optimization:</strong> Internal combustion pathways within modern sport utility platforms place immense engineering focus on thermal efficiency metrics. The Toyota Dynamic Force platform implements a highly optimized Atkinson cycle configuration utilizing laser-clad valve seats and asymmetrical intake ports to establish exceptional tumble airflow mechanics inside the cylinder chambers. Running a strict 14.0:1 compression ratio, the platform leverages a combined direct and port fuel injection design (D-4S) to mitigate pre-ignition knock sequences under wide-open throttle states.</p>
+                        <p><strong>Drivetrain Mechanics and Fluid Longevity:</strong> Honda's engineering team counters with an innovative downsized VTEC Turbo or an advanced dual-motor direct-drive layout. In standard configurations, the integrated exhaust manifold is cooled via dedicated cylinder head coolant channels, lowering incoming exhaust temperatures prior to turbine wheel exposure. In hybrid applications, the mechanical setup removes the transmission casing entirely, swapping standard gears for an intelligent lock-up clutch system that connects the combustion engine directly to the front drive axle during high-speed cruising loops, avoiding typical friction losses.</p>
+                        <p><strong>Fluid Shear Vulnerabilities:</strong> Transmission lubrication stability varies heavily across these platform profiles. Toyota’s electronic continuously variable transmission (e-CVT) relies on permanent planetary gear tooth contact lines to blend torque vectors. This system minimizes severe localized shear stresses, preserving low fluid degradation indexes over 100,000-kilometer intervals. Honda’s system places extreme operational demand on low-viscosity structural lubricants to cool the fast-spinning internal generator windings while simultaneously providing adequate boundary layer film protection across the high-load direct clutch plates.</p>
+                        <ul class="tech-spec-list">
+                            <li>Toyota Combustion: <span>2.5L Atkinson Dynamic Force</span></li>
+                            <li>Honda Combustion: <span>1.5L VTEC Turbo / 2.0L Direct-Drive</span></li>
+                            <li>Transmission Setup: <span>Planetary e-CVT vs Electronic Clutch Link</span></li>
+                        </ul>
+                    </div>
+                    <a href="toyota-Honda.html" class="btn-read-more">Read Full Analysis <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <!-- CARD 3: LACETTI VS NEXIA -->
+            <div class="car-card">
+                <img src="Chevrolet Lacetti.jpg" alt="Chevrolet Lacetti vs Ravon Nexia 3" class="car-image">
+                <div class="car-content">
+                    <div class="car-title">Chevrolet Lacetti vs. Ravon Nexia 3</div>
+                    <div class="car-description">
+                        <p><strong>Chassis Geometry Deconstruction:</strong> High-mileage fleet durability demands rigid subframe construction and robust structural unibody properties. The GM J200 platform (Chevrolet Lacetti) utilizes a fully independent rear multi-link suspension structure mounted via vibration-isolating rubber bushings. This independent layout manages lateral loads completely separated from vertical impact forces, protecting individual body joints from excessive metal fatigue when tracking across highly uneven, broken local road networks over extended periods.</p>
+                        <p><strong>Torsion Beam vs Multi-Link Rigidness:</strong> The GM T250 architecture (Ravon Nexia 3) implements a simplified, lightweight semi-independent rear torsion beam axle setup. While this layout reduces maintenance complexity and expands interior luggage room, it continuously transfers single-wheel impacts across the entire rear subframe assembly. Over extended 200,000+ kilometer commercial lifecycles, this cyclic twisting stress concentrates high load factors around the trailing arm mounting brackets, demanding regular bushing replacements to prevent dangerous rear tracking alignment variances.</p>
+                        <p><strong>Alternative Fuel Conversions (CNG/LPG):</strong> Drivetrain compatibility with Compressed Natural Gas (CNG) is a primary consideration for regional commercial deployment. The 1.5L B15D2 iron-block engine found in both platforms offers excellent thermal resilience. However, the Lacetti's spacious engine compartment provides vastly superior airflow dynamics, allowing heat to dissipate naturally during harsh summer weather cycles. The tight engine bay configuration of the Nexia 3 retains secondary exhaust manifold heat, accelerating the degradation of ignition coils, accessory drive belts, and vacuum lines.</p>
+                        <ul class="tech-spec-list">
+                            <li>Lacetti Platform: <span>GM J200 Independent Rear Axle</span></li>
+                            <li>Nexia 3 Platform: <span>GM T250 Torsion Beam Rear Axle</span></li>
+                            <li>Fuel System Limits: <span>High-Volume CNG Engine Bay Dissipation</span></li>
+                        </ul>
+                    </div>
+                    <a href="Chevrolet-Nexia.html" class="btn-read-more">Read Full Analysis <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+
         </div>
 
-        <!-- ADSENSE FOOTER BANNER PLACEHOLDER -->
-        <div class="adsense-native-box">
-            <span>Contextual Ad Placement Partition</span>
-            <p>Automotive Category Footer Leaderboard Area — Maximizes Final Page Scroll RPM Revenue</p>
+        <!-- Mid Page Ad Placement -->
+        <div class="ad-placeholder">
+            <i class="fas fa-rectangle-ad"></i> Intermediate Native Contextual Ad Block - Maximizes Page View RPM Statistics
+        </div>
+
+        <div class="car-grid">
+
+            <!-- CARD 4: MERCEDES VS BMW -->
+            <div class="car-card">
+                <img src="BMW-i4.jpg" alt="Mercedes-Benz vs BMW" class="car-image">
+                <div class="car-content">
+                    <div class="car-title">Mercedes-Benz C-Class vs. BMW 3-Series</div>
+                    <div class="car-description">
+                        <p><strong>Kinematic Suspension Steering Layouts:</strong> Premium compact sedan engineering centers on balancing absolute ride quality against high-speed cornering accuracy. The BMW 3-Series features a unique double-pivot aluminum front suspension layout that splits the lower control arm into two independent links. This geometry repositions the virtual steering axis close to the wheel center line, mitigating bump-steer anomalies and providing incredibly direct steering responses. Adaptive M damper variants utilize high-speed electromagnetic valves to adjust internal fluid resistance profiles every few milliseconds based on road data.</p>
+                        <p><strong>NVH Dampening and Data Networks:</strong> The Mercedes-Benz C-Class isolates steering control paths completely from longitudinal suspension movements through a highly sophisticated four-link assembly. The platform relies heavily on fluid-filled hydro-bushings to isolate high-frequency noise, vibration, and harshness (NVH) inputs before they penetrate the cabin unibody. On the electronic side, BMW uses a deterministic, time-triggered FlexRay data bus network running at 10 Mbps to ensure instant communication between stability modules, while Mercedes uses a distributed CAN-FD layout optimized for smooth hybrid system power routing.</p>
+                        <p><strong>Drivetrain Alignment and Subframe Layouts:</strong> Both platforms deploy longitudinal engine alignments to maintain a near-perfect 50:50 weight distribution ratio. BMW bolts its steering rack directly onto a reinforced aluminum front subframe structure to enhance steering crispness. Mercedes utilizes isolated subframe mounts featuring soft compound dampening layers to reduce road roar, resulting in a plush, refined long-distance cruising experience that emphasizes passenger isolation over raw track-focused feedback.</p>
+                        <ul class="tech-spec-list">
+                            <li>BMW Steering Axle: <span>Double-Pivot Strut Architecture</span></li>
+                            <li>Mercedes Steering Axle: <span>4-Link Isolated Luxury Orientation</span></li>
+                            <li>Network Architecture: <span>10 Mbps FlexRay vs Multi-Zone CAN-FD</span></li>
+                        </ul>
+                    </div>
+                    <a href="automotive-comparisons.html" class="btn-read-more">Read Full Analysis <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <!-- CARD 5: DAMAS VS LABO -->
+            <div class="car-card">
+                <img src="Ravon Nexia 3.jpg" alt="Damas vs Labo Commercial" class="car-image">
+                <div class="car-content">
+                    <div class="car-title">Damas Van vs. Labo Pickup</div>
+                    <div class="car-description">
+                        <p><strong>Commercial Vehicle Structural Framing:</strong> Small-scale commercial logistics operations depend entirely on maximizing volume and payload parameters relative to localized maintenance costs. The Damas commercial van features an enclosed, integrated unibody layout where the steel roof and side panels form a rigid box structure that increases total torsional resistance against heavy load deflections. The rear axle assembly uses a robust live axle layout suspended by heavy-duty multi-leaf semi-elliptic springs to transfer structural load weight cleanly to frame channels.</p>
+                        <p><strong>Ladder Frame vs Unibody Cargo Dynamics:</strong> The Labo pickup features an open steel flatbed mounted onto an authentic high-gauge steel ladder frame chassis, keeping passenger cabin stresses separated from shifting rear payload weight vectors. Because the flatbed layout allows loads to be stacked higher directly over the rear differential housing, the leaf spring packs are configured with a stiffer primary spring rate to counter top-heavy load shifts during sharp urban turns over uneven delivery routes.</p>
+                        <p><strong>Midship Engine Layout Thermal Constraints:</strong> Both vehicles present unique cooling system challenges due to their mid-mounted, low-displacement three-cylinder engines positioned underneath the front cabin seats. Long coolant delivery pipes link the midship engine block to a front-mounted radiator core, requiring high system pressures and automatic bleeding valves to clear trapped air pockets. Regular mechanical valvetrain lifter adjustments are mandatory every 30,000 kilometers using precise manual feeler gauges to protect against localized exhaust valve seat burnout under continuous operation.</p>
+                        <ul class="tech-spec-list">
+                            <li>Damas Layout: <span>Enclosed Unibody Box Structure</span></li>
+                            <li>Labo Layout: <span>Heavy Ladder Chassis Flatbed</span></li>
+                            <li>Valvetrain Service: <span>30,000 km Manual Tappet Clearance Check</span></li>
+                        </ul>
+                    </div>
+                    <a href="automotive-comparisons.html" class="btn-read-more">Read Full Analysis <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <!-- CARD 6: TAHOE VS PATROL -->
+            <div class="car-card">
+                <img src="byd-seal.jpg" alt="Chevrolet Tahoe vs Nissan Patrol" class="car-image">
+                <div class="car-content">
+                    <div class="car-title">Chevrolet Tahoe vs. Nissan Patrol</div>
+                    <div class="car-description">
+                        <p><strong>Full-Size Body-on-Frame Manufacturing:</strong> Heavy-duty full-size SUV configurations represent the pinnacle of absolute towing performance and technical off-road articulation. The Chevrolet Tahoe is engineered around a fully boxed high-strength steel frame that utilizes advanced hydroformed side rails. This manufacturing methodology shapes structural tubes using high-pressure fluid vectors instead of traditional multi-weld seams, lowering unladen frame mass while maximizing front-end impact absorption profiles during collision events.</p>
+                        <p><strong>Hydraulic Suspension vs Magnetic Damping:</strong> The Nissan Patrol relies on a heavy-gauge welded steel ladder frame designed to survive high stress levels across harsh terrain. Rather than standard mechanical anti-roll bars, the Patrol features Nissan's Hydraulic Body Motion Control (HBMC) system. This setup links all four independent damper assemblies via pressurized cross-piping and accumulators; the system increases hydraulic fluid resistance to reduce body lean on pavement, while bleeding pressure off-road to allow extreme suspension articulation over rocks.</p>
+                        <p><strong>Transfer Case Torque Multipliers:</strong> Four-wheel-drive gear performance determines off-road capability. The Tahoe features an active two-speed transfer case utilizing an automated wet clutch pack to split incoming torque profiles ahead of actual tire slip. Selecting 4-Low locks a 2.72:1 planetary reduction gearset to multiply engine torque. The Nissan Patrol relies on an All-Mode 4x4 layout paired with a robust 2.68:1 low-range gear reduction assembly and a push-button 100% mechanical locking rear differential to guarantee positive axle lock across deep mud and sand fields.</p>
+                        <ul class="tech-spec-list">
+                            <li>Tahoe Frame Setup: <span>Hydroformed Fully Boxed Framework</span></li>
+                            <li>Patrol Frame Setup: <span>Heavy Welded Commercial Ladder Frame</span></li>
+                            <li>Chassis Damping: <span>Magnetic Ride Dampers vs HBMC Hydraulic System</span></li>
+                        </ul>
+                    </div>
+                    <a href="automotive-comparisons.html" class="btn-read-more">Read Full Analysis <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+
         </div>
 
     </div>
 
     <footer>
         <div class="container">
-            <div class="footer-container">
-                <div class="footer-column">
-                    <h3>AutoExpert Hub</h3>
-                    <p>Providing data-driven automotive teardowns, mechanical component stress analysis, and structural platform evaluations since 2024.</p>
-                </div>
-                
-                <div class="footer-column">
-                    <h3>Engineering Categories</h3>
-                    <ul>
-                        <li><a href="technology.html"><i class="fas fa-mobile-screen"></i> Mobile Technology Systems</a></li>
-                        <li><a href="software.html"><i class="fas fa-code-branch"></i> Enterprise Software Engineering</a></li>
-                        <li><a href="automotive.html"><i class="fas fa-car"></i> Automotive Platform Index</a></li>
-                        <li><a href="index.html"><i class="fas fa-house-chimney"></i> Core Knowledge Base</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-column">
-                    <h3>Technical Communications</h3>
-                    <p><i class="fas fa-envelope-open"></i> analysis@autoexperthub.com</p>
-                    <p><i class="fas fa-phone-volume"></i> +998 90 123 45 67</p>
-                </div>
-            </div>
-            
-            <div class="copyright">
-                <p>&copy; 2026 AutoExpert Hub. All Rights Reserved. Technical platform data verified via localized testing cycles.</p>
-            </div>
+            <p>&copy; 2026 AutoExpert Hub. Technical Reviews, Data-Driven Platform Diagnostics & Fleet Evaluation Directory. All rights reserved.</p>
         </div>
     </footer>
 
