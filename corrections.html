@@ -53,7 +53,7 @@
             width: 100%;
             max-width: 1240px;
             margin: 0 auto;
-            padding: 0 32px; /* Safety margin to fully eliminate edge-squeezing */
+            padding: 0 32px;
         }
 
         a {
@@ -747,30 +747,28 @@
                 <p style="color: var(--text-light); font-size: 14.5px; margin-top: 6px;">If you have detected an active factual error or statistical distortion within our data rows, please file an official claim below. All submissions are processed by an engineering ombudsman within 24 hours:</p>
                 
                 <div class="interactive-panel">
-                   <!-- TO'G'RI VA TAYYOR FORMA KODI -->
-<form id="correctionsForm" action="https://formspree.io/f/mwvjanwa" method="POST" onsubmit="handleFormSubmit(event)">
-    <div class="form-group">
-        <label for="userName">Full Name / Institutional Entity</label>
-        <input type="text" id="userName" name="name" placeholder="e.g., Feruza" required>
-    </div>
-    <div class="form-group">
-        <label for="userEmail">Official Correspondence Email Address</label>
-        <input type="email" id="userEmail" name="email" placeholder="expert@domain.com" required>
-    </div>
-    <div class="form-group">
-        <label for="articleUrl">Target Content Resource Locator (URL)</label>
-        <input type="url" id="articleUrl" name="url" placeholder="https://ranking-hours.uz/review-item" required>
-    </div>
-    <div class="form-group">
-        <label for="errorDesc">Granular Discrepancy Breakdown & Verification Evidence</label>
-        <textarea id="errorDesc" name="message" rows="5" placeholder="Please carefully specify the exact phrase, data coordinate, or metric error along with verifiable reference paths to direct engineering primary sources..." required></textarea>
-    </div>
-    
-    <!-- Tugma mana shunday havolasiz, lekin type="submit" holatda bo'lishi shart -->
-    <button type="submit" class="btn btn-primary">
-        <i class="fas fa-shield-heart"></i> Dispatch Form To Editorial Board
-    </button>
-</form>
+                    <form id="correctionsForm" action="https://formspree.io/f/mwvjanwa" method="POST" onsubmit="handleFormSubmit(event)">
+                        <div class="form-group">
+                            <label for="userName">Full Name / Institutional Entity</label>
+                            <input type="text" id="userName" name="name" placeholder="e.g., Feruza" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="userEmail">Official Correspondence Email Address</label>
+                            <input type="email" id="userEmail" name="email" placeholder="expert@domain.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="articleUrl">Target Content Resource Locator (URL)</label>
+                            <input type="url" id="articleUrl" name="url" placeholder="https://ranking-hours.uz/review-item" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="errorDesc">Granular Discrepancy Breakdown & Verification Evidence</label>
+                            <textarea id="errorDesc" name="message" rows="5" placeholder="Please carefully specify the exact phrase, data coordinate, or metric error along with verifiable reference paths to direct engineering primary sources..." required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-shield-heart"></i> Dispatch Form To Editorial Board
+                        </button>
+                    </form>
 
                     <div style="background: white; padding: 28px; border-radius: var(--radius); border: 1px solid var(--border-orange);">
                         <h4><i class="fas fa-envelope-open-text">Direct Legal and Corporate Communications Center</i></h4>
@@ -822,7 +820,6 @@
                     <h3>Corporate Contact</h3>
                     <ul class="footer-links">
                         <li><a href="mailto:abdullohmahmudov660@gmail.com">support@ranking-hours.uz</a></li>
-                      
                     </ul>
                 </div>
             </div>
@@ -862,19 +859,38 @@
             });
         });
 
-        // Form Submission Processor Logic
+        // TO'G'RILANGAN INTERFAOL FORMA PROCESSORI (ASYNCHRONOUS FETCH ENGINE)
         function handleFormSubmit(event) {
-            event.preventDefault();
+            event.preventDefault(); // Sahifa qayta yuklanishini to'xtatadi
             
+            const form = event.target;
+            const data = new FormData(form);
             const toast = document.getElementById('toastAlert');
-            toast.classList.add('show');
-            
-            // Reset input values smoothly
-            document.getElementById('correctionsForm').reset();
-            
-            setTimeout(() => {
-                toast.classList.remove('show');
-            }, 4000);
+
+            // Ma'lumotlarni Formspree serveriga yuborish
+            fetch(form.action, {
+                method: form.method,
+                body: data,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            })
+            .then(response => {
+                if (response.ok) {
+                    // Xat muvaffaqiyatli ketgandagina bildirishnomani ko'rsatish
+                    toast.classList.add('show');
+                    form.reset(); // Kiritilgan ma'lumotlarni tozalash
+                    
+                    setTimeout(() => {
+                        toast.classList.remove('show');
+                    }, 4000);
+                } else {
+                    alert("Xatolik yuz berdi. Ma'lumot yuborilmadi.");
+                }
+            })
+            .catch(error => {
+                alert("Tarmoq ulanishida xatolik. Internetni tekshiring.");
+            });
         }
     </script>
 </body>
