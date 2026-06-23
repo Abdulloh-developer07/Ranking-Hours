@@ -747,25 +747,30 @@
                 <p style="color: var(--text-light); font-size: 14.5px; margin-top: 6px;">If you have detected an active factual error or statistical distortion within our data rows, please file an official claim below. All submissions are processed by an engineering ombudsman within 24 hours:</p>
                 
                 <div class="interactive-panel">
-                    <form id="correctionsForm" onsubmit="handleFormSubmit(event)">
-                        <div class="form-group">
-                            <label for="userName">Full Name / Institutional Entity</label>
-                            <input type="text" id="userName" placeholder="e.g., Feruza" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="userEmail">Official Correspondence Email Address</label>
-                            <input type="email" id="userEmail" placeholder="expert@domain.com" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="articleUrl">Target Content Resource Locator (URL)</label>
-                            <input type="url" id="articleUrl" placeholder="https://ranking-hours.uz/review-item" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="errorDesc">Granular Discrepancy Breakdown & Verification Evidence</label>
-                            <textarea id="errorDesc" rows="5" placeholder="Please carefully specify the exact phrase, data coordinate, or metric error along with verifiable reference paths to direct engineering primary sources..." required></textarea>
-                        </div>
-                        <a href="https://formspree.io/f/mwvjanwa"><button type="submit" class="btn btn-primary"><i class="fas fa-shield-heart"></i> Dispatch Form To Editorial Board</button></a>
-                    </form>
+                   <!-- TO'G'RI VA TAYYOR FORMA KODI -->
+<form id="correctionsForm" action="https://formspree.io/f/mwvjanwa" method="POST" onsubmit="handleFormSubmit(event)">
+    <div class="form-group">
+        <label for="userName">Full Name / Institutional Entity</label>
+        <input type="text" id="userName" name="name" placeholder="e.g., Feruza" required>
+    </div>
+    <div class="form-group">
+        <label for="userEmail">Official Correspondence Email Address</label>
+        <input type="email" id="userEmail" name="email" placeholder="expert@domain.com" required>
+    </div>
+    <div class="form-group">
+        <label for="articleUrl">Target Content Resource Locator (URL)</label>
+        <input type="url" id="articleUrl" name="url" placeholder="https://ranking-hours.uz/review-item" required>
+    </div>
+    <div class="form-group">
+        <label for="errorDesc">Granular Discrepancy Breakdown & Verification Evidence</label>
+        <textarea id="errorDesc" name="message" rows="5" placeholder="Please carefully specify the exact phrase, data coordinate, or metric error along with verifiable reference paths to direct engineering primary sources..." required></textarea>
+    </div>
+    
+    <!-- Tugma mana shunday havolasiz, lekin type="submit" holatda bo'lishi shart -->
+    <button type="submit" class="btn btn-primary">
+        <i class="fas fa-shield-heart"></i> Dispatch Form To Editorial Board
+    </button>
+</form>
 
                     <div style="background: white; padding: 28px; border-radius: var(--radius); border: 1px solid var(--border-orange);">
                         <h4><i class="fas fa-envelope-open-text">Direct Legal and Corporate Communications Center</i></h4>
