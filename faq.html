@@ -930,11 +930,7 @@
             </div>
         </section>
 
-        <!-- Programmatic Contextual Display Unit Placeholder -->
-        <div class="adsense-placeholder">
-            <h4>Programmatic Knowledge Base Integration Block</h4>
-            <p>Contextual documentation links and policy-compliant informational announcements are placed here dynamically. These ad spaces operate separately from our core content metrics and testing logs.</p>
-        </div>
+       
 
         <!-- Custom User Submission Form Module Section -->
         <section class="ask-section">
@@ -1070,7 +1066,6 @@
                 const answer = question.nextElementSibling;
                 const icon = question.querySelector('i');
                 
-                // Close other open panels smoothly to maintain a pristine, scannable layout
                 document.querySelectorAll('.faq-answer').forEach(item => {
                     if (item !== answer && item.classList.contains('active')) {
                         item.classList.remove('active');
@@ -1079,7 +1074,6 @@
                     }
                 });
                 
-                // Toggle current target panel active class and calculate element height dynamically
                 answer.classList.toggle('active');
                 if (answer.classList.contains('active')) {
                     answer.style.maxHeight = answer.scrollHeight + "px";
@@ -1091,13 +1085,13 @@
             });
         });
         
-        // Track and Display Local File Upload Attachment Metadata Changes
+        // Fayl yuklanganda uning nomini ko'rsatish logikasi
         document.getElementById('file').addEventListener('change', function(e) {
             const fileName = e.target.files.length > 0 ? e.target.files[0].name : 'Choose File No file chosen';
             document.getElementById('fileName').textContent = fileName;
         });
         
-        // Clean and Clear Form Fields with Notification Fade-out
+        // Formani tozalash funksiyasi
         function clearForm() {
             document.getElementById('questionForm').reset();
             document.getElementById('fileName').textContent = 'Choose File No file chosen';
@@ -1105,42 +1099,74 @@
             notification.style.display = 'none';
         }
         
-        // Handle Asynchronous Inbound Form Data Submissions Safely
+        // Formspree-ga ma'lumot yuborish tizimi (Haqiqiy Fetch Integratsiyasi)
         document.getElementById('questionForm').addEventListener('submit', function(e) {
-            e.preventDefault();
+            e.preventDefault(); // Sahifa yangilanib ketishini oldini olamiz
             
             const notification = document.getElementById('notification');
             const submitBtn = this.querySelector('button[type="submit"]');
             
-            // Collect operational data variables for processing
-            const formData = {
-                category: document.getElementById('category').value,
-                title: document.getElementById('title').value,
-                details: document.getElementById('details').value,
-                name: document.getElementById('name').value,
-                email: document.getElementById('email').value,
-                pubConsent: document.getElementById('faq').checked,
-                subStatus: document.getElementById('subscribe').checked
-            };
-            
-            // Add processing feedback styling to the submission button
+            // Tugmani bloklab, yuklanish holatiga o'tkazamiz
             submitBtn.disabled = true;
-            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Processing...';
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Dispatching...';
             
-            // Simulate server-side processing for tracking logs
-            setTimeout(() => {
-                notification.innerHTML = '<i class="fas fa-check-circle"></i> Success! Your technical inquiry has been securely queued. Our compliance desk will dispatch a formal resolution to your verified email address within 3 business days.';
-                notification.className = "notification success";
+            // Formspree talab qiladigan FormData obyektini yaratamiz (Fayl bilan birga ketishi uchun)
+            // HTML inputlarida "name" atributlari mos kelishini ta'minlaydi
+            const plainFormData = new FormData();
+            plainFormData.append("Category", document.getElementById('category').value);
+            plainFormData.append("Title", document.getElementById('title').value);
+            plainFormData.append("Message Details", document.getElementById('details').value);
+            plainFormData.append("Full Name", document.getElementById('name').value);
+            plainFormData.append("Email", document.getElementById('email').value);
+            plainFormData.append("Publication Consent", document.getElementById('faq').checked ? "Granted" : "Denied");
+            plainFormData.append("Subscription Status", document.getElementById('subscribe').checked ? "Subscribed" : "Unsubscribed");
+            
+            // Agar fayl tanlangan bo'lsa, uni ham biriktiramiz
+            const fileInput = document.getElementById('file');
+            if (fileInput.files.length > 0) {
+                plainFormData.append("Attachment", fileInput.files[0]);
+            }
+            
+            // Sizning shaxsiy Formspree Endpoint manzilingizga so'rov yuboramiz
+            fetch('https://formspree.io/f/mwvjanwa', {
+                method: 'POST',
+                body: plainFormData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            })
+            .then(response => {
+                if (response.ok) {
+                    // Muvaffaqiyatli yuborilgandagi xabar
+                    notification.innerHTML = '<i class="fas fa-check-circle"></i> Success! Your technical inquiry has been securely sent to Formspree dashboard. Our compliance desk will review it soon.';
+                    notification.className = "notification success";
+                    notification.style.display = "flex";
+                    clearForm(); // Formani tozalash
+                } else {
+                    // Server xatolik qaytarganda
+                    return response.json().then(data => {
+                        if (Object.hasOwn(data, 'errors')) {
+                            notification.innerHTML = '<i class="fas fa-exclamation-triangle"></i> Submission Error: ' + data.errors.map(error => error.message).join(', ');
+                        } else {
+                            notification.innerHTML = '<i class="fas fa-exclamation-triangle"></i> Oops! There was a problem submitting your form.';
+                        }
+                        notification.className = "notification error";
+                        notification.style.display = "flex";
+                    });
+                }
+            })
+            .catch(error => {
+                // Tarmoqda muammo bo'lganda (Internet uzilsa yoki bloklansa)
+                notification.innerHTML = '<i class="fas fa-wifi"></i> Network Error! Please verify your internet connection and try again.';
+                notification.className = "notification error";
                 notification.style.display = "flex";
-                
-                // Restore button status and reset fields safely
+            })
+            .finally(() => {
+                // Har qanday holatda ham tugmani yana faollashtiramiz
                 submitBtn.disabled = false;
                 submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> Dispatch Formal Query';
-                clearForm();
-                
-                // Auto-scroll layout window smoothly to center notification area
                 notification.scrollIntoView({ behavior: 'smooth', block: 'center' });
-            }, 1200);
+            });
         });
     </script>
 </body>
