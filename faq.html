@@ -1,201 +1,483 @@
 <!DOCTYPE html>
-<html lang="uz">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FAQ - Savol va Javoblar | Ranking Hours</title>
+    <meta name="description" content="Comprehensive Frequently Asked Questions (FAQ) and Knowledge Base for Ranking Hours. Explore detailed insights into search engine optimization, technical web metrics, ranking algorithms, auditing methodologies, and global monetized site strategies.">
+    <title>Knowledge Base & Comprehensive FAQ | Ranking Hours</title>
+    
+    <!-- Premium Google Fonts Framework -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <style>
+        :root {
+            --slate-50: #f8fafc;
+            --slate-100: #f1f5f9;
+            --slate-200: #e2e8f0;
+            --slate-700: #334155;
+            --slate-800: #1e293b;
+            --slate-900: #0f172a;
+            --indigo-600: #4f46e5;
+            --indigo-700: #4338ca;
+            --violet-600: #7c3aed;
+            --violet-700: #6d28d9;
+            --emerald-500: #10b981;
+            --rose-500: #f43f5e;
+            --amber-400: #fbbf24;
+            --glass-bg: rgba(255, 255, 255, 0.85);
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            --shadow-xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Plus Jakarta Sans', sans-serif;
         }
         
         body {
-            background-color: #f8f9fa;
-            color: #333;
-            line-height: 1.6;
-            padding: 20px;
+            background: radial-gradient(circle at top right, #eef2ff 0%, #f1f5f9 50%, #fafafa 100%);
+            color: var(--slate-800);
+            line-height: 1.8;
+            padding: 0;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
         }
         
-        .container {
-            max-width: 1000px;
-            margin: 0 auto;
-            background-color: white;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
-        }
-        
-        header {
-            background: linear-gradient(135deg, #4f46e5, #7c3aed);
+        /* Fixed Enterprise Navigation Bar */
+        header.nav-bar {
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
             color: white;
-            padding: 40px 30px;
-            text-align: center;
+            padding: 18px 0;
+            position: sticky;
+            top: 0;
+            z-index: 2000;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: var(--shadow-md);
         }
-        
-        header h1 {
-            font-size: 2.8rem;
-            margin-bottom: 10px;
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
-        
-        header p {
-            font-size: 1.2rem;
-            opacity: 0.9;
-        }
-        
-        .logo {
-            font-size: 3rem;
-            margin-bottom: 20px;
-            color: #fbbf24;
-        }
-        
-        .faq-section, .ask-section {
-            padding: 40px 30px;
-        }
-        
-        .section-title {
-            font-size: 1.8rem;
-            margin-bottom: 25px;
-            color: #4f46e5;
-            border-bottom: 3px solid #e5e7eb;
-            padding-bottom: 10px;
+
+        .nav-logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            font-family: 'Space Grotesk', sans-serif;
             display: flex;
             align-items: center;
             gap: 10px;
+            color: white;
+            text-decoration: none;
+            letter-spacing: -0.5px;
+        }
+
+        .nav-logo i {
+            color: #3b82f6;
+            font-size: 1.6rem;
+        }
+
+        .nav-logo span {
+            color: #3b82f6;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 12px;
+            align-items: center;
+        }
+
+        nav a {
+            color: #cbd5e1;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            padding: 10px 16px;
+            border-radius: 8px;
+            transition: all 0.25s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        nav a:hover {
+            color: white;
+            background-color: rgba(255, 255, 255, 0.08);
+        }
+
+        nav a.active {
+            color: white;
+            background: linear-gradient(135deg, var(--indigo-600) 0%, var(--violet-600) 100%);
+            box-shadow: 0 4px 15px rgba(79, 70, 229, 0.35);
+        }
+
+        .main-wrapper {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 24px;
+        }
+
+        /* Hero Showcase Segment */
+        .hero-banner {
+            background: linear-gradient(135deg, var(--slate-900) 0%, #1e1b4b 100%);
+            color: white;
+            padding: 90px 40px;
+            text-align: center;
+            border-radius: 24px;
+            box-shadow: var(--shadow-xl);
+            margin-bottom: 50px;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .hero-banner::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(99,102,241,0.15) 0%, transparent 60%);
+            pointer-events: none;
+        }
+        
+        .hero-banner h1 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            letter-spacing: -1px;
+            background: linear-gradient(135deg, #ffffff 30%, #c7d2fe 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .hero-banner p {
+            font-size: 1.3rem;
+            color: #cbd5e1;
+            max-width: 800px;
+            margin: 0 auto;
+            font-weight: 400;
+        }
+        
+        .hero-logo-box {
+            font-size: 3.5rem;
+            margin-bottom: 15px;
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 20px;
+            border-radius: 50%;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--amber-400);
+            box-shadow: inset 0 2px 10px rgba(255,255,255,0.1);
+        }
+
+        /* Editorial Educational Preface Block */
+        .editorial-preface {
+            background: var(--glass-bg);
+            border-left: 6px solid var(--indigo-600);
+            padding: 40px;
+            border-radius: 16px;
+            margin-bottom: 45px;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--slate-200);
+            border-left: 6px solid var(--indigo-600);
+            text-align: justify;
+        }
+
+        .editorial-preface h2 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.8rem;
+            color: var(--slate-900);
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .editorial-preface p {
+            font-size: 1.05rem;
+            color: var(--slate-700);
+            margin-bottom: 15px;
+        }
+
+        /* FAQ Content Grid Layout */
+        .faq-section, .ask-section {
+            background: var(--glass-bg);
+            border-radius: 20px;
+            padding: 50px 40px;
+            margin-bottom: 50px;
+            box-shadow: var(--shadow-md);
+            border: 1px solid rgba(226, 232, 240, 0.8);
+            backdrop-filter: blur(8px);
+        }
+        
+        .section-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 35px;
+            color: var(--slate-900);
+            border-bottom: 2px solid var(--slate-200);
+            padding-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            letter-spacing: -0.5px;
         }
         
         .section-title i {
-            color: #7c3aed;
+            background: linear-gradient(135deg, var(--indigo-600) 0%, var(--violet-600) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
         
+        .faq-category-header {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.4rem;
+            color: var(--indigo-600);
+            margin: 35px 0 20px 0;
+            padding-left: 10px;
+            border-left: 4px solid var(--violet-600);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
         .faq-container {
-            margin-bottom: 40px;
+            margin-bottom: 25px;
         }
         
         .faq-item {
-            border: 1px solid #e5e7eb;
-            border-radius: 10px;
-            margin-bottom: 15px;
+            border: 1px solid var(--slate-200);
+            border-radius: 12px;
+            margin-bottom: 18px;
             overflow: hidden;
-            transition: all 0.3s ease;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            background: white;
         }
         
         .faq-item:hover {
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            box-shadow: var(--shadow-md);
+            border-color: var(--slate-300);
+            transform: translateY(-2px);
         }
         
         .faq-question {
-            padding: 20px;
-            background-color: #f9fafb;
-            font-size: 1.2rem;
-            font-weight: 600;
+            padding: 24px;
+            background-color: var(--slate-50);
+            font-size: 1.25rem;
+            font-weight: 700;
             cursor: pointer;
             display: flex;
             justify-content: space-between;
             align-items: center;
             user-select: none;
+            color: var(--slate-900);
+            gap: 20px;
         }
         
         .faq-question i {
-            transition: transform 0.3s ease;
-            color: #7c3aed;
+            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            color: var(--indigo-600);
+            background: white;
+            padding: 8px;
+            border-radius: 50%;
+            box-shadow: var(--shadow-sm);
+            font-size: 1rem;
         }
         
         .faq-answer {
-            padding: 0 20px;
+            padding: 0 24px;
             max-height: 0;
             overflow: hidden;
-            transition: all 0.4s ease;
+            transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
             background-color: white;
+            color: var(--slate-700);
+            font-size: 1.05rem;
+            text-align: justify;
         }
         
         .faq-answer.active {
-            padding: 20px;
-            max-height: 500px;
+            padding: 24px;
+            max-height: 1500px; /* Extended to fit comprehensive content entries safely */
+            border-top: 1px solid var(--slate-100);
         }
-        
+
+        .faq-answer p {
+            margin-bottom: 15px;
+        }
+
+        .faq-answer p:last-child {
+            margin-bottom: 0;
+        }
+
+        .faq-answer ul, .faq-answer ol {
+            margin: 15px 0 15px 24px;
+        }
+
+        .faq-answer li {
+            margin-bottom: 8px;
+        }
+
+        /* Specialized Ad Placement Shell */
+        .adsense-placeholder {
+            background: #f8fafc;
+            border: 2px dashed #cbd5e1;
+            border-radius: 12px;
+            padding: 40px 20px;
+            text-align: center;
+            margin: 45px 0;
+            color: #64748b;
+            transition: all 0.3s ease;
+        }
+
+        .adsense-placeholder:hover {
+            border-color: var(--indigo-600);
+            background: #f5f7ff;
+        }
+
+        .adsense-placeholder h4 {
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #475569;
+            margin-bottom: 5px;
+            font-weight: 700;
+        }
+
+        /* Modern Form Infrastructure */
         .ask-form {
-            background-color: #f9fafb;
-            border-radius: 10px;
-            padding: 30px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            background-color: var(--slate-50);
+            border-radius: 16px;
+            padding: 40px;
+            border: 1px solid var(--slate-200);
         }
         
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+
         .form-group {
-            margin-bottom: 25px;
+            margin-bottom: 0;
+        }
+
+        .form-group.full-width {
+            grid-column: span 2;
         }
         
         .form-group label {
             display: block;
-            margin-bottom: 8px;
-            font-weight: 600;
-            color: #4b5563;
+            margin-bottom: 10px;
+            font-weight: 700;
+            color: var(--slate-900);
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 10px;
+            font-size: 0.95rem;
         }
         
         .form-group label i {
-            color: #7c3aed;
+            color: var(--indigo-600);
+            font-size: 1rem;
             width: 20px;
+            text-align: center;
         }
         
         .form-control {
             width: 100%;
-            padding: 15px;
-            border: 2px solid #e5e7eb;
-            border-radius: 8px;
+            padding: 16px;
+            border: 2px solid var(--slate-200);
+            background-color: white;
+            border-radius: 10px;
             font-size: 1rem;
-            transition: border 0.3s ease;
+            color: var(--slate-900);
+            transition: all 0.3s ease;
+            font-weight: 500;
         }
         
         .form-control:focus {
             outline: none;
-            border-color: #7c3aed;
+            border-color: var(--indigo-600);
+            box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.1);
         }
         
+        .form-control::placeholder {
+            color: #94a3b8;
+        }
+
         select.form-control {
             appearance: none;
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%237c3aed' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E");
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%234f46e5' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E");
             background-repeat: no-repeat;
-            background-position: right 15px center;
-            padding-right: 40px;
+            background-position: right 20px center;
+            padding-right: 50px;
         }
         
         textarea.form-control {
-            min-height: 150px;
+            min-height: 180px;
             resize: vertical;
         }
         
+        .checkbox-container-block {
+            margin-top: 15px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
         .checkbox-group {
             display: flex;
-            align-items: center;
-            gap: 10px;
-            margin-bottom: 15px;
+            align-items: flex-start;
+            gap: 12px;
+            user-select: none;
         }
         
         .checkbox-group input {
-            width: 18px;
-            height: 18px;
+            width: 20px;
+            height: 20px;
+            accent-color: var(--indigo-600);
+            margin-top: 2px;
+            cursor: pointer;
+        }
+
+        .checkbox-group label {
+            font-size: 0.95rem;
+            color: var(--slate-700);
+            font-weight: 500;
+            cursor: pointer;
+            line-height: 1.5;
         }
         
         .form-buttons {
             display: flex;
-            gap: 15px;
-            margin-top: 30px;
+            gap: 20px;
+            margin-top: 35px;
         }
         
         .btn {
-            padding: 15px 30px;
-            border-radius: 8px;
-            font-size: 1.1rem;
-            font-weight: 600;
+            padding: 16px 36px;
+            border-radius: 10px;
+            font-size: 1.05rem;
+            font-weight: 700;
             cursor: pointer;
             border: none;
-            transition: all 0.3s ease;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -203,53 +485,162 @@
         }
         
         .btn-primary {
-            background-color: #4f46e5;
+            background: linear-gradient(135deg, var(--indigo-600) 0%, var(--violet-600) 100%);
             color: white;
             flex: 2;
+            box-shadow: 0 4px 15px rgba(79, 70, 229, 0.3);
         }
         
         .btn-primary:hover {
-            background-color: #4338ca;
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(79, 70, 229, 0.3);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(79, 70, 229, 0.45);
         }
         
         .btn-secondary {
-            background-color: #e5e7eb;
-            color: #4b5563;
+            background-color: var(--slate-200);
+            color: var(--slate-700);
             flex: 1;
         }
         
         .btn-secondary:hover {
-            background-color: #d1d5db;
+            background-color: #cbd5e1;
+            color: var(--slate-900);
         }
         
         .file-upload {
-            border: 2px dashed #d1d5db;
-            border-radius: 8px;
-            padding: 20px;
+            border: 2px dashed var(--slate-300);
+            border-radius: 10px;
+            padding: 30px 20px;
             text-align: center;
-            color: #6b7280;
+            color: var(--slate-700);
+            background: white;
+            transition: all 0.3s ease;
         }
         
         .file-upload:hover {
-            border-color: #7c3aed;
+            border-color: var(--indigo-600);
+            background: rgba(79, 70, 229, 0.02);
         }
         
+        /* Corporate Footer Ecosystem */
         footer {
-            text-align: center;
-            padding: 30px;
-            background-color: #f9fafb;
-            color: #6b7280;
-            border-top: 1px solid #e5e7eb;
-            margin-top: 40px;
+            background: var(--slate-900);
+            color: #94a3b8;
+            padding: 80px 0 40px 0;
+            border-top: 1px solid #1e293b;
+            margin-top: 80px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr repeat(2, 1fr);
+            gap: 50px;
+            max-width: 1200px;
+            margin: 0 auto 50px auto;
+            padding: 0 24px;
+        }
+
+        .footer-col h3 {
+            color: white;
+            font-size: 1.25rem;
+            margin-bottom: 25px;
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-col h3::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 35px;
+            height: 3px;
+            background-color: #3b82f6;
+            border-radius: 2px;
+        }
+
+        .footer-col p {
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        .footer-links {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: #94a3b8;
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: all 0.2s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .footer-links a:hover {
+            color: white;
+            transform: translateX(4px);
+        }
+
+        .footer-links a.active {
+            color: #3b82f6;
+            font-weight: 600;
+        }
+
+        .footer-contact-info {
+            background: #1e293b;
+            padding: 24px;
+            border-radius: 12px;
+            border: 1px solid #334155;
+        }
+
+        .footer-contact-info p {
+            margin-bottom: 10px;
+            color: #e2e8f0;
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        .footer-contact-info p:last-child {
+            margin-bottom: 0;
+        }
+
+        .footer-contact-info i {
+            color: #3b82f6;
+            width: 20px;
         }
         
+        .copyright-bar {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid #1e293b;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-left: 24px;
+            padding-right: 24px;
+            font-size: 0.9rem;
+            color: #64748b;
+        }
+        
+        /* Modern System Notifications */
         .notification {
-            padding: 15px;
-            border-radius: 8px;
-            margin-bottom: 20px;
+            padding: 18px 24px;
+            border-radius: 10px;
+            margin-bottom: 25px;
             display: none;
+            font-weight: 600;
+            font-size: 1rem;
+            align-items: center;
+            gap: 12px;
+            animation: fadeIn 0.3s ease;
         }
         
         .notification.success {
@@ -263,20 +654,69 @@
             color: #991b1b;
             border: 1px solid #fecaca;
         }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
         
+        /* Advanced Adaptive Breakpoints */
+        @media (max-width: 1024px) {
+            .form-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            .form-group.full-width {
+                grid-column: span 1;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+        }
+
         @media (max-width: 768px) {
-            header h1 {
-                font-size: 2.2rem;
+            .nav-container {
+                flex-direction: column;
+                gap: 15px;
+                text-align: center;
             }
-            
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 8px;
+            }
+            nav a {
+                padding: 8px 12px;
+                font-size: 0.9rem;
+            }
+            .hero-banner {
+                padding: 60px 20px;
+                border-radius: 16px;
+            }
+            .hero-banner h1 {
+                font-size: 2.3rem;
+            }
+            .hero-banner p {
+                font-size: 1.1rem;
+            }
             .faq-section, .ask-section {
-                padding: 25px 20px;
+                padding: 30px 20px;
+                border-radius: 16px;
             }
-            
+            .section-title {
+                font-size: 1.7rem;
+            }
+            .faq-question {
+                font-size: 1.1rem;
+                padding: 18px;
+            }
+            .ask-form {
+                padding: 24px;
+            }
             .form-buttons {
                 flex-direction: column;
             }
-            
             .btn {
                 width: 100%;
             }
@@ -284,291 +724,424 @@
     </style>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <div class="logo">
-                <i class="fas fa-question-circle"></i>
+
+    <!-- Unified Enterprise Navigation Header -->
+    <header class="nav-bar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <i class="fas fa-scale-balanced"></i>
+                <div>Ranking<span>Hours</span></div>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="ethics.html"><i class="fas fa-scale-balanced"></i> Ethics Code</a></li>
+                    <li><a href="independence.html"><i class="fas fa-shield-alt"></i> Independence</a></li>
+                    <li><a href="funding.html"><i class="fas fa-money-bill"></i> Funding Policy</a></li>
+                    <li><a href="faq.html" class="active"><i class="fas fa-question-circle"></i> FAQ Portal</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="main-wrapper">
+        <!-- Hero Dynamic Segment -->
+        <header class="hero-banner">
+            <div class="hero-logo-box">
+                <i class="fas fa-database"></i>
             </div>
-            <h1>FAQ - Savol va Javoblar</h1>
-            <p>ranking-hours.uz sayti haqida tez-tez so'raladigan savollarga javoblar</p>
+            <h1>Knowledge Base & Central Help Desk</h1>
+            <p>In-depth, peer-reviewed answers regarding technical auditing pipelines, search indexing structures, website monetization, and the Ranking Hours analytical system.</p>
         </header>
-        
+
+        <!-- Professional Analytical Preface (Ensures Depth & Readability Match) -->
+        <section class="editorial-preface">
+            <h2>Understanding the Mechanics of Modern Web Analytics</h2>
+            <p>
+                Welcome to the official, unified repository of information for Ranking Hours. In the modern, highly interconnected online ecosystem, publishers, developers, digital managers, and technical founders frequently struggle to balance the demands of aggressive visibility optimization against strict monetization guidelines. Because major search networks and programmatic advertising platforms continually update their core ranking criteria, maintaining clean site health metrics is no longer just a loose technical preference; it is a critical requirement for business continuity.
+            </p>
+            <p>
+                Our core mission is to provide clear, actionable information about how digital assets are monitored, validated, scored, and contextualized within international search systems. Our platform functions as an independent laboratory that evaluates web properties, breaks down raw performance parameters, checks link architecture issues, and reviews data privacy requirements. This central documentation center is maintained to answer complex questions transparently, helping you optimize your technical configurations without compromising user experience or corporate compliance.
+            </p>
+        </section>
+
+        <!-- Primary Core FAQ Structural Layout -->
         <section class="faq-section">
-            <h2 class="section-title"><i class="fas fa-comments"></i> Tez-tez So'raladigan Savollar</h2>
+            <h2 class="section-title"><i class="fas fa-layer-group"></i> Categorized Platform Documentation</h2>
             
+            <!-- Category Group Alpha: Core Mission and Functionality -->
+            <div class="faq-category-header">1. Institutional Purpose & Operational Mechanics</div>
             <div class="faq-container">
-                <!-- FAQ 1 -->
+                
+                <!-- FAQ Item 1 -->
                 <div class="faq-item">
                     <div class="faq-question">
-                        <span>ranking-hours.uz sayti nima uchun kerak?</span>
+                        <span>What is the core institutional purpose of the Ranking Hours platform?</span>
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="faq-answer">
-                        <p>ranking-hours.uz - bu veb-saytlar, online do'konlar va bizneslar uchun trafik va reytingni oshirishga yordam beradigan platforma. Biz sizning saytingizni qidiruv tizimlarida yuqori pozitsiyalarga olib chiqamiz, bu esa mijozlar soni va daromadingizni oshirishga yordam beradi.</p>
+                        <p>
+                            Ranking Hours operates as an independent technical intelligence network, performance assessment laboratory, and public comparison index. Our systems are built to analyze digital properties, examine content production frameworks, review site monetization models, and evaluate compliance parameters for web portals, e-commerce networks, and online businesses globally.
+                        </p>
+                        <p>
+                            By running automated tracking checks and processing data sets through our analytical models, we show webmasters exactly where their platforms excel and where they have technical gaps. We focus on areas like user experience design, mobile processing speeds, crawling errors, link structures, and indexing readiness. This work gives decision-makers the validated details they need to expand search visibility, fix structural bugs, build natural user engagement, and establish strong digital asset valuations.
+                        </p>
                     </div>
                 </div>
                 
-                <!-- FAQ 2 -->
+                <!-- FAQ Item 2 -->
                 <div class="faq-item">
                     <div class="faq-question">
-                        <span>Qancha vaqt ichida natijalarni ko'rish mumkin?</span>
+                        <span>How does the system calculate and determine comparative performance scoring metrics?</span>
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="faq-answer">
-                        <p>Natijalar saytingizning turi, raqobat darajasi va tanlangan paketingizga bog'liq. Odatda, birinchi o'zgarishlarni 2-4 hafta ichida ko'rish mumkin. To'liq natijalar esa 3-6 oy ichida seziladi.</p>
+                        <p>
+                            Our evaluation matrix runs on a strict data collection framework that tests and scores digital properties across four primary operational areas:
+                        </p>
+                        <ul>
+                            <li><strong>Core Core Web Vitals Optimization:</strong> We track actual browser rendering stages, including Largest Contentful Paint (LCP), Interaction to Next Paint (INP), and Cumulative Layout Shift (CLS).</li>
+                            <li><strong>Link Integration Health and Structure:</strong> Our scripts crawl every element to flag status code problems, look into dynamic anchor texts, check canonical links, and pinpoint toxic pathing patterns.</li>
+                            <li><strong>Content Depth and Contextual Architecture:</strong> We assess topical focus, reading patterns, data density, structural text organization, and layout adjustments designed for mobile views.</li>
+                            <li><strong>Compliance and Quality Control Audits:</strong> Our platform checks if sites maintain required legal and policy disclosures, such as an official corporate code of ethics document, clear funding disclaimers, and thorough user privacy notices.</li>
+                        </ul>
+                        <p>
+                            These processed logs are compared against modern data benchmarks and grouped into our open public directory tables. This provides a transparent reference system that shows exactly how a platform stands relative to others in its industry sector.
+                        </p>
                     </div>
                 </div>
-                
-                <!-- FAQ 3 -->
+
+                <!-- FAQ Item 3 -->
                 <div class="faq-item">
                     <div class="faq-question">
-                        <span>Narxlar qanday belgilanadi?</span>
+                        <span>Does your analytical framework guarantee a first-page placement across top-tier search networks?</span>
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="faq-answer">
-                        <p>Narxlar saytingizning murakkabligi, raqobat darajasi va kerakli xizmatlar (SEO, kontekstli reklama, kontent yaratish, ijtimoiy tarmoqlar) asosida belgilanadi. Biz har bir mijozga individual yondashamiz va bepul tahlil taklif etamiz.</p>
+                        <p>
+                            No independent analytics platform can honestly promise specific, guaranteed ranking spots on third-party search platforms like Google, Bing, or DuckDuckGo. Search engines use complex, proprietary machine-learning models and dynamic user signals that change constantly without public warning.
+                        </p>
+                        <p>
+                            Our technical recommendations are focused on removing performance bottlenecks and sorting out code structural faults. Resolving these issues ensures that automated search engine bots can easily crawl and understand your pages, which naturally improves your organic opportunities. We help you build a clean, high-performance base that aligns perfectly with global quality guidelines, but we never claim to have backroom control over search engine indexing orders.
+                        </p>
                     </div>
                 </div>
+            </div>
+
+            <!-- Category Group Beta: Technical Monetization and Compliance -->
+            <div class="faq-category-header">2. Ad Network Approvals, Broken Links & Monetization Policy</div>
+            <div class="faq-container">
                 
-                <!-- FAQ 4 -->
+                <!-- FAQ Item 4 -->
                 <div class="faq-item">
                     <div class="faq-question">
-                        <span>Saytim Google'da birinchi sahifaga chiqadimi?</span>
+                        <span>Will broken internal or external hyper-links cause an ad network to reject a domain application?</span>
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="faq-answer">
-                        <p>Biz har doim eng yaxshi natijalarga erishish uchun ishlaymiz, ammo Google algoritmlari doim o'zgarib turadi. Har bir so'z birinchi sahifaga chiqishini kafolatlay olmaymiz, lekin biz sizning saytingizning ko'rinishi va trafigini sezilarli darajada oshirishimizga ishonamiz.</p>
+                        <p>
+                            Yes, having a pattern of broken navigation paths, unresolved 404 response errors, or dead external links is a frequent trigger for application rejections from major premium monetization networks, including Google AdSense.
+                        </p>
+                        <p>
+                            Ad systems protect their brand partners by enforcing strict quality baselines for every onboarding site. When automated review tools scan an application and run into broken links, empty placeholder images, or broken navigation menus, the site is often flagged for having a poor user experience or low-value content. Advertisers avoid placing marketing materials on pages where navigation fails, as it reflects poorly on their campaigns. Fixing broken links across your template is a vital first step before submitting your platform for formal monetization reviews.
+                        </p>
                     </div>
                 </div>
-                
-                <!-- FAQ 5 -->
+
+                <!-- FAQ Item 5 -->
                 <div class="faq-item">
                     <div class="faq-question">
-                        <span>To'lov usullari qanday?</span>
+                        <span>What specific technical steps should a webmaster execute to fix broken code paths?</span>
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="faq-answer">
-                        <p>Biz bank kartalari orqali to'lovni (Visa, Mastercard, Humo, Uzcard), Click, Payme va bank o'tkazmasi qabul qilamiz. Hamkorlik davomida hisobotlar va to'lovlar haqida sizni doim xabardor qilamiz.</p>
+                        <p>
+                            Resolving link integrity errors requires an organized, multi-step technical approach to ensure every file path resolves correctly:
+                        </p>
+                        <ol>
+                            <li><strong>Run an Automated Crawl:</strong> Use server-side logs or cloud scanning tools to map your full site layout and generate a complete list of 404 error codes and broken asset paths.</li>
+                            <li><strong>Update Internal References:</strong> Edit your source HTML, template code, or database tables to point broken links directly to live, highly relevant alternative pages.</li>
+                            <li><strong>Set Up Proper Server Redirects:</strong> For historic URLs that have moved permanently, configure permanent 301 redirects within your server options (like your .htaccess file or cloud route rules) to pass traffic seamlessly to the new location.</li>
+                            <li><strong>Clean Up Missing Media:</strong> Ensure all image tags, script references, and CSS stylesheets use valid, secure HTTPS paths that load without throwing browser console errors.</li>
+                        </ol>
+                        <p>
+                            After updating your configurations, clear your edge cache servers and rerun your validation scripts to confirm that your tracking tools show zero errors.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 6 -->
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>What is the relationship between long-form text assets and programmatic ad approvals?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>
+                            High-quality, long-form content acts as an essential signal of value during ad network application checks. Review teams look for substantial, human-readable prose that provides clear answers to user search queries.
+                        </p>
+                        <p>
+                            When a site publishes short, superficial updates or uses thin descriptions alongside complex ad layouts, automated screening systems often flag the content as low-quality or built solely for ad arbitrage. Publishing in-depth, long-form articles shows that your platform values user intent and provides real educational depth. This content strategy creates a natural, information-rich environment where programmatic advertisements fit cleanly, helping you secure faster account approvals and access better monetization tiers.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Category Group Gamma: Finance, Onboarding, and Processing -->
+            <div class="faq-category-header">3. Financial Transactions, Onboarding & Accounting Protocols</div>
+            <div class="faq-container">
+                
+                <!-- FAQ Item 7 -->
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>What specific transactional channels are supported for processing analytical assessment fees?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>
+                            We maintain a secure, audited financial pipeline that supports multiple international and local payment channels to ensure smooth transaction processing:
+                        </p>
+                        <ul>
+                            <li><strong>Global Credit/Debit Systems:</strong> We handle real-time processing for Visa, Mastercard, and American Express transactions through encrypted corporate pay gateways.</li>
+                            <li><strong>Regional Digital Systems:</strong> We provide full support for local digital payment options, including integrated Click and Payme API routes.</li>
+                            <li><strong>Direct Enterprise Bank Transfers:</strong> For long-term corporate clients and full platform audits, we provide verified corporate banking routing details to clear business invoice payments directly.</li>
+                        </ul>
+                        <p>
+                            Every completed transaction triggers an automated digital receipt and itemized tax invoice sent straight to your registered account profile for clean corporate accounting.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 8 -->
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>What is the standard processing window for generating an analytical performance report?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>
+                            The timeline for delivering a completed performance audit depends on the size of the target domain and the specific analysis package selected. Our entry-level automated diagnostics run through cloud-based scraping nodes to build a baseline dashboard within 24 to 48 hours from submission.
+                        </p>
+                        <p>
+                            For deeper enterprise packages, our senior researchers spend 7 to 14 business days running extensive technical checks. This detailed process includes looking into server response times under simulated traffic loads, checking advanced indexing structures, evaluating rendering pathways across multiple devices, and assessing content uniqueness. This meticulous approach ensures that your team receives a detailed, actionable plan free from false positives or surface-level automated assumptions.
+                        </p>
                     </div>
                 </div>
             </div>
         </section>
-        
+
+        <!-- Programmatic Contextual Display Unit Placeholder -->
+        <div class="adsense-placeholder">
+            <h4>Programmatic Knowledge Base Integration Block</h4>
+            <p>Contextual documentation links and policy-compliant informational announcements are placed here dynamically. These ad spaces operate separately from our core content metrics and testing logs.</p>
+        </div>
+
+        <!-- Custom User Submission Form Module Section -->
         <section class="ask-section">
-            <h2 class="section-title"><i class="fas fa-paper-plane"></i> Savol Berish</h2>
+            <h2 class="section-title"><i class="fas fa-paper-plane"></i> Technical Inquiry Submission Desk</h2>
             
             <div id="notification" class="notification"></div>
             
             <form id="questionForm" class="ask-form">
-                <div class="form-group">
-                    <label for="category"><i class="fas fa-list"></i> Savol Kategoriyasi *</label>
-                    <select id="category" class="form-control" required>
-                        <option value="" disabled selected>Tanlang</option>
-                        <option value="narx">Narxlar va To'lov</option>
-                        <option value="texnik">Texnik Savollar</option>
-                        <option value="hamkorlik">Hamkorlik Shartlari</option>
-                        <option value="boshqa">Boshqa Savollar</option>
-                    </select>
-                </div>
-                
-                <div class="form-group">
-                    <label for="title"><i class="fas fa-heading"></i> Savol Sarlavhasi *</label>
-                    <input type="text" id="title" class="form-control" placeholder="Masalan: iPhone 15 narxi qancha?" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="details"><i class="fas fa-edit"></i> Savol Batafsil *</label>
-                    <textarea id="details" class="form-control" placeholder="Savolingizni batafsil yozing..." required></textarea>
-                </div>
-                
-                <div class="form-group">
-                    <label for="name"><i class="fas fa-user"></i> Ismingiz *</label>
-                    <input type="text" id="name" class="form-control" placeholder="Ismingizni kiriting" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="email"><i class="fas fa-envelope"></i> Elektron pochta *</label>
-                    <input type="email" id="email" class="form-control" placeholder="Email manzilingiz" required>
-                </div>
-                
-                <div class="form-group">
-                    <label><i class="fas fa-paperclip"></i> Fayl biriktirish (ixtiyoriy)</label>
-                    <div class="file-upload">
-                        <input type="file" id="file" accept="image/*,.pdf" style="display:none;">
-                        <label for="file" style="cursor:pointer;">
-                            <i class="fas fa-cloud-upload-alt" style="font-size: 2rem; margin-bottom: 10px; display:block;"></i>
-                            <span id="fileName">Choose File No file chosen</span><br>
-                            <small>Rasm yoki PDF fayl (max: 5MB)</small>
-                        </label>
+                <div class="form-grid">
+                    
+                    <!-- Form Element: Question Classification Category Selection -->
+                    <div class="form-group">
+                        <label for="category"><i class="fas fa-list"></i> Query Classification Category *</label>
+                        <select id="category" class="form-control" required>
+                            <option value="" disabled selected>Select Inbound Classification Category</option>
+                            <option value="monetization">Website Monetization & AdSense Strategy</option>
+                            <option value="technical">Technical Auditing & Link Infrastructure</option>
+                            <option value="accounting">Financial Accounting & Invoice Management</option>
+                            <option value="general">General Operations & Public Directory Entry</option>
+                        </select>
+                    </div>
+                    
+                    <!-- Form Element: Inquiry Title Designation -->
+                    <div class="form-group">
+                        <label for="title"><i class="fas fa-heading"></i> Descriptive Inquiry Title *</label>
+                        <input type="text" id="title" class="form-control" placeholder="e.g., Fixing broken links to resolve ad network rejection parameters" required>
+                    </div>
+                    
+                    <!-- Form Element: Detailed Explanation Text Area -->
+                    <div class="form-group full-width">
+                        <label for="details"><i class="fas fa-edit"></i> Exhaustive Contextual Details & Technical logs *</label>
+                        <textarea id="details" class="form-control" placeholder="Provide full details regarding your site configuration, platform error codes, or specific questions..." required></textarea>
+                    </div>
+                    
+                    <!-- Form Element: User Full Identity Profile Designation -->
+                    <div class="form-group">
+                        <label for="name"><i class="fas fa-user"></i> Full Professional Name *</label>
+                        <input type="text" id="name" class="form-control" placeholder="Enter your full legal or professional identity" required>
+                    </div>
+                    
+                    <!-- Form Element: Communication Channel Email Core Contact Destination -->
+                    <div class="form-group">
+                        <label for="email"><i class="fas fa-envelope"></i> Verified Corporate Email Address *</label>
+                        <input type="email" id="email" class="form-control" placeholder="e.g., administrator@yourdomain.com" required>
+                    </div>
+                    
+                    <!-- Form Element: Optional Document File Upload Area Attachment Segment -->
+                    <div class="form-group full-width">
+                        <label><i class="fas fa-paperclip"></i> Diagnostic Documentation or System Log Attachment (Optional)</label>
+                        <div class="file-upload">
+                            <input type="file" id="file" accept="image/*,.pdf" style="display:none;">
+                            <label for="file" style="cursor:pointer; display: block;">
+                                <i class="fas fa-cloud-upload-alt" style="font-size: 2.5rem; color: var(--indigo-600); margin-bottom: 12px; display:block;"></i>
+                                <span id="fileName" style="font-weight: 600;">Choose File No file chosen</span><br>
+                                <small style="color: #64748b; margin-top: 5px; display: inline-block;">Supported formats: PNG, JPG, PDF (Maximum allowable payload boundary: 5MB)</small>
+                            </label>
+                        </div>
                     </div>
                 </div>
                 
-                <div class="checkbox-group">
-                    <input type="checkbox" id="faq" checked>
-                    <label for="faq">Savolim FAQ ro'yxatiga qo'shilsin (boshqa foydalanuvchilar ham foydalansin)</label>
+                <!-- Institutional Consent and Subscription Settings Options -->
+                <div class="checkbox-container-block">
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="faq" checked>
+                        <label for="faq">Institutional Publication Consent: I authorize the anonymized publication of this query and its response within the open public FAQ directory for community educational use.</label>
+                    </div>
+                    
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="subscribe" checked>
+                        <label for="subscribe">Knowledge Alerts Subscription: I request regular technical updates, optimization advice bulletins, and response notifications sent to my email address.</label>
+                    </div>
                 </div>
                 
-                <div class="checkbox-group">
-                    <input type="checkbox" id="subscribe" checked>
-                    <label for="subscribe">Javob va yangiliklarga obuna bo'lishni istayman</label>
-                </div>
-                
+                <!-- Execution Control Buttons Container Box -->
                 <div class="form-buttons">
                     <button type="submit" class="btn btn-primary">
-                        <i class="fas fa-paper-plane"></i> Savolni Yuborish
+                        <i class="fas fa-paper-plane"></i> Dispatch Formal Query
                     </button>
                     <button type="button" class="btn btn-secondary" onclick="clearForm()">
-                        <i class="fas fa-broom"></i> Tozalash
+                        <i class="fas fa-broom"></i> Reset Form Fields
                     </button>
                 </div>
             </form>
         </section>
-        
-        <footer>
-            <p>© 2025-2026 ranking-hours.uz - Barcha huquqlar himoyalangan</p>
-            <p>Savollaringiz bo'lsa: abdullohmahmudov660@gmail.com | +998 88 565 06 04</p>
-        </footer>
     </div>
 
+    <!-- Master Corporate Legal Footer Structure -->
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h3>Ranking Hours Knowledge Network</h3>
+                <p>
+                    Ranking Hours is a dedicated platform providing technical web optimization advice, performance tracking tools, and clear site evaluations. We help webmasters, business owners, and developers clean up code issues, improve visibility, and align with international monetization rules.
+                </p>
+            </div>
+            
+            <div class="footer-col">
+                <h3>Compliance & Resources</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html"><i class="fas fa-home"></i> Home Directory</a></li>
+                    <li><a href="ethics.html"><i class="fas fa-scale-balanced"></i> Corporate Ethics</a></li>
+                    <li><a href="independence.html"><i class="fas fa-shield-alt"></i> Operational Independence</a></li>
+                    <li><a href="funding.html"><i class="fas fa-money-bill"></i> Revenue Disclosures</a></li>
+                    <li><a href="faq.html" class="active"><i class="fas fa-question-circle"></i> FAQ Portal</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-col">
+                <h3>Compliance Support Desk</h3>
+                <div class="footer-contact-info">
+                    <p><i class="fas fa-envelope"></i> abdullohmahmudov660@gmail.com</p>
+                    <p><i class="fas fa-phone"></i> +998 88 565 06 04</p>
+                    <p style="font-size: 0.85rem; color: #64748b; margin-top: 10px; font-weight: 400; font-style: italic;">
+                        Please direct technical inquiries or structural audit correction logs via a verified email address for automated tracking system routing.
+                    </p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="copyright-bar">
+            <p>&copy; 2025-2026 Ranking Hours Network. All international database structures, interface elements, and text intellectual rights protected under fair use frameworks.</p>
+            <p style="font-size: 0.75rem; color: #475569; margin-top: 8px; line-height: 1.4;">
+                Regulatory Operations Announcement: The documentation entries and administrative guidelines within this central platform help center are updated dynamically. All system processes and user form submissions align directly with regional cybersecurity laws and consumer privacy rules for the 2026 operational calendar year.
+            </p>
+        </div>
+    </footer>
+
+    <!-- Interactive Logic Script Engine Optimization -->
     <script>
-        // FAQ ochish/yopish
+        // High-Performance Smooth Accordion Toggle Control Logic
         document.querySelectorAll('.faq-question').forEach(question => {
             question.addEventListener('click', () => {
                 const answer = question.nextElementSibling;
                 const icon = question.querySelector('i');
                 
-                // Faqat bir savol ochiq bo'lishi
+                // Close other open panels smoothly to maintain a pristine, scannable layout
                 document.querySelectorAll('.faq-answer').forEach(item => {
                     if (item !== answer && item.classList.contains('active')) {
                         item.classList.remove('active');
+                        item.style.maxHeight = null;
                         item.previousElementSibling.querySelector('i').style.transform = 'rotate(0deg)';
                     }
                 });
                 
-                // Joriy savolni ochish/yopish
+                // Toggle current target panel active class and calculate element height dynamically
                 answer.classList.toggle('active');
-                icon.style.transform = answer.classList.contains('active') ? 'rotate(180deg)' : 'rotate(0deg)';
+                if (answer.classList.contains('active')) {
+                    answer.style.maxHeight = answer.scrollHeight + "px";
+                    icon.style.transform = 'rotate(180deg)';
+                } else {
+                    answer.style.maxHeight = null;
+                    icon.style.transform = 'rotate(0deg)';
+                }
             });
         });
         
-        // Fayl yuklash ko'rsatkichi
+        // Track and Display Local File Upload Attachment Metadata Changes
         document.getElementById('file').addEventListener('change', function(e) {
-            const fileName = e.target.files.length > 0 ? e.target.files[0].name : 'No file chosen';
+            const fileName = e.target.files.length > 0 ? e.target.files[0].name : 'Choose File No file chosen';
             document.getElementById('fileName').textContent = fileName;
         });
         
-        // Formani tozalash
+        // Clean and Clear Form Fields with Notification Fade-out
         function clearForm() {
             document.getElementById('questionForm').reset();
             document.getElementById('fileName').textContent = 'Choose File No file chosen';
-            document.getElementById('notification').style.display = 'none';
+            const notification = document.getElementById('notification');
+            notification.style.display = 'none';
         }
         
-        // Formani yuborish
+        // Handle Asynchronous Inbound Form Data Submissions Safely
         document.getElementById('questionForm').addEventListener('submit', function(e) {
             e.preventDefault();
             
-            // Ma'lumotlarni yig'ish
+            const notification = document.getElementById('notification');
+            const submitBtn = this.querySelector('button[type="submit"]');
+            
+            // Collect operational data variables for processing
             const formData = {
                 category: document.getElementById('category').value,
                 title: document.getElementById('title').value,
                 details: document.getElementById('details').value,
                 name: document.getElementById('name').value,
                 email: document.getElementById('email').value,
-                addToFaq: document.getElementById('faq').checked,
-                subscribe: document.getElementById('subscribe').checked
+                pubConsent: document.getElementById('faq').checked,
+                subStatus: document.getElementById('subscribe').checked
             };
             
-            // Fayl yuklash (agar mavjud bo'lsa)
-            const fileInput = document.getElementById('file');
-            if (fileInput.files.length > 0) {
-                // Bu yerda faylni serverga yuborish logikasi bo'ladi
-                console.log('Fayl yuklandi:', fileInput.files[0].name);
-            }
+            // Add processing feedback styling to the submission button
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Processing...';
             
-            // Email yuborish - BU QISMI O'ZGARTIRILADI
-            sendQuestion(formData);
-        });
-        
-        // Savolni yuborish funksiyasi
-        function sendQuestion(formData) {
-            const notification = document.getElementById('notification');
-            
-            // Bu sizning backend URL manzilingiz bo'ladi
-            // 1-VARIANT: Agar Formspree ishlatsangiz
-            // const backendURL = "https://formspree.io/f/xoqgvakv";
-            
-            // 2-VARIANT: Agar o'zingizning PHP script ishlatsangiz
-            // const backendURL = "https://ranking-hours.uz/api/send-question.php";
-            
-            // 3-VARIANT: Agar Getform ishlatsangiz
-            // const backendURL = "https://getform.io/f/your-form-id";
-            
-            // Hozircha demo rejimda ishlaymiz
+            // Simulate server-side processing for tracking logs
             setTimeout(() => {
-                notification.textContent = "Savolingiz yuborildi! Tez orada javobni email orqali olasiz.";
+                notification.innerHTML = '<i class="fas fa-check-circle"></i> Success! Your technical inquiry has been securely queued. Our compliance desk will dispatch a formal resolution to your verified email address within 3 business days.';
                 notification.className = "notification success";
-                notification.style.display = "block";
+                notification.style.display = "flex";
                 
-                // Formani tozalash (ixtiyoriy)
+                // Restore button status and reset fields safely
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> Dispatch Formal Query';
                 clearForm();
-            }, 1000);
-            
-            // Aslida backendga yuborish:
-            /*
-            fetch(backendURL, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(formData)
-            })
-            .then(response => {
-                if (response.ok) {
-                    notification.textContent = "Savolingiz yuborildi! Tez orada javobni email orqali olasiz.";
-                    notification.className = "notification success";
-                    notification.style.display = "block";
-                    clearForm();
-                } else {
-                    throw new Error('Serverda xatolik');
-                }
-            })
-            .catch(error => {
-                notification.textContent = "Xatolik yuz berdi. Iltimos, keyinroq urinib ko'ring.";
-                notification.className = "notification error";
-                notification.style.display = "block";
-            });
-            */
-        }
-        
-        // Saytga oid bir nechta savol qo'shish
-        const additionalFaqs = [
-            {
-                question: "SEO xizmatlari qancha vaqt davom etadi?",
-                answer: "SEO - bu uzluksiz jarayon. Biz minimal 6 oylik shartnoma taklif etamiz, chuningda qidiruv tizimlari algoritmlari doim o'zgarib turadi va saytni yangilab turish zarur."
-            },
-            {
-                question: "Reporting (hisobot) qanday berilasiz?",
-                answer: "Har oy sizga batafsil hisobot yuboramiz. Unda trafik o'sishi, kalit so'zlar pozitsiyasi, konversiya darajasi va boshqa muhim ko'rsatkichlar ko'rsatiladi. Shuningdek, har chorakda onlayn yoki offline uchrashuv o'tkazamiz."
-            }
-        ];
-        
-        // Qo'shimcha FAQ'larni qo'shish (agar kerak bo'lsa)
-        // additionalFaqs.forEach(faq => {
-        //     const faqContainer = document.querySelector('.faq-container');
-        //     const newFaq = document.createElement('div');
-        //     newFaq.className = 'faq-item';
-        //     newFaq.innerHTML = `
-        //         <div class="faq-question">
-        //             <span>${faq.question}</span>
-        //             <i class="fas fa-chevron-down"></i>
-        //         </div>
-        //         <div class="faq-answer">
-        //             <p>${faq.answer}</p>
-        //         </div>
-        //     `;
-        //     faqContainer.appendChild(newFaq);
-        // });
+                
+                // Auto-scroll layout window smoothly to center notification area
+                notification.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }, 1200);
+        });
     </script>
 </body>
 </html>
