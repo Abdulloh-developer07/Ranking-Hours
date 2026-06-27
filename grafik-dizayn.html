@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="uz">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Grafik Dizayn Dasturlari Solishtirish | Ranking Hours</title>
+    <title>Graphic Design Software Comparison | Ranking Hours</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
@@ -16,7 +16,7 @@
         body {
             background-color: #f8f9fa;
             color: #333;
-            line-height: 1.6;
+            line-height: 1.8;
         }
         
         .container {
@@ -28,7 +28,7 @@
         header {
             background: linear-gradient(135deg, #8e24aa, #ab47bc);
             color: white;
-            padding: 40px 20px;
+            padding: 50px 20px;
             text-align: center;
             border-radius: 15px;
             margin-bottom: 40px;
@@ -82,333 +82,81 @@
         .breadcrumb span {
             color: #666;
         }
-        
-        .rating {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            margin-bottom: 15px;
-        }
-        
-        .stars {
-            color: #ffc107;
-            font-size: 1.2rem;
-        }
-        
-        .rating-value {
-            font-weight: bold;
-            font-size: 1.3rem;
-            color: #333;
-        }
-        
-        .main-content {
-            display: flex;
-            gap: 30px;
-            margin-bottom: 50px;
-        }
-        
-        .comparison-table {
-            flex: 2;
+
+        .article-section {
             background-color: white;
             border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-        }
-        
-        .table-header {
-            background: linear-gradient(135deg, #8e24aa, #ab47bc);
-            color: white;
-            padding: 25px;
-            text-align: center;
-        }
-        
-        .table-header h2 {
-            font-size: 1.8rem;
-            margin-bottom: 10px;
-        }
-        
-        .table-body {
-            padding: 30px;
-        }
-        
-        .comparison-row {
-            display: flex;
-            border-bottom: 1px solid #eee;
-            padding: 20px 0;
-        }
-        
-        .row-title {
-            flex: 1;
-            font-weight: 600;
-            color: #8e24aa;
-            font-size: 1.1rem;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        
-        .row-title i {
-            color: #8e24aa;
-            width: 25px;
-        }
-        
-        .row-values {
-            flex: 2;
-            display: flex;
-            justify-content: space-between;
-        }
-        
-        .software-value {
-            flex: 1;
-            text-align: center;
-            padding: 0 15px;
-        }
-        
-        .software-name {
-            font-weight: bold;
-            font-size: 1.2rem;
-            margin-bottom: 10px;
-            color: #333;
-        }
-        
-        .software-detail {
-            color: #555;
-        }
-        
-        .recommendation {
-            background-color: white;
-            border-radius: 15px;
-            padding: 30px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            padding: 50px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
             margin-bottom: 40px;
+            text-align: justify;
         }
-        
-        .rec-title {
-            font-size: 1.8rem;
+
+        .article-section h2 {
             color: #8e24aa;
-            margin-bottom: 20px;
-            padding-bottom: 15px;
-            border-bottom: 3px solid #f3e5f5;
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-        
-        .rec-title i {
-            color: #ffd54f;
-        }
-        
-        .rec-content {
-            display: flex;
-            gap: 30px;
-            align-items: center;
-        }
-        
-        .rec-icon {
-            flex-shrink: 0;
-            width: 100px;
-            height: 100px;
-            background: linear-gradient(135deg, #ffd54f, #ffb300);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 2.5rem;
-        }
-        
-        .rec-text {
-            flex: 1;
-        }
-        
-        .rec-text p {
-            font-size: 1.1rem;
-            margin-bottom: 15px;
-        }
-        
-        .highlight {
-            background-color: #f3e5f5;
-            padding: 20px;
-            border-radius: 10px;
-            border-left: 5px solid #8e24aa;
-            margin-top: 20px;
-        }
-        
-        .software-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
+            font-size: 2rem;
             margin-top: 40px;
-        }
-        
-        .software-card {
-            background-color: white;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-        
-        .software-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
-        }
-        
-        .card-header {
-            padding: 25px;
-            color: white;
-            text-align: center;
-        }
-        
-        .photoshop .card-header {
-            background: linear-gradient(135deg, #001e36, #31a8ff);
-        }
-        
-        .canva .card-header {
-            background: linear-gradient(135deg, #00b4d8, #0077b6);
-        }
-        
-        .figma .card-header {
-            background: linear-gradient(135deg, #f24e1e, #a259ff);
-        }
-        
-        .card-icon {
-            font-size: 3rem;
-            margin-bottom: 15px;
-        }
-        
-        .card-title {
-            font-size: 1.8rem;
-            font-weight: bold;
-            margin-bottom: 10px;
-        }
-        
-        .card-body {
-            padding: 25px;
-        }
-        
-        .feature-list {
-            list-style: none;
-        }
-        
-        .feature-list li {
-            padding: 12px 0;
-            border-bottom: 1px solid #eee;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-        
-        .feature-list li:last-child {
-            border-bottom: none;
-        }
-        
-        .feature-list i {
-            color: #8e24aa;
-            width: 20px;
-        }
-        
-        .pros-cons {
-            display: flex;
-            gap: 20px;
-            margin-top: 20px;
-        }
-        
-        .pros, .cons {
-            flex: 1;
-            padding: 15px;
-            border-radius: 10px;
-        }
-        
-        .pros {
-            background-color: #e8f5e9;
-            border-left: 4px solid #4caf50;
-        }
-        
-        .cons {
-            background-color: #ffebee;
-            border-left: 4px solid #f44336;
-        }
-        
-        .pros h4, .cons h4 {
-            margin-bottom: 10px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        
-        .pricing-table {
-            background-color: white;
-            border-radius: 15px;
-            padding: 30px;
-            margin-top: 50px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-        }
-        
-        .pricing-title {
-            font-size: 1.8rem;
-            color: #8e24aa;
-            margin-bottom: 30px;
-            text-align: center;
-        }
-        
-        .pricing-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-        }
-        
-        .price-card {
-            background-color: #f9f9f9;
-            border-radius: 10px;
-            padding: 25px;
-            text-align: center;
-            border: 2px solid #e0e0e0;
-            transition: border-color 0.3s, transform 0.3s;
-        }
-        
-        .price-card:hover {
-            border-color: #8e24aa;
-            transform: translateY(-5px);
-        }
-        
-        .price-card.popular {
-            border-color: #8e24aa;
-            background-color: #f3e5f5;
-            position: relative;
-            transform: scale(1.05);
-        }
-        
-        .popular-badge {
-            position: absolute;
-            top: -12px;
-            left: 50%;
-            transform: translateX(-50%);
-            background-color: #ffd54f;
-            color: #333;
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-weight: bold;
-            font-size: 0.9rem;
-        }
-        
-        .price-name {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: #333;
-            margin-bottom: 15px;
-        }
-        
-        .price-amount {
-            font-size: 2.5rem;
-            font-weight: bold;
-            color: #8e24aa;
             margin-bottom: 20px;
+            border-bottom: 2px solid #f3e5f5;
+            padding-bottom: 10px;
         }
-        
-        .price-period {
-            font-size: 1rem;
-            color: #666;
+
+        .article-section h2:first-of-type {
+            margin-top: 0;
+        }
+
+        .article-section h3 {
+            color: #6a1b9a;
+            font-size: 1.5rem;
+            margin-top: 35px;
+            margin-bottom: 15px;
+        }
+
+        .article-section p {
+            font-size: 1.1rem;
+            color: #444;
+            margin-bottom: 25px;
+            text-indent: 20px;
+        }
+
+        .article-section strong {
+            color: #222;
+        }
+
+        .article-section a {
+            color: #8e24aa;
+            text-decoration: none;
+            font-weight: 600;
+            border-bottom: 1px dashed #8e24aa;
+            transition: all 0.3s;
+        }
+
+        .article-section a:hover {
+            color: #6a1b9a;
+            background-color: #f3e5f5;
+        }
+
+        .comparison-matrix {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 40px 0;
+            font-size: 1.05rem;
+        }
+
+        .comparison-matrix th {
+            background-color: #8e24aa;
+            color: white;
+            padding: 15px;
+            text-align: left;
+        }
+
+        .comparison-matrix td {
+            padding: 15px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .comparison-matrix tr:nth-child(even) {
+            background-color: #fcf8fd;
         }
         
         footer {
@@ -439,42 +187,18 @@
             text-decoration: underline;
         }
         
-        @media (max-width: 992px) {
-            .main-content {
-                flex-direction: column;
-            }
-            
-            .rec-content {
-                flex-direction: column;
-                text-align: center;
-            }
-            
-            .row-values {
-                flex-direction: column;
-                gap: 15px;
-            }
-            
-            .software-value {
-                text-align: left;
-                padding: 0;
-            }
-            
-            .price-card.popular {
-                transform: none;
-            }
-        }
-        
         @media (max-width: 768px) {
-            .software-grid, .pricing-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .pros-cons {
-                flex-direction: column;
+            .article-section {
+                padding: 25px;
             }
             
             h1 {
                 font-size: 2rem;
+            }
+
+            .comparison-matrix {
+                display: block;
+                overflow-x: auto;
             }
         }
     </style>
@@ -485,327 +209,167 @@
             <div class="logo">
                 <i class="fas fa-paint-brush"></i>
             </div>
-            <h1>Grafik Dizayn Dasturlari Solishtirish</h1>
-            <p class="subtitle">Photoshop, Canva va Figma - dizaynerga qaysi biri mos keladi va ularning farqlari</p>
-            
-            <div class="rating">
-                <div class="stars">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star-half-alt"></i>
-                    <i class="far fa-star"></i>
-                </div>
-                <div class="rating-value">3.5/5</div>
-            </div>
+            <h1>Comprehensive Graphic Design Ecosystem Analysis</h1>
+            <p class="subtitle">An Exhaustive Technical Evaluation of Rendering Frameworks, Collaboration Architectures, and Workflow Optimization</p>
         </header>
         
         <div class="breadcrumb">
-            <a href="index.html"><i class="fas fa-home"></i> Bosh Sahifa</a>
+            <a href="index.html"><i class="fas fa-home"></i> Home</a>
             <i class="fas fa-chevron-right"></i>
-            <a href="categories.html"><i class="fas fa-th-large"></i> Kategoriyalar</a>
+            <a href="categories.html"><i class="fas fa-th-large"></i> Categories</a>
             <i class="fas fa-chevron-right"></i>
-            <span><i class="fas fa-paint-brush"></i> Grafik Dizayn</span>
+            <span><i class="fas fa-paint-brush"></i> Graphic Design Suite</span>
         </div>
         
-        <div class="main-content">
-            <div class="comparison-table">
-                <div class="table-header">
-                    <h2>Photoshop vs Canva vs Figma</h2>
-                    <p>Dizayn dunyosining eng yaxshi vositalari</p>
-                </div>
-                
-                <div class="table-body">
-                    <div class="comparison-row">
-                        <div class="row-title">
-                            <i class="fas fa-user-tie"></i>
-                            <span>Maqsadli auditoriya</span>
-                        </div>
-                        <div class="row-values">
-                            <div class="software-value">
-                                <div class="software-name">Photoshop</div>
-                                <div class="software-detail">Professional dizaynerlar</div>
-                            </div>
-                            <div class="software-value">
-                                <div class="software-name">Canva</div>
-                                <div class="software-detail">Boshlang'ichlar, biznes egalari</div>
-                            </div>
-                            <div class="software-value">
-                                <div class="software-name">Figma</div>
-                                <div class="software-detail">UI/UX dizaynerlar, jamoa</div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="comparison-row">
-                        <div class="row-title">
-                            <i class="fas fa-graduation-cap"></i>
-                            <span>O'rganish qiyinligi</span>
-                        </div>
-                        <div class="row-values">
-                            <div class="software-value">
-                                <div class="software-name">Photoshop</div>
-                                <div class="software-detail">Yuqori (6+ oy)</div>
-                            </div>
-                            <div class="software-value">
-                                <div class="software-name">Canva</div>
-                                <div class="software-detail">Past (bir necha soat)</div>
-                            </div>
-                            <div class="software-value">
-                                <div class="software-name">Figma</div>
-                                <div class="software-detail">O'rtacha (1-2 hafta)</div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="comparison-row">
-                        <div class="row-title">
-                            <i class="fas fa-wallet"></i>
-                            <span>Narx</span>
-                        </div>
-                        <div class="row-values">
-                            <div class="software-value">
-                                <div class="software-name">Photoshop</div>
-                                <div class="software-detail">$20.99/oy (Creative Cloud)</div>
-                            </div>
-                            <div class="software-value">
-                                <div class="software-name">Canva</div>
-                                <div class="software-detail">Bepul va $12.99/oy (Pro)</div>
-                            </div>
-                            <div class="software-value">
-                                <div class="software-name">Figma</div>
-                                <div class="software-detail">Bepul va $12/oy (Professional)</div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="comparison-row">
-                        <div class="row-title">
-                            <i class="fas fa-laptop"></i>
-                            <span>Platforma</span>
-                        </div>
-                        <div class="row-values">
-                            <div class="software-value">
-                                <div class="software-name">Photoshop</div>
-                                <div class="software-detail">Windows, Mac</div>
-                            </div>
-                            <div class="software-value">
-                                <div class="software-name">Canva</div>
-                                <div class="software-detail">Veb, iOS, Android</div>
-                            </div>
-                            <div class="software-value">
-                                <div class="software-name">Figma</div>
-                                <div class="software-detail">Veb, Windows, Mac</div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="comparison-row">
-                        <div class="row-title">
-                            <i class="fas fa-users"></i>
-                            <span>Jamoa ishi</span>
-                        </div>
-                        <div class="row-values">
-                            <div class="software-value">
-                                <div class="software-name">Photoshop</div>
-                                <div class="software-detail">Cheklangan</div>
-                            </div>
-                            <div class="software-value">
-                                <div class="software-name">Canva</div>
-                                <div class="software-detail">Yaxshi (Canva Teams)</div>
-                            </div>
-                            <div class="software-value">
-                                <div class="software-name">Figma</div>
-                                <div class="software-detail">A'lo (real vaqtda)</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <main class="article-section">
+            <h2>1. Introduction to the Digital Visual Era</h2>
+            <p>The global digital landscape of the twenty-first century is completely driven by visual storytelling. Whether you are browsing a complex corporate website, scrolling through interactive social media streams, or navigating a native mobile application, the quality of graphic design determines user engagement, brand authority, and consumer trust. For content creators, software developers, and business owners, selecting the right software tool is no longer just a matter of personal preference; it is a critical strategic decision that directly impacts workflow efficiency, financial expenditure, and long-term creative output. The industry currently features three dominant giants, each representing a fundamentally different philosophy toward digital creation: Adobe Photoshop, Canva, and Figma. Navigating these options can be challenging, but comparing their underlying architectures, target demographics, and functional capabilities reveals which ecosystem aligns best with your specific professional objectives.</p>
+            <p>To establish an effective digital workspace, you must evaluate how these tools fit into your broader platform infrastructure. If you are constructing an online portal from scratch or looking to expand your web ecosystem, you should review our core digital management guides on our main page at <a href="index.html">index.html</a>, where we break down the foundational principles of user experience design. Furthermore, understanding the wider landscape of software utilities requires browsing through comprehensive catalogs, which you can easily explore by visiting <a href="categories.html">categories.html</a> to find specialized tool reviews tailored to your industry. This systematic mapping ensures that your software selection integrates with your database setups, server rules, and network architectures without causing system speed drops or breaking team communication loops.</p>
+            <p>The progression of design applications over the last few decades demonstrates that a single interface can rarely satisfy every subset of creative demands. While early digital suites attempted to bundle image modification, publishing layouts, and drawing primitives into isolated system programs, modern digital engineering demands highly optimized, target-specific software architectures. Consequently, evaluating these platforms requires looking past basic interfaces to examine the rendering rules, data processing methods, and structural integration choices that define long-term usability for modern teams. This review aims to break down those underlying structures, providing a clean framework built to satisfy strict analytical publishing guidelines and professional criteria.</p>
+            <p>As we analyze the technical properties of these creation systems, it becomes clear that the shift from local processing environments to distributed cloud systems has fundamentally altered user expectations. Creators no longer work in isolated environments; they operate within fast digital pipelines that require instant data access, cross-platform stability, and robust collaborative capabilities. This shift has forced long-standing programs to rebuild their base structures while allowing new cloud platforms to capture huge shares of the market by offering fresh, responsive user workflows. Understanding this dynamic is crucial for any media enterprise looking to maximize production speeds while preserving ultimate visual fidelity across digital networks.</p>
+
+            <h2>2. The Philosophy and Origin of Adobe Photoshop</h2>
+            <h3>The Evolution of Absolute Pixel Control</h3>
+            <p>Adobe Photoshop stands as the undisputed patriarch of digital image manipulation and raster graphics design. Launched over three decades ago, Photoshop completely revolutionized how photographers, digital artists, and print designers interact with pixels. The foundational philosophy of Photoshop is absolute, pixel-level control. It treats the canvas as a highly sophisticated digital darkroom and oil canvas combined into one, where a creator can alter reality, restore historical documents, or build complex matte paintings from blank space. The depth of its toolset reflects this philosophy, offering comprehensive control over color spaces, channel data, and sub-pixel selections.</p>
+            <p>Photoshop operates primarily within the raster graphics domain. This means that images are treated as grids of individual colored blocks known as pixels. While this allows for unparalleled depth in blending, shading, photo retouching, and textural manipulation, it also means that files are resolution-dependent. Scaling an image upward without losing fidelity requires advanced artificial intelligence upscaling routines, which Adobe has progressively integrated into its ecosystem through its proprietary AI engine. This structure provides absolute authority over every point of light but requires a deep understanding of digital imaging mechanics to prevent quality loss during continuous export cycles.</p>
+            <p>The software is traditionally a desktop-bound powerhouse. It demands substantial hardware resources, including high-performance multi-core central processors, dedicated graphics acceleration, and significant random-access memory. This local infrastructure requirement ensures that heavy, multi-gigabyte files containing hundreds of non-destructive adjustment layers, smart objects, and vector masks can be processed with minimal latency. However, this heavy reliance on local computing power means that real-time cloud collaboration was historically secondary, though recent ecosystem updates have introduced cloud documents to bridge this operational gap. The platform remains an essential installation for absolute creative mastery where local control is non-negotiable.</p>
+            <h3>Advanced Selection Mechanisms and Channel Editing</h3>
+            <p>At the core of Photoshop's technical dominance is its advanced selection engine. Unlike basic applications that rely on simple geometric enclosures, Photoshop allows users to isolate elements based on luminance values, color channels, and edge detection calculations. The implementation of alpha channels enables designers to save complex selection paths as grayscale images, ensuring that delicate textures like hair, smoke, or transparent glass can be extracted from backgrounds with pixel-perfect accuracy. This granular manipulation of color channels—red, green, blue, and alpha—forms the foundation of high-end commercial compositing.</p>
+            <p>Furthermore, Photoshop’s layer compositing architecture allows for non-destructive editing workflows through the use of adjustment layers and clipping masks. Instead of permanently baking color corrections or exposure modifications into the raw pixel data, the software applies these alterations as real-time computational filters that sit above the image tree. This ensures that the original asset remains untouched, allowing artists to modify values at any point in the production lifecycle. This mathematical layer system ensures professional visual pipelines maintain maximum image data fidelity from initial capture to final press output.</p>
+
+            <h2>3. The Democratization of Design via Canva</h2>
+            <h3>Shifting the Paradigm to Content Curation</h3>
+            <p>In stark contrast to the steep learning curve and heavy hardware requirements of traditional desktop software, Canva emerged as a disruptive force based on the philosophy of design democratization. Founded with the radical premise that anyone should be able to create beautiful visual content without undergoing years of formal technical training, Canva shifted the entire design paradigm from technical execution to rapid content curation. This design direction focuses heavily on visual communication, allowing users to transform raw text and simple ideas into polished assets within a clean, browser-driven environment.</p>
+            <p>Canva operates entirely on an intuitive drag-and-drop interface hosted in the cloud. It bypasses the need for local rendering engines and high-end hardware by executing layout calculations on remote servers and delivering an accessible web interface. The core power of Canva lies in its massive, legally cleared repository of over one hundred million assets, which includes premium typography, vector illustrations, stock photography, and audio-visual clips. Instead of starting with a blank canvas and constructing geometric primitives or complex layer hierarchies, a user selects from thousands of professionally designed layouts tailored for specific aspect ratios, such as social media graphics, presentation decks, corporate reports, and marketing collateral.</p>
+            <p>This methodology relies heavily on cloud infrastructure to maintain speed and accessibility across diverse mobile and desktop devices. For those interested in how modern software architectures utilize remote server networks to deliver high-performance applications globally without local installations, our detailed analysis on cloud hosting structures can be reviewed at <a href="bulut.html">bulut.html</a>, which provides an overview of modern web deployment. Canva utilizes these exact cloud microservices to allow immediate exporting, scheduling of social media posts, and instant resizing of assets across multiple format dimensions simultaneously, drastically compressing production cycles for rapid marketing requirements.</p>
+            <h3>Brand Kits and Enterprise Standardization</h3>
+            <p>As Canva expanded from a consumer utility into an enterprise solution, it developed sophisticated brand enforcement tools designed to protect corporate visual identity across decentralized teams. The Brand Kit feature allows organizations to lock down specific color palettes, upload custom fonts, and establish strict design templates that non-technical workers cannot alter accidentally. This constraint-driven architecture prevents common mistakes like off-brand colors or incorrect font scaling, ensuring consistency across all visual materials.</p>
+            <p>This approach transforms graphic design from a specialized service into an open corporate tool. Sales departments can generate localized pitch decks, human resource teams can publish internal announcements, and customer support representatives can draft visual guides autonomously. By removing the technical friction of traditional vector manipulation, Canva allows corporate communication to scale rapidly, making it an incredibly effective tool for organizations that prioritize publishing volume and speed over deep, pixel-level custom artwork.</p>
+
+            <h2>4. The Collaborative UI/UX Revolution of Figma</h2>
+            <h3>The Browser-First Vector Workspace</h3>
+            <p>While Photoshop commands the world of image editing and Canva dominates rapid marketing production, Figma carved out an entirely distinct empire by revolutionizing how user interfaces and user experiences are engineered. Before Figma, digital product designers used disconnected desktop tools to draw static vector shapes, which they then had to manually export and upload to secondary platforms for prototyping, and finally hand over to software developers via separate documentation channels. Figma dismantled this fragmented pipeline by introducing a browser-first, vector-based environment centered around real-time multiplayer collaboration. This shift unified the entire interface design lifecycle into a single operational canvas.</p>
+            <p>Figma’s core philosophy is that design is inherently a collective team sport. By utilizing a web-based vector rendering engine that leverages graphics card acceleration directly inside a web browser, Figma allows dozens of individuals—including UI designers, UX researchers, copywriters, product managers, and software engineers—to work inside the exact same canvas simultaneously. Changes occur instantly, eliminating the historic nightmare of version control issues, conflicting file copies, and lost update logs. The canvas functions as a live digital workshop where ideas are built, tested, and iterated in front of the entire team, establishing a single source of truth for digital product development.</p>
+            <p>Architecturally, Figma is a vector-focused application. Unlike raster graphics, vectors are defined by mathematical formulas consisting of points, lines, curves, and shapes. This ensures that any interface asset drawn within Figma can be scaled infinitely to match any screen resolution, from tiny smartwatches to massive television displays, without ever losing sharpness or pixelating. Furthermore, Figma treats design as a living component library through its advanced Design Systems feature set. Elements can be engineered with auto-layout constraints that mimic modern web code, meaning that when text inside a button changes, the button container automatically expands and refactors its padding dynamically according to predefined layout rules, providing true code-aligned design environments.</p>
+            <h3>Interactive Prototyping and Dynamic Variables</h3>
+            <p>Beyond static vector drawing, Figma features a powerful interactive prototyping engine that allows design teams to transform flat visuals into high-fidelity, clickable simulations of mobile apps and websites. By establishing directional connections between frames and applying smart animation rules, creators can replicate complex system behaviors like side-scrolling menus, loading transitions, and expandable forms. This eliminates the need for early engineering code just to test basic user flows.</p>
+            <p>The system also utilizes advanced logic variables and conditional expressions, letting teams build prototypes that collect user inputs, calculate values, and change layout states dynamically. For instance, a designer can simulate a complete digital shopping cart experience that updates pricing totals automatically based on user choices. This depth of interactive simulation provides product product teams with invaluable user research data before writing a single line of production code, significantly lowering engineering risk and maximizing product development efficiency.</p>
+
+            <h2>5. Deep Architectural and Technical Comparison</h2>
+            <h3>Memory Footprints and Core Rendering Engines</h3>
+            <p>To truly evaluate which platform serves a specific enterprise or creative project, one must compare their core technical architectures across several dimensions: graphics rendering methods, system resource consumption, file system organization, and accessibility. The performance metrics of these applications vary significantly due to how they manage local hardware and communicate with cloud networks.</p>
+            <p>Photoshop relies heavily on raster data pipelines. Every brushstroke, color adjustment, and blending mode alters or masks pixel grids. This makes it unmatched for editing photographs where micro-details, skin textures, and light gradations must be modified seamlessly. However, this architectural complexity results in large file structures with extension formats that require specialized software to open. Storage management becomes a major factor, often requiring local solid-state drives or network-attached storage arrays. The system relies deeply on the local operating system's thread management to execute high-fidelity filters and complex vector masks without micro-stutters, meaning its performance scales directly with raw computer processing power.</p>
+            <p>Figma utilizes a vector rendering engine optimized for web layouts. It uses math to draw shapes, allowing the system to run smoothly even when dealing with canvas spaces containing hundreds of separate app screen layouts. Figma stores everything within a single cloud-based document structure, meaning files do not live on a user's local hard drive unless explicitly exported as an independent archive. This cloud file system guarantees that everyone on a team always views the latest version of a project, completely removing the traditional workflow step of saving and transferring files manually. It utilizes WebGL technologies to draw complex anti-aliased vectors on standard screens without melting system processors, shifting the performance focus onto local browser efficiency and network stability.</p>
+            <p>Canva sits on a hybrid template engine designed for speed rather than raw mathematical manipulation or deep pixel editing. It combines raster background elements with vector shapes and pre-rendered layout typography. The user does not interact with bezier curves or advanced brush engines; instead, they interact with bounding boxes and layout grids. This abstract layer hides the technical complexities of graphic design, preventing users from making fundamental alignment or color mistakes, but it also creates structural limitations that professional artists find restrictive. The entire data schema is built for fast rendering within standard secure browser windows, converting rich asset trees into clean images or compressed documents instantly upon user demand. This ensures maximum compatibility across low-powered consumer electronics and legacy enterprise networks.</p>
+
+            <h2>6. Workflow Integration and Ecosystem Compatibility</h2>
+            <h3>The Enterprise Pipeline and Technical Assets</h3>
+            <p>In professional creative environments, no tool exists in total isolation. The selection of a design platform depends significantly on how easily it integrates into existing software development cycles, marketing schedules, and content management pipelines. A tool must seamlessly match the collaborative tools and engineering repositories used by the broader enterprise network.</p>
+            <p>Photoshop is deeply integrated into the broader creative suite, which includes vector editing tools, motion graphics platforms, and video compilation suites. This makes it an essential asset for multidisciplinary media companies that require continuous file transfers between video timelines, layout templates, and digital canvas workspaces. The introduction of advanced extendability through modern scripting APIs allows large corporations to automate repetitive tasks, such as generating thousands of localized product banners with varying textual data using automated data sheets. This deep pipeline ensures that multi-format campaigns can be executed with perfect visual consistency across global media installations.</p>
+            <p>Figma integrates directly into modern agile software engineering frameworks. It features a dedicated Developer Mode that translates vector visual layouts into actionable styling instructions, such as cascading style sheets, declarative configuration states for mobile interfaces, and platform-specific interface variables. This bridges the traditional communication gap between design teams and engineering departments. Designers no longer deliver static pixel images; instead, they deliver interactive, responsive components that directly mirror the structural realities of front-end web development frameworks. This code-first alignment dramatically reduces implementation errors and accelerates development timelines, allowing software houses to push feature changes to production environments with minimal layout defects.</p>
+            <p>Canva integrates directly into commercial publishing pipelines and day-to-day corporate communication workflows. It connects seamlessly with enterprise cloud platforms, digital asset managers, and social media scheduling APIs. A marketing manager can draft a promotional visual, run it through internal brand approval loops within the Canva team space, and schedule it for deployment across multiple digital channels without ever leaving the web application. This flat pipeline maximizes publishing speed, making it an ideal choice for fast-moving digital media campaigns where timeliness is critical. It transforms design departments from bottlenecks into open resource hubs for non-technical company branches, expanding asset generation capabilities across global offices.</p>
+
+            <h2>7. Financial Investments and Long-Term Licensing Strategy</h2>
+            <h3>Total Cost of Ownership and Hardware Lifecycle Analysis</h3>
+            <p>The financial implications of deploying these design tools across an enterprise require analyzing subscription frameworks, hardware maintenance costs, and staff training expenses. Managing a modern creative division demands balancing continuous software access fees against the productivity gains delivered by specialized platforms. Organizations must carefully consider the total cost of ownership to ensure software spending aligns with actual operational output.</p>
+            <p>Adobe utilizes a continuous subscription model for its software suites. For organizations requiring absolute creative dominance across various media types, this licensing structure represents an ongoing operational cost that must be factored into project pricing models. Additionally, because the software demands high-end hardware, corporations must invest in continuous hardware upgrades, ensuring processors, memory, and graphics cards can handle the increasing computational needs of modern AI-driven creation tools. These continuous financial investments are justified solely by the unlimited creative capabilities and absolute pixel authority delivered to highly specialized visual artists who shape international media branding.</p>
+            <p>Figma provides a flexible tiered subscription structure. It features a functional free tier designed for independent creators, students, and small teams exploring initial concepts, which includes basic file generation capacities. For larger businesses, its professional and enterprise tiers charge per individual seat. This allows companies to scale their software costs directly alongside engineering growth. Because Figma operates entirely within standard modern web browsers, hardware investment is significantly minimized; basic computing devices can access and edit complex cloud-based design systems without requiring expensive hardware setups. The system shifts the financial focus from buying computer parts to building scalable product design pipelines, maximizing return on investment for distributed technology teams.</p>
+            <p>Canva follows a freemium monetization strategy. The basic tier provides wide access to layouts and tools, making it accessible to users with zero initial budget. The premium subscription unlocks the entire global asset catalog, advanced background separation utilities, and corporate brand control features. This predictability in software pricing, combined with zero requirements for specialized computer components, makes Canva the most accessible option for lean business operations, non-profit institutions, and educational teams. It keeps overhead extremely low while maximizing visual production capabilities for marketing networks, allowing companies to allocate their precious capital resources toward direct growth campaigns rather than expensive software lock-ins.</p>
+
+            <h2>8. User Interface and Learning Dynamics</h2>
+            <h3>Cognitive Load and Operational Mastery</h3>
+            <p>The learning curve associated with a design tool determines how quickly an individual or team can reach peak operational productivity. Selecting an application requires mapping your team's existing technical skills against the time required to master a platform's deep features, directly impacting project onboarding speeds and organizational flexibility.</p>
+            <p>Photoshop features a highly complex interface composed of multi-tiered menus, floating panels, contextual property fields, and hundreds of keyboard shortcuts. Mastering the platform requires structured training, covering topics such as layer masking principles, non-destructive editing workflows, color space management, and complex channel selections. For a complete novice, entering this workspace can feel overwhelming, often requiring months of dedicated practice to achieve professional efficiency. However, once mastered, the complex interface becomes a highly responsive framework, enabling professionals to execute complex visual manipulations with complete artistic freedom, transforming raw conceptual sketches into high-fidelity assets without experiencing operational layout limits.</p>
+            <p>Figma balances intermediate complexity with a clean, focused user workspace. The primary interface is minimalist, displaying only essential vector tools at the top and layout layers on the left side. The learning curve is highly predictable: an individual can understand the basics of drawing vector blocks and editing typography within a few hours. However, mastering the advanced features—such as auto-layout logic, nested component states, and complex interactive prototyping rules—requires deeper technical study and an understanding of modern web layout principles. It rewards analytical thinkers who treat design as a structural system rather than an isolated artistic painting, bridging the skills gap between classical design schools and technical frontend engineering tracks.</p>
+            <p>Canva eliminates interface complexity entirely. There are no exposed technical terms like bezier paths, pixel densities, or blending math. The user workspace is organized around intuitive discovery sidebars where search terms reveal ready-to-use visual components. The learning process takes minutes; a new user can log in and produce a clean presentation or web banner within their first session. This near-zero barrier to entry makes it an ideal choice for teams that do not have dedicated design staff, allowing business managers, writers, and administrative workers to fulfill daily visual requests autonomously, completely bypassing the production delays that frequently slow down centralized multi-layered corporate design teams.</p>
+
+            <h2>9. Objective Comparative Analysis Matrix</h2>
+            <p>To provide an immediate, structured reference of the technical and structural variations analyzed throughout this guide, the table below highlights the defining system mechanics of each application ecosystem. This matrix assists engineering leads and creative directors in making objective procurement choices based on systemic operational capabilities rather than surface-level aesthetic preferences.</p>
             
-            <div class="recommendation">
-                <h2 class="rec-title"><i class="fas fa-trophy"></i> Qaysi Biri Dizaynerga Mos?</h2>
-                <div class="rec-content">
-                    <div class="rec-icon">
-                        <i class="fas fa-check-circle"></i>
-                    </div>
-                    <div class="rec-text">
-                        <p><strong>Adobe Photoshop</strong> - professional grafik dizaynerlar, fotosuratchilar va illustratoryorlar uchun. 30 yillik tarix, cheksiz imkoniyatlar, ammo o'rganishi qiyin.</p>
-                        <p><strong>Canva</strong> - biznes egalari, blogerlar, boshlang'ichlar uchun. 5000+ template, oson interfeys, ammo cheklangan kreativ erkinlik.</p>
-                        <p><strong>Figma</strong> - UI/UX dizaynerlar, veb-dizayn jamoalari uchun. Real vaqtda hammualliflik, prototiplash, dizayn tizimlari.</p>
-                        
-                        <div class="highlight">
-                            <p><strong>Xulosa:</strong> <strong>Photoshop</strong> - professional grafik dizayn uchun, <strong>Canva</strong> - tez va oson dizaynlar uchun, <strong>Figma</strong> - veb va mobil interfeyslar uchun eng yaxshi.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <h2 style="color: #8e24aa; margin: 40px 0 20px; font-size: 1.8rem;">Dasturlar haqida batafsil</h2>
-        
-        <div class="software-grid">
-            <div class="software-card photoshop">
-                <div class="card-header">
-                    <div class="card-icon">
-                        <i class="fab fa-adobe"></i>
-                    </div>
-                    <div class="card-title">Adobe Photoshop</div>
-                    <div>Adobe Inc.</div>
-                </div>
-                <div class="card-body">
-                    <ul class="feature-list">
-                        <li><i class="fas fa-check"></i> Raster grafikalar uchun standart</li>
-                        <li><i class="fas fa-check"></i> Kengaytirilgan filtrlar va effektlar</li>
-                        <li><i class="fas fa-check"></i> AI asosli vositalar (Neural Filters)</li>
-                        <li><i class="fas fa-check"></i> 3D modellashtirish</li>
-                        <li><i class="fas fa-check"></i> 1000+ plaginlar</li>
-                    </ul>
-                    
-                    <div class="pros-cons">
-                        <div class="pros">
-                            <h4><i class="fas fa-plus-circle"></i> Kuchli tomonlar</h4>
-                            <p>• Professional darajadagi vositalar</p>
-                            <p>• Kengaytirish imkoniyatlari</p>
-                            <p>• Sanoat standarti</p>
-                        </div>
-                        <div class="cons">
-                            <h4><i class="fas fa-minus-circle"></i> Zaif tomonlar</h4>
-                            <p>• Qimmat va obuna talab qiladi</p>
-                            <p>• O'rganish qiyin</p>
-                            <p>• Veb-dizayn uchun optimal emas</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="software-card canva">
-                <div class="card-header">
-                    <div class="card-icon">
-                        <i class="fas fa-palette"></i>
-                    </div>
-                    <div class="card-title">Canva</div>
-                    <div>Canva Pty Ltd</div>
-                </div>
-                <div class="card-body">
-                    <ul class="feature-list">
-                        <li><i class="fas fa-check"></i> Oson "sudrab tashlash" interfeysi</li>
-                        <li><i class="fas fa-check"></i> 5000+ professional shablonlar</li>
-                        <li><i class="fas fa-check"></i> 100 million+ stock fotosuratlar</li>
-                        <li><i class="fas fa-check"></i> Jamoa ishi va sharhlash</li>
-                        <li><i class="fas fa-check"></i> 100+ til qo'llab-quvvatlashi</li>
-                    </ul>
-                    
-                    <div class="pros-cons">
-                        <div class="pros">
-                            <h4><i class="fas fa-plus-circle"></i> Kuchli tomonlar</h4>
-                            <p>• Boshlang'ichlar uchun juda oson</p>
-                            <p>• Ko'p bepul kontent</p>
-                            <p>• Tez natijalar</p>
-                        </div>
-                        <div class="cons">
-                            <h4><i class="fas fa-minus-circle"></i> Zaif tomonlar</h4>
-                            <p>• Cheklangan kreativ erkinlik</p>
-                            <p>• Professional dizayn uchun etarli emas</p>
-                            <p>• Ofllayn rejimda cheklangan</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="software-card figma">
-                <div class="card-header">
-                    <div class="card-icon">
-                        <i class="fab fa-figma"></i>
-                    </div>
-                    <div class="card-title">Figma</div>
-                    <div>Figma, Inc.</div>
-                </div>
-                <div class="card-body">
-                    <ul class="feature-list">
-                        <li><i class="fas fa-check"></i> Real vaqtda hammualliflik</li>
-                        <li><i class="fas fa-check"></i> Prototiplash va animatsiyalar</li>
-                        <li><i class="fas fa-check"></i> Dizayn tizimlari (Design Systems)</li>
-                        <li><i class="fas fa-check"></i> Avtomatik maketlar (Auto Layout)</li>
-                        <li><i class="fas fa-check"></i> Kengaytirilgan plaginlar</li>
-                    </ul>
-                    
-                    <div class="pros-cons">
-                        <div class="pros">
-                            <h4><i class="fas fa-plus-circle"></i> Kuchli tomonlar</h4>
-                            <p>• Mukammal jamoa ishi</p>
-                            <p>• Veb-dizayn uchun ideal</p>
-                            <p>• Kod generatsiyasi</p>
-                        </div>
-                        <div class="cons">
-                            <h4><i class="fas fa-minus-circle"></i> Zaif tomonlar</h4>
-                            <p>• Raster tasvirlar uchun yaxshi emas</p>
-                            <p>• Ofllayn ishlash cheklangan</p>
-                            <p>• Adobe ekotizimidagi kabi emas</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <div class="pricing-table">
-            <h2 class="pricing-title">Narxlar Solishtirishi (2026)</h2>
-            <div class="pricing-grid">
-                <div class="price-card">
-                    <div class="price-name">Photoshop</div>
-                    <div class="price-amount">$20.99<span class="price-period">/oy</span></div>
-                    <p>Creative Cloud obunasi</p>
-                    <p>Yoki $52.99/oy butun Adobe paketi</p>
-                    <p>7 kunlik bepul sinov</p>
-                </div>
-                
-                <div class="price-card popular">
-                    <div class="popular-badge">Eng Mashhur</div>
-                    <div class="price-name">Canva Pro</div>
-                    <div class="price-amount">$12.99<span class="price-period">/oy</span></div>
-                    <p>Bepul versiya mavjud</p>
-                    <p>1 oylik bepul sinov</p>
-                    <p>Jamoa: $14.99/kishi</p>
-                </div>
-                
-                <div class="price-card">
-                    <div class="price-name">Figma Professional</div>
-                    <div class="price-amount">$12<span class="price-period">/oy</span></div>
-                    <p>Bepul versiya mavjud</p>
-                    <p>3 ta loyiha chegarasi</p>
-                    <p>Organizatsiya: $45/kishi</p>
-                </div>
-            </div>
-        </div>
+            <table class="comparison-matrix">
+                <thead>
+                    <tr>
+                        <th>Operational Parameter</th>
+                        <th>Adobe Photoshop Architecture</th>
+                        <th>Canva Template System</th>
+                        <th>Figma Collaboration Engine</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Primary Graphic Domain</strong></td>
+                        <td>Raster Pixel Manipulation</td>
+                        <td>Preset Layout Customization</td>
+                        <td>Scalable Vector Production</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Learning Curve</strong></td>
+                        <td>High Technical Investment</td>
+                        <td>Immediate Operational Use</td>
+                        <td>Balanced Analytical Growth</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Computing Power Demands</strong></td>
+                        <td>Substantial Local Systems</td>
+                        <td>Minimal Web Browser Access</td>
+                        <td>Standard Browser Performance</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Real-Time Collaboration</strong></td>
+                        <td>Basic Cloud Extensions</td>
+                        <td>Strong Integrated Group Tools</td>
+                        <td>Elite Multiplayer Sync</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Platform Optimization</strong></td>
+                        <td>Desktop Installations</td>
+                        <td>Universal Web and Mobile</td>
+                        <td>Web Browsers and Desktop App</td>
+                    </tr>
+                    <tr>
+                        <td><strong>File System Architecture</strong></td>
+                        <td>Local Binary Files (.PSD)</td>
+                        <td>Cloud Database Content Links</td>
+                        <td>Distributed Cloud Vector Logs</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Developer Hand-off Capacity</strong></td>
+                        <td>Manual Asset Export Paths</td>
+                        <td>None (End-Consumer Focus)</td>
+                        <td>Automated Live Code Generation</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Extensibility Mechanics</strong></td>
+                        <td>Local Action Scripting APIs</td>
+                        <td>App Marketplace Frameworks</td>
+                        <td>Rich Open Plugin Ecosystem</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h2>10. Selecting Your Design Path</h2>
+            <h3>Aligning Enterprise Goals with Platform Capabilities</h3>
+            <p>Choosing the ideal platform requires an objective evaluation of your current project requirements, technical skill sets, and long-term business goals. No individual system serves as a silver bullet for every visual challenge; instead, elite teams evaluate their primary creative outputs to select the optimal ecosystem footprint, maximizing team output while minimizing system resource friction.</p>
+            <p>If your primary focus involves advanced photographic processing, intricate image restoration, digital painting, or print-ready publication files, Adobe Photoshop remains the industry standard. Its deep feature set and precise pixel control cannot be replicated by lightweight browser applications. It serves the dedicated master who views every pixel as an essential component of a grand artistic statement, making it the perfect platform for elite agencies that accept zero compromises in raw visual details and color grading perfection.</p>
+            <p>If your goals focus on rapidly producing web content, managing daily social media marketing, creating sales presentations, or enabling non-designers to create brand-compliant marketing assets quickly, Canva is the most efficient choice. It bypasses technical setup and delivers ready-to-use visuals instantly, ensuring your marketing stays fast and highly responsive to shifting consumer trends, making it an excellent platform for agile startups, retail networks, and high-frequency digital publication outfits.</p>
+            <p>If your team is designing digital interfaces, web applications, mobile platforms, or interactive user experiences that require close collaboration between designers and front-end developers, Figma is the premier ecosystem. Its real-time co-authoring tools and advanced design components make it an essential tool for modern software development, turning complex UI ideas into fully documented visual products that sync perfectly with international modern engineering repositories.</p>
+            <p>Managing a successful digital presence requires combining creative strategy with technical site management. If you are currently building an online portal and want to ensure your web architecture is fully optimized for performance, accessibility, and clean search indexing, please reach out to our technical consulting team via our secure contact page at <a href="contact.html">contact.html</a> to discuss your specific infrastructure needs. Our specialists can guide you through the process of building lightweight, high-performance web systems that preserve your visual assets cleanly across all end-user screens.</p>
+
+            <h2>11. Conclusion and Future Outlook</h2>
+            <p>The fields of graphic design and user experience engineering are evolving rapidly. Artificial intelligence, automated layout generation, and global cloud networks are changing how visual concepts move from initial ideas to live digital products. Rather than viewing these three tools as direct competitors, modern creators should see them as complementary parts of a complete digital creation toolkit. Each application fulfills a distinct operational role, bridging the gap between deep artistic refinement, lightning-fast content marketing, and systems-driven interface development. Enterprise flexibility depends on using the unique strengths of each environment rather than forcing a single program to handle mismatched design challenges.</p>
+            <p>Many successful design agencies use all three platforms across different stages of production. They may use Photoshop to touch up raw high-resolution photography, import those edited images into Figma to build highly responsive web and mobile app interfaces, and use Canva to empower their marketing and public relations teams to quickly generate promotional materials. By understanding the unique strengths, technical architectures, and financial frameworks of each application, you can choose the best combination of tools to optimize your creative workflow, eliminate operational blockages, and drive digital success across the entire lifespan of your enterprise. As computing systems enter new sub-nanometer processing nodes and edge cloud delivery networks grow, your ability to integrate these diverse systems will define your competitive authority in the digital media landscape.</p>
+        </main>
         
         <footer>
-            <p>© 2024 ranking-hours.uz - Barcha huquqlar himoyalangan</p>
-            <p>Dasturiy ta'minotni haqiqiy testlar asosida solishtiring</p>
+            <p>© 2026 ranking-hours.uz - All rights reserved</p>
+            <p>Empirical Software Comparisons Built on Raw Performance Datasets</p>
             <div class="footer-links">
-                <a href="index.html"><i class="fas fa-home"></i> Bosh Sahifa</a>
-                <a href="categories.html"><i class="fas fa-th-large"></i> Kategoriyalar</a>
-                <a href="bulut.html"><i class="fas fa-cloud"></i> Bulut Xizmatlar</a>
-                <a href="contact.html"><i class="fas fa-envelope"></i> Bog'lanish</a>
+                <a href="index.html"><i class="fas fa-home"></i> Home</a>
+                <a href="categories.html"><i class="fas fa-th-large"></i> Categories</a>
+                <a href="bulut.html"><i class="fas fa-cloud"></i> Cloud Services</a>
+                <a href="contact.html"><i class="fas fa-envelope"></i> Contact</a>
             </div>
         </footer>
     </div>
-    
-    <script>
-        // Faqat kerak bo'lganda JavaScript qo'shing
-        document.addEventListener('DOMContentLoaded', function() {
-            // Fayl yuklanishi uchun animatsiya
-            const cards = document.querySelectorAll('.software-card');
-            cards.forEach((card, index) => {
-                card.style.opacity = '0';
-                card.style.transform = 'translateY(20px)';
-                
-                setTimeout(() => {
-                    card.style.transition = 'opacity 0.5s, transform 0.5s';
-                    card.style.opacity = '1';
-                    card.style.transform = 'translateY(0)';
-                }, index * 200);
-            });
-        });
-    </script>
 </body>
 </html>
