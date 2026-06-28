@@ -1,20 +1,21 @@
 <!DOCTYPE html>
-<html lang="uz">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Mahsulotlarni qanday tanlash kerak? To'g'ri tanlov qilish uchun to'liq qo'llanma.">
-    <title>Qanday Tanlash Kerak? | Haqiqiy Maslahatlar</title>
+    <meta name="description" content="The Ultimate Comprehensive Smart Consumer Guide. Learn how to evaluate, analyze, and select the best products across electronics, vehicles, appliances, and more.">
+    <title>The Ultimate Smart Buyer's Blueprint | Comprehensive Choice Framework</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            --primary: #2c3e50;
-            --secondary: #3498db;
-            --accent: #e74c3c;
-            --light: #ecf0f1;
+            --primary: #1a2a3a;
+            --secondary: #2980b9;
+            --accent: #c0392b;
+            --light: #f8f9fa;
             --dark: #2c3e50;
             --success: #27ae60;
             --warning: #f39c12;
+            --border-color: #e2e8f0;
         }
 
         * {
@@ -25,16 +26,16 @@
         }
 
         body {
-            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            background: #f4f6f9;
             color: var(--dark);
-            line-height: 1.6;
+            line-height: 1.8;
             min-height: 100vh;
         }
 
         .container {
-            max-width: 1200px;
+            max-width: 1300px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 25px;
         }
 
         /* Header */
@@ -42,7 +43,7 @@
             background-color: var(--primary);
             color: white;
             padding: 20px 0;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
             position: sticky;
             top: 0;
             z-index: 1000;
@@ -55,15 +56,17 @@
         }
 
         .logo {
-            font-size: 1.8rem;
+            font-size: 1.6rem;
             font-weight: 700;
+            text-decoration: none;
+            color: white;
             display: flex;
             align-items: center;
             gap: 10px;
         }
 
         .logo i {
-            font-size: 2rem;
+            font-size: 1.8rem;
             color: var(--secondary);
         }
 
@@ -74,23 +77,25 @@
         nav ul {
             display: flex;
             list-style: none;
-            gap: 25px;
+            gap: 20px;
         }
 
         nav a {
-            color: white;
+            color: #ecf0f1;
             text-decoration: none;
             font-weight: 500;
-            padding: 8px 15px;
-            border-radius: 20px;
-            transition: all 0.3s;
+            padding: 10px 18px;
+            border-radius: 25px;
+            transition: all 0.3s ease;
             display: flex;
             align-items: center;
             gap: 8px;
+            font-size: 0.95rem;
         }
 
         nav a:hover, nav a.active {
             background-color: var(--secondary);
+            color: white;
         }
 
         .mobile-menu-btn {
@@ -104,130 +109,192 @@
 
         /* Page Header */
         .page-header {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            background: linear-gradient(135deg, var(--primary) 0%, #2c3e50 100%);
             color: white;
             text-align: center;
-            padding: 80px 20px;
+            padding: 100px 20px;
             margin-bottom: 50px;
-            border-radius: 0 0 30px 30px;
+            border-radius: 0 0 40px 40px;
             position: relative;
-            overflow: hidden;
-        }
-
-        .page-header:before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 Z" fill="rgba(255,255,255,0.1)"/></svg>');
-            background-size: cover;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
         }
 
         .page-header h1 {
-            font-size: 3rem;
-            margin-bottom: 20px;
-            position: relative;
-            z-index: 1;
+            font-size: 3.2rem;
+            margin-bottom: 25px;
+            font-weight: 800;
+            letter-spacing: -0.5px;
         }
 
         .page-header p {
-            font-size: 1.2rem;
-            max-width: 700px;
+            font-size: 1.3rem;
+            max-width: 850px;
             margin: 0 auto;
             opacity: 0.9;
-            position: relative;
-            z-index: 1;
+            font-weight: 300;
         }
 
-        /* Content */
+        /* Layout Architecture */
         .guide-container {
             display: grid;
-            grid-template-columns: 2fr 1fr;
-            gap: 40px;
-            margin-bottom: 50px;
+            grid-template-columns: 2.8fr 1.2fr;
+            gap: 45px;
+            margin-bottom: 60px;
         }
 
         .main-content {
             background: white;
-            padding: 40px;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            padding: 50px;
+            border-radius: 24px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
         }
 
         .sidebar {
             background: white;
-            padding: 30px;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            padding: 35px;
+            border-radius: 24px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
             height: fit-content;
             position: sticky;
-            top: 100px;
+            top: 120px;
         }
 
-        .step {
-            margin-bottom: 40px;
-            padding-bottom: 30px;
-            border-bottom: 2px dashed #eee;
+        /* Section Typography & Details */
+        .mega-section {
+            margin-bottom: 60px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 50px;
         }
 
-        .step:last-child {
+        .mega-section:last-child {
             border-bottom: none;
             margin-bottom: 0;
+            padding-bottom: 0;
         }
 
-        .step-number {
+        .section-badge {
             display: inline-block;
-            background: var(--secondary);
-            color: white;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            text-align: center;
-            line-height: 40px;
-            font-weight: bold;
-            font-size: 1.2rem;
+            background: #e1f5fe;
+            color: var(--secondary);
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
             margin-bottom: 15px;
         }
 
-        .step h3 {
-            font-size: 1.5rem;
-            margin-bottom: 15px;
+        h2.section-title {
+            font-size: 2.2rem;
             color: var(--primary);
+            margin-bottom: 25px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 15px;
         }
 
-        .step-content {
-            background: #f8f9fa;
-            padding: 20px;
-            border-radius: 10px;
-            margin-top: 15px;
+        h3.subsection-title {
+            font-size: 1.4rem;
+            color: #34495e;
+            margin: 30px 0 15px;
+            font-weight: 600;
         }
 
+        p.content-block {
+            margin-bottom: 20px;
+            color: #4a5568;
+            font-size: 1.1rem;
+            text-align: justify;
+        }
+
+        /* Specialized Informational Boxes */
         .tip-box {
-            background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
-            border-left: 5px solid var(--secondary);
-            padding: 20px;
-            margin: 20px 0;
-            border-radius: 0 10px 10px 0;
+            background: linear-gradient(135deg, #e3f2fd 0%, #eef2f7 100%);
+            border-left: 6px solid var(--secondary);
+            padding: 25px;
+            margin: 25px 0;
+            border-radius: 8px;
+        }
+
+        .tip-box strong {
+            color: #1b4f72;
+            font-size: 1.1rem;
+            display: block;
+            margin-bottom: 8px;
         }
 
         .warning-box {
-            background: linear-gradient(135deg, #ffebee 0%, #ffcdd2 100%);
-            border-left: 5px solid var(--accent);
-            padding: 20px;
-            margin: 20px 0;
-            border-radius: 0 10px 10px 0;
+            background: linear-gradient(135deg, #ffebee 0%, #fdf2f2 100%);
+            border-left: 6px solid var(--accent);
+            padding: 25px;
+            margin: 25px 0;
+            border-radius: 8px;
         }
 
+        .warning-box strong {
+            color: #78281f;
+            font-size: 1.1rem;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .framework-box {
+            background: #f8fafc;
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 30px;
+            margin: 30px 0;
+        }
+
+        /* Advanced Grid Matrix */
+        .spec-matrix {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .matrix-item {
+            background: #ffffff;
+            border: 1px solid var(--border-color);
+            padding: 20px;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+        }
+
+        .matrix-item:hover {
+            transform: translateY(-5px);
+            border-color: var(--secondary);
+        }
+
+        .matrix-item strong {
+            color: var(--primary);
+            display: block;
+            margin-bottom: 6px;
+            font-size: 1.1rem;
+        }
+
+        .matrix-item p {
+            font-size: 0.95rem;
+            color: #64748b;
+        }
+
+        /* Lists and Checklists */
         .checklist {
             list-style: none;
-            margin: 20px 0;
+            margin: 25px 0;
         }
 
         .checklist li {
-            padding: 10px 0 10px 35px;
+            padding: 12px 0 12px 40px;
             position: relative;
+            font-size: 1.05rem;
+            color: #4a5568;
+            cursor: pointer;
+            transition: all 0.2s ease;
         }
 
         .checklist li:before {
@@ -235,88 +302,157 @@
             position: absolute;
             left: 0;
             top: 10px;
-            width: 25px;
-            height: 25px;
+            width: 24px;
+            height: 24px;
             background: var(--success);
             color: white;
             border-radius: 50%;
             text-align: center;
-            line-height: 25px;
+            line-height: 24px;
             font-weight: bold;
+            font-size: 0.85rem;
         }
 
-        /* Category Cards */
-        .category-cards {
+        .checklist li.completed {
+            opacity: 0.55;
+            text-decoration: line-through;
+        }
+
+        /* Sidebar Specific Elements */
+        .sidebar-widget {
+            margin-bottom: 35px;
+        }
+
+        .sidebar-widget h3 {
+            font-size: 1.25rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--border-color);
+        }
+
+        .sidebar-card {
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+        }
+
+        /* Category System */
+        .category-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
             gap: 25px;
-            margin: 40px 0;
+            margin: 50px 0;
         }
 
         .category-card {
             background: white;
-            padding: 25px;
-            border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            padding: 35px 25px;
+            border-radius: 16px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.04);
             text-align: center;
-            transition: all 0.3s;
+            transition: all 0.3s ease;
             text-decoration: none;
             color: inherit;
-            display: block;
+            border: 1px solid transparent;
         }
 
         .category-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+            border-color: var(--secondary);
         }
 
         .category-card i {
-            font-size: 2.5rem;
+            font-size: 2.8rem;
             color: var(--secondary);
-            margin-bottom: 15px;
+            margin-bottom: 20px;
         }
 
         .category-card h4 {
-            font-size: 1.2rem;
-            margin-bottom: 10px;
+            font-size: 1.3rem;
+            margin-bottom: 12px;
             color: var(--primary);
         }
 
-        /* Adsense */
-        .ad-unit {
-            background: #f8f9fa;
-            border: 2px dashed #ddd;
-            border-radius: 10px;
-            padding: 30px;
-            text-align: center;
-            margin: 40px 0;
-            color: #666;
+        .category-card p {
+            font-size: 0.95rem;
+            color: #64748b;
         }
 
-        .ad-unit h3 {
-            color: var(--primary);
-            margin-bottom: 10px;
+        /* Data Matrix Tables */
+        .data-table-wrapper {
+            overflow-x: auto;
+            margin: 30px 0;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
         }
 
-        /* Footer */
-        footer {
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+            font-size: 1rem;
+        }
+
+        .data-table th {
             background-color: var(--primary);
             color: white;
-            padding: 50px 0 20px;
-            margin-top: 50px;
+            padding: 15px 20px;
+            font-weight: 600;
+        }
+
+        .data-table td {
+            padding: 15px 20px;
+            border-bottom: 1px solid var(--border-color);
+            color: #4a5568;
+        }
+
+        .data-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .data-table tr:nth-child(even) {
+            background-color: #f8fafc;
+        }
+
+        /* Footer System */
+        footer {
+            background-color: var(--primary);
+            color: #e2e8f0;
+            padding: 70px 0 30px;
+            margin-top: 80px;
         }
 
         .footer-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            margin-bottom: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
         }
 
         .footer-column h3 {
-            font-size: 1.2rem;
-            margin-bottom: 20px;
-            color: var(--secondary);
+            font-size: 1.3rem;
+            margin-bottom: 25px;
+            color: white;
+            position: relative;
+        }
+
+        .footer-column h3:after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -8px;
+            width: 40px;
+            height: 30px;
+            border-bottom: 2px solid var(--secondary);
+        }
+
+        .footer-column p {
+            font-size: 0.95rem;
+            line-height: 1.7;
+            color: #94a3b8;
         }
 
         .footer-column ul {
@@ -324,61 +460,55 @@
         }
 
         .footer-column li {
-            margin-bottom: 10px;
+            margin-bottom: 12px;
         }
 
         .footer-column a {
-            color: #bdc3c7;
+            color: #94a3b8;
             text-decoration: none;
             transition: color 0.3s;
+            font-size: 0.95rem;
         }
 
         .footer-column a:hover {
             color: white;
-            text-decoration: underline;
+            text-decoration: none;
+            padding-left: 5px;
         }
 
         .copyright {
             text-align: center;
-            padding-top: 20px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            color: #95a5a6;
+            padding-top: 30px;
+            border-top: 1px solid #2d3748;
+            color: #64748b;
             font-size: 0.9rem;
         }
 
-        /* Responsive */
-        @media (max-width: 992px) {
+        /* Responsiveness Overrides */
+        @media (max-width: 1100px) {
             .guide-container {
                 grid-template-columns: 1fr;
             }
-            
             .sidebar {
                 position: static;
+                width: 100%;
             }
         }
 
         @media (max-width: 768px) {
             .header-container {
                 flex-direction: column;
-                text-align: center;
-                gap: 15px;
+                gap: 20px;
             }
-
             nav ul {
                 flex-wrap: wrap;
                 justify-content: center;
             }
-
             .page-header h1 {
-                font-size: 2.2rem;
+                font-size: 2.3rem;
             }
-
-            .page-header p {
-                font-size: 1rem;
-            }
-
             .main-content {
-                padding: 25px;
+                padding: 30px;
             }
         }
 
@@ -386,42 +516,28 @@
             .mobile-menu-btn {
                 display: block;
                 position: absolute;
-                top: 20px;
-                right: 20px;
+                top: 25px;
+                right: 25px;
             }
-
             nav ul {
                 display: none;
                 flex-direction: column;
                 width: 100%;
-                margin-top: 15px;
             }
-
             nav ul.active {
                 display: flex;
-            }
-
-            .page-header {
-                padding: 60px 20px;
-            }
-
-            .page-header h1 {
-                font-size: 1.8rem;
-            }
-
-            .category-cards {
-                grid-template-columns: 1fr;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Header -->
+
+    <!-- Main Navigation Header -->
     <header>
         <div class="container header-container">
             <a href="index.html" class="logo">
                 <i class="fas fa-check-circle"></i>
-                <div>Haqiqiy<span>Testlar</span></div>
+                <div>Smart<span>Choice</span></div>
             </a>
             
             <button class="mobile-menu-btn" id="mobileMenuBtn">
@@ -430,332 +546,381 @@
             
             <nav>
                 <ul id="mainNav">
-                    <li><a href="index.html"><i class="fas fa-home"></i> Bosh Sahifa</a></li>
-                    <li><a href="comparisons.html"><i class="fas fa-balance-scale"></i> Solishtirishlar</a></li>
-                    <li><a href="how-to-choose.html" class="active"><i class="fas fa-question-circle"></i> Qanday Tanlash Kerak</a></li>
-                    <li><a href="independence.html"><i class="fas fa-shopping-cart"></i> Mustaqillik</a></li>
-                    <li><a href="disclaimer.html"><i class="fas fa-bell"></i> Mas'uliyatdan Voz Kechish</a></li>
+                    <li><a href="index.html"><i class="fas fa-home"></i> Dashboard</a></li>
+                    <li><a href="comparisons.html"><i class="fas fa-balance-scale"></i> Matrices</a></li>
+                    <li><a href="how-to-choose.html" class="active"><i class="fas fa-book-open"></i> Core Framework</a></li>
+                    <li><a href="independence.html"><i class="fas fa-shield-alt"></i> Editorial Integrity</a></li>
+                    <li><a href="disclaimer.html"><i class="fas fa-exclamation-circle"></i> Legal Notice</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <!-- Page Header -->
+    <!-- Contextual Page Hero Section -->
     <section class="page-header">
         <div class="container">
-            <h1><i class="fas fa-question-circle"></i> Qanday Tanlash Kerak?</h1>
-            <p>To'g'ri mahsulotni tanlash uchun bosqichma-bosqich qo'llanma. Har bir kategoriya uchun maxsus maslahatlar.</p>
+            <h1>The Comprehensive Consumer Acquisition Framework</h1>
+            <p>An empirical, data-driven methodology detailing how to analyze market metrics, mitigate cognitive biases, evaluate deep technical specifications, and consistently make flawless purchasing decisions.</p>
         </div>
     </section>
 
-    <!-- Main Content -->
+    <!-- Primary Layout System -->
     <div class="container">
-        <!-- Adsense Top Banner -->
-        <div class="ad-unit">
-            <h3>Reklama</h3>
-            <p>Bu yerda mahsulot tanlashga oid foydali reklamalar ko'rsatilishi mumkin</p>
-            <p>728x90 o'lchamdagi banner</p>
-        </div>
-
         <div class="guide-container">
-            <div class="main-content">
-                <!-- Introduction -->
-                <div class="step">
-                    <div class="step-number">1</div>
-                    <h3>Tanlashning Asosiy Tamoyillari</h3>
-                    <p>Har qanday mahsulotni tanlashda quyidagi 5 ta asosiy tamoyilga amal qiling:</p>
-                    
-                    <div class="step-content">
-                        <h4><i class="fas fa-bullseye"></i> 1. Ehtiyojlarni aniqlash</h4>
-                        <p>Avval o'zingizga savol bering: "Menga bu mahsulot nimasi kerak?" Keraksiz funksiyalar uchun ortiqcha pul to'lamang.</p>
-                        
-                        <div class="tip-box">
-                            <strong><i class="fas fa-lightbulb"></i> Maslahat:</strong> Har bir funksiya uchun "Menga bu kerakmi?" deb so'rang. Agar javob "Yo'q" bo'lsa, uni o'tkazib yuboring.
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Step 2 -->
-                <div class="step">
-                    <div class="step-number">2</div>
-                    <h3>Byudjetni Belgilash</h3>
-                    <p>Byudjetingizni oldindan belgilang va unga qat'iy rioya qiling.</p>
-                    
-                    <div class="step-content">
-                        <h4><i class="fas fa-money-bill-wave"></i> Byudjetni qanday belgilash kerak?</h4>
-                        <ul class="checklist">
-                            <li>Maksimal byudjetni belgilang</li>
-                            <li>Narx oralig'ini aniqlang (masalan: $300-400)</li>
-                            <li>Qo'shimcha xarajatlarni hisobga oling (yetkazib berish, kafolat, aksessuarlar)</li>
-                            <li>Chegirmalar va aksiyalarni kuzatib boring</li>
-                        </ul>
-                        
-                        <div class="warning-box">
-                            <strong><i class="fas fa-exclamation-triangle"></i> Diqqat:</strong> Eng arzon variant har doim eng yaxshi emas. Ba'zida biroz qimmatroq mahsulot uzoq muddatda tejamkorroq bo'ladi.
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Step 3 -->
-                <div class="step">
-                    <div class="step-number">3</div>
-                    <h3>Spetsifikatsiyalarni Tushunish</h3>
-                    <p>Texnik spetsifikatsiyalarni qanday tushunish va solishtirish kerak?</p>
-                    
-                    <div class="step-content">
-                        <h4><i class="fas fa-microchip"></i> Muhim parametrlar:</h4>
-                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin: 20px 0;">
-                            <div style="background: #e8f4fc; padding: 15px; border-radius: 8px;">
-                                <strong>Protsessor/GPU</strong>
-                                <p>Tezlik va samaradorlik</p>
-                            </div>
-                            <div style="background: #e8f4fc; padding: 15px; border-radius: 8px;">
-                                <strong>Xotira (RAM)</strong>
-                                <p>Ko'p vazifalilik</p>
-                            </div>
-                            <div style="background: #e8f4fc; padding: 15px; border-radius: 8px;">
-                                <strong>Saqlash (Storage)</strong>
-                                <p>Fayllar uchun joy</p>
-                            </div>
-                            <div style="background: #e8f4fc; padding: 15px; border-radius: 8px;">
-                                <strong>Batareya/quvvat</strong>
-                                <p>Ishlash muddati</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Step 4 -->
-                <div class="step">
-                    <div class="step-number">4</div>
-                    <h3>Sharhlar va Reytinglarni O'rganish</h3>
-                    <p>Foydalanuvchi sharhlarini qanday to'g'ri tahlil qilish kerak?</p>
-                    
-                    <div class="step-content">
-                        <h4><i class="fas fa-star"></i> Sharhlarni tahlil qilish sirlari:</h4>
-                        <ul class="checklist">
-                            <li>Ko'p sonli sharhlarga e'tibor bering (100+)</li>
-                            <li>Eng yangi sharhlarni o'qing</li>
-                            <li>1 va 5 ballik sharhlarni diqqat bilan o'qing</li>
-                            <li>Takrorlanadigan muammolarni qidiring</li>
-                            <li>Video sharhlarni ko'rib chiqing</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Step 5 -->
-                <div class="step">
-                    <div class="step-number">5</div>
-                    <h3>Yakuniy Qaror va Xarid</h3>
-                    <p>Yakuniy qaror qabul qilish va xavfsiz xarid qilish.</p>
-                    
-                    <div class="step-content">
-                        <h4><i class="fas fa-check-double"></i> Yakuniy tekshiruv ro'yxati:</h4>
-                        <ul class="checklist">
-                            <li>Kafolat muddati (kamida 1-2 yil)</li>
-                            <li>Qaytarish shartlari (30 kun ichida)</li>
-                            <li>Texnik yordam mavjudligi</li>
-                            <li>Ehtiyot qismlar mavjudligi</li>
-                            <li>Yetkazib berish muddati va narxi</li>
-                        </ul>
-                        
-                        <div class="tip-box">
-                            <strong><i class="fas fa-lightbulb"></i> Maslahat:</strong> Har doim rasmiy distribyutorlardan yoki ishonchli do'konlardan xarid qiling. "Judayam arzon" takliflarga ishonmang.
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Sidebar -->
-            <div class="sidebar">
-                <h3><i class="fas fa-fire"></i> Tez Maslahatlar</h3>
+            
+            <!-- Long-Form Highly Detailed Analysis Content Block -->
+            <main class="main-content">
                 
-                <div style="background: #f0f7ff; padding: 20px; border-radius: 10px; margin: 20px 0;">
-                    <h4><i class="fas fa-clock"></i> Vaqtni tejash</h4>
-                    <p>Tanlash uchun 3-7 kun vaqt ajrating. Shoshilmasdan, batafsil o'rganing.</p>
-                </div>
-                
-                <div style="background: #fff0f0; padding: 20px; border-radius: 10px; margin: 20px 0;">
-                    <h4><i class="fas fa-exclamation-triangle"></i> Qochish kerak</h4>
-                    <ul style="list-style: none; padding-left: 0;">
-                        <li style="margin-bottom: 8px;">• Noma'lum brendlar</li>
-                        <li style="margin-bottom: 8px;">• "Too good to be true" narxlar</li>
-                        <li style="margin-bottom: 8px;">• Sharhlar yo'q mahsulotlar</li>
+                <!-- Section 1: Fundamental Paradigm -->
+                <section class="mega-section" id="foundations">
+                    <span class="section-badge">Module 01</span>
+                    <h2 class="section-title"><i class="fas fa-brain"></i> 1. The Psychology and Epistemology of Choice</h2>
+                    
+                    <p class="content-block">
+                        Every day, the modern consumer is bombarded with thousands of marketing vectors explicitly engineered to bypass logical processing and tap directly into emotional centers. To make truly analytical purchasing decisions, one must first recognize the architectural flaws inherent in human decision-making. The primary obstacle to a smart purchase is not a lack of information; rather, it is the deliberate optimization of information overload and the omnipresence of cognitive biases.
+                    </p>
+                    
+                    <p class="content-block">
+                        Foremost among these is the <strong>Anchoring Bias</strong>. This occurs when a manufacturer introduces an arbitrarily inflated retail price (e.g., a "suggested retail price" of $1,200) only to offer an immediate discount down to $600. The brain subconsciously anchors to the initial figure, processing the transaction as an absolute net gain of $600, instead of critically evaluating whether the inherent material performance of the item justifies the $600 expenditure. By stripping away initial anchors, you force the item to prove its baseline utility from scratch.
+                    </p>
+
+                    <p class="content-block">
+                        Another deceptive vector is the <strong>Choice Paradox</strong>. As options expand exponentially, consumer satisfaction inversely drops due to the creeping anxiety of missing out on a marginally superior alternative. To bypass this feedback loop, our framework implements an analytical pruning method known as "Satisficing via Elimination Matrix." Rather than chasing an elusive, non-existent perfect match, you establish strict mathematical thresholds for your absolute baseline requirements and immediately purge any options falling short.
+                    </p>
+
+                    <div class="framework-box">
+                        <h3>The Axiomatic Core Value Inquiry</h3>
+                        <p class="content-block">Before committing capital to any ecosystem, assign absolute numeric weightings to your usage patterns. If you are calculating the utility of an electronic platform or a piece of heavy equipment, ask yourself: What specific, recurring problem does this asset resolve? If the resolution of that problem occurs less frequently than once a fiscal quarter, the optimal monetary decision is almost universally a rental model or outsourcing rather than capital asset acquisition.</p>
+                    </div>
+
+                    <div class="tip-box">
+                        <strong><i class="fas fa-microscope"></i> Empirical Rule of Decoupling:</strong> Never evaluate a product while viewing its marketing collateral side-by-side. Copy the text specs into a blank markdown sheet or text file, stripping away custom fonts, color schemes, lifestyle imagery, and promotional adjectives. Evaluate the product solely based on its unadorned structural reality.
+                    </div>
+                </section>
+
+                <!-- Section 2: Mathematical Budget Allocation -->
+                <section class="mega-section" id="budgeting">
+                    <span class="section-badge">Module 02</span>
+                    <h2 class="section-title"><i class="fas fa-calculator"></i> 2. Total Cost of Ownership (TCO) Calculations</h2>
+                    
+                    <p class="content-block">
+                        The purchase price of an item represents merely the visible tip of a prolonged financial iceberg. True consumer literacy requires a transition from nominal sticker-price evaluation to a strict <strong>Total Cost of Ownership (TCO)</strong> structural model. TCO calculates every micro-transaction linked to an asset across its entire functional lifespan.
+                    </p>
+                    
+                    <p class="content-block">
+                        The mathematical formula for calculating the realistic TCO of an asset over an explicit timeline can be expressed via multiple operational costs:
+                    </p>
+                    
+                    <div style="background: #f1f5f9; padding: 20px; border-radius: 8px; font-family: monospace; font-size: 1.1rem; text-align: center; margin: 20px 0; border: 1px solid var(--border-color);">
+                        TCO = Acquisition Cost + Operation Cost + Maintenance Cost + Disposal/Depreciation Costs - Residual Resale Value
+                    </div>
+
+                    <p class="content-block">
+                        Let us examine how these variables manifest in standard consumer spaces:
+                    </p>
+
+                    <div class="data-table-wrapper">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Cost Parameter</th>
+                                    <th>Hidden Elements to Track</th>
+                                    <th>Long-Term Financial Impact</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Acquisition Premium</td>
+                                    <td>Financing interest rates, extended warranty fees, initial configuration tools</td>
+                                    <td>Can inflate the up-front capital requirements by 15% to 35% instantly.</td>
+                                </tr>
+                                <tr>
+                                    <td>Operational Drag</td>
+                                    <td>Energy usage metrics, software subscription renewals, mandatory proprietary fuel/consumables</td>
+                                    <td>Often overtakes the initial purchase cost entirely within a 36-month window.</td>
+                                </tr>
+                                <tr>
+                                    <td>Maintenance Overhead</td>
+                                    <td>Component replacement availability, wear-and-tear degradation, technical servicing fees</td>
+                                    <td>Unreliable ecosystems convert time into an expensive resource sink.</td>
+                                </tr>
+                                <tr>
+                                    <td>Residual Depreciation</td>
+                                    <td>Velocity of market obsolescence, second-hand liquidity index</td>
+                                    <td>Determines how much capital is permanently vaporized upon asset exit.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <p class="content-block">
+                        Consider ink-jet vs. laser printing systems as a classic example of TCO variance. An ink-jet system might feature an entry acquisition cost of $50, whereas a high-efficiency monochrome laser system demands $220 upfront. However, the operational cost per page of the ink-jet sits at approximately $0.08 in proprietary liquid ink cartridges, whereas the laser variant operates at $0.004 per page via dry toner matrices. If your standard operational cadence demands 500 sheets a month, the ink-jet system will outcost the laser setup in less than 6 months of continuous deployment.
+                    </p>
+
+                    <div class="warning-box">
+                        <strong><i class="fas fa-exclamation-triangle"></i> The Cheap Trap Matrix:</strong> Sinking capital into low-tier manufacturing nodes frequently triggers the "Vimes Boots Theory of Socioeconomic Unfairness." An inferior item that costs $20 but requires replacement every single year will inevitably drain more absolute wealth than a premium engineering execution that costs $80 but operates flawlessly for a solid decade.
+                    </div>
+                </section>
+
+                <!-- Section 3: Deep Technical Specification Literacy -->
+                <section class="mega-section" id="specifications">
+                    <span class="section-badge">Module 03</span>
+                    <h2 class="section-title"><i class="fas fa-microchip"></i> 3. Deconstructing Technical Specifications</h2>
+                    
+                    <p class="content-block">
+                        To navigate technical markets effectively, one must learn to ignore marketing nomenclature and look directly at raw system physics. Manufacturers frequently manufacture meaningless proprietary naming standards to obfuscate standardized engineering specifications. Your objective is always to parse the data down to universally accepted baseline units of measure.
+                    </p>
+                    
+                    <h3 class="subsection-title">Computing Ecosystems & Micro-Architecture</h3>
+                    <p class="content-block">
+                        When looking at silicon processing layers, look past raw clock frequencies listed in Gigahertz ($GHz$). Modern computational output is a multifaceted dance between Instruction Per Clock ($IPC$) steps, micro-architectural node scaling (measured in nanometers), thermal dissipation headroom, and cache memory hierarchies. A system boasting a high nominal clock rate will rapidly throttle its performance profile down to a fraction of its advertised capability if its thermal dissipation structure fails to clear heat away from the core die efficiently.
+                    </p>
+
+                    <div class="spec-matrix">
+                        <div class="matrix-item">
+                            <strong>Volatile Memory (RAM)</strong>
+                            <p>Look for multi-channel arrays running at high transfer rates with low latency metrics over simple density specs.</p>
+                        </div>
+                        <div class="matrix-item">
+                            <strong>Solid-State Storage</strong>
+                            <p>Prioritize high random read/write IOPS metrics and high Terabytes Written (TBW) endurance ratings.</p>
+                        </div>
+                        <div class="matrix-item">
+                            <strong>Power Subsystems</strong>
+                            <p>Seek out continuous wattage ratings verified by independent certifications rather than peak theoretical numbers.</p>
+                        </div>
+                        <div class="matrix-item">
+                            <strong>Display Engineering</strong>
+                            <p>Evaluate delta-E color accuracy metrics and local dimming zone arrays over simple peak nit claims.</p>
+                        </div>
+                    </div>
+
+                    <h3 class="subsection-title">Material Sciences and Physical Structural Integrities</h3>
+                    <p class="content-block">
+                        For physical items such as furniture, luggage, and structural tools, look past aesthetic descriptions and focus on structural metallurgy and textile composition metrics. Synthetic fabrics should be assessed by their exact denier rating—a measure of linear mass density that maps directly to real-world tear strength. Wood hardware should be filtered to distinguish between solid timber variants, multi-layered optical grade plywoods, and low-density particle boards bound by volatile adhesives that inevitably disintegrate under cyclic shear loads.
+                    </p>
+
+                    <ul class="checklist" id="specChecklist">
+                        <li>Cross-verify component listings against independent open-source hardware databases.</li>
+                        <li>Isolate and review industrial material data safety sheets when examining chemical finishes or polymer composites.</li>
+                        <li>Identify standard interface profiles (like USB4, PCIe Gen 5, or direct standardized mechanical bolts) to ensure long-term modular maintenance capability.</li>
+                        <li>Verify exact operating temperature thresholds and ingress protection (IP) ratings for external deployments.</li>
                     </ul>
-                </div>
+                </section>
+
+                <!-- Section 4: Review Desynthesization Methods -->
+                <section class="mega-section" id="reviews">
+                    <span class="section-badge">Module 04</span>
+                    <h2 class="section-title"><i class="fas fa-shield-virus"></i> 4. Algorithmic Review Desensitization and Analysis</h2>
+                    
+                    <p class="content-block">
+                        The modern review ecosystem is heavily contaminated by systemic manipulation tactics, including coordinate review-bombing campaigns, AI-generated synthetic recommendations, and financial incentive networks. Relying blindly on aggregate star ratings on major retail platforms is a fast track to consumer regret. You must approach user feedback with a structured analytical filter.
+                    </p>
+                    
+                    <p class="content-block">
+                        The first phase of review analysis requires the complete disregard of all 5-star ratings and 1-star ratings. 5-star write-ups are frequently written during the brief "honeymoon phase" of product ownership or are bought outright through hidden refund programs. Conversely, 1-star ratings are often the result of shipping delays or user errors that have nothing to do with the design of the product itself. The real value is almost always found in the 2-star, 3-star, and 4-star tiers.
+                    </p>
+
+                    <div class="framework-box">
+                        <h3>The Three-Tier Review Extraction Algorithm</h3>
+                        <p class="content-block">
+                            When auditing low-to-mid tier critical feedback, look for pattern consistency across independent platforms. If five distinct buyers complain that a specific structural pin sheared off within three months of standard use, you have uncovered a documented engineering vulnerability. Pay close attention to what reviewers say about long-term durability changes after 180+ days of continuous real-world use.
+                        </p>
+                    </div>
+
+                    <p class="content-block">
+                        Be on the lookout for advanced linguistic footprints of synthetic reviews. Artificial, keyword-stuffed feedback often repeats the product's full marketing name unnecessarily, reads like an ad script, and lacks realistic casual phrasing. Real reviews focus on highly specific, practical issues—such as cord management annoyances, poor interface choices, or sub-optimal weight distribution during prolonged operation.
+                    </p>
+                </section>
+
+                <!-- Section 5: The Post-Purchase Protocol -->
+                <section class="mega-section" id="acquisition">
+                    <span class="section-badge">Module 05</span>
+                    <h2 class="section-title"><i class="fas fa-file-contract"></i> 5. The Procurement and Operational Protocol</h2>
+                    
+                    <p class="content-block">
+                        Once your analysis isolates the optimal asset target, the final phase involves securing the transaction under the safest legal and financial terms possible. This requires selecting procurement channels that give you maximum protection if the hardware fails to perform as promised.
+                    </p>
+
+                    <p class="content-block">
+                        Always read through return policies with an eye for hidden loopholes. A "30-day return window" is practically useless if it only applies to unopened boxes or charges a 20% restocking fee just to inspect a defective unit. Prioritize vendors that offer clear, unconditional return terms with no financial penalties. Additionally, leverage your payment methods wisely; using credit cards that include built-in extended warranty coverages or purchase protection plans gives you an extra layer of defense that manufacturers can't easily bypass.
+                    </p>
+
+                    <div class="tip-box">
+                        <strong><i class="fas fa-toolbox"></i> Post-Unboxing Diagnostic Drill:</strong> The moment an asset enters your space, run it through a rigorous performance stress test. Do not wait for a critical real-world project to discover a factory defect. Push the hardware to its safe operating limits right away while you are still inside the vendor's immediate over-the-counter return window.
+                    </div>
+
+                    <p class="content-block">
+                        Finally, create a dedicated digital archive for every major asset purchase. Store crisp PDF copies of your purchase receipts, official warranty agreements, and initial diagnostic reports in a structured folder system. Having these documents organized and ready to go ensures that if you ever need to file a warranty claim or coordinate a factory repair, you can move forward immediately without wasting time searching for proof of purchase.
+                    </p>
+                </section>
+
+            </main>
+
+            <!-- Sticky Analytical Control Panel Sidebar -->
+            <aside class="sidebar">
                 
-                <div style="background: #f0fff4; padding: 20px; border-radius: 10px; margin: 20px 0;">
-                    <h4><i class="fas fa-thumbs-up"></i> Ishontirish belgilari</h4>
-                    <ul style="list-style: none; padding-left: 0;">
-                        <li style="margin-bottom: 8px;">• Keng kafolat</li>
-                        <li style="margin-bottom: 8px;">• Ko'p ijobiy sharhlar</li>
-                        <li style="margin-bottom: 8px;">• Ishonchli brend</li>
-                        <li style="margin-bottom: 8px;">• Yaxshi texnik yordam</li>
-                    </ul>
+                <div class="sidebar-widget">
+                    <h3><i class="fas fa-sliders-h"></i> Core Framework Elements</h3>
+                    
+                    <div class="sidebar-card" style="background: #f0f7ff; border-left: 4px solid var(--secondary);">
+                        <h4 style="color: var(--primary); margin-bottom: 5px;"><i class="fas fa-hourglass-start"></i> The 72-Hour Delay Rule</h4>
+                        <p>For any purchase above $200, enforce a mandatory 72-hour delay after your final selection before completing the checkout. This clears out lingering impulse dopamine spikes and resets your analytical baseline.</p>
+                    </div>
+                    
+                    <div class="sidebar-card" style="background: #fff0f0; border-left: 4px solid var(--accent);">
+                        <h4 style="color: #78281f; margin-bottom: 5px;"><i class="fas fa-ban"></i> Marketing Terms to Ignore</h4>
+                        <p>Immediately look past subjective sales buzzwords like <em>"Military-Grade," "Aeronautical-Polymer," "Eco-Friendly Architecture,"</em> and <em>"Next-Generation AI-Driven Optimization."</em> These terms have no standardized legal definition.</p>
+                    </div>
+                    
+                    <div class="sidebar-card" style="background: #f0fff4; border-left: 4px solid var(--success);">
+                        <h4 style="color: #1e8449; margin-bottom: 5px;"><i class="fas fa-heartbeat"></i> Ecosystem Health Indicators</h4>
+                        <p>Prioritize product ecosystems that feature open access to service manuals, standardized screw formats, independent third-party parts replacement support, and active community-driven repair forums.</p>
+                    </div>
                 </div>
 
-                <!-- Sidebar Ads -->
-                <div class="ad-unit" style="margin: 30px 0; padding: 20px;">
-                    <h4>Reklama</h4>
-                    <p>300x250 banner</p>
-                    <p>Tanlashga yordam beradigan vositalar</p>
+                <div class="sidebar-widget">
+                    <h3><i class="fas fa-percentage"></i> Depreciative Trajectories</h3>
+                    <p style="font-size: 0.9rem; color: #64748b; margin-bottom: 15px;">Average asset value retention metrics evaluated over a standard 24-month high-use deployment lifecycle:</p>
+                    <div style="background: #f8fafc; padding: 15px; border-radius: 8px; font-size: 0.9rem;">
+                        <div style="margin-bottom: 8px; display: flex; justify-content: space-between;">
+                            <span>Flagship Computing</span><strong>~55% Retained</strong>
+                        </div>
+                        <div style="margin-bottom: 8px; display: flex; justify-content: space-between;">
+                            <span>Premium Power Tools</span><strong>~75% Retained</strong>
+                        </div>
+                        <div style="margin-bottom: 8px; display: flex; justify-content: space-between;">
+                            <span>Consumer Appliances</span><strong>~40% Retained</strong>
+                        </div>
+                        <div style="display: flex; justify-content: space-between;">
+                            <span>Budget Smart Device Tier</span><strong>~15% Retained</strong>
+                        </div>
+                    </div>
                 </div>
-            </div>
+
+            </aside>
         </div>
 
-        <!-- Category Specific Guides -->
-        <h2 style="text-align: center; margin: 50px 0 30px; color: var(--primary);">
-            <i class="fas fa-th-large"></i> Kategoriyalar Bo'yicha Maslahatlar
+        <!-- Specialized Deep-Dive Domain Matrices -->
+        <h2 style="text-align: center; margin: 60px 0 20px; color: var(--primary); font-size: 2.4rem; font-weight: 800;">
+            <i class="fas fa-cubes"></i> Industry-Specific Selection Vectors
         </h2>
+        <p style="text-align: center; max-width: 750px; margin: 0 auto 50px; color: #64748b; font-size: 1.1rem;">
+            Apply our core analysis criteria directly to your target product categories using these foundational spec strategies.
+        </p>
 
-        <div class="category-cards">
-            <a href="smartphone-comparisons.html" class="category-card">
-                <i class="fas fa-mobile-alt"></i>
-                <h4>Smartfon Tanlash</h4>
-                <p>Protsessor, kamera, batareya - qaysi parametrlar muhim?</p>
-            </a>
+        <div class="category-grid">
+            <div class="category-card">
+                <i class="fas fa-microchip"></i>
+                <h4>Mobile & Compute Frameworks</h4>
+                <p>Prioritize thermal performance metrics, storage write endurance (TBW), RAM speed configurations, and guaranteed security update lifespans over artificial processing benchmarks.</p>
+            </div>
 
-            <a href="laptop-comparisons.html" class="category-card">
+            <div class="category-card">
                 <i class="fas fa-laptop"></i>
-                <h4>Noutbuk Tanlash</h4>
-                <p>Ish yoki o'yin uchun? Dizayn yoki quvvat?</p>
-            </a>
+                <h4>Enterprise Workspace Tooling</h4>
+                <p>Evaluate display panel color spaces (sRGB/DCI-P3), modular component access, mechanical chassis rigidity metrics, and power delivery protocol standards.</p>
+            </div>
 
-            <a href="automotive-comparisons.html" class="category-card">
+            <div class="category-card">
                 <i class="fas fa-car"></i>
-                <h4>Avtomobil Tanlash</h4>
-                <p>Yangi yoki ishlatilgan? Benzin yoki elektr?</p>
-            </a>
+                <h4>Automotive Infrastructure</h4>
+                <p>Analyze safety crash test data, real-world engine thermal efficiency, transmission reliability statistics, and part availability dynamics across local service networks.</p>
+            </div>
 
-            <a href="appliances-comparisons.html" class="category-card">
+            <div class="category-card">
                 <i class="fas fa-blender"></i>
-                <h4>Maishiy Texnika</h4>
-                <p>Energiya tejamkorligi va ishonchlilikni qanday tekshirish?</p>
-            </a>
+                <h4>High-Efficiency Mechanicals</h4>
+                <p>Focus on continuous-duty motor ratings, internal metal gear engineering, real-world energy efficiency certifications, and decibel sound output profiles under peak operational loads.</p>
+            </div>
         </div>
 
-        <!-- Bottom Ads -->
-        <div class="ad-unit">
-            <h3>Mahsulot Taqqoslash Vositalari</h3>
-            <p>Bu yerda turli mahsulotlarni solishtirishga yordam beradigan vositalar reklamasi</p>
-            <p>728x90 yoki 300x250 banner</p>
-        </div>
     </div>
 
-    <!-- Footer -->
+    <!-- Complete Structural Footer System -->
     <footer>
         <div class="container">
             <div class="footer-container">
                 <div class="footer-column">
-                    <h3>Haqiqiy Testlar</h3>
-                    <p>Biz haqiqiy odamlardan haqiqiy maslahatlar beramiz. Har bir mahsulotni o'zimiz sinab ko'ramiz.</p>
-                  
+                    <h3>SmartChoice Labs</h3>
+                    <p>Providing independent consumer analysis frameworks. Our goal is to empower buyers with pure, unadorned technical realities, free from corporate marketing noise or sponsored bias.</p>
                 </div>
                 
                 <div class="footer-column">
-                    <h3>Tez Havolalar</h3>
+                    <h3>Deep-Dive Navigation</h3>
                     <ul>
-                        <li><a href="index.html"><i class="fas fa-chevron-right"></i> Bosh Sahifa</a></li>
-                        <li><a href="comparisons.html"><i class="fas fa-chevron-right"></i> Barcha Solishtirishlar</a></li>
-                        <li><a href="how-to-choose.html"><i class="fas fa-chevron-right"></i> Qanday Tanlash Kerak?</a></li>
-                        <li><a href="independence.html"><i class="fas fa-chevron-right"></i> Mustaqillik</a></li>
+                        <li><a href="index.html"><i class="fas fa-angle-right"></i> Knowledge Repository Home</a></li>
+                        <li><a href="comparisons.html"><i class="fas fa-angle-right"></i> Comprehensive Matrix Index</a></li>
+                        <li><a href="how-to-choose.html"><i class="fas fa-angle-right"></i> The Selection Methodology Blueprint</a></li>
+                        <li><a href="independence.html"><i class="fas fa-angle-right"></i> Editorial Neutrality Commitments</a></li>
                     </ul>
                 </div>
                 
                 <div class="footer-column">
-                    <h3>Yordam Markazi</h3>
+                    <h3>Operational Safeguards</h3>
                     <ul>
-                        <li><a href="faq.html"><i class="fas fa-question-circle"></i> Tez-tez So'raladigan Savollar</a></li>
-                        <li><a href="contact.html"><i class="fas fa-envelope"></i> Biz bilan Bog'lanish</a></li>
-                        <li><a href="about.html"><i class="fas fa-info-circle"></i> Biz Haqimizda</a></li>
-                        <li><a href="privacy-policy.html"><i class="fas fa-shield-alt"></i> Maxfiylik Siyosati</a></li>
+                        <li><a href="faq.html"><i class="fas fa-angle-right"></i> Empirical Inquiry Directory</a></li>
+                        <li><a href="contact.html"><i class="fas fa-angle-right"></i> Secure Technical Intake Channels</a></li>
+                        <li><a href="about.html"><i class="fas fa-angle-right"></i> Research Methodology & History</a></li>
+                        <li><a href="privacy-policy.html"><i class="fas fa-angle-right"></i> User Privacy Protocols</a></li>
                     </ul>
                 </div>
                 
                 <div class="footer-column">
-                    <h3>Obuna Bo'ling</h3>
-                    <p>Yangi qo'llanmalar va maslahatlar haqida xabardor bo'ling.</p>
+                    <h3>Intellectual Dispatch</h3>
+                    <p>Get notified when we publish new deep-dive breakdowns and teardowns of hardware ecosystems.</p>
                     <form id="subscribeForm" style="margin-top: 15px;">
-                        <input type="email" placeholder="Email manzilingiz" required 
-                               style="padding: 10px; width: 100%; border-radius: 5px; border: none; margin-bottom: 10px;">
+                        <input type="email" placeholder="Enter secure email terminal..." required 
+                               style="padding: 12px; width: 100%; border-radius: 6px; border: 1px solid #2d3748; background: #0f172a; color: white; margin-bottom: 12px; font-size: 0.9rem;">
                         <button type="submit" 
-                                style="background: var(--secondary); color: white; border: none; padding: 10px 15px; border-radius: 5px; width: 100%; cursor: pointer;">
-                            <i class="fas fa-paper-plane"></i> Obuna bo'lish
+                                style="background: var(--secondary); color: white; border: none; padding: 12px 20px; border-radius: 6px; width: 100%; cursor: pointer; font-weight: 600; font-size: 0.95rem; transition: background 0.2s;">
+                            <i class="fas fa-paper-plane"></i> Initialize Dispatch Subscription
                         </button>
                     </form>
                 </div>
             </div>
             
             <div class="copyright">
-                <p>&copy; 2025-2026 Haqiqiy Testlar. Barcha huquqlar himoyalangan.</p>
-                <p style="margin-top: 5px; font-size: 0.8rem;">Haqiqiy odamlar - Haqiqiy testlar - Haqiqiy maslahatlar</p>
+                <p>&copy; 2026 SmartChoice Frameworks. All research and documentation open-sourced under global educational distribution rights.</p>
+                <p style="margin-top: 8px; font-size: 0.8rem; color: #475569;">Empirical Veracity • Deep-Dive Technical Auditing • Complete Financial Autonomy</p>
             </div>
         </div>
     </footer>
 
     <script>
-        // Mobile Menu Toggle
+        // Responsive Menu Framework
         document.getElementById('mobileMenuBtn').addEventListener('click', function() {
             document.getElementById('mainNav').classList.toggle('active');
         });
 
-        // Smooth Scroll
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                if(this.getAttribute('href') === '#') return;
-                
-                e.preventDefault();
-                
-                const targetId = this.getAttribute('href');
-                if(targetId.startsWith('#')) {
-                    const targetElement = document.querySelector(targetId);
-                    
-                    if(targetElement) {
-                        window.scrollTo({
-                            top: targetElement.offsetTop - 80,
-                            behavior: 'smooth'
-                        });
-                        
-                        // Close mobile menu if open
-                        document.getElementById('mainNav').classList.remove('active');
-                    }
-                }
-            });
-        });
-
-        // Subscription Form
-        document.getElementById('subscribeForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            const email = this.querySelector('input[type="email"]').value;
-            
-            if(email) {
-                // Simulate API call
-                setTimeout(() => {
-                    alert('Tabriklaymiz! Siz muvaffaqiyatli obuna bo'ldingiz. Tez orada birinchi maslahatimizni olasiz.');
-                    this.reset();
-                }, 500);
-            }
-        });
-
-        // Interactive Checklist
-        document.querySelectorAll('.checklist li').forEach(item => {
-            item.addEventListener('click', function() {
+        // Safe Interactivity Module for Checklists
+        document.querySelectorAll('.checklist li').forEach(element => {
+            element.addEventListener('click', function() {
                 this.classList.toggle('completed');
             });
         });
 
-        // Add completed style
-        const style = document.createElement('style');
-        style.textContent = `
-            .checklist li.completed {
-                opacity: 0.7;
-                text-decoration: line-through;
+        // Handle Dispatch Submission Safely
+        document.getElementById('subscribeForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const inputField = this.querySelector('input[type="email"]');
+            if(inputField.value) {
+                setTimeout(() => {
+                    alert('Registration complete. Your analytical update terminal has been securely added to our database.');
+                    inputField.value = '';
+                }, 400);
             }
+        });
+
+        // Inject Dynamic Checklist Styles Into Document Header Safeguard
+        const styleSheet = document.createElement('style');
+        styleSheet.textContent = `
             .checklist li.completed:before {
-                background: var(--success);
+                background: #94a3b8 !important;
+                content: "✓";
             }
         `;
-        document.head.appendChild(style);
+        document.head.appendChild(styleSheet);
     </script>
 </body>
 </html>
