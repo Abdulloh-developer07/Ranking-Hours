@@ -135,6 +135,9 @@
             padding: 30px;
             text-align: center;
             color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
         
         .gree-header {
@@ -145,10 +148,34 @@
             background: linear-gradient(135deg, #0066cc, #1e88e5);
         }
         
-        .product-logo {
-            font-size: 2.5rem;
+        /* New Product Image Container Styles */
+        .product-img-container {
+            width: 140px;
+            height: 140px;
+            background: white;
+            border-radius: 50%;
             margin-bottom: 15px;
-            transition: transform 0.8s ease;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+            border: 3px solid rgba(255,255,255,0.6);
+            transition: transform 0.5s ease;
+        }
+        
+        .product-img-container img {
+            width: 85%;
+            height: auto;
+            object-fit: contain;
+            display: block;
+        }
+
+        .product-img-fallback {
+            font-size: 2.8rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
         
         .product-name {
@@ -162,7 +189,7 @@
             opacity: 0.9;
         }
 
-        /* Image Placeholder styling */
+        /* Image Placeholder styling inside text */
         .article-image-box {
             margin: 30px 0;
             background: #f1f3f5;
@@ -179,7 +206,6 @@
             display: block;
         }
 
-        /* Fallback placeholder style if image is missing */
         .image-fallback {
             height: 300px;
             display: flex;
@@ -627,15 +653,18 @@
             <h1 class="main-title">Gree vs Samsung Air Conditioners</h1>
             <p class="subtitle">12000 BTU Inverter Systems - The Ultimate Technical Comparison and Buyer's Guide</p>
         </div>
-        
-      
+     
         
         <!-- Products Grid -->
         <div class="products-grid">
             <!-- Gree -->
             <div class="product-card gree-card">
                 <div class="product-header gree-header">
-                    <div class="product-logo">🌿</div>
+                    <!-- CHANGED: Image replaces emoji with dynamic fallback handler -->
+                    <div class="product-img-container">
+                        <img src="gree air conditior.webp" alt="Gree 12000 BTU Inverter Unit" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="product-img-fallback" style="display:none; color: #27ae60;">🌿</div>
+                    </div>
                     <h2 class="product-name">GREE</h2>
                     <div class="product-type">Inverter Air Conditioner 12000 BTU</div>
                 </div>
@@ -688,11 +717,14 @@
                     <p style="color: #666;">Installation: $50 Additional</p>
                 </div>
             </div>
-            
             <!-- Samsung -->
             <div class="product-card samsung-card">
                 <div class="product-header samsung-header">
-                    <div class="product-logo">🌟</div>
+                    <!-- CHANGED: Image replaces emoji with dynamic fallback handler -->
+                    <div class="product-img-container">
+                        <img src="samsung air conditir.jpg" alt="Samsung 12000 BTU Inverter Unit" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="product-img-fallback" style="display:none; color: #0066cc;">🌟</div>
+                    </div>
                     <h2 class="product-name">SAMSUNG</h2>
                     <div class="product-type">Inverter Air Conditioner 12000 BTU</div>
                 </div>
@@ -754,7 +786,6 @@
             
             <!-- IMAGE PLACEHOLDER 1 -->
             <figure class="article-image-box">
-                <!-- Replace 'src' with your real image URL later -->
                 <img src="hvac-global-competition.jpg" alt="Gree vs Samsung Showroom and Design Lineup" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
                 <div class="image-fallback" style="display:none;">
                     <span>🖼️</span>
@@ -860,13 +891,7 @@
             </p>
         </div>
         
-        <!-- Adsense Middle -->
-        <div class="adsense-middle">
-            <div class="ad-label">Advertisement</div>
-            <div class="ad-placeholder">
-                Google AdSense Banner — Discover the latest smart home deals and HVAC installation services in your area.
-            </div>
-        </div>
+      
         
         <!-- Features Section -->
         <div class="features-section">
@@ -1058,15 +1083,16 @@
             });
         });
         
-        // Product logo rotation animation
-        document.querySelectorAll('.product-logo').forEach(logo => {
-            logo.addEventListener('mouseenter', function() {
-                this.style.transform = 'rotate(360deg)';
-                this.style.transition = 'transform 1s ease';
+        // Product image hover zoom effect
+        document.querySelectorAll('.product-img-container').forEach(container => {
+            container.addEventListener('mouseenter', function() {
+                const img = this.querySelector('img');
+                if(img) img.style.transform = 'scale(1.1)';
             });
             
-            logo.addEventListener('mouseleave', function() {
-                this.style.transform = 'rotate(0deg)';
+            container.addEventListener('mouseleave', function() {
+                const img = this.querySelector('img');
+                if(img) img.style.transform = 'scale(1)';
             });
         });
     </script>
