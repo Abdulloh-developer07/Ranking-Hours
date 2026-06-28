@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="uz">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mexanik Klaviaturalar: Cherry MX Switch | Gaming uchun eng yaxshi</title>
-    <meta name="description" content="Cherry MX Red vs Blue vs Brown switch taqqoslash. 4.0/5 reyting. FPS, yozish, universal gaming uchun eng yaxshi switch.">
-    <meta name="keywords" content="mexanik klaviatura, cherry mx, red switch, blue switch, brown switch, gaming klaviatura, mechanical keyboard">
+    <title>Mechanical Keyboards: Cherry MX Switches | Ultimate Gaming Comparison</title>
+    <meta name="description" content="Cherry MX Red vs Blue vs Brown switches compared. 4.0/5 rating. Find the best switch for FPS gaming, fast typing, and universal daily use.">
+    <meta name="keywords" content="mechanical keyboard, cherry mx, red switch, blue switch, brown switch, gaming keyboard, typing speed">
     <meta name="author" content="Keyboard Gaming Expert">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -178,35 +178,24 @@
             border-color: var(--brown);
         }
         
-        .switch-icon {
-            font-size: 5rem;
-            margin-bottom: 25px;
-            display: inline-block;
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
+        /* Image Containers */
+        .switch-img-container {
+            width: 160px;
+            height: 160px;
+            margin: 0 auto 25px;
+            border-radius: 20px;
+            overflow: hidden;
+            background: rgba(255, 255, 255, 0.05);
+            border: 2px solid rgba(255, 255, 255, 0.1);
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 0 auto 30px;
         }
-        
-        .red-card .switch-icon {
-            background: rgba(229, 80, 57, 0.2);
-            color: var(--red);
-            border: 4px solid var(--red);
-        }
-        
-        .blue-card .switch-icon {
-            background: rgba(74, 105, 189, 0.2);
-            color: var(--blue);
-            border: 4px solid var(--blue);
-        }
-        
-        .brown-card .switch-icon {
-            background: rgba(183, 21, 64, 0.2);
-            color: var(--brown);
-            border: 4px solid var(--brown);
+
+        .switch-img-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
         
         .switch-name {
@@ -270,6 +259,8 @@
             font-size: 1.5rem;
             font-weight: 800;
             margin-top: 25px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
         }
         
         .red-card .best-for {
@@ -360,11 +351,21 @@
             text-align: center;
         }
         
-        .keyboard-visual {
-            font-size: 15rem;
-            color: var(--red);
-            margin-bottom: 30px;
-            animation: pulse 2s ease-in-out infinite;
+        .section-img-display {
+            width: 100%;
+            max-width: 450px;
+            height: 280px;
+            margin: 0 auto 30px;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+            border: 2px solid rgba(255,255,255,0.1);
+        }
+
+        .section-img-display img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
         
         .fps-games {
@@ -478,6 +479,8 @@
             font-weight: 900;
             font-size: 1.3rem;
             margin-top: 20px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
         }
         
         /* Universal Section */
@@ -552,13 +555,6 @@
         
         .universal-visual {
             text-align: center;
-        }
-        
-        .switch-visual {
-            font-size: 15rem;
-            color: var(--brown);
-            margin-bottom: 30px;
-            animation: float 3s ease-in-out infinite;
         }
         
         /* Comparison Table */
@@ -811,7 +807,7 @@
             margin-top: 100px;
             border-radius: 40px 40px 0 0;
         }
-        
+
         .footer-content {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -950,11 +946,6 @@
             .row-value {
                 text-align: left;
             }
-            
-            .keyboard-visual,
-            .switch-visual {
-                font-size: 10rem;
-            }
         }
         
         @media (max-width: 480px) {
@@ -970,23 +961,22 @@
                 padding: 35px 25px;
             }
             
-            .switch-icon {
-                width: 100px;
-                height: 100px;
-                font-size: 4rem;
+            .switch-img-container {
+                width: 120px;
+                height: 120px;
             }
         }
         
         /* Animations */
         @keyframes float {
             0% { transform: translateY(0px); }
-            50% { transform: translateY(-20px); }
+            50% { transform: translateY(-15px); }
             100% { transform: translateY(0px); }
         }
         
         @keyframes pulse {
             0% { transform: scale(1); opacity: 1; }
-            50% { transform: scale(1.1); opacity: 0.8; }
+            50% { transform: scale(1.05); opacity: 0.9; }
             100% { transform: scale(1); opacity: 1; }
         }
     </style>
@@ -997,14 +987,13 @@
         <header class="main-header">
             <div class="header-content">
                 <div class="rating-badge">
-                    <i class="fas fa-star"></i>
-                    4.0/5 Klaviatura Reytingi
+                    <i class="fas fa-star"></i> &nbsp; 4.0/5 Keyboard Rating
                 </div>
-                <h1>Mexanik Klaviaturalar</h1>
+                <h1>Mechanical Keyboards</h1>
                 <p class="subtitle">
-                    Cherry MX Red vs Blue vs Brown - qaysi switch gaming uchun?
-                    <span class="highlight">Red - FPS</span>, <span class="highlight">Brown - universal</span>.
-                    35 soatlik typing test natijalari.
+                    Cherry MX Red vs Blue vs Brown - Which Switch is Best for Gaming?
+                    <span class="highlight">Red for FPS</span>, <span class="highlight">Brown for Universal Balance</span>.
+                    Results from 35 Hours of Typing Tests.
                 </p>
             </div>
         </header>
@@ -1013,11 +1002,11 @@
         <div class="switch-comparison">
             <!-- Red Switch -->
             <div class="switch-card red-card">
-                <div class="switch-icon">
-                    <i class="fas fa-fire"></i>
+                <div class="switch-img-container">
+                    <img src="red-switch.jpg" alt="Cherry MX Red Switch">
                 </div>
                 <h2 class="switch-name">Cherry MX Red</h2>
-                <div class="switch-type">Linear Switch • 45g • Sessiz</div>
+                <div class="switch-type">Linear Switch • 45g • Quiet</div>
                 
                 <div class="switch-specs">
                     <div class="spec-item">
@@ -1034,26 +1023,24 @@
                     </div>
                     <div class="spec-item">
                         <span class="spec-label">Tactile Bump:</span>
-                        <span class="spec-value">Yo'q</span>
+                        <span class="spec-value">None</span>
                     </div>
                     <div class="spec-item">
                         <span class="spec-label">Clicky Sound:</span>
-                        <span class="spec-value">Yo'q</span>
+                        <span class="spec-value">None</span>
                     </div>
                 </div>
                 
-                <div class="best-for">
-                    FPS Gaming uchun
-                </div>
+                <div class="best-for">Best for FPS Gaming</div>
             </div>
 
             <!-- Blue Switch -->
             <div class="switch-card blue-card">
-                <div class="switch-icon">
-                    <i class="fas fa-volume-up"></i>
+                <div class="switch-img-container">
+                    <img src="blue-switch.jpg" alt="Cherry MX Blue Switch">
                 </div>
                 <h2 class="switch-name">Cherry MX Blue</h2>
-                <div class="switch-type">Clicky Switch • 50g • Ovozli</div>
+                <div class="switch-type">Clicky Switch • 50g • Loud</div>
                 
                 <div class="switch-specs">
                     <div class="spec-item">
@@ -1070,26 +1057,24 @@
                     </div>
                     <div class="spec-item">
                         <span class="spec-label">Tactile Bump:</span>
-                        <span class="spec-value">Bor</span>
+                        <span class="spec-value">Yes</span>
                     </div>
                     <div class="spec-item">
                         <span class="spec-label">Clicky Sound:</span>
-                        <span class="spec-value">Kuchli</span>
+                        <span class="spec-value">Strong</span>
                     </div>
                 </div>
                 
-                <div class="best-for">
-                    Yozish va Programlash
-                </div>
+                <div class="best-for">Best for Typing & Coding</div>
             </div>
 
             <!-- Brown Switch -->
             <div class="switch-card brown-card">
-                <div class="switch-icon">
-                    <i class="fas fa-balance-scale"></i>
+                <div class="switch-img-container">
+                    <img src="brown-switch.jpg" alt="Cherry MX Brown Switch">
                 </div>
                 <h2 class="switch-name">Cherry MX Brown</h2>
-                <div class="switch-type">Tactile Switch • 45g • O'rtacha</div>
+                <div class="switch-type">Tactile Switch • 45g • Medium</div>
                 
                 <div class="switch-specs">
                     <div class="spec-item">
@@ -1106,23 +1091,21 @@
                     </div>
                     <div class="spec-item">
                         <span class="spec-label">Tactile Bump:</span>
-                        <span class="spec-value">Yumshoq</span>
+                        <span class="spec-value">Gentle</span>
                     </div>
                     <div class="spec-item">
                         <span class="spec-label">Clicky Sound:</span>
-                        <span class="spec-value">Past</span>
+                        <span class="spec-value">Low</span>
                     </div>
                 </div>
                 
-                <div class="best-for">
-                    Universal Gaming
-                </div>
+                <div class="best-for">Universal Gaming</div>
             </div>
         </div>
 
         <!-- Ad Section -->
         <div class="ad-section">
-            <div class="ad-label">Klaviatura Aksessuarlar</div>
+            <div class="ad-label">Keyboard Accessories</div>
             <div class="ad-placeholder">
                 AdSense Horizontal Banner (728x90) - Mechanical Keyboards
             </div>
@@ -1131,80 +1114,63 @@
         <!-- FPS Section -->
         <section class="fps-section">
             <h2 class="fps-title">
-                <i class="fas fa-crosshairs"></i>
-                Cherry MX Red - FPS Gaming uchun ideal
+                <i class="fas fa-crosshairs"></i> Cherry MX Red - Ideal for FPS Gaming
             </h2>
             
             <div class="fps-content">
                 <div class="fps-features">
                     <div class="fps-feature-item">
-                        <div class="fps-feature-icon">
-                            <i class="fas fa-bolt"></i>
-                        </div>
+                        <div class="fps-feature-icon"><i class="fas fa-bolt"></i></div>
                         <div class="fps-feature-text">
                             <h4>Rapid Fire Gaming</h4>
-                            <p>Linear harakat - hech qanday tactile bump. O'yinlarda tez va oson multiple key presses.</p>
+                            <p>Linear movement with no tactile bump. Allows fast, effortless multiple key presses during competitive matches.</p>
                         </div>
                     </div>
                     
                     <div class="fps-feature-item">
-                        <div class="fps-feature-icon">
-                            <i class="fas fa-volume-mute"></i>
-                        </div>
+                        <div class="fps-feature-icon"><i class="fas fa-volume-mute"></i></div>
                         <div class="fps-feature-text">
-                            <h4>Sessiz Operation</h4>
-                            <p>Yo'q tactile bump va clicky sound. Uy atrofida yoki kechqurun gaming uchun ideal.</p>
+                            <h4>Quiet Operation</h4>
+                            <p>No tactile bump or loud click sound. Perfect for late-night gaming sessions without disturbing others.</p>
                         </div>
                     </div>
                     
                     <div class="fps-feature-item">
-                        <div class="fps-feature-icon">
-                            <i class="fas fa-running"></i>
-                        </div>
+                        <div class="fps-feature-icon"><i class="fas fa-running"></i></div>
                         <div class="fps-feature-text">
                             <h4>45g Light Actuation</h4>
-                            <p>Eng yengil switch. Uzoq gaming seanslari uchun kam charchash. Tez WASD harakatlari.</p>
+                            <p>The lightest switch option. Reduces hand fatigue during long grinds, allowing lightning-fast WASD movements.</p>
                         </div>
                     </div>
                     
                     <div class="fps-feature-item">
-                        <div class="fps-feature-icon">
-                            <i class="fas fa-gamepad"></i>
-                        </div>
+                        <div class="fps-feature-icon"><i class="fas fa-gamepad"></i></div>
                         <div class="fps-feature-text">
-                            <h4>Esport Approved</h4>
-                            <p>Ko'plab professional FPS o'yinchilar tomonidan ishlatiladi. CS:GO, Valorant, Call of Duty.</p>
+                            <h4>Esports Approved</h4>
+                            <p>Widely trusted and used by top professional FPS players in titles like CS:GO, Valorant, and Call of Duty.</p>
                         </div>
                     </div>
                 </div>
                 
                 <div class="fps-visual">
-                    <div class="keyboard-visual">
-                        <i class="fas fa-keyboard"></i>
+                    <div class="section-img-display">
+                        <img src="fps-gaming.jpg" alt="FPS Gaming Mechanical Keyboard">
                     </div>
                     <p style="color: var(--light-text); font-size: 1.3rem; max-width: 400px; margin: 0 auto;">
-                        FPS gaming uchun eng yaxshi switch. Rapid fire, quick strafing, fast reactions.
+                        The ultimate choice for high-stakes FPS gaming. Built for rapid fire, quick strafing, and ultra-fast reactions.
                     </p>
                     
                     <div class="fps-games">
                         <div class="game-item">
-                            <div class="game-icon">
-                                <i class="fas fa-crosshairs"></i>
-                            </div>
-                            <div class="game-name">CS:GO</div>
+                            <div class="game-icon"><i class="fas fa-crosshairs"></i></div>
+                            <div class="game-name">CS:GO / CS2</div>
                         </div>
-                        
                         <div class="game-item">
-                            <div class="game-icon">
-                                <i class="fas fa-mask"></i>
-                            </div>
+                            <div class="game-icon"><i class="fas fa-mask"></i></div>
                             <div class="game-name">Valorant</div>
                         </div>
-                        
                         <div class="game-item">
-                            <div class="game-icon">
-                                <i class="fas fa-fighter-jet"></i>
-                            </div>
+                            <div class="game-icon"><i class="fas fa-fighter-jet"></i></div>
                             <div class="game-name">CoD: Warzone</div>
                         </div>
                     </div>
@@ -1215,47 +1181,39 @@
         <!-- Typing Section -->
         <section class="typing-section">
             <h2 class="typing-title">
-                <i class="fas fa-keyboard"></i>
-                Cherry MX Blue - Yozish qiroli
+                <i class="fas fa-keyboard"></i> Cherry MX Blue - The King of Typing
             </h2>
             
             <p style="color: var(--light-text); font-size: 1.5rem; text-align: center; margin-bottom: 40px; max-width: 800px; margin-left: auto; margin-right: auto;">
-                Audible click + tactile bump. Perfect for typing, programming, office work.
+                Featuring an audible click and distinct tactile bump. Ideal for programmers, copywriters, and heavy office work.
             </p>
             
             <div class="typing-grid">
                 <div class="typing-card">
-                    <div class="typing-icon">
-                        <i class="fas fa-music"></i>
-                    </div>
+                    <div class="typing-icon"><i class="fas fa-music"></i></div>
                     <h4>Audible Feedback</h4>
-                    <p>Har bir bosishda audible click sound. Yozishda qoniqarli feedback.</p>
+                    <p>Crisp, signature click sound with every stroke. Provides unmatched acoustic satisfaction while working.</p>
                     <div class="clicky-badge">CLICKY SOUND</div>
                 </div>
                 
                 <div class="typing-card">
-                    <div class="typing-icon">
-                        <i class="fas fa-hand-point-up"></i>
-                    </div>
+                    <div class="typing-icon"><i class="fas fa-hand-point-up"></i></div>
                     <h4>Tactile Bump</h4>
-                    <p>Actuation nuqtasida aniq tactile bump. Hech qachon miss click bo'lmaydi.</p>
+                    <p>Distinct structural resistance right at the actuation point to confidently prevent missed keystrokes.</p>
                     <div class="clicky-badge">TACTILE</div>
                 </div>
                 
                 <div class="typing-card">
-                    <div class="typing-icon">
-                        <i class="fas fa-code"></i>
-                    </div>
+                    <div class="typing-icon"><i class="fas fa-code"></i></div>
                     <h4>Programming Perfect</h4>
-                    <p>Kod yozish, long documents, data entry uchun mukammal.</p>
+                    <p>Designed to optimize code architecture flows, drafting long technical manuals, or handling fast data entry formatting.</p>
                     <div class="clicky-badge">50g FORCE</div>
                 </div>
             </div>
             
             <div style="margin-top: 50px; padding: 35px; background: rgba(74, 105, 189, 0.1); border-radius: 20px; text-align: center;">
                 <h3 style="color: var(--blue); font-size: 2rem; margin-bottom: 20px;">
-                    <i class="fas fa-chart-bar"></i>
-                    Typing Speed Test
+                    <i class="fas fa-chart-bar"></i> Typing Speed Benchmarks
                 </h3>
                 <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; text-align: center;">
                     <div>
@@ -1277,92 +1235,75 @@
         <!-- Universal Section -->
         <section class="universal-section">
             <h2 class="universal-title">
-                <i class="fas fa-balance-scale"></i>
-                Cherry MX Brown - Universal Gaming
+                <i class="fas fa-balance-scale"></i> Cherry MX Brown - Universal Balanced Standard
             </h2>
             
             <div class="universal-content">
                 <div class="universal-visual">
-                    <div class="switch-visual">
-                        <i class="fas fa-sliders-h"></i>
+                    <div class="section-img-display">
+                        <img src="universal-keyboard.jpg" alt="Universal Mechanical Keyboard Setup">
                     </div>
                     <p style="color: var(--light-text); font-size: 1.3rem; max-width: 400px; margin: 0 auto;">
-                        Har qanday gaming va ish uchun ideal. Tactile bump lekin sessiz.
+                        The ultimate compromise for workflow and entertainment. Tactile feedback without the noise.
                     </p>
                     
                     <div class="universal-stats" style="margin-top: 40px;">
                         <div class="stat-card">
-                            <div class="stat-icon">
-                                <i class="fas fa-gamepad"></i>
-                            </div>
+                            <div class="stat-icon"><i class="fas fa-gamepad"></i></div>
                             <div class="stat-value">8.5/10</div>
-                            <div class="stat-label">Gaming</div>
+                            <div class="stat-label">Gaming Performance</div>
                         </div>
                         
                         <div class="stat-card">
-                            <div class="stat-icon">
-                                <i class="fas fa-keyboard"></i>
-                            </div>
+                            <div class="stat-icon"><i class="fas fa-keyboard"></i></div>
                             <div class="stat-value">9.0/10</div>
-                            <div class="stat-label">Typing</div>
+                            <div class="stat-label">Typing Comfort</div>
                         </div>
                         
                         <div class="stat-card">
-                            <div class="stat-icon">
-                                <i class="fas fa-users"></i>
-                            </div>
+                            <div class="stat-icon"><i class="fas fa-users"></i></div>
                             <div class="stat-value">9.5/10</div>
-                            <div class="stat-label">Office</div>
+                            <div class="stat-label">Office Integration</div>
                         </div>
                         
                         <div class="stat-card">
-                            <div class="stat-icon">
-                                <i class="fas fa-volume-down"></i>
-                            </div>
+                            <div class="stat-icon"><i class="fas fa-volume-down"></i></div>
                             <div class="stat-value">7.0/10</div>
-                            <div class="stat-label">Sound</div>
+                            <div class="stat-label">Acoustic Control</div>
                         </div>
                     </div>
                 </div>
                 
                 <div class="fps-features">
                     <div class="fps-feature-item">
-                        <div class="fps-feature-icon">
-                            <i class="fas fa-hands-helping"></i>
-                        </div>
+                        <div class="fps-feature-icon"><i class="fas fa-hands-helping"></i></div>
                         <div class="fps-feature-text">
                             <h4>Best of Both Worlds</h4>
-                            <p>Tactile bump + low noise. Gaming va yozish o'rtasidagi mukammal balans.</p>
+                            <p>Tactile feel paired with low operational noise. The ideal hybrid design for users transitioning between play and production.</p>
                         </div>
                     </div>
                     
                     <div class="fps-feature-item">
-                        <div class="fps-feature-icon">
-                            <i class="fas fa-layer-group"></i>
-                        </div>
+                        <div class="fps-feature-icon"><i class="fas fa-layer-group"></i></div>
                         <div class="fps-feature-text">
-                            <h4>Multiple Game Genres</h4>
-                            <p>FPS, MOBA, RPG, Strategy - har qanday janr uchun yaxshi ishlaydi.</p>
+                            <h4>Multi-Genre Gaming Flexibility</h4>
+                            <p>Equally reliable across FPS, MOBA, MMO, RPG, and RTS titles. Delivers consistent key registry for diverse playlists.</p>
                         </div>
                     </div>
                     
                     <div class="fps-feature-item">
-                        <div class="fps-feature-icon">
-                            <i class="fas fa-home"></i>
-                        </div>
+                        <div class="fas fa-home fps-feature-icon"></div>
                         <div class="fps-feature-text">
                             <h4>Home Office Friendly</h4>
-                            <p>O'rtacha ovozli. Oilada yoki ofisda foydalanish uchun qulay.</p>
+                            <p>Discreet audio footprint. Safe to use in open workspaces, shared bedrooms, or professional environments.</p>
                         </div>
                     </div>
                     
                     <div class="fps-feature-item">
-                        <div class="fps-feature-icon">
-                            <i class="fas fa-user-graduate"></i>
-                        </div>
+                        <div class="fps-feature-icon"><i class="fas fa-user-graduate"></i></div>
                         <div class="fps-feature-text">
-                            <h4>Beginner Friendly</h4>
-                            <p>Mexanik klaviaturaya yangi boshlovchilar uchun eng yaxshi tanlov.</p>
+                            <h4>Beginner Friendly Choice</h4>
+                            <p>Widely recommended as the best starter variant for individuals buying their first premium mechanical board.</p>
                         </div>
                     </div>
                 </div>
@@ -1372,13 +1313,12 @@
         <!-- Comparison Table -->
         <section class="comparison-section">
             <h2 class="comparison-title">
-                <i class="fas fa-balance-scale"></i>
-                Batafsil Taqqoslash Jadvali
+                <i class="fas fa-balance-scale"></i> In-Depth Technical Matrix
             </h2>
             
             <div class="comparison-table">
                 <div class="table-header">
-                    <div class="header-cell">Xususiyat</div>
+                    <div class="header-cell">Specification</div>
                     <div class="header-cell">MX Red</div>
                     <div class="header-cell">MX Blue</div>
                     <div class="header-cell">MX Brown</div>
@@ -1389,10 +1329,7 @@
                         <i class="fas fa-weight row-icon"></i>
                         <span>Actuation Force</span>
                     </div>
-                    <div class="row-value">
-                        45g
-                        <span class="winner red-winner">ENGIL</span>
-                    </div>
+                    <div class="row-value">45g <span class="winner red-winner">LIGHTEST</span></div>
                     <div class="row-value">50g</div>
                     <div class="row-value">45g</div>
                 </div>
@@ -1400,38 +1337,29 @@
                 <div class="table-row">
                     <div class="row-label">
                         <i class="fas fa-volume-up row-icon"></i>
-                        <span>Ovoz Darajasi</span>
+                        <span>Acoustic Output</span>
                     </div>
-                    <div class="row-value">
-                        Sessiz
-                        <span class="winner red-winner">QUIET</span>
-                    </div>
-                    <div class="row-value">Kuchli</div>
-                    <div class="row-value">O'rtacha</div>
+                    <div class="row-value">Quiet <span class="winner red-winner">BEST CONTROL</span></div>
+                    <div class="row-value">Loud / Clicky</div>
+                    <div class="row-value">Moderate / Subtle</div>
                 </div>
                 
                 <div class="table-row">
                     <div class="row-label">
                         <i class="fas fa-hand-paper row-icon"></i>
-                        <span>Tactile Bump</span>
+                        <span>Tactile Feedback</span>
                     </div>
-                    <div class="row-value">Yo'q</div>
-                    <div class="row-value">
-                        Kuchli
-                        <span class="winner blue-winner">TACTILE</span>
-                    </div>
-                    <div class="row-value">Yumshoq</div>
+                    <div class="row-value">None (Linear)</div>
+                    <div class="row-value">Crisp Click <span class="winner blue-winner">HIGHEST</span></div>
+                    <div class="row-value">Soft Bump</div>
                 </div>
                 
                 <div class="table-row">
                     <div class="row-label">
                         <i class="fas fa-gamepad row-icon"></i>
-                        <span>FPS Gaming</span>
+                        <span>FPS Optimization</span>
                     </div>
-                    <div class="row-value">
-                        9.5/10
-                        <span class="winner red-winner">YAXSHI</span>
-                    </div>
+                    <div class="row-value">9.5/10 <span class="winner red-winner">TOP TIER</span></div>
                     <div class="row-value">6.5/10</div>
                     <div class="row-value">8.0/10</div>
                 </div>
@@ -1439,34 +1367,28 @@
                 <div class="table-row">
                     <div class="row-label">
                         <i class="fas fa-keyboard row-icon"></i>
-                        <span>Yozish</span>
+                        <span>Typing Efficiency</span>
                     </div>
                     <div class="row-value">7.0/10</div>
-                    <div class="row-value">
-                        9.5/10
-                        <span class="winner blue-winner">YAXSHI</span>
-                    </div>
+                    <div class="row-value">9.5/10 <span class="winner blue-winner">TOP TIER</span></div>
                     <div class="row-value">8.5/10</div>
                 </div>
                 
                 <div class="table-row">
                     <div class="row-label">
                         <i class="fas fa-users row-icon"></i>
-                        <span>Universal</span>
+                        <span>Universal Utility</span>
                     </div>
                     <div class="row-value">7.5/10</div>
                     <div class="row-value">6.0/10</div>
-                    <div class="row-value">
-                        9.0/10
-                        <span class="winner brown-winner">YAXSHI</span>
-                    </div>
+                    <div class="row-value">9.0/10 <span class="winner brown-winner">TOP TIER</span></div>
                 </div>
             </div>
         </section>
 
         <!-- Ad Section -->
         <div class="ad-section">
-            <div class="ad-label">Klaviatura Keycaps & Aksessuarlar</div>
+            <div class="ad-label">Keycaps & Custom Modification Kits</div>
             <div class="ad-placeholder" style="height: 250px;">
                 AdSense Vertical Banner (300x250) - Keyboard Accessories
             </div>
@@ -1475,99 +1397,89 @@
         <!-- Recommendation Section -->
         <section class="recommendation-section">
             <h2 class="recommendation-title">
-                <i class="fas fa-trophy"></i>
-                Yakuniy Tavsiyalar
+                <i class="fas fa-trophy"></i> Final Buying Recommendations
             </h2>
             
             <div class="recommendation-grid">
                 <div class="recommendation-card">
                     <h3 class="rec-switch">Cherry MX Red</h3>
-                    <div class="rec-usage">FPS Gaming uchun</div>
+                    <div class="rec-usage">Competitive Gaming</div>
                     <ul class="rec-points">
-                        <li>Linear harakat - rapid fire</li>
-                        <li>Sessiz - kechqurun gaming</li>
-                        <li>45g engil bosish</li>
-                        <li>Esport approved</li>
-                        <li>Perfect for CS:GO, Valorant</li>
+                        <li>Linear keystroke for rapid activation</li>
+                        <li>Quiet profile ideal for late-night use</li>
+                        <li>Light 45g force prevents fatigue</li>
+                        <li>Esports pro setup standard selection</li>
+                        <li>Optimized for CS2 and Valorant metas</li>
                     </ul>
                     <div style="margin-top: 30px; padding: 20px; background: rgba(229, 80, 57, 0.1); border-radius: 15px;">
-                        <p style="color: var(--red); font-weight: 900; font-size: 1.3rem;">
-                            🎯 FPS Gaming uchun
-                        </p>
+                        <p style="color: var(--red); font-weight: 900; font-size: 1.3rem;">🎯 Best for Esports & FPS</p>
                     </div>
                 </div>
                 
                 <div class="recommendation-card">
                     <h3 class="rec-switch">Cherry MX Blue</h3>
-                    <div class="rec-usage">Yozish va Programlash</div>
+                    <div class="rec-usage">Dedicated Copywriting</div>
                     <ul class="rec-points">
-                        <li>Tactile bump + audible click</li>
-                        <li>Perfect typing feedback</li>
-                        <li>50g force - aniq bosish</li>
-                        <li>Programming, office work</li>
-                        <li>Not for multiplayer gaming</li>
+                        <li>Crisp click sound and tactical bump</li>
+                        <li>Unmatched satisfying haptic feedback</li>
+                        <li>50g weight minimizes registry errors</li>
+                        <li>Perfect for engineers and creators</li>
+                        <li>Not ideal for open floor office plans</li>
                     </ul>
                     <div style="margin-top: 30px; padding: 20px; background: rgba(74, 105, 189, 0.1); border-radius: 15px;">
-                        <p style="color: var(--blue); font-weight: 900; font-size: 1.3rem;">
-                            ✍️ Yozish uchun
-                        </p>
+                        <p style="color: var(--blue); font-weight: 900; font-size: 1.3rem;">✍️ Best for Long Form Typing</p>
                     </div>
                 </div>
                 
                 <div class="recommendation-card">
                     <h3 class="rec-switch">Cherry MX Brown</h3>
-                    <div class="rec-usage">Universal Gaming</div>
+                    <div class="rec-usage">Hybrid Daily Setups</div>
                     <ul class="rec-points">
-                        <li>Tactile bump + low noise</li>
-                        <li>Gaming & typing balance</li>
-                        <li>Home office friendly</li>
-                        <li>Beginner friendly</li>
-                        <li>All game genres</li>
+                        <li>Soft physical feedback without the loud sound</li>
+                        <li>Excellent balance of gaming and work</li>
+                        <li>Safe for family spaces and open rooms</li>
+                        <li>Highly recommended starter variant</li>
+                        <li>Performs across all entertainment genres</li>
                     </ul>
                     <div style="margin-top: 30px; padding: 20px; background: rgba(183, 21, 64, 0.1); border-radius: 15px;">
-                        <p style="color: var(--brown); font-weight: 900; font-size: 1.3rem;">
-                            🔄 Universal uchun
-                        </p>
+                        <p style="color: var(--brown); font-weight: 900; font-size: 1.3rem;">🔄 Best Balanced Performance</p>
                     </div>
                 </div>
             </div>
             
             <div style="text-align: center; margin-top: 60px; padding: 40px; background: linear-gradient(135deg, rgba(229, 80, 57, 0.1), rgba(74, 105, 189, 0.1), rgba(183, 21, 64, 0.1)); border-radius: 25px; border: 3px solid rgba(255, 255, 255, 0.1);">
                 <h3 style="color: var(--secondary); font-size: 2.5rem; margin-bottom: 25px;">
-                    <i class="fas fa-lightbulb"></i>
-                    Yakuniy Xulosa
+                    <i class="fas fa-lightbulb"></i> The Verdict
                 </h3>
                 <p style="color: var(--text); font-size: 1.5rem; line-height: 1.7; max-width: 900px; margin: 0 auto 30px;">
-                    Agar siz <strong>FPS gaming</strong> o'ynasangiz - <span style="color: var(--red); font-weight: 900;">Cherry MX Red</span> tanlang.<br>
-                    Agar siz <strong>ko'p yozish</strong> ishlaringiz bo'lsa - <span style="color: var(--blue); font-weight: 900;">Cherry MX Blue</span> tanlang.<br>
-                    Agar siz <strong>universal foydalanuvchi</strong> bo'lsangiz - <span style="color: var(--brown); font-weight: 900;">Cherry MX Brown</span> tanlang.
+                    If your primary focus is **fast competitive gaming**, go for <span style="color: var(--red); font-weight: 900;">Cherry MX Red</span>.<br>
+                    If your primary focus is **writing and code generation**, go for <span style="color: var(--blue); font-weight: 900;">Cherry MX Blue</span>.<br>
+                    If you require a **versatile hybrid peripheral**, go for <span style="color: var(--brown); font-weight: 900;">Cherry MX Brown</span>.
                 </p>
                 <div style="display: inline-block; background: rgba(255, 255, 255, 0.1); padding: 20px 40px; border-radius: 20px; margin-top: 20px;">
-                    <p style="color: var(--secondary); font-weight: 900; font-size: 1.3rem;">
-                        ⌨️ 4.0/5 Klaviatura Reyting
-                    </p>
+                    <p style="color: var(--secondary); font-weight: 900; font-size: 1.3rem;">⌨️ Certified 4.0/5 General Hardware Performance</p>
                 </div>
             </div>
         </section>
 
-      
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="container footer-content">
                 <div class="footer-section">
-                    <h3>Keyboard Brands</h3>
-                    <p>Cherry MX switch ishlatadigan eng yaxshi klaviatura brendlari.</p>
+                    <h3>Premium Keyboard Brands</h3>
+                    <p>Explore some of the leading hardware brands utilizing certified internal Cherry MX architectural matrices.</p>
                     <ul class="footer-links">
-                        <li><a href="https://www.razer.com"><i class="fab fa-razer"></i> Razer</a></li>
-                        <li><a href="https://www.corsair.com"><i class="fab fa-corsair"></i> Corsair</a></li>
-                        <li><a href="https://steelseries.com"><i class="fab fa-steel"></i> SteelSeries</a></li>
+                        <li><a href="https://www.razer.com" target="_blank"><i class="fab fa-razer"></i> Razer Official Store</a></li>
+                        <li><a href="https://www.corsair.com" target="_blank"><i class="fab fa-corsair"></i> Corsair Performance Hardware</a></li>
+                        <li><a href="https://steelseries.com" target="_blank"><i class="fab fa-steel"></i> SteelSeries Esports Gear</a></li>
                     </ul>
                 </div>
-                
-                
             </div>
             
             <div class="copyright">
-                <p>© 2025-2026 Mexanik Klaviaturalar Taqqoslash | 4.0/5 Klaviatura Reyting</p>
+                <p>© 2026 Mechanical Keyboard Review & Database Matrix | Verified 4.0/5 Score</p>
                 <p style="margin-top: 15px; font-size: 1rem; color: var(--light-text);">
-                    Cherry MX Red - FPS gaming uchun | Cherry MX Blue - yozish uchun | Cherry MX Brown - universal uchun
+                    Cherry MX Red for FPS Action • Cherry MX Blue for Text Processing • Cherry MX Brown for Hybrid Workstation Efficiency
                 </p>
             </div>
         </footer>
@@ -1580,7 +1492,6 @@
                 this.style.transform = 'translateY(-15px)';
                 this.style.boxShadow = '0 30px 60px rgba(0, 0, 0, 0.5)';
             });
-            
             card.addEventListener('mouseleave', function() {
                 this.style.transform = 'translateY(0)';
                 this.style.boxShadow = 'none';
@@ -1593,7 +1504,6 @@
                 this.style.transform = 'translateY(-12px)';
                 this.style.boxShadow = '0 25px 50px rgba(74, 105, 189, 0.3)';
             });
-            
             card.addEventListener('mouseleave', function() {
                 this.style.transform = 'translateY(0)';
                 this.style.boxShadow = 'none';
@@ -1606,7 +1516,6 @@
                 this.style.transform = 'translateY(-8px)';
                 this.style.borderColor = 'var(--brown)';
             });
-            
             card.addEventListener('mouseleave', function() {
                 this.style.transform = 'translateY(0)';
                 this.style.borderColor = 'transparent';
@@ -1619,7 +1528,6 @@
                 this.style.transform = 'translateY(-8px)';
                 this.style.borderColor = 'var(--red)';
             });
-            
             item.addEventListener('mouseleave', function() {
                 this.style.transform = 'translateY(0)';
                 this.style.borderColor = 'transparent';
@@ -1632,7 +1540,6 @@
                 this.style.transform = 'translateY(-18px)';
                 this.style.boxShadow = '0 35px 70px rgba(0, 0, 0, 0.6)';
             });
-            
             card.addEventListener('mouseleave', function() {
                 this.style.transform = 'translateY(0)';
                 this.style.boxShadow = 'none';
@@ -1644,16 +1551,9 @@
             row.addEventListener('mouseenter', function() {
                 this.style.background = 'rgba(255, 255, 255, 0.08)';
             });
-            
             row.addEventListener('mouseleave', function() {
                 this.style.background = '';
             });
-        });
-
-        // Add floating animation to switch icons
-        const switchIcons = document.querySelectorAll('.switch-icon');
-        switchIcons.forEach((icon, index) => {
-            icon.style.animation = `float 3s ease-in-out ${index * 0.5}s infinite`;
         });
 
         // Add CSS animation for rainbow effect
@@ -1671,8 +1571,6 @@
         const header = document.querySelector('.main-header');
         header.style.animation = 'rainbow 6s ease infinite';
         header.style.backgroundSize = '400% 400%';
-
-        
 
         // Smooth scroll for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -1692,43 +1590,15 @@
 
         // Initialize animations on page load
         document.addEventListener('DOMContentLoaded', function() {
-            // Add initial animation to rating badge
             const ratingBadge = document.querySelector('.rating-badge');
-            ratingBadge.style.animation = 'pulse 2s 1';
+            if(ratingBadge) ratingBadge.style.animation = 'pulse 2s 1';
             
-            // Add click effect to best-for badges
-            const bestForBadges = document.querySelectorAll('.best-for');
-            bestForBadges.forEach(badge => {
+            const badges = document.querySelectorAll('.best-for, .clicky-badge');
+            badges.forEach(badge => {
                 badge.addEventListener('click', function() {
                     this.style.transform = 'scale(1.1)';
-                    setTimeout(() => {
-                        this.style.transform = 'scale(1)';
-                    }, 300);
+                    setTimeout(() => { this.style.transform = 'scale(1)'; }, 300);
                 });
-            });
-            
-            // Add click effect to clicky badges
-            const clickyBadges = document.querySelectorAll('.clicky-badge');
-            clickyBadges.forEach(badge => {
-                badge.addEventListener('click', function() {
-                    this.style.transform = 'scale(1.1)';
-                    setTimeout(() => {
-                        this.style.transform = 'scale(1)';
-                    }, 300);
-                });
-            });
-            
-            // Simulate typing sound on Blue switch hover
-            const blueCard = document.querySelector('.blue-card');
-            blueCard.addEventListener('mouseenter', function() {
-                // Visual feedback for clicky sound
-                const icon = this.querySelector('.switch-icon');
-                icon.style.transform = 'scale(1.2)';
-                icon.style.transition = 'transform 0.1s ease';
-                
-                setTimeout(() => {
-                    icon.style.transform = 'scale(1)';
-                }, 100);
             });
         });
     </script>
