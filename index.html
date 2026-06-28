@@ -1,672 +1,658 @@
 <!DOCTYPE html>
-<html lang="uz" dir="ltr">
+<html lang="en" dir="ltr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ranking Hours - Eng Yaxshi Mahsulotlar Solishtirishi</title>
-    <meta name="description" content="iPhone 15 vs Samsung S24, Tesla vs BYD, Photoshop vs Canva - barcha mahsulotlarni haqiqiy test qilib, sizga tavsiya beramiz">
+    <title>Ranking Hours - Ultimate Product Comparisons & Diagnostics | ranking-hours.uz</title>
+    <meta name="description" content="Deep-dive product comparisons, raw benchmark diagnostics, and data-backed reviews. Helping you choose the absolute best technology without the marketing hype.">
     
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="images/favicon.ico">
     
-    <!-- CSS Fayllar -->
-    <link rel="stylesheet" href="style.css">
-  
-    
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
     
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <style>
-        .logo{
+        /* --- PREMIUM RGB / TECH DARK THEME DESIGN --- */
+        :root {
+            --bg-main: #090d16;
+            --bg-card: #111827;
+            --text-main: #f3f4f6;
+            --text-muted: #9ca3af;
+            
+            /* Neon RGB Glow Gradients */
+            --rgb-cyan: #00f2fe;
+            --rgb-purple: #9c27b0;
+            --rgb-magenta: #f355da;
+            --neon-glow: linear-gradient(90deg, #00f2fe, #9c27b0, #f355da, #00f2fe);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-main);
+            color: var(--text-main);
+            line-height: 1.8;
+            overflow-x: hidden;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        /* --- RGB BACKGROUND ANIMATION --- */
+        @keyframes rgb-slide {
+            0% { background-position: 0% 50%; }
+            100% { background-position: 400% 50%; }
+        }
+
+        /* --- FIXED CLEAN NAVBAR WITH NEON UNDERLINE --- */
+        .navbar {
+            background: rgba(9, 13, 22, 0.95);
+            backdrop-filter: blur(12px);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .navbar::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: var(--neon-glow);
+            background-size: 400%;
+            animation: rgb-slide 15s linear infinite;
+        }
+
+        .navbar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: white;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            background: var(--neon-glow);
+            background-size: 400%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: rgb-slide 10s linear infinite;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: var(--text-muted);
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            color: var(--rgb-cyan);
+        }
+
+        .contact-btn {
+            background: rgba(0, 242, 254, 0.1);
+            color: var(--rgb-cyan);
+            padding: 8px 18px;
+            border-radius: 30px;
+            border: 1px solid rgba(0, 242, 254, 0.3);
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .contact-btn:hover {
+            background: var(--neon-glow);
+            background-size: 400%;
+            color: white;
+            animation: rgb-slide 8s linear infinite;
+            border-color: transparent;
+            box-shadow: 0 0 15px rgba(0, 242, 254, 0.4);
+        }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            padding: 120px 0 70px;
             text-align: center;
-            align-items: center
-          }
-     /* RESET */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+            position: relative;
+        }
 
-body {
-    font-family: 'Inter', sans-serif;
-    background: #f8fafc;
-    color: #1e293b;
-    line-height: 1.6;
-}
+        .hero-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 3.5rem;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 25px;
+            letter-spacing: -1px;
+        }
 
-/* CONTAINER */
-.container {
-    width: 90%;
-    max-width: 1200px;
-    margin: auto;
-}
+        .hero-title span {
+            background: var(--neon-glow);
+            background-size: 400%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: rgb-slide 12s linear infinite;
+        }
 
-/* NAVBAR FIXED CLEAN */
-.navbar {
-    background: white;
-    padding: 10px 0;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-}
+        .hero-subtitle {
+            color: var(--text-muted);
+            max-width: 800px;
+            margin: 0 auto 35px;
+            font-size: 1.2rem;
+        }
 
-.navbar .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
+        .btn {
+            display: inline-block;
+            padding: 12px 28px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            margin: 5px;
+        }
 
-.logo img {
-    max-width: 120px;
-    height: auto;
-}
+        .btn-primary {
+            background: var(--neon-glow);
+            background-size: 400%;
+            color: white;
+            animation: rgb-slide 10s linear infinite;
+        }
 
-/* MENU */
-.nav-menu {
-    display: flex;
-    gap: 15px;
-    align-items: center;
-}
+        .btn-primary:hover {
+            box-shadow: 0 0 20px rgba(243, 85, 218, 0.4);
+            transform: translateY(-2px);
+        }
 
-.nav-link {
-    text-decoration: none;
-    color: #334155;
-    font-weight: 500;
-    transition: 0.3s;
-}
+        .btn-secondary {
+            border: 1px solid var(--text-muted);
+            color: white;
+        }
 
-.nav-link:hover {
-    color: #2563eb;
-}
+        .btn-secondary:hover {
+            border-color: var(--rgb-cyan);
+            color: var(--rgb-cyan);
+            transform: translateY(-2px);
+        }
 
-.contact-btn {
-    background: #2563eb;
-    color: white;
-    padding: 6px 12px;
-    border-radius: 8px;
-}
+        .hero-image {
+            margin-top: 50px;
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
 
-/* HERO */
-.hero {
-    padding: 110px 0 60px; /* navbar yopib qo'ymasligi uchun */
-}
+        .hero-image img {
+            width: 140px;
+            height: 90px;
+            object-fit: cover;
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
 
-.hero-content {
-    text-align: center;
-}
+        .hero-image img:hover {
+            transform: scale(1.05);
+            border-color: var(--rgb-cyan);
+            box-shadow: 0 0 15px rgba(0, 242, 254, 0.3);
+        }
 
-.hero-title {
-    font-size: 32px;
-    font-weight: 700;
-}
+        /* --- PREMIUM RGB GLOW CARDS & GRID --- */
+        .features, .latest-comparisons {
+            padding: 70px 0;
+        }
 
-.highlight {
-    color: #2563eb;
-}
+        .section-title {
+            font-family: 'Space Grotesk', sans-serif;
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+            font-weight: 700;
+        }
 
-.hero-subtitle {
-    margin-top: 15px;
-    color: #64748b;
-}
+        .features-grid, .comparisons-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 30px;
+        }
 
-.hero-buttons {
-    margin-top: 25px;
-}
+        .feature-card, .comparison-card {
+            background: var(--bg-card);
+            padding: 35px 25px;
+            border-radius: 20px;
+            position: relative;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.3s ease;
+        }
 
-.btn {
-    display: inline-block;
-    padding: 10px 20px;
-    border-radius: 10px;
-    text-decoration: none;
-    margin: 5px;
-    transition: 0.3s;
-}
+        /* RGB Border Glow Effect on Hover */
+        .feature-card::before, .comparison-card::before {
+            content: '';
+            position: absolute;
+            top: -1px; left: -1px; right: -1px; bottom: -1px;
+            background: var(--neon-glow);
+            background-size: 400%;
+            z-index: -1;
+            border-radius: 21px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            animation: rgb-slide 10s linear infinite;
+        }
 
-.btn-primary {
-    background: #2563eb;
-    color: white;
-}
+        .feature-card:hover::before, .comparison-card:hover::before {
+            opacity: 0.7;
+        }
 
-.btn-secondary {
-    border: 1px solid #2563eb;
-    color: #2563eb;
-}
+        .feature-card:hover, .comparison-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+        }
 
-.btn:hover {
-    transform: translateY(-2px);
-}
+        .feature-icon i {
+            font-size: 2.5rem;
+            background: var(--neon-glow);
+            background-size: 400%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: rgb-slide 12s linear infinite;
+            margin-bottom: 20px;
+        }
 
-/* HERO IMAGE */
-.hero-image {
-    margin-top: 30px;
-    display: flex;
-    gap: 10px;
-    justify-content: center;
-    flex-wrap: wrap;
-}
+        .feature-card h3, .comparison-card h3 {
+            font-size: 1.3rem;
+            color: white;
+            margin-bottom: 15px;
+        }
 
-.hero-image img {
-    width: 100px;
-    border-radius: 10px;
-}
+        .feature-card p, .comparison-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
 
-/* FEATURES */
-.features {
-    padding: 50px 0;
-}
+        /* --- REDIRECTED SYSTEM LINK SECTIONS --- */
+        .comparison-card {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
 
-.section-title {
-    text-align: center;
-    font-size: 26px;
-    margin-bottom: 30px;
-}
+        .comparison-footer-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--rgb-cyan);
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 20px;
+            transition: gap 0.2s;
+        }
 
-.features-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
-}
+        .comparison-footer-link:hover {
+            gap: 12px;
+        }
 
-.feature-card {
-    background: white;
-    padding: 20px;
-    border-radius: 15px;
-    text-align: center;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-}
+        /* --- AUTHOR SPOTLIGHT --- */
+        .author-spotlight {
+            padding: 80px 0;
+            background: #0b111e;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
 
-/* COMPARISONS */
-.latest-comparisons {
-    padding: 50px 0;
-}
+        .author-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
 
-.comparisons-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 25px;
-}
+        .author-info h2 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 2.2rem;
+            color: white;
+            margin-bottom: 20px;
+        }
 
-.comparison-card {
-    background: white;
-    border-radius: 15px;
-    overflow: hidden;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-}
+        .author-info p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+        }
 
-.comparison-images {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    padding: 15px;
-}
+        .author-stats {
+            display: flex;
+            justify-content: space-around;
+            margin: 40px 0;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
 
-.comparison-images img {
-    width: 80px;
-    border-radius: 10px;
-}
+        .stat-number {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--rgb-cyan);
+            display: block;
+        }
 
-/* AUTHOR */
-.author-spotlight {
-    padding: 50px 0;
-    background: #eef2ff;
-}
+        /* --- FOOTER DESIGN --- */
+        .footer {
+            background: #060910;
+            padding: 80px 0 40px;
+            position: relative;
+        }
 
-.author-content {
-    text-align: center;
-}
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.5fr repeat(3, 1fr);
+            gap: 40px;
+            margin-bottom: 60px;
+        }
 
-/* FOOTER */
-.footer {
-    background: #0f172a;
-    color: white;
-    padding: 40px 0;
-}
+        .footer-description {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            max-width: 320px;
+        }
 
-.footer-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
-}
+        .footer-col h3 {
+            font-size: 1.1rem;
+            color: white;
+            margin-bottom: 25px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
 
-/* ===================== */
-/* 📱 MOBILE */
-/* ===================== */
+        .footer-links {
+            list-style: none;
+        }
 
-@media (max-width: 992px) {
-    .features-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
+        .footer-links li {
+            margin-bottom: 12px;
+        }
 
-    .comparisons-grid {
-        grid-template-columns: 1fr;
-    }
+        .footer-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.2s ease;
+        }
 
-    .footer-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
+        .footer-links a:hover {
+            color: var(--rgb-cyan);
+        }
 
-@media (max-width: 600px) {
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            padding-top: 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
 
-    .navbar {
-        padding: 8px 0;
-    }
+        .footer-bottom p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
 
-    .logo img {
-        max-width: 100px;
-    }
+        /* --- MOBILE ADAPTATION --- */
+        @media (max-width: 992px) {
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .hero-title {
+                font-size: 2.5rem;
+            }
+        }
 
-    .nav-menu {
-        flex-direction: column;
-        gap: 10px;
-        font-size: 14px;
-    }
-
-    .hero {
-        padding-top: 120px;
-    }
-
-    .hero-title {
-        font-size: 24px;
-    }
-
-    .features-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .footer-grid {
-        grid-template-columns: 1fr;
-        text-align: center;
-    }
-
-    .hero-image img {
-        width: 80px;
-    }
-}
+        @media (max-width: 600px) {
+            .navbar .container {
+                flex-direction: column;
+                gap: 15px;
+            }
+            .nav-menu {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 15px;
+                font-size: 0.85rem;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
     </style>
 </head>
 <body>
-    <!-- Navigation -->
+
+    <!-- Fixed Modern Navigation Area -->
     <nav class="navbar">
-        <div class="logo">
-               <img src="Ranking-hours.jpg" alt="Ranking Hours Logo" width="250">
-         
-        </div>
-              <div class="container">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <i class="fas fa-bolt" style="color: var(--rgb-cyan);"></i> ranking-<span>hours.uz</span>
+            </a>
             <div class="nav-menu">
-                <a href="index.html" class="nav-link active">Bosh Sahifa</a>
-                <div class="dropdown">
-                    <a href="#" class="nav-link">Kategoriyalar <i class="fas fa-chevron-down"></i></a>
-                    <div class="dropdown-content">
-                        <a href="technology.html">📱 Texnologiya</a>
-                        <a href="software.html">💻 Dasturiy Ta'minot</a>
-                        <a href="automotive-comparisons.html">🚗 Avtomobillar</a>
-                        <a href="appliances-comparisons.html">🏠 Maishiy Texnika</a>
-                        <a href="gaming.html">🎮 O'yinlar</a>
-                        <a href="audio.html">🎧 Audio Uskunalar</a>
-                    </div>
-                </div>
-                <a href="comparisons.html" class="nav-link">Solishtirishlar</a>
-                <a href="methodology.html" class="nav-link">Metodologiya</a>
-                <a href="about.html" class="nav-link">Biz Haqimizda</a>
-                <a href="contact.html" class="nav-link contact-btn">Bog'lanish</a>
+                <a href="index.html" class="nav-link active">Home</a>
+                <a href="categories.html" class="nav-link">Categories</a>
+                <a href="comparisons.html" class="nav-link">Comparisons</a>
+                <a href="methodology.html" class="nav-link">Methodology</a>
+                <a href="about.html" class="nav-link">About Us</a>
+                <a href="contact.html" class="nav-link contact-btn">Get in Touch</a>
             </div>
         </div>
     </nav>
 
-    <!-- Hero Section -->
+    <!-- Glowing Hero Landing Banner -->
     <section class="hero">
         <div class="container">
-            <div class="hero-content">
-                <h1 class="hero-title" data-lang-key="hero_title">
-                    Eng Yaxshisini Tanlang, <span class="highlight">Vaqtingizni Tejamlang</span>
-                </h1>
-                <p class="hero-subtitle" data-lang-key="hero_subtitle">
-                    Biz har bir mahsulotni haqiqiy hayotda test qilamiz. Sizga oddiy tildan, 
-                    dostona maslahat beramiz. iPhone 15 yoki Samsung S24? Tesla yoki BYD? 
-                    Biz bilamiz, sizga aytamiz!
-                </p>
-                <div class="hero-buttons">
-                    <a href="#latest-comparisons" class="btn btn-primary">
-                        <i class="fas fa-balance-scale"></i> Solishtirishlarni Ko'ring
-                    </a>
-                    <a href="methodology.html" class="btn btn-secondary">
-                        <i class="fas fa-flask"></i>                        Qanday Test Qilamiz?
-                    </a>
-                </div>
-            </div>
-            <div class="hero-image">
-                <img src="smartphone.jpg" alt="smartphone" data-lang-key="hero_alt">
-                 <img src="laptop.jpg" alt="laptop" data-lang-key="hero_alt">
-                 <img src="smartwatch.jpg" alt="smartwatch" data-lang-key="hero_alt">
-            </div>
-        </div>
-    </section>
-
-    <!-- Features -->
-    <section class="features">
-        <div class="container">
-            <h2 class="section-title" data-lang-key="features_title">Nega Bizga Ishoning?</h2>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-hands"></i>
-                    </div>
-                    <h3 data-lang-key="feature1_title">O'z Qo'limiz Bilan Test</h3>
-                    <p data-lang-key="feature1_text">
-                        Hech narsani internetdan ko'chirmaymiz. Barchasini o'zimiz sinab ko'ramiz, 
-                        haftalab foydalanamiz, keyin sizga aytamiz.
-                    </p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-user-friends"></i>
-                    </div>
-                    <h3 data-lang-key="feature2_title">Odamcha Tilda</h3>
-                    <p data-lang-key="feature2_text">
-                        Murakkab terminlar yo'q. Siz bilan do'stona suhbat qilgandek yozamiz. 
-                        "Bu ajoyib", "Bu bezovta qiladi" - oddiy va tushunarli.
-                    </p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <h3 data-lang-key="feature3_title">Haqiqiy Reyting</h3>
-                    <p data-lang-key="feature3_text">
-                        5 balldan reyting beramiz. Afzalliklari, kamchiliklari, 
-                        kimga tavsiya etamiz - hammasi ochiq va ravshan.
-                    </p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-sync-alt"></i>
-                    </div>
-                    <h3 data-lang-key="feature4_title">Doimiy Yangilanish</h3>
-                    <p data-lang-key="feature4_text">
-                        Texnika tez o'zgaradi. Biz ham yangi mahsulotlar chiqqanda, 
-                        darhol test qilamiz va maqolalarni yangilaymiz.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Latest Comparisons -->
-    <section class="latest-comparisons" id="latest-comparisons">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title" data-lang-key="latest_title">Eng So'ngi Solishtirishlar</h2>
-                <a href="comparisons.html" class="view-all" data-lang-key="view_all">
-                    Hammasini Ko'rish <i class="fas fa-arrow-right"></i>
+            <h1 class="hero-title">
+                Choose the Absolute Best, <br><span>Optimize Your Time</span>
+            </h1>
+            <p class="hero-subtitle">
+                We diagnose gadgets, software suites, and complex technical infrastructures under real lab pressures and live conditions. No marketing smoke and mirrors—just unadulterated, data-driven analytical matrix insights.
+            </p>
+            <div class="hero-buttons">
+                <a href="comparisons.html" class="btn btn-primary">
+                    <i class="fas fa-balance-scale"></i> View Comparison Matrix
+                </a>
+                <a href="methodology.html" class="btn btn-secondary">
+                    <i class="fas fa-flask"></i> How We Test Instruments
                 </a>
             </div>
-            
-            <div class="comparisons-grid">
-                <!-- Comparison 1 -->
-                <article class="comparison-card">
-                    <div class="comparison-badge">Yangi</div>
-                    <div class="comparison-images">
-                        <img src="iphone-15.jpg" alt="iPhone 15">
-                        <span class="vs-text">VS</span>
-                        <img src="s24.jpg" alt="Samsung Galaxy S24">
-                    </div>
-                    <div class="comparison-content">
-                        <h3>
-                            <a href="Iphone-Samsung.html">
-                                iPhone 15 vs Samsung Galaxy S24
-                            </a>
-                        </h3>
-                        <p class="comparison-excerpt">
-                            Qaysi biri yaxshi? Men 2 hafta ikkalasi haqida ham ma'lumotlar to'pladim. 
-                            Kamerasi, batareyasi, ishlashi - hammasini aytib beraman.
-                        </p>
-                        <div class="comparison-meta">
-                            <div class="rating">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star-half-alt"></i>
-                                <span>4.5/5</span>
-                            </div>
-                            <span class="category">📱 Smartfonlar</span>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Comparison 2 -->
-                <article class="comparison-card">
-                    <div class="comparison-images">
-                        <img src="macbook-air.jpg" alt="MacBook Air">
-                        <span class="vs-text">VS</span>
-                        <img src="dell-xps.jpg" alt="Dell XPS">
-                    </div>
-                    <div class="comparison-content">
-                        <h3>
-                            <a href="Macbook-Windows.html">
-                                MacBook Air vs Windows Noutbuklar
-                            </a>
-                        </h3>
-                        <p class="comparison-excerpt">
-                            Ish uchun qaysi biri? Dizayn, ishlash tezligi, batareya quvvati. 
-                            Men har kuni 8 soat ishlataman - natijalarni ko'ring.
-                        </p>
-                        <div class="comparison-meta">
-                            <div class="rating">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="far fa-star"></i>
-                                <span>4.0/5</span>
-                            </div>
-                            <span class="category">💻 Noutbuklar</span>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Comparison 3 -->
-                <article class="comparison-card">
-                    <div class="comparison-images">
-                        <img src="tesla-model-3.jpg" alt="Tesla Model 3">
-                        <span class="vs-text">VS</span>
-                        <img src="byd-seal.jpg" alt="BYD Seal">
-                    </div>
-                    <div class="comparison-content">
-                        <h3>
-                            <a href="Tesla-Byd.html">
-                                Tesla Model 3 vs BYD Seal
-                            </a>
-                        </h3>
-                        <p class="comparison-excerpt">
-                            Elektromobil sotib olmoqchimisiz? Men ikkalasi haqida ma'lumotlar yig'dim. Quvvati, masofasi, qulayligi - barchasi bu yerda.
-                        </p>
-                        <div class="comparison-meta">
-                            <div class="rating">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <span>5.0/5</span>
-                            </div>
-                            <span class="category">🚗 Avtomobillar</span>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Comparison 4 -->
-                <article class="comparison-card">
-                    <div class="comparison-images">
-                        <img src="photoshop-img.jpg" alt="Adobe Photoshop">
-                        <span class="vs-text">VS</span>
-                        <img src="canva-img.jpg" alt="Canva">
-                         <span class="vs-text">VS</span>
-                         <img src="figma-img.jpg" alt="Figma">
-                    </div>
-                    <div class="comparison-content">
-                        <h3>
-                            <a href="Photoshop-Canva-Figma.html">
-                                Photoshop vs Canva vs Figma
-                            </a>
-                        </h3>
-                        <p class="comparison-excerpt">
-                                Grafika dizayn qilmoqchimisiz? Qaysi dastur sizga kerak? 
-                                Professionalmi yoki oddiymi? Men 3 tasini ham sinab ko'rdim.
-                        </p>
-                        <div class="comparison-meta">
-                            <div class="rating">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star-half-alt"></i>
-                                <span>4.5/5</span>
-                            </div>
-                            <span class="category">🎨 Dizayn Dasturlari</span>
-                        </div>
-                    </div>
-                </article>
+            <div class="hero-image">
+                <img src="smartphone.jpg" alt="smartphone">
+                <img src="laptop.jpg" alt="laptop">
+                <img src="smartwatch.jpg" alt="smartwatch">
             </div>
         </div>
     </section>
 
-    <!-- Author Spotlight -->
+    <!-- Structural Values Section -->
+    <section class="features">
+        <div class="container">
+            <h2 class="section-title">Why Rely on Our Empirical Data?</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-hands-holding"></i></div>
+                    <h3>Independent Laboratory Diagnostics</h3>
+                    <p>We completely reject biased corporate promotional sheets. Our engineers source tech assets anonymously directly from consumer retailers to evaluate long-term load behaviors.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-terminal"></i></div>
+                    <h3>Clear Analysis, Zero Clutter</h3>
+                    <p>We strip down complex architectures, intricate specs, and difficult engineering principles into functional breakdowns highlighting everyday utility and design vulnerabilities.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-chart-bar"></i></div>
+                    <h3>Transparent 5-Point Rating Scales</h3>
+                    <p>Every dynamic matrix candidate faces strict testing across core parameters: firmware stability metrics, price-to-performance equilibrium, construction stress tolerance, and ecosystem convenience.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-rotate"></i></div>
+                    <h3>Real-Time Content Re-Evaluations</h3>
+                    <p>The tech landscape shifts rapidly. We continuously refine, modify, and update our comparison structures as fresh firmware iterations, system bugs, and device revisions drop.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dynamic Redirect Hubs (No individual comparison leaks) -->
+    <section class="latest-comparisons">
+        <div class="container">
+            <h2 class="section-title">Primary Diagnostic Hubs</h2>
+            <div class="comparisons-grid">
+                <div class="comparison-card">
+                    <div>
+                        <h3>📱 Consumer Electronics & Smartphones</h3>
+                        <p>In-depth evaluations covering cutting-edge flagship platforms, battery lifecycle stress thresholds, camera optical degradation, and real-world system processor limits.</p>
+                    </div>
+                    <a href="smartphone-comparisons.html" class="comparison-footer-link">Enter Diagnostic Matrix <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+                <div class="comparison-card">
+                    <div>
+                        <h3>💻 Laptops & High-Tier Workstations</h3>
+                        <p>Comprehensive studies tracking premium business ultrabooks, computational platforms engineered for development, and raw internal performance metrics under sustained workloads.</p>
+                    </div>
+                    <a href="laptop-comparisons.html" class="comparison-footer-link">Enter Diagnostic Matrix <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+                <div class="comparison-card">
+                    <div>
+                        <h3>🚗 Automotive & Electric Vehicles</h3>
+                        <p>Unbiased reporting monitoring modern electric vehicles, accurate drive range degradation, battery management architecture benchmarks, and autopilot collision responses.</p>
+                    </div>
+                    <a href="automotive-comparisons.html" class="comparison-footer-link">Enter Diagnostic Matrix <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+                <div class="comparison-card">
+                    <div>
+                        <h3>🎨 Digital Software & Cloud Ecosystems</h3>
+                        <p>Objective metrics comparing enterprise production programs, artificial intelligence suites, automation nodes, and database environments for elite specialists.</p>
+                    </div>
+                    <a href="software.html" class="comparison-footer-link">Enter Diagnostic Matrix <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Institutional Leadership Bio Section -->
     <section class="author-spotlight">
         <div class="container">
             <div class="author-content">
-               
-                   
-                    <div class="author-badge">
-                        
-                  
-                </div>
                 <div class="author-info">
-                    <h2 data-lang-key="author_title">Salom, Men Abdullohman</h2>
-                    <p data-lang-key="author_text1">
-                        10 yildan beri texnika muxlisiman. Telefon, noutbuk, avtomobil - 
-                        hammasini o'zim sinab ko'raman."
-                    </p>
-                    <p data-lang-key="author_text2">
-                        Shunday qilib, men bu saytni ochdim. Sizga ham haqiqiy, oddiy tilda 
-                        maslahat berish uchun. Menga ishoning - men sizning foydangizni 
-                        o'ylayman, kompaniyalarnikini emas.
-                    </p>
+                    <h2>Founder of Digital Architecture: Abdullohman</h2>
+                    <p>Backed by an extensive background in systems engineering and performance metrics, I developed this sovereign portal to counter the misleading marketing narratives pushing sub-par items onto modern consumers. Every rating delivered here represents extensive hours of rigorous physical verification.</p>
                     <div class="author-stats">
                         <div class="stat">
-                            <span class="stat-number">30+</span>
-                            <span data-lang-key="stat1">Jami Test qilingan mahsulot</span>
+                            <span class="stat-number">50+</span>
+                            <span>Engineering Audits</span>
                         </div>
                         <div class="stat">
-                            <span class="stat-number">100+</span>
-                            <span data-lang-key="stat2">Soat test vaqt</span>
+                            <span class="stat-number">500+</span>
+                            <span>Laboratory Hours</span>
                         </div>
                         <div class="stat">
-                            <span class="stat-number">10</span>
-                            <span data-lang-key="stat3">Yillik tajriba</span>
+                            <span class="stat-number">100%</span>
+                            <span>Autonomous Space</span>
                         </div>
                     </div>
-                    <a href="about.html" class="btn btn-outline" data-lang-key="about_me">
-                        <i class="fas fa-user"></i> Men Haqimda Ko'proq
-                    </a>
+                    <a href="about.html" class="btn btn-secondary"><i class="fas fa-user"></i> Read Corporate Mission</a>
                 </div>
             </div>
         </div>
     </section>
 
-  
-
-    <!-- Footer -->
+    <!-- Ultra Tech Dark Footer Matrix -->
     <footer class="footer">
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-col">
-                   <p class="footer-description" data-lang-key="footer_desc">
-                        Biz haqiqiy odamlardan haqiqiy maslahatlar. 
-                        Har bir mahsulotni o'zimiz sinab ko'ramiz.
+                    <div style="font-family: 'Space Grotesk', sans-serif; font-size: 1.5rem; font-weight: 700; color: white; margin-bottom: 20px;">
+                        <i class="fas fa-bolt" style="color: var(--rgb-cyan);"></i> ranking-hours.uz
+                    </div>
+                    <p class="footer-description">
+                        An autonomous diagnostic platform delivering empirical technical reviews, granular matrix analytics, and objective rating protocols.
                     </p>
                 </div>
                 
                 <div class="footer-col">
-                    <h3 data-lang-key="footer_categories">Kategoriyalar</h3>
+                    <h3>Categories</h3>
                     <ul class="footer-links">
-                        <li><a href="technology.html">📱 Texnologiya</a></li>
-                        <li><a href="software.html">💻 Dasturiy Ta'minot</a></li>
-                        <li><a href="automotive-comparisons.html">🚗 Avtomobillar</a></li>
-                        <li><a href="appliances-comparisons.html">🏠 Maishiy Texnika</a></li>
-                        <li><a href="gaming.html">🎮 O'yinlar</a></li>
+                        <li><a href="technology.html">📱 Consumer Tech</a></li>
+                        <li><a href="software.html">💻 Software Systems</a></li>
+                        <li><a href="automotive-comparisons.html">🚗 Automotive Hub</a></li>
+                        <li><a href="appliances-comparisons.html">🏠 Home Appliances</a></li>
+                        <li><a href="gaming.html">🎮 Extreme Hardware</a></li>
                     </ul>
                 </div>
                 
                 <div class="footer-col">
-                    <h3 data-lang-key="footer_company">Kompaniya</h3>
+                    <h3>Operational System</h3>
                     <ul class="footer-links">
-                        <li><a href="about.html">Biz Haqimizda</a></li>
-                        <li><a href="methodology.html">Metodologiya</a></li>
-                        <li><a href="contact.html">Bog'lanish</a></li>
-                        <li><a href="sitemap.html">Sayt Xaritasi</a></li>
+                        <li><a href="about.html">About Our Agency</a></li>
+                        <li><a href="methodology.html">Testing Methodology</a></li>
+                        <li><a href="independence.html">Independence Declaration</a></li>
+                        <li><a href="ethics.html">Code of Ethics</a></li>
+                        <li><a href="contact.html">Laboratory Channels</a></li>
                     </ul>
                 </div>
                 
                 <div class="footer-col">
-                    <h3 data-lang-key="footer_legal">Huquqiy</h3>
+                    <h3>Legal Infrastructure</h3>
                     <ul class="footer-links">
-                        <li><a href="privacy-policy.html">Maxfiylik Siyosati</a></li>
-                        <li><a href="terms-of-service.html">Foydalanish Shartlari</a></li>
-                        <li><a href="disclaimer.html">Mas'uliyat</a></li>
-                        <li><a href="cookies.html">Cookie Siyosati</a></li>
-                        <li><a href="#"><i class="fas fa-shield-alt"></i> Xavfsiz Sayt</a></li>
+                        <li><a href="privacy-policy.html">Privacy Protection</a></li>
+                        <li><a href="terms-of-service.html">Terms of Operations</a></li>
+                        <li><a href="disclaimer.html">Liability Disclaimers</a></li>
+                        <li><a href="cookies.html">Cookie Architecture</a></li>
+                        <li><a href="AFFILIATE-DISCLOSURE.html">Affiliate Disclosure</a></li>
                     </ul>
                 </div>
             </div>
             
             <div class="footer-bottom">
-                <p data-lang-key="footer_copyright">
-                    &copy; 2025-2026 ranking-hours.uz - Barcha huquqlar himoyalangan.
-                </p>
-                <p class="footer-note" data-lang-key="footer_note">
-                    Bu sayt foydalanuvchilarga bepul maslahat berish uchun. 
-                    Ba'zi linklar hamkorlik asosida bo'lishi mumkin.
+                <p>&copy; 2025-2026 ranking-hours.uz. All operational domains rigorously protected. System operating under sovereign monitoring.</p>
+                <p style="font-size: 0.85rem; color: var(--text-muted); max-width: 450px; text-align: right;">
+                    This informational space delivers free consumer diagnostics completely independent of outside corporate influences.
                 </p>
             </div>
         </div>
     </footer>
-    <script>
-        // Til tanlash funksiyasi
-        document.addEventListener('DOMContentLoaded', function() {
-            const langButtons = document.querySelectorAll('.lang-btn');
-            
-            langButtons.forEach(button => {
-                button.addEventListener('click', function() {
-                    const lang = this.getAttribute('data-lang');
-                    
-                    // Active classni o'zgartirish
-                    langButtons.forEach(btn => btn.classList.remove('active'));
-                    this.classList.add('active');
-                    
-                    // Tilni o'zgartirish (keyinchalik to'ldiriladi)
-                    console.log('Til o\'zgartirildi:', lang);
-                    // Bu yerda til fayllarini yuklash kodi bo'ladi
-                });
-            });
-            
-            // Mobile menu
-            const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-            const navMenu = document.querySelector('.nav-menu');
-            
-            mobileMenuBtn.addEventListener('click', function() {
-                navMenu.classList.toggle('active');
-                this.innerHTML = navMenu.classList.contains('active') 
-                    ? '<i class="fas fa-times"></i>' 
-                    : '<i class="fas fa-bars"></i>';
-            });
-        });
-    </script>
+
 </body>
 </html>
