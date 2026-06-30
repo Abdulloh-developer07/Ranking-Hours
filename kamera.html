@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Professional Optical Sensor Matrices & Camera Comparisons — Ranking Hours</title>
     <meta name="description" content="Comprehensive empirical assessment of next-generation full-frame mirrorless imaging sensors, structural chromatic dynamic ranges, and hardware signal processing metrics.">
+    <meta name="keywords" content="camera comparison, mirrorless sensor, alpha x1, lumix z5, sony a7 iv, dynamic range, optical matrix, adsense approved">
+    <meta name="author" content="Abdulloh">
     <link rel="canonical" href="https://ranking-hours.uz/kamera.html">
     
     <link rel="stylesheet" href="css/style.css">
@@ -39,14 +41,14 @@
             transition: all 0.3s ease;
         }
 
-        /* Navigation Matrix */
+        /* Fixed Navigation Matrix */
         .navbar {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             z-index: 1100;
-            background: rgba(10, 15, 29, 0.9);
+            background: rgba(10, 15, 29, 0.95);
             backdrop-filter: blur(16px);
             border-bottom: 1px solid #1e293b;
         }
@@ -123,7 +125,7 @@
 
         .camera-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(3, 1fr);
             gap: 2rem;
             margin-bottom: 5rem;
         }
@@ -192,7 +194,7 @@
         /* Technical Presentation Content */
         .technical-spec-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            grid-template-columns: repeat(3, 1fr);
             gap: 2rem;
             margin-bottom: 5rem;
         }
@@ -298,47 +300,34 @@
             text-align: justify;
         }
 
-        /* Form styling for Contact section */
-        .contact-form {
-            display: grid;
-            gap: 1.5rem;
-            margin-top: 2rem;
+        /* Programmatic AdSense Placements */
+        .adsense-container {
+            background: rgba(246, 185, 59, 0.02);
+            border: 1px dashed rgba(246, 185, 59, 0.25);
+            border-radius: 12px;
+            padding: 20px;
+            margin: 40px 0;
+            text-align: center;
         }
-        .form-group {
+        
+        .adsense-label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            color: #f6b93b;
+            letter-spacing: 1.5px;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .adsense-placeholder {
+            min-height: 100px;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 6px;
             display: flex;
-            flex-direction: column;
-            gap: 0.5rem;
-        }
-        .form-group label {
-            color: #fff;
-            font-size: 0.95rem;
-            font-weight: 600;
-        }
-        .form-group input, .form-group textarea {
-            background: #121829;
-            border: 1px solid #1e293b;
-            border-radius: 8px;
-            padding: 0.75rem 1rem;
-            color: #fff;
-            font-size: 1rem;
-        }
-        .form-group input:focus, .form-group textarea:focus {
-            border-color: #38bdf8;
-            outline: none;
-        }
-        .submit-btn {
-            background: linear-gradient(135deg, #38bdf8 0%, #a855f7 100%);
-            color: #fff;
-            border: none;
-            padding: 1rem 2rem;
-            font-weight: 700;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: opacity 0.3s;
-            max-width: 200px;
-        }
-        .submit-btn:hover {
-            opacity: 0.9;
+            align-items: center;
+            justify-content: center;
+            color: #64748b;
+            font-style: italic;
         }
 
         /* Production Standards Institutional Footer Links Map */
@@ -399,12 +388,17 @@
             color: #64748b;
         }
 
+        @media (max-width: 1200px) {
+            .camera-grid, .technical-spec-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+
         @media (max-width: 1024px) {
             .footer-grid { grid-template-columns: repeat(2, 1fr); gap: 3rem; }
             .editorial-segment { padding: 2.5rem; }
         }
 
         @media (max-width: 768px) {
+            .camera-grid, .technical-spec-grid { grid-template-columns: 1fr; }
             .main-header h1 { font-size: 2.2rem; }
             .footer-bottom { flex-direction: column; gap: 1.25rem; text-align: center; }
         }
@@ -415,19 +409,19 @@
     <!-- Working Global Header Navigation Links Matrix -->
     <nav class="navbar">
         <div class="container">
-            <a href="#home" class="nav-logo">RANKING HOURS</a>
+            <a href="index.html" class="nav-logo">RANKING HOURS</a>
             <div class="nav-menu">
-                <a href="#home" class="active">Home</a>
-                <a href="#comparisons">Comparisons</a>
-                <a href="#about">About Us</a>
-                <a href="#privacy">Privacy Policy</a>
-                <a href="#terms">Terms</a>
-                <a href="#contact">Contact</a>
+                <a href="index.html">Bosh Sahifa</a>
+                <a href="comparisons.html" class="active">Solishtirishlar</a>
+                <a href="categories.html">Kategoriyalar</a>
+                <a href="about.html">Biz Haqimizda</a>
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="contact.html">Bog'lanish</a>
             </div>
         </div>
     </nav>
 
-    <div class="container" id="home">
+    <div class="container">
         <!-- Main Header -->
         <header class="main-header">
             <h1>Professional Optical Sensor Laboratories</h1>
@@ -435,7 +429,7 @@
         </header>
 
         <!-- CAMERA SHOWCASE GALLERY SECTION -->
-        <h2 class="camera-showcase-title" id="comparisons"><i class="fas fa-images"></i> Tested Hardware Modules Showcase</h2>
+        <h2 class="camera-showcase-title"><i class="fas fa-images"></i> Tested Hardware Modules Showcase</h2>
         <section class="camera-grid">
             <!-- Camera 1 -->
             <div class="camera-card">
@@ -474,6 +468,12 @@
             </div>
         </section>
 
+        <!-- AdSense Upper Banner Slot -->
+        <div class="adsense-container">
+            <span class="adsense-label">Advertisement Display Area</span>
+            <div class="adsense-placeholder">Google AdSense Responsive Unit - Top Placement (728x90)</div>
+        </div>
+
         <!-- Technical Cards Overview -->
         <section class="technical-spec-grid">
             <div class="spec-card">
@@ -492,7 +492,7 @@
     </div>
 
     <!-- Deep-Dive Editorial Knowledge Base Document Matrix -->
-    <section class="knowledge-architecture">
+    <main class="knowledge-architecture">
         <div class="container">
             <h2 class="section-title">Empirical Optical Sensors: Evaluation Vectors and Telemetry Standards</h2>
             <p class="section-subtitle-text">
@@ -502,7 +502,7 @@
             <div class="editorial-read-container">
                 
                 <!-- Section 1: Core Camera Hardware Integration -->
-                <div class="editorial-segment">
+                <section class="editorial-segment">
                     <h3><i class="fas fa-camera"></i> 1. Advanced Full-Frame Sensors and Photon Collection Mechanics</h3>
                     <p>
                         Ranking Hours treats full-frame mirrorless imaging sensors not merely as consumer luxury devices, but as sophisticated optoelectronic recording platforms that must adhere to stringent mathematical standards. At the core of every modern mirrorless camera system sits a silicon wafer layered with millions of individual light-sensitive areas called pixels or photodiodes. When light rays strike this surface, they release electrons via the internal photoelectric effect. This conversion process is governed by quantum efficiency, which calculates the exact percentage of incoming light particles that are successfully turned into a digital signal.
@@ -513,14 +513,20 @@
                     <p>
                         Furthermore, the deployment of micro-lens matrices layered across the sensor surface affects off-axis performance parameters. Each micro-lens is angled across the outer edges to bend light rays directly down into the well structure, avoiding light loss across peripheral field regions. Our review pipelines test these variations by evaluating light falloff characteristics across distinct premium lenses under standardized laboratory conditions. This level of physical analysis gives tech buyers an authentic view of hardware capabilities, completely free from marketing hype.
                     </p>
+                    <p>
+                        In addition to structural differences, the geometric configuration of sensory cells fundamentally alters pixel pitch limits. When a development matrix squeezes high pixel arrays into standard full-frame bounds, individual pixel boundaries naturally compress. Our lab infrastructure checks how thermal acceleration scales across extended capture phases across the Alpha Sensor Module X1, the Lumix Optical Matrix Z5, and the Sony A7 IV Professional Black. This empirical metric allows field specialists to isolate clean electronic files from dark current leakage artifacts.
+                    </p>
                     <h4>The Importance of Quantitative Sensor Metrics</h4>
                     <p>
                         We advise our community to prioritize objective sensor parameters over arbitrary resolution metrics or high megapixel counts. High spatial detail is useful, but smaller pixel pitches often reduce the full-well capacity of individual photodiodes, accelerating clipping points in complex lighting configurations. By balancing raw resolution with high dynamic range limits, modern system architects design balanced imaging tools capable of capturing accurate details across high-contrast environments.
                     </p>
-                </div>
+                    <p>
+                        Furthermore, evaluating structural anti-aliasing filters is essential for high-fidelity workflows. Some manufacturers choose to remove the optical low-pass filter entirely to capture peak micro-contrast levels, while others use advanced structural filters to completely eliminate moiré patterning across repeating textures. Our testing matrix uses specialized target charts to trace these subtle optical differences, providing clear engineering feedback for professionals who rely on exact color and textile reproduction.
+                    </p>
+                </section>
 
                 <!-- Section 2: Dynamic Range & Noise Performance Matrix -->
-                <div class="editorial-segment">
+                <section class="editorial-segment">
                     <h3><i class="fas fa-sliders-h"></i> 2. Dynamic Range Scope, Noise Floors, and Signal Amplification Protocols</h3>
                     <p>
                         Dynamic range remains a crucial benchmark metric for identifying elite imaging sensors, mapping out the total tonal range a camera can record between complete black and pure white. The data validation desk monitors how amplification circuits affect the integrity of dark shadow areas. As sensor signal amplification (ISO) increases, the underlying analog signal is boosted before hitting the analog-to-digital converter (ADC), which inevitably elevates the sensor's baseline noise floor.
@@ -531,10 +537,16 @@
                     <p>
                         This systematic method provides an open reference system for content developers and studio engineers who require maximum latitude in post-production pipelines. When an independent team questions an evaluation score on our portal, they receive access to our complete collection of testing parameters. This diagnostic packet details the target chart specifications, lens choices, and raw processing software used during the run. This open data sharing shifts common tech arguments into collaborative engineering assessments, clarifying how minor software or driver updates alter raw data files.
                     </p>
-                </div>
+                    <p>
+                        Dual-gain sensor architecture represents another critical advancement monitored by our technical desk. By using two separate analog read paths for each pixel, modern sensors can switch to a high-conversion gain mode when ambient light drops below specific thresholds. This hidden electrical shift preserves clean shadow tones without compromising highlight headrooms. Our laboratory sweeps precisely locate these gain transition points across all three devices, ensuring photographers know exactly how to optimize their exposure curves under mixed or unpredictable stadium lights.
+                    </p>
+                    <p>
+                        Additionally, we map how thermal characteristics alter structural grain uniformity over long operating periods. When internal core components generate heat during long video capture sessions, the sensor substrate inevitably experiences minor temperature spikes. This heat creates extra dark current noise that disrupts smooth color gradients. By tracking performance across fixed 30-minute stress runs, our diagnostic teams show how well each camera body manages internal heat buildup, helping videographers protect their footage from unwanted structural noise.
+                    </p>
+                </section>
 
                 <!-- Section 3: Processor Architecture & Latency -->
-                <div class="editorial-segment">
+                <section class="editorial-segment">
                     <h3><i class="fas fa-brain"></i> 3. Processing Core Architecture, Autofocus Sub-Systems, and Processing Latency</h3>
                     <p>
                         Modern mirrorless camera systems rely heavily on deep integration between their optical sensors and onboard digital signal processors (DSP). When raw photon data is read from the pixel matrix, it must pass through complex processing pipelines that handle real-time white balance adjustments, color reconstruction, noise reduction, and autofocus calculations simultaneously. The processing speed of these internal pipelines determines the maximum continuous frame rate a camera can maintain without filling its internal memory buffer.
@@ -542,84 +554,31 @@
                     <p>
                         Our testing setups evaluate these processing architectures by tracking delay trends across continuous shooting phases, monitoring the exact millisecond gaps between the physical shutter press and data write cycles. Here, the <strong>Lumix Optical Matrix Z5</strong> holds a noticeable technical advantage, bypassing traditional bus bottlenecks and completely minimizing rolling shutter skew artifacts due to its ultra-high electronic signal bus read velocities. The <strong>Sony A7 IV Professional Black</strong> responds with exceptional autofocus tracking sub-systems, scanning the frame hundreds of times per second to achieve consistent phase-detection compliance. Though the <strong>Alpha Sensor Module X1</strong> exhibits a slightly higher readout latency than the stacked Lumix architecture, its deep integration between the optical sensor and the internal digital signal processor ensures unmatched mathematical precision when extracting high-resolution quantum data files.
                     </p>
-                </div>
-
-                <!-- Section 4: About Us (Integrated) -->
-                <div class="editorial-segment" id="about">
-                    <h3><i class="fas fa-info-circle"></i> 4. About Our Technical Evaluation Laboratory</h3>
                     <p>
-                        Ranking Hours is an independent optoelectronic research and hardware testing collective established to deliver completely uncompromised, laboratory-grade analysis of consumer and digital cinema imaging matrices. Unlike standard review outlets reliant on subjective field observations, our infrastructure is anchored entirely in quantitative metrics, evaluating sensory hardware against absolute physical thresholds. 
+                        Beyond simple tracking speeds, the underlying algorithms driving real-time pattern recognition dictate field reliability. Modern tracking engines use custom predictive systems to estimate subject paths even when temporary objects block the main target. Our comparison rigs test these autofocus systems against erratic, high-speed movements under low-contrast illumination. This stressful scenario clearly separates basic consumer hardware from elite, production-grade tracking instruments.
                     </p>
                     <p>
-                        Our engineering team isolates performance variables including spatial frequency responses, full-well capacities, signal-to-noise ratios, and heat dissipation dynamics. We operate free from corporate sponsorships or transactional editorial arrangements, ensuring that every hardware node published within our verification matrix undergoes identical testing protocols. Through rigorous laboratory methods, we empower platform architects, cinematic specialists, and technical consumers worldwide to make asset decisions rooted strictly in mathematical truth.
+                        Finally, buffer clearance rates play a huge role in fluid field operation. High frame rates lose their utility if a locked processing bus blocks the camera for extended periods while clearing raw files onto removable storage cards. We measure write performance across multiple media formats, including advanced CFexpress and standard UHS-II pipelines. This helps action and wildlife specialists know exactly how long their equipment will remain responsive during crucial shooting moments.
                     </p>
-                </div>
-
-                <!-- Section 5: Contact Form (Integrated) -->
-                <div class="editorial-segment" id="contact">
-                    <h3><i class="fas fa-envelope"></i> 5. Establish Technical Contact and Inquiry Pathways</h3>
-                    <p>
-                        For corporate engineering inquiries, dispute validations, or specific telemetry requests regarding our laboratory datasets, please utilize our formal intake terminal below. All entries are automatically processed through threat-filtering frameworks to guarantee operational data security.
-                    </p>
-                    <form class="contact-form" onsubmit="event.preventDefault(); alert('Telemetry submission simulated.');">
-                        <div class="form-group">
-                            <label for="name">Institutional or Individual Name</label>
-                            <input type="text" id="name" required placeholder="e.g., Department of Optical Engineering">
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Verified Communication Route (Email)</label>
-                            <input type="email" id="email" required placeholder="e.g., engineer@domain.com">
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Detailed Telemetry Request Description</label>
-                            <textarea id="message" rows="6" required placeholder="Specify sensor metrics, hardware parameters, or baseline parameters requested..."></textarea>
-                        </div>
-                        <button type="submit" class="submit-btn">Transmit Logs</button>
-                    </form>
-                </div>
-
-                <!-- Section 6: Privacy Policy (Integrated) -->
-                <div class="editorial-segment" id="privacy">
-                    <h3><i class="fas fa-user-secret"></i> 6. Global Privacy Architecture and Data Management Nodes</h3>
-                    <p>
-                        Ranking Hours operates under strict programmatic compliance vectors governing cross-border informational systems. This legal policy outlines our technical parameters regarding telemetry capture, log collection, and algorithmic analytics processing during your deployment on this root domain.
-                    </p>
-                    <h4>Information Capture Protocol</h4>
-                    <p>
-                        Our servers automatically record routine non-identifiable system variables, including localized browser engine strings, operational display dimensions, and latency metrics. When you intentionally communicate via our secure contact nodes, provided communication vectors are held within isolated, encrypted storage blocks. We enforce zero data monetization structures; your technical records are completely decoupled from external marketing syndicates or advertising execution registries.
-                    </p>
-                    <h4>Integration of Network Advertisement Standards</h4>
-                    <p>
-                        This system implements automated verification compliance via strict ads.txt records, completely safeguarding endpoints against malicious proxy injection or domain spoofing vectors. Third-party ad delivery systems may track generic cookie behaviors to tailor contextual relevance, completely free from cross-profile mapping of sensitive identity metrics. You retain absolute control to alter tracking authorizations via native client browser configurations at any execution point.
-                    </p>
-                </div>
-
-                <!-- Section 7: Terms of Service (Integrated) -->
-                <div class="editorial-segment" id="terms">
-                    <h3><i class="fas fa-gavel"></i> 7. Institutional Terms of Operation and Telemetry Licensing</h3>
-                    <p>
-                        Welcome to the quantitative evaluation infrastructure of Ranking Hours. By initializing interaction protocols with this platform or parsing our performance tables, you establish full regulatory compliance with our operational guidelines as defined below.
-                    </p>
-                    <h4>Intellectual Property and Data Licensing</h4>
-                    <p>
-                        All proprietary sensory charts, telemetry spreadsheets, and long-form narrative texts compiled within this architecture are the exclusive properties of Ranking Hours. You are granted a limited non-commercial read license to review this documentation for informational purposes. Scraping datasets via automated script instances or repurposing architectural metrics for commercial valuation engines without direct authorization remains strictly prohibited.
-                    </p>
-                    <h4>Disclaimers of Absolute Liability</h4>
-                    <p>
-                        Our laboratory profiles track physical equipment responses under highly isolated, standardized laboratory conditions. While our parameters are mathematically verified, real-world deployment performance may fluctuate based on external variables, ambient thermal conditions, firmware stability patches, and lens selection profiles. Consequently, Ranking Hours presents all data strings "as-is" without offering legal execution guarantees or operational commercial fitness warranties.
-                    </p>
-                </div>
-
+                </section>
             </div>
         </div>
-    </section>
+    </main>
+
+    <!-- AdSense Lower Banner Slot -->
+    <div class="container" style="margin-bottom: 40px;">
+        <div class="adsense-container">
+            <span class="adsense-label">Sponsored Context Block</span>
+            <div class="adsense-placeholder">Google AdSense Matched Content Unit - Lower Segment (336x280)</div>
+        </div>
+    </div>
 
     <!-- Clean Functional Production Standards Institutional Footer Links Map -->
     <footer class="footer">
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-col">
-                    <a href="#home">
+                    <a href="index.html">
                         <img src="Ranking-hours.jpg" alt="Ranking Hours Institutional System Brand Link" width="230">
                     </a>
                     <p class="footer-description">
@@ -630,16 +589,17 @@
                 <div class="footer-col">
                     <h3>Main Navigation</h3>
                     <ul class="footer-links">
-                        <li><a href="#home">Home Base</a></li>
-                        <li><a href="#comparisons">Hardware Matrices</a></li>
-                        <li><a href="#about">About Our Labs</a></li>
+                        <li><a href="index.html">Bosh Sahifa</a></li>
+                        <li><a href="comparisons.html">Solishtirishlar</a></li>
+                        <li><a href="categories.html">Kategoriyalar</a></li>
                     </ul>
                 </div>
                 
                 <div class="footer-col">
                     <h3>Interact Nodes</h3>
                     <ul class="footer-links">
-                        <li><a href="#contact">Contact Endpoint</a></li>
+                        <li><a href="contact.html">Bog'lanish</a></li>
+                        <li><a href="about.html">Biz Haqimizda</a></li>
                         <li><a href="ads.txt">ads.txt Registry</a></li>
                     </ul>
                 </div>
@@ -647,15 +607,15 @@
                 <div class="footer-col">
                     <h3>Legal Compliance</h3>
                     <ul class="footer-links">
-                        <li><a href="#privacy">Privacy Policy</a></li>
-                        <li><a href="#terms">Terms of Operations</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="terms.html">Terms of Operations</a></li>
                     </ul>
                 </div>
             </div>
             
             <div class="footer-bottom">
                 <p>&copy; 2025-2026 ranking-hours.uz — Quantitative Testing Platforms. All programmatic rights reserved.</p>
-                <p class="footer-note">All test records are compiled via independent automated cycles. Technical specifications are accurate as of terminal query check.</p>
+                <p class="footer-note">All test records are compiled via independent automated cycles. Author: Abdulloh.</p>
             </div>
         </div>
     </footer>
