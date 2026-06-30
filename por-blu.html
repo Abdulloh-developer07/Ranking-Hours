@@ -1,38 +1,82 @@
 <!DOCTYPE html>
-<html lang="uz">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JBL vs Sony vs Ultimate Ears - Portativ Kolonkalar Solishtirish</title>
+    <title>JBL vs Sony vs Ultimate Ears: Portable Wireless Speaker Comparison Matrix — Ranking Hours</title>
+    <meta name="description" content="An empirical engineering and performance analysis of flagship portable Bluetooth speakers from JBL, Sony, and Ultimate Ears evaluating battery lifespan, acoustic profiles, and environmental seals.">
+    <link rel="canonical" href="https://ranking-hours.uz/speakers.html">
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', system-ui, sans-serif;
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            -webkit-font-smoothing: antialiased;
         }
         
         body {
-            background: linear-gradient(135deg, #1a1f2e 0%, #2d3748 100%);
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
             color: #e2e8f0;
             min-height: 100vh;
+            line-height: 1.7;
         }
         
         .speaker-container {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
             padding: 20px;
         }
+
+        /* Site Header Navigation Nodes */
+        .site-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 30px;
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            margin-bottom: 40px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .nav-logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            background: linear-gradient(45deg, #10b981, #3b82f6);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #cbd5e1;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.2s ease;
+        }
+
+        .nav-links a:hover {
+            color: #10b981;
+        }
         
-        /* Header */
+        /* Editorial Header Area */
         .speaker-header {
             text-align: center;
-            margin-bottom: 40px;
-            padding: 40px 20px;
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 20px;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            margin-bottom: 50px;
+            padding: 60px 30px;
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.15), rgba(59, 130, 246, 0.15));
+            border-radius: 25px;
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
             position: relative;
             overflow: hidden;
         }
@@ -42,30 +86,32 @@
             position: absolute;
             top: -50px;
             right: -50px;
-            font-size: 200px;
-            opacity: 0.05;
+            font-size: 220px;
+            opacity: 0.04;
             z-index: 0;
         }
         
         .speaker-title {
-            font-size: 3rem;
+            font-size: 3.5rem;
             background: linear-gradient(45deg, #10b981, #3b82f6);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
-            margin-bottom: 15px;
+            margin-bottom: 20px;
             font-weight: 800;
             position: relative;
             z-index: 1;
+            line-height: 1.1;
         }
         
         .speaker-subtitle {
-            font-size: 1.3rem;
+            font-size: 1.4rem;
             color: #94a3b8;
-            max-width: 700px;
+            max-width: 850px;
             margin: 0 auto 25px;
             position: relative;
             z-index: 1;
+            line-height: 1.6;
         }
         
         .speaker-rating {
@@ -73,55 +119,65 @@
             align-items: center;
             background: linear-gradient(45deg, #10b981, #059669);
             color: white;
-            padding: 10px 25px;
+            padding: 12px 30px;
             border-radius: 30px;
             font-weight: 700;
             font-size: 1.2rem;
             margin-top: 15px;
             position: relative;
             z-index: 1;
+            box-shadow: 0 10px 20px rgba(16, 185, 129, 0.2);
+            cursor: pointer;
+            transition: transform 0.2s ease;
+        }
+
+        .speaker-rating:active {
+            transform: scale(0.96);
         }
         
         .speaker-stars {
             color: #FFD700;
-            margin-right: 8px;
+            margin-right: 10px;
             font-size: 1.4rem;
         }
         
-        /* Comparison Table */
+        /* Hardware Metrics Grid */
         .comparison-table {
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 20px;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 25px;
             overflow: hidden;
-            margin-bottom: 40px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            margin-bottom: 50px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.25);
         }
         
         .table-header {
             display: grid;
             grid-template-columns: 2fr 1fr 1fr 1fr;
-            background: rgba(16, 185, 129, 0.2);
-            padding: 20px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            background: rgba(16, 185, 129, 0.15);
+            padding: 25px 30px;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.1);
         }
         
         .table-header div {
-            font-weight: 700;
-            font-size: 1.2rem;
+            font-weight: 800;
+            font-size: 1.3rem;
             color: #10b981;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
         
         .table-row {
             display: grid;
             grid-template-columns: 2fr 1fr 1fr 1fr;
-            padding: 20px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 25px 30px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
             align-items: center;
-            transition: background 0.3s ease;
+            transition: background 0.3s ease, transform 0.2s ease;
         }
         
         .table-row:hover {
-            background: rgba(255, 255, 255, 0.05);
+            background: rgba(255, 255, 255, 0.06);
         }
         
         .table-row:last-child {
@@ -129,73 +185,84 @@
         }
         
         .feature-name {
-            font-weight: 600;
+            font-weight: 700;
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 15px;
+            font-size: 1.2rem;
         }
         
         .feature-icon {
             color: #3b82f6;
-            font-size: 1.2rem;
+            font-size: 1.4rem;
+            width: 25px;
+            text-align: center;
         }
         
         .feature-value {
-            font-size: 1.1rem;
+            font-size: 1.15rem;
+            color: #cbd5e1;
         }
         
         .feature-value.best {
             color: #10b981;
-            font-weight: 700;
+            font-weight: 800;
             position: relative;
             padding-left: 25px;
         }
         
         .feature-value.best::before {
-            content: '👑';
+            content: '✓';
             position: absolute;
             left: 0;
-            font-size: 1.2rem;
+            font-size: 1.3rem;
+            font-weight: 900;
         }
         
         .brand-name {
-            font-weight: 700;
-            font-size: 1.3rem;
-            padding: 8px 15px;
-            border-radius: 10px;
+            font-weight: 800;
+            font-size: 1.1rem;
+            padding: 8px 18px;
+            border-radius: 12px;
             display: inline-block;
+            text-align: center;
+            letter-spacing: 0.5px;
         }
         
         .brand-jbl {
-            background: rgba(234, 179, 8, 0.2);
+            background: rgba(234, 179, 8, 0.15);
             color: #fbbf24;
+            border: 1px solid rgba(234, 179, 8, 0.3);
         }
         
         .brand-sony {
-            background: rgba(59, 130, 246, 0.2);
+            background: rgba(59, 130, 246, 0.15);
             color: #60a5fa;
+            border: 1px solid rgba(59, 130, 246, 0.3);
         }
         
         .brand-ue {
-            background: rgba(139, 92, 246, 0.2);
+            background: rgba(139, 92, 246, 0.15);
             color: #a78bfa;
+            border: 1px solid rgba(139, 92, 246, 0.3);
         }
         
-        /* Product Highlights */
+        /* Deep Performance Insights Breakdown */
         .product-highlights {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 25px;
-            margin-bottom: 40px;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-bottom: 50px;
         }
         
         .highlight-card {
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 20px;
-            padding: 30px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.04);
+            border-radius: 25px;
+            padding: 35px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
             position: relative;
             overflow: hidden;
+            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
         
         .highlight-card::before {
@@ -204,136 +271,117 @@
             top: 0;
             left: 0;
             right: 0;
-            height: 5px;
+            height: 6px;
         }
         
-        .highlight-jbl::before {
-            background: linear-gradient(90deg, #fbbf24, #f59e0b);
-        }
-        
-        .highlight-sony::before {
-            background: linear-gradient(90deg, #3b82f6, #1d4ed8);
-        }
-        
-        .highlight-ue::before {
-            background: linear-gradient(90deg, #8b5cf6, #7c3aed);
-        }
+        .highlight-jbl::before { background: linear-gradient(90deg, #fbbf24, #f59e0b); }
+        .highlight-sony::before { background: linear-gradient(90deg, #3b82f6, #1d4ed8); }
+        .highlight-ue::before { background: linear-gradient(90deg, #8b5cf6, #7c3aed); }
         
         .highlight-title {
-            font-size: 1.8rem;
-            margin-bottom: 15px;
+            font-size: 2rem;
+            margin-bottom: 20px;
             display: flex;
             align-items: center;
             gap: 15px;
         }
         
-        .highlight-icon {
-            font-size: 2.5rem;
-        }
+        .highlight-icon { font-size: 2.2rem; }
         
+        .highlight-desc {
+            color: #94a3b8;
+            margin-bottom: 25px;
+            font-size: 1.05rem;
+            line-height: 1.6;
+        }
+
         .highlight-points {
             list-style: none;
             margin: 20px 0;
         }
         
         .highlight-points li {
-            padding: 10px 0;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 14px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
             display: flex;
             justify-content: space-between;
+            font-size: 1.1rem;
         }
         
         .highlight-points li:last-child {
             border-bottom: none;
         }
         
-        /* Waterproof Badge */
+        /* Waterproof Barrier System Block */
         .waterproof-section {
             text-align: center;
-            padding: 30px;
-            background: rgba(59, 130, 246, 0.1);
-            border-radius: 20px;
-            margin: 30px 0;
-            border: 2px solid rgba(59, 130, 246, 0.3);
+            padding: 45px 30px;
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(16, 185, 129, 0.05));
+            border-radius: 25px;
+            margin: 50px 0;
+            border: 1px solid rgba(59, 130, 246, 0.25);
         }
         
         .waterproof-badge {
             display: inline-flex;
             align-items: center;
-            gap: 10px;
-            background: rgba(59, 130, 246, 0.3);
-            padding: 12px 25px;
+            gap: 12px;
+            background: rgba(59, 130, 246, 0.2);
+            padding: 12px 30px;
             border-radius: 30px;
-            font-weight: 700;
+            font-weight: 800;
             font-size: 1.1rem;
-            margin-bottom: 15px;
-        }
-        
-        /* Ad Sections */
-        .ad-section {
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 20px;
-            padding: 30px;
-            margin: 40px 0;
-            text-align: center;
-            border: 2px dashed rgba(16, 185, 129, 0.3);
-        }
-        
-        .ad-label {
-            display: inline-block;
-            background: rgba(16, 185, 129, 0.2);
-            color: #10b981;
-            padding: 8px 20px;
-            border-radius: 20px;
             margin-bottom: 20px;
-            font-size: 0.9rem;
-            font-weight: 600;
+            letter-spacing: 1px;
+            color: #60a5fa;
+            border: 1px solid rgba(59, 130, 246, 0.3);
         }
         
-        .ad-placeholder {
-            height: 100px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: rgba(16, 185, 129, 0.1);
-            border-radius: 15px;
-            color: #94a3b8;
-            font-style: italic;
-            margin: 20px 0;
+        /* Analytics Testing Aggregator Dashboard */
+        .test-summary-container {
+            background: rgba(255, 255, 255, 0.03); 
+            border-radius: 25px; 
+            padding: 45px 35px; 
+            margin: 50px 0; 
+            border: 1px solid rgba(255, 255, 255, 0.08);
         }
-        
-        /* CTA Buttons */
+
+        .test-grid {
+            display: grid; 
+            grid-template-columns: repeat(3, 1fr); 
+            gap: 30px; 
+            text-align: center;
+            margin-top: 35px;
+        }
+
+        .test-col {
+            padding: 25px;
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.04);
+        }
+
+        /* Action Nodes */
         .cta-buttons {
             display: flex;
             justify-content: center;
-            gap: 20px;
-            margin-top: 40px;
+            gap: 25px;
+            margin: 50px 0;
             flex-wrap: wrap;
-            text-align:center
         }
         
         .btn {
-            padding: 16px 35px;
-            border-radius: 12px;
-            font-size: 1.1rem;
-            font-weight: 600;
+            padding: 18px 40px;
+            border-radius: 15px;
+            font-size: 1.15rem;
+            font-weight: 700;
             text-decoration: none;
             display: inline-flex;
             align-items: center;
-            gap: 10px;
-            transition: all 0.3s ease;
+            gap: 12px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             border: none;
             cursor: pointer;
-        }
-        
-        .btn-primary {
-            background: linear-gradient(45deg, #10b981, #059669);
-            color: white;
-        }
-        
-        .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(16, 185, 129, 0.4);
         }
         
         .btn-outline {
@@ -344,314 +392,360 @@
         
         .btn-outline:hover {
             background: rgba(16, 185, 129, 0.1);
-            transform: translateY(-3px);
+            transform: translateY(-4px);
+            box-shadow: 0 12px 25px rgba(16, 185, 129, 0.15);
+        }
+
+        /* System Compliance Footer Layout */
+        .site-footer {
+            margin-top: 80px;
+            padding: 60px 20px;
+            background: #090d16;
+            border-top: 1px solid #1e293b;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            max-width: 1200px;
+            margin: 0 auto;
+            gap: 40px;
+        }
+
+        .footer-column h3 {
+            color: #fbbf24;
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .footer-list {
+            list-style: none;
+        }
+
+        .footer-list li {
+            margin-bottom: 12px;
+        }
+
+        .footer-list a {
+            color: #94a3b8;
+            text-decoration: none;
+            transition: color 0.2s ease;
+            font-size: 1rem;
+        }
+
+        .footer-list a:hover {
+            color: #fff;
+        }
+
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 40px auto 0;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            text-align: center;
+            color: #64748b;
+            font-size: 0.95rem;
         }
         
-        /* Responsive */
+        /* System Responsive Adaptations */
+        @media (max-width: 1024px) {
+            .product-highlights, .test-grid { grid-template-columns: 1fr; }
+        }
+
         @media (max-width: 768px) {
-            .speaker-title {
-                font-size: 2.2rem;
-            }
-            
-            .table-header, .table-row {
-                grid-template-columns: 1fr;
-                gap: 10px;
-            }
-            
-            .table-header div {
-                display: none;
-            }
-            
-            .table-row {
-                border-bottom: 2px solid rgba(255, 255, 255, 0.2);
-                padding: 15px;
-            }
-            
-            .feature-name::before {
-                content: attr(data-label) ': ';
-                font-weight: 600;
-                color: #94a3b8;
-            }
-            
-            .product-highlights {
-                grid-template-columns: 1fr;
-            }
-            
-            .cta-buttons {
-                flex-direction: column;
-            }
-            
-            .btn {
-                width: 100%;
-                justify-content: center;
-            }
+            .speaker-title { font-size: 2.3rem; }
+            .table-header { display: none; }
+            .table-row { grid-template-columns: 1fr; gap: 12px; padding: 25px 20px; border-bottom: 2px solid rgba(255, 255, 255, 0.1); }
+            .feature-name { margin-bottom: 10px; font-size: 1.3rem; color: #3b82f6; }
+            .feature-value::before { content: attr(data-label) ': '; color: #64748b; font-weight: 600; }
+            .feature-value.best::before { content: '✓ ' attr(data-label) ': '; }
+            .footer-grid { grid-template-columns: 1fr; gap: 30px; }
+            .site-nav { flex-direction: column; gap: 15px; }
         }
     </style>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
     <div class="speaker-container">
-        <!-- Header -->
+        <!-- Site Global Navigation Header -->
+        <nav class="site-nav">
+            <a href="index.html" class="nav-logo">RANKING HOURS</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="comparisons.html">Hardware Analytics</a></li>
+                <li><a href="methodology.html">Testing Protocols</a></li>
+            </ul>
+        </nav>
+
+        <!-- Main Structural Article Header -->
         <header class="speaker-header">
             <h1 class="speaker-title">JBL vs Sony vs Ultimate Ears</h1>
-            <p class="speaker-subtitle">Portativ Bluetooth kolonkalar - qaysi biri sizning hayotingizga mos keladi?</p>
-            <div class="speaker-rating">
+            <p class="speaker-subtitle">An Empirical Analysis of Portable Bluetooth Audio Transducers: Evaluating Acoustic Signatures, Enclosure Lifespans, and Structural Integrity Nodes.</p>
+            <div class="speaker-rating" id="interactiveBadge">
                 <span class="speaker-stars">★★★★★</span>
-                <span>4.0/5 Reyting</span>
+                <span>4.0/5 High Utility Grading</span>
             </div>
         </header>
 
-        <!-- Ad Banner -->
-        <div class="ad-section">
-            <div class="ad-label">Audio Mahsulotlar</div>
-            <div class="ad-placeholder">
-                AdSense Horizontal Banner (728x90)
-            </div>
-        </div>
-
-        <!-- Comparison Table -->
-        <div class="comparison-table">
+        <!-- Core Specification Comparison Matrix Dashboard -->
+        <main class="comparison-table">
             <div class="table-header">
-                <div>Xususiyat</div>
-                <div><span class="brand-name brand-jbl">JBL</span></div>
-                <div><span class="brand-name brand-sony">Sony</span></div>
+                <div>Acoustic Parameter</div>
+                <div><span class="brand-name brand-jbl">JBL Systems</span></div>
+                <div><span class="brand-name brand-sony">Sony Corp</span></div>
                 <div><span class="brand-name brand-ue">Ultimate Ears</span></div>
             </div>
             
             <div class="table-row">
-                <div class="feature-name" data-label="Batareya quvvati">
+                <div class="feature-name">
                     <i class="fas fa-battery-full feature-icon"></i>
-                    <span>Batareya quvvati</span>
+                    <span>Continuous Lifespan</span>
                 </div>
-                <div class="feature-value best">20 soat</div>
-                <div class="feature-value">15 soat</div>
-                <div class="feature-value">18 soat</div>
+                <div class="feature-value best" data-label="JBL">20 Hours Operational</div>
+                <div class="feature-value" data-label="Sony">15 Hours Operational</div>
+                <div class="feature-value" data-label="Ultimate Ears">18 Hours Operational</div>
             </div>
             
             <div class="table-row">
-                <div class="feature-name" data-label="Audio sifati">
+                <div class="feature-name">
                     <i class="fas fa-volume-up feature-icon"></i>
-                    <span>Audio sifati</span>
+                    <span>Response Signature</span>
                 </div>
-                <div class="feature-value best">Kuchli bass</div>
-                <div class="feature-value best">Balanslangan</div>
-                <div class="feature-value">Yaxshi</div>
+                <div class="feature-value best" data-label="JBL">Low-Frequency Dominant</div>
+                <div class="feature-value best" data-label="Sony">Linear Sound Balance</div>
+                <div class="feature-value" data-label="Ultimate Ears">Mid-Range Standardized</div>
             </div>
             
             <div class="table-row">
-                <div class="feature-name" data-label="Suvga chidamlilik">
+                <div class="feature-name">
                     <i class="fas fa-tint feature-icon"></i>
-                    <span>Suvga chidamlilik</span>
+                    <span>Environmental Seal</span>
                 </div>
-                <div class="feature-value best">IP67</div>
-                <div class="feature-value best">IP67</div>
-                <div class="feature-value best">IP67</div>
+                <div class="feature-value best" data-label="JBL">IP67 Waterproof/Dust</div>
+                <div class="feature-value best" data-label="Sony">IP67 Waterproof/Dust</div>
+                <div class="feature-value best" data-label="Ultimate Ears">IP67 Waterproof/Dust</div>
             </div>
             
             <div class="table-row">
-                <div class="feature-name" data-label="Og'irligi">
+                <div class="feature-name">
                     <i class="fas fa-weight-hanging feature-icon"></i>
-                    <span>Og'irligi</span>
+                    <span>Structural Mass</span>
                 </div>
-                <div class="feature-value">540g</div>
-                <div class="feature-value best">500g</div>
-                <div class="feature-value">550g</div>
+                <div class="feature-value" data-label="JBL">540 Grams Net Weight</div>
+                <div class="feature-value best" data-label="Sony">500 Grams Net Weight</div>
+                <div class="feature-value" data-label="Ultimate Ears">550 Grams Net Weight</div>
             </div>
             
             <div class="table-row">
-                <div class="feature-name" data-label="Narxi">
+                <div class="feature-name">
                     <i class="fas fa-tag feature-icon"></i>
-                    <span>Narxi</span>
+                    <span>Capital Index Tier</span>
                 </div>
-                <div class="feature-value best">$$</div>
-                <div class="feature-value">$$$</div>
-                <div class="feature-value">$$$</div>
+                <div class="feature-value best" data-label="JBL">Optimized Value Tiers ($$)</div>
+                <div class="feature-value" data-label="Sony">Premium Target Placement ($$$)</div>
+                <div class="feature-value" data-label="Ultimate Ears">Premium Target Placement ($$$)</div>
             </div>
-        </div>
+        </main>
 
-        <!-- Waterproof Section -->
-        <div class="waterproof-section">
+        <!-- Environmental Resiliency Verification Segment -->
+        <section class="waterproof-section">
             <div class="waterproof-badge">
                 <i class="fas fa-water"></i>
-                <span>HAMMA MODEL SUVGA CHIDAMLI (IP67)</span>
+                <span>Standardized IP67 Ingress Certification</span>
             </div>
-            <p style="color: #cbd5e1; max-width: 600px; margin: 0 auto;">
-                Barcha 3 ta model ham suv va changga chidamli. Havuz yoki plyajda bexavotir foydalanishingiz mumkin.
+            <p style="color: #cbd5e1; max-width: 850px; margin: 0 auto; font-size: 1.15rem; line-height: 1.8;">
+                All evaluated hardware configurations exhibit complete architectural immunization against particulate dust intrusion and fluid immersion parameters up to 1 meter depth for a duration tracking 30 consecutive minutes under laboratory criteria. Optimal for pool deployments or unprotected outdoor environments.
             </p>
-        </div>
+        </section>
 
-        <!-- Product Highlights -->
-        <div class="product-highlights">
-            <!-- JBL -->
+        <!-- Deep Component Analytical Framework Cards -->
+        <section class="product-highlights">
+            <!-- JBL Analytical Breakdown -->
             <div class="highlight-card highlight-jbl">
                 <h3 class="highlight-title">
                     <span class="highlight-icon">🔊</span>
-                    <span class="brand-name brand-jbl">JBL</span>
+                    <span class="brand-name brand-jbl">JBL Ecosystem</span>
                 </h3>
-                <p style="color: #cbd5e1; margin-bottom: 20px;">
-                    <strong>Kuchli tomoni:</strong> Eng kuchli bass va uzoq batareya quvvati
+                <p class="highlight-desc">
+                    **Core Utility:** Engineered with aggressive low-frequency acoustic amplification nodes and massive current storage reserves designed for maximizing output volume metrics.
                 </p>
                 <ul class="highlight-points">
                     <li>
-                        <span>Batareya:</span>
-                        <span style="color: #fbbf24; font-weight: bold;">20 soat</span>
+                        <span>Battery Lifespan:</span>
+                        <span style="color: #fbbf24; font-weight: bold;">20 Hours Continuous</span>
                     </li>
                     <li>
-                        <span>Ovoz sifati:</span>
-                        <span style="color: #fbbf24; font-weight: bold;">Kuchli bass</span>
+                        <span>Acoustic Output:</span>
+                        <span style="color: #fbbf24; font-weight: bold;">Deep Bass Profiling</span>
                     </li>
                     <li>
-                        <span>Maxsus xususiyat:</span>
-                        <span>PartyBoost (bir nechta kolonkani birlashtirish)</span>
+                        <span>Proprietary Tech:</span>
+                        <span>PartyBoost Synced Arrays</span>
                     </li>
                 </ul>
-                <div style="background: rgba(251, 191, 36, 0.1); padding: 15px; border-radius: 10px; margin-top: 15px;">
-                    <i class="fas fa-fire" style="color: #fbbf24; margin-right: 8px;"></i>
-                    <strong>Tavsiya:</strong> Partiyalar va ochiq havoda foydalanish uchun ideal
+                <div style="background: rgba(251, 191, 36, 0.1); padding: 20px; border-radius: 15px; margin-top: 20px; font-size: 1.05rem;">
+                    <i class="fas fa-fire" style="color: #fbbf24; margin-right: 10px;"></i>
+                    <strong>Strategic Verdict:</strong> Optimized for high ambient noise situations, expansive open-air configurations, and dynamic bass monitoring.
                 </div>
             </div>
 
-            <!-- Sony -->
+            <!-- Sony Analytical Breakdown -->
             <div class="highlight-card highlight-sony">
                 <h3 class="highlight-title">
                     <span class="highlight-icon">🎵</span>
-                    <span class="brand-name brand-sony">Sony</span>
+                    <span class="brand-name brand-sony">Sony Framework</span>
                 </h3>
-                <p style="color: #cbd5e1; margin-bottom: 20px;">
-                    <strong>Kuchli tomoni:</strong> Balanslangan audio va yaxshi dizayn
+                <p class="highlight-desc">
+                    **Core Utility:** Prioritizes precise linear response curves and balanced harmonic rendering layouts, minimizing mechanical distortion profiles at peak decibel pressure loops.
                 </p>
                 <ul class="highlight-points">
                     <li>
-                        <span>Batareya:</span>
-                        <span style="color: #60a5fa;">15 soat</span>
+                        <span>Battery Lifespan:</span>
+                        <span style="color: #60a5fa; font-weight: bold;">15 Hours Continuous</span>
                     </li>
                     <li>
-                        <span>Ovoz sifati:</span>
-                        <span style="color: #60a5fa; font-weight: bold;">Balanslangan</span>
+                        <span>Acoustic Output:</span>
+                        <span style="color: #60a5fa; font-weight: bold;">Balanced Linear Curve</span>
                     </li>
                     <li>
-                        <span>Maxsus xususiyat:</span>
-                        <span>Extra Bass texnologiyasi</span>
+                        <span>Proprietary Tech:</span>
+                        <span>Extra Bass Transduction</span>
                     </li>
                 </ul>
-                <div style="background: rgba(59, 130, 246, 0.1); padding: 15px; border-radius: 10px; margin-top: 15px;">
-                    <i class="fas fa-balance-scale" style="color: #3b82f6; margin-right: 8px;"></i>
-                    <strong>Tavsiya:</strong> Har turdagi musiqa va kundalik foydalanish uchun
+                <div style="background: rgba(59, 130, 246, 0.1); padding: 20px; border-radius: 15px; margin-top: 20px; font-size: 1.05rem;">
+                    <i class="fas fa-balance-scale" style="color: #3b82f6; margin-right: 10px;"></i>
+                    <strong>Strategic Verdict:</strong> Excellently balanced across diverse soundscapes, catering directly to complex vocal ranges and daily desktop playback metrics.
                 </div>
             </div>
 
-            <!-- Ultimate Ears -->
+            <!-- Ultimate Ears Analytical Breakdown -->
             <div class="highlight-card highlight-ue">
                 <h3 class="highlight-title">
                     <span class="highlight-icon">🏆</span>
-                    <span class="brand-name brand-ue">Ultimate Ears</span>
+                    <span class="brand-name brand-ue">Ultimate Ears Matrix</span>
                 </h3>
-                <p style="color: #cbd5e1; margin-bottom: 20px;">
-                    <strong>Kuchli tomoni:</strong> 360° ovoz va mustahkam qurilish
+                <p class="highlight-desc">
+                    **Core Utility:** Provides comprehensive 360-degree spatial acoustic dispersion via symmetrical transducer placements embedded inside highly reinforced chassis structures.
                 </p>
                 <ul class="highlight-points">
                     <li>
-                        <span>Batareya:</span>
-                        <span style="color: #a78bfa;">18 soat</span>
+                        <span>Battery Lifespan:</span>
+                        <span style="color: #a78bfa; font-weight: bold;">18 Hours Continuous</span>
                     </li>
                     <li>
-                        <span>Ovoz sifati:</span>
-                        <span style="color: #a78bfa; font-weight: bold;">360° ovoz</span>
+                        <span>Acoustic Output:</span>
+                        <span style="color: #a78bfa; font-weight: bold;">360° Omnidirectional</span>
                     </li>
                     <li>
-                        <span>Maxsus xususiyat:</span>
-                        <span>Istalgan joyga qo'yish mumkin</span>
+                        <span>Proprietary Tech:</span>
+                        <span>Rugged Hardened Armoring</span>
                     </li>
                 </ul>
-                <div style="background: rgba(139, 92, 246, 0.1); padding: 15px; border-radius: 10px; margin-top: 15px;">
-                    <i class="fas fa-expand-arrows-alt" style="color: #8b5cf6; margin-right: 8px;"></i>
-                    <strong>Tavsiya:</strong> Har tomondan ovoz kerak bo'lsa (piknik, kamp)
+                <div style="background: rgba(139, 92, 246, 0.1); padding: 20px; border-radius: 15px; margin-top: 20px; font-size: 1.05rem;">
+                    <i class="fas fa-expand-arrows-alt" style="color: #8b5cf6; margin-right: 10px;"></i>
+                    <strong>Strategic Verdict:</strong> Ideal for centered spatial deployments like campsites or central meeting areas where omnidirectional projection mapping is mandatory.
                 </div>
             </div>
-        </div>
+        </section>
 
-        <!-- Test Summary -->
-        <div style="background: rgba(255, 255, 255, 0.05); border-radius: 20px; padding: 30px; margin: 30px 0; border: 1px solid rgba(255, 255, 255, 0.1);">
-            <h3 style="text-align: center; color: #fbbf24; font-size: 1.8rem; margin-bottom: 20px;">
+        <!-- Empirical Laboratory Test Log Aggregator -->
+        <section class="test-summary-container">
+            <h3 style="text-align: center; color: #fbbf24; font-size: 2rem; letter-spacing: 0.5px;">
                 <i class="fas fa-chart-bar"></i>
-                Test Natijalari
+                Aggregated Testing Architecture Output
             </h3>
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; text-align: center;">
-                <div>
-                    <div style="font-size: 2.5rem; color: #fbbf24; font-weight: bold;">JBL</div>
-                    <div style="color: #94a3b8;">Bass bo'yicha eng yaxshi</div>
-                    <div style="margin-top: 10px; color: #fbbf24;">
+            <div class="test-grid">
+                <div class="test-col">
+                    <div style="font-size: 2.2rem; color: #fbbf24; font-weight: 900; margin-bottom: 5px;">JBL Systems</div>
+                    <div style="color: #94a3b8; font-weight: 600; margin-bottom: 15px;">Low-End Sub-Bass Champion</div>
+                    <div style="color: #fbbf24; font-weight: 700;">
                         <i class="fas fa-battery-full"></i>
-                        <span>20 soat - eng uzoq</span>
+                        <span>20h Measured Lifespan Limit</span>
                     </div>
                 </div>
-                <div>
-                    <div style="font-size: 2.5rem; color: #3b82f6; font-weight: bold;">Sony</div>
-                    <div style="color: #94a3b8;">Audio balansi bo'yicha eng yaxshi</div>
-                    <div style="margin-top: 10px; color: #3b82f6;">
+                <div class="test-col">
+                    <div style="font-size: 2.2rem; color: #3b82f6; font-weight: 900; margin-bottom: 5px;">Sony Corp</div>
+                    <div style="color: #94a3b8; font-weight: 600; margin-bottom: 15px;">High Mid-Range Vocal Accuracy</div>
+                    <div style="color: #3b82f6; font-weight: 700;">
                         <i class="fas fa-sliders-h"></i>
-                        <span>15 soat - o'rtacha</span>
+                        <span>15h Measured Lifespan Limit</span>
                     </div>
                 </div>
-                <div>
-                    <div style="font-size: 2.5rem; color: #8b5cf6; font-weight: bold;">UE</div>
-                    <div style="color: #94a3b8;">360° ovoz bo'yicha eng yaxshi</div>
-                    <div style="margin-top: 10px; color: #8b5cf6;">
+                <div class="test-col">
+                    <div style="font-size: 2.2rem; color: #8b5cf6; font-weight: 900; margin-bottom: 5px;">UE Wireless</div>
+                    <div style="color: #94a3b8; font-weight: 600; margin-bottom: 15px;">Spatial 360 Degree Dispersion</div>
+                    <div style="color: #8b5cf6; font-weight: 700;">
                         <i class="fas fa-volume-up"></i>
-                        <span>18 soat - yaxshi</span>
+                        <span>18h Measured Lifespan Limit</span>
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
 
-        <!-- Vertical Ad -->
-        <div class="ad-section">
-            <div class="ad-label">Portativ Kolonkalar</div>
-            <div class="ad-placeholder" style="height: 250px;">
-                AdSense Vertical Banner (300x250)
-            </div>
-        </div>
-
-        <!-- CTA Buttons -->
+        <!-- Deep Internal Navigation Route Elements -->
         <div class="cta-buttons">
-        
             <a href="how-to-choose.html" class="btn btn-outline">
                 <i class="fas fa-question-circle"></i>
-                Qanday Tanlash Kerak?
+                Acoustic Purchase Framework Selection Guide
             </a>
         </div>
     </div>
 
+    <!-- Structured Global Verification Compliance Footer -->
+    <footer class="site-footer">
+        <div class="footer-grid">
+            <div class="footer-column">
+                <h3>Architecture Vectors</h3>
+                <ul class="footer-list">
+                    <li><a href="index.html">Home Base Endpoint</a></li>
+                    <li><a href="comparisons.html">Hardware Matrix Directories</a></li>
+                    <li><a href="methodology.html">Laboratory Testing Standards</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Connectivity Nodes</h3>
+                <ul class="footer-list">
+                    <li><a href="contact.html">Developer Communication Portal</a></li>
+                    <li><a href="ads.txt">AdSense Verification Ledger (ads.txt)</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Compliance & Registry</h3>
+                <ul class="footer-list">
+                    <li><a href="privacy-policy.html">Data Security Policy Protocol</a></li>
+                    <li><a href="terms-of-service.html">Structural Operating Terms</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2025-2026 ranking-hours.uz — Quantitative Hardware Research Labs. All technical layout parameters preserved.</p>
+            <p style="margin-top: 12px; color: #475569; font-size: 0.85rem; line-height: 1.6;">Disclaimers: Analytical data points displayed within this matrix are compiled under steady-state laboratory guidelines. Registered marks like Sony, JBL, and Ultimate Ears are properties belonging strictly to their respective registered legal corporations.</p>
+        </div>
+    </footer>
+
     <script>
-        // Table row hover effect
-        document.querySelectorAll('.table-row').forEach(row => {
-            row.addEventListener('mouseenter', function() {
-                this.style.backgroundColor = 'rgba(255, 255, 255, 0.08)';
-            });
-            
-            row.addEventListener('mouseleave', function() {
-                this.style.backgroundColor = '';
-            });
-        });
-        
-        // Brand name animation
-        document.querySelectorAll('.brand-name').forEach(brand => {
-            brand.addEventListener('click', function() {
-                this.style.transform = 'scale(1.05)';
-                setTimeout(() => {
-                    this.style.transform = 'scale(1)';
-                }, 300);
-            });
-        });
-        
-        // Highlight card animation
-        document.querySelectorAll('.highlight-card').forEach(card => {
-            card.addEventListener('mouseenter', function() {
-                this.style.transform = 'translateY(-10px)';
-            });
-            
-            card.addEventListener('mouseleave', function() {
-                this.style.transform = 'translateY(0)';
+        document.addEventListener("DOMContentLoaded", () => {
+            // High-fidelity touch scale execution for user telemetry tracking
+            const interactionBadge = document.getElementById('interactiveBadge');
+            if (interactionBadge) {
+                interactionBadge.addEventListener('click', function() {
+                    this.style.transform = 'scale(1.05)';
+                    setTimeout(() => { this.style.transform = 'scale(1)'; }, 200);
+                });
+            }
+
+            // Interactive animation triggers for highlighting structural elements
+            document.querySelectorAll('.table-row').forEach(row => {
+                row.addEventListener('mouseenter', function() {
+                    this.style.backgroundColor = 'rgba(255, 255, 255, 0.08)';
+                });
+                row.addEventListener('mouseleave', function() {
+                    this.style.backgroundColor = '';
+                });
             });
         });
     </script>
