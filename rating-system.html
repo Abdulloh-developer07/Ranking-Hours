@@ -1,53 +1,69 @@
 <!DOCTYPE html>
-<html lang="uz">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Bizning 5 ballik reyting tizimimiz qanday ishlaydi? Har bir ball qanday baholanadi?">
-    <title>Reyting Tizimi | RankingHours</title>
+    <meta name="description" content="An in-depth, multi-dimensional breakdown of the Ranking Hours 5-star scoring matrix. Discover our mathematical weight distribution models, rigorous algorithmic testing metrics, and editorial independence frameworks.">
+    <title>The Analytical Engineering Matrix: Our 5-Star Rating System Explained | Ranking Hours</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            --primary: #2c3e50;
-            --secondary: #3498db;
+            --primary: #1a252f;
+            --primary-light: #2c3e50;
+            --secondary: #2980b9;
             --accent: #e74c3c;
-            --star: #FFD700;
-            --light: #ecf0f1;
-            --dark: #2c3e50;
-            --success: #27ae60;
-            --warning: #f39c12;
-            --info: #3498db;
+            --star: #f1c40f;
+            --light-bg: #f8f9fa;
+            --border-color: #e2e8f0;
+            --text-dark: #2d3748;
+            --text-muted: #718096;
+            --shadow-sm: 0 2px 4px rgba(0,0,0,0.05);
+            --shadow-md: 0 10px 25px rgba(0,0,0,0.08);
+            --shadow-lg: 0 20px 40px rgba(0,0,0,0.12);
         }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif;
         }
 
         body {
-            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-            color: var(--dark);
-            line-height: 1.6;
-            min-height: 100vh;
+            background-color: var(--light-bg);
+            color: var(--text-dark);
+            line-height: 1.75;
+            font-size: 16px;
+            -webkit-font-smoothing: antialiased;
         }
 
         .container {
-            max-width: 1200px;
+            max-width: 1260px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 24px;
         }
 
-        /* Header */
+        /* Top Bar Banner */
+        .top-announcement {
+            background-color: var(--secondary);
+            color: white;
+            text-align: center;
+            padding: 10px 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+
+        /* Header Navigation */
         header {
             background-color: var(--primary);
             color: white;
             padding: 20px 0;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            box-shadow: var(--shadow-sm);
             position: sticky;
             top: 0;
             z-index: 1000;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
         }
 
         .header-container {
@@ -57,600 +73,1009 @@
         }
 
         .logo {
-            font-size: 1.8rem;
-            font-weight: 700;
+            font-size: 1.6rem;
+            font-weight: 800;
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
+            color: white;
+            text-decoration: none;
+            letter-spacing: -0.5px;
         }
 
         .logo i {
-            font-size: 2rem;
+            font-size: 1.8rem;
+            color: var(--star);
+        }
+
+        .logo span.highlight {
             color: var(--star);
         }
 
         nav ul {
             display: flex;
             list-style: none;
-            gap: 25px;
+            gap: 15px;
         }
 
         nav a {
-            color: white;
+            color: rgba(255, 255, 255, 0.85);
             text-decoration: none;
-            font-weight: 500;
-            padding: 8px 15px;
-            border-radius: 20px;
-            transition: all 0.3s;
+            font-weight: 600;
+            font-size: 0.95rem;
+            padding: 10px 18px;
+            border-radius: 8px;
+            transition: all 0.25s ease;
         }
 
-        nav a:hover, nav a.active {
+        nav a:hover {
+            color: white;
+            background-color: rgba(255, 255, 255, 0.08);
+        }
+
+        nav a.active {
+            color: white;
             background-color: var(--secondary);
         }
 
-        /* Page Header */
-        .page-header {
-            background: linear-gradient(135deg, var(--primary) 0%, #34495e 100%);
-            color: white;
-            text-align: center;
-            padding: 80px 20px;
-            margin-bottom: 50px;
-            border-radius: 0 0 30px 30px;
-            position: relative;
-            overflow: hidden;
+        /* Editorial Context Banner */
+        .editorial-context-bar {
+            background-color: white;
+            border-bottom: 1px solid var(--border-color);
+            padding: 14px 0;
+            font-size: 0.88rem;
+            color: var(--text-muted);
         }
 
-        .page-header:before {
-            content: "★★★★★";
-            position: absolute;
-            font-size: 15rem;
-            opacity: 0.1;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
+        .editorial-flex {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
         }
 
-        .page-header h1 {
-            font-size: 3rem;
-            margin-bottom: 20px;
-            position: relative;
-            z-index: 1;
-        }
-
-        .page-header p {
-            font-size: 1.2rem;
-            max-width: 700px;
-            margin: 0 auto;
-            opacity: 0.9;
-            position: relative;
-            z-index: 1;
-        }
-
-        /* Rating System */
-        .rating-system {
-            background: white;
-            border-radius: 20px;
-            padding: 40px;
-            margin: 40px 0;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-        }
-
-        .rating-scale {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            margin: 40px 0;
-        }
-
-        .rating-card {
-            background: #f8f9fa;
-            border-radius: 15px;
-            padding: 30px;
-            text-align: center;
-            transition: all 0.3s;
-            border: 2px solid transparent;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .rating-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
-            border-color: var(--secondary);
-        }
-
-        .rating-stars {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-            color: var(--star);
-            letter-spacing: 5px;
-        }
-
-        .rating-number {
-            font-size: 4rem;
-            font-weight: bold;
-            color: var(--primary);
-            margin-bottom: 15px;
-        }
-
-        .rating-1 .rating-number { color: #e74c3c; }
-        .rating-2 .rating-number { color: #f39c12; }
-        .rating-3 .rating-number { color: #f1c40f; }
-        .rating-4 .rating-number { color: #2ecc71; }
-        .rating-5 .rating-number { color: #27ae60; }
-
-        .rating-label {
-            font-size: 1.3rem;
-            font-weight: bold;
-            margin-bottom: 15px;
-            color: var(--primary);
-        }
-
-        .rating-desc {
-            color: #666;
-            font-size: 0.95rem;
-        }
-
-        /* Criteria Grid */
-        .criteria-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
-            margin: 40px 0;
-        }
-
-        .criterion {
-            background: white;
-            border-radius: 15px;
-            padding: 25px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-            border-left: 5px solid var(--secondary);
-        }
-
-        .criterion h4 {
+        .editorial-meta-item {
             display: flex;
             align-items: center;
-            gap: 10px;
-            margin-bottom: 15px;
-            color: var(--primary);
+            gap: 8px;
         }
 
-        .criterion h4 i {
+        .editorial-meta-item i {
             color: var(--secondary);
         }
 
-        .weight {
-            display: inline-block;
-            background: var(--secondary);
+        /* Hero Splash Section */
+        .page-header {
+            background: linear-gradient(135deg, var(--primary) 0%, #1e374f 100%);
             color: white;
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            margin-top: 10px;
-            font-weight: bold;
+            text-align: center;
+            padding: 90px 20px;
+            border-radius: 0 0 40px 40px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
         }
 
-        /* Example Section */
-        .example-section {
-            background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
-            border-radius: 20px;
-            padding: 40px;
-            margin: 50px 0;
+        .page-header::before {
+            content: "★ ★ ★ ★ ★";
+            position: absolute;
+            font-size: 12rem;
+            opacity: 0.04;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+            pointer-events: none;
+            letter-spacing: 10px;
         }
 
-        .example-calc {
+        .page-header h1 {
+            font-size: 3.2rem;
+            font-weight: 800;
+            margin-bottom: 24px;
+            letter-spacing: -1px;
+            line-height: 1.2;
+        }
+
+        .page-header p {
+            font-size: 1.25rem;
+            max-width: 800px;
+            margin: 0 auto;
+            color: #b4c6d4;
+            font-weight: 400;
+        }
+
+        /* Layout Architecture Split */
+        .main-layout {
+            display: grid;
+            grid-template-columns: 1fr 320px;
+            gap: 40px;
+            margin: 60px 0;
+        }
+
+        /* Informational Narrative Blocks */
+        .narrative-block {
             background: white;
-            border-radius: 15px;
-            padding: 25px;
-            margin: 20px 0;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            border-radius: 24px;
+            padding: 45px;
+            margin-bottom: 40px;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--border-color);
         }
 
-        .calc-step {
+        .narrative-block h2 {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 25px;
+            letter-spacing: -0.5px;
             display: flex;
             align-items: center;
             gap: 15px;
-            margin: 15px 0;
-            padding: 10px;
-            background: #f8f9fa;
-            border-radius: 10px;
+            border-bottom: 2px solid var(--light-bg);
+            padding-bottom: 15px;
         }
 
-        .calc-step-number {
-            background: var(--secondary);
-            color: white;
-            width: 30px;
-            height: 30px;
-            border-radius: 50%;
+        .narrative-block h2 i {
+            color: var(--secondary);
+        }
+
+        .narrative-block p {
+            color: var(--text-dark);
+            margin-bottom: 20px;
+            font-size: 1.05rem;
+        }
+
+        .narrative-block ul, .narrative-block ol {
+            margin-left: 25px;
+            margin-bottom: 25px;
+            color: var(--text-dark);
+        }
+
+        .narrative-block li {
+            margin-bottom: 12px;
+            padding-left: 5px;
+        }
+
+        /* 5-Star Tier Scale Visuals */
+        .rating-scale {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+            margin: 35px 0;
+        }
+
+        .rating-card {
+            background: var(--light-bg);
+            border-radius: 18px;
+            padding: 30px;
+            display: grid;
+            grid-template-columns: 140px 220px 1fr;
+            align-items: center;
+            gap: 25px;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            border: 1px solid var(--border-color);
+            cursor: pointer;
+        }
+
+        .rating-card:hover {
+            transform: translateX(8px);
+            box-shadow: var(--shadow-md);
+            background: white;
+        }
+
+        .card-metric-block {
             text-align: center;
-            line-height: 30px;
-            font-weight: bold;
+            border-right: 2px solid rgba(0,0,0,0.05);
+            padding-right: 15px;
         }
 
-        /* Footer */
+        .rating-number {
+            font-size: 3.5rem;
+            font-weight: 900;
+            line-height: 1;
+            margin-bottom: 5px;
+        }
+
+        .rating-stars {
+            font-size: 1.1rem;
+            color: var(--star);
+            letter-spacing: 2px;
+        }
+
+        .rating-label-block {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .rating-label {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 4px;
+        }
+
+        .rating-badge {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 30px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            width: fit-content;
+        }
+
+        .rating-desc {
+            color: #4a5568;
+            font-size: 0.98rem;
+            line-height: 1.6;
+        }
+
+        /* Individual Tier Colors */
+        .tier-5 { border-left: 6px solid #27ae60; }
+        .tier-5 .rating-number { color: #27ae60; }
+        .tier-5 .rating-badge { background-color: #e8f8f0; color: #27ae60; }
+
+        .tier-4 { border-left: 6px solid #2ecc71; }
+        .tier-4 .rating-number { color: #2ecc71; }
+        .tier-4 .rating-badge { background-color: #eafaf1; color: #2ecc71; }
+
+        .tier-3 { border-left: 6px solid #f1c40f; }
+        .tier-3 .rating-number { color: #f1c40f; }
+        .tier-3 .rating-badge { background-color: #fef9e7; color: #f1c40f; }
+
+        .tier-2 { border-left: 6px solid #e67e22; }
+        .tier-2 .rating-number { color: #e67e22; }
+        .tier-2 .rating-badge { background-color: #fdf2e9; color: #e67e22; }
+
+        .tier-1 { border-left: 6px solid #e74c3c; }
+        .tier-1 .rating-number { color: #e74c3c; }
+        .tier-1 .rating-badge { background-color: #fceae9; color: #e74c3c; }
+
+        /* Criteria Matrix Layout */
+        .criteria-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin: 35px 0;
+        }
+
+        .criterion-box {
+            background: var(--light-bg);
+            border-radius: 16px;
+            padding: 24px;
+            border: 1px solid var(--border-color);
+            transition: all 0.2s ease;
+        }
+
+        .criterion-box:hover {
+            background: white;
+            box-shadow: var(--shadow-sm);
+            border-color: var(--secondary);
+        }
+
+        .criterion-box h4 {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .criterion-box h4 i {
+            color: var(--secondary);
+            font-size: 1.2rem;
+        }
+
+        .criterion-box p {
+            font-size: 0.92rem;
+            color: #4a5568;
+            margin-bottom: 15px;
+            line-height: 1.5;
+        }
+
+        .weight-tag {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            font-weight: 700;
+            font-size: 0.8rem;
+            padding: 4px 12px;
+            border-radius: 20px;
+            letter-spacing: 0.5px;
+        }
+
+        /* Mathematical Verification Segment */
+        .math-section {
+            background: linear-gradient(135deg, #f0f4f8 0%, #d9e2ec 100%);
+            border-radius: 24px;
+            padding: 45px;
+            margin: 40px 0;
+            border: 1px solid #bcccdc;
+        }
+
+        .math-section h3 {
+            font-size: 1.6rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+            font-weight: 800;
+        }
+
+        .formula-container {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            margin: 20px 0;
+            text-align: center;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: var(--primary-light);
+            border: 1px solid #bcccdc;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .math-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 15px;
+            margin-top: 25px;
+        }
+
+        .math-step {
+            background: white;
+            border-radius: 12px;
+            padding: 16px;
+            border-left: 4px solid var(--secondary);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .math-step-num {
+            font-size: 0.85rem;
+            font-weight: 800;
+            color: var(--secondary);
+            text-transform: uppercase;
+            margin-bottom: 4px;
+        }
+
+        .math-step h5 {
+            font-size: 1rem;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+
+        .math-step span {
+            font-size: 0.88rem;
+            color: var(--text-muted);
+        }
+
+        /* Sidebar Widgets */
+        .sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .widget {
+            background: white;
+            border-radius: 20px;
+            padding: 28px;
+            border: 1px solid var(--border-color);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .widget h3 {
+            font-size: 1.25rem;
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 18px;
+            border-bottom: 2px solid var(--light-bg);
+            padding-bottom: 10px;
+        }
+
+        .widget-links {
+            list-style: none;
+        }
+
+        .widget-links li {
+            margin-bottom: 12px;
+        }
+
+        .widget-links a {
+            color: #4a5568;
+            text-decoration: none;
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: color 0.2s ease;
+        }
+
+        .widget-links a:hover {
+            color: var(--secondary);
+        }
+
+        .widget-links i {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .trust-badge-sidebar {
+            text-align: center;
+            background: linear-gradient(to bottom, #ffffff, #f7fafc);
+        }
+
+        .trust-badge-sidebar i {
+            font-size: 3rem;
+            color: var(--secondary);
+            margin-bottom: 15px;
+        }
+
+        .trust-badge-sidebar p {
+            font-size: 0.9rem;
+            color: #4a5568;
+            line-height: 1.5;
+        }
+
+        /* Interactive FAQ Accordion Elements */
+        .faq-block {
+            margin-top: 25px;
+        }
+
+        .faq-item {
+            background: var(--light-bg);
+            border-radius: 12px;
+            margin-bottom: 14px;
+            border: 1px solid var(--border-color);
+            overflow: hidden;
+        }
+
+        .faq-trigger {
+            width: 100%;
+            text-align: left;
+            background: none;
+            border: none;
+            padding: 18px 24px;
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--primary);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background-color 0.2s ease;
+        }
+
+        .faq-trigger:hover {
+            background-color: #edf2f7;
+        }
+
+        .faq-content {
+            padding: 0 24px 20px 24px;
+            color: #4a5568;
+            font-size: 0.98rem;
+            display: none;
+        }
+
+        /* Global Footer System */
         footer {
             background-color: var(--primary);
-            color: white;
-            padding: 50px 0 20px;
-            margin-top: 50px;
+            color: #e2e8f0;
+            padding: 70px 0 30px 0;
+            margin-top: 80px;
+            border-top: 4px solid var(--secondary);
         }
 
-        .footer-container {
+        .footer-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            margin-bottom: 30px;
+            grid-template-columns: 2fr repeat(3, 1fr);
+            gap: 40px;
+            margin-bottom: 50px;
         }
 
-        .copyright {
+        .footer-column h3 {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 22px;
+            position: relative;
+        }
+
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -8px;
+            width: 35px;
+            height: 2px;
+            background-color: var(--secondary);
+        }
+
+        .footer-column p {
+            font-size: 0.95rem;
+            color: #a0aec0;
+            line-height: 1.6;
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column li {
+            margin-bottom: 12px;
+        }
+
+        .footer-column a {
+            color: #a0aec0;
+            text-decoration: none;
+            font-size: 0.92rem;
+            transition: all 0.2s ease;
+            display: inline-block;
+        }
+
+        .footer-column a:hover {
+            color: white;
+            transform: translateX(4px);
+        }
+
+        .footer-bottom {
             text-align: center;
-            padding-top: 20px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            color: #95a5a6;
-            font-size: 0.9rem;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            color: #718096;
+            font-size: 0.88rem;
         }
 
-        /* Responsive */
+        .footer-tagline {
+            margin-top: 6px;
+            font-weight: 600;
+            color: var(--text-muted);
+        }
+
+        /* System Adaptability Overrides */
+        @media (max-width: 992px) {
+            .main-layout {
+                grid-template-columns: 1fr;
+            }
+            .page-header h1 {
+                font-size: 2.6rem;
+            }
+        }
+
         @media (max-width: 768px) {
             .header-container {
                 flex-direction: column;
+                gap: 20px;
                 text-align: center;
-                gap: 15px;
             }
-
             nav ul {
                 flex-wrap: wrap;
                 justify-content: center;
             }
-
-            .page-header h1 {
-                font-size: 2.2rem;
-            }
-
-            .rating-scale {
+            .rating-card {
                 grid-template-columns: 1fr;
+                text-align: center;
+                justify-items: center;
             }
-
-            .criteria-grid {
+            .card-metric-block {
+                border-right: none;
+                border-bottom: 2px solid rgba(0,0,0,0.05);
+                padding-right: 0;
+                padding-bottom: 15px;
+                width: 100%;
+            }
+            .rating-label-block {
+                align-items: center;
+            }
+            .footer-grid {
                 grid-template-columns: 1fr;
+                gap: 30px;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Header -->
+
+    <!-- Top Bar Announcement -->
+    <div class="top-announcement">
+        Unbiased Consumer Architecture Research & Platform Audits For 2026
+    </div>
+
+    <!-- Main Navigation Header -->
     <header>
         <div class="container header-container">
             <a href="index.html" class="logo">
                 <i class="fas fa-star"></i>
-                <div>Ranking<span style="color: var(--star);">Hours</span></div>
+                <div>Ranking<span class="highlight">Hours</span></div>
             </a>
             
             <nav>
                 <ul>
-                    <li><a href="index.html"><i class="fas fa-home"></i> Bosh Sahifa</a></li>
-                    <li><a href="methodology.html"><i class="fas fa-flask"></i> Metodologiya</a></li>
-                    <li><a href="rating-system.html" class="active"><i class="fas fa-star-half-alt"></i> Reyting Tizimi</a></li>
-                    <li><a href="test-process.html"><i class="fas fa-cogs"></i> Test Jarayoni</a></li>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="methodology.html">Methodology</a></li>
+                    <li><a href="rating-system.html" class="active">Scoring Architecture</a></li>
+                    <li><a href="test-process.html">Testing Protocol</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <!-- Page Header -->
-    <section class="page-header">
-        <div class="container">
-            <h1><i class="fas fa-star-half-alt"></i> Reyting Tizimi</h1>
-            <p>Bizning 5 ballik reyting tizimimiz qanday ishlaydi? Har bir ball qanday baholanadi va nimani anglatadi?</p>
-        </div>
-    </section>
-
-    <div class="container">
-        <!-- Introduction -->
-        <div class="rating-system">
-            <h2 style="color: var(--primary); margin-bottom: 20px;">
-                <i class="fas fa-chart-line"></i> Bizning Reyting Tizimimiz
-            </h2>
-            <p style="font-size: 1.1rem; margin-bottom: 30px;">
-                Biz 5 ballik tizimdan foydalanamiz. Har bir ball aniq mezonlar asosida belgilanadi. 
-                Barcha mahsulotlar bir xil mezonlar asosida baholanadi, shuning uchun ularni adolatli solishtirish mumkin.
-            </p>
-            
-            <div class="rating-scale">
-                <!-- Rating 5 -->
-                <div class="rating-card rating-5">
-                    <div class="rating-stars">★★★★★</div>
-                    <div class="rating-number">5.0</div>
-                    <div class="rating-label">A'lo (Mukammal)</div>
-                    <div class="rating-desc">
-                        Mukammal mahsulot. Dehqonat darajasida, barcha asosiy va qo'shimcha funksiyalarni bajaradi. 
-                        Hech qanday jiddiy kamchiliklari yo'q. Tavsiya etiladi.
-                    </div>
-                </div>
-
-                <!-- Rating 4 -->
-                <div class="rating-card rating-4">
-                    <div class="rating-stars">★★★★☆</div>
-                    <div class="rating-number">4.0</div>
-                    <div class="rating-label">Yaxshi (Yuqori)</div>
-                    <div class="rating-desc">
-                        Juda yaxshi mahsulot. Barcha asosiy vazifalarni a'lo darajada bajaradi. 
-                        Kichik kamchiliklari bo'lishi mumkin, ammo umumiy tajribaga ta'sir qilmaydi.
-                    </div>
-                </div>
-
-                <!-- Rating 3 -->
-                <div class="rating-card rating-3">
-                    <div class="rating-stars">★★★☆☆</div>
-                    <div class="rating-number">3.0</div>
-                    <div class="rating-label">O'rtacha (Qoniqarli)</div>
-                    <div class="rating-desc">
-                        Qoniqarli mahsulot. Asosiy funksiyalarni bajaradi, lekin kuchli va zaif tomonlari bor. 
-                        Ma'lum sharoitlarda tavsiya etilishi mumkin.
-                    </div>
-                </div>
-
-                <!-- Rating 2 -->
-                <div class="rating-card rating-2">
-                    <div class="rating-stars">★★☆☆☆</div>
-                    <div class="rating-number">2.0</div>
-                    <div class="rating-label">Past (Qoniqarsiz)</div>
-                    <div class="rating-desc">
-                        Qoniqarsiz mahsulot. Ko'p kamchiliklari bor yoki asosiy vazifalarni bajara olmaydi. 
-                        Aksariyat hollarda tavsiya etilmaydi.
-                    </div>
-                </div>
-
-                <!-- Rating 1 -->
-                <div class="rating-card rating-1">
-                    <div class="rating-stars">★☆☆☆☆</div>
-                    <div class="rating-number">1.0</div>
-                    <div class="rating-label">Yomon (Tavsiya etilmaydi)</div>
-                    <div class="rating-desc">
-                        Juda yomon mahsulot. Ishlatish qiyin yoki xavfli. Ko'p nuqsonlari bor. 
-                        Har qanday sharoitda xarid qilishdan qaytarish tavsiya etiladi.
-                    </div>
-                </div>
+    <!-- Editorial Context Bar for Integrity Verification -->
+    <div class="editorial-context-bar">
+        <div class="container editorial-flex">
+            <div class="editorial-meta-item">
+                <i class="fas fa-gavel"></i>
+                <span><strong>Editorial Standard:</strong> Independent Empirical Evaluation Matrix</span>
             </div>
-        </div>
-
-        <!-- Rating Criteria -->
-        <div class="rating-system">
-            <h2 style="color: var(--primary); margin-bottom: 30px;">
-                <i class="fas fa-clipboard-check"></i> Reyting Mezonlari
-            </h2>
-            <p style="margin-bottom: 30px;">
-                Har bir mahsulot quyidagi 7 ta asosiy mezon bo'yicha baholanadi. Har bir mezonning o'ziga xos og'irligi bor:
-            </p>
-            
-            <div class="criteria-grid">
-                <!-- Criterion 1 -->
-                <div class="criterion">
-                    <h4><i class="fas fa-bullseye"></i> Ishlash va Samaradorlik</h4>
-                    <p>Mahsulot o'z vazifasini qanchalik yaxshi bajaradi? Tezlik, aniqlik, kuch.</p>
-                    <span class="weight">Og'irlik: 25%</span>
-                </div>
-
-                <!-- Criterion 2 -->
-                <div class="criterion">
-                    <h4><i class="fas fa-cogs"></i> Qurilish Sifati va Mustahkamlik</h4>
-                    <p>Materiallar sifat, montaj, umumiy mustahkamlik va chidamlilik.</p>
-                    <span class="weight">Og'irlik: 20%</span>
-                </div>
-
-                <!-- Criterion 3 -->
-                <div class="criterion">
-                    <h4><i class="fas fa-hand-rock"></i> Foydalanish Qulayligi</h4>
-                    <p>Intuitiv interfeys, o'rnatish osonligi, qo'llanma aniqligi.</p>
-                    <span class="weight">Og'irlik: 15%</span>
-                </div>
-
-                <!-- Criterion 4 -->
-                <div class="criterion">
-                    <h4><i class="fas fa-dollar-sign"></i> Narx va Qiymat</h4>
-                    <p>Narx uning taklif qilayotgan qiymatiga nisbatan qanchalik adolatli?</p>
-                    <span class="weight">Og'irlik: 15%</span>
-                </div>
-
-                <!-- Criterion 5 -->
-                <div class="criterion">
-                    <h4><i class="fas fa-battery-full"></i> Energiya Samaradorligi</h4>
-                    <p>Quvvat iste'moli, batareya umri, energiya tejamkorligi.</p>
-                    <span class="weight">Og'irlik: 10%</span>
-                </div>
-
-                <!-- Criterion 6 -->
-                <div class="criterion">
-                    <h4><i class="fas fa-headset"></i> Kafolat va Xizmat</h4>
-                    <p>Kafolat muddati, texnik yordam, ehtiyot qismlar mavjudligi.</p>
-                    <span class="weight">Og'irlik: 10%</span>
-                </div>
-
-                <!-- Criterion 7 -->
-                <div class="criterion">
-                    <h4><i class="fas fa-heart"></i> Dizayn va Ergonomika</h4>
-                    <p>Ko'rinish, ergonomika, rang va shakl tanlovi.</p>
-                    <span class="weight">Og'irlik: 5%</span>
-                </div>
+            <div class="editorial-meta-item">
+                <i class="fas fa-calendar-alt"></i>
+                <span><strong>Framework Version:</strong> 2026.4.1 Stable Core</span>
             </div>
-        </div>
-
-        <!-- Example Calculation -->
-        <div class="example-section">
-            <h2 style="color: var(--primary); margin-bottom: 30px;">
-                <i class="fas fa-calculator"></i> Reyting Qanday Hisoblanadi? (Misol)
-            </h2>
-            
-            <div class="example-calc">
-                <h4>iPhone 15 Pro uchun reyting hisobi:</h4>
-                
-                <div class="calc-step">
-                    <div class="calc-step-number">1</div>
-                    <div>
-                        <strong>Ishlash:</strong> 4.8/5 (25% og'irlik)<br>
-                        <small>1.2 ball (4.8 × 0.25)</small>
-                    </div>
-                </div>
-
-                <div class="calc-step">
-                    <div class="calc-step-number">2</div>
-                    <div>
-                        <strong>Qurilish sifati:</strong> 4.9/5 (20% og'irlik)<br>
-                        <small>0.98 ball (4.9 × 0.20)</small>
-                    </div>
-                </div>
-
-                <div class="calc-step">
-                    <div class="calc-step-number">3</div>
-                    <div>
-                        <strong>Foydalanish qulayligi:</strong> 4.5/5 (15% og'irlik)<br>
-                        <small>0.675 ball (4.5 × 0.15)</small>
-                    </div>
-                </div>
-
-                <div class="calc-step">
-                    <div class="calc-step-number">4</div>
-                    <div>
-                        <strong>Narx/qiymat:</strong> 3.8/5 (15% og'irlik)<br>
-                        <small>0.57 ball (3.8 × 0.15)</small>
-                    </div>
-                </div>
-
-                <div class="calc-step">
-                    <div class="calc-step-number">5</div>
-                    <div>
-                        <strong>Energiya samaradorligi:</strong> 4.2/5 (10% og'irlik)<br>
-                        <small>0.42 ball (4.2 × 0.10)</small>
-                    </div>
-                </div>
-
-                <div class="calc-step">
-                    <div class="calc-step-number">6</div>
-                    <div>
-                        <strong>Kafolat:</strong> 4.0/5 (10% og'irlik)<br>
-                        <small>0.4 ball (4.0 × 0.10)</small>
-                    </div>
-                </div>
-
-                <div class="calc-step">
-                    <div class="calc-step-number">7</div>
-                    <div>
-                        <strong>Dizayn:</strong> 4.7/5 (5% og'irlik)<br>
-                        <small>0.235 ball (4.7 × 0.05)</small>
-                    </div>
-                </div>
-
-                <div style="background: var(--primary); color: white; padding: 20px; border-radius: 10px; margin-top: 20px; text-align: center;">
-                    <h3 style="margin-bottom: 10px;">Umumiy Reyting</h3>
-                    <div style="font-size: 2.5rem; font-weight: bold; color: var(--star);">4.48/5.0</div>
-                    <p style="margin-top: 10px;">★★★★☆ (Yaxshi - Yuqori)</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- FAQ Section -->
-        <div class="rating-system">
-            <h2 style="color: var(--primary); margin-bottom: 30px;">
-                <i class="fas fa-question-circle"></i> Tez-tez So'raladigan Savollar
-            </h2>
-            
-            <div style="background: #f8f9fa; padding: 25px; border-radius: 15px; margin-bottom: 20px;">
-                <h4><i class="fas fa-question"></i> Nima uchun 5 ballik tizim?</h4>
-                <p>5 ballik tizim eng oddiy va tushunarli tizimdir. Foydalanuvchilar uchun tez tushunish va taqqoslash imkonini beradi.</p>
-            </div>
-
-            <div style="background: #f8f9fa; padding: 25px; border-radius: 15px; margin-bottom: 20px;">
-                <h4><i class="fas fa-question"></i> Yarim ballar (4.5 kabi) nima uchun?</h4>
-                <p>Yarim ballar mahsulotning aniqroq baholanishini ta'minlaydi. Masalan, 4.5 - "juda yaxshi" va "mukammal" o'rtasidagi mahsulot.</p>
-            </div>
-
-            <div style="background: #f8f9fa; padding: 25px; border-radius: 15px; margin-bottom: 20px;">
-                <h4><i class="fas fa-question"></i> Og'irliklar nima uchun har xil?</h4>
-                <p>Har bir parametr turli darajada muhim. Masalan, ishlash har doim dizayndan muhimroq, shuning uchun uning og'irligi kattaroq.</p>
+            <div class="editorial-meta-item">
+                <i class="fas fa-user-shield"></i>
+                <span><strong>Review Panel:</strong> Certified Hardware Analysts</span>
             </div>
         </div>
     </div>
 
-    <!-- Footer -->
+    <!-- Page Splash Hero Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>The Mathematical Scoring Architecture</h1>
+            <p>Demystifying our weighted data models, algorithmic verification processes, and real-world standard execution loops to understand how product engineering quality transforms into an objective numerical ranking.</p>
+        </div>
+    </section>
+
+    <!-- Core Layout Grid Split -->
+    <div class="container main-layout">
+        
+        <!-- Left Side Primary Core Document -->
+        <main class="primary-document">
+            
+            <!-- Introduction Philosophy Block -->
+            <section class="narrative-block">
+                <h2><i class="fas fa-compass"></i> 1. Foundational Review Philosophy</h2>
+                <p>In the modern digital environment, consumer technology reporting has fallen victim to hyperbole, surface-level impressions, and subjective opinions. Most ranking platforms use arbitrary grading systems influenced by personal preferences or hidden marketing agreements. This lack of standards distorts consumer data, leaving buyers to decode marketing buzzwords instead of relying on verified engineering metrics.</p>
+                <p>Ranking Hours was built to challenge this status quo. We believe a rating system should serve as a precise, mathematical model that transforms real-world testing data into clear, actionable scores. Our testing lab approaches product evaluation through strict, repeatable benchmarks. We look past the attractive packaging, polished marketing campaigns, and bold specification sheets to evaluate hardware on true functionality, operational longevity, structural integrity, and long-term cost-to-value performance.</p>
+                <p>By standardizing our evaluation process across every product segment, we remove human bias from the equation. Whether our technicians are evaluating a premium smartphone, a long-range electric vehicle, or a high-efficiency home appliance, they follow strict testing checklists. The final score is not a casual consensus reached in an editorial office; it is the calculated result of our weighted performance algorithm.</p>
+            </section>
+
+            <!-- Detailed Tiers Breakdown -->
+            <section class="narrative-block">
+                <h2><i class="fas fa-layer-group"></i> 2. The 5-Star Structural Matrix</h2>
+                <p>To keep data easily scannable while maintaining analytical depth, we use a granular 5-point system. Scores are calculated down to two decimal places, separating products into five clearly defined performance tiers. Clicking on any tier highlights its specific engineering classification criteria:</p>
+                
+                <div class="rating-scale">
+                    <!-- Tier 5 -->
+                    <div class="rating-card tier-5">
+                        <div class="card-metric-block">
+                            <div class="rating-number">5.0</div>
+                            <div class="rating-stars">★★★★★</div>
+                        </div>
+                        <div class="rating-label-block">
+                            <span class="rating-label">Elite Class</span>
+                            <span class="rating-badge">Exceptional</span>
+                        </div>
+                        <p class="rating-desc">
+                            Represents the absolute peak of modern engineering. The product satisfies all primary, secondary, and fringe functional parameters with distinction. It contains no notable structural flaws or software bottlenecks and presents an innovative design leap that alters the competitive horizon.
+                        </p>
+                    </div>
+
+                    <!-- Tier 4 -->
+                    <div class="rating-card tier-4">
+                        <div class="card-metric-block">
+                            <div class="rating-number">4.0</div>
+                            <div class="rating-stars">★★★★☆</div>
+                        </div>
+                        <div class="rating-label-block">
+                            <span class="rating-label">Upper Core Class</span>
+                            <span class="rating-badge">Highly Recommended</span>
+                        </div>
+                        <p class="rating-desc">
+                            An excellent, dependable consumer choice. The product achieves top marks across all main performance categories. Minor compromises may exist in secondary cosmetic trims or non-essential features, but the core user experience remains stable, reliable, and clear of major issues.
+                        </p>
+                    </div>
+
+                    <!-- Tier 3 -->
+                    <div class="rating-card tier-3">
+                        <div class="card-metric-block">
+                            <div class="rating-number">3.0</div>
+                            <div class="rating-stars">★★★☆☆</div>
+                        </div>
+                        <div class="rating-label-block">
+                            <span class="rating-label">Median Utility Class</span>
+                            <span class="rating-badge">Satisfactory</span>
+                        </div>
+                        <p class="rating-desc">
+                            A functional but flawed option. The device handles its primary tasks reliably but presents clear trade-offs, such as average material choices, sub-optimal battery life, or limited update support. It is a reasonable option only when offered at a significant discount or for niche use cases.
+                        </p>
+                    </div>
+
+                    <!-- Tier 2 -->
+                    <div class="rating-card tier-2">
+                        <div class="card-metric-block">
+                            <div class="rating-number">2.0</div>
+                            <div class="rating-stars">★★☆☆☆</div>
+                        </div>
+                        <div class="rating-label-block">
+                            <span class="rating-label">Sub-Standard Class</span>
+                            <span class="rating-badge">Deficient</span>
+                        </div>
+                        <p class="rating-desc">
+                            Presents major functional deficiencies. The product suffers from regular performance drops, structural design oversights, or poor component integration that disrupts normal use. It fails to match standard market alternatives and is generally not recommended.
+                        </p>
+                    </div>
+
+                    <!-- Tier 1 -->
+                    <div class="rating-card tier-1">
+                        <div class="card-metric-block">
+                            <div class="rating-number">1.0</div>
+                            <div class="rating-stars">★☆☆☆☆</div>
+                        </div>
+                        <div class="rating-label-block">
+                            <span class="rating-label">Defective Class</span>
+                            <span class="rating-badge">Critical Alert</span>
+                        </div>
+                        <p class="rating-desc">
+                            A completely failed engineering design. The product fails to perform its core advertised features, displays extreme component wear within brief testing windows, or introduces safety risks to the end user. Purchase should be avoided under all conditions.
+                        </p>
+                    </div>
+                </div>
+                <p>This tiered model prevents score inflation. By saving the 5.0 score exclusively for groundbreaking innovations, we ensure that an Upper Core Class 4.0 or 4.5 rating remains a strong, reliable recommendation for premium consumer investments.</p>
+            </section>
+
+            <!-- Detailed Criteria Matrix Explanation -->
+            <section class="narrative-block">
+                <h2><i class="fas fa-sliders-h"></i> 3. Granular Weighted Criteria</h2>
+                <p>Every product we test is graded across seven fundamental evaluation categories. Each category is assigned a fixed weight based on its impact on daily use. This ensure that critical performance metrics naturally outvote purely cosmetic features:</p>
+                
+                <div class="criteria-grid">
+                    <div class="criterion-box">
+                        <h4><i class="fas fa-bolt"></i> Performance & Core Power</h4>
+                        <p>Measures raw throughput capacity, processing speeds, task accuracy under high loads, thermal dissipation, and system response times.</p>
+                        <span class="weight-tag">Weight Alloc: 25%</span>
+                    </div>
+
+                    <div class="criterion-box">
+                        <h4><i class="fas fa-shield-alt"></i> Material Build & Rigidity</h4>
+                        <p>Analyzes stress-point durability, structural choice integrity, long-term wear resistance, and environmental sealing protections.</p>
+                        <span class="weight-tag">Weight Alloc: 20%</span>
+                    </div>
+
+                    <div class="criterion-box">
+                        <h4><i class="fas fa-universal-access"></i> Interface & Ergonomics</h4>
+                        <p>Evaluates setup accessibility, software optimization, control menu clarity, layout ergonomics, and overall ease of use.</p>
+                        <span class="weight-tag">Weight Alloc: 15%</span>
+                    </div>
+
+                    <div class="criterion-box">
+                        <h4><i class="fas fa-balance-scale"></i> Pure Financial Value Index</h4>
+                        <p>Compares market retail pricing directly against the quality of hardware provided, finding the sweet spot for consumer cost per performance.</p>
+                        <span class="weight-tag">Weight Alloc: 15%</span>
+                    </div>
+
+                    <div class="criterion-box">
+                        <h4><i class="fas fa-leaf"></i> Consumption & Power Return</h4>
+                        <p>Measures power draw efficiency, battery runtime longevity, charge recovery curves, and standby power retention metrics.</p>
+                        <span class="weight-tag">Weight Alloc: 10%</span>
+                    </div>
+
+                    <div class="criterion-box">
+                        <h4><i class="fas fa-file-contract"></i> Warranty & Service Support</h4>
+                        <p>Evaluates manufacturer coverage periods, customer support response speeds, local repair networks, and replacement part availability.</p>
+                        <span class="weight-tag">Weight Alloc: 10%</span>
+                    </div>
+
+                    <div class="criterion-box">
+                        <h4><i class="fas fa-palette"></i> Aesthetic & Industrial Vision</h4>
+                        <p>Assesses visual design identity, balance, color options, and how well form follows function in the overall package.</p>
+                        <span class="weight-tag">Weight Alloc: 5%</span>
+                    </div>
+                </div>
+                <p>This category breakdown keeps our testing completely transparent. If a premium device looks stunning but suffers from poor battery optimization and unexpected thermal throttling under load, our formula automatically balances out its high aesthetic score to protect the buyer.</p>
+            </section>
+
+            <!-- Verification Mathematical Logic Box -->
+            <section class="math-section">
+                <h3><i class="fas fa-calculator"></i> 4. Algorithmic Calculation Logic</h3>
+                <p>To demonstrate this transparency in action, let's look at how our algorithm computes a final score using a real-world smartphone testing example:</p>
+                
+                <div class="formula-container">
+                    Final Composite Score = SUM(Category Score × Category Weight)
+                </div>
+
+                <div class="math-grid">
+                    <div class="math-step">
+                        <div class="math-step-num">Step 1</div>
+                        <h5>Performance Tier</h5>
+                        <span>4.8 / 5.0 score × 0.25 = <strong>1.200</strong></span>
+                    </div>
+                    <div class="math-step">
+                        <div class="math-step-num">Step 2</div>
+                        <h5>Material Build</h5>
+                        <span>4.9 / 5.0 score × 0.20 = <strong>0.980</strong></span>
+                    </div>
+                    <div class="math-step">
+                        <div class="math-step-num">Step 3</div>
+                        <h5>Interface Layout</h5>
+                        <span>4.5 / 5.0 score × 0.15 = <strong>0.675</strong></span>
+                    </div>
+                    <div class="math-step">
+                        <div class="math-step-num">Step 4</div>
+                        <h5>Financial Value</h5>
+                        <span>3.8 / 5.0 score × 0.15 = <strong>0.570</strong></span>
+                    </div>
+                    <div class="math-step">
+                        <div class="math-step-num">Step 5</div>
+                        <h5>Power Return</h5>
+                        <span>4.2 / 5.0 score × 0.10 = <strong>0.420</strong></span>
+                    </div>
+                    <div class="math-step">
+                        <div class="math-step-num">Step 6</div>
+                        <h5>Service Network</h5>
+                        <span>4.0 / 5.0 score × 0.10 = <strong>0.400</strong></span>
+                    </div>
+                    <div class="math-step">
+                        <div class="math-step-num">Step 7</div>
+                        <h5>Industrial Vision</h5>
+                        <span>4.7 / 5.0 score × 0.05 = <strong>0.235</strong></span>
+                    </div>
+                </div>
+
+                <div style="background: var(--primary); color: white; padding: 25px; border-radius: 16px; margin-top: 30px; text-align: center; box-shadow: var(--shadow-md);">
+                    <h4 style="font-weight: 700; margin-bottom: 8px; font-size: 1.2rem; letter-spacing: 0.5px;">Calculated Mathematical Score Total</h4>
+                    <div style="font-size: 3.2rem; font-weight: 900; color: var(--star); line-height: 1.1;">4.48 / 5.00</div>
+                    <p style="margin-top: 8px; font-size: 1rem; color: #cbd5e0; font-weight: 600;">Classification Order: Tier 4 - Highly Recommended Choice</p>
+                </div>
+            </section>
+
+            <!-- FAQ Accordion Segment -->
+            <section class="narrative-block">
+                <h2><i class="fas fa-question-circle"></i> 5. Methodological Inquiries (FAQ)</h2>
+                <p>Our scoring model often sparks questions from readers who are used to traditional, subjective review formats. Below, we answer the most frequent questions about our data processes:</p>
+                
+                <div class="faq-block">
+                    <div class="faq-item">
+                        <button class="faq-trigger">Why does Ranking Hours use a static 5-point scale instead of a 100-point index? <i class="fas fa-chevron-down"></i></button>
+                        <div class="faq-content">
+                            <p>A 100-point index often creates a false sense of accuracy. The difference between an 87 and an 88 is rarely based on clear, repeatable benchmarks. Our 5-point scale, tracked to two decimal places, offers the perfect balance: it is precise enough to highlight clear performance differences while keeping categories clearly tied to verifiable real-world metrics.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-trigger">How often do you update scores when software patches improve a device? <i class="fas fa-chevron-down"></i></button>
+                        <div class="faq-content">
+                            <p>We review our top rankings every quarter to account for major software updates and firmware changes. If a system patch resolves a known hardware issue or noticeably extends battery performance, our test logs are updated, and the new data is automatically recalculated into the product score.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-trigger">Do these category weights remain identical across every product class? <i class="fas fa-chevron-down"></i></button>
+                        <div class="faq-content">
+                            <p>The core weights are fixed to ensure absolute testing integrity, but we use tailored sub-metrics within categories to keep evaluations relevant. For example, when testing a home appliance, the 'Performance' category focuses on power efficiency and sound levels, whereas for a smartphone, it tracks processing throughput and frame rates.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-trigger">How does your platform handle sponsored review content or paid product placement? <i class="fas fa-chevron-down"></i></button>
+                        <div class="faq-content">
+                            <p>Ranking Hours strictly avoids sponsored reviews or paid product placements. Our testing labs operate with complete financial independence. Our analysts do not accept paid gifts or marketing incentives, ensuring our final data curves remain completely objective and focused on consumer advocacy.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Right Side Navigational Sidebar -->
+        <aside class="sidebar">
+            
+            <div class="widget trust-badge-sidebar">
+                <i class="fas fa-balance-scale"></i>
+                <h3>Our Core Promise</h3>
+                <p>We do not use affiliate links that distort recommendations, and we do not accept paid manufacturer partnerships. Every decimal point is earned through hands-on testing in our labs.</p>
+            </div>
+
+            <div class="widget">
+                <h3>Testing Documentation</h3>
+                <ul class="widget-links">
+                    <li><a href="methodology.html"><i class="fas fa-chevron-right"></i> Research Methodology</a></li>
+                    <li><a href="rating-system.html"><i class="fas fa-chevron-right"></i> Scoring Architecture</a></li>
+                    <li><a href="test-process.html"><i class="fas fa-chevron-right"></i> The Testing Protocol</a></li>
+                    <li><a href="equipment.html"><i class="fas fa-chevron-right"></i> Lab Test Equipment</a></li>
+                </ul>
+            </div>
+
+            <div class="widget">
+                <h3>Transparency Policy</h3>
+                <ul class="widget-links">
+                    <li><a href="ethics.html"><i class="fas fa-chevron-right"></i> Editorial Code of Ethics</a></li>
+                    <li><a href="independence.html"><i class="fas fa-chevron-right"></i> Financial Independence</a></li>
+                    <li><a href="corrections.html"><i class="fas fa-chevron-right"></i> Corrections & Audits</a></li>
+                    <li><a href="contact.html"><i class="fas fa-chevron-right"></i> Contact Lab Desk</a></li>
+                </ul>
+            </div>
+        </aside>
+    </div>
+
+    <!-- Complete Legal and Contextual Footer -->
     <footer>
         <div class="container">
-            <div class="footer-container">
+            <div class="footer-grid">
                 <div class="footer-column">
-                    <h3>RankingHours</h3>
-                    <p>Biz haqiqiy odamlardan haqiqiy maslahatlar. Har bir mahsulotni o'zimiz sinab ko'ramiz.</p>
+                    <h3 style="color: white; margin-bottom: 15px;">Ranking Hours</h3>
+                    <p>Providing independent, data-driven consumer product analysis since 2024. Our testing labs run comprehensive empirical evaluations to help you make confident buying decisions.</p>
                 </div>
                 
                 <div class="footer-column">
-                    <h3>Test Usullari</h3>
+                    <h3>Review Portals</h3>
                     <ul>
-                        <li><a href="methodology.html"><i class="fas fa-flask"></i> Metodologiya</a></li>
-                        <li><a href="rating-system.html"><i class="fas fa-star-half-alt"></i> Reyting Tizimi</a></li>
-                        <li><a href="test-process.html"><i class="fas fa-cogs"></i> Test Jarayoni</a></li>
-                        <li><a href="test-equipment.html"><i class="fas fa-tools"></i> Test Uskunalari</a></li>
+                        <li><a href="index.html">Home Platform</a></li>
+                        <li><a href="categories/technology.html">Technology Matrix</a></li>
+                        <li><a href="categories/automotive.html">Automotive Systems</a></li>
+                        <li><a href="categories/appliances.html">Home Appliance Units</a></li>
                     </ul>
                 </div>
                 
                 <div class="footer-column">
-                    <h3>Transparency</h3>
+                    <h3>Internal Integrity</h3>
                     <ul>
-                        <li><a href="ethics.html"><i class="fas fa-handshake"></i> Etika Kodeksi</a></li>
-                        <li><a href="independence.html"><i class="fas fa-balance-scale"></i> Mustaqillik</a></li>
-                        <li><a href="funding.html"><i class="fas fa-money-bill-wave"></i> Moliyalashtirish</a></li>
-                        <li><a href="corrections.html"><i class="fas fa-edit"></i> Tuzatishlar</a></li>
+                        <li><a href="methodology.html">Testing Methodology</a></li>
+                        <li><a href="rating-system.html">Scoring Architecture</a></li>
+                        <li><a href="ethics.html">Code of Ethics</a></li>
+                        <li><a href="about.html">Our Lab Team</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Legal Framework</h3>
+                    <ul>
+                        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="terms-of-service.html">Terms of Service</a></li>
+                        <li><a href="cookie-policy.html">Cookie Disclosures</a></li>
+                        <li><a href="contact.html">Support Desk</a></li>
                     </ul>
                 </div>
             </div>
             
-            <div class="copyright">
-                <p>&copy; 2024 RankingHours. Barcha huquqlar himoyalangan.</p>
-                <p style="margin-top: 5px; font-size: 0.8rem;">Haqiqiy testlar - Shaffof reytinglar</p>
+            <div class="footer-bottom">
+                <p>&copy; 2026 RankingHours.uz. All rights reserved. Registered Independent Consumer Research Organization.</p>
+                <p class="footer-tagline">Empirical Validation Loops • Objective Analysis Metrics • Zero Marketing Influence</p>
             </div>
         </div>
     </footer>
 
+    <!-- JavaScript Interactions for UX Polish -->
     <script>
-        // Interactive rating cards
+        // Interactive Rating Card Feedback Loop
         document.querySelectorAll('.rating-card').forEach(card => {
             card.addEventListener('click', function() {
-                const rating = this.querySelector('.rating-number').textContent;
-                const label = this.querySelector('.rating-label').textContent;
-                alert(`Siz ${rating} bahosini tanladingiz: ${label}`);
+                const tierName = this.querySelector('.rating-label').textContent;
+                const tierScore = this.querySelector('.rating-number').textContent;
+                console.log(`User inspected framework subset: ${tierName} (${tierScore} Tier Baseline)`);
             });
         });
 
-        // Animate rating numbers on scroll
-        const observerOptions = {
-            threshold: 0.5
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const ratingNumber = entry.target.querySelector('.rating-number');
-                    if (ratingNumber && !ratingNumber.classList.contains('animated')) {
-                        ratingNumber.classList.add('animated');
-                        animateValue(ratingNumber, 0, parseFloat(ratingNumber.textContent), 1000);
-                    }
+        // FAQ Dynamic Accordion Mechanics
+        document.querySelectorAll('.faq-trigger').forEach(trigger => {
+            trigger.addEventListener('click', function() {
+                const targetContent = this.nextElementSibling;
+                const icon = this.querySelector('i');
+                
+                if (targetContent.style.display === 'block') {
+                    targetContent.style.display = 'none';
+                    icon.className = 'fas fa-chevron-down';
+                    this.style.backgroundColor = 'transparent';
+                } else {
+                    targetContent.style.display = 'block';
+                    icon.className = 'fas fa-chevron-up';
+                    this.style.backgroundColor = '#edf2f7';
                 }
             });
-        }, observerOptions);
-
-        document.querySelectorAll('.rating-card').forEach(card => {
-            observer.observe(card);
         });
-
-        function animateValue(element, start, end, duration) {
-            let startTimestamp = null;
-            const step = (timestamp) => {
-                if (!startTimestamp) startTimestamp = timestamp;
-                const progress = Math.min((timestamp - startTimestamp) / duration, 1);
-                element.textContent = (progress * (end - start) + start).toFixed(1);
-                if (progress < 1) {
-                    window.requestAnimationFrame(step);
-                }
-            };
-            window.requestAnimationFrame(step);
-        }
     </script>
 </body>
 </html>
