@@ -174,36 +174,23 @@
             height: 240px;
             background-color: #f1f5f9;
             border-radius: 12px;
-            border: 2px dashed #cbd5e1;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
+            border: 1px solid var(--border-light);
             overflow: hidden;
             position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .product-image-container img {
             width: 100%;
             height: 100%;
-            object-fit: cover;
-            position: absolute;
-            top: 0;
-            left: 0;
+            object-fit: contain;
+            transition: transform 0.3s ease;
         }
 
-        .image-placeholder-info {
-            text-align: center;
-            color: #64748b;
-            font-size: 0.88rem;
-            padding: 16px;
-            z-index: 1;
-        }
-
-        .image-placeholder-icon {
-            font-size: 2.5rem;
-            margin-bottom: 4px;
+        .product-image-container img:hover {
+            transform: scale(1.03);
         }
 
         .brand-pill {
@@ -537,12 +524,7 @@
                 <div class="product-identity-card samsung-theme">
                     <span class="brand-pill">Global Premium</span>
                     <div class="product-image-container">
-                        <!-- Replace src path with your image link when available -->
-                        <img src="images/samsung-refrigerator.jpg" alt="Samsung Inverter Refrigerator Visual" onerror="this.style.display='none'">
-                        <div class="image-placeholder-info">
-                            <div class="image-placeholder-icon">📱</div>
-                            <strong>Samsung Inverter Model</strong><br>Visual Reference Frame
-                        </div>
+                        <img src="images/samsung-refrigerator.jpg" alt="Samsung Inverter Refrigerator Visual">
                     </div>
                     <h3>Samsung Inverter Series</h3>
                     <p>Focuses on long-term thermal control, advanced multi-flow cooling pipelines, and maximum electrical efficiency indices.</p>
@@ -552,12 +534,7 @@
                 <div class="product-identity-card artel-theme">
                     <span class="brand-pill">Regional Leader</span>
                     <div class="product-image-container">
-                        <!-- Replace src path with your image link when available -->
-                        <img src="images/artel-refrigerator.jpg" alt="Artel Inverter Refrigerator Visual" onerror="this.style.display='none'">
-                        <div class="image-placeholder-info">
-                            <div class="image-placeholder-icon">🏆</div>
-                            <strong>Artel Inverter Model</strong><br>Visual Reference Frame
-                        </div>
+                        <img src="images/artel-refrigerator.jpg" alt="Artel Inverter Refrigerator Visual">
                     </div>
                     <h3>Artel Inverter Variant</h3>
                     <p>Engineered for regional grid conditions, emphasizing value-to-cost metrics and localized maintenance infrastructures.</p>
