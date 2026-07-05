@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Site Map - RankingHours</title>
+    <title>Site Map - Comprehensive Architecture Directory | RankingHours</title>
     <link rel="stylesheet" href="style.css">
     <style>
         :root {
@@ -22,7 +22,7 @@
             font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
             margin: 0;
             padding: 0;
-            line-height: 1.5;
+            line-height: 1.6;
         }
 
         header {
@@ -58,9 +58,27 @@
         }
 
         .container {
-            max-width: 1000px;
+            max-width: 1050px;
             margin: 50px auto;
             padding: 0 20px;
+        }
+
+        .sitemap-welcome {
+            margin-bottom: 40px;
+            text-align: left;
+        }
+
+        .sitemap-welcome h1 {
+            font-size: 32px;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .sitemap-welcome p {
+            color: var(--text-muted);
+            font-size: 16px;
+            max-width: 700px;
+            margin: 0;
         }
 
         .sitemap-card {
@@ -68,15 +86,15 @@
             border-radius: 16px;
             padding: 40px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-            margin-bottom: 30px;
+            margin-bottom: 35px;
         }
 
         .section-title {
             display: flex;
             align-items: center;
-            font-size: 26px;
+            font-size: 24px;
             margin-top: 0;
-            margin-bottom: 30px;
+            margin-bottom: 15px;
             font-weight: 700;
             letter-spacing: -0.5px;
         }
@@ -86,10 +104,20 @@
             color: var(--accent-cyan);
         }
 
+        .section-desc {
+            color: var(--text-muted);
+            font-size: 14px;
+            margin-bottom: 30px;
+            padding-left: 5px;
+            border-left: 3px solid var(--accent-blue);
+            padding-top: 2px;
+            padding-bottom: 2px;
+        }
+
         .accordion-item {
             background-color: var(--item-bg);
             border-radius: 8px;
-            margin-bottom: 15px;
+            margin-bottom: 20px;
             overflow: hidden;
             border: 1px solid #1e293b;
         }
@@ -98,9 +126,14 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 18px 24px;
+            padding: 20px 24px;
             cursor: pointer;
             user-select: none;
+            transition: background-color 0.2s;
+        }
+
+        .accordion-header:hover {
+            background-color: rgba(255, 255, 255, 0.02);
         }
 
         .accordion-header-left {
@@ -108,11 +141,12 @@
             align-items: center;
             gap: 15px;
             font-weight: 600;
-            font-size: 16px;
+            font-size: 17px;
         }
 
         .accordion-icon {
             color: var(--accent-cyan);
+            font-size: 20px;
         }
 
         .badge {
@@ -142,35 +176,69 @@
         .accordion-content {
             max-height: 0;
             overflow: hidden;
-            transition: max-height 0.3s ease-out;
-            background-color: rgba(15, 23, 42, 0.6);
+            transition: max-height 0.4s ease-out;
+            background-color: rgba(15, 23, 42, 0.4);
+        }
+
+        .category-intro {
+            padding: 20px 24px 5px 24px;
+            font-size: 14px;
+            color: var(--text-muted);
+            border-bottom: 1px dashed #1e293b;
         }
 
         .links-grid {
-            padding: 20px 24px;
+            padding: 24px;
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 12px;
+            grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+            gap: 20px;
         }
 
-        .links-grid a {
-            color: var(--text-muted);
+        .link-block {
+            display: flex;
+            flex-direction: column;
+            background: rgba(255, 255, 255, 0.01);
+            padding: 12px 16px;
+            border-radius: 6px;
+            border: 1px solid rgba(255, 255, 255, 0.03);
+            transition: transform 0.2s, border-color 0.2s;
+        }
+
+        .link-block:hover {
+            transform: translateY(-2px);
+            border-color: rgba(0, 242, 254, 0.2);
+            background: rgba(255, 255, 255, 0.02);
+        }
+
+        .link-block a {
+            color: #f8fafc;
             text-decoration: none;
-            font-size: 14px;
-            transition: color 0.2s, padding-left 0.2s;
+            font-size: 15px;
+            font-weight: 600;
             display: flex;
             align-items: center;
+            margin-bottom: 4px;
         }
 
-        .links-grid a:hover {
-            color: var(--accent-cyan);
-            padding-left: 5px;
-        }
-
-        .links-grid a::before {
-            content: "•";
+        .link-block a::before {
+            content: "→";
             color: var(--accent-cyan);
             margin-right: 8px;
+            font-weight: bold;
+        }
+
+        .link-block p {
+            margin: 0;
+            color: var(--text-muted);
+            font-size: 13px;
+            padding-left: 18px;
+        }
+
+        /* Static Grids for Cards 2 and 3 */
+        .static-links-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 16px;
         }
 
         footer {
@@ -179,7 +247,7 @@
             color: var(--text-muted);
             font-size: 14px;
             border-top: 1px solid #1e293b;
-            margin-top: 40px;
+            margin-top: 50px;
         }
     </style>
 </head>
@@ -200,9 +268,15 @@
 
     <main class="container">
 
+        <div class="sitemap-welcome">
+            <h1>Navigation Index &amp; Site Architecture</h1>
+            <p>Welcome to the official sitemap of RankingHours. This comprehensive directory lists all verified evaluation articles, data sheets, lab testing methodologies, and legal operational agreements.</p>
+        </div>
+
         <!-- CARD 1: Indexed Articles & Testing Records -->
         <div class="sitemap-card">
             <h2 class="section-title"><span>📂</span> Indexed Articles &amp; Testing Records</h2>
+            <p class="section-desc">This section contains deep technical reviews, data comparisons, and comprehensive test files sorted by consumer electronics and hardware categories.</p>
 
             <!-- Mobile Radios & Tablet Architectures -->
             <div class="accordion-item">
@@ -212,21 +286,49 @@
                         <span>Mobile Radios &amp; Tablet Architectures</span>
                     </div>
                     <div>
-                        <span class="badge">9 Reports</span>
+                        <span class="badge">9 Verified Links</span>
                         <span class="arrow"></span>
                     </div>
                 </div>
                 <div class="accordion-content">
+                    <div class="category-intro">Detailed analysis of smartphone networks, hardware performance, and tablet ecosystems.</div>
                     <div class="links-grid">
-                        <a href="smartphone-comparisons.html">Smartphone Comparisons</a>
-                        <a href="apple-samsung.html">Apple vs. Samsung Flagships</a>
-                        <a href="iphone-samsung-comp.html">iPhone vs. Samsung Analytical Report</a>
-                        <a href="samsung-iphone.html">Samsung vs. iPhone Head-to-Head</a>
-                        <a href="iphone-samsung.html">iPhone vs. Samsung Enterprise Ecosystems</a>
-                        <a href="google-Iphone.html">Google Pixel vs. Apple iPhone</a>
-                        <a href="samsung-artel.html">Samsung vs. Artel Consumer Analysis</a>
-                        <a href="ipad-samsung.html">iPad Pro vs. Samsung Galaxy Tab S9</a>
-                        <a href="micro-google.html">Microsoft Mobile vs. Google Ecosystems</a>
+                        <div class="link-block">
+                            <a href="smartphone-comparisons.html">Smartphone Comparisons</a>
+                            <p>Main dynamic directory listing all flagship and mid-range mobile phone reviews.</p>
+                        </div>
+                        <div class="link-block">
+                            <a href="apple-samsung.html">Apple vs. Samsung Flagships</a>
+                            <p>An in-depth look at how top-tier premium phones match up in everyday use.</p>
+                        </div>
+                        <div class="link-block">
+                            <a href="iphone-samsung-comp.html">iPhone vs. Samsung Analytical Report</a>
+                            <p>Full breakdown of premium processing chips, battery curves, and display speeds.</p>
+                        </div>
+                        <div class="link-block">
+                            <a href="samsung-iphone.html">Samsung vs. iPhone Head-to-Head</a>
+                            <p>A simple, side-by-side comparison focusing on software features and build quality.</p>
+                        </div>
+                        <div class="link-block">
+                            <a href="iphone-samsung.html">iPhone vs. Samsung Enterprise Ecosystems</a>
+                            <p>Reviewing cross-device connectivity and workplace features for power users.</p>
+                        </div>
+                        <div class="link-block">
+                            <a href="google-Iphone.html">Google Pixel vs. Apple iPhone</a>
+                            <p>Comparing camera image processing, AI smarts, and stock operating systems.</p>
+                        </div>
+                        <div class="link-block">
+                            <a href="samsung-artel.html">Samsung vs. Artel Consumer Analysis</a>
+                            <p>A regional value comparison balancing price against long-term product durability.</p>
+                        </div>
+                        <div class="link-block">
+                            <a href="ipad-samsung.html">iPad Pro vs. Samsung Galaxy Tab S9</a>
+                            <p>A thorough test of screen brightness, stylus lag, and mobile productivity.</p>
+                        </div>
+                        <div class="link-block">
+                            <a href="micro-google.html">Microsoft Mobile vs. Google Ecosystems</a>
+                            <p>An evaluation of cloud services, productivity apps, and mobile OS integration.</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -239,19 +341,41 @@
                         <span>Computational Workstations &amp; Portable Systems</span>
                     </div>
                     <div>
-                        <span class="badge">7 Reports</span>
+                        <span class="badge">7 Verified Links</span>
                         <span class="arrow"></span>
                     </div>
                 </div>
                 <div class="accordion-content">
+                    <div class="category-intro">Thermal management, core performance, and power efficiency data for laptop systems.</div>
                     <div class="links-grid">
-                        <a href="laptop-comparisons.html">Laptop Performance Indexes</a>
-                        <a href="gaming-noutbuk.html">High-End Gaming Laptops</a>
-                        <a href="macbook-windows.html">MacBook Air vs. Windows Hardware</a>
-                        <a href="macbook-ultrabook.html">MacBook vs. Premium Ultrabooks</a>
-                        <a href="windows-macOS.html">Windows OS vs. macOS Architecture</a>
-                        <a href="dell-lenovo.html">Dell XPS vs. Lenovo ThinkPad</a>
-                        <a href="asus-msi.html">ASUS vs. MSI Engineering Matrix</a>
+                        <div class="link-block">
+                            <a href="laptop-comparisons.html">Laptop Performance Indexes</a>
+                            <p>The main hub for comparing computational speeds, keyboard comfort, and build quality.</p>
+                        </div>
+                        <div class="link-block">
+                            <a href="gaming-noutbuk.html">High-End Gaming Laptops</a>
+                            <p>Testing portable gaming machines for graphics power, cooling efficiency, and fan noise.</p>
+                        </div>
+                        <div class="link-block">
+                            <a href="macbook-windows.html">MacBook Air vs. Windows Hardware</a>
+                            <p>Comparing thin-and-light laptop body styles, trackpads, and real-world battery life.</p>
+                        </div>
+                        <div class="link-block">
+                            <a href="macbook-ultrabook.html">MacBook vs. Premium Ultrabooks</a>
+                            <p>An evaluation of premium portable builds, looking at display accuracy and daily speed.</p>
+                        </div>
+                        <div class="link-block">
+                            <a href="windows-macOS.html">Windows OS vs. macOS Architecture</a>
+                            <p>A straightforward user comparison focusing on workflow speeds and ease of use.</p>
+                        </div>
+                        <div class="link-block">
+                            <a href="dell-lenovo.html">Dell XPS vs. Lenovo ThinkPad</a>
+                            <p>Testing top productivity laptops for keyboard comfort, durability, and screen quality.</p>
+                        </div>
+                        <div class="link-block">
+                            <a href="asus-msi.html">ASUS vs. MSI Engineering Matrix</a>
+                            <p>A direct comparison of hardware layouts, board reliability, and game performance.</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -264,17 +388,33 @@
                         <span>Automotive Engineering &amp; Alternative Power Systems</span>
                     </div>
                     <div>
-                        <span class="badge">5 Reports</span>
+                        <span class="badge">5 Verified Links</span>
                         <span class="arrow"></span>
                     </div>
                 </div>
                 <div class="accordion-content">
+                    <div class="category-intro">Drive profiles, battery ranges, and safety test reviews for consumer vehicles.</div>
                     <div class="links-grid">
-                        <a href="automotive-comparisons.html">Automotive Engineering Comparisons</a>
-                        <a href="Bmw-Tesla.html">BMW i4 vs. Tesla EV Architecture</a>
-                        <a href="tesla-Byd-atto.html">Tesla Model 3 vs. BYD Atto 3</a>
-                        <a href="toyota-honda.html">Toyota RAV4 vs. Honda CR-V</a>
-                        <a href="Chevrolet-Nexia.html">Chevrolet Lacetti vs. Ravon Nexia 3</a>
+                        <div class="link-block">
+                            <a href="automotive-comparisons.html">Automotive Engineering Comparisons</a>
+                            <p>Main page covering vehicle metrics, dashboard software, and safety ratings.</p>
+                        </div>
+                        <div class="link-block">
+                            <a href="Bmw-Tesla.html">BMW i4 vs. Tesla EV Architecture</a>
+                            <p>Evaluating electric driving ranges, interior build quality, and self-driving features.</p>
+                        </div>
+                        <div class="link-block">
+                            <a href="tesla-Byd-atto.html">Tesla Model 3 vs. BYD Atto 3</a>
+                            <p>A clear comparison of motor power, real battery efficiency, and value for money.</p>
+                        </div>
+                        <div class="link-block">
+                            <a href="toyota-honda.html">Toyota RAV4 vs. Honda CR-V</a>
+                            <p>Testing everyday compact family SUVs on cargo space, fuel economy, and reliability.</p>
+                        </div>
+                        <div class="link-block">
+                            <a href="Chevrolet-Nexia.html">Chevrolet Lacetti vs. Ravon Nexia 3</a>
+                            <p>Practical review of everyday sedans, assessing maintenance costs and engine life.</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -287,21 +427,49 @@
                         <span>Peripherals, Audio &amp; Smart Electronics</span>
                     </div>
                     <div>
-                        <span class="badge">9 Reports</span>
+                        <span class="badge">9 Verified Links</span>
                         <span class="arrow"></span>
                     </div>
                 </div>
                 <div class="accordion-content">
+                    <div class="category-intro">Frequency response tests, input lag measurements, and audio quality reports.</div>
                     <div class="links-grid">
-                        <a href="audio.html">Acoustic Audio Systems</a>
-                        <a href="naushnik.html">Wireless Headphones Benchmarks</a>
-                        <a href="Airpods-Sony.html">Apple AirPods Pro vs. Sony WF-1000XM5</a>
-                        <a href="sony-bose.html">Sony Noise Cancelling vs. Bose Studio</a>
-                        <a href="soundbar.html">Home Theater Soundbar Matrices</a>
-                        <a href="wireless.html">Wireless Audio Transmission Protocols</a>
-                        <a href="klaviatura.html">Mechanical Keyboards Switch Profiles</a>
-                        <a href="sichqoncha.html">Ergonomic Gaming Mice Metrics</a>
-                        <a href="vr-qurilma.html">Virtual Reality Headset Architectures</a>
+                        <div class="link-block">
+                            <a href="audio.html">Acoustic Audio Systems</a>
+                            <p>Central directory for speaker systems, clean amplifiers, and sound output files.</p>
+                        </div>
+                        <div class="link-block">
+                            <a href="naushnik.html">Wireless Headphones Benchmarks</a>
+                            <p>Testing earbud and over-ear comfort, wireless range, and microphone clarity.</p>
+                        </div>
+                        <div class="link-block">
+                            <a href="Airpods-Sony.html">Apple AirPods Pro vs. Sony WF-1000XM5</a>
+                            <p>An absolute head-to-head on active noise cancellation and sound richness.</p>
+                        </div>
+                        <div class="link-block">
+                            <a href="sony-bose.html">Sony Noise Cancelling vs. Bose Studio</a>
+                            <p>Comparing top over-ear travel headphones for long-term comfort and quietness.</p>
+                        </div>
+                        <div class="link-block">
+                            <a href="soundbar.html">Home Theater Soundbar Matrices</a>
+                            <p>Evaluating TV speaker setups on movie dialogue clarity and bass power.</p>
+                        </div>
+                        <div class="link-block">
+                            <a href="wireless.html">Wireless Audio Transmission Protocols</a>
+                            <p>A simple look at wireless bluetooth stability, connection delay, and sound loss.</p>
+                        </div>
+                        <div class="link-block">
+                            <a href="klaviatura.html">Mechanical Keyboards Switch Profiles</a>
+                            <p>Testing different keyboard switches for typing sound, responsiveness, and feel.</p>
+                        </div>
+                        <div class="link-block">
+                            <a href="sichqoncha.html">Ergonomic Gaming Mice Metrics</a>
+                            <p>Measuring mouse sensor accuracy, weight distribution, and battery run times.</p>
+                        </div>
+                        <div class="link-block">
+                            <a href="vr-qurilma.html">Virtual Reality Headset Architectures</a>
+                            <p>Reviewing tracking accuracy, screen pixels, and overall comfort for VR gear.</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -314,16 +482,29 @@
                         <span>Home Appliances &amp; Climate Control</span>
                     </div>
                     <div>
-                        <span class="badge">4 Reports</span>
+                        <span class="badge">4 Verified Links</span>
                         <span class="arrow"></span>
                     </div>
                 </div>
                 <div class="accordion-content">
+                    <div class="category-intro">Power consumption metrics and filtration efficacy data for home goods.</div>
                     <div class="links-grid">
-                        <a href="appliances-comparisons.html">Domestic Appliances Analyses</a>
-                        <a href="Dyson-Xiaomi.html">Dyson Vacuums vs. Xiaomi Air Purifiers</a>
-                        <a href="lg-bosch.html">LG Systems vs. Bosch Engineering</a>
-                        <a href="gree-samsung.html">Gree Smart Climate vs. Samsung Air Conditioners</a>
+                        <div class="link-block">
+                            <a href="appliances-comparisons.html">Domestic Appliances Analyses</a>
+                            <p>Main landing spot for household motor tools, kitchen gear, and power numbers.</p>
+                        </div>
+                        <div class="link-block">
+                            <a href="Dyson-Xiaomi.html">Dyson Vacuums vs. Xiaomi Air Purifiers</a>
+                            <p>A look at indoor air cleaning, dust pickup rates, and fan noise levels.</p>
+                        </div>
+                        <div class="link-block">
+                            <a href="lg-bosch.html">LG Systems vs. Bosch Engineering</a>
+                            <p>Comparing laundry setups and kitchen appliances for reliability and water use.</p>
+                        </div>
+                        <div class="link-block">
+                            <a href="gree-samsung.html">Gree Smart Climate vs. Samsung Air Conditioners</a>
+                            <p>Testing home cooling speeds, energy bill savings, and smart app features.</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -336,19 +517,41 @@
                         <span>Multimedia Software &amp; Gaming Infrastructure</span>
                     </div>
                     <div>
-                        <span class="badge">7 Reports</span>
+                        <span class="badge">7 Verified Links</span>
                         <span class="arrow"></span>
                     </div>
                 </div>
                 <div class="accordion-content">
+                    <div class="category-intro">Render pipelines, system resource allocation, and software ecosystem reviews.</div>
                     <div class="links-grid">
-                        <a href="software.html">Production Software Architectures</a>
-                        <a href="grafik-dizayn.html">Graphic Design Engine Requirements</a>
-                        <a href="Photoshop-Canva-Figma.html">Adobe Photoshop vs. Canva vs. Figma</a>
-                        <a href="adobe-daVinci.html">Adobe Premiere Pro vs. DaVinci Resolve</a>
-                        <a href="gaming.html">Console &amp; PC Gaming Hub</a>
-                        <a href="Playstation-Xbox.html">PlayStation 5 vs. Xbox Series X Architecture</a>
-                        <a href="ps-xbox.html">Next-Gen Console Ecosystem Deployment</a>
+                        <div class="link-block">
+                            <a href="software.html">Production Software Architectures</a>
+                            <p>The core index for creative apps, system load benchmarks, and UI speeds.</p>
+                        </div>
+                        <div class="link-block">
+                            <a href="grafik-dizayn.html">Graphic Design Engine Requirements</a>
+                            <p>Testing software speeds on memory use, export times, and tool layout comfort.</p>
+                        </div>
+                        <div class="link-block">
+                            <a href="Photoshop-Canva-Figma.html">Adobe Photoshop vs. Canva vs. Figma</a>
+                            <p>Evaluating image tools based on template choices, team features, and deep editing.</p>
+                        </div>
+                        <div class="link-block">
+                            <a href="adobe-daVinci.html">Adobe Premiere Pro vs. DaVinci Resolve</a>
+                            <p>A direct comparison of video rendering speeds, color tools, and stability.</p>
+                        </div>
+                        <div class="link-block">
+                            <a href="gaming.html">Console &amp; PC Gaming Hub</a>
+                            <p>Main directory for checking game frame rates, console features, and hardware loads.</p>
+                        </div>
+                        <div class="link-block">
+                            <a href="Playstation-Xbox.html">PlayStation 5 vs. Xbox Series X Architecture</a>
+                            <p>An entry-level look at loading times, graphics chips, and controller ergonomics.</p>
+                        </div>
+                        <div class="link-block">
+                            <a href="ps-xbox.html">Next-Gen Console Ecosystem Deployment</a>
+                            <p>Comparing game subscriptions, online server stability, and backward compatibility.</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -358,46 +561,123 @@
         <!-- CARD 2: Hardware Testing Methodology & Quality Compliance -->
         <div class="sitemap-card">
             <h2 class="section-title"><span>⚙️</span> Hardware Testing Methodology &amp; Quality Compliance</h2>
-            <div class="links-grid" style="padding: 0;">
-                <a href="methodology.html">Testing Methodology &amp; Protocol Standards</a>
-                <a href="test-process.html">Step-by-Step Device Test Processes</a>
-                <a href="test-equipment.html">Laboratory Instrumentation &amp; Equipment Specs</a>
-                <a href="rating-system.html">Weighted Rating System Calculations</a>
-                <a href="how-to-choose.html">Consumer Procurement Guide &amp; Criteria</a>
-                <a href="kamera.html">Optical Matrix &amp; Camera Sensor Evaluation</a>
-                <a href="pc-build.html">Custom PC System Component Benchmarking</a>
-                <a href="antivirus.html">Antivirus Protection &amp; Cybersecurity Evaluation</a>
-                <a href="bulut.html">Cloud Computing Infrastructure Analysis</a>
+            <p class="section-desc">Our scientific testing principles. We publish our criteria openly to maintain transparency for readers and compliance auditors.</p>
+            <div class="links-grid static-links-grid" style="padding: 0;">
+                <div class="link-block">
+                    <a href="methodology.html">Testing Methodology Standards</a>
+                    <p>The rules we follow to keep all device testing fair, constant, and clean.</p>
+                </div>
+                <div class="link-block">
+                    <a href="test-process.html">Step-by-Step Test Processes</a>
+                    <p>Our complete roadmap for unboxing, running, and analyzing consumer hardware.</p>
+                </div>
+                <div class="link-block">
+                    <a href="test-equipment.html">Laboratory Instrumentation Specs</a>
+                    <p>Details about the physical tools and meters we use to check screen and battery numbers.</p>
+                </div>
+                <div class="link-block">
+                    <a href="rating-system.html">Weighted Rating Calculations</a>
+                    <p>How we calculate final review scores based on performance, cost, and design.</p>
+                </div>
+                <div class="link-block">
+                    <a href="how-to-choose.html">Consumer Procurement Criteria</a>
+                    <p>A straightforward handbook to help shoppers pick the best electronics for their budget.</p>
+                </div>
+                <div class="link-block">
+                    <a href="kamera.html">Camera Sensor Evaluation Labs</a>
+                    <p>How we check lens sharpness, low-light image grain, and color accuracy.</p>
+                </div>
+                <div class="link-block">
+                    <a href="pc-build.html">PC System Component Benchmarking</a>
+                    <p>The scripts and tracking tools we use to test processor speeds and custom rigs.</p>
+                </div>
+                <div class="link-block">
+                    <a href="antivirus.html">Antivirus &amp; Cyber Security Labs</a>
+                    <p>Our safe system methods for testing digital tools against malware and system slowdowns.</p>
+                </div>
+                <div class="link-block">
+                    <a href="bulut.html">Cloud Computing Infrastructure Analysis</a>
+                    <p>Testing server performance, response times, and online data safety curves.</p>
+                </div>
             </div>
         </div>
 
-        <!-- CARD 3: Technical Operations & Legal Notices (CRITICAL FOR ADSENSE) -->
+        <!-- CARD 3: Technical Operations & Legal Notices -->
         <div class="sitemap-card">
             <h2 class="section-title"><span>⚖️</span> Corporate Operations &amp; Legal Compliance</h2>
-            <div class="links-grid" style="padding: 0;">
-                <a href="about.html">About Our Lab &amp; Team Details</a>
-                <a href="contact.html">Contact Customer Helpdesk</a>
-                <a href="search.html">Advanced System Directory Search</a>
-                <a href="categories.html">All Content Categories Index</a>
-                <a href="faq.html">Frequently Asked Questions</a>
-                <a href="podcast.html">Technical Podcast Transcripts</a>
-                <a href="studio.html">Media Studio Gear Configurations</a>
-                <a href="corrections.html">Editorial Correction Logs</a>
-                <a href="privacy-policy.html">Privacy Policy Statement</a>
-                <a href="terms-of-service.html">Terms of Service Agreement</a>
-                <a href="cookies.html">Cookie Directive &amp; Compliance</a>
-                <a href="disclaimer.html">Legal Warranties Disclaimer</a>
-                <a href="AFFILIATE-DISCLOSURE.html">Commercial Affiliate Disclosure</a>
-                <a href="funding.html">Funding, Ownership, &amp; Financial Governance</a>
-                <a href="ethics.html">Journalistic Ethics Statement</a>
-                <a href="independence.html">Editorial Independence Protections</a>
+            <p class="section-desc">Essential documents outlining site safety rules, management structure, and data collection transparency policies.</p>
+            <div class="links-grid static-links-grid" style="padding: 0;">
+                <div class="link-block">
+                    <a href="about.html">About Our Lab &amp; Team Details</a>
+                    <p>Learn about our background, our values, and meet the testing specialists behind our reviews.</p>
+                </div>
+                <div class="link-block">
+                    <a href="contact.html">Contact Customer Helpdesk</a>
+                    <p>Official pathways to reach our writers, support staff, or submit news tips directly.</p>
+                </div>
+                <div class="link-block">
+                    <a href="search.html">Advanced System Directory Search</a>
+                    <p>A fast, customized database tool to pinpoint specific product models and specifications.</p>
+                </div>
+                <div class="link-block">
+                    <a href="categories.html">All Content Categories Index</a>
+                    <p>A simple overview of all tech sectors and consumer branches reviewed on this platform.</p>
+                </div>
+                <div class="link-block">
+                    <a href="faq.html">Frequently Asked Questions</a>
+                    <p>Quick answers about how we source items, test devices, and update our score sheets.</p>
+                </div>
+                <div class="link-block">
+                    <a href="podcast.html">Technical Podcast Transcripts</a>
+                    <p>Written notes and talking points from our audio talk sessions covering seasonal hardware.</p>
+                </div>
+                <div class="link-block">
+                    <a href="studio.html">Media Studio Gear Configurations</a>
+                    <p>A peek at the microphones, lighting setups, and camera bodies used for our media assets.</p>
+                </div>
+                <div class="link-block">
+                    <a href="corrections.html">Editorial Correction Logs</a>
+                    <p>Public records of any typos or fact corrections we fix on published pages to stay honest.</p>
+                </div>
+                <div class="link-block">
+                    <a href="privacy-policy.html">Privacy Policy Statement</a>
+                    <p>How we shield your user information, clear cookie trackers, and handle private data paths.</p>
+                </div>
+                <div class="link-block">
+                    <a href="terms-of-service.html">Terms of Service Agreement</a>
+                    <p>The rules you agree to follow when browsing our pages, using data, or leaving comments.</p>
+                </div>
+                <div class="link-block">
+                    <a href="cookies.html">Cookie Directive &amp; Compliance</a>
+                    <p>A simple breakdown of why we use cookies to save your display settings and theme selections.</p>
+                </div>
+                <div class="link-block">
+                    <a href="disclaimer.html">Legal Warranties Disclaimer</a>
+                    <p>Official legal notices stating our limits on commercial advice and shopping decisions.</p>
+                </div>
+                <div class="link-block">
+                    <a href="AFFILIATE-DISCLOSURE.html">Commercial Affiliate Disclosure</a>
+                    <p>Transparency note explaining how we earn small referral points from retail links at zero cost to you.</p>
+                </div>
+                <div class="link-block">
+                    <a href="funding.html">Funding, Ownership, &amp; Governance</a>
+                    <p>Clear details explaining how we stay financially independent and handle operational budgets.</p>
+                </div>
+                <div class="link-block">
+                    <a href="ethics.html">Journalistic Ethics Statement</a>
+                    <p>Our formal vow to block retail pressures, avoid bias, and always put readers first.</p>
+                </div>
+                <div class="link-block">
+                    <a href="independence.html">Editorial Independence Protections</a>
+                    <p>How we separate our product test staff completely from brand sponsorships or outside ads.</p>
+                </div>
             </div>
         </div>
 
     </main>
 
     <footer>
-        <p>&copy; 2026 Ranking Hours. Founded by Abdulloh. All rights reserved.</p>
+        <p>&copy; 2026 RankingHours. Founded by Abdulloh. All rights reserved.</p>
     </footer>
 
     <script>
