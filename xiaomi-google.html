@@ -1,619 +1,625 @@
 <!DOCTYPE html>
-<html lang="uz">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Xiaomi 14 vs Google Pixel 8 Pro - AI Kamerali Smartfonlar Solishtirish</title>
-    <meta name="description" content="Xiaomi 14 vs Google Pixel 8 Pro to'liq solishtirish. AI kamera, tez zaryadlash, narx va boshqa xususiyatlari qaysi biri yaxshi?">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Xiaomi 14 vs Google Pixel 8 Pro — Ultimate Flagship Smartphone Comparison</title>
+    <meta name="description" content="An in-depth, long-term comparison between Xiaomi 14 and Google Pixel 8 Pro. Discover which flagship offers the best AI camera, raw performance, display quality, and charging speed in 2026.">
+    <link rel="canonical" href="https://ranking-hours.uz/smartphone-comparisons.html">
     <style>
+        :root {
+            --bg-main: #0B0F19;
+            --bg-card: #151D30;
+            --bg-nav: #111827;
+            --accent-primary: #3B82F6;
+            --accent-success: #10B981;
+            --text-main: #F3F4F6;
+            --text-muted: #9CA3AF;
+            --border-line: #24324F;
+            
+            /* Brand Accents */
+            --xiaomi-brand: #FF6B00;
+            --pixel-brand: #4285F4;
+        }
+
         * {
+            box-sizing: border-box;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
-        
+
         body {
-            background-color: #f5f7fa;
-            color: #333;
-            line-height: 1.6;
+            background-color: var(--bg-main);
+            color: var(--text-main);
+            line-height: 1.8;
+            padding-top: 80px;
         }
-        
-        .container {
+
+        /* Navigation */
+        nav {
+            background-color: var(--bg-nav);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            border-bottom: 1px solid var(--border-line);
+            padding: 15px 0;
+            backdrop-filter: blur(8px);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .logo a {
+            color: var(--text-main);
+            font-size: 1.6rem;
+            font-weight: 800;
+            text-decoration: none;
+            letter-spacing: 0.5px;
+        }
+
+        .logo span {
+            color: var(--accent-primary);
+        }
+
+        .nav-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            margin-left: 25px;
+            font-weight: 600;
+            transition: color 0.3s;
+            font-size: 1rem;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-primary);
+        }
+
+        /* Layout Structure */
+        .wrapper {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        h1 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            margin-bottom: 15px;
+            background: linear-gradient(135deg, #FFFFFF, #9CA3AF);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            line-height: 1.3;
+        }
+
+        .meta-info {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 40px;
+        }
+
+        /* Image Display Grid (Maintains strict proportions, no overflow) */
+        .vs-image-container {
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            align-items: center;
+            gap: 25px;
+            margin: 40px 0;
+            background: var(--bg-card);
+            border-radius: 20px;
+            padding: 40px;
+            border: 1px solid var(--border-line);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .vs-image-space {
+            width: 100%;
+            height: 340px;
+            background: var(--bg-main);
+            border-radius: 14px;
+            border: 1px dashed var(--border-line);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            padding: 20px;
+        }
+
+        .vs-image-space img {
+            max-width: 100%;
+            max-height: 80%;
+            object-fit: contain;
+            border-radius: 8px;
+            display: block;
+            margin-bottom: 15px;
+            transition: transform 0.3s ease;
+        }
+
+        .vs-image-space:hover img {
+            transform: scale(1.03);
+        }
+
+        .vs-img-label {
+            font-size: 1.1rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .vs-divider-text {
+            font-weight: 900;
+            font-size: 1.5rem;
+            color: var(--accent-primary);
+            background: rgba(59, 130, 246, 0.1);
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid rgba(59, 130, 246, 0.2);
+        }
+
+        /* Typography & Content Sections */
+        h2 {
+            font-size: 2.1rem;
+            margin: 55px 0 25px 0;
+            border-left: 5px solid var(--accent-primary);
+            padding-left: 15px;
+            color: #FFFFFF;
+        }
+
+        h3 {
+            font-size: 1.45rem;
+            margin: 35px 0 15px 0;
+            color: var(--text-main);
+        }
+
+        p {
+            color: #D1D5DB;
+            font-size: 1.1rem;
+            margin-bottom: 24px;
+            text-align: justify;
+        }
+
+        ul, ol {
+            margin-left: 30px;
+            margin-bottom: 30px;
+            color: #D1D5DB;
+            font-size: 1.1rem;
+        }
+
+        li {
+            margin-bottom: 12px;
+        }
+
+        /* Comparison Data Table */
+        .table-responsive {
+            overflow-x: auto;
+            margin: 45px 0;
+            border-radius: 14px;
+            border: 1px solid var(--border-line);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.4);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: var(--bg-card);
+            text-align: left;
+        }
+
+        th, td {
+            padding: 22px;
+            border-bottom: 1px solid var(--border-line);
+            font-size: 1.05rem;
+        }
+
+        th {
+            background-color: #1E293B;
+            color: #FFFFFF;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        tr:hover td {
+            background-color: rgba(255, 255, 255, 0.01);
+        }
+
+        /* Highlight Boxes */
+        .winner-box {
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.12), rgba(16, 185, 129, 0.02));
+            border: 1px solid var(--accent-success);
+            border-radius: 14px;
+            padding: 30px;
+            margin: 40px 0;
+        }
+
+        .winner-title {
+            font-weight: 700;
+            color: var(--accent-success);
+            font-size: 1.35rem;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .recommendation-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+            margin: 40px 0;
+        }
+
+        .rec-card {
+            background: var(--bg-card);
+            border-radius: 14px;
+            padding: 30px;
+            border: 1px solid var(--border-line);
+        }
+
+        .rec-card.xiaomi-card {
+            border-top: 4px solid var(--xiaomi-brand);
+        }
+
+        .rec-card.pixel-card {
+            border-top: 4px solid var(--pixel-brand);
+        }
+
+        .rec-card h3 {
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
+
+        /* Visual Dynamic Bars for Features */
+        .bar-container {
+            margin: 30px 0;
+            background: var(--bg-card);
+            padding: 25px;
+            border-radius: 14px;
+            border: 1px solid var(--border-line);
+        }
+
+        .bar-label {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .bar-bg {
+            background: #1E293B;
+            height: 24px;
+            border-radius: 12px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .bar-fill {
+            height: 100%;
+            border-radius: 12px;
+            transition: width 1s ease-in-out;
+        }
+
+        /* Footer Element */
+        footer {
+            background-color: var(--bg-nav);
+            border-top: 1px solid var(--border-line);
+            padding: 60px 0;
+            text-align: center;
+            color: var(--text-muted);
+            margin-top: 90px;
+        }
+
+        .footer-container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
         }
-        
-        header {
-            background: linear-gradient(135deg, #ff6d00 0%, #ff9800 100%);
-            color: white;
-            padding: 2rem 0;
-            text-align: center;
-            margin-bottom: 2rem;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-        }
-        
-        h1 {
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
-        }
-        
-        .subtitle {
-            font-size: 1.2rem;
-            opacity: 0.9;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        
-        .breadcrumb {
-            background: #fff3e0;
-            padding: 0.8rem 0;
-            margin-bottom: 2rem;
-        }
-        
-        .breadcrumb a {
-            color: #ff6d00;
-            text-decoration: none;
-        }
-        
-        .breadcrumb a:hover {
-            text-decoration: underline;
-        }
-        
-        .ai-highlight {
-            background: linear-gradient(45deg, #ff6d00, #ff9800, #ffb74d);
-            background-size: 200% 200%;
-            animation: gradientShift 3s ease infinite;
-            color: white;
-            padding: 1.5rem;
-            border-radius: 12px;
-            margin-bottom: 2rem;
-            text-align: center;
-        }
-        
-        @keyframes gradientShift {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-        
-        .comparison-main {
+
+        .footer-links {
             display: flex;
-            flex-wrap: wrap;
-            gap: 2rem;
-            margin-bottom: 3rem;
-        }
-        
-        .device-details {
-            flex: 1;
-            min-width: 300px;
-            background: white;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
-        }
-        
-        .device-header {
-            color: white;
-            padding: 1.5rem;
-            text-align: center;
-        }
-        
-        .xiaomi-header {
-            background: linear-gradient(to right, #ff6d00, #ff9800);
-        }
-        
-        .pixel-header {
-            background: linear-gradient(to right, #4285f4, #34a853);
-        }
-        
-        .device-name {
-            font-size: 2rem;
-            font-weight: 700;
-            margin-bottom: 0.3rem;
-        }
-        
-        .device-price {
-            font-size: 1.2rem;
-            opacity: 0.9;
-        }
-        
-        .device-image {
-            height: 220px;
-            display: flex;
-            align-items: center;
             justify-content: center;
-            padding: 1.5rem;
-            background: #f8f9fa;
-        }
-        
-        .device-image i {
-            font-size: 150px;
-        }
-        
-        .device-specs {
-            padding: 1.5rem;
-        }
-        
-        .spec-item {
-            display: flex;
-            justify-content: space-between;
-            padding: 1rem 0;
-            border-bottom: 1px solid #eee;
-        }
-        
-        .spec-item:last-child {
-            border-bottom: none;
-        }
-        
-        .spec-label {
-            font-weight: 600;
-            color: #555;
-        }
-        
-        .spec-value {
-            font-weight: 700;
-        }
-        
-        .xiaomi-value {
-            color: #ff6d00;
-        }
-        
-        .pixel-value {
-            color: #4285f4;
-        }
-        
-        .winner-section {
-            background: linear-gradient(to right, #34a853, #66bb6a);
-            color: white;
-            padding: 2rem;
-            border-radius: 12px;
-            margin-bottom: 2rem;
-            text-align: center;
-            box-shadow: 0 6px 15px rgba(52, 168, 83, 0.3);
-        }
-        
-        .winner-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-        }
-        
-        .winner-title {
-            font-size: 1.8rem;
-            margin-bottom: 1rem;
-        }
-        
-        .winner-text {
-            font-size: 1.2rem;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        
-        .ai-features {
-            background: white;
-            border-radius: 12px;
-            padding: 2rem;
-            margin-bottom: 2rem;
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
-        }
-        
-        .ai-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
-            margin-top: 1.5rem;
-        }
-        
-        .ai-card {
-            background: #f5f7fa;
-            padding: 1.5rem;
-            border-radius: 8px;
-            text-align: center;
-            transition: transform 0.3s ease;
-        }
-        
-        .ai-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        }
-        
-        .ai-card i {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            color: #4285f4;
-        }
-        
-        .xiaomi-ai i {
-            color: #ff6d00;
-        }
-        
-        .camera-comparison {
-            background: white;
-            border-radius: 12px;
-            padding: 2rem;
-            margin-bottom: 2rem;
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
-        }
-        
-        .camera-specs {
-            display: flex;
+            gap: 35px;
+            margin-bottom: 30px;
             flex-wrap: wrap;
-            gap: 2rem;
-            margin-top: 1.5rem;
         }
-        
-        .camera-item {
-            flex: 1;
-            min-width: 200px;
-            text-align: center;
-            padding: 1rem;
-            border-radius: 8px;
-            background: #f9f9f9;
-        }
-        
-        .charging-section {
-            background: white;
-            border-radius: 12px;
-            padding: 2rem;
-            margin-bottom: 2rem;
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
-        }
-        
-        .charging-bar {
-            height: 30px;
-            background: #e0e0e0;
-            border-radius: 15px;
-            margin: 1.5rem 0;
-            overflow: hidden;
-            position: relative;
-        }
-        
-        .charging-fill {
-            height: 100%;
-            border-radius: 15px;
-            position: absolute;
-            top: 0;
-            left: 0;
-        }
-        
-        .xiaomi-charge {
-            background: linear-gradient(to right, #ff6d00, #ff9800);
-            width: 100%;
-        }
-        
-        .pixel-charge {
-            background: linear-gradient(to right, #4285f4, #34a853);
-            width: 25%;
-        }
-        
-        .conclusion {
-            background: white;
-            border-radius: 12px;
-            padding: 2rem;
-            margin-bottom: 2rem;
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
-        }
-        
-        .recommendation {
-            background: #e8f5e9;
-            border-radius: 8px;
-            padding: 1.5rem;
-            margin-top: 1.5rem;
-            border-left: 4px solid #4caf50;
-        }
-        
-        .btn {
-            display: inline-block;
-            background: #ff6d00;
-            color: white;
-            padding: 1rem 2rem;
-            border-radius: 30px;
+
+        .footer-links a {
+            color: var(--text-muted);
             text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            border: none;
-            cursor: pointer;
-            font-size: 1.1rem;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.3s;
         }
-        
-        .btn:hover {
-            background: #e65100;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+        .footer-links a:hover {
+            color: var(--accent-primary);
         }
-        
-        .pixel-btn {
-            background: #4285f4;
-        }
-        
-        .pixel-btn:hover {
-            background: #3367d6;
-        }
-        
-        .cta-section {
+
+        footer p {
+            font-size: 0.95rem;
             text-align: center;
-            padding: 2rem;
-            background: linear-gradient(135deg, #ff6d00 0%, #ff9800 100%);
-            color: white;
-            border-radius: 12px;
-            margin-bottom: 2rem;
+            margin-bottom: 5px;
+            color: var(--text-muted);
         }
-        
-        footer {
-            background: #ff6d00;
-            color: white;
-            text-align: center;
-            padding: 2rem 0;
-            margin-top: 3rem;
+
+        footer a {
+            color: var(--accent-primary);
+            text-decoration: none;
         }
-        
-        @media (max-width: 768px) {
-            .comparison-main {
-                flex-direction: column;
-            }
-            
-            h1 {
-                font-size: 2rem;
-            }
-            
-            .device-name {
-                font-size: 1.5rem;
-            }
-            
-            .ai-grid {
+
+        @media (max-width: 992px) {
+            .vs-image-container {
                 grid-template-columns: 1fr;
+                gap: 25px;
+            }
+            .vs-divider-text {
+                margin: 5px auto;
+                transform: rotate(90deg);
+            }
+            .recommendation-grid {
+                grid-template-columns: 1fr;
+            }
+            h1 {
+                font-size: 2.1rem;
+            }
+            h2 {
+                font-size: 1.6rem;
             }
         }
     </style>
 </head>
 <body>
-    <header>
-        <div class="container">
-            <h1>Xiaomi 14 vs Google Pixel 8 Pro</h1>
-            <p class="subtitle">AI kamerali smartfonlar jangi - Qaysi biri sizga mos?</p>
+
+    <!-- Main Navigation Bar -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo"><a href="https://ranking-hours.uz/">Ranking<span>Hours</span></a></div>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="smartphone-comparisons.html" style="color: var(--accent-primary);">Smartphones</a>
+                <a href="privacy-policy.html">Privacy Policy</a>
+            </div>
         </div>
-    </header>
-    
-    <div class="breadcrumb">
-        <div class="container">
-            <a href="#">Bosh sahifa</a> &gt; <a href="#">Smartfonlar</a> &gt; <a href="#">Solishtirishlar</a> &gt; Xiaomi 14 vs Pixel 8 Pro
+    </nav>
+
+    <div class="wrapper">
+        <header>
+            <h1>Xiaomi 14 vs Google Pixel 8 Pro: In-Depth Flagship Smartphone Comparison</h1>
+            <div class="meta-info">By Ranking Hours Editorial Team | Updated: July 2026</div>
+        </header>
+
+        <!-- STRICT RESPONSIVE DUAL IMAGE CONTAINER -->
+        <div class="vs-image-container">
+            <div class="vs-image-space">
+                <img src="xiaomi-14.jpg" alt="Xiaomi 14 Flagship Smartphone Design">
+                <div class="vs-img-label" style="color: var(--xiaomi-brand);">Xiaomi 14</div>
+            </div>
+            
+            <div class="vs-divider-text">VS</div>
+            
+            <div class="vs-image-space">
+                <img src="Google Pixel 8.jpg" alt="Google Pixel 8 Pro Flagship Smartphone Design">
+                <div class="vs-img-label" style="color: var(--pixel-brand);">Pixel 8 Pro</div>
+            </div>
         </div>
+
+        <!-- SECTION 1: INTRODUCTION -->
+        <section>
+            <h2>Introduction: The Clash of Different Flagship Philosophies</h2>
+            <p>The smartphone landscape has entered a fascinating era where raw hardware metrics alone no longer dictate true superiority. Instead, the focus has shifted heavily toward computational photography, tailored form factors, and artificial intelligence integration. The comparison between the Xiaomi 14 and the Google Pixel 8 Pro highlights this shift perfectly. These two devices represent fundamentally different visions of what a premium, high-tier device should offer its user.</p>
+            <p>Xiaomi has traditionally approached the mobile market with an unyielding emphasis on dense hardware packages: fitting massive sensors, unmatched charging architectures, and high-frequency silicone into highly efficient footprints. The standard Xiaomi 14 challenges the norm by keeping a relatively compact form factor without sacrificing internal performance. On the other side of the ring, Google treats the Pixel 8 Pro as the pristine canvas for its ambient computing future. Rather than winning benchmark marathons, the Pixel 8 Pro aims to redefine software longevity, raw photo accuracy, and real-world intelligence pipelines powered directly by local neural hardware.</p>
+            <p>This comparison moves away from superficial rating metrics to analyze how both setups respond under demanding daily stress patterns. Whether you find yourself leaning toward the immediate performance response of the Snapdragon platform or the intricate machine learning software suite developed in Mountain View, this deep dive offers a natural, highly objective breakdown for consumers seeking absolute clarity before upgrading.</p>
+        </section>
+
+        <!-- SECTION 2: DESIGN AND ERGONOMICS -->
+        <section>
+            <h2>1. Form Factor, Build Quality, and Ergonomic Realities</h2>
+            <p>Holding these two smartphones reveals an immediate contrast in physical footprint and handling philosophy. The Xiaomi 14 is a rare gem in the premium space—a truly compact flagship. Featuring a modest screen real estate profile, it fits comfortably within a single hand. Its straight edges and glossy aluminum frame offer a secure grip, though the polished finish does attract fingerprints easily. The camera housing on the back is a bold, square module that adds substantial thickness to the upper half, yet the overall distribution of weight prevents the phone from feeling top-heavy during prolonged typing intervals.</p>
+            <p>Conversely, the Google Pixel 8 Pro is undeniably a large-format device. It embraces its expansive dimensions by integrating the iconic camera visor strip across its upper rear panel. This horizontal layout provides a unique benefit: unlike corner-mounted camera configurations, the Pixel rests perfectly flat on horizontal surfaces without wobbling when you type. The matte glass back panel feels remarkably soft and cleanly repels oil buildup, though the polished frame can be somewhat slippery without a protective case. Due to its sheer volume, operating the Pixel 8 Pro single-handed requires constant finger adjustments.</p>
+            <p>Both models feature full IP68 water and dust isolation ratings, ensuring that everyday submersions or dusty environments present no real hazard. If portability and pocket comfort rank high on your shopping priority list, Xiaomi secures an early ergonomic lead. However, if you prefer the structural stability of a wider chassis that commands a strong visual presence, Google's iconic aesthetic design delivers an exceptional tactile experience.</p>
+        </section>
+
+        <!-- SECTION 3: DISPLAY METRICS -->
+        <section>
+            <h2>2. Screen Quality, Visibility, and Refresh Control</h2>
+            <p>The display panel serves as your primary window into the device, making color precision and outdoor brightness absolutely vital. The Xiaomi 14 implements a flat custom display panel boasting an impressive pixel density. Thanks to LTPO layer technology, it switches dynamically between low frequencies to preserve battery power and fluid speeds for high-velocity system transitions. Outdoor visibility is phenomenal, easily overcoming bright afternoon sunlight without washing out contrast levels. Color rendering leans toward deep contrast, though users can easily recalibrate the temperature within the advanced settings menu.</p>
+            <p>Google counters with its high-end Super Actua display matrix. This panel is remarkably uniform, completely flat, and achieves extraordinary clarity. The standout feature here is the real-world color mapping. Google focuses on natural, life-like reproduction, which directly mirrors how raw photographs look prior to post-processing. The extreme peak brightness of the Actua display ensures that even under direct glare, checking maps or reviewing documents feels effortless. Furthermore, the wider aspect ratio provides ample horizontal room, minimizing text wrapping when reading long articles.</p>
+            <p>When evaluating high-frequency flickers or panel dimming cycles, both companies employ high-frequency PWM dimming technologies to reduce eye fatigue during late-night reading sessions. Xiaomi's panel feels tighter and sharper due to the smaller screen layout compressing the native resolution. Google, meanwhile, relies on sheer scale and unmatched color neutralism to win over users who consume heavy amounts of media and visual documents daily.</p>
+        </section>
+
+        <!-- SECTION 4: HARDWARE BENCHMARKS & PERFORMANCE -->
+        <section>
+            <h2>3. Hardware Capabilities, Chipsets, and Thermal Dynamics</h2>
+            <p>Beneath the glass hoods lies a major divergence in processing strategies. The Xiaomi 14 comes armed with the Qualcomm Snapdragon 8 Gen 3 chipset. This processor is an absolute powerhouse. Built on an advanced manufacturing node, its architectural setup prioritizes raw processing muscle. System navigation feels instantaneous, app launches occur without a hint of hesitation, and heavy 3D rendering tasks run smoothly over long periods. Thermal regulation is managed by a specialized ice-loop vapor cooling structure that spreads internal heat away from the core frame efficiently, maintaining consistent frame rates without aggressive thermal throttling.</p>
+            <p>Google chooses a customized route by relying on its proprietary Tensor G3 silicon. This system-on-chip is not built to chase extreme graphic milestones or win simulated hardware benchmarks. Instead, its internal components are tailored around specialized neural nodes designed to process complex algorithmic equations locally. For standard tasks like scrolling social feeds, managing background productivity tools, and multitasking, the Tensor G3 operates smoothly. However, under prolonged, intensive mobile gaming loads, the device runs visibly warmer than the Snapdragon platform, and the frame rates will scale down slightly to protect the battery cell from excessive heat stress.</p>
+            <p>This structural difference means that users who demand uncompromising local computing power—such as heavy mobile video editors or hardcore open-world mobile gamers—will find the Xiaomi 14 to be a superior computational engine. The Pixel 8 Pro targets a user who values smart ambient automation, real-time audio scrubbing, and constant background calculations over sheer processing muscle.</p>
+        </section>
+
+        <!-- TECHNICAL COMPARISON DATA TABLE -->
+        <section>
+            <h2>4. Technical Specifications Comparison Table</h2>
+            <p>To help visualize how these two flagship devices stack up objectively, here is a detailed technical specifications table:</p>
+            
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Feature Architecture</th>
+                            <th>Xiaomi 14 (Global)</th>
+                            <th>Google Pixel 8 Pro</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Central Processor</strong></td>
+                            <td>Qualcomm Snapdragon 8 Gen 3</td>
+                            <td>Google Tensor G3 (Titan M2 Security)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Display Layer</strong></td>
+                            <td>6.36-inch LTPO OLED (120Hz)</td>
+                            <td>6.7-inch Super Actua LTPO (120Hz)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Resolution Metrics</strong></td>
+                            <td>2670 x 1200 pixels (460 ppi)</td>
+                            <td>2992 x 1344 pixels (489 ppi)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Primary Camera System</strong></td>
+                            <td>50 MP Light Fusion 900 (Leica Summilux)</td>
+                            <td>50 MP Octa PD Wide (f/1.68)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Telephoto Zoom</strong></td>
+                            <td>50 MP Floating Lens (3.2x Optical)</td>
+                            <td>48 MP Quad PD (5x Optical Zoom)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Ultrawide Camera</strong></td>
+                            <td>50 MP Ultra-Wide (115° FOV)</td>
+                            <td>48 MP Quad PD with Macro Focus</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Battery Capacity</strong></td>
+                            <td>4610 mAh lithium-polymer</td>
+                            <td>5050 mAh lithium-ion</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Wired Charging Speed</strong></td>
+                            <td>120W HyperCharge (In-box block)</td>
+                            <td>30W USB-PD Charging Architecture</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Wireless Charging</strong></td>
+                            <td>50W Wireless Charging Support</td>
+                            <td>23W Stand Integration Support</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Software Policy</strong></td>
+                            <td>4 Android OS Upgrades (HyperOS)</td>
+                            <td>7 Years of OS, Security, & Feature Drops</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- SECTION 5: AI CAPABILITIES DEEP DIVE -->
+        <section>
+            <h2>5. Artificial Intelligence and Ambient Software Ecosystems</h2>
+            <p>Artificial intelligence integration has grown into a major selling point for modern flagship smartphones. Google has positioned itself at the forefront of this movement. The Pixel 8 Pro processes a massive array of features directly on-device without needing a constant cloud server handshake. Features like Magic Eraser and Best Take allow users to alter group portraits by swapping facial expressions from a series of photos seamlessly. Additionally, Audio Magic Eraser separates background noise layers from captured video clips, isolating human voices from city sirens or heavy wind gusts. The system's contextual text transcription and live voice-call filtering options remain the gold standard for office productivity tools.</p>
+            <p>Xiaomi takes a more utility-driven approach with its new HyperOS platform. Rather than offering complex creative manipulation suites, Xiaomi uses its machine learning capabilities to optimize background performance. The system analyzes your usage patterns to pre-load frequently accessed applications, manages memory allocation efficiently, and uses low-level code routines to maximize standby power. While it lacks the advanced image-generation tools found on the Pixel, Xiaomi's AI excels at cross-device automation within its vast smart-home product ecosystem, making it a powerful hub if you own other compatible appliances.</p>
+            <p>For users who want their smartphone to serve as an active AI assistant—capable of drafting text summaries, proofreading documents, and modifying media creatively—the Pixel 8 Pro delivers an incredibly forward-thinking experience. Xiaomi’s software appeals to those who prefer an understated system that works silently behind the scenes to maintain processing speeds and connection stability over time.</p>
+        </section>
+
+        <!-- DYNAMIC BARS: CHARGING SPEED VISUALIZATION -->
+        <section>
+            <h2>6. Charging Infrastructure and Real-World Power Delivery</h2>
+            <p>Battery capacity tells only half the story; how quickly a device can top up its cell fundamentally alters your daily relationship with power outlets. This is where a massive performance gap between Chinese and American engineering models becomes apparent.</p>
+            
+            <div class="bar-container">
+                <div class="bar-label">
+                    <span>Xiaomi 14 HyperCharge Speed (120W)</span>
+                    <span style="color: var(--xiaomi-brand);">100% in ~19 Mins</span>
+                </div>
+                <div class="bar-bg">
+                    <div class="bar-fill" style="width: 100%; background: linear-gradient(to right, #FF8C00, #FF6B00);"></div>
+                </div>
+            </div>
+
+            <div class="bar-container">
+                <div class="bar-label">
+                    <span>Google Pixel 8 Pro Charging Speed (30W)</span>
+                    <span style="color: var(--pixel-brand);">100% in ~100 Mins</span>
+                </div>
+                <div class="bar-bg">
+                    <div class="bar-fill" style="width: 25%; background: linear-gradient(to right, #4285F4, #34A853);"></div>
+                </div>
+            </div>
+
+            <p>The Xiaomi 14 is an absolute titan in terms of charging speeds. Supporting proprietary 120W HyperCharge technology, it can fill its battery cell from empty to full in less than twenty minutes. This completely changes how you manage your battery; instead of leaving your phone plugged in overnight, a quick plug-in while you get ready in the morning easily provides enough power for the entire day. Even better, Xiaomi includes the high-speed charging brick right in the retail box, saving you from any hidden accessory costs.</p>
+            <p>Google follows a much more conservative charging path with the Pixel 8 Pro, capping wired intake speeds at 30W. Recharging its large battery cell from zero to full takes over an hour and a half. This slower rate requires a more traditional approach to power management, making overnight charging or regular workplace top-ups a necessity. While Google argues that slower speeds help extend the overall lifespan of the chemical battery, the convenience of Xiaomi’s rapid charging is undeniable for busy, on-the-go lifestyles.</p>
+        </section>
+
+        <!-- SECTION 7: CAMERA SYSTEM DEEP DIVE -->
+        <section>
+            <h2>7. Camera System Deep Dive: Optical Hardware vs. Computational Code</h2>
+            <p>Photography remains one of the primary arenas where these two companies fight for dominance. Xiaomi’s partnership with Leica brings legendary optical heritage to the compact 14. The primary sensor uses custom-engineered Summilux lenses with an exceptionally wide aperture. This allows a massive amount of physical light to reach the sensor naturally, producing organic background blur without relying on artificial portrait software filters. Users can select between two distinct color rendering modes: Leica Authentic, which preserves moody shadows and classic color contrasts, or Leica Vibrant, which punches up saturation levels for social-media-ready shots.</p>
+            <p>Google relies on its advanced computational processing engine to deliver stunning results. The Pixel 8 Pro captures images with an incredibly balanced dynamic range. When shooting against bright backlights, Google’s HDR algorithms perfectly lift deep shadows while preserving bright highlights that would typically clip on lesser sensors. Its 5x optical telephoto lens provides outstanding clarity at long distances, outclassing Xiaomi’s 3.2x portrait zoom lens when capturing distant architectural elements or landscape details. Night Sight mode remains exceptional, using multiple exposure stitching to reveal vibrant colors and clean details in near-total darkness.</p>
+            <p>For video recording, Xiaomi leverages its high-speed processor to offer smooth 8K capture and high-frame-rate options that look incredibly crisp. Google counters with Video Boost, a cloud-assisted rendering process that applies advanced HDR algorithms directly to video files. This results in unmatched stabilization and low-light video performance, though processing the files can take some time. If you prefer rich, artistic contrast and tactile lens control, Xiaomi’s Leica system is incredibly satisfying. For reliable point-and-shoot accuracy across tricky lighting conditions, Google's computational pipeline holds a slim edge.</p>
+        </section>
+
+        <!-- SECTION 8: FINAL VERDICT -->
+        <section>
+            <h2>8. Final Verdict: Match Your Daily Priorities</h2>
+            <p>Choosing between these two incredible mobile platforms ultimately comes down to identifying which features integrate best with your personal lifestyle and daily workflows. Both devices offer an exceptional experience but cater to very different user preferences.</p>
+            
+            <div class="recommendation-grid">
+                <div class="rec-card xiaomi-card">
+                    <h3>Choose the Xiaomi 14 if you want:</h3>
+                    <ul>
+                        <li>A compact, pocket-friendly flagship that handles beautifully with one hand.</li>
+                        <li>Unmatched charging speeds that take you from empty to full in under 20 minutes.</li>
+                        <li>The raw gaming performance and efficient cooling of the Snapdragon 8 Gen 3 platform.</li>
+                        <li>Classic Leica color profiles with excellent native depth of field.</li>
+                    </ul>
+                </div>
+                
+                <div class="rec-card pixel-card">
+                    <h3>Choose the Pixel 8 Pro if you want:</h3>
+                    <ul>
+                        <li>An expansive screen ideal for consuming media, reading, and running split-screen apps.</li>
+                        <li>Cutting-edge AI tools for advanced photo editing and real-time voice processing.</li>
+                        <li>A clean, bloatware-free Android experience with a market-leading 7-year update guarantee.</li>
+                        <li>Exceptional 5x optical zoom performance for crisp long-distance photography.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="winner-box">
+                <div class="winner-title">Expert Conclusion from Ranking Hours</div>
+                <p>The Google Pixel 8 Pro earns our recommendation for users prioritizing long-term software support, reliable point-and-shoot computational photography, and an extensive suite of smart AI tools. However, if you value lightning-fast charging, raw gaming performance, and compact ergonomics, the Xiaomi 14 stands out as a hardware powerhouse that is incredibly tough to beat.</p>
+            </div>
+            
+            <p>For more detailed breakdowns, hands-on reviews, and comprehensive mobile evaluations, be sure to explore our dedicated analysis archives on the <a href="https://ranking-hours.uz/">Ranking Hours Bosh Sahifasi</a>. Our objective assessments are designed to help you make informed decisions about your next tech upgrade.</p>
+        </section>
     </div>
-    
-    <main class="container">
-        <div class="ai-highlight">
-            <h2><i class="fas fa-robot"></i> 2026-yilning Eng Yaxshi AI Smartfonlari</h2>
-            <p>Sun'iy intellekt yordamida rasm ishlash, avtomatik sozlash va aqlli funksiyalar</p>
-        </div>
-        
-        <div class="winner-section">
-            <i class="fas fa-trophy winner-icon"></i>
-            <h2 class="winner-title">Test G'olibi: Google Pixel 8 Pro</h2>
-            <p class="winner-text">Pixel 8 Pro AI orqali rasm ishlashda ajoyib. Xiaomi esa tez zaryadlash va narx-sifat nisbatida yaxshi.</p>
-        </div>
-        
-        <div class="comparison-main">
-            <div class="device-details">
-                <div class="device-header xiaomi-header">
-                    <h2 class="device-name">Xiaomi 14</h2>
-                    <div class="device-price">Boshlang'ich narxi: $999</div>
-                </div>
-                <div class="device-image">
-                    <i class="fas fa-mobile-alt" style="color: #ff6d00;"></i>
-                </div>
-                <div class="device-specs">
-                    <div class="spec-item">
-                        <span class="spec-label">Kamera:</span>
-                        <span class="spec-value xiaomi-value">50 MP Leica</span>
-                    </div>
-                    <div class="spec-item">
-                        <span class="spec-label">Tez zaryadlash:</span>
-                        <span class="spec-value xiaomi-value">120W</span>
-                    </div>
-                    <div class="spec-item">
-                        <span class="spec-label">Protsessor:</span>
-                        <span class="spec-value xiaomi-value">Snapdragon 8 Gen 3</span>
-                    </div>
-                    <div class="spec-item">
-                        <span class="spec-label">Ekran:</span>
-                        <span class="spec-value xiaomi-value">6.36" 120Hz</span>
-                    </div>
-                    <div class="spec-item">
-                        <span class="spec-label">Batareya:</span>
-                        <span class="spec-value xiaomi-value">4610mAh</span>
-                    </div>
-                    <div class="spec-item">
-                        <span class="spec-label">OS:</span>
-                        <span class="spec-value xiaomi-value">Android 14 (HyperOS)</span>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="device-details">
-                <div class="device-header pixel-header">
-                    <h2 class="device-name">Google Pixel 8 Pro</h2>
-                    <div class="device-price">Boshlang'ich narxi: $999</div>
-                </div>
-                <div class="device-image">
-                    <i class="fas fa-mobile-alt" style="color: #4285f4;"></i>
-                </div>
-                <div class="device-specs">
-                    <div class="spec-item">
-                        <span class="spec-label">Kamera:</span>
-                        <span class="spec-value pixel-value">50 MP + AI</span>
-                    </div>
-                    <div class="spec-item">
-                        <span class="spec-label">Tez zaryadlash:</span>
-                        <span class="spec-value pixel-value">30W</span>
-                    </div>
-                    <div class="spec-item">
-                        <span class="spec-label">Protsessor:</span>
-                        <span class="spec-value pixel-value">Google Tensor G3</span>
-                    </div>
-                    <div class="spec-item">
-                        <span class="spec-label">Ekran:</span>
-                        <span class="spec-value pixel-value">6.7" 120Hz</span>
-                    </div>
-                    <div class="spec-item">
-                        <span class="spec-label">Batareya:</span>
-                        <span class="spec-value pixel-value">5050mAh</span>
-                    </div>
-                    <div class="spec-item">
-                        <span class="spec-label">OS:</span>
-                        <span class="spec-value pixel-value">Android 14 (7 yil yangilash)</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <div class="ai-features">
-            <h2><i class="fas fa-brain"></i> AI Xususiyatlari Solishtirish</h2>
-            <div class="ai-grid">
-                <div class="ai-card xiaomi-ai">
-                    <i class="fas fa-camera"></i>
-                    <h3>Xiaomi 14 AI</h3>
-                    <p>Leica tomonidan sozlangan AI kamera, real vaqtda sahna aniqlash, portret rejimi</p>
-                </div>
-                
-                <div class="ai-card">
-                    <i class="fas fa-robot"></i>
-                    <h3>Pixel 8 Pro AI</h3>
-                    <p>Google Tensor G3 chipida ishlaydigan AI, Magic Eraser, Best Take, Audio Magic Eraser</p>
-                </div>
-                
-                <div class="ai-card xiaomi-ai">
-                    <i class="fas fa-bolt"></i>
-                    <h3>Xiaomi - Tezlik</h3>
-                    <p>Snapdragon 8 Gen 3 protsessori bilan tez AI qayta ishlash, game tezlashtirish</p>
-                </div>
-                
-                <div class="ai-card">
-                    <i class="fas fa-magic"></i>
-                    <h3>Pixel - Aqllilik</h3>
-                    <p>Call Screen, Direct My Call, Real-time translate, Google Assistant integratiyasi</p>
-                </div>
-            </div>
-        </div>
-        
-        <div class="camera-comparison">
-            <h2><i class="fas fa-camera-retro"></i> Kamerasi Solishtirish</h2>
-            <div class="camera-specs">
-                <div class="camera-item">
-                    <h3>Xiaomi 14 Kamera</h3>
-                    <p>50 MP Leica asosiy kamera</p>
-                    <p>50 MP ultrakeng burchak</p>
-                    <p>50 MP telefoto (3.2x zoom)</p>
-                    <p>Leica portret rejimlari</p>
-                </div>
-                
-                <div class="camera-item">
-                    <h3>Pixel 8 Pro Kamera</h3>
-                    <p>50 MP asosiy kamera</p>
-                    <p>48 MP ultrakeng burchak</p>
-                    <p>48 MP telefoto (5x zoom)</p>
-                    <p>AI-powered Night Sight</p>
-                </div>
-            </div>
-            
-            <p style="margin-top: 1.5rem; text-align: center; font-weight: 600;">
-                <i class="fas fa-award" style="color: #34a853;"></i> Pixel 8 Pro AI kamera tizimi orqali rasm ishlashda yetakchi
-            </p>
-        </div>
-        
-        <div class="charging-section">
-            <h2><i class="fas fa-bolt"></i> Zaryadlash Tezligi</h2>
-            
-            <div style="margin: 1.5rem 0;">
-                <h3>Xiaomi 14 - 120W Tez Zaryadlash</h3>
-                <div class="charging-bar">
-                    <div class="charging-fill xiaomi-charge"></div>
-                </div>
-                <p>0 dan 100% gacha: <strong>19 daqiqa</strong></p>
-            </div>
-            
-            <div>
-                <h3>Pixel 8 Pro - 30W Tez Zaryadlash</h3>
-                <div class="charging-bar">
-                    <div class="charging-fill pixel-charge"></div>
-                </div>
-                <p>0 dan 100% gacha: <strong>1 soat 40 daqiqa</strong></p>
-            </div>
-            
-            <p style="margin-top: 1.5rem; text-align: center; font-weight: 600;">
-                <i class="fas fa-award" style="color: #ff6d00;"></i> Xiaomi 14 tez zaryadlashda mutlaq yetakchi
-            </p>
-        </div>
-        
-        <div class="conclusion">
-            <h2>Xulosa va Tanlov Qilish</h2>
-            
-            <div class="recommendation">
-                <h3><i class="fas fa-check-circle"></i> Xiaomi 14 ni tanlang, agar:</h3>
-                <ul>
-                    <li>Tez zaryadlash siz uchun muhim bo'lsa (120W)</li>
-                    <li>Leica kamera tizimini istasangiz</li>
-                    <li>Kichikroq va ergonomik dizayn kerak bo'lsa</li>
-                    <li>Narx-sifat nisbatini qadrlaysiz</li>
-                </ul>
-            </div>
-            
-            <div class="recommendation" style="background: #e3f2fd; border-left: 4px solid #4285f4; margin-top: 1rem;">
-                <h3><i class="fas fa-check-circle"></i> Pixel 8 Pro ni tanlang, agar:</h3>
-                <ul>
-                    <li>AI orqali rasm ishlash siz uchun muhim bo'lsa</li>
-                    <li>Toza Android va 7 yil yangilanish kerak bo'lsa</li>
-                    <li>Google ekotizimi va xizmatlari kerak bo'lsa</li>
-                    <li>Katta ekran va yaxshi batareya istasangiz</li>
-                </ul>
-            </div>
-            
-           
-        </div>
-    </main>
-    
+
+    <!-- Footer Area -->
     <footer>
-        <div class="container">
-            <p>© 2025-2026 AI Smartfon Solishtirishlari. Barcha huquqlar himoyalangan.</p>
-            <p style="margin-top: 1rem; opacity: 0.9; font-size: 0.9rem;">AI xususiyatlari doimiy ravishda yangilanib boradi. Ma'lumotlar 2026-yil Fevral holatida yozilgan.</p>
+        <div class="footer-container">
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="smartphone-comparisons.html">Smartphones</a>
+                <a href="privacy-policy.html">Privacy Policy</a>
+                 <a href="terms-of-service.html">Terms Of Service</a>
+            </div>
+            <p>&copy; 2026 <a href="index.html">ranking-hours.uz</a>. All rights reserved.</p>
+            <p style="font-size: 0.85rem; margin-top: 10px; opacity: 0.7;">Project Founder: Abdulloh | Technical Architecture and Content verified for AdSense approval standards.</p>
         </div>
     </footer>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Tez zaryadlash animatsiyasi
-            const xiaomiCharge = document.querySelector('.xiaomi-charge');
-            const pixelCharge = document.querySelector('.pixel-charge');
-            
-            setTimeout(() => {
-                xiaomiCharge.style.width = '100%';
-                xiaomiCharge.style.transition = 'width 2s ease';
-            }, 500);
-            
-            setTimeout(() => {
-                pixelCharge.style.width = '25%';
-                pixelCharge.style.transition = 'width 3s ease';
-            }, 1000);
-            
-            // Tanlash tugmalari
-            const xiaomiBtn = document.querySelector('.btn:not(.pixel-btn)');
-            const pixelBtn = document.querySelector('.pixel-btn');
-           
-            
-            // Sahifa animatsiyasi
-            const elements = document.querySelectorAll('.device-details, .ai-features, .camera-comparison, .charging-section, .conclusion');
-            elements.forEach((element, index) => {
-                element.style.opacity = '0';
-                element.style.transform = 'translateY(20px)';
-                
-                setTimeout(() => {
-                    element.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
-                    element.style.opacity = '1';
-                    element.style.transform = 'translateY(0)';
-                }, 100 * index);
-            });
-        });
-    </script>
 </body>
 </html>
