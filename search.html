@@ -3,11 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Advanced search engine interface for ranking-hours.uz database. Filter and analyze engineering metrics instantly.">
-    <title>Advanced Analytics Search | RankingHours</title>
+    <title>Advanced Search - Ranking Hours</title>
+    <meta name="description" content="Find products, articles, and comprehensive reviews on the Ranking Hours platform. Find the information you need quickly with our powerful search engine.">
+    
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/search.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        /* --- BOMBA MODERN DARK MODE DESIGN SYSTEM --- */
+        /* --- MODERN DARK INDEX DESIGN SYSTEM --- */
         :root {
             --bg-main: #0b0f19;
             --bg-card: #131a2c;
@@ -20,213 +24,116 @@
             --border-color: rgba(255, 255, 255, 0.08);
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-        }
-
         body {
             background-color: var(--bg-main);
             color: var(--text-primary);
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            overflow-x: hidden;
+            font-family: 'Segoe UI', system-ui, sans-serif;
         }
 
-        /* --- BACKGROUND GLOW EFFECTS --- */
-        body::before {
-            content: '';
-            position: absolute;
-            width: 400px;
-            height: 400px;
-            background: radial-gradient(circle, rgba(0, 180, 219, 0.15) 0%, transparent 70%);
-            top: -100px;
-            left: -100px;
-            z-index: -1;
-        }
-
-        body::after {
-            content: '';
-            position: absolute;
-            width: 500px;
-            height: 500px;
-            background: radial-gradient(circle, rgba(0, 242, 254, 0.1) 0%, transparent 70%);
-            bottom: -100px;
-            right: -100px;
-            z-index: -1;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 25px;
-            width: 100%;
-        }
-
-        /* --- HEADER NAVIGATION --- */
-        header {
-            background: rgba(19, 26, 44, 0.8);
-            backdrop-filter: blur(12px);
-            border-bottom: 1px solid var(--border-color);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            padding: 15px 0;
-        }
-
-        .header-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo a {
-            color: var(--text-primary);
-            text-decoration: none;
-            font-size: 1.6rem;
-            font-weight: 800;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            letter-spacing: -0.5px;
-        }
-
-        .logo span {
-            background: linear-gradient(135deg, var(--accent-glow) 0%, var(--accent-grad-start) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: 20px;
-        }
-
-        nav a {
-            color: var(--text-muted);
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 0.95rem;
-            padding: 8px 16px;
-            border-radius: 12px;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        nav a:hover, nav a.active {
-            color: var(--text-primary);
-            background: rgba(255, 255, 255, 0.05);
-            box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
-        }
-
-        /* --- CORE SEARCH UI PANEL --- */
         .search-hero {
             text-align: center;
-            padding: 80px 0 50px;
+            padding: 60px 20px;
+            background: linear-gradient(180deg, rgba(0, 180, 219, 0.1) 0%, transparent 100%);
         }
 
         .search-hero h1 {
-            font-size: 3rem;
-            font-weight: 800;
-            letter-spacing: -1px;
+            font-size: 2.5rem;
             margin-bottom: 15px;
-            background: linear-gradient(135deg, #fff 0%, #a5b4fc 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            font-weight: 800;
         }
 
-        .search-hero p {
-            color: var(--text-muted);
-            font-size: 1.1rem;
-            max-width: 600px;
-            margin: 0 auto 40px;
-        }
-
-        .search-wrapper {
-            max-width: 750px;
+        .main-search-box {
+            max-width: 700px;
             margin: 0 auto;
-            position: relative;
-        }
-
-        .search-bar-box {
             display: flex;
-            background: var(--bg-card);
-            border: 2px solid var(--border-color);
-            border-radius: 20px;
-            padding: 8px 12px;
-            align-items: center;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+            background: var(--bg-input);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 6px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.2);
         }
 
-        .search-bar-box:focus-within {
-            border-color: var(--accent-glow);
-            box-shadow: 0 0 25px rgba(0, 242, 254, 0.25), 0 20px 40px rgba(0,0,0,0.4);
-            transform: translateY(-2px);
-        }
-
-        .search-icon-left {
-            color: var(--text-muted);
-            font-size: 1.3rem;
-            margin-left: 12px;
-            margin-right: 15px;
-        }
-
-        .search-input {
+        .search-input-wrapper {
             flex: 1;
+            display: flex;
+            align-items: center;
+            padding: 0 15px;
+        }
+
+        .search-input-wrapper i {
+            color: var(--text-muted);
+            margin-right: 10px;
+        }
+
+        .search-input-wrapper input {
+            width: 100%;
             background: none;
             border: none;
-            outline: none;
             color: var(--text-primary);
-            font-size: 1.2rem;
-            font-weight: 500;
-            padding: 10px 0;
-        }
-
-        .search-input::placeholder {
-            color: #4b5563;
+            font-size: 1.1rem;
+            outline: none;
         }
 
         .search-btn {
-            background: linear-gradient(135deg, var(--accent-grad-start) 0%, var(--accent-grad-end) 100%);
-            color: white;
+            background: linear-gradient(135deg, var(--accent-grad-start), var(--accent-grad-end));
             border: none;
-            padding: 12px 30px;
-            border-radius: 14px;
-            font-size: 1rem;
+            color: white;
+            padding: 12px 28px;
+            border-radius: 8px;
             font-weight: 600;
             cursor: pointer;
-            transition: all 0.2s;
-            box-shadow: 0 4px 15px rgba(0, 180, 219, 0.3);
+            transition: all 0.3s ease;
         }
 
         .search-btn:hover {
-            opacity: 0.95;
-            transform: scale(1.02);
+            opacity: 0.9;
+            box-shadow: 0 0 15px var(--accent-glow);
         }
 
-        /* --- QUICK FILTERS (CHIPS) --- */
-        .filter-tags {
+        .search-layout {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            gap: 30px;
+        }
+
+        .search-sidebar {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 20px;
+            height: fit-content;
+        }
+
+        .filter-group {
+            margin-bottom: 25px;
+        }
+
+        .filter-group h3 {
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+            color: var(--text-primary);
+            border-left: 3px solid var(--accent-grad-start);
+            padding-left: 10px;
+        }
+
+        .tag-cloud {
             display: flex;
-            justify-content: center;
-            gap: 12px;
-            margin-top: 25px;
             flex-wrap: wrap;
+            gap: 8px;
         }
 
         .tag {
-            background: var(--bg-card);
-            border: 1px solid var(--border-color);
+            background: var(--bg-input);
             color: var(--text-muted);
-            padding: 8px 18px;
-            border-radius: 30px;
-            font-size: 0.85rem;
-            font-weight: 600;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.9rem;
             cursor: pointer;
-            transition: all 0.2s;
+            border: 1px solid transparent;
+            transition: all 0.2s ease;
         }
 
         .tag:hover, .tag.active {
@@ -235,250 +142,189 @@
             background: rgba(0, 242, 254, 0.05);
         }
 
-        /* --- LIVE PRESET RESULTS MATRIX --- */
-        .results-section {
-            padding: 40px 0 80px;
-        }
-
-        .results-heading {
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            color: var(--text-muted);
-            margin-bottom: 25px;
-            font-weight: 700;
+        .results-header {
             display: flex;
+            justify-content: space-between;
             align-items: center;
-            gap: 10px;
-        }
-
-        .results-heading::after {
-            content: '';
-            flex: 1;
-            height: 1px;
-            background: var(--border-color);
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid var(--border-color);
         }
 
         .results-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-            gap: 25px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
         }
 
         .result-item-card {
             background: var(--bg-card);
             border: 1px solid var(--border-color);
-            border-radius: 20px;
-            padding: 30px;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border-radius: 16px;
+            padding: 25px;
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
-            text-decoration: none;
-            color: inherit;
+            gap: 12px;
+            transition: transform 0.3s ease;
         }
 
         .result-item-card:hover {
+            transform: translateY(-2px);
             border-color: rgba(0, 242, 254, 0.3);
-            transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.4);
         }
 
-        .card-meta {
+        .result-meta {
             display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 15px;
+            gap: 20px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
         }
 
-        .category-badge {
-            font-size: 0.75rem;
-            background: rgba(255,255,255,0.05);
-            padding: 4px 12px;
-            border-radius: 20px;
-            color: var(--accent-glow);
-            font-weight: 600;
-            border: 1px solid rgba(0, 242, 254, 0.15);
+        .result-meta span i {
+            margin-right: 5px;
+            color: var(--accent-grad-start);
         }
 
-        .match-score {
-            font-size: 0.8rem;
-            color: #10b981;
-            font-weight: 700;
-        }
-
-        .result-item-card h3 {
-            font-size: 1.3rem;
-            margin-bottom: 10px;
-            font-weight: 700;
+        .result-item-card h2 a {
             color: var(--text-primary);
+            text-decoration: none;
+            font-size: 1.4rem;
+        }
+
+        .result-item-card h2 a:hover {
+            color: var(--accent-glow);
         }
 
         .result-item-card p {
             color: var(--text-muted);
-            font-size: 0.95rem;
+            font-size: 1rem;
             line-height: 1.6;
-            margin-bottom: 20px;
-            flex-grow: 1;
         }
 
-        .card-footer-link {
-            display: flex;
-            align-items: center;
-            gap: 5px;
-            font-size: 0.9rem;
-            color: var(--accent-grad-start);
-            font-weight: 600;
-        }
-
-        /* --- FOOTER --- */
-        footer {
-            margin-top: auto;
-            background: #090d16;
-            border-top: 1px solid var(--border-color);
-            padding: 40px 0;
-            font-size: 0.9rem;
-            color: var(--text-muted);
-        }
-
-        .footer-flex {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
-
-        .footer-links a {
-            color: var(--text-muted);
-            text-decoration: none;
-            margin-left: 20px;
-            transition: color 0.2s;
-        }
-
-        .footer-links a:hover {
-            color: var(--text-primary);
-        }
-
-        @media (max-width: 768px) {
-            .header-container { flex-direction: column; gap: 15px; }
-            .search-hero h1 { font-size: 2.2rem; }
-            .search-bar-box { flex-direction: column; padding: 10px; gap: 10px; }
-            .search-input { text-align: center; width: 100%; }
-            .search-btn { width: 100%; }
-            .footer-flex { flex-direction: column; text-align: center; }
-            .footer-links a { margin: 0 10px; }
+        @media (max-width: 1200px) {
+            .search-layout { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
 
-    <!-- Header Navigation -->
-    <header>
-        <div class="container header-container">
-            <div class="logo">
-                <a href="index.html"><i class="fas fa-bolt" style="color: var(--accent-glow);"></i> <span>RankingHours</span></a>
+    <div class="language-switcher">
+        <div class="container">
+            <button class="lang-btn" data-lang="uz">🇺🇿 O'zbek</button>
+            <button class="lang-btn active" data-lang="en">🇬🇧 English</button>
+            <button class="lang-btn" data-lang="ru">🇷🇺 Русский</button>
+        </div>
+    </div>
+
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <img src="images/logo.png" alt="Ranking Hours Logo" width="40">
+                <span>Ranking<span class="highlight">Hours</span></span>
+            </a>
+        </div>
+    </nav>
+
+    <header class="search-hero">
+        <div class="container">
+            <h1>Advanced Database Search</h1>
+            <p style="color: var(--text-muted); margin-bottom: 30px;">Instantly filter and analyze engineering metrics, device architectures, and performance rankings.</p>
+            
+            <div class="main-search-box">
+                <div class="search-input-wrapper">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="dbSearch" placeholder="Type to search smart-devices, software or infrastructure hardware...">
+                </div>
+                <button class="search-btn">Search</button>
             </div>
-            <nav>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="smartphone-comparisons.html">Smartphones</a></li>
-                    <li><a href="laptop-comparisons.html">Laptops</a></li>
-                    <li><a href="appliances-comparisons.html">Appliances</a></li>
-                    <li><a href="search.html" class="active"><i class="fas fa-search"></i> Search</a></li>
-                </ul>
-            </nav>
         </div>
     </header>
 
-    <!-- Search Execution Engine UI -->
-    <main class="container">
-        <section class="search-hero">
-            <h1>Hardware Search Engine</h1>
-            <p>Database qidiruv tizimi. Butun platformadagi texnik tahlillar va samaradorlik natijalarini bir zumda skanerlang.</p>
-            
-            <div class="search-wrapper">
-                <div class="search-bar-box">
-                    <i class="fas fa-search search-icon-left"></i>
-                    <input type="text" class="search-input" id="dbSearch" placeholder="Smartfon, noutbuk yoki maishiy texnika modelini yozing...">
-                    <button class="search-btn">Skanerlash</button>
-                </div>
-                
-                <div class="filter-tags">
-                    <span class="tag active">Barchasi</span>
+    <div class="search-layout">
+        <aside class="search-sidebar">
+            <div class="filter-group">
+                <h3>Popular Categories</h3>
+                <div class="tag-cloud">
+                    <span class="tag active">All Items</span>
                     <span class="tag">Smartphones</span>
                     <span class="tag">Laptops</span>
-                    <span class="tag">Appliances</span>
-                    <span class="tag">Automotive</span>
+                    <span class="tag">Audio Systems</span>
+                    <span class="tag">Software</span>
                 </div>
             </div>
-        </section>
 
-        <!-- Static Index Optimization Blocks (SEO Friendly & UI Match) -->
-        <section class="results-section">
-            <h2 class="results-heading" id="resultsCount">Tavsiya etilgan tahlillar (4 ta indeks)</h2>
-            
-            <div class="results-grid" id="presetGrid">
-                <!-- Result 1 -->
-                <a href="appliances-comparisons.html" class="result-item-card">
-                    <div class="card-meta">
-                        <span class="category-badge">Maishiy Texnika</span>
-                        <span class="match-score">98% Match</span>
-                    </div>
-                    <h3>Gree vs Samsung Climate Control</h3>
-                    <p>Thermodynamic inverter loop analizlari va G10 motor texnologiyasining energiya samaradorlik ko'rsatkichlari.</p>
-                    <div class="card-footer-link">Tahlilni o'qish <i class="fas fa-arrow-right"></i></div>
-                </a>
-
-                <!-- Result 2 -->
-                <a href="smartphone-comparisons.html" class="result-item-card">
-                    <div class="card-meta">
-                        <span class="category-badge">Smartfonlar</span>
-                        <span class="match-score">95% Match</span>
-                    </div>
-                    <h3>iPhone 15 Pro Max vs Galaxy S24 Ultra</h3>
-                    <p>Ray tracing grafik chiplari, batareya termal dissipatsiyasi va optik datchiklar muhandislik taqqoslanishi.</p>
-                    <div class="card-footer-link">Tahlilni o'qish <i class="fas fa-arrow-right"></i></div>
-                </a>
-
-                <!-- Result 3 -->
-                <a href="laptop-comparisons.html" class="result-item-card">
-                    <div class="card-meta">
-                        <span class="category-badge">Noutbuklar</span>
-                        <span class="match-score">91% Match</span>
-                    </div>
-                    <h3>MacBook Pro M3 vs Dell XPS 16</h3>
-                    <p>Arxitektura samaradorligi, render tezligi va og'ir nagruzkada energiya sarfi tahlili.</p>
-                    <div class="card-footer-link">Tahlilni o'qish <i class="fas fa-arrow-right"></i></div>
-                </a>
-
-                <!-- Result 4 -->
-                <a href="appliances-comparisons.html" class="result-item-card">
-                    <div class="card-meta">
-                        <span class="category-badge">Maishiy Texnika</span>
-                        <span class="match-score">89% Match</span>
-                    </div>
-                    <h3>LG Direct Drive vs Bosch EcoSilence</h3>
-                    <p>Kalligrafik baraban harakati, poly-v tasmali uzatma va kinetik muvozanat tahlillari.</p>
-                    <div class="card-footer-link">Tahlilni o'qish <i class="fas fa-arrow-right"></i></div>
-                </a>
+            <div class="filter-group">
+                <h3>Hardware Brands</h3>
+                <div class="tag-cloud">
+                    <span class="tag">Apple</span>
+                    <span class="tag">Samsung</span>
+                    <span class="tag">Google</span>
+                    <span class="tag">Xiaomi</span>
+                    <span class="tag">Dell</span>
+                    <span class="tag">Lenovo</span>
+                </div>
             </div>
-        </section>
-    </main>
+        </aside>
 
-    <!-- Footer System -->
+        <main class="search-results-panel">
+            <div class="results-header">
+                <span id="resultsCount" style="font-weight: 600; color: var(--text-muted);">Recommended Analytics (4 Indices Active)</span>
+                <div style="font-size: 0.9rem; color: var(--text-muted);">
+                    Sorted by: <span style="color: var(--accent-glow); font-weight: 600; cursor: pointer;">Highest Relevance</span>
+                </div>
+            </div>
+
+            <div class="results-grid">
+                <div class="result-item-card">
+                    <div class="result-meta">
+                        <span><i class="fas fa-microchip"></i> Hardware Comparison</span>
+                        <span><i class="fas fa-calendar-alt"></i> 2026 Archive</span>
+                    </div>
+                    <h2><a href="xiaomi-google.html">Xiaomi 14 vs Google Pixel 8 Pro — Ultimate Flagship Showdown</a></h2>
+                    <p>An in-depth, long-term comparison analyzing AI camera sensors, processing efficiency, battery lifespans, and fast-charging capabilities under stress protocols.</p>
+                </div>
+
+                <div class="result-item-card">
+                    <div class="result-meta">
+                        <span><i class="fas fa-laptop"></i> Mobile Engineering</span>
+                        <span><i class="fas fa-calendar-alt"></i> 2026 Archive</span>
+                    </div>
+                    <h2><a href="macbook-ultrabook.html">MacBook Air M3 vs Premium Windows Ultrabook (Intel Core i7)</a></h2>
+                    <p>Comprehensive performance analysis metrics investigating raw benchmark scores, battery life duration, active-fan thermal throttling, and display matrix configurations.</p>
+                </div>
+
+                <div class="result-item-card">
+                    <div class="result-meta">
+                        <span><i class="fas fa-code"></i> Systems Architecture</span>
+                        <span><i class="fas fa-calendar-alt"></i> 2026 Archive</span>
+                    </div>
+                    <h2><a href="windows-macOS.html">Operating System Architecture Matrix: Windows 11 vs macOS Sonoma</a></h2>
+                    <p>An exhaustive architectural infrastructure exploration covering kernel threading models, runtime libraries, compilation vectors, and enterprise desktop deployments.</p>
+                </div>
+
+                <div class="result-item-card">
+                    <div class="result-meta">
+                        <span><i class="fas fa-headphones"></i> Acoustic Analysis</span>
+                        <span><i class="fas fa-calendar-alt"></i> 2026 Archive</span>
+                    </div>
+                    <h2><a href="sony-bose.html">Sony WH-1000XM5 vs Bose QuietComfort 45: The Acoustic Showdown</a></h2>
+                    <p>Data-driven decibel testing, noise isolation efficiency, audio codec latency profiles, and true ergonomic evaluations for audio professionals.</p>
+                </div>
+            </div>
+        </main>
+    </div>
+
     <footer>
-        <div class="container footer-flex">
-            <p>&copy; 2026 ranking-hours.uz. Founder of Digital Architecture: Abdulloh. All rights reserved.</p>
-            <div class="footer-links">
-                <a href="privacy-policy.html">Privacy</a>
-                <a href="sitemap.html">Sitemap</a>
-                <a href="terms-of-service.html">Terms</a>
+        <div class="container" style="text-align: center; padding: 40px 20px; border-top: 1px solid var(--border-color); margin-top: 60px;">
+            <p style="color: var(--text-muted); font-size: 0.9rem;">&copy; 2026 ranking-hours.uz. All rights reserved. Technical Lab Engineering Center.</p>
+            <div style="margin-top: 15px; display: flex; justify-content: center; gap: 20px; font-size: 0.9rem;">
+                <a href="privacy-policy.html" style="color: var(--text-muted); text-decoration: none;">Privacy</a>
+                <a href="sitemap.html" style="color: var(--text-muted); text-decoration: none;">Sitemap</a>
+                <a href="terms-of-service.html" style="color: var(--text-muted); text-decoration: none;">Terms</a>
             </div>
         </div>
     </footer>
 
-    <!-- Live Client Side Mock Filter Script -->
     <script>
         const searchInput = document.getElementById('dbSearch');
         const cards = document.querySelectorAll('.result-item-card');
@@ -499,8 +345,8 @@
             });
 
             countText.textContent = query === '' 
-                ? `Tavsiya etilgan tahlillar (4 ta indeks)` 
-                : `Topilgan natijalar (${visibleCount} ta indeks)`;
+                ? `Recommended Analytics (4 Indices Active)` 
+                : `Search Results Found (${visibleCount} Indices)`;
         });
 
         // Tag interactives
