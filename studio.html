@@ -3,657 +3,287 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yamaha vs KRK vs JBL: The Ultimate Studio Monitor Acoustics Guide</title>
-    <meta name="description" content="An intensive, laboratory-grade sound engineering comparison between Yamaha, KRK, and JBL studio monitors. Read factual frequency responses and room tuning analyses.">
-    <meta name="author" content="Abdulloh">
+    <meta name="description" content="Professional studio monitor comparison engine analyzing near-field frequency transparency, transducer responsiveness, and acoustic waveguide geometries.">
+    <title>Professional Studio Monitor Analytics & Acoustic Breakdown | RankingHours</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
     <style>
-        :root {
-            --bg-base: #08090c;
-            --bg-surface: #121820;
-            --bg-surface-hover: #1a222d;
-            --accent-primary: #f59e0b;
-            --accent-secondary: #d97706;
-            --brand-yamaha: #38bdf8;
-            --brand-krk: #facc15;
-            --brand-jbl: #f97316;
-            --text-main: #94a3b8;
-            --text-bright: #ffffff;
-            --text-muted: #475569;
-            --border-glow: rgba(255, 255, 255, 0.04);
-        }
-
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
-
         body {
-            background-color: var(--bg-base);
-            color: var(--text-main);
-            line-height: 1.8;
+            background-color: #0b0f19;
+            color: #f1f5f9;
+            line-height: 1.7;
             font-size: 16px;
         }
-
-        .studio-container {
-            max-width: 1300px;
+        .container {
+            max-width: 1200px;
             margin: 0 auto;
-            padding: 0 24px;
+            padding: 0 20px;
         }
-
-        /* Header Layout */
-        .studio-header {
-            text-align: center;
-            margin: 40px 0;
-            padding: 65px 30px;
-            background: linear-gradient(135deg, #161e29 0%, #0a0e14 100%);
-            border-radius: 24px;
-            border: 1px solid var(--border-glow);
-            position: relative;
-            box-shadow: 0 25px 50px rgba(0,0,0,0.5);
+        header {
+            background: #0f172a;
+            padding: 20px 0;
+            border-bottom: 1px solid #1e293b;
         }
-
-        .studio-title {
-            font-size: 3.6rem;
-            background: linear-gradient(45deg, var(--accent-primary), #ef4444);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            margin-bottom: 15px;
-            font-weight: 800;
-            letter-spacing: -1px;
-        }
-
-        .studio-subtitle {
-            font-size: 1.3rem;
-            color: #cbd5e1;
-            max-width: 850px;
-            margin: 0 auto 25px;
-        }
-
-        .studio-rating {
-            display: inline-flex;
+        .header-container {
+            display: flex;
+            justify-content: space-between;
             align-items: center;
-            background: linear-gradient(45deg, var(--accent-primary), var(--accent-secondary));
-            color: #000000;
-            padding: 10px 25px;
-            border-radius: 30px;
+        }
+        .logo a {
+            color: #ff6d00;
+            text-decoration: none;
+            font-size: 1.8rem;
             font-weight: 700;
-            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
-
-        /* Image Deck with Visible VS Labels */
-        .image-visual-deck {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 35px; /* Kengaytirilgan masofa VS sig'ishi uchun */
-            margin-bottom: 60px;
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
         }
-
-        .visual-card {
-            background: var(--bg-surface);
-            border: 1px solid var(--border-glow);
+        nav a {
+            color: #94a3b8;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 8px 15px;
             border-radius: 20px;
-            padding: 22px;
-            text-align: center;
-            position: relative; /* VS mutloq joylashishi uchun muhim */
+            transition: all 0.3s;
         }
+        nav a:hover, nav a.active {
+            color: #ffffff;
+            background-color: #1e293b;
+        }
+        .page-header {
+            text-align: center;
+            padding: 80px 20px 40px;
+        }
+        .page-header h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            color: #ffffff;
+            margin-bottom: 15px;
+        }
+        .page-header p {
+            color: #94a3b8;
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        /* Studio Grid System from Screenshot */
+        .studio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+        .monitor-card {
+            background-color: #111827;
+            border-radius: 20px;
+            padding: 25px;
+            text-align: center;
+            position: relative;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+        }
+        .card-blue { border: 2px solid #38bdf8; }
+        .card-amber { border: 2px solid #eab308; }
+        .card-orange { border: 2px solid #f97316; }
 
-        .visual-card.vs-yamaha { border-top: 4px solid var(--brand-yamaha); }
-        .visual-card.vs-krk { border-top: 4px solid var(--brand-krk); }
-        .visual-card.vs-jbl { border-top: 4px solid var(--brand-jbl); }
-
-        .img-container {
-            width: 100%;
-            height: 230px;
-            background: #090d14;
-            border-radius: 14px;
+        .image-wrapper {
+            background-color: #ffffff;
+            border-radius: 15px;
+            height: 220px;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-bottom: 15px;
             overflow: hidden;
-            border: 1px solid rgba(255,255,255,0.02);
+            margin-bottom: 20px;
         }
-
-        .img-container img {
+        .image-wrapper img {
             width: 100%;
             height: 100%;
             object-fit: cover;
         }
-
-        /* VS Doirasi Mukammal Ko'rinishi */
-        .vs-label {
+        .monitor-card h3 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-top: 15px;
+        }
+        .vs-badge {
             position: absolute;
+            right: -15px;
             top: 50%;
-            right: -22px;
             transform: translateY(-50%);
-            background: linear-gradient(45deg, #ef4444, #f59e0b);
+            background: linear-gradient(135deg, #f97316 0%, #ef4444 100%);
             color: white;
-            width: 44px;
-            height: 44px;
+            width: 32px;
+            height: 32px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-weight: 800;
-            font-size: 0.95rem;
-            z-index: 20;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
-            border: 3px solid var(--bg-base);
-        }
-
-        .visual-card:last-child .vs-label { display: none; }
-
-        .visual-title {
-            font-size: 1.25rem;
+            font-size: 0.75rem;
             font-weight: 700;
-            color: var(--text-bright);
-            margin-top: 8px;
+            z-index: 10;
         }
 
-        /* Technical Pillars Section */
-        .features-section {
+        /* Features Section from Screenshot */
+        .features-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 25px;
-            margin-bottom: 60px;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            margin: 60px 0;
         }
-
         .feature-card {
-            background: var(--bg-surface);
+            background-color: #111827;
             border-radius: 20px;
             padding: 35px;
-            border: 1px solid var(--border-glow);
-            transition: all 0.3s ease;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
         }
-
-        .feature-card:hover {
-            transform: translateY(-4px);
-            border-color: rgba(245, 158, 11, 0.25);
-        }
-
-        .feature-card.flat { border-top: 5px solid var(--brand-yamaha); }
-        .feature-card.dsp { border-top: 5px solid var(--brand-krk); }
-        .feature-card.waveguide { border-top: 5px solid var(--brand-jbl); }
+        .feature-card.blue-top { border-top: 4px solid #38bdf8; border-bottom: 4px solid #38bdf8; }
+        .feature-card.amber-top { border-top: 4px solid #eab308; border-bottom: 4px solid #eab308; }
+        .feature-card.orange-top { border-top: 4px solid #f97316; border-bottom: 4px solid #f97316; }
 
         .feature-icon {
-            font-size: 2.3rem;
+            font-size: 2rem;
             margin-bottom: 20px;
-            background: rgba(255,255,255,0.01);
-            width: 65px;
-            height: 65px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
         }
+        .icon-blue { color: #38bdf8; }
+        .icon-amber { color: #eab308; }
+        .icon-orange { color: #f97316; }
 
-        .flat .feature-icon { color: var(--brand-yamaha); }
-        .dsp .feature-icon { color: var(--brand-krk); }
-        .waveguide .feature-icon { color: var(--brand-jbl); }
-
-        .feature-title {
-            font-size: 1.35rem;
-            margin-bottom: 12px;
-            color: var(--text-bright);
+        .feature-card h4 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 15px;
         }
-
-        /* Human-written Deep-Dive Long-Form Text */
-        .editorial-wrapper {
-            background: var(--bg-surface);
-            border-radius: 24px;
-            padding: 50px;
-            margin-bottom: 60px;
-            border: 1px solid var(--border-glow);
-        }
-
-        .editorial-wrapper h2 {
-            font-size: 2.2rem;
-            color: var(--text-bright);
-            margin-bottom: 25px;
-            border-bottom: 2px solid rgba(255,255,255,0.04);
-            padding-bottom: 12px;
-            margin-top: 20px;
-        }
-
-        .editorial-wrapper p {
-            margin-bottom: 22px;
-            color: #cbd5e1;
+        .feature-card p {
+            color: #94a3b8;
+            font-size: 0.95rem;
             text-align: justify;
         }
 
-        /* Brand Comparisons Matrices */
-        .product-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 25px;
-            margin-bottom: 60px;
+        /* Deep Content Section for AdSense */
+        .deep-analysis {
+            background-color: #111827;
+            border-radius: 24px;
+            padding: 45px;
+            margin: 60px 0;
+            border: 1px solid #1e293b;
         }
-
-        .product-item {
-            background: var(--bg-surface);
-            border-radius: 20px;
-            padding: 35px;
-            border: 1px solid var(--border-glow);
-        }
-
-        .product-item.yamaha { border-left: 5px solid var(--brand-yamaha); }
-        .product-item.krk { border-left: 5px solid var(--brand-krk); }
-        .product-item.jbl { border-left: 5px solid var(--brand-jbl); }
-
-        .product-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+        .deep-analysis h2 {
+            color: #ffffff;
+            font-size: 2rem;
             margin-bottom: 20px;
         }
-
-        .product-name {
-            font-size: 1.6rem;
-            font-weight: 700;
-        }
-
-        .product-name.yamaha { color: var(--brand-yamaha); }
-        .product-name.krk { color: var(--brand-krk); }
-        .product-name.jbl { color: var(--brand-jbl); }
-
-        .product-tag {
-            background: rgba(255,255,255,0.04);
-            padding: 4px 12px;
-            border-radius: 12px;
-            font-size: 0.85rem;
-            color: var(--text-bright);
-        }
-
-        .product-features {
-            list-style: none;
-            margin: 20px 0;
-        }
-
-        .product-features li {
-            padding: 12px 0;
-            border-bottom: 1px solid rgba(255,255,255,0.02);
-            display: flex;
-            justify-content: space-between;
-        }
-
-        .feature-status {
-            font-weight: 600;
-            color: var(--text-bright);
-        }
-
-        .product-summary {
-            background: rgba(0,0,0,0.2);
-            padding: 16px;
-            border-radius: 12px;
-            margin-top: 15px;
-            font-size: 0.95rem;
-        }
-
-        /* Benchmark Data Layout */
-        .table-wrapper {
-            background: var(--bg-surface);
-            border-radius: 24px;
-            padding: 40px;
-            margin-bottom: 60px;
-            border: 1px solid var(--border-glow);
-            overflow-x: auto;
-        }
-
-        .metrics-table {
-            width: 100%;
-            border-collapse: collapse;
-            text-align: left;
-        }
-
-        .metrics-table th, .metrics-table td {
-            padding: 18px 22px;
-            border-bottom: 1px solid rgba(255,255,255,0.04);
-        }
-
-        .metrics-table th {
-            color: var(--text-bright);
-            background: rgba(0,0,0,0.2);
-            font-weight: 700;
-        </tr>
-
-        /* CTA Deck */
-        .cta-deck {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin: 60px 0;
-        }
-
-        .btn {
-            padding: 16px 36px;
-            border-radius: 12px;
-            font-weight: 600;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            transition: all 0.3s;
-        }
-
-        .btn-primary { background: linear-gradient(45deg, var(--accent-primary), var(--accent-secondary)); color: #000000; }
-        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 20px rgba(245,158,11,0.2); }
-        .btn-outline { border: 2px solid var(--accent-primary); color: var(--accent-primary); }
-        .btn-outline:hover { background: rgba(245,158,11,0.04); }
-
-        /* Working Footer Layout */
-        .site-footer {
-            background: #0a0d14;
-            padding: 60px 0 40px;
-            border-top: 1px solid var(--border-glow);
-            margin-top: 10px;
-        }
-
-        .footer-grid {
-            display: grid;
-            grid-template-columns: 1.5fr 1fr;
-            gap: 40px;
-            align-items: center;
-            margin-bottom: 40px;
-        }
-
-        .footer-logo {
-            font-size: 1.5rem;
-            font-weight: 800;
-            color: var(--text-bright);
-            text-decoration: none;
-        }
-
-        .footer-logo span { color: var(--accent-primary); }
-        
-        .footer-desc {
-            color: #64748b;
-            font-size: 0.95rem;
-            margin-top: 10px;
-            max-width: 520px;
-        }
-
-        .footer-links-wrapper {
-            text-align: right;
-        }
-
-        .footer-links-mesh {
-            list-style: none;
-            display: inline-flex;
-            gap: 30px;
-        }
-
-        .footer-links-mesh a {
+        .deep-analysis p {
             color: #cbd5e1;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1rem;
-            transition: color 0.2s;
+            margin-bottom: 20px;
+            text-align: justify;
         }
 
-        .footer-links-mesh a:hover { color: var(--accent-primary); }
-
-        .footer-bottom {
-            border-top: 1px solid rgba(255,255,255,0.02);
-            padding-top: 30px;
-            display: flex;
-            justify-content: space-between;
+        footer {
+            background-color: #0f172a;
+            padding: 40px 0;
+            border-top: 1px solid #1e293b;
+            margin-top: 80px;
+            text-align: center;
             color: #64748b;
-            font-size: 0.9rem;
-        }
-
-        @media (max-width: 1100px) {
-            .features-section, .product-grid, .image-visual-deck { grid-template-columns: 1fr; gap: 45px; }
-            .vs-label { display: none; }
-            .footer-grid { grid-template-columns: 1fr; text-align: center; }
-            .footer-links-wrapper { text-align: center; }
-            .footer-links-mesh { flex-direction: column; gap: 15px; }
-            .studio-title { font-size: 2.6rem; }
         }
     </style>
 </head>
 <body>
 
-    <div class="soundbar-container">
-        <header class="studio-header">
-            <h1 class="studio-title">Yamaha vs KRK vs JBL</h1>
-            <p class="studio-subtitle">An In-Depth Acoustic Engineering Comparison of Premium Studio Monitor Ecosystems</p>
-            <div class="studio-rating">
-                <span>Reference Laboratory Performance Evaluation</span>
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <a href="index.html"><i class="fas fa-star"></i> RankingHours</a>
             </div>
-        </header>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="smartphone-comparisons.html">Smartphones</a></li>
+                    <li><a href="studio.html" class="active">Studio Sound</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-        <section class="image-visual-deck">
-            <div class="visual-card vs-yamaha">
-                <div class="img-container">
-                    <img src="yamaha-monitor.jpg" alt="Yamaha Studio Monitor">
+    <div class="container">
+        
+        <div class="page-header">
+            <h1>Studio Monitor Reference Architectures</h1>
+            <p>An empirical comparative validation of linear reference responses, acoustic imaging systems, and acoustic dampening mechanics within professional listening environments.</p>
+        </div>
+
+        <!-- 3 Monitor Comparison Grid (Top part of screenshot) -->
+        <div class="studio-grid">
+            <div class="monitor-card card-blue">
+                <div class="image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1545454675-3531b543be5d?auto=format&fit=crop&w=600&q=80" alt="Yamaha HS Series White Woofer Technology">
                 </div>
-                <div class="vs-label">VS</div>
-                <div class="visual-title">Yamaha HS Series</div>
+                <h3>Yamaha HS Series</h3>
+                <div class="vs-badge">VS</div>
             </div>
-            
-            <div class="visual-card vs-krk">
-                <div class="img-container">
-                    <img src="krk-monitor.jpg" alt="KRK Rokit Studio Monitor">
+
+            <div class="monitor-card card-amber">
+                <div class="image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1616763355548-1b606f439f86?auto=format&fit=crop&w=600&q=80" alt="KRK Rokit Series Yellow Kevlar Cone">
                 </div>
-                <div class="vs-label">VS</div>
-                <div class="visual-title">KRK Rokit Series</div>
+                <h3>KRK Rokit Series</h3>
+                <div class="vs-badge">VS</div>
             </div>
-            
-            <div class="visual-card vs-jbl">
-                <div class="img-container">
-                    <img src="jbl-monitor.jpg" alt="JBL 3 Series Monitor">
+
+            <div class="monitor-card card-orange">
+                <div class="image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1589256469067-ea99122bb5a5?auto=format&fit=crop&w=600&q=80" alt="JBL 3-Series Professional Waveguide">
                 </div>
-                <div class="visual-title">JBL 3-Series Professional</div>
-            </div>
-        </section>
-
-        <section class="features-section">
-            <div class="feature-card flat">
-                <div class="feature-icon"><i class="fas fa-wave-square"></i></div>
-                <h3 class="feature-title">Flat Frequency Analysis</h3>
-                <p>Advanced transducer layouts designed to reproduce sound signatures accurately, ensuring errors in human mixing choices are highlighted instantly without coloration.</p>
-            </div>
-            <div class="feature-card dsp">
-                <div class="feature-icon"><i class="fas fa-sliders"></i></div>
-                <h3 class="feature-title">Active Environment Calibration</h3>
-                <p>On-board tuning configurations that adjust amplifier responses based on boundary limitations, helping control messy bass build-ups near solid walls.</p>
-            </div>
-            <div class="feature-card waveguide">
-                <div class="feature-icon"><i class="fas fa-bullhorn"></i></div>
-                <h3 class="feature-title">Controlled Image Waveguides</h3>
-                <p>Calculated geometric framing surrounding high-frequency tweeters that directs high-end frequencies evenly across a wide listening sweet spot.</p>
-            </div>
-        </section>
-
-        <article class="editorial-wrapper">
-            <h2>The Critical Role of Precision Monitoring in Modern Audio Production</h2>
-            <p>
-                In the world of audio production, the accuracy of your listening tools changes everything. Unlike traditional home speakers designed to make music sound pleasant, studio monitors serve a different purpose. They act as acoustic microscopes, revealing everything hidden inside an audio track. A professional monitor system must deliver a flat, unaltered picture of the incoming sound data. This ensures that a mix completed in a bedroom will translate well across a wide range of external sound setups, from low-end phone speakers to giant festival sound stages.
-            </p>
-            <p>
-                When a speaker adds false coloration to sound tracks, it can lead an engineer to make poor mixing choices. For instance, if a speaker naturally pumps out excessive bass warmth, the person mixing might turn down the lower frequencies in the track. Later, when that same song plays on a standard car stereo, the music will sound thin and hollow. To prevent these translation errors, top audio manufacturers like Yamaha, KRK, and JBL focus on clear engineering designs that minimize cabinet vibrations, manage internal phase issues, and control electronic distortion.
-            </p>
-            <p>
-                Choosing between these legendary manufacturers requires looking past basic power specs and exploring their core design theories. Each company builds equipment for different workflows and room layouts. Yamaha pursues clinical, revealing detail that forces engineers to fix hidden mixing mistakes. KRK centers its approach around deep low-end power and smart digital adjustment tools. Meanwhile, JBL uses advanced physical horn designs to provide an exceptionally wide sweet spot. Understanding how these distinct design paths impact real-world performance is the key to finding the right fit for your studio space.
-            </p>
-
-            <h2>Yamaha: Clinical Precision and Unforgiving Honesty</h2>
-            <p>
-                Yamaha’s approach to studio speaker design is deeply rooted in recording history. Decades ago, their famous white-coned speakers became an industry standard because they were famously unforgiving. If a mix sounded decent on those monitors, it would sound excellent anywhere else. Modern Yamaha monitor systems carry forward this strict philosophy, prioritizing explicit mid-range separation and sharp high-end definition over flattering bass textures.
-            </p>
-            <p>
-                The iconic white woofer design uses custom-selected speaker cones and heavy-duty magnets to keep responses tight and uniform across long sessions. Yamaha deliberately tunes these enclosures to prevent artificial low-frequency masking. This means the bass feels quick and immediate, but it doesn't rumble artificially. The mid-range frequencies, where human vocals and critical instrument details live, are pushed slightly forward. This design makes it incredibly easy to spot muddy frequencies, overlapping tracks, or harsh vocal tones.
-            </p>
-            <p>
-                The trade-off for this intense clarity is that listening can become tiring over long sessions. The high-frequency response is sharp and revealing, meaning low-quality audio files or bad microphone tracking will sound harsh immediately. Additionally, because the low-end tuning is so controlled, electronic music producers may find themselves wanting more sub-bass energy. Yamaha builds precision production tools for engineers who want to hear the raw, unvarnished truth of their tracks, no matter how ugly that truth might be.
-            </p>
-
-            <h2>KRK: Deep Low-End Performance and Smart App Calibration</h2>
-            <p>
-                KRK has carved out a massive place in modern studios by focusing on robust low-frequency responses, high electronic power, and intuitive software tuning tools. Instantly recognizable by their bright yellow speaker cones, these monitors are designed to handle the heavy low-end demands of modern electronic music, hip-hop production, and sound design work.
-            </p>
-            <p>
-                Instead of using standard paper or polypropylene speaker materials, KRK uses lightweight, tightly woven fibers for their main driver cones. This dense construction allows the woofer to push air quickly and deeply without warping under heavy loads, delivering punchy bass that remains clean at high volumes. Furthermore, the enclosure design uses front-facing bass ports. This port placement is an incredible advantage for small home studios, as it lets you place the speakers close to solid walls without triggering the muddy bass reflections common with rear-ported enclosures.
-            </p>
-            <p>
-                A massive modern advantage of the KRK system is its deep integration of active digital processing tools. The back panel features a clear display screen connected to an internal digital processing brain. This system provides a wide variety of fine-tuning curves to correct for acoustic issues caused by uncarpeted floors or bare walls. When paired with their smartphone app, the system analyzes your room using test tones and guides you through exact adjustments. KRK offers an incredibly flexible, user-friendly solution for modern creators who need solid low-frequency monitoring and automated workspace adaptation.
-            </p>
-
-            <h2>JBL: Revolutionary Waveguides and Massive Sound Fields</h2>
-            <p>
-                JBL approaches studio monitoring from a unique angle, focusing heavily on how sound waves travel through space after leaving the speaker cabinet. They recognize that audio engineers rarely sit perfectly still in one spot for hours. To solve this, JBL developed an advanced geometric horn shape around their high-frequency tweeters, which has completely changed what creators expect from budget-friendly monitoring systems.
-            </p>
-            <p>
-                This custom waveguide design spreads high-frequency details evenly across an exceptionally wide area. In traditional studio setups, moving even a few inches to the left or right can cause the high-end balance to shift, altering how you perceive the stereo image. JBL’s design eliminates this limitation, keeping the stereo field stable even when you lean over to adjust hardware or move around your desk. The resulting sound field feels deep and panoramic, allowing you to place instruments across the stereo field with incredible accuracy.
-            </p>
-            <p>
-                The low-frequency response is handled by high-performance woofers paired with a custom rear port design that delivers smooth, extended bass depth. However, because these ports face the rear, these monitors require careful placement. If you jam them flat against a wall in a small room, the low frequencies will bounce off the wall and become muddy. When given just a couple of feet of breathing room, JBL monitors provide an immersive, open listening experience that punches far above its weight class.
-            </p>
-
-            <h2>Room Acoustics, Boundary Effects, and Strategic Speaker Placement</h2>
-            <p>
-                When upgrading your monitoring environment, it is vital to understand that your room acts as a second speaker enclosure. Every sound wave that fires out of a monitor bounces off your desk, ceiling, and bare walls before reaching your ears. These reflections combine with the direct sound from the speaker, creating phase problems that can trick you into making bad mixing decisions. This makes speaker choice and placement just as important as the quality of the speakers themselves.
-            </p>
-            <p>
-                For instance, if you are forced to place your production setup in a tight corner or right against a wall, rear-ported speakers will cause low frequencies to build up unnaturally. In these tight spaces, a front-ported monitor like a KRK or a highly controlled system like a Yamaha with its custom boundary switches becomes essential. These tools let you roll off specific bass frequencies to balance out your room's natural acoustic problems, ensuring your speakers can perform accurately in imperfect rooms.
-            </p>
-
-            <h2>Amplifier Architecture, Electronic Crossovers, and Long-Term Value</h2>
-            <p>
-                Behind the speaker cones of modern studio monitors sits a complex array of electronic components. High-end active monitors utilize a bi-amplified design, meaning each speaker box contains two separate power amplifiers. One dedicated amplifier drives the high-frequency tweeter, while a completely separate amplifier drives the low-frequency woofer. This separation keeps the power distribution highly efficient and prevents heavy bass hits from distorting clear high-frequency details.
-            </p>
-            <p>
-                An electronic crossover network splits the incoming audio signal cleanly before it ever reaches the amplifiers. This clean separation ensures that each driver handles only the exact frequencies it was built to play, reducing distortion and improving overall clarity. Investing in monitors with robust internal amplifier protection circuits keeps your gear safe from unexpected audio spikes or power surges, ensuring your studio investment continues to deliver reliable performance for years to come.
-            </p>
-        </article>
-
-        <section class="product-comparison">
-            <div class="product-grid">
-                <div class="product-item yamaha">
-                    <div class="product-header">
-                        <div class="product-name yamaha">Yamaha HS Series</div>
-                        <div class="product-tag">Clinical Accuracy</div>
-                    </div>
-                    <p>Built for pure sonic honesty, utilizing rigid custom drivers to highlight critical mid-range mixing errors without adding flattering color to your tracks.</p>
-                    <ul class="product-features">
-                        <li><span>Enclosure Porting</span><span class="feature-status">Rear Ported Layout</span></li>
-                        <li><span>Mid-Range Response</span><span class="feature-status">Analytically Forward</span></li>
-                        <li><span>Room Controls</span><span class="feature-status">Manual Toggle Switches</span></li>
-                        <li><span>Best Application</span><span class="feature-status">Tracking & Fine Mixing</span></li>
-                    </ul>
-                    <div class="product-summary">
-                        <strong>Best For:</strong> Audio purists who want an unforgiving, revealing speaker that forces them to fix hidden flaws in their mixes.
-                    </div>
-                </div>
-
-                <div class="product-item krk">
-                    <div class="product-header">
-                        <div class="product-name krk">KRK Rokit G5</div>
-                        <div class="product-tag">Low-End Power</div>
-                    </div>
-                    <p>Optimized for deep bass tracking, combining lightweight woven fiber cones with an advanced digital processing brain for quick room correction.</p>
-                    <ul class="product-features">
-                        <li><span>Enclosure Porting</span><span class="feature-status">Front Ported Design</span></li>
-                        <li><span>Bass Response</span><span class="feature-status">Deep & Extended</span></li>
-                        <li><span>Calibration Tools</span><span class="feature-status">On-Board Screen DSP</span></li>
-                        <li><span>Best Application</span><span class="feature-status">Urban & Electronic Music</span></li>
-                    </ul>
-                    <div class="product-summary">
-                        <strong>Best For:</strong> Modern beatmakers and producers who need punchy, clear bass and easy automated room adjustments.
-                    </div>
-                </div>
-
-                <div class="product-item jbl">
-                    <div class="product-header">
-                        <div class="product-name jbl">JBL Professional</div>
-                        <div class="product-tag">Expansive Sweet Spot</div>
-                    </div>
-                    <p>Features an advanced geometric waveguide horn that projects a massive sound field, maintaining an accurate stereo image even as you move around your desk.</p>
-                    <ul class="product-features">
-                        <li><span>Enclosure Porting</span><span class="feature-status">Rear Slipstream Port</span></li>
-                        <li><span>Stereo Image Field</span><span class="feature-status">Exceptionally Wide</span></li>
-                        <li><span>Cabinet Hardware</span><span class="feature-status">Composite MDF Shell</span></li>
-                        <li><span>Best Application</span><span class="feature-status">Arranging & Long Sessions</span></li>
-                    </ul>
-                    <div class="product-summary">
-                        <strong>Best For:</strong> Engineers who want a deep, panoramic sound stage and a comfortable listening experience during long studio sessions.
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="table-wrapper">
-            <h2 style="color: var(--text-bright); margin-bottom: 20px;"><i class="fas fa-chart-line"></i> Technical Acoustic Telemetry Database</h2>
-            <table class="metrics-table">
-                <thead>
-                    <tr>
-                        <th>Performance Parameter</th>
-                        <th>Yamaha Benchmark</th>
-                        <th>KRK System Layout</th>
-                        <th>JBL Professional</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Core Acoustic Goal</td>
-                        <td>Flat Mid-Range Analysis</td>
-                        <td>Deep Low-Frequency Power</td>
-                        <td>Panoramic Stereo Mapping</td>
-                    </tr>
-                    <tr>
-                        <td>Enclosure Air Venting</td>
-                        <td>Rear Linear Port</td>
-                        <td>Front-Firing Geometric Slot</td>
-                        <td>Rear Aerodynamic Slipstream</td>
-                    </tr>
-                    <tr>
-                        <td>Calibration Interface</td>
-                        <td>Manual Boundary Toggles</td>
-                        <td>Visual Screen with App Link</td>
-                        <td>High/Low Shelf Switches</td>
-                    </tr>
-                    <tr>
-                        <td>Sweet Spot Latitude</td>
-                        <td>Focused & Position-Locked</td>
-                        <td>Standard Centered Layout</td>
-                        <td>Ultra-Wide Waveguide Dispersion</td>
-                    </tr>
-                </tbody>
-            </table>
-        </section>
-
-        <section class="cta-deck">
-            <a href="independence.html" class="btn btn-primary"><i class="fas fa-shield-halved"></i> Our Testing Promise</a>
-            <a href="test-equipment.html" class="btn btn-outline"><i class="fas fa-microchip"></i> Laboratory Equipment Index</a>
-            <a href="faq.html" class="btn btn-outline"><i class="fas fa-circle-question"></i> System FAQ Hub</a>
-        </section>
-    </div>
-
-    <footer class="site-footer">
-        <div class="soundbar-container">
-            <div class="footer-grid">
-                <div>
-                    <a href="index.html" class="footer-logo">Ranking<span>Hours</span></a>
-                    <p class="footer-desc">An independent hardware evaluation laboratory. We analyze consumer electronics using transparent, real-world data benchmarks to help you shop with confidence.</p>
-                </div>
-                <div class="footer-links-wrapper">
-                    <ul class="footer-links-mesh">
-                        <li><a href="privacy-policy.html">Privacy Matrix</a></li>
-                        <li><a href="terms-of-service.html">Usage Terms</a></li>
-                        <li><a href="faq.html">System FAQ</a></li>
-                        <li><a href="contact.html">Contact Office</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2026 ranking-hours.uz - Engineering Verification Registry. All Rights Reserved.</p>
-                <p>Platform Architecture managed by Founder: Abdulloh.</p>
+                <h3>JBL 3-Series Professional</h3>
             </div>
         </div>
+
+        <!-- 3 Features Grid (Bottom part of screenshot) -->
+        <div class="features-grid">
+            <div class="feature-card blue-top">
+                <div class="feature-icon icon-blue"><i class="fas fa-wave-square"></i></div>
+                <h4>Flat Frequency Analysis</h4>
+                <p>Advanced transducer layouts designed to reproduce sound signatures accurately, ensuring errors in human mixing are caught instantly. These engineering deployments target critical mid-range clarity matrices to avoid overlapping phase anomalies within dense multichannel tracks.</p>
+            </div>
+
+            <div class="feature-card amber-top">
+                <div class="feature-icon icon-amber"><i class="fas fa-sliders-h"></i></div>
+                <h4>Active Environment Calibration</h4>
+                <p>On-board tuning configurations that adjust amplifier responses based on boundary limitations, helping control phase anomalies caused by placement near solid brick or concrete walls. This feature guarantees tonal stability across small vocal booths and wide commercial control rooms.</p>
+            </div>
+
+            <div class="feature-card orange-top">
+                <div class="feature-icon icon-orange"><i class="fas fa-bullhorn"></i></div>
+                <h4>Controlled Image Waveguides</h4>
+                <p>Calculated geometric framing surrounding high-frequency tweeters that directs high-end frequencies evenly across a wide listening area. This configuration expands the sweet spot, letting audio engineers move across console stations without experiencing high-frequency loss.</p>
+            </div>
+        </div>
+
+        <!-- Extra Deep Technical Article for AdSense Approval -->
+        <section class="deep-analysis">
+            <h2>Evaluating Reference Monitor Transducer Physics</h2>
+            <p>To accurately balance high-end commercial audio, studio equipment must deliver perfectly transparent sound translation. The Yamaha HS Series uses a distinct white polypropylene cone that controls resonance patterns smoothly across critical mid-frequency bands, avoiding the common sonic masking found in lower-grade audio hardware. This signature response makes it an industry benchmark for mixing voice tracks and acoustic instruments with surgical precision.</p>
+            <p>On the other hand, the KRK Rokit platform uses lightweight aramid Kevlar fibers to ensure immediate transient recovery, delivering tight, punchy low-end processing tailored for modern digital synthesis and urban sub-bass tracks. Meanwhile, the JBL 3-Series relies on custom image control waveguides to spread spatial layouts cleanly, helping engineers place instrument tracks perfectly across wide stereo soundfields. Balancing these varied hardware responses remains essential when planning modern acoustic listening layouts.</p>
+        </section>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2026 ranking-hours.uz. All rights reserved. Professional Audio Research Analytics.</p>
     </footer>
 
 </body>
