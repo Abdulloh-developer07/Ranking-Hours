@@ -3,291 +3,513 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Advanced Search Engine Optimization Matrix - Ranking Hours</title>
-    <meta name="description" content="Explore and locate extensive hardware analyses, consumer electronics evaluations, automotive data breakdowns, and comparative expert reviews across the global technology ecosystem.">
-    
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/responsive.css">
-    <link rel="stylesheet" href="css/search.css">
+    <meta name="description" content="Advanced search engine interface for ranking-hours.uz database. Filter and analyze engineering metrics instantly.">
+    <title>Advanced Analytics Search | RankingHours</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* --- BOMBA MODERN DARK MODE DESIGN SYSTEM --- */
+        :root {
+            --bg-main: #0b0f19;
+            --bg-card: #131a2c;
+            --bg-input: #1e2942;
+            --accent-glow: #00f2fe;
+            --accent-grad-start: #00b4db;
+            --accent-grad-end: #0083b0;
+            --text-primary: #f8fafc;
+            --text-muted: #94a3b8;
+            --border-color: rgba(255, 255, 255, 0.08);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-main);
+            color: var(--text-primary);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            overflow-x: hidden;
+        }
+
+        /* --- BACKGROUND GLOW EFFECTS --- */
+        body::before {
+            content: '';
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(0, 180, 219, 0.15) 0%, transparent 70%);
+            top: -100px;
+            left: -100px;
+            z-index: -1;
+        }
+
+        body::after {
+            content: '';
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(0, 242, 254, 0.1) 0%, transparent 70%);
+            bottom: -100px;
+            right: -100px;
+            z-index: -1;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 25px;
+            width: 100%;
+        }
+
+        /* --- HEADER NAVIGATION --- */
+        header {
+            background: rgba(19, 26, 44, 0.8);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            padding: 15px 0;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo a {
+            color: var(--text-primary);
+            text-decoration: none;
+            font-size: 1.6rem;
+            font-weight: 800;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            letter-spacing: -0.5px;
+        }
+
+        .logo span {
+            background: linear-gradient(135deg, var(--accent-glow) 0%, var(--accent-grad-start) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+        }
+
+        nav a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            padding: 8px 16px;
+            border-radius: 12px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--text-primary);
+            background: rgba(255, 255, 255, 0.05);
+            box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
+        }
+
+        /* --- CORE SEARCH UI PANEL --- */
+        .search-hero {
+            text-align: center;
+            padding: 80px 0 50px;
+        }
+
+        .search-hero h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            letter-spacing: -1px;
+            margin-bottom: 15px;
+            background: linear-gradient(135deg, #fff 0%, #a5b4fc 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .search-hero p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto 40px;
+        }
+
+        .search-wrapper {
+            max-width: 750px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .search-bar-box {
+            display: flex;
+            background: var(--bg-card);
+            border: 2px solid var(--border-color);
+            border-radius: 20px;
+            padding: 8px 12px;
+            align-items: center;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        }
+
+        .search-bar-box:focus-within {
+            border-color: var(--accent-glow);
+            box-shadow: 0 0 25px rgba(0, 242, 254, 0.25), 0 20px 40px rgba(0,0,0,0.4);
+            transform: translateY(-2px);
+        }
+
+        .search-icon-left {
+            color: var(--text-muted);
+            font-size: 1.3rem;
+            margin-left: 12px;
+            margin-right: 15px;
+        }
+
+        .search-input {
+            flex: 1;
+            background: none;
+            border: none;
+            outline: none;
+            color: var(--text-primary);
+            font-size: 1.2rem;
+            font-weight: 500;
+            padding: 10px 0;
+        }
+
+        .search-input::placeholder {
+            color: #4b5563;
+        }
+
+        .search-btn {
+            background: linear-gradient(135deg, var(--accent-grad-start) 0%, var(--accent-grad-end) 100%);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 14px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            box-shadow: 0 4px 15px rgba(0, 180, 219, 0.3);
+        }
+
+        .search-btn:hover {
+            opacity: 0.95;
+            transform: scale(1.02);
+        }
+
+        /* --- QUICK FILTERS (CHIPS) --- */
+        .filter-tags {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-top: 25px;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            color: var(--text-muted);
+            padding: 8px 18px;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .tag:hover, .tag.active {
+            border-color: var(--accent-glow);
+            color: var(--text-primary);
+            background: rgba(0, 242, 254, 0.05);
+        }
+
+        /* --- LIVE PRESET RESULTS MATRIX --- */
+        .results-section {
+            padding: 40px 0 80px;
+        }
+
+        .results-heading {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--text-muted);
+            margin-bottom: 25px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .results-heading::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: var(--border-color);
+        }
+
+        .results-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 25px;
+        }
+
+        .result-item-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            padding: 30px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .result-item-card:hover {
+            border-color: rgba(0, 242, 254, 0.3);
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.4);
+        }
+
+        .card-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .category-badge {
+            font-size: 0.75rem;
+            background: rgba(255,255,255,0.05);
+            padding: 4px 12px;
+            border-radius: 20px;
+            color: var(--accent-glow);
+            font-weight: 600;
+            border: 1px solid rgba(0, 242, 254, 0.15);
+        }
+
+        .match-score {
+            font-size: 0.8rem;
+            color: #10b981;
+            font-weight: 700;
+        }
+
+        .result-item-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+
+        .result-item-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+
+        .card-footer-link {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 0.9rem;
+            color: var(--accent-grad-start);
+            font-weight: 600;
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            margin-top: auto;
+            background: #090d16;
+            border-top: 1px solid var(--border-color);
+            padding: 40px 0;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        .footer-flex {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .footer-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            margin-left: 20px;
+            transition: color 0.2s;
+        }
+
+        .footer-links a:hover {
+            color: var(--text-primary);
+        }
+
+        @media (max-width: 768px) {
+            .header-container { flex-direction: column; gap: 15px; }
+            .search-hero h1 { font-size: 2.2rem; }
+            .search-bar-box { flex-direction: column; padding: 10px; gap: 10px; }
+            .search-input { text-align: center; width: 100%; }
+            .search-btn { width: 100%; }
+            .footer-flex { flex-direction: column; text-align: center; }
+            .footer-links a { margin: 0 10px; }
+        }
+    </style>
 </head>
 <body>
 
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="container">
-            <a href="index.html" class="logo">
-                <img src="images/logo.png" alt="Ranking Hours Logo" width="40">
-                <span>Ranking<span class="highlight">Hours</span></span>
-            </a>
-            <div class="nav-menu">
-                <!-- Navigatsiya menyusi yangilandi: 'Home' o'z joyida -->
-                <a href="index.html">Home</a>
-                <a href="comparisons.html">Comparisons</a>
-                <a href="categories.html">Categories</a>
-                <a href="about.html">About Us</a>
-                <a href="faq.html">FAQ</a>
-                <a href="contact.html">Contact</a>
-                <a href="search.html" class="active">Search Matrix</a>
+    <!-- Header Navigation -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <a href="index.html"><i class="fas fa-bolt" style="color: var(--accent-glow);"></i> <span>RankingHours</span></a>
             </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="smartphone-comparisons.html">Smartphones</a></li>
+                    <li><a href="laptop-comparisons.html">Laptops</a></li>
+                    <li><a href="appliances-comparisons.html">Appliances</a></li>
+                    <li><a href="search.html" class="active"><i class="fas fa-search"></i> Search</a></li>
+                </ul>
+            </nav>
         </div>
-    </nav>
+    </header>
 
-    <!-- Search Hero Section -->
-    <section class="search-hero">
-        <div class="container">
-            <div class="hero-content">
-                <h1>Deep Search Engine Platform</h1>
-                <p class="hero-subtitle">Locate exact deep-dive benchmarks, structural metric validations, and hardware comparisons from our database</p>
-                
-                <!-- Main Search Box -->
-                <div class="main-search-box">
-                    <div class="search-input-wrapper">
-                        <i class="fas fa-search"></i>
-                        <input type="text" id="mainSearch" placeholder="What hardware metric are you looking for? e.g., iPhone 15 Pro vs Samsung S24, Tesla Model Y battery, MacBook M2...">
-                        <button id="voiceSearchBtn" class="voice-btn" title="Voice Recognition Search">
-                            <i class="fas fa-microphone"></i>
-                        </button>
-                    </div>
-                    <button id="searchButton" class="search-btn">
-                        <i class="fas fa-search"></i> Search Database
-                    </button>
+    <!-- Search Execution Engine UI -->
+    <main class="container">
+        <section class="search-hero">
+            <h1>Hardware Search Engine</h1>
+            <p>Database qidiruv tizimi. Butun platformadagi texnik tahlillar va samaradorlik natijalarini bir zumda skanerlang.</p>
+            
+            <div class="search-wrapper">
+                <div class="search-bar-box">
+                    <i class="fas fa-search search-icon-left"></i>
+                    <input type="text" class="search-input" id="dbSearch" placeholder="Smartfon, noutbuk yoki maishiy texnika modelini yozing...">
+                    <button class="search-btn">Skanerlash</button>
                 </div>
                 
-                <!-- Search Stats -->
-                <div class="search-stats">
-                    <div class="stat">
-                        <i class="fas fa-database"></i>
-                        <div>
-                            <h3>10+</h3>
-                            <p>Detailed Reviews</p>
-                        </div>
-                    </div>
-                    <div class="stat">
-                        <i class="fas fa-box"></i>
-                        <div>
-                            <h3>1,000+</h3>
-                            <p>Hardware Nodes</p>
-                        </div>
-                    </div>
-                    <div class="stat">
-                        <i class="fas fa-bolt"></i>
-                        <div>
-                            <h3>0.2s</h3>
-                            <p>Index Retrieval</p>
-                        </div>
-                    </div>
-                    <div class="stat">
-                        <i class="fas fa-tags"></i>
-                        <div>
-                            <h3>5+</h3>
-                            <p>Global Frameworks</p>
-                        </div>
-                    </div>
+                <div class="filter-tags">
+                    <span class="tag active">Barchasi</span>
+                    <span class="tag">Smartphones</span>
+                    <span class="tag">Laptops</span>
+                    <span class="tag">Appliances</span>
+                    <span class="tag">Automotive</span>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Search Content Layout -->
-    <main class="search-content">
-        <div class="container">
-            <div class="search-layout">
-                <!-- Sidebar Filters -->
-                <aside class="search-sidebar">
-                    <!-- Search Tips -->
-                    <div class="filter-section">
-                        <h3><i class="fas fa-lightbulb"></i> Operators & Filter Rules</h3>
-                        <div class="search-tips">
-                            <div class="tip">
-                                <i class="fas fa-quote-left"></i>
-                                <p><strong>Exact Matches:</strong> Enclose parameters within double quotes like <code>"iPhone 15 Pro Max"</code>.</p>
-                            </div>
-                            <div class="tip">
-                                <i class="fas fa-asterisk"></i>
-                                <p><strong>Wildcard Queries:</strong> Add an asterisk modifier like <code>laptop*</code> to instantly parse variations.</p>
-                            </div>
-                            <div class="tip">
-                                <i class="fas fa-minus"></i>
-                                <p><strong>Exclusion Filter:</strong> Use a preceding hyphen like <code>smartphone -Xiaomi</code> to purge explicit brands.</p>
-                            </div>
-                        </div>
+        <!-- Static Index Optimization Blocks (SEO Friendly & UI Match) -->
+        <section class="results-section">
+            <h2 class="results-heading" id="resultsCount">Tavsiya etilgan tahlillar (4 ta indeks)</h2>
+            
+            <div class="results-grid" id="presetGrid">
+                <!-- Result 1 -->
+                <a href="appliances-comparisons.html" class="result-item-card">
+                    <div class="card-meta">
+                        <span class="category-badge">Maishiy Texnika</span>
+                        <span class="match-score">98% Match</span>
                     </div>
+                    <h3>Gree vs Samsung Climate Control</h3>
+                    <p>Thermodynamic inverter loop analizlari va G10 motor texnologiyasining energiya samaradorlik ko'rsatkichlari.</p>
+                    <div class="card-footer-link">Tahlilni o'qish <i class="fas fa-arrow-right"></i></div>
+                </a>
 
-                    <!-- Category Filter -->
-                    <div class="filter-section">
-                        <h3><i class="fas fa-folder"></i> Functional Segments</h3>
-                        <div class="category-filter">
-                            <label class="filter-option">
-                                <input type="checkbox" name="category" value="smartphones" checked>
-                                <span class="checkmark"></span>
-                                <span class="filter-label"><i class="fas fa-mobile-alt"></i> Smartphones <span class="count">45</span></span>
-                            </label>
-                            <label class="filter-option">
-                                <input type="checkbox" name="category" value="laptops" checked>
-                                <span class="checkmark"></span>
-                                <span class="filter-label"><i class="fas fa-laptop"></i> Laptops & PCs <span class="count">32</span></span>
-                            </label>
-                            <label class="filter-option">
-                                <input type="checkbox" name="category" value="cars" checked>
-                                <span class="checkmark"></span>
-                                <span class="filter-label"><i class="fas fa-car"></i> Automotive <span class="count">28</span></span>
-                            </label>
-                            <label class="filter-option">
-                                <input type="checkbox" name="category" value="tv" checked>
-                                <span class="checkmark"></span>
-                                <span class="filter-label"><i class="fas fa-tv"></i> Display Ecosystems <span class="count">15</span></span>
-                            </label>
-                            <label class="filter-option">
-                                <input type="checkbox" name="category" value="home" checked>
-                                <span class="checkmark"></span>
-                                <!-- Domestic Tech segmenti to'g'ri ko'rinishda saqlandi -->
-                                <span class="filter-label"><i class="fas fa-home"></i> Domestic Tech <span class="count">18</span></span>
-                            </label>
-                        </div>
+                <!-- Result 2 -->
+                <a href="smartphone-comparisons.html" class="result-item-card">
+                    <div class="card-meta">
+                        <span class="category-badge">Smartfonlar</span>
+                        <span class="match-score">95% Match</span>
                     </div>
+                    <h3>iPhone 15 Pro Max vs Galaxy S24 Ultra</h3>
+                    <p>Ray tracing grafik chiplari, batareya termal dissipatsiyasi va optik datchiklar muhandislik taqqoslanishi.</p>
+                    <div class="card-footer-link">Tahlilni o'qish <i class="fas fa-arrow-right"></i></div>
+                </a>
 
-                    <!-- Price Filter -->
-                    <div class="filter-section">
-                        <h3><i class="fas fa-tag"></i> Market Evaluation Range</h3>
-                        <div class="price-filter">
-                            <div class="price-range">
-                                <input type="range" id="priceMin" min="0" max="5000" value="0">
-                                <input type="range" id="priceMax" min="0" max="5000" value="5000">
-                            </div>
-                            <div class="price-values">
-                                <span id="minPriceValue">$0</span>
-                                <span>-</span>
-                                <span id="maxPriceValue">$5,000</span>
-                            </div>
-                        </div>
+                <!-- Result 3 -->
+                <a href="laptop-comparisons.html" class="result-item-card">
+                    <div class="card-meta">
+                        <span class="category-badge">Noutbuklar</span>
+                        <span class="match-score">91% Match</span>
                     </div>
+                    <h3>MacBook Pro M3 vs Dell XPS 16</h3>
+                    <p>Arxitektura samaradorligi, render tezligi va og'ir nagruzkada energiya sarfi tahlili.</p>
+                    <div class="card-footer-link">Tahlilni o'qish <i class="fas fa-arrow-right"></i></div>
+                </a>
 
-                    <!-- Sort Options -->
-                    <div class="filter-section">
-                        <h3><i class="fas fa-sort"></i> Structural Sorting</h3>
-                        <div class="sort-options">
-                            <label class="sort-option">
-                                <input type="radio" name="sort" value="relevance" checked>
-                                <span class="sort-label"><i class="fas fa-bullseye"></i> Semantic Relevance</span>
-                            </label>
-                            <label class="sort-option">
-                                <input type="radio" name="sort" value="newest">
-                                <span class="sort-label"><i class="fas fa-clock"></i> Chronological Input</span>
-                            </label>
-                        </div>
+                <!-- Result 4 -->
+                <a href="appliances-comparisons.html" class="result-item-card">
+                    <div class="card-meta">
+                        <span class="category-badge">Maishiy Texnika</span>
+                        <span class="match-score">89% Match</span>
                     </div>
-                </aside>
-
-                <!-- Main Results Panel with AdSense Content Core -->
-                <div class="search-results">
-                    <div class="results-header">
-                        <div class="results-info">
-                            <h2 id="resultsTitle">Comprehensive Hardware Catalog Indexes</h2>
-                            <p id="resultsCount">Filtering structural nodes based on your custom criteria matrix</p>
-                        </div>
-                    </div>
-
-                    <div class="active-filters" id="activeFilters"></div>
-
-                    <!-- Dynamic Results Grid -->
-                    <div class="results-grid" id="resultsGrid">
-                        <!-- JavaScript orqali to'ldiriladi -->
-                    </div>
-
-                    <!-- Strategic Deep Dive Analysis Framework (AdSense Rich Text Content) -->
-                    <section class="deep-dive-editorial-wrapper">
-                        <hr class="section-divider">
-                        <h2>Structural Architecture of Digital Evaluation Engines: A Human Technical Insight</h2>
-                        <p class="editorial-paragraph">
-                            Modern consumer electronic evaluation requires transitioning away from basic data sheet reading into layered, technical validation protocols. At Ranking Hours, our parsing systems do not simply pull surface attributes or copy brand marketing. Instead, we break down hardware platforms, display subpixels, thermal distribution thresholds, and component durability over months of real-world stress testing. By indexing these physical variables down into clean database entries, this search matrix lets you isolate exactly how a target consumer product behaves under load.
-                        </p>
-                        <p class="editorial-paragraph">
-                            For example, evaluating the raw silicon performance of top tier system-on-chip architectures goes far beyond running a standard synthesis loop or reading maximum clock cycles. It requires deep analysis of sustained clock frequencies when choked inside restrictive mobile chassis designs. When our search engine returns data points for smartphones like the Apple iPhone or Samsung Galaxy platforms, the embedded algorithms filter architectural variables such as thermal throttling curves, peak power Draw-to-Performance ratios, and efficiency cluster handoffs under extended gaming loops or complex multi-stream video compilation environments.
-                        </p>
-
-                        <h3>The Mechanics of Multi-Variable Indexing and Component Validation</h3>
-                        <p class="editorial-paragraph">
-                            Our database tracks specific physical metrics across multiple core device types. In the laptop space, our review framework tests the structural integrity of display hinges, keyboard deck flex under measured pressure, and absolute color accuracy verified with calibrated hardware colorimeters over various color spaces like sRGB, Adobe RGB, and DCI-P3. This ensures that creative professionals can easily separate true wide-gamut editing displays from cheap consumer panels that rely on aggressive software saturation to mimic depth.
-                        </p>
-                    </section>
-
-                    <!-- Pagination Elements -->
-                    <div class="pagination">
-                        <button class="page-btn prev" disabled><i class="fas fa-chevron-left"></i> Previous</button>
-                        <div class="page-numbers">
-                            <button class="page-number active">1</button>
-                        </div>
-                        <button class="page-btn next">Next <i class="fas fa-chevron-right"></i></button>
-                    </div>
-                </div>
+                    <h3>LG Direct Drive vs Bosch EcoSilence</h3>
+                    <p>Kalligrafik baraban harakati, poly-v tasmali uzatma va kinetik muvozanat tahlillari.</p>
+                    <div class="card-footer-link">Tahlilni o'qish <i class="fas fa-arrow-right"></i></div>
+                </a>
             </div>
-        </div>
+        </section>
     </main>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-bottom">
-                <p>&copy; 2025-2026 ranking-hours.uz - Structural Engineering Integrity Secured. All rights reserved.</p>
-                <p class="footer-note">Last structural index rebuild cycle: July 2026.[cite: 3]</p>
+    <!-- Footer System -->
+    <footer>
+        <div class="container footer-flex">
+            <p>&copy; 2026 ranking-hours.uz. Founder of Digital Architecture: Abdulloh. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="privacy-policy.html">Privacy</a>
+                <a href="sitemap.html">Sitemap</a>
+                <a href="terms-of-service.html">Terms</a>
             </div>
         </div>
     </footer>
 
-    <script src="js/main.js"></script>
+    <!-- Live Client Side Mock Filter Script -->
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Qidiruv ma'lumotlari ombori modali
-            const searchData = [
-                {
-                    id: 1,
-                    title: "iPhone 15 Pro Max Deep Architecture Diagnostics & Empirical Field Evaluation",
-                    category: "smartphones",
-                    price: 999,
-                    rating: 4.8,
-                    views: 15423,
-                    date: "5 days ago",
-                    excerpt: "An in-depth analysis of Apple's flagship silicon platform. We test thermal limits and performance metrics under high pressure execution workflows.",
-                    badges: ["new", "video"],
-                    image: "images/iphone-15-pro.jpg"
-                },
-                {
-                    id: 2,
-                    title: "MacBook Air M2 Continuous Workload Efficiency Profile",
-                    category: "laptops",
-                    price: 1299,
-                    rating: 4.6,
-                    views: 8923,
-                    date: "2 weeks ago",
-                    excerpt: "A rigorous look at the fanless M2 processing platform under sustained rendering loads and professional display benchmarks.",
-                    badges: ["editors"],
-                    image: "images/macbook-air-m2.jpg"
-                }
-            ];
+        const searchInput = document.getElementById('dbSearch');
+        const cards = document.querySelectorAll('.result-item-card');
+        const countText = document.getElementById('resultsCount');
 
-            // Qidiruv algoritmlari va filtratsiya kodlari shu yerda ishlaydi...
-            function displayInitialData() {
-                const grid = document.getElementById('resultsGrid');
-                let html = '';
-                searchData.forEach(item => {
-                    html += `
-                        <div class="result-item">
-                            <div class="result-content">
-                                <span class="result-category"><i class="fas fa-bolt"></i> ${item.category}</span>
-                                <h3 class="result-title"><a href="${item.id}.html">${item.title}</a></h3>
-                                <p class="result-excerpt">${item.excerpt}</p>
-                                <div class="result-price">
-                                    <span class="price">$${item.price}</span>
-                                    <a href="${item.id}.html" class="btn-read">Explore Matrix</a>
-                                </div>
-                            </div>
-                        </div>
-                    `;
-                });
-                grid.innerHTML = html;
-            }
-            displayInitialData();
+        searchInput.addEventListener('input', (e) => {
+            const query = e.target.value.toLowerCase().trim();
+            let visibleCount = 0;
+
+            cards.forEach(card => {
+                const text = card.textContent.toLowerCase();
+                if(text.includes(query)) {
+                    card.style.display = 'flex';
+                    visibleCount++;
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+
+            countText.textContent = query === '' 
+                ? `Tavsiya etilgan tahlillar (4 ta indeks)` 
+                : `Topilgan natijalar (${visibleCount} ta indeks)`;
+        });
+
+        // Tag interactives
+        const tags = document.querySelectorAll('.tag');
+        tags.forEach(tag => {
+            tag.addEventListener('click', () => {
+                tags.forEach(t => t.classList.remove('active'));
+                tag.classList.add('active');
+            });
         });
     </script>
 </body>
