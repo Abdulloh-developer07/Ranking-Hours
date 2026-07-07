@@ -52,7 +52,6 @@
             border-radius: 24px;
             border: 1px solid var(--border-glow);
             position: relative;
-            overflow: hidden;
             box-shadow: 0 20px 40px rgba(0,0,0,0.4);
         }
 
@@ -94,57 +93,62 @@
         .image-visual-deck {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
+            gap: 30px; /* Masofa biroz kengaytirildi */
             margin-bottom: 50px;
+            position: relative;
         }
 
         .visual-card {
             background: var(--bg-surface);
             border: 1px solid var(--border-glow);
             border-radius: 20px;
-            padding: 15px;
+            padding: 20px;
             text-align: center;
-            position: relative;
-            overflow: hidden;
+            position: relative; /* VS tugmasi kartaga nisbatan joylashadi */
         }
 
         .visual-card.vs-samsung { border-top: 4px solid var(--brand-samsung); }
         .visual-card.vs-lg { border-top: 4px solid var(--brand-lg); }
         .visual-card.vs-sonos { border-top: 4px solid var(--brand-sonos); }
 
-        .img-placeholder {
+        .img-container {
             width: 100%;
-            height: 200px;
+            height: 220px;
             background: #0f141c;
             border-radius: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
             margin-bottom: 15px;
-            border: 1px dashed rgba(255,255,255,0.1);
+            overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.03);
         }
 
-        .img-placeholder i {
-            font-size: 3rem;
-            color: var(--text-muted);
+        .img-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Rasmlar joyiga chiroyli moslashadi */
         }
 
+        /* VS badgi mutloq markazlashtirildi va chetda qisqarib ketishi tuzatildi */
         .vs-label {
             position: absolute;
             top: 50%;
-            right: -15px;
+            right: -20px;
             transform: translateY(-50%);
-            background: var(--accent-primary);
+            background: linear-gradient(45deg, var(--accent-primary), var(--accent-secondary));
             color: white;
-            width: 30px;
-            height: 30px;
+            width: 40px;
+            height: 40px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             font-weight: 800;
-            font-size: 0.8rem;
-            z-index: 10;
+            font-size: 0.95rem;
+            z-index: 15;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+            border: 2px solid var(--bg-base);
         }
 
         .visual-card:last-child .vs-label { display: none; }
@@ -153,6 +157,7 @@
             font-size: 1.2rem;
             font-weight: 700;
             color: var(--text-bright);
+            margin-top: 10px;
         }
 
         /* Editorial Sections */
@@ -346,7 +351,7 @@
         .btn-outline { border: 2px solid var(--accent-primary); color: var(--accent-primary); }
         .btn-outline:hover { background: rgba(239,68,68,0.05); }
 
-        /* Streamlined Professional 4-Link Footer Layout */
+        /* Footer Layout */
         .site-footer {
             background: #0f141c;
             padding: 60px 0 40px;
@@ -409,7 +414,7 @@
 
         /* Screen Responsive Rules */
         @media (max-width: 1100px) {
-            .features-section, .product-grid, .image-visual-deck { grid-template-columns: 1fr; }
+            .features-section, .product-grid, .image-visual-deck { grid-template-columns: 1fr; gap: 40px; }
             .vs-label { display: none; }
             .footer-grid { grid-template-columns: 1fr; text-align: center; }
             .footer-links-wrapper { text-align: center; }
@@ -431,30 +436,30 @@
             </div>
         </header>
 
-        <!-- Image Visual Grid Layout -->
+        <!-- Image Visual Grid Layout (Fixed VS Visibility & Images added) -->
         <section class="image-visual-deck">
             <div class="visual-card vs-samsung">
-                <div class="img-placeholder">
-                    <!-- Link your real Samsung Soundbar Image here -->
-                    <i class="fas fa-volume-high"></i>
+                <div class="img-container">
+                   
+                    <img src="samsung-soundbar.jpg" alt="Samsung Q-Series Soundbar">
                 </div>
                 <div class="vs-label">VS</div>
                 <div class="visual-title">Samsung Q-Series Flagship</div>
             </div>
             
             <div class="visual-card vs-lg">
-                <div class="img-placeholder">
-                    <!-- Link your real LG Soundbar Image here -->
-                    <i class="fas fa-audio-description"></i>
+                <div class="img-container">
+                   
+                    <img src="lg-soundbar.jpg" alt="LG S-Series Soundbar">
                 </div>
                 <div class="vs-label">VS</div>
                 <div class="visual-title">LG S-Series Innovation</div>
             </div>
             
             <div class="visual-card vs-sonos">
-                <div class="img-placeholder">
-                    <!-- Link your real Sonos Soundbar Image here -->
-                    <i class="fas fa-music"></i>
+                <div class="img-container">
+                    
+                    <img src="sonos.jpg" alt="Sonos Arc Soundbar">
                 </div>
                 <div class="visual-title">Sonos Premium Architectural Ecosystem</div>
             </div>
@@ -479,7 +484,7 @@
             </div>
         </section>
 
-        <!-- Multi-Page Deep Dive Text Block (AdSense Long-Form Text Requirements) -->
+        <!-- Editorial Text Block -->
         <article class="editorial-wrapper">
             <h2>The Changing World of Home Audio Design</h2>
             <p>
@@ -620,25 +625,25 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <strong><td>Primary Testing Focus</td></strong>
+                        <td>Primary Testing Focus</td>
                         <td>High-Volume Cinema Impact</td>
                         <td>Smart Dialogue Optimization</td>
                         <td>Acoustic Clarity & Expansion</td>
                     </tr>
                     <tr>
-                        <strong><td>Acoustic Calibration Approach</td></strong>
+                        <td>Acoustic Calibration Approach</td>
                         <td>Manual Graphic Equalizer</td>
                         <td>Automated On-Board Scanning</td>
                         <td>Advanced App-Based Mapping</td>
                     </tr>
                     <tr>
-                        <strong><td>Data Transfer Ports</td></strong>
+                        <td>Data Transfer Ports</td>
                         <td>Multiple Dedicated Inputs</td>
                         <td>Dual High-Speed Switchers</td>
                         <td>Single Return Channel Only</td>
                     </tr>
                     <tr>
-                        <strong><td>System Expansion Path</td></strong>
+                        <td>System Expansion Path</td>
                         <td>Fixed Out-of-the-Box Kit</td>
                         <td>Optional Add-On Kits</td>
                         <td>Fully Modular Wireless Pairing</td>
@@ -655,7 +660,7 @@
         </section>
     </div>
 
-    <!-- Streamlined Professional 4-Link Footer Layout -->
+    <!-- Site Footer Layout -->
     <footer class="site-footer">
         <div class="soundbar-container">
             <div class="footer-grid">
@@ -673,7 +678,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2026 RankingHours.uz - Engineering Verification Registry. All Rights Reserved.</p>
+                <p>&copy; 2025-2026 ranking-hours.uz - Engineering Verification Registry. All Rights Reserved.</p>
                 <p>Platform Architecture managed by Founder: Abdulloh.</p>
             </div>
         </div>
