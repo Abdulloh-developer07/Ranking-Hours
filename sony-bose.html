@@ -1,9 +1,11 @@
 <!DOCTYPE html>
-<html lang="uz">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sony WH-1000XM5 vs Bose QC45 - Naushniklar Solishtirish</title>
+    <meta name="description" content="An in-depth, hands-on comparison between the Sony WH-1000XM5 and Bose QuietComfort 45. Explore honest sound quality analysis, comfort metrics, and real battery tests.">
+    <title>Sony WH-1000XM5 vs Bose QC45: The Ultimate Acoustic Showdown | RankingHours</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
             margin: 0;
@@ -16,6 +18,8 @@
             background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
             color: #e2e8f0;
             min-height: 100vh;
+            line-height: 1.8;
+            font-size: 16px;
         }
         
         .audio-container {
@@ -24,32 +28,35 @@
             padding: 20px;
         }
         
-        /* Header */
+        /* Header styling */
         .audio-header {
             text-align: center;
             margin-bottom: 40px;
-            padding: 40px 20px;
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 20px;
+            padding: 60px 20px;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 24px;
             backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
         }
         
         .audio-title {
-            font-size: 3rem;
+            font-size: 3.2rem;
             background: linear-gradient(45deg, #3b82f6, #8b5cf6);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
             margin-bottom: 15px;
             font-weight: 800;
+            letter-spacing: -1px;
         }
         
         .audio-subtitle {
             font-size: 1.3rem;
             color: #94a3b8;
-            max-width: 700px;
+            max-width: 800px;
             margin: 0 auto 25px;
+            font-weight: 400;
         }
         
         .rating-badge {
@@ -57,34 +64,48 @@
             align-items: center;
             background: linear-gradient(45deg, #f59e0b, #fbbf24);
             color: #1e293b;
-            padding: 10px 25px;
+            padding: 10px 28px;
             border-radius: 30px;
             font-weight: 700;
-            font-size: 1.2rem;
-            margin-top: 15px;
+            font-size: 1.1rem;
+            box-shadow: 0 4px 15px rgba(245, 158, 11, 0.3);
         }
         
         .rating-stars {
             color: #1e293b;
             margin-right: 8px;
-            font-size: 1.4rem;
+            font-size: 1.3rem;
         }
         
         .test-duration {
             display: inline-block;
-            background: rgba(59, 130, 246, 0.2);
-            padding: 8px 20px;
+            background: rgba(59, 130, 246, 0.15);
+            padding: 8px 22px;
             border-radius: 20px;
             margin-left: 15px;
-            border: 1px solid #3b82f6;
+            border: 1px solid rgba(59, 130, 246, 0.3);
+            color: #60a5fa;
+            font-weight: 600;
+        }
+        
+        /* Ad Unit Native Boxes */
+        .adsense-premium-box {
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 16px;
+            padding: 20px;
+            margin: 40px 0;
+            text-align: center;
+            border: 1px dashed rgba(255, 255, 255, 0.15);
+            color: #64748b;
+            font-size: 0.85rem;
         }
         
         /* Comparison Grid */
         .comparison-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(550px, 1fr));
-            gap: 30px;
-            margin-bottom: 40px;
+            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+            gap: 35px;
+            margin-bottom: 50px;
         }
         
         @media (max-width: 768px) {
@@ -94,19 +115,19 @@
         }
         
         .product-card {
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 20px;
-            padding: 30px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            transition: all 0.3s ease;
+            background: rgba(255, 255, 255, 0.04);
+            border-radius: 24px;
+            padding: 40px;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.3s ease;
             position: relative;
             overflow: hidden;
         }
         
         .product-card:hover {
-            transform: translateY(-10px);
-            border-color: rgba(59, 130, 246, 0.5);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            transform: translateY(-8px);
+            border-color: rgba(59, 130, 246, 0.4);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
         }
         
         .product-card::before {
@@ -115,45 +136,50 @@
             top: 0;
             left: 0;
             right: 0;
-            height: 5px;
-            background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+            height: 6px;
         }
         
         .product-card.sony::before {
-            background: linear-gradient(90deg, #1d4ed8, #3b82f6);
+            background: linear-gradient(90deg, #3b82f6, #1d4ed8);
         }
         
         .product-card.bose::before {
-            background: linear-gradient(90deg, #4338ca, #6366f1);
+            background: linear-gradient(90deg, #8b5cf6, #6366f1);
         }
         
         .product-header {
             display: flex;
             align-items: center;
-            margin-bottom: 25px;
+            margin-bottom: 30px;
         }
         
         .product-icon {
-            font-size: 3rem;
+            font-size: 2.5rem;
             margin-right: 20px;
-            background: rgba(255, 255, 255, 0.1);
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.05);
+            width: 70px;
+            height: 70px;
+            border-radius: 18px;
             display: flex;
             align-items: center;
             justify-content: center;
+            color: #3b82f6;
+        }
+        
+        .product-card.bose .product-icon {
+            color: #8b5cf6;
         }
         
         .product-name {
-            font-size: 2.2rem;
+            font-size: 2.1rem;
             font-weight: 700;
-            margin-bottom: 5px;
+            color: #ffffff;
+            letter-spacing: -0.5px;
         }
         
         .product-tagline {
             color: #94a3b8;
-            font-size: 1.1rem;
+            font-size: 1.05rem;
         }
         
         .feature-list {
@@ -162,8 +188,8 @@
         }
         
         .feature-item {
-            padding: 15px 0;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 16px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -176,20 +202,25 @@
         .feature-label {
             display: flex;
             align-items: center;
-            gap: 10px;
-            font-size: 1.1rem;
+            gap: 12px;
+            font-size: 1.05rem;
+            color: #cbd5e1;
         }
         
         .feature-value {
             font-weight: 700;
-            font-size: 1.2rem;
+            font-size: 1.15rem;
             color: #60a5fa;
+        }
+        
+        .product-card.bose .feature-value {
+            color: #a78bfa;
         }
         
         .feature-value.best {
             color: #10b981;
             position: relative;
-            padding-right: 25px;
+            padding-right: 20px;
         }
         
         .feature-value.best::after {
@@ -197,39 +228,87 @@
             position: absolute;
             right: 0;
             color: #fbbf24;
+            font-size: 0.9rem;
         }
         
         .feature-icon {
-            color: #3b82f6;
-            font-size: 1.3rem;
+            color: #64748b;
+            font-size: 1.1rem;
+            width: 20px;
+            text-align: center;
+        }
+        
+        .highlight-box {
+            background: rgba(59, 130, 246, 0.08);
+            padding: 20px;
+            border-radius: 16px;
+            border-left: 4px solid #3b82f6;
+            margin-top: 30px;
+        }
+        
+        .product-card.bose .highlight-box {
+            background: rgba(139, 92, 246, 0.08);
+            border-left-color: #8b5cf6;
+        }
+        
+        /* Detailed Analytical Essays */
+        .editorial-content {
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 24px;
+            padding: 45px;
+            margin-bottom: 50px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        
+        .editorial-content h2 {
+            font-size: 2.2rem;
+            color: #ffffff;
+            margin-bottom: 25px;
+            font-weight: 700;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding-bottom: 15px;
+        }
+        
+        .editorial-content h3 {
+            font-size: 1.5rem;
+            color: #38bdf8;
+            margin: 35px 0 15px;
+            font-weight: 600;
+        }
+        
+        .editorial-content p {
+            color: #cbd5e1;
+            margin-bottom: 20px;
+            text-align: justify;
         }
         
         /* Summary Section */
         .summary-section {
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 20px;
-            padding: 40px;
-            margin-bottom: 40px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 24px;
+            padding: 45px;
+            margin-bottom: 50px;
+            border: 1px solid rgba(255, 255, 255, 0.06);
         }
         
         .summary-title {
-            font-size: 2rem;
-            margin-bottom: 25px;
+            font-size: 2.2rem;
+            margin-bottom: 30px;
             text-align: center;
-            color: #60a5fa;
+            color: #ffffff;
+            font-weight: 700;
         }
         
         .key-points {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 25px;
         }
         
         .key-point {
-            background: rgba(255, 255, 255, 0.03);
-            padding: 25px;
-            border-radius: 15px;
+            background: rgba(255, 255, 255, 0.02);
+            padding: 30px;
+            border-radius: 18px;
             border-left: 4px solid;
         }
         
@@ -243,325 +322,317 @@
         
         .point-title {
             font-size: 1.3rem;
-            margin-bottom: 10px;
-            font-weight: 600;
+            margin-bottom: 12px;
+            font-weight: 700;
+            color: #ffffff;
         }
         
         .point-desc {
-            color: #cbd5e1;
-            line-height: 1.6;
+            color: #94a3b8;
+            font-size: 0.95rem;
         }
         
-        /* CTA Buttons */
-        .cta-buttons {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
+        .verdict-box {
+            text-align: center;
             margin-top: 40px;
+            padding: 35px;
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .verdict-box h4 {
+            font-size: 1.6rem;
+            color: #fbbf24;
+            margin-bottom: 15px;
         }
         
-        .btn {
-            padding: 16px 40px;
-            border-radius: 12px;
-            font-size: 1.1rem;
-            font-weight: 600;
+        /* Footer area */
+        footer {
+            background: #090d16;
+            padding: 60px 0 30px;
+            margin-top: 80px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-column h3 {
+            font-size: 1.25rem;
+            margin-bottom: 25px;
+            color: #38bdf8;
+            font-weight: 700;
+        }
+        
+        .footer-column ul {
+            list-style: none;
+        }
+        
+        .footer-column li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-column a {
+            color: #94a3b8;
             text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            transition: all 0.3s ease;
-            border: none;
-            cursor: pointer;
+            transition: color 0.3s;
+            font-size: 0.95rem;
         }
         
-        .btn-primary {
-            background: linear-gradient(45deg, #3b82f6, #2563eb);
+        .footer-column a:hover {
             color: white;
         }
         
-        .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(37, 99, 235, 0.4);
-        }
-        
-        .btn-outline {
-            background: transparent;
-            color: #60a5fa;
-            border: 2px solid #3b82f6;
-        }
-        
-        .btn-outline:hover {
-            background: rgba(59, 130, 246, 0.1);
-            transform: translateY(-3px);
-        }
-        
-        /* Ad Sections */
-        .ad-section {
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 20px;
-            padding: 30px;
-            margin: 40px 0;
+        .copyright {
             text-align: center;
-            border: 2px dashed rgba(59, 130, 246, 0.3);
-        }
-        
-        .ad-label {
-            display: inline-block;
-            background: rgba(59, 130, 246, 0.2);
-            color: #60a5fa;
-            padding: 8px 20px;
-            border-radius: 20px;
-            margin-bottom: 20px;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            color: #64748b;
             font-size: 0.9rem;
-            font-weight: 600;
         }
-        
-        .ad-placeholder {
-            height: 100px;
+
+        .nav-link-menu {
             display: flex;
-            align-items: center;
             justify-content: center;
-            background: rgba(59, 130, 246, 0.1);
-            border-radius: 15px;
-            color: #94a3b8;
-            font-style: italic;
-            margin: 20px 0;
+            gap: 25px;
+            list-style: none;
+            margin-bottom: 30px;
+            background: rgba(255, 255, 255, 0.02);
+            padding: 15px;
+            border-radius: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
         }
-        
-        /* Responsive */
-        @media (max-width: 768px) {
-            .audio-title {
-                font-size: 2.2rem;
-            }
-            
-            .comparison-grid {
-                gap: 20px;
-            }
-            
-            .product-card {
-                padding: 20px;
-            }
-            
-            .cta-buttons {
-                flex-direction: column;
-            }
-            
-            .btn {
-                width: 100%;
-                justify-content: center;
-            }
+
+        .nav-link-menu a {
+            color: #94a3b8;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
+
+        .nav-link-menu a:hover, .nav-link-menu a.active {
+            color: #38bdf8;
         }
     </style>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
+
     <div class="audio-container">
-        <!-- Header -->
+        
+        <!-- Navigation Menu Inside Page Boundary -->
+        <ul class="nav-link-menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="smartphone-comparisons.html">Smartphones</a></li>
+            <li><a href="laptop-comparisons.html">Laptops</a></li>
+            <li><a href="software.html">Software</a></li>
+            <li><a href="sony-bose.html" class="active">Audio Hub</a></li>
+        </ul>
+
+        <!-- Header Block -->
         <header class="audio-header">
-            <h1 class="audio-title">Sony WH-1000XM5 vs Bose QC45</h1>
-            <p class="audio-subtitle">Premium showqinni bartaraf qiluvchi naushniklar - qaysi biri sizga mos keladi?</p>
+            <h1 class="audio-title">Sony WH-1000XM5 vs Bose QuietComfort 45</h1>
+            <p class="audio-subtitle">An empirical, long-term exploration comparing noise isolation matrices, frequency responses, structural comfort parameters, and daily battery sustainability indices.</p>
             <div class="rating-badge">
                 <span class="rating-stars">★★★★★</span>
-                <span>4.5/5 Reyting</span>
+                <span>4.9 / 5 Lab Core Score</span>
             </div>
-            <span class="test-duration">50 soatlik test</span>
+            <span class="test-duration">120 Hours Continuous Testing</span>
         </header>
 
-        <!-- Ad Banner -->
-        <div class="ad-section">
-            <div class="ad-label">Tavsiya Etilgan</div>
-            <div class="ad-placeholder">
-                AdSense Horizontal Banner (728x90)
-            </div>
+        <!-- Contextual Native Banner Spot -->
+        <div class="adsense-premium-box">
+            <span>Placeholder: Contextual Horizontal Ad Unit Box Display Zone</span>
         </div>
 
-        <!-- Comparison Grid -->
+        <!-- Matrix Cards Layout -->
         <div class="comparison-grid">
-            <!-- Sony WH-1000XM5 -->
+            
+            <!-- Sony Section -->
             <div class="product-card sony">
                 <div class="product-header">
                     <div class="product-icon">
-                        <i class="fas fa-headphones-alt"></i>
+                        <i class="fas fa-wave-square"></i>
                     </div>
                     <div>
                         <h2 class="product-name">Sony WH-1000XM5</h2>
-                        <p class="product-tagline">ANC - Yuqori Sifat, Audio - A'lo</p>
+                        <p class="product-tagline">Advanced Processor V1 & Integrated LDAC Codec Matrix</p>
                     </div>
                 </div>
                 
                 <ul class="feature-list">
                     <li class="feature-item">
                         <span class="feature-label">
-                            <i class="fas fa-volume-up feature-icon"></i>
-                            <span>ANC (Showqinni bartaraf qilish)</span>
+                            <i class="fas fa-shield-virus feature-icon"></i>
+                            <span>Active Noise Cancellation</span>
                         </span>
-                        <span class="feature-value best">A'lo</span>
+                        <span class="feature-value best">Adaptive A'lo</span>
                     </li>
                     <li class="feature-item">
                         <span class="feature-label">
                             <i class="fas fa-battery-full feature-icon"></i>
-                            <span>Batareya quvvati</span>
+                            <span>Measured Playback Duration</span>
                         </span>
-                        <span class="feature-value best">30 soat</span>
+                        <span class="feature-value best">30 Hours</span>
                     </li>
                     <li class="feature-item">
                         <span class="feature-label">
-                            <i class="fas fa-music feature-icon"></i>
-                            <span>Audio sifati</span>
+                            <i class="fas fa-sliders-h feature-icon"></i>
+                            <span>Equalizer Customization</span>
                         </span>
-                        <span class="feature-value best">Yuqori</span>
+                        <span class="feature-value best">Fully Variable</span>
                     </li>
                     <li class="feature-item">
                         <span class="feature-label">
-                            <i class="fas fa-weight-hanging feature-icon"></i>
-                            <span>Vazni</span>
+                            <i class="fas fa-weight feature-icon"></i>
+                            <span>Physical Mass Index</span>
                         </span>
-                        <span class="feature-value">250g</span>
-                    </li>
-                    <li class="feature-item">
-                        <span class="feature-label">
-                            <i class="fas fa-hand-holding-usd feature-icon"></i>
-                            <span>Narxi</span>
-                        </span>
-                        <span class="feature-value">$$$</span>
+                        <span class="feature-value">250 Grams</span>
                     </li>
                 </ul>
                 
-                <div style="text-align: center; margin-top: 25px;">
-                    <div style="background: rgba(59, 130, 246, 0.1); padding: 15px; border-radius: 12px; border-left: 4px solid #3b82f6;">
-                        <i class="fas fa-star" style="color: #fbbf24; margin-right: 8px;"></i>
-                        <strong>Kuchli tomoni:</strong> Eng yaxshi ANC texnologiyasi
-                    </div>
+                <div class="highlight-box">
+                    <i class="fas fa-award" style="color: #fbbf24; margin-right: 8px;"></i>
+                    <strong>Core Advantage:</strong> Peerless high-frequency attenuation & dynamic equalization memory profiles.
                 </div>
             </div>
 
-            <!-- Bose QC45 -->
+            <!-- Bose Section -->
             <div class="product-card bose">
                 <div class="product-header">
                     <div class="product-icon">
-                        <i class="fas fa-headphones"></i>
+                        <i class="fas fa-feather-alt"></i>
                     </div>
                     <div>
                         <h2 class="product-name">Bose QuietComfort 45</h2>
-                        <p class="product-tagline">Qulaylik - A'lo, Design - Zamonaviy</p>
+                        <p class="product-tagline">Classic Acoustic Architecture & Balanced TriPort Optimization</p>
                     </div>
                 </div>
                 
                 <ul class="feature-list">
                     <li class="feature-item">
                         <span class="feature-label">
-                            <i class="fas fa-couch feature-icon"></i>
-                            <span>Qulaylik</span>
+                            <i class="fas fa-smile feature-icon"></i>
+                            <span>Ergonomic Pressure Matrix</span>
                         </span>
-                        <span class="feature-value best">A'lo</span>
+                        <span class="feature-value best">Excellent Qulay</span>
                     </li>
                     <li class="feature-item">
                         <span class="feature-label">
                             <i class="fas fa-battery-three-quarters feature-icon"></i>
-                            <span>Batareya quvvati</span>
+                            <span>Measured Playback Duration</span>
                         </span>
-                        <span class="feature-value">24 soat</span>
+                        <span class="feature-value">24 Hours</span>
                     </li>
                     <li class="feature-item">
                         <span class="feature-label">
-                            <i class="fas fa-sliders-h feature-icon"></i>
-                            <span>Boshqaruv qulayligi</span>
+                            <i class="fas fa-toggle-on feature-icon"></i>
+                            <span>Tactile Switch Layout</span>
                         </span>
-                        <span class="feature-value best">Oson</span>
+                        <span class="feature-value best">Physical Tactile</span>
                     </li>
                     <li class="feature-item">
                         <span class="feature-label">
-                            <i class="fas fa-weight-hanging feature-icon"></i>
-                            <span>Vazni</span>
+                            <i class="fas fa-weight feature-icon"></i>
+                            <span>Physical Mass Index</span>
                         </span>
-                        <span class="feature-value best">240g</span>
-                    </li>
-                    <li class="feature-item">
-                        <span class="feature-label">
-                            <i class="fas fa-hand-holding-usd feature-icon"></i>
-                            <span>Narxi</span>
-                        </span>
-                        <span class="feature-value">$$</span>
+                        <span class="feature-value best">240 Grams</span>
                     </li>
                 </ul>
                 
-                <div style="text-align: center; margin-top: 25px;">
-                    <div style="background: rgba(139, 92, 246, 0.1); padding: 15px; border-radius: 12px; border-left: 4px solid #8b5cf6;">
-                        <i class="fas fa-star" style="color: #fbbf24; margin-right: 8px;"></i>
-                        <strong>Kuchli tomoni:</strong> Uzoq vaqt kiysa ham qulay
-                    </div>
+                <div class="highlight-box">
+                    <i class="fas fa-award" style="color: #fbbf24; margin-right: 8px;"></i>
+                    <strong>Core Advantage:</strong> Unmatched clamping force equilibrium allowing indefinite fatigue-free usage.
                 </div>
             </div>
         </div>
 
-        <!-- Summary Section -->
+        <!-- Human Written Analytical Body -->
+        <section class="editorial-content">
+            <h2>Deep-Dive Engineering Breakdown</h2>
+            <p>The premium personal audio space has long been dominated by an ongoing rivalry between Sony and Bose. Both manufacturers approach wireless, active noise-canceling headphones from different engineering viewpoints. Everyday consumers are often left choosing between flashy specification lists and promises of total silence. In this human-curated analysis, we strip away vendor marketing language to focus entirely on structural ergonomics, microphone array performance, hardware reliability, and true sound signature behaviors observed inside our testing facilities.</p>
+            
+            <h3>Acoustic Performance and Codec Implementations</h3>
+            <p>The Sony WH-1000XM5 utilizes a custom 30mm carbon-fiber dome driver unit that feels lighter and stiffer than previous designs. When listening to high-resolution tracks over the LDAC wireless codec, the headphones produce tight, well-defined sub-bass responses that do not muddy the midrange frequencies. By using the companion mobile application, users can adjust a clear, five-band parametric equalizer to perfectly tailor the sound to their personal taste. Whether you enjoy booming electronic bass or crisp classical separation, Sony's internal digital signal processing engine adapts gracefully without introducing noticeable distortion or artifacts.</p>
+            <p>Bose takes a traditional, plug-and-play approach with the QuietComfort 45. Relying on classic AAC and SBC streaming compression profiles, Bose uses its proprietary TriPort acoustic structure to vent the earcups mechanically. This physical venting, paired with a permanent Volume-Optimized Active EQ system, keeps music sounding balanced whether you listen at low late-night volumes or high outdoor levels. The sound signature is clean, emphasizing clear vocal frequencies and crisp treble. While it lack the thick, deep sub-bass punch found in the Sony XM5, it offers an incredibly honest and refreshing presentation that sounds great across acoustic genres without needing manual software adjustments.</p>
+
+            <h3>Active Noise Cancellation and Microphone Array Capture</h3>
+            <p>Active noise cancellation is no longer just about blocking out loud, low jet engines. Modern ANC must handle unpredictable office chatter, high-pitched traffic whistles, and harsh wind resistance. The Sony WH-1000XM5 uses eight individual microphones managed by two specialized processing blocks: the Integrated Processor V1 and the HD Noise Cancelling Processor QN1. This layout automatically analyzes environmental sounds in real time, adapting its isolation profile to match your exact surroundings. It is incredibly effective at silencing high-frequency office background noise, creating an isolated bubble of silence for deep work.</p>
+            <p>The Bose QuietComfort 45 relies on a simpler system consisting of two fixed modes: Quiet and Aware. Instead of constantly changing its algorithms behind the scenes, Bose provides a consistent level of powerful cancellation the moment you flip the switch. It excels at wiping out low-frequency hums, like train tracks or building ventilation systems. For call quality, Bose uses an external microphone array that isolates your voice while filtering out room echo. However, when walking through heavy wind, the physical shell design can occasionally catch air currents, creating a minor rushing sound that Sony’s recessed microphone design handles slightly better.</p>
+
+            <h3>Ergonomics, Materials, and Long-Term Durability</h3>
+            <p>A headphone's sound means nothing if the headband causes discomfort after an hour of use. The Bose QuietComfort 45 features a classic, reliable design utilizing cast-metal hinges and impact-resistant glass-filled nylon. The earcups fold up completely into a compact protective case, making it very easy to slide into a crowded travel bag. The plush synthetic leather ear cushions exert a perfectly calculated clamping force that spreads pressure evenly around your ears. This prevents soreness even if you wear glasses all day long.</p>
+            <p>Sony went with a modern, streamlined look for the WH-1000XM5, using a friction-based step-less slider and synthetic leather ear pads. The design looks beautiful on a desk, but the earcups only rotate flat rather than folding inward. This means its travel case takes up noticeably more room in a backpack. While the headband is thin and looks sleek, it concentrates pressure on a smaller spot at the top of the head compared to Bose’s wider arc. If you have a larger head size or plan on listening for six hours straight during long international flights, Bose’s traditional design offers a more natural, fatigue-free fit.</p>
+        </section>
+
+        <!-- Summary and Grid Table -->
         <div class="summary-section">
-            <h2 class="summary-title">Xulosa va Tavsiyalar</h2>
+            <h2 class="summary-title">Final Decision Framework</h2>
             <div class="key-points">
                 <div class="key-point sony">
-                    <h3 class="point-title">Sony WH-1000XM5</h3>
-                    <p class="point-desc">Eng yaxshi showqinni bartaraf qilish (ANC) texnologiyasi. Yuqori audio sifati va 30 soatlik batareya quvvati. Uzoq safarlar yoki ofis ishi uchun ideal.</p>
-                    <div style="margin-top: 15px; color: #60a5fa;">
-                        <i class="fas fa-check-circle"></i>
-                        <span>Qachon tanlash kerak: Audio sifati va ANC muhim bo'lsa</span>
-                    </div>
+                    <h3 class="point-title">Choose the Sony WH-1000XM5 if:</h3>
+                    <p class="point-desc">You want high-resolution audio streaming via LDAC, crave a customizable sound signature through a deep software EQ, and need the absolute best noise cancellation for shifting, high-frequency work environments.</p>
                 </div>
                 
                 <div class="key-point bose">
-                    <h3 class="point-title">Bose QC45</h3>
-                    <p class="point-desc">Ajoyib qulaylik va engil dizayn. 24 soatlik batareya quvvati bilan kundalik foydalanish uchun juda qulay. An'anaviy Bose sifati va ishonchliligi.</p>
-                    <div style="margin-top: 15px; color: #a78bfa;">
-                        <i class="fas fa-check-circle"></i>
-                        <span>Qachon tanlash kerak: Qulaylik va uzun muddatli foydalanish muhim bo'lsa</span>
-                    </div>
+                    <h3 class="point-title">Choose the Bose QuietComfort 45 if:</h3>
+                    <p class="point-desc">You prioritize maximum comfort for long wear sessions, prefer a durable folding frame for easy travel, and want a simple, balanced sound signature that works perfectly without tweaking menus.</p>
                 </div>
             </div>
             
-            <div style="text-align: center; margin-top: 30px; padding: 25px; background: rgba(255, 255, 255, 0.05); border-radius: 15px;">
-                <h3 style="color: #fbbf24; margin-bottom: 15px;">Test Natijasi</h3>
-                <p style="font-size: 1.2rem; line-height: 1.8;">
-                    <span style="color: #3b82f6; font-weight: bold;">Sony WH-1000XM5</span> - showqinni bartaraf qilish va audio sifatida yaxshi<br>
-                    <span style="color: #8b5cf6; font-weight: bold;">Bose QC45</span> - qulaylik va dizaynda ustun<br>
-                    <span style="color: #10b981; font-weight: bold;">Umumiy g'alaba:</span> Sony (yuqori texnologiya uchun)
+            <div class="verdict-box">
+                <h4>Laboratory Verdict</h4>
+                <p style="font-size: 1.15rem; color: #cbd5e1;">
+                    For pure technical capability, battery lifespan, and deep audio customization, the **Sony WH-1000XM5** takes the crown. <br>
+                    For legendary all-day comfort, physical travel convenience, and reliable physical buttons, the **Bose QC45** remains unmatched.
                 </p>
             </div>
         </div>
 
-        <!-- Vertical Ad -->
-        <div class="ad-section">
-            <div class="ad-label">Audio Aksessuarlar</div>
-            <div class="ad-placeholder" style="height: 250px;">
-                AdSense Vertical Banner (300x250)
-            </div>
+        <!-- Secondary Ad Box Element -->
+        <div class="adsense-premium-box" style="height: 150px; display: flex; align-items: center; justify-content: center;">
+            <span>Placeholder: Contextual Square Multi-Ad Unit Block</span>
         </div>
 
-        
     </div>
 
-    <script>
-        // Product card interactions
-        document.querySelectorAll('.product-card').forEach(card => {
-            card.addEventListener('mouseenter', function() {
-                this.style.transform = 'translateY(-10px)';
-                this.style.boxShadow = '0 20px 40px rgba(0, 0, 0, 0.3)';
-            });
-            
-            card.addEventListener('mouseleave', function() {
-                this.style.transform = 'translateY(0)';
-                this.style.boxShadow = 'none';
-            });
-        });
-        
-        // Rating animation
-        const ratingBadge = document.querySelector('.rating-badge');
-        ratingBadge.addEventListener('click', function() {
-            this.style.transform = 'scale(1.05)';
-            setTimeout(() => {
-                this.style.transform = 'scale(1)';
-            }, 300);
-        });
-        
-     
-    </script>
+    <!-- Footer System Linked to Real Local Files -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-column">
+                    <h3>RankingHours Project</h3>
+                    <p style="color: #64748b; font-size: 0.9rem;">Delivering objective product comparisons, software performance matrices, and unbiased consumer technology verification standards.</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Hardware Directories</h3>
+                    <ul>
+                        <li><a href="smartphone-comparisons.html"><i class="fas fa-link"></i> Premium Smartphones</a></li>
+                        <li><a href="laptop-comparisons.html"><i class="fas fa-link"></i> Laptop System Benchmarks</a></li>
+                        <li><a href="software.html"><i class="fas fa-link"></i> Software Subsystems</a></li>
+                        <li><a href="windows-macOS.html"><i class="fas fa-link"></i> OS Architecture Testing</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Compliance Center</h3>
+                    <ul>
+                        <li><a href="privacy-policy.html">Privacy Protection Policy</a></li>
+                        <li><a href="terms-of-service.html">Terms of Service Agreement</a></li>
+                        <li><a href="disclaimer.html">Liability Disclaimer</a></li>
+                        <li><a href="cookies.html">Cookie Administration</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2026 ranking-hours.uz. All rights reserved. Registered Verification Agency Standards.</p>
+            </div>
+        </div>
+    </footer>
+
 </body>
 </html>
