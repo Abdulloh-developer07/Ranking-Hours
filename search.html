@@ -3,340 +3,608 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Advanced Search - Ranking Hours</title>
-    <meta name="description" content="Find products, articles, and comprehensive reviews on the Ranking Hours platform. Find the information you need quickly with our powerful search engine.">
-    
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/responsive.css">
-    <link rel="stylesheet" href="css/search.css">
+    <meta name="description" content="Advanced analytics and hardware engineering search engine for ranking-hours.uz. Instantly filter, compare, and analyze structural performance indexes.">
+    <title>Hardware Analytics Search Engine | Ranking Hours</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        /* --- MODERN DARK INDEX DESIGN SYSTEM --- */
+        /* --- PREMIUM BOMBA DARK ULTRA-MODERN DESIGN SYSTEM --- */
         :root {
-            --bg-main: #0b0f19;
-            --bg-card: #131a2c;
-            --bg-input: #1e2942;
-            --accent-glow: #00f2fe;
-            --accent-grad-start: #00b4db;
-            --accent-grad-end: #0083b0;
+            --bg-main: #070a13;
+            --bg-card: #0f1626;
+            --bg-input: #17223b;
+            --accent-cyan: #00f2fe;
+            --accent-blue: #3b82f6;
+            --accent-purple: #8b5cf6;
             --text-primary: #f8fafc;
             --text-muted: #94a3b8;
-            --border-color: rgba(255, 255, 255, 0.08);
+            --border-color: rgba(255, 255, 255, 0.06);
+            --border-glow: rgba(0, 242, 254, 0.2);
+            --card-gradient: linear-gradient(145deg, #111a2e 0%, #0d1324 100%);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
         }
 
         body {
             background-color: var(--bg-main);
             color: var(--text-primary);
-            font-family: 'Segoe UI', system-ui, sans-serif;
-        }
-
-        .search-hero {
-            text-align: center;
-            padding: 60px 20px;
-            background: linear-gradient(180deg, rgba(0, 180, 219, 0.1) 0%, transparent 100%);
-        }
-
-        .search-hero h1 {
-            font-size: 2.5rem;
-            margin-bottom: 15px;
-            font-weight: 800;
-        }
-
-        .main-search-box {
-            max-width: 700px;
-            margin: 0 auto;
+            min-height: 100vh;
             display: flex;
-            background: var(--bg-input);
-            border: 1px solid var(--border-color);
-            border-radius: 12px;
-            padding: 6px;
-            box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+            flex-direction: column;
+            overflow-x: hidden;
+            position: relative;
         }
 
-        .search-input-wrapper {
-            flex: 1;
+        /* --- NEO GLOW BACKGROUND BLUR EFFECTS --- */
+        body::before {
+            content: '';
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(0, 242, 254, 0.08) 0%, transparent 65%);
+            top: -150px;
+            left: -150px;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        body::after {
+            content: '';
+            position: absolute;
+            width: 700px;
+            height: 700px;
+            background: radial-gradient(circle, rgba(139, 92, 246, 0.06) 0%, transparent 70%);
+            bottom: -200px;
+            right: -200px;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 30px;
+            width: 100%;
+        }
+
+        /* --- STICKY GLASSMORPHIC NAVIGATION --- */
+        header {
+            background: rgba(15, 22, 38, 0.75);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            padding: 18px 0;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo a {
+            color: var(--text-primary);
+            text-decoration: none;
+            font-size: 1.8rem;
+            font-weight: 800;
             display: flex;
             align-items: center;
-            padding: 0 15px;
+            gap: 12px;
+            letter-spacing: -0.5px;
         }
 
-        .search-input-wrapper i {
+        .logo span {
+            background: linear-gradient(135deg, var(--accent-cyan) 0%, var(--accent-blue) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        nav a {
             color: var(--text-muted);
-            margin-right: 10px;
-        }
-
-        .search-input-wrapper input {
-            width: 100%;
-            background: none;
-            border: none;
-            color: var(--text-primary);
-            font-size: 1.1rem;
-            outline: none;
-        }
-
-        .search-btn {
-            background: linear-gradient(135deg, var(--accent-grad-start), var(--accent-grad-end));
-            border: none;
-            color: white;
-            padding: 12px 28px;
-            border-radius: 8px;
+            text-decoration: none;
             font-weight: 600;
-            cursor: pointer;
+            font-size: 0.95rem;
+            padding: 10px 20px;
+            border-radius: 14px;
             transition: all 0.3s ease;
         }
 
-        .search-btn:hover {
-            opacity: 0.9;
-            box-shadow: 0 0 15px var(--accent-glow);
-        }
-
-        .search-layout {
-            max-width: 1200px;
-            margin: 40px auto;
-            padding: 0 20px;
-            display: grid;
-            grid-template-columns: 280px 1fr;
-            gap: 30px;
-        }
-
-        .search-sidebar {
-            background: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: 16px;
-            padding: 20px;
-            height: fit-content;
-        }
-
-        .filter-group {
-            margin-bottom: 25px;
-        }
-
-        .filter-group h3 {
-            font-size: 1.1rem;
-            margin-bottom: 15px;
+        nav a:hover, nav a.active {
             color: var(--text-primary);
-            border-left: 3px solid var(--accent-grad-start);
-            padding-left: 10px;
+            background: rgba(255, 255, 255, 0.04);
+            box-shadow: inset 0 1px 1px rgba(255,255,255,0.08);
         }
 
-        .tag-cloud {
+        /* --- SEARCH ENGINE HERO DISPLAY --- */
+        .search-hero {
+            text-align: center;
+            padding: 80px 0 50px;
+        }
+
+        .search-hero h1 {
+            font-size: 3.5rem;
+            font-weight: 900;
+            letter-spacing: -1.5px;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #ffffff 20%, #a5b4fc 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .search-hero p {
+            color: var(--text-muted);
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 45px;
+            line-height: 1.6;
+        }
+
+        .search-wrapper {
+            max-width: 850px;
+            margin: 0 auto;
+        }
+
+        .search-bar-box {
             display: flex;
+            background: var(--bg-card);
+            border: 2px solid var(--border-color);
+            border-radius: 24px;
+            padding: 10px 16px;
+            align-items: center;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 30px 60px rgba(0,0,0,0.4);
+        }
+
+        .search-bar-box:focus-within {
+            border-color: var(--accent-cyan);
+            box-shadow: 0 0 30px rgba(0, 242, 254, 0.2), 0 30px 60px rgba(0,0,0,0.5);
+            transform: translateY(-2px);
+        }
+
+        .search-icon-left {
+            color: var(--text-muted);
+            font-size: 1.4rem;
+            margin-left: 15px;
+            margin-right: 20px;
+        }
+
+        .search-input {
+            flex: 1;
+            background: none;
+            border: none;
+            outline: none;
+            color: var(--text-primary);
+            font-size: 1.25rem;
+            font-weight: 500;
+            padding: 12px 0;
+        }
+
+        .search-input::placeholder {
+            color: #4b5563;
+        }
+
+        /* --- STREAMLINED NAVIGATION CHIPS --- */
+        .filter-tags {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-top: 35px;
             flex-wrap: wrap;
-            gap: 8px;
         }
 
         .tag {
-            background: var(--bg-input);
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
             color: var(--text-muted);
-            padding: 6px 12px;
-            border-radius: 20px;
+            padding: 10px 22px;
+            border-radius: 40px;
             font-size: 0.9rem;
+            font-weight: 700;
             cursor: pointer;
-            border: 1px solid transparent;
-            transition: all 0.2s ease;
+            transition: all 0.25s ease;
         }
 
         .tag:hover, .tag.active {
-            border-color: var(--accent-glow);
+            border-color: var(--accent-cyan);
             color: var(--text-primary);
-            background: rgba(0, 242, 254, 0.05);
+            background: rgba(0, 242, 254, 0.04);
+            box-shadow: 0 0 15px rgba(0, 242, 254, 0.1);
         }
 
-        .results-header {
+        /* --- RESULTS METADATA & GRID MATRIX --- */
+        .results-section {
+            padding: 30px 0 100px;
+        }
+
+        .results-heading {
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--text-muted);
+            margin-bottom: 35px;
+            font-weight: 800;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .results-heading::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: var(--border-color);
+        }
+
+        .results-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 30px;
+        }
+
+        .result-item-card {
+            background: var(--card-gradient);
+            border: 1px solid var(--border-color);
+            border-radius: 24px;
+            padding: 35px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            text-decoration: none;
+            color: inherit;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .result-item-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(0, 242, 254, 0.03) 0%, transparent 50%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .result-item-card:hover {
+            border-color: rgba(0, 242, 254, 0.25);
+            transform: translateY(-6px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4), inset 0 1px 1px rgba(255,255,255,0.05);
+        }
+
+        .result-item-card:hover::before {
+            opacity: 1;
+        }
+
+        .card-meta {
             display: flex;
             justify-content: space-between;
             align-items: center;
             margin-bottom: 20px;
-            padding-bottom: 15px;
-            border-bottom: 1px solid var(--border-color);
         }
 
-        .results-grid {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
+        .category-badge {
+            font-size: 0.75rem;
+            background: rgba(255,255,255,0.03);
+            padding: 6px 14px;
+            border-radius: 30px;
+            color: var(--accent-cyan);
+            font-weight: 700;
+            border: 1px solid rgba(0, 242, 254, 0.12);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
-        .result-item-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: 16px;
-            padding: 25px;
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-            transition: transform 0.3s ease;
-        }
-
-        .result-item-card:hover {
-            transform: translateY(-2px);
-            border-color: rgba(0, 242, 254, 0.3);
-        }
-
-        .result-meta {
-            display: flex;
-            gap: 20px;
-            font-size: 0.85rem;
-            color: var(--text-muted);
-        }
-
-        .result-meta span i {
-            margin-right: 5px;
-            color: var(--accent-grad-start);
-        }
-
-        .result-item-card h2 a {
-            color: var(--text-primary);
-            text-decoration: none;
+        .result-item-card h3 {
             font-size: 1.4rem;
+            margin-bottom: 14px;
+            font-weight: 700;
+            color: var(--text-primary);
+            line-height: 1.4;
+            transition: color 0.2s ease;
         }
 
-        .result-item-card h2 a:hover {
-            color: var(--accent-glow);
+        .result-item-card:hover h3 {
+            color: var(--accent-cyan);
         }
 
         .result-item-card p {
             color: var(--text-muted);
-            font-size: 1rem;
-            line-height: 1.6;
+            font-size: 0.98rem;
+            line-height: 1.65;
+            margin-bottom: 25px;
+            flex-grow: 1;
         }
 
-        @media (max-width: 1200px) {
-            .search-layout { grid-template-columns: 1fr; }
+        .card-footer-link {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.95rem;
+            color: var(--accent-blue);
+            font-weight: 700;
+            transition: gap 0.2s ease;
+        }
+
+        .result-item-card:hover .card-footer-link {
+            gap: 12px;
+            color: var(--accent-cyan);
+        }
+
+        .no-results {
+            text-align: center;
+            padding: 80px 0;
+            color: var(--text-muted);
+            font-size: 1.2rem;
+            grid-column: 1 / -1;
+        }
+
+        /* --- FOOTER COMPONENT --- */
+        footer {
+            margin-top: auto;
+            background: #04060d;
+            border-top: 1px solid var(--border-color);
+            padding: 50px 0;
+            font-size: 0.95rem;
+            color: var(--text-muted);
+        }
+
+        .footer-flex {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 25px;
+        }
+
+        .footer-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            margin-left: 25px;
+            transition: color 0.2s;
+            font-weight: 600;
+        }
+
+        .footer-links a:hover {
+            color: var(--text-primary);
+        }
+
+        @media (max-width: 992px) {
+            .results-grid { grid-template-columns: 1fr; }
+            .search-hero h1 { font-size: 2.6rem; }
+        }
+
+        @media (max-width: 768px) {
+            .header-container { flex-direction: column; gap: 20px; }
+            .footer-flex { flex-direction: column; text-align: center; }
+            .footer-links a { margin: 0 12px; }
         }
     </style>
 </head>
 <body>
 
-    <div class="language-switcher">
-        <div class="container">
-            <button class="lang-btn" data-lang="uz">🇺🇿 O'zbek</button>
-            <button class="lang-btn active" data-lang="en">🇬🇧 English</button>
-            <button class="lang-btn" data-lang="ru">🇷🇺 Русский</button>
-        </div>
-    </div>
-
-    <nav class="navbar">
-        <div class="container">
-            <a href="index.html" class="logo">
-                <img src="images/logo.png" alt="Ranking Hours Logo" width="40">
-                <span>Ranking<span class="highlight">Hours</span></span>
-            </a>
-        </div>
-    </nav>
-
-    <header class="search-hero">
-        <div class="container">
-            <h1>Advanced Database Search</h1>
-            <p style="color: var(--text-muted); margin-bottom: 30px;">Instantly filter and analyze engineering metrics, device architectures, and performance rankings.</p>
-            
-            <div class="main-search-box">
-                <div class="search-input-wrapper">
-                    <i class="fas fa-search"></i>
-                    <input type="text" id="dbSearch" placeholder="Type to search smart-devices, software or infrastructure hardware...">
-                </div>
-                <button class="search-btn">Search</button>
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <a href="index.html"><i class="fas fa-bolt" style="color: var(--accent-cyan);"></i> <span>RankingHours</span></a>
             </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="smartphone-comparisons.html">Smartphones</a></li>
+                    <li><a href="laptop-comparisons.html">Laptops</a></li>
+                    <li><a href="appliances-comparisons.html">Appliances</a></li>
+                    <li><a href="search.html" class="active"><i class="fas fa-search"></i> Search</a></li>
+                </ul>
+            </nav>
         </div>
     </header>
 
-    <div class="search-layout">
-        <aside class="search-sidebar">
-            <div class="filter-group">
-                <h3>Popular Categories</h3>
-                <div class="tag-cloud">
-                    <span class="tag active">All Items</span>
-                    <span class="tag">Smartphones</span>
-                    <span class="tag">Laptops</span>
-                    <span class="tag">Audio Systems</span>
-                    <span class="tag">Software</span>
+    <main class="container">
+        <section class="search-hero">
+            <h1>Hardware Engineering Engine</h1>
+            <p>Access our multi-indexed database containing comprehensive empirical reviews, computing telemetry architectures, microchip evaluations, and infrastructure performance testing analytics matrix.</p>
+            
+            <div class="search-wrapper">
+                <div class="search-bar-box">
+                    <i class="fas fa-search search-icon-left"></i>
+                    <input type="text" class="search-input" id="dbSearch" placeholder="Filter microchip architectures, peripheral arrays, or computing configurations...">
+                </div>
+                
+                <div class="filter-tags" id="tagContainer">
+                    <span class="tag active" data-filter="all">All Ecosystems</span>
+                    <span class="tag" data-filter="smartphones">Smartphones</span>
+                    <span class="tag" data-filter="laptops">Computing & OS</span>
+                    <span class="tag" data-filter="appliances">Home Infrastructure</span>
+                    <span class="tag" data-filter="audio">Acoustic Engineering</span>
+                    <span class="tag" data-filter="gaming">Gaming & Virtuality</span>
                 </div>
             </div>
+        </section>
 
-            <div class="filter-group">
-                <h3>Hardware Brands</h3>
-                <div class="tag-cloud">
-                    <span class="tag">Apple</span>
-                    <span class="tag">Samsung</span>
-                    <span class="tag">Google</span>
-                    <span class="tag">Xiaomi</span>
-                    <span class="tag">Dell</span>
-                    <span class="tag">Lenovo</span>
-                </div>
+        <section class="results-section">
+            <h2 class="results-heading" id="resultsCount">Compiling Multi-Index Records...</h2>
+            
+            <div class="results-grid" id="presetGrid">
+                
+                <!-- 1. xiaomi-google -->
+                <a href="xiaomi-google.html" class="result-item-card" data-category="smartphones" data-keywords="xiaomi google pixel mobile smartphone flagship sensor camera tensor android snapdragon leica">
+                    <div class="card-meta"><span class="category-badge">Smartphones</span></div>
+                    <h3>Xiaomi vs Google Pixel Architecture Evaluation</h3>
+                    <p>A rigorous architectural exploration balancing Xiaomi's brute force hardware implementations against Google Pixel's machine learning pipelines. This 2500+ word technical report analyzes image signal processing (ISP) loops, computation telemetry, real-time tensor core execution models, thermal dissipation thresholds under heavy gaming stress, and neural network latency arrays during continuous photographic rendering cycles.</p>
+                    <div class="card-footer-link">Deconstruct Engineering Reports <i class="fas fa-arrow-right"></i></div>
+                </a>
+
+                <!-- 2. windows-macOS -->
+                <a href="windows-macOS.html" class="result-item-card" data-category="laptops" data-keywords="windows macos operating system kernel computing architecture hardware microsoft apple unix thread allocation m3 snapdragon x elite">
+                    <div class="card-meta"><span class="category-badge">Computing & OS</span></div>
+                    <h3>Windows Kernel vs macOS UNIX Core Infrastructure</h3>
+                    <p>An extensive, low-level structural comparative documentation auditing scheduling paradigms, resource allocation loops, and runtime optimization. Investigating how the Windows NT kernel processes asymmetric processing instructions relative to macOS UNIX thread dispatching routines. Includes empirical measurements on rendering processing speeds, battery utilization coefficients, memory cache misses, and virtualization latencies across ARM64 and x86 architectures.</p>
+                    <div class="card-footer-link">Deconstruct Engineering Reports <i class="fas fa-arrow-right"></i></div>
+                </a>
+
+                <!-- 3. vr-qurilma -->
+                <a href="vr-qurilma.html" class="result-item-card" data-category="gaming" data-keywords="vr oculus quest htc vive virtual reality spatial computing resolution refreshing display tracker optical immersion">
+                    <div class="card-meta"><span class="category-badge">Gaming & Virtuality</span></div>
+                    <h3>Spatial Computing & Next-Gen Virtual Reality Frameworks</h3>
+                    <p>A comprehensive study on virtual reality (VR) display matrices, inside-out tracking lag latencies, and spatial orientation sensor arrays. This white paper focuses on optical distortion profiles, refresh cycle consistency, interpupillary distance mechanical stability, and GPU rendering workloads. Detailed hardware metrics break down how structural spatial computing units maintain high-fidelity positional telemetry without causing system stuttering.</p>
+                    <div class="card-footer-link">Deconstruct Engineering Reports <i class="fas fa-arrow-right"></i></div>
+                </a>
+
+                <!-- 4. soundbar -->
+                <a href="soundbar.html" class="result-item-card" data-category="audio" data-keywords="soundbar samsung lg acoustic audio speaker dolby atmos dts surround decibel amplifier harmonic distortion">
+                    <div class="card-meta"><span class="category-badge">Acoustic Engineering</span></div>
+                    <h3>Acoustic Soundbar Transducer Arrays & Waveguide Analysis</h3>
+                    <p>Deep dive evaluation into multi-channel home audio bars, specializing in upward-firing transducer performance and Dolby Atmos digital processing delays. Discover mathematical acoustics detailing total harmonic distortion, frequency response flatness, enclosure acoustic dampening coefficients, and wireless sync jitter profiles. Ideal for systems integrators looking for complete acoustic field rendering clarity comparisons.</p>
+                    <div class="card-footer-link">Deconstruct Engineering Reports <i class="fas fa-arrow-right"></i></div>
+                </a>
+
+                <!-- 5. sony bose -->
+                <a href="sony-bose.html" class="result-item-card" data-category="audio" data-keywords="sony bose headphones audio noise cancelling anc acoustics frequency decibel ambient feedback loop">
+                    <div class="card-meta"><span class="category-badge">Acoustic Engineering</span></div>
+                    <h3>Premium Active Noise Cancellation (ANC) Signal Testing</h3>
+                    <p>Comparative structural report testing feed-forward and feed-back ambient microphone loops across premium headphones. This analysis measures precise external attenuation rates across the low-frequency spectrum, analyzing microchip response curves under real-world dynamic atmospheric noise. Covers voice-coil acceleration, high-fidelity wireless audio codec throughput stability, and ergonomic clamp-force distribution.</p>
+                    <div class="card-footer-link">Deconstruct Engineering Reports <i class="fas fa-arrow-right"></i></div>
+                </a>
+
+                <!-- 6. smartphone-comparisons -->
+                <a href="smartphone-comparisons.html" class="result-item-card" data-category="smartphones" data-keywords="smartphone comparisons mobile matrix display brightness benchmark throttling hardware processor battery drain">
+                    <div class="card-meta"><span class="category-badge">Smartphones</span></div>
+                    <h3>Global Smartphone Engineering Comparisons & Benchmarks</h3>
+                    <p>The definitive centralized comparative directory measuring mobile screen luminance, sustained performance under long-term thermal pressure, and power management IC performance. Compiles structural hardware test results, detailing specific voltage drops and frame-pacing variance profiles during complex graphical rendering workflows. Essential data validation for choosing optimal flagman smartphones.</p>
+                    <div class="card-footer-link">Deconstruct Engineering Reports <i class="fas fa-arrow-right"></i></div>
+                </a>
+
+                <!-- 7. samsung-iphone -->
+                <a href="samsung-iphone.html" class="result-item-card" data-category="smartphones" data-keywords="samsung iphone apple galaxy pro max ultra flagship ios android bionic snapdragon ray tracing oled nvme">
+                    <div class="card-meta"><span class="category-badge">Smartphones</span></div>
+                    <h3>Samsung Galaxy vs iPhone Ultimate Flagship Battle</h3>
+                    <p>An exhaustive structural deconstruction comparing custom processing microarchitectures against foundational silicon designs. This highly detailed engineering document uncovers execution pipeline disparities, memory data storage bandwidths, hardware-accelerated ray tracing hardware efficiency, and sub-pixel dynamic rendering quality. Fully vetted performance indexes designed to meet deep research and monetization specifications.</p>
+                    <div class="card-footer-link">Deconstruct Engineering Reports <i class="fas fa-arrow-right"></i></div>
+                </a>
+
+                <!-- 8. samsung-artel -->
+                <a href="samsung-artel.html" class="result-item-card" data-category="appliances" data-keywords="samsung artel home appliances refrigerator television dynamic cooling consumer electronics service network price utility">
+                    <div class="card-meta"><span class="category-badge">Home Infrastructure</span></div>
+                    <h3>Samsung vs Artel Regional Market Electronics Auditing</h3>
+                    <p>A rigorous consumer market research comparing imported smart appliances with localized industrial manufacturing solutions. This deep report calculates precise lifecycle asset values, motor operational efficiencies, cooling loops under harsh environmental temperatures, and spare parts supply chain access. Features complete structural data sets mapping performance outputs against consumer initial investment metrics.</p>
+                    <div class="card-footer-link">Deconstruct Engineering Reports <i class="fas fa-arrow-right"></i></div>
+                </a>
+
+                <!-- 9. ps-xbox -->
+                <a href="ps-xbox.html" class="result-item-card" data-category="gaming" data-keywords="ps xbox playstation microsoft sony console gpu ray tracing memory bandwidth storage velocity architecture rdna">
+                    <div class="card-meta"><span class="category-badge">Gaming & Virtuality</span></div>
+                    <h3>PlayStation vs Xbox Next-Gen Compute Architecture</h3>
+                    <p>A pure hardware telemetry comparison measuring custom graphic processor pipelines, custom storage architectures, and system data highway velocities. Delves into shader execution units, ray-triangle intersection performance metrics, active cooling system efficiency, and frame timing stability during heavy graphics processing workloads. Ideal data resource for graphics programmers and engineering specialists.</p>
+                    <div class="card-footer-link">Deconstruct Engineering Reports <i class="fas fa-arrow-right"></i></div>
+                </a>
+
+                <!-- 10. macbook-ultrabook -->
+                <a href="macbook-ultrabook.html" class="result-item-card" data-category="laptops" data-keywords="macbook ultrabook laptop notebook intel amd apple silicon thermal throttling efficiency premium workspace">
+                    <div class="card-meta"><span class="category-badge">Computing & OS</span></div>
+                    <h3>MacBook Silicon vs Windows Thin-and-Light Ultrabooks</h3>
+                    <p>Technical evaluation tracking energy efficiency vs peak processing output in high-end mobile workstations. Analyzes performance drop percentages when running on internal battery arrays, examining heat distribution across aluminum chassis, display color gamut uniformity, and solid-state drive sequential read/write speed matrix arrays. Designed for demanding remote workflows.</p>
+                    <div class="card-footer-link">Deconstruct Engineering Reports <i class="fas fa-arrow-right"></i></div>
+                </a>
+
+                <!-- 11. lg-bosch -->
+                <a href="lg-bosch.html" class="result-item-card" data-category="appliances" data-keywords="lg bosch washing machine motor direct drive ecosilence vibration kinetic balance energy integration water consumption">
+                    <div class="card-meta"><span class="category-badge">Home Infrastructure</span></div>
+                    <h3>LG Direct Drive vs Bosch EcoSilence Powertrain Systems</h3>
+                    <p>An structural mechanical breakdown investigating direct magnetic propulsion versus brushless belt-drive mechanics. Evaluates drum oscillation dampening control algorithms, electronic balancing sensor response, bearing lifecycle limits, and energy conservation behavior during intensive water mechanical force extraction routines. A definitive guide for automated laundry appliance engineering.</p>
+                    <div class="card-footer-link">Deconstruct Engineering Reports <i class="fas fa-arrow-right"></i></div>
+                </a>
+
+                <!-- 12. laptop-comparisons -->
+                <a href="laptop-comparisons.html" class="result-item-card" data-category="laptops" data-keywords="laptop comparisons notebook hardware specs benchmark compiler workstation rendering compilation screen panel">
+                    <div class="card-meta"><span class="category-badge">Computing & OS</span></div>
+                    <h3>Comprehensive Computer Hardware Engineering Comparisons</h3>
+                    <p>An interconnected index evaluating mobile productivity computing layouts across different generations of multi-core processors. Features detailed comparison metrics monitoring code compilation speeds, heavy database rendering execution times, 3D viewport spatial performance, and display backlight refresh precision profiles. Your primary resource for determining enterprise development machine procurement.</p>
+                    <div class="card-footer-link">Deconstruct Engineering Reports <i class="fas fa-arrow-right"></i></div>
+                </a>
+
+                <!-- 13. gree-samsung -->
+                <a href="gree-samsung.html" class="result-item-card" data-category="appliances" data-keywords="gree samsung air conditioner climate control inverter compressor thermodynamic loop thermal transfer btu energy efficiency">
+                    <div class="card-meta"><span class="category-badge">Home Infrastructure</span></div>
+                    <h3>Gree vs Samsung Advanced Climate Control Technology</h3>
+                    <p>A thermodynamic data analysis studying compressor frequency fine-tuning and cooling loop heat transfer efficiency. Examines mechanical design differences, sensor calibration curves, quiet indoor air displacement configurations, and power surge resilience features. Built to provide strict structural analytics matching advanced building architecture standards.</p>
+                    <div class="card-footer-link">Deconstruct Engineering Reports <i class="fas fa-arrow-right"></i></div>
+                </a>
+
+                <!-- 14. dell-lenovo -->
+                <a href="dell-lenovo.html" class="result-item-card" data-category="laptops" data-keywords="dell lenovo thinkpad xps business laptop enterprise security durability hardware encryption keyboard ergonomics">
+                    <div class="card-meta"><span class="category-badge">Computing & OS</span></div>
+                    <h3>Dell XPS vs Lenovo ThinkPad Corporate Systems Auditing</h3>
+                    <p>A rigorous professional review evaluating chassis flex tolerances, mainboard power management design, built-in security chips, and long-term typing biomechanics. Investigates field reliability variables, firmware security validation processes, heat dissipation channels, and structural hardware modularity for IT management deployment protocols.</p>
+                    <div class="card-footer-link">Deconstruct Engineering Reports <i class="fas fa-arrow-right"></i></div>
+                </a>
+
+                <!-- 15. apple-samsung -->
+                <a href="apple-samsung.html" class="result-item-card" data-category="smartphones" data-keywords="apple samsung ecosystem integration data sync cloud wearable watch tablet continuity friction hardware interconnect">
+                    <div class="card-meta"><span class="category-badge">Smartphones</span></div>
+                    <h3>Apple Ecosystem vs Samsung Galaxy Interconnected Arrays</h3>
+                    <p>An extensive look into cross-device communication protocols, smart device data link latencies, peripheral asset sharing speeds, and cloud-to-device infrastructure security. Measures transmission overhead during large backup actions and cross-device display expansion, mapping out system friction points between competing device webs.</p>
+                    <div class="card-footer-link">Deconstruct Engineering Reports <i class="fas fa-arrow-right"></i></div>
+                </a>
+
             </div>
-        </aside>
 
-        <main class="search-results-panel">
-            <div class="results-header">
-                <span id="resultsCount" style="font-weight: 600; color: var(--text-muted);">Recommended Analytics (4 Indices Active)</span>
-                <div style="font-size: 0.9rem; color: var(--text-muted);">
-                    Sorted by: <span style="color: var(--accent-glow); font-weight: 600; cursor: pointer;">Highest Relevance</span>
-                </div>
+            <div id="noResults" class="no-results" style="display: none;">
+                <i class="fas fa-database-sad" style="font-size: 2.5rem; margin-bottom: 15px; color: var(--accent-cyan);"></i>
+                <p>No matching architectural analytics indexes found in our active database.</p>
             </div>
-
-            <div class="results-grid">
-                <div class="result-item-card">
-                    <div class="result-meta">
-                        <span><i class="fas fa-microchip"></i> Hardware Comparison</span>
-                        <span><i class="fas fa-calendar-alt"></i> 2026 Archive</span>
-                    </div>
-                    <h2><a href="xiaomi-google.html">Xiaomi 14 vs Google Pixel 8 Pro — Ultimate Flagship Showdown</a></h2>
-                    <p>An in-depth, long-term comparison analyzing AI camera sensors, processing efficiency, battery lifespans, and fast-charging capabilities under stress protocols.</p>
-                </div>
-
-                <div class="result-item-card">
-                    <div class="result-meta">
-                        <span><i class="fas fa-laptop"></i> Mobile Engineering</span>
-                        <span><i class="fas fa-calendar-alt"></i> 2026 Archive</span>
-                    </div>
-                    <h2><a href="macbook-ultrabook.html">MacBook Air M3 vs Premium Windows Ultrabook (Intel Core i7)</a></h2>
-                    <p>Comprehensive performance analysis metrics investigating raw benchmark scores, battery life duration, active-fan thermal throttling, and display matrix configurations.</p>
-                </div>
-
-                <div class="result-item-card">
-                    <div class="result-meta">
-                        <span><i class="fas fa-code"></i> Systems Architecture</span>
-                        <span><i class="fas fa-calendar-alt"></i> 2026 Archive</span>
-                    </div>
-                    <h2><a href="windows-macOS.html">Operating System Architecture Matrix: Windows 11 vs macOS Sonoma</a></h2>
-                    <p>An exhaustive architectural infrastructure exploration covering kernel threading models, runtime libraries, compilation vectors, and enterprise desktop deployments.</p>
-                </div>
-
-                <div class="result-item-card">
-                    <div class="result-meta">
-                        <span><i class="fas fa-headphones"></i> Acoustic Analysis</span>
-                        <span><i class="fas fa-calendar-alt"></i> 2026 Archive</span>
-                    </div>
-                    <h2><a href="sony-bose.html">Sony WH-1000XM5 vs Bose QuietComfort 45: The Acoustic Showdown</a></h2>
-                    <p>Data-driven decibel testing, noise isolation efficiency, audio codec latency profiles, and true ergonomic evaluations for audio professionals.</p>
-                </div>
-            </div>
-        </main>
-    </div>
+        </section>
+    </main>
 
     <footer>
-        <div class="container" style="text-align: center; padding: 40px 20px; border-top: 1px solid var(--border-color); margin-top: 60px;">
-            <p style="color: var(--text-muted); font-size: 0.9rem;">&copy; 2026 ranking-hours.uz. All rights reserved. Technical Lab Engineering Center.</p>
-            <div style="margin-top: 15px; display: flex; justify-content: center; gap: 20px; font-size: 0.9rem;">
-                <a href="privacy-policy.html" style="color: var(--text-muted); text-decoration: none;">Privacy</a>
-                <a href="sitemap.html" style="color: var(--text-muted); text-decoration: none;">Sitemap</a>
-                <a href="terms-of-service.html" style="color: var(--text-muted); text-decoration: none;">Terms</a>
+        <div class="container footer-flex">
+            <p>&copy; 2026 ranking-hours.uz. Founder of Digital Architecture: Abdulloh. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="privacy-policy.html">Privacy</a>
+                <a href="sitemap.html">Sitemap</a>
+                <a href="terms-of-service.html">Terms</a>
             </div>
         </div>
     </footer>
 
+    <!-- LIVE CLIENT-SIDE ENGINE PROCESSOR & COMPILER -->
     <script>
         const searchInput = document.getElementById('dbSearch');
         const cards = document.querySelectorAll('.result-item-card');
         const countText = document.getElementById('resultsCount');
+        const noResults = document.getElementById('noResults');
+        const tags = document.querySelectorAll('.tag');
 
-        searchInput.addEventListener('input', (e) => {
-            const query = e.target.value.toLowerCase().trim();
+        let currentFilter = 'all';
+
+        function searchExecutionEngine() {
+            const query = searchInput.value.toLowerCase().trim();
             let visibleCount = 0;
 
             cards.forEach(card => {
-                const text = card.textContent.toLowerCase();
-                if(text.includes(query)) {
+                const innerContent = card.textContent.toLowerCase();
+                const dataKeywords = card.getAttribute('data-keywords').toLowerCase();
+                const category = card.getAttribute('data-category');
+
+                const queryMatch = innerContent.includes(query) || dataKeywords.includes(query);
+                const filterMatch = currentFilter === 'all' || category === currentFilter;
+
+                if(queryMatch && filterMatch) {
                     card.style.display = 'flex';
                     visibleCount++;
                 } else {
@@ -344,18 +612,37 @@
                 }
             });
 
-            countText.textContent = query === '' 
-                ? `Recommended Analytics (4 Indices Active)` 
-                : `Search Results Found (${visibleCount} Indices)`;
-        });
+            // Update Metadata Counts Dynamically
+            if (query === '' && currentFilter === 'all') {
+                countText.textContent = `Recommended Structural Analytics (${cards.length} Hardware Indices Active)`;
+            } else {
+                countText.textContent = `Search Execution Complete (${visibleCount} Matching Records Compiled)`;
+            }
 
-        // Tag interactives
-        const tags = document.querySelectorAll('.tag');
+            // Error Flag Toggle
+            if(visibleCount === 0) {
+                noResults.style.display = 'block';
+            } else {
+                noResults.style.display = 'none';
+            }
+        }
+
+        // Live input event tracking
+        searchInput.addEventListener('input', searchExecutionEngine);
+
+        // Interactive Filtering Chips
         tags.forEach(tag => {
             tag.addEventListener('click', () => {
                 tags.forEach(t => t.classList.remove('active'));
                 tag.classList.add('active');
+                currentFilter = tag.getAttribute('data-filter');
+                searchExecutionEngine();
             });
+        });
+
+        // Initialize counts on execution finish
+        window.addEventListener('DOMContentLoaded', () => {
+            countText.textContent = `Recommended Structural Analytics (${cards.length} Hardware Indices Active)`;
         });
     </script>
 </body>
