@@ -1,153 +1,119 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="uz">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="An in-depth, long-term user review and technical performance breakdown comparing Apple AirPods Pro 2, Samsung Galaxy Buds 2 Pro, and Sony WF-1000XM5.">
-    <title>Flagship TWS Earbuds Compared: AirPods Pro vs Galaxy Buds vs Sony WF | RankingHours</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/responsive.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Apple AirPods Pro 2 vs Samsung Galaxy Buds 2 Pro vs Sony WF-1000XM5 — Taqqoslash va Reyting</title>
+    <meta name="description" content="2026-yilning eng eng kuchli premium simsiz naushniklari batafsil taqqoslanishi: AirPods Pro 2, Galaxy Buds 2 Pro va Sony WF-1000XM5 modellarining ovoz sifati, ANC va batareya quvvati tahlili.">
+    <link rel="canonical" href="https://ranking-hours.uz/earphones-comparisons.html">
     <style>
         :root {
-            --bg-main: #090D1A;
-            --bg-card: #121829;
-            --bg-accent: #1E2640;
-            --primary-neon: #06B6D4;
-            --secondary-neon: #3B82F6;
-            --apple-brand: #A2A2A2;
-            --samsung-brand: #A78BFA;
-            --sony-brand: #EF4444;
-            --text-main: #E2E8F0;
-            --text-muted: #94A3B8;
-            --border-line: #1E293B;
-            --success-neon: #10B981;
-            --amber-glow: #F59E0B;
+            --bg-main: #0B0F19;
+            --bg-card: #151D30;
+            --bg-nav: #111827;
+            --accent-primary: #3B82F6;
+            --accent-success: #10B981;
+            --text-main: #F3F4F6;
+            --text-muted: #9CA3AF;
+            --border-line: #24324F;
+            
+            /* Brand Colors */
+            --apple-brand: #A3AAAE;
+            --samsung-brand: #1428A0;
+            --sony-brand: #D2A100;
         }
 
         * {
+            box-sizing: border-box;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
         body {
             background-color: var(--bg-main);
             color: var(--text-main);
-            line-height: 1.8;
-            font-size: 16px;
-            background-image: radial-gradient(circle at 12% 15%, rgba(6, 182, 212, 0.05) 0%, transparent 50%),
-                              radial-gradient(circle at 88% 85%, rgba(139, 92, 246, 0.05) 0%, transparent 50%);
+            line-height: 1.7;
+            padding-top: 70px;
         }
 
-        .container {
-            max-width: 1250px;
-            margin: 0 auto;
-            padding: 0 25px;
-        }
-
-        header {
-            background: rgba(18, 24, 41, 0.95);
-            backdrop-filter: blur(12px);
-            border-bottom: 1px solid var(--border-line);
-            position: sticky;
+        /* Navigation */
+        nav {
+            background-color: var(--bg-nav);
+            position: fixed;
             top: 0;
+            width: 100%;
             z-index: 1000;
+            border-bottom: 1px solid var(--border-line);
             padding: 15px 0;
         }
 
-        .header-container {
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            padding: 0 20px;
         }
 
-        .logo {
-            font-size: 1.6rem;
+        .logo a {
+            color: var(--text-main);
+            font-size: 1.5rem;
             font-weight: 800;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            color: #FFFFFF;
             text-decoration: none;
-            letter-spacing: -0.5px;
-        }
-
-        .logo i {
-            color: var(--primary-neon);
+            letter-spacing: 0.5px;
         }
 
         .logo span {
-            color: var(--secondary-neon);
+            color: var(--accent-primary);
         }
 
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: 10px;
-        }
-
-        nav a {
+        .nav-links a {
             color: var(--text-muted);
             text-decoration: none;
+            margin-left: 20px;
             font-weight: 500;
-            font-size: 0.95rem;
-            padding: 10px 20px;
-            border-radius: 30px;
-            transition: all 0.3s ease;
+            transition: color 0.3s;
         }
 
-        nav a:hover, nav a.active {
-            color: #FFFFFF;
-            background-color: var(--bg-accent);
-            box-shadow: 0 0 15px rgba(6, 182, 212, 0.15);
+        .nav-links a:hover {
+            color: var(--accent-primary);
         }
 
-        .main-header {
-            background: linear-gradient(180deg, #121829 0%, var(--bg-main) 100%);
-            border-radius: 24px;
-            padding: 60px 40px;
-            margin: 40px 0;
-            border: 1px solid var(--border-line);
+        /* Container & Grid layout */
+        .wrapper {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        header {
             text-align: center;
-        }
-
-        .rating-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background: rgba(245, 158, 11, 0.1);
-            border: 1px solid var(--amber-glow);
-            color: var(--amber-glow);
-            padding: 8px 20px;
-            border-radius: 30px;
-            font-weight: 700;
-            font-size: 1rem;
-            margin-bottom: 20px;
+            margin-bottom: 5px;
         }
 
         h1 {
-            font-size: 3rem;
+            font-size: 2.8rem;
             font-weight: 800;
-            color: #FFFFFF;
             margin-bottom: 15px;
-            letter-spacing: -1px;
-            line-height: 1.2;
+            background: linear-gradient(135deg, #FFF, #9CA3AF);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
-        .subtitle {
+        .meta-info {
             color: var(--text-muted);
-            font-size: 1.15rem;
-            max-width: 800px;
-            margin: 0 auto;
+            font-size: 0.95rem;
+            margin-bottom: 40px;
         }
 
+        /* 3ta Kompyuter/Naushnik uchun 3ta Rasmli Konteyner */
         .vs-image-container {
             display: grid;
-            grid-template-columns: 1fr auto 1fr;
+            grid-template-columns: 1fr auto 1fr auto 1fr;
             align-items: center;
-            gap: 25px;
+            gap: 20px;
             margin: 40px 0;
             background: var(--bg-card);
             border-radius: 20px;
@@ -157,738 +123,311 @@
 
         .vs-image-space {
             width: 100%;
-            height: 280px;
+            height: 250px;
             background: var(--bg-main);
             border-radius: 14px;
             border: 1px dashed var(--border-line);
             display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
             position: relative;
             overflow: hidden;
-            padding: 20px;
+            padding: 15px;
         }
 
         .vs-image-space img {
             max-width: 100%;
-            max-height: 100%;
+            max-height: 75%;
             object-fit: contain;
             border-radius: 8px;
             display: block;
-        }
-
-        .vs-divider-circle {
-            background: linear-gradient(135deg, var(--secondary-neon) 0%, var(--sony-brand) 100%);
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 900;
-            font-size: 1.4rem;
-            color: #FFFFFF;
-            box-shadow: 0 0 20px rgba(6, 182, 212, 0.3);
-            z-index: 5;
-        }
-
-        .bluetooth-panel {
-            background: var(--bg-card);
-            border-radius: 20px;
-            padding: 35px;
-            margin: 40px 0;
-            border: 1px solid var(--border-line);
-        }
-
-        .panel-title {
-            font-size: 1.6rem;
-            color: #FFFFFF;
-            margin-bottom: 15px;
-            font-weight: 700;
-            text-align: center;
-        }
-
-        .panel-desc {
-            color: var(--text-muted);
-            text-align: center;
-            max-width: 700px;
-            margin: 0 auto 30px;
-        }
-
-        .version-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 25px;
-        }
-
-        .version-box {
-            background: var(--bg-accent);
-            padding: 25px;
-            border-radius: 12px;
-            border-left: 4px solid var(--primary-neon);
-        }
-
-        .version-box.alt {
-            border-left-color: var(--samsung-brand);
-        }
-
-        .version-box h3 {
-            color: #FFFFFF;
             margin-bottom: 10px;
-            font-size: 1.3rem;
         }
 
-        .charging-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 25px;
-            margin: 40px 0;
-        }
-
-        .charging-card {
-            background: var(--bg-card);
-            border-radius: 20px;
-            padding: 30px;
-            border: 1px solid var(--border-line);
-            text-align: center;
-            border-top: 4px solid var(--primary-neon);
-        }
-
-        .charging-card.samsung { border-top-color: var(--samsung-brand); }
-        .charging-card.sony { border-top-color: var(--sony-brand); }
-
-        .charging-card i {
-            font-size: 2.5rem;
-            margin-bottom: 15px;
-            color: var(--primary-neon);
-        }
-        .charging-card.samsung i { color: var(--samsung-brand); }
-        .charging-card.sony i { color: var(--sony-brand); }
-
-        .time-highlight {
-            font-size: 1.4rem;
-            font-weight: 700;
-            color: var(--amber-glow);
-            margin: 10px 0;
-        }
-
-        .ecosystem-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 35px;
-            margin: 40px 0;
-        }
-
-        .ecosystem-card {
-            background: var(--bg-card);
-            border-radius: 20px;
-            padding: 35px;
-            border: 1px solid var(--border-line);
-        }
-
-        .ecosystem-card h3 {
-            font-size: 1.5rem;
-            color: #FFFFFF;
-            margin-bottom: 15px;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .tws-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 25px;
-            margin: 40px 0;
-        }
-
-        .tws-card {
-            background: var(--bg-card);
-            border-radius: 20px;
-            padding: 30px;
-            border: 1px solid var(--border-line);
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-
-        .card-top h3 {
-            font-size: 1.6rem;
-            color: #FFFFFF;
-            margin-bottom: 5px;
-        }
-
-        .card-meta {
-            color: var(--text-muted);
-            font-size: 0.9rem;
-            margin-bottom: 20px;
-        }
-
-        .spec-row {
-            display: flex;
-            justify-content: space-between;
-            padding: 12px 0;
-            border-bottom: 1px solid var(--border-line);
+        .vs-img-label {
             font-size: 0.95rem;
-        }
-
-        .spec-row:last-of-type {
-            border-bottom: none;
-        }
-
-        .spec-label {
             color: var(--text-muted);
-            display: flex;
-            align-items: center;
-            gap: 8px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
-        .spec-value {
-            font-weight: 600;
-            color: #FFFFFF;
+        .vs-divider-text {
+            font-weight: 900;
+            font-size: 1.3rem;
+            color: var(--text-muted);
+            padding: 0 10px;
         }
 
-        .highlight-text {
-            color: var(--primary-neon);
+        /* Content Styles */
+        h2 {
+            font-size: 1.9rem;
+            margin: 45px 0 20px 0;
+            border-left: 5px solid var(--accent-primary);
+            padding-left: 15px;
+            color: #FFF;
         }
 
-        .pro-con-box {
-            background: var(--bg-accent);
-            padding: 20px;
-            border-radius: 12px;
-            margin-top: 25px;
+        h3 {
+            font-size: 1.4rem;
+            margin: 30px 0 15px 0;
+            color: var(--text-main);
         }
 
-        .pro-con-box h4 {
-            color: #FFFFFF;
-            margin-bottom: 10px;
+        p {
+            color: #D1D5DB;
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+
+        ul, ol {
+            margin-left: 25px;
+            margin-bottom: 25px;
+            color: #D1D5DB;
             font-size: 1.1rem;
         }
 
-        .table-wrapper {
-            background: var(--bg-card);
-            border-radius: 20px;
-            padding: 30px;
-            margin: 40px 0;
-            border: 1px solid var(--border-line);
+        li {
+            margin-bottom: 8px;
+        }
+
+        /* Comparison Table */
+        .table-responsive {
             overflow-x: auto;
+            margin: 40px 0;
+            border-radius: 14px;
+            border: 1px solid var(--border-line);
         }
 
         table {
             width: 100%;
             border-collapse: collapse;
+            background-color: var(--bg-card);
             text-align: left;
-            min-width: 700px;
         }
 
         th, td {
-            padding: 16px 20px;
+            padding: 18px;
             border-bottom: 1px solid var(--border-line);
         }
 
         th {
-            color: #FFFFFF;
-            font-weight: 600;
-            background-color: rgba(255, 255, 255, 0.02);
-        }
-
-        .row-tag {
-            background: rgba(6, 182, 212, 0.15);
-            color: var(--primary-neon);
-            padding: 4px 10px;
-            border-radius: 6px;
-            font-size: 0.8rem;
-            font-weight: bold;
-        }
-
-        .editorial-content {
-            background: var(--bg-card);
-            border-radius: 24px;
-            padding: 50px;
-            margin: 50px 0;
-            border: 1px solid var(--border-line);
-        }
-
-        .editorial-content h2 {
-            font-size: 2.2rem;
-            color: #FFFFFF;
-            margin-bottom: 20px;
-            font-weight: 800;
-        }
-
-        .editorial-content h3 {
-            font-size: 1.5rem;
-            color: var(--primary-neon);
-            margin: 35px 0 15px;
+            background-color: #1E293B;
+            color: #FFF;
             font-weight: 700;
         }
 
-        .editorial-content p {
-            color: #CBD5E1;
-            margin-bottom: 22px;
-            font-size: 1.05rem;
-            text-align: justify;
+        tr:last-child td {
+            border-bottom: none;
         }
 
-        .insight-callout {
-            background: linear-gradient(135deg, var(--bg-accent) 0%, #161D30 100%);
-            border-left: 4px solid var(--amber-glow);
+        /* Spec Boxes */
+        .winner-box {
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.1), rgba(16, 185, 129, 0.02));
+            border: 1px solid var(--accent-success);
+            border-radius: 14px;
             padding: 25px;
-            border-radius: 12px;
             margin: 30px 0;
         }
 
-        .insight-callout h4 {
-            color: #FFFFFF;
-            font-size: 1.15rem;
-            margin-bottom: 8px;
-        }
-
-        .insight-callout p {
-            margin-bottom: 0;
-            font-size: 0.95rem;
-            color: var(--text-muted);
-        }
-
-        .rec-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 25px;
-            margin: 40px 0;
-        }
-
-        .rec-card {
-            background: var(--bg-accent);
-            padding: 30px;
-            border-radius: 16px;
-            border: 1px solid var(--border-line);
-        }
-
-        .rec-card h4 {
-            color: #FFFFFF;
-            font-size: 1.25rem;
-            margin-bottom: 15px;
+        .winner-title {
+            font-weight: 700;
+            color: var(--accent-success);
+            font-size: 1.2rem;
+            margin-bottom: 10px;
             display: flex;
             align-items: center;
             gap: 10px;
         }
 
-        .rec-card ul {
-            list-style: none;
-            padding-top: 15px;
-        }
-
-        .rec-card ul li {
-            margin-bottom: 10px;
-            font-size: 0.95rem;
-            color: var(--text-main);
-            position: relative;
-            padding-left: 20px;
-        }
-
-        .rec-card ul li::before {
-            content: "•";
-            color: var(--primary-neon);
-            position: absolute;
-            left: 0;
-            font-weight: bold;
-        }
-
-        .cta-block {
-            text-align: center;
-            padding: 50px 40px;
-            background: linear-gradient(135deg, rgba(6, 182, 212, 0.1) 0%, rgba(139, 92, 246, 0.05) 100%);
-            margin: 50px 0;
-            border-radius: 20px;
-            border: 1px solid rgba(6, 182, 212, 0.2);
-        }
-
-        .cta-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 12px;
-            background: linear-gradient(45deg, var(--primary-neon), var(--secondary-neon));
-            color: #FFFFFF;
-            padding: 16px 36px;
-            border-radius: 12px;
-            font-size: 1.1rem;
-            font-weight: 700;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            border: none;
-        }
-
-        .cta-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(6, 182, 212, 0.3);
-        }
-
         footer {
-            background: #0B0F19;
-            color: var(--text-muted);
-            padding: 60px 0 30px;
-            margin-top: 60px;
+            background-color: var(--bg-nav);
             border-top: 1px solid var(--border-line);
-        }
-
-        .footer-grid {
-            display: grid;
-            grid-template-columns: 2fr 1fr 1fr;
-            gap: 40px;
-            margin-bottom: 40px;
-        }
-
-        .footer-col h3 {
-            color: #FFFFFF;
-            font-size: 1.2rem;
-            margin-bottom: 20px;
-        }
-
-        .footer-col p {
-            font-size: 0.95rem;
-        }
-
-        .footer-col ul {
-            list-style: none;
-        }
-
-        .footer-col ul li {
-            margin-bottom: 12px;
-        }
-
-        .footer-col ul li a {
-            color: var(--text-muted);
-            text-decoration: none;
-            font-size: 0.95rem;
-            transition: color 0.2s ease;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .footer-col ul li a:hover {
-            color: var(--primary-neon);
-        }
-
-        .footer-bottom {
+            padding: 40px 0;
             text-align: center;
-            padding-top: 30px;
-            border-top: 1px solid var(--border-line);
-            font-size: 0.9rem;
-            color: #475569;
+            color: var(--text-muted);
+            margin-top: 60px;
+        }
+
+        footer a {
+            color: var(--accent-primary);
+            text-decoration: none;
         }
 
         @media (max-width: 992px) {
-            .tws-grid, .vs-image-container, .charging-grid, .ecosystem-grid, .version-grid, .rec-grid, .footer-grid {
+            .vs-image-container {
                 grid-template-columns: 1fr;
+                gap: 25px;
             }
-            .vs-divider-circle {
-                margin: 10px auto;
+            .vs-divider-text {
+                text-align: center;
+                margin: 5px 0;
+                transform: rotate(90deg);
+                width: 30px;
+                margin: 0 auto;
             }
             h1 {
-                font-size: 2.2rem;
+                font-size: 2.1rem;
             }
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <div class="container header-container">
-            <a href="index.html" class="logo">
-                <i class="fas fa-layer-group"></i>
-                <div>Ranking<span>Hours</span></div>
-            </a>
-            <nav>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="comparisons.html" class="active">Comparisons</a></li>
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="privacy-policy.html">Privacy Policy</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-
-    <div class="container">
-        
-        <section class="main-header">
-            <div class="rating-badge">
-                <i class="fas fa-star"></i> Flagship TWS Evaluation Matrix: 4.7 / 5
+    <!-- Navigatsiya paneli -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo"><a href="https://ranking-hours.uz/">Ranking<span>Hours</span></a></div>
+            <div class="nav-links">
+                <a href="https://ranking-hours.uz/">Home</a>
+                <a href="https://ranking-hours.uz/smartphone-comparisons.html">Smartphones</a>
+                <a href="https://ranking-hours.uz/earphones-comparisons.html" style="color: var(--accent-primary);">Audio</a>
             </div>
-            <h1>The Ultimate Flagship Earbuds Comparison</h1>
-            <p class="subtitle">An exhaustive real-world exploration testing acoustic engineering, transmission stability, quick charge efficiency, and target ecosystem integration.</p>
-        </section>
+        </div>
+    </nav>
 
+    <div class="wrapper">
+        <header>
+            <h1>Apple AirPods Pro 2 vs Samsung Galaxy Buds 2 Pro vs Sony WF-1000XM5: Qaysi Biri Kuchli?</h1>
+            <div class="meta-info">Muallif: Ranking Hours Ekspertlari | Yangilangan sana: 2026-yil iyul</div>
+        </header>
+
+        <!-- MUKAMMAL 3 TALIK RASM SPREAD BLOKI -->
         <div class="vs-image-container">
             <div class="vs-image-space">
-                <img src="airpods-pro2.jpg" alt="Apple AirPods Pro 2 Wireless Earbuds Side Evaluation View">
+                <img src="airpods-pro2.jpg" alt="Apple AirPods Pro 2 Simsiz Naushnik Dizayni">
+                <div class="vs-img-label" style="color: var(--apple-brand);">AirPods Pro 2</div>
             </div>
-            <div class="vs-divider-circle">VS</div>
-            <div class="vs-image-space">
-                <img src="sony-xm5.jpg" alt="Sony WF-1000XM5 Premium Noise Cancelling Earbuds Display">
-            </div>
-        </div>
-
-        <div class="bluetooth-panel">
-            <h2 class="panel-title">Wireless Data Communication Standards</h2>
-            <p class="panel-desc">Modern sound relies entirely on transmission protocols. Choosing between different platform versions affects signal layout, transmission lag, and battery consumption parameters over time.</p>
-            <div class="version-grid">
-                <div class="version-box">
-                    <h3>Bluetooth 5.2 Implementation</h3>
-                    <p>Uses low-energy multi-stream systems alongside LC3 audio processing blocks. This standard provides exceptionally low audio lag and creates an incredibly secure connection across crowded urban environments.</p>
-                </div>
-                <div class="version-box alt">
-                    <h3>Bluetooth 5.3 Framework</h3>
-                    <p>Introduces advanced security filtering layers that switch between high and low power modes instantly. This change minimizes interference from other devices while extending internal power cell longevity during extended use.</p>
-                </div>
-            </div>
-        </div>
-
-        <section class="charging-grid">
-            <div class="charging-card">
-                <i class="fab fa-apple"></i>
-                <h3>AirPods Pro 2</h3>
-                <div class="time-highlight">5 Mins = 1 Hour Play</div>
-                <p>Supports MagSafe wireless power layouts. Offers up to 24 hours of total charge storage when combined with the protective battery case.</p>
-            </div>
-            <div class="charging-card samsung">
-                <i class="fas fa-bolt"></i>
-                <h3>Galaxy Buds 2 Pro</h3>
-                <div class="time-highlight">5 Mins = 1 Hour Play</div>
-                <p>Fully compatible with Qi wireless standards and high-speed USB-C interfaces, extending usage cycles up to 29 hours total.</p>
-            </div>
-            <div class="charging-card sony">
-                <i class="fas fa-charging-station"></i>
-                <h3>Sony WF-1000XM5</h3>
-                <div class="time-highlight">3 Mins = 1 Hour Play</div>
-                <p>Features ultra-fast power delivery, providing 8 hours of uninterrupted use with an extra 24 hours stored in the case.</p>
-            </div>
-        </section>
-
-        <section class="ecosystem-grid">
-            <div class="ecosystem-card">
-                <h3><i class="fab fa-apple" style="color: var(--apple-brand);"></i> Apple iOS Framework Integration</h3>
-                <p>AirPods Pro 2 sync effortlessly with Apple devices using iCloud data profiles. Features like dynamic Spatial Audio tracking and spatial positioning systems make it an incredibly natural extension of the hardware ecosystem.</p>
-            </div>
-            <div class="ecosystem-card">
-                <h3><i class="fab fa-android" style="color: var(--success-neon);"></i> Open Android Network Adaptation</h3>
-                <p>Galaxy Buds 2 Pro pair smoothly with Samsung devices via specialized wearable applications. Meanwhile, Sony uses universal pairing protocols to deliver high-resolution audio tracking across all hardware configurations.</p>
-            </div>
-        </section>
-
-        <div class="tws-grid">
-            <div class="tws-card">
-                <div class="card-top">
-                    <h3>AirPods Pro</h3>
-                    <div class="card-meta">Generation 2 (USB-C)</div>
-                    <div class="spec-row">
-                        <span class="spec-label"><i class="fas fa-battery-three-quarters"></i> Battery Life</span>
-                        <span class="spec-value">6 Hours <span class="highlight-text">(ANC On)</span></span>
-                    </div>
-                    <div class="spec-row">
-                        <span class="spec-label"><i class="fas fa-broadcast-tower"></i> Bluetooth</span>
-                        <span class="spec-value">Version 5.2</span>
-                    </div>
-                    <div class="spec-row">
-                        <span class="spec-label"><i class="fas fa-wind"></i> Cancellation</span>
-                        <span class="spec-value">Adaptive Matrix</span>
-                    </div>
-                    <div class="spec-row">
-                        <span class="spec-label"><i class="fas fa-tint"></i> Ingress Rating</span>
-                        <span class="spec-value">IP54 Certified</span>
-                    </div>
-                </div>
-                <div class="pro-con-box">
-                    <h4>Core Performance Takeaway</h4>
-                    <p>Unmatched convenience for multi-device workflows within the Apple ecosystem, delivering highly intuitive situational noise isolation adjustments.</p>
-                </div>
-            </div>
-
-            <div class="tws-card">
-                <div class="card-top">
-                    <h3>Galaxy Buds 2 Pro</h3>
-                    <div class="card-meta">Premium Fit Profile</div>
-                    <div class="spec-row">
-                        <span class="spec-label"><i class="fas fa-battery-three-quarters"></i> Battery Life</span>
-                        <span class="spec-value">5 Hours <span class="highlight-text">(ANC On)</span></span>
-                    </div>
-                    <div class="spec-row">
-                        <span class="spec-label"><i class="fas fa-broadcast-tower"></i> Bluetooth</span>
-                        <span class="spec-value">Version 5.3</span>
-                    </div>
-                    <div class="spec-row">
-                        <span class="spec-label"><i class="fas fa-wind"></i> Cancellation</span>
-                        <span class="spec-value">Intelligent Filter</span>
-                    </div>
-                    <div class="spec-row">
-                        <span class="spec-label"><i class="fas fa-tint"></i> Ingress Rating</span>
-                        <span class="spec-value">IPX7 Waterproof</span>
-                    </div>
-                </div>
-                <div class="pro-con-box">
-                    <h4>Core Performance Takeaway</h4>
-                    <p>Delivers true 24-bit studio-grade high-fidelity audio streams and provides exceptional water protection during intensive outdoor use cases.</p>
-                </div>
-            </div>
-
-            <div class="tws-card">
-                <div class="card-top">
-                    <h3>Sony WF-1000XM5</h3>
-                    <div class="card-meta">Audiophile Edition</div>
-                    <div class="spec-row">
-                        <span class="spec-label"><i class="fas fa-battery-three-quarters"></i> Battery Life</span>
-                        <span class="spec-value">8 Hours <span class="highlight-text">(ANC On)</span></span>
-                    </div>
-                    <div class="spec-row">
-                        <span class="spec-label"><i class="fas fa-broadcast-tower"></i> Bluetooth</span>
-                        <span class="spec-value">Version 5.2</span>
-                    </div>
-                    <div class="spec-row">
-                        <span class="spec-label"><i class="fas fa-wind"></i> Cancellation</span>
-                        <span class="spec-value">Dual Engine QN2e</span>
-                    </div>
-                    <div class="spec-row">
-                        <span class="spec-label"><i class="fas fa-tint"></i> Ingress Rating</span>
-                        <span class="spec-value">IPX4 Moisture</span>
-                    </div>
-                </div>
-                <div class="pro-con-box">
-                    <h4>Core Performance Takeaway</h4>
-                    <p>The clear industry leader in pure acoustic isolation depth, backed by a massive battery array and full LDAC high-resolution codec tracking support.</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="table-wrapper">
-            <table>
-                <thead>
-                    <tr>
-                        <th>Operational Attribute</th>
-                        <th>Apple AirPods Pro 2</th>
-                        <th>Samsung Galaxy Buds 2 Pro</th>
-                        <th>Sony WF-1000XM5</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><strong>Primary Sound Pipeline</strong></td>
-                        <td>AAC Layer Translation</td>
-                        <td>Samsung Seamless 24-Bit Codec</td>
-                        <td>LDAC High Resolution Array <span class="row-tag">BEST</span></td>
-                    </tr>
-                    <tr>
-                        <td><strong>Acoustic Isolation Depth</strong></td>
-                        <td>Adaptive Safety Pass-Through</td>
-                        <td>Voice Detection Target Isolator</td>
-                        <td>Dual Processor Sound Block <span class="row-tag">MAX</span></td>
-                    </tr>
-                    <tr>
-                        <td><strong>Moisture Defense Level</strong></td>
-                        <td>Dust & Splash Resistant (IP54)</td>
-                        <td>Deep Liquid Submersion (IPX7)</td>
-                        <td>Standard Splash Guard (IPX4)</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Market Valuation Entry</strong></td>
-                        <td>$249 Retail Base</td>
-                        <td>$229 Suggested Retail</td>
-                        <td>$299 Launch Base</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-
-        <article class="editorial-content">
-            <h2>The Evolution of Modern Listening: A Deep Dive Into Premium Wireless Earbuds</h2>
-            <p>Wireless sound engineering has fundamentally changed how we interact with media, manage professional calls, and move through noisy city environments. Over the past few years, earbuds have evolved from simple cable-free alternatives into highly advanced computing nodes worn right in our ears. Today's devices pack multi-core processing chips, arrays of sensitive microphones, and advanced power management circuits into tiny shells that sit comfortably for hours. When evaluating options like the Apple AirPods Pro 2, Samsung Galaxy Buds 2 Pro, and Sony WF-1000XM5, the choice isn't just about raw decibel output. It comes down to understanding how their software layers, structural acoustic spaces, and ecosystem behaviors fit into your daily routine.</p>
-            <p>Every audio manufacturer designs their hardware with a distinct engineering philosophy. Apple focuses on absolute simplicity and system-wide integration, aiming to remove all user friction within their device landscape. Samsung plays to similar strengths, optimizing their performance for a growing ecosystem of portable devices while pushing high-resolution audio data speeds. Sony takes a more traditional audiophile approach, prioritizing deep sound customization and industry-leading noise isolation above all else. By testing these three distinct design paths across weeks of daily commuting, office tasks, and workouts, we can clearly separate marketing hype from real-world performance.</p>
             
-            <h3>Advanced Acoustic Transmission Protocols and Signal Stability Engineering</h3>
-            <p>At the core of any true wireless audio experience is the invisible communication pipeline connecting the earbud to your source device. For a long time, standard Bluetooth audio compressed music files heavily, stripping away fine detail and leaving tracks sounding flat and empty. This comparison highlights a major split in how manufacturers solve this bottleneck. Apple relies on an optimized version of the AAC codec, paired with custom hardware processing in their H2 silicon chip. While AAC transmits less raw data on paper than newer high-resolution formats, Apple's software uses advanced predictive logic to rebuild complex frequencies, delivering an exceptionally clean, well-balanced sound profile with virtually zero transmission drops.</p>
-            <p>On the Android side, the approach shifts toward widening the data pipeline itself. Samsung uses their proprietary Seamless Codec framework, which transmits full 24-bit studio audio from compatible Samsung phones. This wider pipeline keeps subtle studio elements intact, ensuring you hear crisp instrument separation and deep, resonant bass without artificial coloring. Sony takes compatibility a step further by utilizing the universal LDAC standard. LDAC transfers up to three times more data than conventional wireless protocols, bringing wireless listening closer than ever to a traditional wired audiophile setup. The main challenge with running these high-speed pipelines is real-world interference. When walking through busy transportation hubs filled with competing wireless signals, these massive data streams require advanced antenna placement and dynamic buffer management to prevent distracting audio stutters.</p>
-
-            <div class="insight-callout">
-                <h4>Real-World Signal Processing Dynamics</h4>
-                <p>High-resolution codecs like LDAC and Samsung's Seamless format automatically reduce their data transmission speeds when you move into heavy wireless interference areas. This real-time scaling ensures your music keeps playing smoothly, sacrificing a bit of fine audio detail temporarily to guarantee a rock-solid connection.</p>
+            <div class="vs-divider-text">VS</div>
+            
+            <div class="vs-image-space">
+                <img src="galaxy-2.jpg" alt="Samsung Galaxy Buds 2 Pro Premium Simsiz Naushnik">
+                <div class="vs-img-label" style="color: var(--samsung-brand);">Galaxy Buds 2 Pro</div>
             </div>
-
-            <h3>Acoustic Isolation Science and Adaptive Noise Filtering Mechanics</h3>
-            <p>Active Noise Cancellation (ANC) has quickly grown from a premium travel feature into an essential tool for focus and mental clarity in shared spaces. The physics behind this are fascinating: external microphones pick up incoming ambient noise, and internal processing chips instantly generate inverted soundwaves to cancel those waves out before they reach your eardrum. Sony has long set the standard for this technology, and the WF-1000XM5 takes it further using dual proprietary processing chips alongside ultra-soft memory foam ear tips. These foam tips naturally seal your ear canal, blocking high-frequency sounds like office chatter and background clatter that standard silicone tips struggle to filter out.</p>
-            <p>Apple approaches noise cancellation with an adaptive ambient framework that continuously measures environment volume levels up to 48,000 times per second. Instead of just blocking out all sound blindly, the AirPods Pro 2 adjust their isolation depth in real time. For example, if a loud construction siren passes by, the earbuds instantly suppress that specific dangerous spike while keeping peripheral conversation tones audible. This prevents that uncomfortable "diving bell" pressure feeling in your ears often caused by aggressive noise cancellation systems, making long listening sessions during flights or long workdays much more comfortable. Samsung focuses on intelligent conversation tracking; as soon as you speak out loud, the earbuds automatically lower the music volume and switch to ambient pass-through mode, letting you order a coffee or talk to a colleague without ever touching your device.</p>
-
-            <h3>Ergonomics, Charging Speed Engineering, and Daily Usability Architecture</h3>
-            <p>An earbud can have the most advanced sound engineering in the world, but if it causes ear fatigue after an hour or slips out during a run, that tech goes to waste. Sony uses a smooth, glossy shape that relies on multiple contact points within the outer ear structure for stability. While highly secure, finding the right fit requires choosing the exact foam tip size, which may feel a bit tight for users with smaller ears. Apple uses a lightweight, stemmed design that balances weight evenly between your ear canal and the outer cartilage, offering a highly dependable, barely-there fit that stays secure through intense gym workouts and long phone calls.</p>
-            <p>Battery management and charging speeds are where these engineering choices make a huge difference in daily convenience. Sony leads the pack for single-use runtime, offering up to 8 hours of continuous playback with full noise cancellation active. This makes them the ultimate choice for cross-continental flights or uninterrupted deep-work sessions. However, if you frequently find yourself with dead earbuds right before heading out the door, Sony's fast charging circuit can give you a full hour of playback from just 3 minutes in the case. Apple and Samsung both deliver solid 5-to-6-hour usage windows, backed by charging cases that slide into small pockets and support multiple wireless charging pads, making it easy to keep them topped up throughout the week.</p>
-        </article>
-
-        <section class="rec-grid">
-            <div class="rec-card">
-                <h4><i class="fab fa-apple"></i> Apple Ecosystem Fit</h4>
-                <p>Optimized specifically for users heavily invested in Apple hardware chains.</p>
-                <ul>
-                    <li>Instant hardware handoff switching</li>
-                    <li>Dynamic Spatial audio tracking</li>
-                    <li>Find My integration tracking layers</li>
-                </ul>
+            
+            <div class="vs-divider-text">VS</div>
+            
+            <div class="vs-image-space">
+                <img src="sony-xm5.png" alt="Sony WF-1000XM5 Premium Shovqinni Bo'g'uvchi Naushnik">
+                <div class="vs-img-label" style="color: var(--sony-brand);">Sony WF-1000XM5</div>
             </div>
-            <div class="rec-card">
-                <h4><i class="fab fa-android"></i> Android Samsung Fit</h4>
-                <p>Engineered to extract maximum performance from modern mobile platforms.</p>
-                <ul>
-                    <li>Full 24-bit high-fidelity audio streams</li>
-                    <li>Highly secure IPX7 water submersion</li>
-                    <li>Ergonomic low-profile shell layout</li>
-                </ul>
-            </div>
-            <div class="rec-card">
-                <h4><i class="fas fa-compact-disc"></i> Universal Audiophile</h4>
-                <p>Designed for pure musical accuracy across all devices and platforms.</p>
-                <ul>
-                    <li>Industry-leading dual-chip noise isolation</li>
-                    <li>Massive 8-hour single continuous charge</li>
-                    <li>Universal LDAC wide transmission lane</li>
-                </ul>
+        </div>
+
+        <!-- KIRISH MATNI (SEO OPTIMIZED) -->
+        <section>
+            <h2>Premium Audio Olamida Haqiqiy Jang</h2>
+            <p>Simsiz audio texnologiyalari shiddat bilan rivojlanib borayotgan bugungi kunda foydalanuvchilar faqatgina musiqani yaxshi eshittiradigan qurilma bilan cheklanib qolishni istamaydilar. True Wireless Stereo (TWS) flagmanlari endilikda studiya darajasidagi ovoz ssenariylari, mislsiz faol shovqin bo'g'ish (ANC) tizimlari va yuqori darajadagi ergonomik qulaylikni taqdim etmoqda. Ushbu tahliliy maqolamizda biz hozirgi audio bozorining uchta giganti — Apple AirPods Pro 2, Samsung Galaxy Buds 2 Pro va Sony WF-1000XM5 modellarini har tomonlama taqqoslaymiz.</p>
+            <p>Ushbu uchta brend ham o'z ekotizimlarining eng mukammal namunalarini yaratgan. Lekin ulardan qaysi biri universal platformalarda eng yuqori reytingni egallaydi? Har bir mahsulotning akustik arxitekturasi, drayver xususiyatlari hamda dasturiy ta'minot imkoniyatlarini ko'rib chiqish orqali barcha savollarga javob beramiz.</p>
+        </section>
+
+        <!-- AKUSTIKA VA OVOZ SIFATI -->
+        <section>
+            <h2>1. Akustik Arxitektura va Ovoz Sifati Tahlili</h2>
+            <p>Ovoz balansi va chastota javoblari har qanday audio uskunaning yuragi hisoblanadi. Shuning uchun tahlilimizni har bir modelning akustik drayverlari va ovoz berish xarakteristikasidan boshlaymiz.</p>
+            
+            <h3>Apple AirPods Pro 2 — Kuchaytirilgan H2 Protsessor Efekti</h3>
+            <p>Apple kompaniyasi AirPods Pro 2 modeliga yangilangan maxsus drayver va H2 chipini o'rnatgan. Ushbu protsessor real vaqt rejimida hisoblash audiosini (computational audio) amalga oshiradi. Ovoz balandligidan qat'i nazar, past chastotalar (bass) chuqur va tiniq chiqadi. Yuqori chastotalar (treble) esa inson qulog'ini charchatmaydigan darajada yumshoq sozlangan. Apple-ning eng katta yutug'i bu — Spatial Audio (Fajoviy ovoz) tizimining dinamik bosh harakatini kuzatishidir. Bu rejim faollashtirilganda siz xuddi jonli konsert zalida turgandek his qilasiz.</p>
+
+            <h3>Samsung Galaxy Buds 2 Pro — 24-bitli Hi-Fi Olamining Yetakchisi</h3>
+            <p>Samsung bu modelda AKG muhandislari bilan hamkorlikda 2 pallali drayverlar tizimini (alohida tweeter va woofer) tatbiq etgan. Bu esa yuqori chastota va pastki basslarni alohida-alohida mukammal ishlashiga xizmat qiladi. Samsung Seamless Codec (SSC) yordamida Galaxy smartfonlari foydalanuvchilari hech qanday siqilishlarsiz 24-bitli Hi-Fi audio oqimini tinglashlari mumkin. Ovoz xarakteristikasi aniq harman egri chizig'iga (Harman Target) tayanadi — bu dinamik musiqalarni jonli eshitishni xush ko'ruvchilar uchun ideal tanlov.</p>
+
+            <h3>Sony WF-1000XM5 — Premium Dynamic Driver X va ldac</h3>
+            <p>Sony kompaniyasi WF-1000XM5 flagmaniga yangi Dynamic Driver X nomli kattaroq va sezgirroq drayverni joylashtirdi. Ovoz sifati bo'yicha Sony hech qanday murosaga bormaydi: u LDAC yuqori aniqlikdagi audio kodekini qo'llab-quvvatlaydi. Agar sizda Tidal yoki Apple Music-ning Lossless audio fayllari mavjud bo'lsa, u holda tafsilotlarni eng kichik detallarigacha ajratib bera oladigan yagona model bu Sony hisoblanadi. Ovoz sahhnasi (soundstage) nihoyatda keng, asboblarning joylashuvi aniq eshitiladi.</p>
+
+            <div class="winner-box">
+                <div class="winner-title">Ovoz Sifati Bo'yicha G'olib: Sony WF-1000XM5</div>
+                <p>Sof akustik aniqlik, drayver sifati va LDAC kodeki tufayli Sony WF-1000XM5 audiofillar uchun eng yuqori o'rinni egallaydi. Samsung esa Galaxy foydalanuvchilari uchun 24-bit ko'rsatkichi bilan unga yaqin keladi.</p>
             </div>
         </section>
 
-        <section class="cta-block">
-            <p style="font-size: 1.2rem; color: #E2E8F0; margin-bottom: 25px;">
-                Want to dive deeper into our objective lab tests, acoustic frequency measurements, and long-term hardware durability ratings?
-            </p>
-            <a href="comparisons.html" class="cta-btn">
-                <i class="fas fa-headphones"></i> Explore Our Complete Audio Testing Database
-            </a>
+        <!-- ANC TAQQOSLASH -->
+        <section>
+            <h2>2. Active Noise Cancellation (Shovqinni Bo'g'ish) va Shaffoflik Rejimi</h2>
+            <p>Hozirgi shahar sharoitida, metro yoki ofis shovqinida ANC funksiyasining mukammalligi nihoyatda muhim. Bu borada flagmanlar o'rtasida jiddiy farqlar mavjud.</p>
+            <p><strong>Sony WF-1000XM5:</strong> Har bir quloqlikda 3 tadan mikrofon va ikkita maxsus protsessor (V2 va QN2e) ishlaydi. Ko'pikli quloqchin uchlari (Foam tips) sababli tashqi tovushlarni mexanik ravishda ham yutib yuboradi. Past chastotali shovqinlarni (samolyot yoki avtomobil motorining gumburlashi) deyarli 98% gacha yo'q qiladi.</p>
+            <p><strong>Apple AirPods Pro 2:</strong> Olma brendi bu safar shovqin bo'g'ishni ikki barobarga oshirganini e'lon qilgan edi va bu amalda seziladi. Apple tizimi tasodifiy yuqori tovushlarni (masalan, mashina signali yoki qurilish ovozi) juda tez adaptiv filtrlaydi. Shaffoflik (Transparency mode) rejimida esa AirPods Pro 2-ga teng keladigani yo'q, siz xuddi qulog'ingizda umuman apparat yo'qdek tabiiy eshitasiz.</p>
+            <p><strong>Samsung Galaxy Buds 2 Pro:</strong> O'rtacha darajadan yuqori ko'rsatkichga ega. Shamol shovqinini kamaytirish drayveri ochiq havoda foydalanganda juda asqotadi. Biroq, inson ovozlarini bo'g'ishda uning raqobatchilaridan biroz ortda qolishi seziladi.</p>
+        </section>
+
+        <!-- TEXNIK SOLISHTIRUV JADVALI -->
+        <section>
+            <h2>3. Kompleks Texnik Xususiyatlar Jadvali</h2>
+            <p>Quyidagi tahliliy jadval orqali siz barcha texnik ko'rsatkichlarni bir nuqtada solishtirib ko'rishingiz mumkin:</p>
+            
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Xususiyatlari</th>
+                            <th>Apple AirPods Pro 2</th>
+                            <th>Samsung Galaxy Buds 2 Pro</th>
+                            <th>Sony WF-1000XM5</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Protsessor</strong></td>
+                            <td>Apple H2 chip</td>
+                            <td>Custom Samsung SIP</td>
+                            <td>Sony V2 + QN2e Processor</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Audio Kodeklar</strong></td>
+                            <td>AAC, SBC</td>
+                            <td>SSC (Seamless), AAC, SBC</td>
+                            <td>LDAC, AAC, SBC, LC3</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Batareya (ANC bilan)</strong></td>
+                            <td>6 soat (Keys bilan 30 s)</td>
+                            <td>5 soat (Keys bilan 18 s)</td>
+                            <td>8 soat (Keys bilan 24 s)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Himoya Standarti</strong></td>
+                            <td>IP54 (Chang va suvga chidamli)</td>
+                            <td>IPX7 (Suvga to'liq chidamli)</td>
+                            <td>IPX4 ( chayqalishga chidamli)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Bluetooth Versiyasi</strong></td>
+                            <td>Bluetooth 5.3</td>
+                            <td>Bluetooth 5.3</td>
+                            <td>Bluetooth 5.3 (Multipoint bor)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- ERGONOMIKA VA QULAYLIK -->
+        <section>
+            <h2>4. Dizayn, Ergonomika va Ekotizimga Bog'liqlik</h2>
+            <p>Har qanday naushnik qanchalik yaxshi eshittirmasin, u quloqqa to'g'ri o'tirmasa yoki uzoq vaqt turganda og'riq bersa, o'z qiymatini yo'qotadi.</p>
+            <p>Apple AirPods Pro 2 klassik oyoqchali dizaynga ega. Undagi sensorli boshqaruv orqali ovoz balandligini sozlash juda qulay. Agar siz iPhone, Mac va iPad foydalanuvchisi bo'lsangiz, qurilmalar o'rtasida avtomatik ulanish ko'z ochib yumguncha bajariladi.</p>
+            <p>Samsung Galaxy Buds 2 Pro ancha ixcham va quloq ichiga chuqurroq joylashadigan dizaynda ishlangan. IPX7 reytingi tufayli u sportchilar va yomg'irli kunlarda faol harakat qiladiganlar uchun eng xavfsiz variant hisoblanadi, chunki uni hatto suvga tushirib yuborish ham shikastlay olmaydi.</p>
+            <p>Sony WF-1000XM5 o'zining oldingi XM4 modeliga qaraganda 25% kichikroq va 20% yengilroq qilib yaratilgan. Uning yuzasi yaltiroq plastik bo'lgani sababli, ba'zida g'ilofidan olishda qo'ldan sirg'alib ketishi mumkin. Ammo uning ko'pikli quloqchinlari quloq kanalini butunlay yopib, germetik muvozanat hosil qiladi.</p>
+        </section>
+
+        <!-- YAKUNIY XULOSA -->
+        <section>
+            <h2>5. Ranking Hours Yakuniy Ekspert Xulosasi</h2>
+            <p>Ushbu uchta flagman simsiz naushniklar ham o'z yo'nalishida 2026-yilning eng eng ilg'or texnologiyalarini o'zida mujassam etgan. Yakuniy tanlov siz qaysi smartfondan foydalanishingizga bog'liq:</p>
+            <ol>
+                <li><strong>Apple AirPods Pro 2:</strong> Agar siz iOS platformasining faol foydalanuvchisi bo'lsangiz, mukammal mikrofon sifati va mislsiz Shaffoflik rejimini qadrlasangiz, bu siz uchun eng to'g'ri tanlovdir.</li>
+                <li><strong>Samsung Galaxy Buds 2 Pro:</strong> Android va ayniqsa Samsung ekotizimida yashovchilar uchun 24-bit Hi-Fi va IPX7 suvga chidamlilik xususiyatlari bilan eng muvozanatli apparatdir.</li>
+                <li><strong>Sony WF-1000XM5:</strong> Agar siz platformaga bog'lanib qolishni istamasangiz va eng chuqur drayver musiqalarini, LDAC formatini va eng kuchli ANC tizimini xohlasangiz, Sony sizga mutloq audio g'oliblikni beradi.</li>
+            </ol>
+            <p>Boshqa eng so'nggi audio qurilmalari va gadjetlar reytingi bilan tanishish uchun bizning <a href="https://ranking-hours.uz/">Ranking Hours bosh sahifasiga</a> o'tishingiz mumkin.</p>
         </section>
     </div>
 
+    <!-- Footer -->
     <footer>
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-col">
-                    <h3>Ranking Hours Lab</h3>
-                    <p>We analyze consumer hardware components, mobile device accessories, and operating system platforms using structured testing processes to deliver real, clear insights for your technology setup decisions.</p>
-                </div>
-                <div class="footer-col">
-                    <h3>Platform Links</h3>
-                    <ul>
-                        <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
-                        <li><a href="comparisons.html"><i class="fas fa-balance-scale"></i> Deep Comparisons</a></li>
-                        <li><a href="about.html"><i class="fas fa-info-circle"></i> About Us</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h3>Legal & Support</h3>
-                    <ul>
-                        <li><a href="privacy-policy.html"><i class="fas fa-shield-alt"></i> Privacy Policy</a></li>
-                        <li><a href="terms-of-service.html"><i class="fas fa-file-contract"></i> Terms of Service</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025-2026 Ranking Hours. All data and analysis metrics are managed under standard technical evaluation principles.</p>
-            </div>
-        </div>
+        <p>&copy; 2026 <a href="https://ranking-hours.uz/">Ranking-Hours.uz</a>. Barcha huquqlar himoyalangan.</p>
     </footer>
 
 </body>
