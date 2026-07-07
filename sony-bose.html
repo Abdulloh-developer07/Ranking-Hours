@@ -31,8 +31,8 @@
         /* Header styling */
         .audio-header {
             text-align: center;
-            margin-bottom: 40px;
-            padding: 60px 20px;
+            margin-bottom: 30px;
+            padding: 60px 20px 40px;
             background: rgba(255, 255, 255, 0.03);
             border-radius: 24px;
             backdrop-filter: blur(10px);
@@ -87,17 +87,72 @@
             color: #60a5fa;
             font-weight: 600;
         }
-        
-        /* Ad Unit Native Boxes */
-        .adsense-premium-box {
-            background: rgba(255, 255, 255, 0.02);
-            border-radius: 16px;
-            padding: 20px;
+
+        /* NEW: Visual Showdown Image Block */
+        .image-showdown-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
             margin: 40px 0;
+            background: rgba(255, 255, 255, 0.02);
+            padding: 30px;
+            border-radius: 24px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .showdown-frame {
+            flex: 1;
+            max-width: 450px;
+            background: rgba(15, 23, 42, 0.6);
+            border-radius: 16px;
+            padding: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
             text-align: center;
-            border: 1px dashed rgba(255, 255, 255, 0.15);
-            color: #64748b;
-            font-size: 0.85rem;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+        }
+
+        .showdown-frame img {
+            width: 100%;
+            height: auto;
+            max-height: 280px;
+            object-fit: contain;
+            border-radius: 12px;
+            transition: transform 0.3s ease;
+        }
+
+        .showdown-frame:hover img {
+            transform: scale(1.03);
+        }
+
+        .image-caption {
+            margin-top: 12px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #cbd5e1;
+        }
+
+        .vs-divider {
+            font-size: 2.5rem;
+            font-weight: 900;
+            font-style: italic;
+            background: linear-gradient(135deg, #f43f5e, #fb7185);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-shadow: 0 0 20px rgba(244, 63, 94, 0.4);
+            padding: 0 10px;
+        }
+
+        @media (max-width: 768px) {
+            .image-showdown-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+            .vs-divider {
+                margin: 10px 0;
+                font-size: 2rem;
+            }
         }
         
         /* Comparison Grid */
@@ -445,9 +500,17 @@
             <span class="test-duration">120 Hours Continuous Testing</span>
         </header>
 
-        <!-- Contextual Native Banner Spot -->
-        <div class="adsense-premium-box">
-            <span>Placeholder: Contextual Horizontal Ad Unit Box Display Zone</span>
+        <!-- Dynamic Image Showdown Section -->
+        <div class="image-showdown-container">
+            <div class="showdown-frame">
+                <img src="Sony WF-1000XM5.jpg" alt="Sony WH-1000XM5 Premium Wireless Headphones">
+                <div class="image-caption">Sony WH-1000XM5</div>
+            </div>
+            <div class="vs-divider">VS</div>
+            <div class="showdown-frame">
+                <img src="Bose QuietComfort 45.jpg" alt="Bose QuietComfort 45 Acoustic Headphones">
+                <div class="image-caption">Bose QuietComfort 45</div>
+            </div>
         </div>
 
         <!-- Matrix Cards Layout -->
@@ -592,11 +655,6 @@
                     For legendary all-day comfort, physical travel convenience, and reliable physical buttons, the **Bose QC45** remains unmatched.
                 </p>
             </div>
-        </div>
-
-        <!-- Secondary Ad Box Element -->
-        <div class="adsense-premium-box" style="height: 150px; display: flex; align-items: center; justify-content: center;">
-            <span>Placeholder: Contextual Square Multi-Ad Unit Block</span>
         </div>
 
     </div>
