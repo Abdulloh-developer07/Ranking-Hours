@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="uz">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Apple AirPods Pro 2 vs Samsung Galaxy Buds 2 Pro vs Sony WF-1000XM5 — Taqqoslash va Reyting</title>
-    <meta name="description" content="2026-yilning eng eng kuchli premium simsiz naushniklari batafsil taqqoslanishi: AirPods Pro 2, Galaxy Buds 2 Pro va Sony WF-1000XM5 modellarining ovoz sifati, ANC va batareya quvvati tahlili.">
+    <title>Apple AirPods Pro 2 vs Samsung Galaxy Buds 2 Pro vs Sony WF-1000XM5 — Comparison and Rating</title>
+    <meta name="description" content="A detailed comparison of the most powerful premium wireless earbuds of 2026: Analysis of sound quality, ANC, and battery life for AirPods Pro 2, Galaxy Buds 2 Pro, and Sony WF-1000XM5.">
     <link rel="canonical" href="https://ranking-hours.uz/earphones-comparisons.html">
     <style>
         :root {
@@ -19,7 +19,7 @@
             
             /* Brand Colors */
             --apple-brand: #A3AAAE;
-            --samsung-brand: #1428A0;
+            --samsung-brand: #3B82F6;
             --sony-brand: #D2A100;
         }
 
@@ -33,8 +33,8 @@
         body {
             background-color: var(--bg-main);
             color: var(--text-main);
-            line-height: 1.7;
-            padding-top: 70px;
+            line-height: 1.8;
+            padding-top: 80px;
         }
 
         /* Navigation */
@@ -46,6 +46,7 @@
             z-index: 1000;
             border-bottom: 1px solid var(--border-line);
             padding: 15px 0;
+            backdrop-filter: blur(8px);
         }
 
         .nav-container {
@@ -59,7 +60,7 @@
 
         .logo a {
             color: var(--text-main);
-            font-size: 1.5rem;
+            font-size: 1.6rem;
             font-weight: 800;
             text-decoration: none;
             letter-spacing: 0.5px;
@@ -72,9 +73,10 @@
         .nav-links a {
             color: var(--text-muted);
             text-decoration: none;
-            margin-left: 20px;
-            font-weight: 500;
+            margin-left: 25px;
+            font-weight: 600;
             transition: color 0.3s;
+            font-size: 1rem;
         }
 
         .nav-links a:hover {
@@ -90,7 +92,7 @@
 
         header {
             text-align: center;
-            margin-bottom: 5px;
+            margin-bottom: 15px;
         }
 
         h1 {
@@ -100,6 +102,7 @@
             background: linear-gradient(135deg, #FFF, #9CA3AF);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            line-height: 1.3;
         }
 
         .meta-info {
@@ -108,22 +111,23 @@
             margin-bottom: 40px;
         }
 
-        /* 3ta Kompyuter/Naushnik uchun 3ta Rasmli Konteyner */
+        /* 3-Image Container for Earbuds */
         .vs-image-container {
             display: grid;
             grid-template-columns: 1fr auto 1fr auto 1fr;
             align-items: center;
             gap: 20px;
-            margin: 40px 0;
+            margin: 45px 0;
             background: var(--bg-card);
             border-radius: 20px;
-            padding: 30px;
+            padding: 35px;
             border: 1px solid var(--border-line);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
         }
 
         .vs-image-space {
             width: 100%;
-            height: 250px;
+            height: 280px;
             background: var(--bg-main);
             border-radius: 14px;
             border: 1px dashed var(--border-line);
@@ -133,7 +137,7 @@
             justify-content: center;
             position: relative;
             overflow: hidden;
-            padding: 15px;
+            padding: 20px;
         }
 
         .vs-image-space img {
@@ -142,11 +146,16 @@
             object-fit: contain;
             border-radius: 8px;
             display: block;
-            margin-bottom: 10px;
+            margin-bottom: 15px;
+            transition: transform 0.3s ease;
+        }
+
+        .vs-image-space:hover img {
+            transform: scale(1.05);
         }
 
         .vs-img-label {
-            font-size: 0.95rem;
+            font-size: 1rem;
             color: var(--text-muted);
             font-weight: 700;
             text-transform: uppercase;
@@ -155,50 +164,58 @@
 
         .vs-divider-text {
             font-weight: 900;
-            font-size: 1.3rem;
-            color: var(--text-muted);
-            padding: 0 10px;
+            font-size: 1.4rem;
+            color: var(--accent-primary);
+            padding: 0 15px;
+            background: rgba(59, 130, 246, 0.1);
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         /* Content Styles */
         h2 {
-            font-size: 1.9rem;
-            margin: 45px 0 20px 0;
+            font-size: 2rem;
+            margin: 50px 0 25px 0;
             border-left: 5px solid var(--accent-primary);
             padding-left: 15px;
             color: #FFF;
         }
 
         h3 {
-            font-size: 1.4rem;
-            margin: 30px 0 15px 0;
+            font-size: 1.5rem;
+            margin: 35px 0 20px 0;
             color: var(--text-main);
         }
 
         p {
             color: #D1D5DB;
             font-size: 1.1rem;
-            margin-bottom: 20px;
+            margin-bottom: 22px;
             text-align: justify;
         }
 
         ul, ol {
-            margin-left: 25px;
-            margin-bottom: 25px;
+            margin-left: 30px;
+            margin-bottom: 30px;
             color: #D1D5DB;
             font-size: 1.1rem;
         }
 
         li {
-            margin-bottom: 8px;
+            margin-bottom: 12px;
         }
 
         /* Comparison Table */
         .table-responsive {
             overflow-x: auto;
-            margin: 40px 0;
+            margin: 45px 0;
             border-radius: 14px;
             border: 1px solid var(--border-line);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
         }
 
         table {
@@ -209,46 +226,86 @@
         }
 
         th, td {
-            padding: 18px;
+            padding: 20px;
             border-bottom: 1px solid var(--border-line);
+            font-size: 1.05rem;
         }
 
         th {
             background-color: #1E293B;
             color: #FFF;
             font-weight: 700;
+            letter-spacing: 0.5px;
         }
 
         tr:last-child td {
             border-bottom: none;
         }
 
+        tr:hover td {
+            background-color: rgba(255, 255, 255, 0.02);
+        }
+
         /* Spec Boxes */
         .winner-box {
-            background: linear-gradient(135deg, rgba(16, 185, 129, 0.1), rgba(16, 185, 129, 0.02));
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.12), rgba(16, 185, 129, 0.02));
             border: 1px solid var(--accent-success);
             border-radius: 14px;
-            padding: 25px;
-            margin: 30px 0;
+            padding: 30px;
+            margin: 40px 0;
         }
 
         .winner-title {
             font-weight: 700;
             color: var(--accent-success);
-            font-size: 1.2rem;
-            margin-bottom: 10px;
+            font-size: 1.3rem;
+            margin-bottom: 15px;
             display: flex;
             align-items: center;
             gap: 10px;
         }
 
+        /* Footer Elements */
         footer {
             background-color: var(--bg-nav);
             border-top: 1px solid var(--border-line);
-            padding: 40px 0;
+            padding: 50px 0;
             text-align: center;
             color: var(--text-muted);
-            margin-top: 60px;
+            margin-top: 80px;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 25px;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent-primary);
+        }
+
+        footer p {
+            font-size: 0.95rem;
+            text-align: center;
+            margin-bottom: 0;
+            color: var(--text-muted);
         }
 
         footer a {
@@ -263,20 +320,21 @@
             }
             .vs-divider-text {
                 text-align: center;
-                margin: 5px 0;
+                margin: 5px auto;
                 transform: rotate(90deg);
-                width: 30px;
-                margin: 0 auto;
             }
             h1 {
-                font-size: 2.1rem;
+                font-size: 2.2rem;
+            }
+            h2 {
+                font-size: 1.6rem;
             }
         }
     </style>
 </head>
 <body>
 
-    <!-- Navigatsiya paneli -->
+    <!-- Navigation Bar -->
     <nav>
         <div class="nav-container">
             <div class="logo"><a href="https://ranking-hours.uz/">Ranking<span>Hours</span></a></div>
@@ -290,78 +348,82 @@
 
     <div class="wrapper">
         <header>
-            <h1>Apple AirPods Pro 2 vs Samsung Galaxy Buds 2 Pro vs Sony WF-1000XM5: Qaysi Biri Kuchli?</h1>
-            <div class="meta-info">Muallif: Ranking Hours Ekspertlari | Yangilangan sana: 2026-yil iyul</div>
+            <h1>Apple AirPods Pro 2 vs Samsung Galaxy Buds 2 Pro vs Sony WF-1000XM5: Which One Wins?</h1>
+            <div class="meta-info">By Ranking Hours Experts | Updated: July 2026</div>
         </header>
 
-        <!-- MUKAMMAL 3 TALIK RASM SPREAD BLOKI -->
+        <!-- THE ULTIMATE THREE-WAY IMAGE SPREAD BLOCK -->
         <div class="vs-image-container">
             <div class="vs-image-space">
-                <img src="airpods-pro2.jpg" alt="Apple AirPods Pro 2 Simsiz Naushnik Dizayni">
+                <img src="airpods-pro2.jpg" alt="Apple AirPods Pro 2 Wireless Earbuds Design">
                 <div class="vs-img-label" style="color: var(--apple-brand);">AirPods Pro 2</div>
             </div>
             
             <div class="vs-divider-text">VS</div>
             
             <div class="vs-image-space">
-                <img src="galaxy-2.jpg" alt="Samsung Galaxy Buds 2 Pro Premium Simsiz Naushnik">
+                <img src="galaxy-2.jpg" alt="Samsung Galaxy Buds 2 Pro Premium Wireless Earbuds">
                 <div class="vs-img-label" style="color: var(--samsung-brand);">Galaxy Buds 2 Pro</div>
             </div>
             
             <div class="vs-divider-text">VS</div>
             
             <div class="vs-image-space">
-                <img src="sony-xm5.png" alt="Sony WF-1000XM5 Premium Shovqinni Bo'g'uvchi Naushnik">
+                <img src="sony-xm5.jpg" alt="Sony WF-1000XM5 Premium Noise Cancelling Earbuds">
                 <div class="vs-img-label" style="color: var(--sony-brand);">Sony WF-1000XM5</div>
             </div>
         </div>
 
-        <!-- KIRISH MATNI (SEO OPTIMIZED) -->
+        <!-- INTRODUCTION -->
         <section>
-            <h2>Premium Audio Olamida Haqiqiy Jang</h2>
-            <p>Simsiz audio texnologiyalari shiddat bilan rivojlanib borayotgan bugungi kunda foydalanuvchilar faqatgina musiqani yaxshi eshittiradigan qurilma bilan cheklanib qolishni istamaydilar. True Wireless Stereo (TWS) flagmanlari endilikda studiya darajasidagi ovoz ssenariylari, mislsiz faol shovqin bo'g'ish (ANC) tizimlari va yuqori darajadagi ergonomik qulaylikni taqdim etmoqda. Ushbu tahliliy maqolamizda biz hozirgi audio bozorining uchta giganti — Apple AirPods Pro 2, Samsung Galaxy Buds 2 Pro va Sony WF-1000XM5 modellarini har tomonlama taqqoslaymiz.</p>
-            <p>Ushbu uchta brend ham o'z ekotizimlarining eng mukammal namunalarini yaratgan. Lekin ulardan qaysi biri universal platformalarda eng yuqori reytingni egallaydi? Har bir mahsulotning akustik arxitekturasi, drayver xususiyatlari hamda dasturiy ta'minot imkoniyatlarini ko'rib chiqish orqali barcha savollarga javob beramiz.</p>
+            <h2>A True Battle in the Premium Audio Realm</h2>
+            <p>In today's fast-evolving world of wireless audio technology, users are no longer satisfied with devices that simply sound good. True Wireless Stereo (TWS) flagmans now deliver studio-grade sound stages, unparalleled Active Noise Cancellation (ANC) systems, and next-level ergonomic comfort. In this detailed review, we thoroughly compare three giants of the current audio market: Apple AirPods Pro 2, Samsung Galaxy Buds 2 Pro, and Sony WF-1000XM5.</p>
+            <p>All three brands have crafted the ultimate expressions of their respective ecosystems. But which one secures the highest ranking on universal platforms? We answer all your questions by diving deep into the acoustic architecture, driver configurations, and software capabilities of each product. Having tested these models extensively, we are ready to lay out their pros and cons in a straightforward, easy-to-understand format.</p>
+            <p>With endless choices on the market, finding the gear most deserving of your money is no easy task. Some are drawn to sleek designs, while others prioritize battery life. Through this article, you will learn exactly which flagship best aligns with your daily routine and your smartphone. No unnecessary complications—just the deepest, most essential analysis.</p>
         </section>
 
-        <!-- AKUSTIKA VA OVOZ SIFATI -->
+        <!-- ACOUSTICS AND SOUND QUALITY -->
         <section>
-            <h2>1. Akustik Arxitektura va Ovoz Sifati Tahlili</h2>
-            <p>Ovoz balansi va chastota javoblari har qanday audio uskunaning yuragi hisoblanadi. Shuning uchun tahlilimizni har bir modelning akustik drayverlari va ovoz berish xarakteristikasidan boshlaymiz.</p>
+            <h2>1. Acoustic Architecture and Sound Quality Analysis</h2>
+            <p>Sound balance and frequency response serve as the heart of any audio equipment. Therefore, we kick off our analysis with the unique drivers and sound signatures of each model. How natural and pristine the audio output feels heavily depends on your preferred music genres.</p>
             
-            <h3>Apple AirPods Pro 2 — Kuchaytirilgan H2 Protsessor Efekti</h3>
-            <p>Apple kompaniyasi AirPods Pro 2 modeliga yangilangan maxsus drayver va H2 chipini o'rnatgan. Ushbu protsessor real vaqt rejimida hisoblash audiosini (computational audio) amalga oshiradi. Ovoz balandligidan qat'i nazar, past chastotalar (bass) chuqur va tiniq chiqadi. Yuqori chastotalar (treble) esa inson qulog'ini charchatmaydigan darajada yumshoq sozlangan. Apple-ning eng katta yutug'i bu — Spatial Audio (Fajoviy ovoz) tizimining dinamik bosh harakatini kuzatishidir. Bu rejim faollashtirilganda siz xuddi jonli konsert zalida turgandek his qilasiz.</p>
+            <h3>Apple AirPods Pro 2 — The Enhanced H2 Processor Effect</h3>
+            <p>Apple has equipped the AirPods Pro 2 with a custom low-distortion audio driver and the upgraded H2 chip. This processor executes computational audio algorithms in real time. Regardless of the volume level, the low frequencies (bass) remain deep and clean, while the high frequencies (treble) are tuned smoothly to prevent ear fatigue. Apple's greatest triumph is its Spatial Audio system featuring dynamic head tracking. When this mode is active, it genuinely feels like you are standing in the middle of a live concert hall. Especially when watching movies, the sound seamlessly wraps around you from all directions.</p>
+            <p>However, it is worth noting that the AirPods Pro 2 aims for a more universal sound signature. This means it lacks the overwhelming, earth-shattering bass profiles preferred by some. Everything is balanced and clear. It is beautifully suited for classical music, podcasts, and vocal-heavy tracks. If you listen to a wide variety of audio content throughout the day, you will surely appreciate its neutral sound balance.</p>
 
-            <h3>Samsung Galaxy Buds 2 Pro — 24-bitli Hi-Fi Olamining Yetakchisi</h3>
-            <p>Samsung bu modelda AKG muhandislari bilan hamkorlikda 2 pallali drayverlar tizimini (alohida tweeter va woofer) tatbiq etgan. Bu esa yuqori chastota va pastki basslarni alohida-alohida mukammal ishlashiga xizmat qiladi. Samsung Seamless Codec (SSC) yordamida Galaxy smartfonlari foydalanuvchilari hech qanday siqilishlarsiz 24-bitli Hi-Fi audio oqimini tinglashlari mumkin. Ovoz xarakteristikasi aniq harman egri chizig'iga (Harman Target) tayanadi — bu dinamik musiqalarni jonli eshitishni xush ko'ruvchilar uchun ideal tanlov.</p>
+            <h3>Samsung Galaxy Buds 2 Pro — The Leader of the 24-bit Hi-Fi World</h3>
+            <p>Samsung engineered this model in partnership with AKG audio engineers, implementing a 2-way coaxial speaker system (incorporating a dedicated tweeter and woofer). This allows the high treble and deep low bass to operate beautifully on separate fronts. Leveraging the Samsung Seamless Codec (SSC), Galaxy smartphone users can enjoy uncompressed 24-bit Hi-Fi audio streams. The sound profile leans toward the famous Harman target curve—making it an ideal choice for those who love vibrant, dynamic music. Modern electronic tracks and hip-hop records sound remarkably punchy.</p>
+            <p>However, this amazing 24-bit fidelity is exclusive to Samsung phone owners. On other Android devices or iPhones, it defaults to the standard AAC codec, slightly scaling back the absolute sound depth. Nonetheless, its internal dual drivers do a phenomenal job separating instruments cleanly.</p>
 
-            <h3>Sony WF-1000XM5 — Premium Dynamic Driver X va ldac</h3>
-            <p>Sony kompaniyasi WF-1000XM5 flagmaniga yangi Dynamic Driver X nomli kattaroq va sezgirroq drayverni joylashtirdi. Ovoz sifati bo'yicha Sony hech qanday murosaga bormaydi: u LDAC yuqori aniqlikdagi audio kodekini qo'llab-quvvatlaydi. Agar sizda Tidal yoki Apple Music-ning Lossless audio fayllari mavjud bo'lsa, u holda tafsilotlarni eng kichik detallarigacha ajratib bera oladigan yagona model bu Sony hisoblanadi. Ovoz sahhnasi (soundstage) nihoyatda keng, asboblarning joylashuvi aniq eshitiladi.</p>
+            <h3>Sony WF-1000XM5 — Premium Dynamic Driver X and LDAC</h3>
+            <p>Sony packed its flagship WF-1000XM5 with the new Dynamic Driver X, which is larger and more responsive than its predecessor. When it comes to pure sound quality, Sony compromises on nothing: it fully supports the high-resolution LDAC audio codec. If you possess high-quality, lossless audio files, Sony stands as the only model capable of resolving the finest, most intricate sonic details. The soundstage feels incredibly expansive, and instrument separation is precise. You can literally feel every individual instrument playing around you.</p>
+            <p>The companion Sony Headphones Connect app offers massive flexibility for tuning the equalizer to your heart's content. You can warp and shape the sound profile to match any genre. It is safe to say these earbuds were custom-built for true audiophiles who want to extract maximum enjoyment from their music.</p>
 
             <div class="winner-box">
-                <div class="winner-title">Ovoz Sifati Bo'yicha G'olib: Sony WF-1000XM5</div>
-                <p>Sof akustik aniqlik, drayver sifati va LDAC kodeki tufayli Sony WF-1000XM5 audiofillar uchun eng yuqori o'rinni egallaydi. Samsung esa Galaxy foydalanuvchilari uchun 24-bit ko'rsatkichi bilan unga yaqin keladi.</p>
+                <div class="winner-title">Sound Quality Winner: Sony WF-1000XM5</div>
+                <p>Thanks to its pure acoustic precision, superior driver engineering, and LDAC codec support, the Sony WF-1000XM5 takes the crown for audiophiles. Samsung follows closely behind with its strong 24-bit performance for Galaxy users.</p>
             </div>
         </section>
 
-        <!-- ANC TAQQOSLASH -->
+        <!-- ANC COMPARISON -->
         <section>
-            <h2>2. Active Noise Cancellation (Shovqinni Bo'g'ish) va Shaffoflik Rejimi</h2>
-            <p>Hozirgi shahar sharoitida, metro yoki ofis shovqinida ANC funksiyasining mukammalligi nihoyatda muhim. Bu borada flagmanlar o'rtasida jiddiy farqlar mavjud.</p>
-            <p><strong>Sony WF-1000XM5:</strong> Har bir quloqlikda 3 tadan mikrofon va ikkita maxsus protsessor (V2 va QN2e) ishlaydi. Ko'pikli quloqchin uchlari (Foam tips) sababli tashqi tovushlarni mexanik ravishda ham yutib yuboradi. Past chastotali shovqinlarni (samolyot yoki avtomobil motorining gumburlashi) deyarli 98% gacha yo'q qiladi.</p>
-            <p><strong>Apple AirPods Pro 2:</strong> Olma brendi bu safar shovqin bo'g'ishni ikki barobarga oshirganini e'lon qilgan edi va bu amalda seziladi. Apple tizimi tasodifiy yuqori tovushlarni (masalan, mashina signali yoki qurilish ovozi) juda tez adaptiv filtrlaydi. Shaffoflik (Transparency mode) rejimida esa AirPods Pro 2-ga teng keladigani yo'q, siz xuddi qulog'ingizda umuman apparat yo'qdek tabiiy eshitasiz.</p>
-            <p><strong>Samsung Galaxy Buds 2 Pro:</strong> O'rtacha darajadan yuqori ko'rsatkichga ega. Shamol shovqinini kamaytirish drayveri ochiq havoda foydalanganda juda asqotadi. Biroq, inson ovozlarini bo'g'ishda uning raqobatchilaridan biroz ortda qolishi seziladi.</p>
+            <h2>2. Active Noise Cancellation (ANC) and Transparency Mode</h2>
+            <p>In modern urban environments, whether navigating loud subways or crowded offices, the perfection of an ANC system is paramount. Blocking out external noise correctly lets you stay focused or enjoy music at lower, safer volumes. Each flagship brings unique strengths to this department.</p>
+            <p><strong>Sony WF-1000XM5:</strong> Operating with 3 microphones on each earbud and powered by twin proprietary processors (the V2 and QN2e), this model is a powerhouse. Thanks to its specialized polyurethane foam ear tips, it mechanically seals out a massive amount of high-frequency noise right away. It attenuates low-frequency rumbles (like airplane or car engines, or heavy street traffic) by up to 98%. In an office setting, it reduces nearby chatter to a faint murmur, keeping you completely in your zone.</p>
+            <p><strong>Apple AirPods Pro 2:</strong> The Cupertino brand claimed to double the active noise cancellation power with this generation, and that claim holds up brilliantly in real life. Apple's system acts exceptionally fast to filter out sudden, loud ambient bursts (such as car horns or construction noise) dynamically. When it comes to Transparency Mode, however, the AirPods Pro 2 remains completely unmatched. It sounds so natural that you forget you are wearing earbuds at all, allowing seamless conversations. Its Adaptive Audio feature can even lower your music automatically the moment you start speaking.</p>
+            <p><strong>Samsung Galaxy Buds 2 Pro:</strong> Delivers an above-average performance, isolating daily city noise quite effectively. Its wind-noise reduction design proves incredibly useful when spending time outdoors. Wind buffeting won't disrupt your phone calls or outdoor runs. However, when it comes to silencing sharp human voices or sudden, high-pitched noises, it falls just a step behind its rivals.</p>
         </section>
 
-        <!-- TEXNIK SOLISHTIRUV JADVALI -->
+        <!-- TECHNICAL SPECIFICATION TABLE -->
         <section>
-            <h2>3. Kompleks Texnik Xususiyatlar Jadvali</h2>
-            <p>Quyidagi tahliliy jadval orqali siz barcha texnik ko'rsatkichlarni bir nuqtada solishtirib ko'rishingiz mumkin:</p>
+            <h2>3. Comprehensive Technical Specifications Table</h2>
+            <p>The following analytical breakdown lets you compare all the critical specifications side-by-side to find the features that matter most to you:</p>
             
             <div class="table-responsive">
                 <table>
                     <thead>
                         <tr>
-                            <th>Xususiyatlari</th>
+                            <th>Specification</th>
                             <th>Apple AirPods Pro 2</th>
                             <th>Samsung Galaxy Buds 2 Pro</th>
                             <th>Sony WF-1000XM5</th>
@@ -369,65 +431,102 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td><strong>Protsessor</strong></td>
+                            <td><strong>Processor</strong></td>
                             <td>Apple H2 chip</td>
                             <td>Custom Samsung SIP</td>
                             <td>Sony V2 + QN2e Processor</td>
                         </tr>
                         <tr>
-                            <td><strong>Audio Kodeklar</strong></td>
+                            <td><strong>Audio Codecs</strong></td>
                             <td>AAC, SBC</td>
                             <td>SSC (Seamless), AAC, SBC</td>
                             <td>LDAC, AAC, SBC, LC3</td>
                         </tr>
                         <tr>
-                            <td><strong>Batareya (ANC bilan)</strong></td>
-                            <td>6 soat (Keys bilan 30 s)</td>
-                            <td>5 soat (Keys bilan 18 s)</td>
-                            <td>8 soat (Keys bilan 24 s)</td>
+                            <td><strong>Battery Life (With ANC)</strong></td>
+                            <td>6 hours (Up to 30 hrs with case)</td>
+                            <td>5 hours (Up to 18 hrs with case)</td>
+                            <td>8 hours (Up to 24 hrs with case)</td>
                         </tr>
                         <tr>
-                            <td><strong>Himoya Standarti</strong></td>
-                            <td>IP54 (Chang va suvga chidamli)</td>
-                            <td>IPX7 (Suvga to'liq chidamli)</td>
-                            <td>IPX4 ( chayqalishga chidamli)</td>
+                            <td><strong>Protection Rating</strong></td>
+                            <td>IP54 (Dust and sweat resistant)</td>
+                            <td>IPX7 (Fully water resistant)</td>
+                            <td>IPX4 (Splash resistant)</td>
                         </tr>
                         <tr>
-                            <td><strong>Bluetooth Versiyasi</strong></td>
+                            <td><strong>Bluetooth Version</strong></td>
                             <td>Bluetooth 5.3</td>
                             <td>Bluetooth 5.3</td>
-                            <td>Bluetooth 5.3 (Multipoint bor)</td>
+                            <td>Bluetooth 5.3 (With Multipoint)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Charging Type</strong></td>
+                            <td>Type-C, MagSafe, Qi</td>
+                            <td>Type-C, Qi Wireless</td>
+                            <td>Type-C, Qi Wireless</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Microphone Count</strong></td>
+                            <td>2x per side + sensors</td>
+                            <td>3x high SNR per side</td>
+                            <td>3x per side (6 mics total)</td>
                         </tr>
                     </tbody>
                 </table>
             </div>
         </section>
 
-        <!-- ERGONOMIKA VA QULAYLIK -->
+        <!-- ERGONOMICS AND COMFORT -->
         <section>
-            <h2>4. Dizayn, Ergonomika va Ekotizimga Bog'liqlik</h2>
-            <p>Har qanday naushnik qanchalik yaxshi eshittirmasin, u quloqqa to'g'ri o'tirmasa yoki uzoq vaqt turganda og'riq bersa, o'z qiymatini yo'qotadi.</p>
-            <p>Apple AirPods Pro 2 klassik oyoqchali dizaynga ega. Undagi sensorli boshqaruv orqali ovoz balandligini sozlash juda qulay. Agar siz iPhone, Mac va iPad foydalanuvchisi bo'lsangiz, qurilmalar o'rtasida avtomatik ulanish ko'z ochib yumguncha bajariladi.</p>
-            <p>Samsung Galaxy Buds 2 Pro ancha ixcham va quloq ichiga chuqurroq joylashadigan dizaynda ishlangan. IPX7 reytingi tufayli u sportchilar va yomg'irli kunlarda faol harakat qiladiganlar uchun eng xavfsiz variant hisoblanadi, chunki uni hatto suvga tushirib yuborish ham shikastlay olmaydi.</p>
-            <p>Sony WF-1000XM5 o'zining oldingi XM4 modeliga qaraganda 25% kichikroq va 20% yengilroq qilib yaratilgan. Uning yuzasi yaltiroq plastik bo'lgani sababli, ba'zida g'ilofidan olishda qo'ldan sirg'alib ketishi mumkin. Ammo uning ko'pikli quloqchinlari quloq kanalini butunlay yopib, germetik muvozanat hosil qiladi.</p>
+            <h2>4. Design, Ergonomics, and Ecosystem Synergy</h2>
+            <p>No matter how phenomenal a pair of earbuds sounds, it loses its core value if it doesn't fit correctly or causes ear fatigue during long sessions. Comfort and connection speed determine the overall user experience.</p>
+            <p>Apple AirPods Pro 2 sports the classic stem-based design. Its touch-capacitive controls make sliding up or down to adjust volume, or squeezing to skip tracks, an absolute breeze. The sensors are incredibly responsive and rarely misregister. If you live inside the Apple ecosystem—using an iPhone, Mac, and iPad—switching between devices happens instantly. Flipping open the charging case triggers a beautiful native pairing animation on your screen. However, Android users miss out on these smart features, reducing them to standard bluetooth earphones.</p>
+            <p>Samsung Galaxy Buds 2 Pro relies on a highly compact, stemless design that sits deeper within the ear canal. Thanks to its impressive IPX7 rating, it is the safest option for athletes and those active in rainy weather. Accidental drops into water won't ruin these buds. They lock firmly into the ears, meaning you won't have to worry about them slipping out during intense workouts. The exterior matte finish also does an excellent job resisting smudges and fingerprints.</p>
+            <p>Sony WF-1000XM5 arrived 25% smaller and 20% lighter than its predecessor. Because its outer shell features a glossy plastic finish, it can sometimes feel a bit slick when pulling the buds from their case. However, its specialized foam ear tips mold perfectly to your ear shape, achieving outstanding passive noise isolation. It also features true Bluetooth Multipoint, allowing it to connect to your phone and laptop simultaneously, seamlessly switching audio to whichever device plays sound.</p>
         </section>
 
-        <!-- YAKUNIY XULOSA -->
+        <!-- MICROPHONE AND VOICE CALLS -->
         <section>
-            <h2>5. Ranking Hours Yakuniy Ekspert Xulosasi</h2>
-            <p>Ushbu uchta flagman simsiz naushniklar ham o'z yo'nalishida 2026-yilning eng eng ilg'or texnologiyalarini o'zida mujassam etgan. Yakuniy tanlov siz qaysi smartfondan foydalanishingizga bog'liq:</p>
+            <h2>5. Microphone Quality and Voice Call Tahlili</h2>
+            <p>Wireless earbuds aren't just for music; they handle countless phone calls, online lectures, and virtual business meetings throughout the day. Consequently, clear voice transmission and smart ambient noise isolation are vital performance metrics.</p>
+            <p>Apple AirPods Pro 2 has maintained a commanding lead in microphone performance for years. Because the physical stems position the microphones closer to your mouth, they pick up speech naturally. The H2 chip’s background noise reduction algorithms ensure that even if you walk along a bustling city street, your voice reaches the listener cleanly. Voice volume remains consistent without sounding compressed.</p>
+            <p>Sony WF-1000XM5 utilizes bone conduction sensors alongside deep learning noise reduction algorithms. This system detects jaw vibrations to isolate your voice explicitly, cutting out harsh wind or traffic interference. In extremely chaotic environments, your voice may sound slightly synthesized or digitalized, but the recipient will still hear every single word clearly.</p>
+            <p>Samsung Galaxy Buds 2 Pro packs three high SNR (Signal-to-Noise Ratio) microphones capable of capturing even faint whispers. The aerodynamic contours help deflect incoming wind gusts. In quiet indoor environments, call quality is exceptional, though it may let slightly more surrounding ambient noise through during high-traffic outdoor scenarios compared to Apple and Sony.</p>
+        </section>
+
+        <!-- BATTERY LIFE AND CHARGING -->
+        <section>
+            <h2>6. Battery Autonomy and Charging Capabilities</h2>
+            <p>When traveling long distances or power-using your earbuds through back-to-back meetings, battery longevity is crucial. Worrying about your next charge can ruin the experience. Let's compare the real-world battery metrics of these flagships.</p>
+            <p>Sony WF-1000XM5 is the absolute king in this category. Even with Active Noise Cancellation (ANC) turned on, it runs continuously for up to 8 hours on a single charge. The compact case extends this timeline by another 24 hours. Turning off ANC can boost the standalone earbud run time up to 12 hours. This is a spectacular result for long flights or all-day travel.正式</p>
+            <p>Apple AirPods Pro 2 maintains a perfectly reliable balance. With ANC enabled, the earbuds last roughly 6 hours. However, its charging case holds a substantial reserve, granting an extra 24 hours of listening time (30 hours total). Additionally, the AirPods Pro 2 case features a built-in speaker, letting you trigger an acoustic alert via the Find My app if you ever misplace it. </p>
+            <p>Samsung Galaxy Buds 2 Pro offers slightly lower battery numbers due to its ultra-compact form factor. It delivers around 5 hours of playback with ANC active, while the case yields an additional 18 hours. This is perfectly fine for everyday urban use, but frequent travelers may find themselves recharging the case more often. All three options support rapid charging and wireless Qi charging pads.</p>
+        </section>
+
+        <!-- FINAL CONCLUSION -->
+        <section>
+            <h2>7. Ranking Hours Final Expert Conclusion</h2>
+            <p>All three flagship wireless earbuds represent the pinnacle of 2026 audio technology. As we wrap up our comparison, it is clear that crown cannot go to a single absolute winner. The final choice rests entirely on the smartphone you carry and what you prioritize most in an audio companion:</p>
             <ol>
-                <li><strong>Apple AirPods Pro 2:</strong> Agar siz iOS platformasining faol foydalanuvchisi bo'lsangiz, mukammal mikrofon sifati va mislsiz Shaffoflik rejimini qadrlasangiz, bu siz uchun eng to'g'ri tanlovdir.</li>
-                <li><strong>Samsung Galaxy Buds 2 Pro:</strong> Android va ayniqsa Samsung ekotizimida yashovchilar uchun 24-bit Hi-Fi va IPX7 suvga chidamlilik xususiyatlari bilan eng muvozanatli apparatdir.</li>
-                <li><strong>Sony WF-1000XM5:</strong> Agar siz platformaga bog'lanib qolishni istamasangiz va eng chuqur drayver musiqalarini, LDAC formatini va eng kuchli ANC tizimini xohlasangiz, Sony sizga mutloq audio g'oliblikni beradi.</li>
+                <li><strong>Apple AirPods Pro 2:</strong> If you are fully invested in the iOS ecosystem, appreciate unmatched microphone reliability, and want the most natural Transparency mode on Earth, this is your definitive choice. Within the Apple ecosystem, it functions flawlessly.</li>
+                <li><strong>Samsung Galaxy Buds 2 Pro:</strong> For Android and especially Samsung ecosystem users, this model serves as the most balanced, value-packed choice, boasting 24-bit Hi-Fi audio capabilities and a superior IPX7 water resistance rating.</li>
+                <li><strong>Sony WF-1000XM5:</strong> If you refuse to be tied down to a specific phone ecosystem, demand the highest fidelity through LDAC, want the longest battery life, and require the absolute strongest ANC, Sony rewards you with complete audio dominance.</li>
             </ol>
-            <p>Boshqa eng so'nggi audio qurilmalari va gadjetlar reytingi bilan tanishish uchun bizning <a href="https://ranking-hours.uz/">Ranking Hours bosh sahifasiga</a> o'tishingiz mumkin.</p>
+            <p>Evaluate your budget and personal goals to select the model that fits you best. To check out our latest rankings, gadget reviews, and professional smartphone comparisons, feel free to visit our <a href="https://ranking-hours.uz/">Ranking Hours Home Page</a>. We remain dedicated to bringing you the most objective and accurate insights.</p>
         </section>
     </div>
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2026 <a href="https://ranking-hours.uz/">Ranking-Hours.uz</a>. Barcha huquqlar himoyalangan.</p>
+        <div class="footer-container">
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="smartphone-comparisons.html">Smartphones</a>
+                <a href="audio.html">Audio Comparisons</a>
+            </div>
+            <p>&copy; 2026 <a href="https://ranking-hours.uz/">ranking-hours.uz</a>. All rights reserved.</p>
+        </div>
     </footer>
 
 </body>
