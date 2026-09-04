@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>About Us - Ranking Hours</title>
+<meta content="About the Ranking Hours team: Who we are, why and how we compare products. Our mission and core values." name="description"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+<style>
+        /* Base Container Adjustment */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Emoji Instead of Image Styling */
+        .emoji-placeholder {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #f1f2f6;
+            font-size: 5rem;
+            width: 100%;
+            height: 100%;
+            min-height: 250px;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+        }
+        .story-image .emoji-placeholder {
+            min-height: 350px;
+            font-size: 8rem;
+            background: #eef2f7;
+        }
+        .testimonial-author .emoji-avatar {
+            font-size: 2.5rem;
+            background: #f1f2f6;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+        }
+
+        /* Hero Section */
+        .about-hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+        .about-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        .hero-subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 40px;
+        }
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+        .stat {
+            text-align: center;
+        }
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            display: block;
+        }
+        .stat-label {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        
+        /* Our Story */
+        .our-story {
+            padding: 80px 0;
+        }
+        .story-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+        .story-text h2 {
+            font-size: 2rem;
+            margin-bottom: 30px;
+            color: #2c3e50;
+        }
+        .story-text p {
+            margin-bottom: 20px;
+            line-height: 1.8;
+            font-size: 1.1rem;
+        }
+        
+        /* Our Mission */
+        .our-mission {
+            padding: 80px 0;
+            background: #f8f9fa;
+        }
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+            color: #2c3e50;
+        }
+        .mission-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        .mission-card {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+        }
+        .mission-card:hover {
+            transform: translateY(-10px);
+        }
+        .mission-icon {
+            font-size: 3rem;
+            color: #667eea;
+            margin-bottom: 20px;
+        }
+        
+        /* Team Section */
+        .our-team {
+            padding: 80px 0;
+        }
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        .team-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            display: flex;
+            flex-direction: column;
+        }
+        .team-card.founder {
+            grid-column: 1 / -1;
+            display: grid;
+            grid-template-columns: 300px 1fr;
+        }
+        .team-image {
+            position: relative;
+            min-height: 250px;
+        }
+        .team-badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: #f1c40f;
+            color: #2c3e50;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: bold;
+            z-index: 5;
+        }
+        .team-info {
+            padding: 30px;
+        }
+        .team-info h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+        .team-title {
+            color: #667eea;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+        .team-bio {
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+        .team-stats {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+        .team-stat {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.9rem;
+        }
+        .team-stat i {
+            color: #667eea;
+        }
+        .team-expertise {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 15px;
+        }
+        .expertise-tag {
+            background: #e8f4fd;
+            color: #3498db;
+            padding: 5px 15px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+        }
+        
+        /* Process Timeline */
+        .our-process {
+            padding: 80px 0;
+            background: #f8f9fa;
+        }
+        .process-timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .process-timeline::before {
+            content: '';
+            position: absolute;
+            left: 30px;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: #667eea;
+        }
+        .process-step {
+            position: relative;
+            margin-bottom: 40px;
+            padding-left: 80px;
+        }
+        .step-number {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 60px;
+            height: 60px;
+            background: #667eea;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            z-index: 2;
+        }
+        .step-content {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        .step-content h3 {
+            margin-bottom: 10px;
+            color: #2c3e50;
+        }
+        
+        /* Values Section */
+        .our-values {
+            padding: 80px 0;
+        }
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        .value-card {
+            text-align: center;
+            padding: 30px;
+        }
+        .value-icon {
+            font-size: 3rem;
+            color: #667eea;
+            margin-bottom: 20px;
+        }
+        
+        /* Testimonials */
+        .testimonials {
+            padding: 80px 0;
+            background: #f8f9fa;
+        }
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        .testimonial-card {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        .testimonial-content p {
+            font-style: italic;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        /* Call-To-Action Layout */
+        .about-cta {
+            padding: 80px 0;
+            text-align: center;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        .about-cta h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        .about-cta p {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            opacity: 0.9;
+        }
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+        .btn-primary {
+            background: white;
+            color: #667eea;
+        }
+        .btn-primary:hover {
+            background: #f0f0f0;
+            transform: scale(1.05);
+        }
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+        .btn-secondary:hover {
+            background: rgba(255,255,255,0.1);
+            transform: scale(1.05);
+        }
+
+        /* Footer */
+        .footer {
+            background: #2c3e50;
+            color: white;
+            padding: 60px 0 20px 0;
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        .footer-col h3 {
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+        }
+        .footer-links {
+            list-style: none;
+            padding: 0;
+        }
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        .footer-links a {
+            color: #bdc3c7;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .footer-links a:hover, .footer-links a.active {
+            color: white;
+        }
+        .footer-bottom {
+            border-top: 1px solid #34495e;
+            padding-top: 20px;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+        .footer-note {
+            margin-top: 10px;
+            color: #95a5a6;
+            font-size: 0.8rem;
+        }
+        
+        /* Responsive Breakpoints */
+        @media (max-width: 768px) {
+            .hero-stats {
+                gap: 20px;
+            }
+            .stat-number {
+                font-size: 1.8rem;
+            }
+            .story-content {
+                grid-template-columns: 1fr;
+            }
+            .team-card.founder {
+                grid-template-columns: 1fr;
+            }
+            .process-timeline::before {
+                left: 20px;
+            }
+            .process-step {
+                padding-left: 60px;
+            }
+            .step-number {
+                width: 40px;
+                height: 40px;
+                font-size: 1rem;
+            }
+        }
+    </style>
+<link href="favicon.png" rel="icon" type="image/png"/>
+</head>
+<body>
+<!-- Navigation -->
+<nav class="navbar">
+<div class="container">
+<div class="nav-menu">
+<a href="index.html">Home</a>
+<a href="comparisons.html">Comparisons</a>
+<a href="methodology.html">Methodology</a>
+<a class="active" href="about.html">About Us</a>
+<a href="contact.html">Contact</a>
+</div>
+</div>
+</nav>
+<!-- About Hero -->
+<section class="about-hero">
+<div class="container">
+<div class="hero-content">
+<h1>About Us</h1>
+<p class="hero-subtitle">Real advice from real people</p>
+<div class="hero-stats">
+<div class="stat">
+<span class="stat-number">20+</span>
+<span class="stat-label">Products Tested</span>
+</div>
+<div class="stat">
+<span class="stat-number">100+</span>
+<span class="stat-label">Hours of Testing</span>
+</div>
+<div class="stat">
+<span class="stat-number">10</span>
+<span class="stat-label">Years of Experience</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Our Story -->
+<section class="our-story">
+<div class="container">
+<div class="story-content">
+<div class="story-text">
+<h2>Our Story</h2>
+<p><strong>It all started in 2015.</strong> I (Abdulloh) wanted to buy a new laptop. I read 100 reviews online, but everyone was saying something different. One said "It's amazing," another said "It's terrible."</p>
+<p>I ended up buying 3 laptops myself, tested them for a week, kept the best one, and returned the rest. When my friends heard about this, they started asking me: "Abdulloh, is this any good?"</p>
+<p>That is how I launched Ranking Hours in 2025. My goal was simple: <strong>to give people honest advice in plain language.</strong> We work for the users, not for the corporations.</p>
+</div>
+<div class="story-image">
+<!-- Updated with Team/Growth Emoji -->
+<div class="emoji-placeholder">🚀</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Our Mission -->
+<section class="our-mission">
+<div class="container">
+<h2 class="section-title">Our Mission</h2>
+<div class="mission-grid">
+<div class="mission-card">
+<div class="mission-icon">
+<i class="fas fa-handshake"></i>
+</div>
+<h3>Real Advice</h3>
+<p>We never copy anything from the internet. We test everything ourselves, use it for weeks, and then give you our honest breakdown.</p>
+</div>
+<div class="mission-card">
+<div class="mission-icon">
+<i class="fas fa-comments"></i>
+</div>
+<h3>Human Language</h3>
+<p>No complicated jargon. We write just like we are having a friendly conversation with you. "This is great," "This is annoying" - simple and clear.</p>
+</div>
+<div class="mission-card">
+<div class="mission-icon">
+<i class="fas fa-balance-scale"></i>
+</div>
+<h3>Unbiased Ratings</h3>
+<p>We are completely independent and are not funded by any brand or company. All our reviews are entirely objective.</p>
+</div>
+<div class="mission-card">
+<div class="mission-icon">
+<i class="fas fa-users"></i>
+</div>
+<h3>Team Spirit</h3>
+<p>We operate as a family. Our users' questions are our questions, and your problems are ours to solve.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Our Team -->
+<section class="our-team">
+<div class="container">
+<h2 class="section-title">Our Team</h2>
+<div class="team-grid">
+<!-- Founder -->
+<div class="team-card founder">
+<div class="team-image">
+<!-- Updated with Tech Expert Emoji -->
+<div class="emoji-placeholder">👨‍💻</div>
+<span class="team-badge">Founder</span>
+</div>
+<div class="team-info">
+<h3>Abdulloh Mahmudov</h3>
+<p class="team-title">Editor-in-Chief &amp; Testing Expert</p>
+<p class="team-bio">10-year tech enthusiast. Having tested over 20+ products, I use every single device in my daily life before giving it a final score.</p>
+<div class="team-stats">
+<div class="team-stat">
+<i class="fas fa-mobile-alt"></i>
+<span>5+ Phones</span>
+</div>
+<div class="team-stat">
+<i class="fas fa-laptop"></i>
+<span>5+ Cars</span>
+</div>
+<div class="team-stat">
+<i class="fas fa-car"></i>
+<span>10+ Others</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Team Member 1 -->
+<div class="team-card">
+<div class="team-image">
+<!-- Updated with Camera Expert Emoji -->
+<div class="emoji-placeholder">📸</div>
+</div>
+<div class="team-info">
+<h3>Sarvar Xolmatov</h3>
+<p class="team-title">Photo &amp; Video Expert</p>
+<p class="team-bio">Professional photographer and videographer. Camera sensors, lens quality, and video capabilities—I inspect them all.</p>
+<div class="team-expertise">
+<span class="expertise-tag">Camera Testing</span>
+<span class="expertise-tag">Video Quality</span>
+<span class="expertise-tag">Image Analysis</span>
+</div>
+</div>
+</div>
+<!-- Team Member 2 -->
+<div class="team-card">
+<div class="team-image">
+<!-- Updated with Home Appliances Expert Emoji -->
+<div class="emoji-placeholder">👩‍🍳</div>
+</div>
+<div class="team-info">
+<h3>Aziza Raximova</h3>
+<p class="team-title">Home Appliances Expert</p>
+<p class="team-bio">Specialist in domestic utility gear. From smart fridges and washing machines to vacuums—I put them to work.</p>
+<div class="team-expertise">
+<span class="expertise-tag">Home Appliances</span>
+<span class="expertise-tag">Energy Efficiency</span>
+<span class="expertise-tag">Smart Home</span>
+</div>
+</div>
+</div>
+<!-- Team Member 3 -->
+<div class="team-card">
+<div class="team-image">
+<!-- Updated with Automotive Expert Emoji -->
+<div class="emoji-placeholder">👨‍🔧</div>
+</div>
+<div class="team-info">
+<h3>Javohir Tursunov</h3>
+<p class="team-title">Automotive Expert</p>
+<p class="team-bio">Car enthusiast and mechanic. I test-drive vehicles, review their fuel economy, and evaluate overall road performance.</p>
+<div class="team-expertise">
+<span class="expertise-tag">Car Testing</span>
+<span class="expertise-tag">Fuel Economy</span>
+<span class="expertise-tag">Maintenance</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Our Process -->
+<section class="our-process">
+<div class="container">
+<h2 class="section-title">How Do We Work?</h2>
+<div class="process-timeline">
+<div class="process-step">
+<div class="step-number">1</div>
+<div class="step-content">
+<h3>Acquiring Products</h3>
+<p>We source products directly from retail outlets or get testing units from companies. No corporate biases allowed.</p>
+</div>
+</div>
+<div class="process-step">
+<div class="step-number">2</div>
+<div class="step-content">
+<h3>Real-World Testing</h3>
+<p>We live with the product for 1 to 4 weeks. Our process focuses on real-life application, not just benchmark numbers.</p>
+</div>
+</div>
+<div class="process-step">
+<div class="step-number">3</div>
+<div class="step-content">
+<h3>Data Collection</h3>
+<p>We log everything day by day - actual battery life, how the camera really looks, and how comfortable the product is to use.</p>
+</div>
+</div>
+<div class="process-step">
+<div class="step-number">4</div>
+<div class="step-content">
+<h3>Writing the Review</h3>
+<p>Once testing is done, we write it all up in plain language - the pros, the cons, and who it's actually a good fit for.</p>
+</div>
+</div>
+<div class="process-step">
+<div class="step-number">5</div>
+<div class="step-content">
+<h3>Community Engagement</h3>
+<p>We publish our articles and actively reply to reader questions. If an oversight is found, we swiftly update it.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Our Values -->
+<section class="our-values">
+<div class="container">
+<h2 class="section-title">Our Core Values</h2>
+<div class="values-grid">
+<div class="value-card">
+<div class="value-icon">
+<i class="fas fa-star"></i>
+</div>
+<h3>Quality</h3>
+<p>We devote over 20 hours to each article. It's either premium quality work or we don't publish it at all.</p>
+</div>
+<div class="value-card">
+<div class="value-icon">
+<i class="fas fa-shield-alt"></i>
+</div>
+<h3>Integrity</h3>
+<p>We operate independently with zero corporate funding. All editorial assessments are strictly our own.</p>
+</div>
+<div class="value-card">
+<div class="value-icon">
+<i class="fas fa-heart"></i>
+</div>
+<h3>User-First Focus</h3>
+<p>Your benefit is our bottom line. Our core mission is giving you advice you can truly depend on.</p>
+</div>
+<div class="value-card">
+<div class="value-icon">
+<i class="fas fa-sync-alt"></i>
+</div>
+<h3>Always Up-to-Date</h3>
+<p>Technology shifts rapidly, and so do we. We regularly refresh old articles and evaluate new variants.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Testimonials -->
+<section class="testimonials">
+<div class="container">
+<h2 class="section-title">What Our Users Say</h2>
+<div class="testimonials-grid">
+<div class="testimonial-card">
+<div class="testimonial-content">
+<p>"I searched for a phone for 3 months. Thanks to Ranking Hours, I found the perfect one within a week!"</p>
+</div>
+<div class="testimonial-author">
+<!-- Updated with Gamer Avatar Emoji -->
+<div class="emoji-avatar">🎮</div>
+<div>
+<h4>Ali</h4>
+<span>Gamer</span>
+</div>
+</div>
+</div>
+<div class="testimonial-card">
+<div class="testimonial-content">
+<p>"I was totally lost looking for a laptop. Abdulloh broke it down so simply that choosing was a breeze."</p>
+</div>
+<div class="testimonial-author">
+<!-- Updated with Teacher Avatar Emoji -->
+<div class="emoji-avatar">👩‍🏫</div>
+<div>
+<h4>Sevara</h4>
+<span>Teacher</span>
+</div>
+</div>
+</div>
+<div class="testimonial-card">
+<div class="testimonial-content">
+<p>"When buying a vehicle, Abdulloh's transparent breakdowns kept me from making an expensive mistake."</p>
+</div>
+<div class="testimonial-author">
+<!-- Updated with Banker Avatar Emoji -->
+<div class="emoji-avatar">💼</div>
+<div>
+<h4>Bekzod</h4>
+<span>Banker</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA -->
+<section class="about-cta">
+<div class="container">
+<h2>Want to Partner With Us?</h2>
+<p>If you want us to test your consumer product or wish to explore a collaboration, feel free to reach out.</p>
+<div class="cta-buttons">
+<a class="btn btn-primary" href="contact.html">
+<i class="fas fa-envelope"></i> Get in Touch
+                </a>
+<a class="btn btn-secondary" href="methodology.html">
+<i class="fas fa-book"></i> Our Methodology
+                </a>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="footer">
+<div class="container">
+<div class="footer-grid">
+<div class="footer-col">
+<h3>Company</h3>
+<ul class="footer-links">
+<li><a class="active" href="about.html">About Us</a></li>
+<li><a href="methodology.html">Methodology</a></li>
+<li><a href="faq.html">FAQs</a></li>
+<li><a href="disclaimer.html">Disclaimer</a></li>
+</ul>
+</div>
+<div class="footer-col">
+<h3>Contact</h3>
+<ul class="footer-links">
+<li>Contact Form</li>
+<li>abdullohmahmudov660@gmail.com</li>
+<li>+998 88 565 06 04</li>
+<li>Tashkent, Uzbekistan</li>
+</ul>
+</div>
+</div>
+<div class="footer-bottom">
+<p>© 2025-2026 ranking-hours.uz - All Rights Reserved.</p>
+<p class="footer-note">
+                    All evaluations are conducted independently. 
+                    Ranking Hours receives zero corporate or brand sponsorship.
+                </p>
+</div>
+</div>
+</footer>
+</body>
+</html>

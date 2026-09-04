@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="Comprehensive engineering database evaluating household appliances, thermodynamic inverter compressors, kinetic laundering metrics, and advanced particulate filtration systems." name="description"/>
+<title>Home Appliance Comparisons | Ranking Hours</title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+<link href="style.css" rel="stylesheet"/>
+<style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f4f6f9;
+            color: #1e293b;
+            line-height: 1.7;
+            font-size: 16px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background: linear-gradient(135deg, #00b4db 0%, #0083b0 100%);
+            color: white;
+            padding: 20px 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.8rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 8px 15px;
+            border-radius: 20px;
+            transition: all 0.3s;
+        }
+
+        nav a:hover, nav a.active {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .page-header {
+            background: linear-gradient(rgba(0, 180, 219, 0.85), rgba(0, 131, 176, 0.85));
+            color: white;
+            text-align: center;
+            padding: 100px 20px 80px;
+            margin-bottom: 40px;
+            border-radius: 0 0 30px 30px;
+        }
+
+        .page-header h1 {
+            font-size: 3.2rem;
+            margin-bottom: 20px;
+            font-weight: 800;
+        }
+
+        .page-header .subtitle {
+            font-size: 1.3rem;
+            max-width: 800px;
+            margin: 0 auto;
+            opacity: 0.95;
+        }
+
+        .category-icon {
+            font-size: 4.5rem;
+            margin-bottom: 25px;
+        }
+
+        .intro-section {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02);
+            border: 1px solid #e2e8f0;
+        }
+
+        .intro-section h2 {
+            color: #0083b0;
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+
+        .software-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 50px;
+            margin: 40px 0;
+        }
+
+        .software-card {
+            background: white;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.04);
+            border: 1px solid #eef2f5;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s ease;
+        }
+
+        .software-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card-header {
+            background: linear-gradient(135deg, #00b4db 0%, #0083b0 100%);
+            color: white;
+            padding: 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .card-header h3 {
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+
+        .badge {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .card-content {
+            padding: 40px;
+        }
+
+        .metrics-dashboard {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+            background: #f8fafc;
+            padding: 25px;
+            border-radius: 16px;
+            border: 1px solid #e2e8f0;
+        }
+
+        .metric-block {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .metric-title {
+            font-size: 0.85rem;
+            color: #64748b;
+            text-transform: uppercase;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .metric-data {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: #0f172a;
+        }
+
+        .essay-body {
+            margin-bottom: 30px;
+        }
+
+        .essay-body h4 {
+            color: #0f172a;
+            font-size: 1.3rem;
+            margin: 25px 0 12px;
+            font-weight: 600;
+        }
+
+        .essay-body p {
+            color: #475569;
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        .btn-container {
+            margin-top: 30px;
+            border-top: 1px solid #e2e8f0;
+            padding-top: 25px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 35px;
+            background: linear-gradient(135deg, #00b4db 0%, #0083b0 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(0, 131, 176, 0.2);
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 131, 176, 0.35);
+        }
+
+        .editorial-note {
+            background: #fffbeb;
+            border-left: 5px solid #d97706;
+            padding: 30px;
+            border-radius: 12px;
+            margin: 60px 0;
+        }
+
+        .editorial-note h3 {
+            color: #b45309;
+            margin-bottom: 10px;
+        }
+
+        footer {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: white;
+            padding: 60px 0 30px;
+            margin-top: 80px;
+        }
+
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-column h3 {
+            font-size: 1.4rem;
+            margin-bottom: 25px;
+            color: #38bdf8;
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column li {
+            margin-bottom: 12px;
+        }
+
+        .footer-column a {
+            color: #cbd5e1;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-column a:hover {
+            color: white;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #94a3b8;
+            font-size: 0.9rem;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            .header-container { flex-direction: column; gap: 20px; }
+            .mobile-menu-btn { display: block; position: absolute; top: 25px; right: 20px; }
+            nav ul { display: none; flex-direction: column; width: 100%; text-align: center; }
+            nav ul.active { display: flex; }
+            .page-header h1 { font-size: 2.4rem; }
+            .card-header h3 { font-size: 1.4rem; }
+        }
+    </style>
+<link href="favicon.png" rel="icon" type="image/png"/>
+</head>
+<body>
+<header>
+<div class="container header-container">
+<div class="logo">
+<a href="index.html">
+<i class="fas fa-star"></i>
+<span>RankingHours</span>
+</a>
+</div>
+<button class="mobile-menu-btn" id="mobileMenuBtn">
+<i class="fas fa-bars"></i>
+</button>
+<nav>
+<ul id="mainNav">
+<li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+<li><a href="smartphone-comparisons.html"><i class="fas fa-mobile-alt"></i> Smartphones</a></li>
+<li><a href="laptop-comparisons.html"><i class="fas fa-laptop"></i> Laptops</a></li>
+<li><a href="software.html"><i class="fas fa-code"></i> Software</a></li>
+<li><a href="automotive-comparisons.html"><i class="fas fa-car"></i> Automotive</a></li>
+<li><a class="active" href="appliances-comparisons.html"><i class="fas fa-blender"></i> Appliances</a></li>
+</ul>
+</nav>
+</div>
+</header>
+<div class="page-header">
+<div class="container">
+<div class="category-icon"><i class="fas fa-plug"></i></div>
+<h1>Home Appliance Comparisons</h1>
+<p class="subtitle">Real-world tests of air purifiers, air conditioners, washing machines, and refrigerators - how they actually perform at home.</p>
+</div>
+</div>
+<div class="container">
+<!-- Technical Introduction -->
+<section class="intro-section">
+<h2>How We Test Appliances</h2>
+<p>A nice-looking appliance doesn't always mean a good one. What matters is how the motor, cooling system, or filter actually performs over months of daily use - not just the brand name on the box. We test both premium global brands and budget-friendly regional ones the same way, so the results are easy to compare.</p>
+</section>
+<div class="software-grid">
+<!-- SECTION 1: Dyson vs Xiaomi -->
+<div class="software-card">
+<div class="card-header">
+<h3>Dyson vs Xiaomi Air Purifiers</h3>
+<span class="badge">Air Treatment &amp; Filtration Layers</span>
+</div>
+<div class="card-content">
+<div class="metrics-dashboard">
+<div class="metric-block">
+<span class="metric-title">Filtration Engine</span>
+<span class="metric-data">Bladeless Glass HEPA vs High-Yield Mesh</span>
+</div>
+<div class="metric-block">
+<span class="metric-title">Acoustic Index</span>
+<span class="metric-data">28 dB(A) vs 26 dB(A) Min Output</span>
+</div>
+<div class="metric-block">
+<span class="metric-title">Smart App</span>
+<span class="metric-data">MyDyson App vs Mi Home App</span>
+</div>
+</div>
+<div class="essay-body">
+<h4>Fluid Dynamics and Particulate Extraction Topologies</h4>
+<p>Dyson's air purifiers use a bladeless design paired with a solid HEPA filter, built to catch allergens and fine particles down to a very small size. Since there's no exposed fan blade, air comes out through a narrow slot that spreads it evenly across a large room.</p>
+<p>Xiaomi takes a more straightforward approach - bigger filters and a strong fan, moving a lot of air for the price. It doesn't have Dyson's bladeless design, but in practice it clears dust and pollutants from a room just as fast in most home setups.</p>
+</div>
+<div class="btn-container">
+<a class="btn" href="Dyson-Xiaomi.html">Examine Full Air Purifier Report</a>
+</div>
+</div>
+</div>
+<!-- SECTION 2: Gree vs Samsung -->
+<div class="software-card">
+<div class="card-header">
+<h3>Gree vs Samsung Air Conditioners</h3>
+<span class="badge">Thermal Atmospheric Regulation</span>
+</div>
+<div class="card-content">
+<div class="metrics-dashboard">
+<div class="metric-block">
+<span class="metric-title">Compressor Mode</span>
+<span class="metric-data">G10 Low-Frequency vs 8-Pole Inverter Boost</span>
+</div>
+<div class="metric-block">
+<span class="metric-title">Diffusion Loop</span>
+<span class="metric-data">Oscillating Louvers vs WindFree Micro-Apertures</span>
+</div>
+<div class="metric-block">
+<span class="metric-title">Refrigerant Type</span>
+<span class="metric-data">Eco-Friendly R32 Refrigerant</span>
+</div>
+</div>
+<div class="essay-body">
+<h4>Thermodynamic Cycles and Inverter Core Mechanics</h4>
+<p>A good split-system air conditioner needs to handle both a brutal summer and a cold winter without struggling. Gree focuses on durability - solid metal parts, rust-resistant coatings, and a compressor that adjusts its speed in small steps. Its G10 inverter keeps cooling steady without big power spikes that can strain your home's electrical wiring.</p>
+<p>Samsung focuses more on how the air feels in the room and on smart features. Its WindFree mode releases cool air through thousands of tiny holes instead of a direct blast, so you get even cooling without a harsh draft. An 8-pole inverter motor lets it cool the room quickly at first, then settle into a more efficient, steady mode.</p>
+</div>
+<div class="btn-container">
+<a class="btn" href="gree-samsung.html">Examine Full Climate Control Report</a>
+</div>
+</div>
+</div>
+<!-- SECTION 3: LG vs Bosch -->
+<div class="software-card">
+<div class="card-header">
+<h3>LG vs Bosch Washing Machines</h3>
+<span class="badge">Washing Machine Motor Types</span>
+</div>
+<div class="card-content">
+<div class="metrics-dashboard">
+<div class="metric-block">
+<span class="metric-title">Kinetic Link</span>
+<span class="metric-data">Axial Direct Drive vs Poly-V Belt Interface</span>
+</div>
+<div class="metric-block">
+<span class="metric-title">Vibration Control</span>
+<span class="metric-data">3D Acceleration Sensors vs Friction Dampers</span>
+</div>
+<div class="metric-block">
+<span class="metric-title">Fluid Induction</span>
+<span class="metric-data">High-Pressure Spray Jets vs Wave-Droplet Drums</span>
+</div>
+</div>
+<div class="essay-body">
+<h4>Mechanical Lifecycles and Kinetic Transmission Systems</h4>
+<p>A washing machine takes a real beating during a fast spin cycle, especially with an unevenly loaded drum. LG solves this by skipping the belt and pulley entirely - the motor bolts straight onto the back of the drum. That direct connection means less vibration and more precise control over the drum's speed.</p>
+<p>Bosch takes a different route: a traditional belt-driven motor, but with strong shock absorbers and a specially shaped outer casing that dampens vibration and noise. Combined with a well-designed drum, it wrings out water effectively and holds up well over years of use.</p>
+</div>
+<div class="btn-container">
+<a class="btn" href="lg-bosch.html">Examine Full Kinetic Laundry Report</a>
+</div>
+</div>
+</div>
+<!-- SECTION 4: Samsung vs Artel -->
+<div class="software-card">
+<div class="card-header">
+<h3>Samsung vs Artel Refrigerators</h3>
+<span class="badge">Variable Capacity Refrigeration</span>
+</div>
+<div class="card-content">
+<div class="metrics-dashboard">
+<div class="metric-block">
+<span class="metric-title">Airflow Corridor</span>
+<span class="metric-data">Twin Cooling Plus vs Singular Evaporator</span>
+</div>
+<div class="metric-block">
+<span class="metric-title">Modulation Band</span>
+<span class="metric-data">1,050 - 4,300 RPM vs 1,800 - 3,600 RPM</span>
+</div>
+<div class="metric-block">
+<span class="metric-title">Thermal Insulation</span>
+<span class="metric-data">Cyclopentane Foam vs Polyurethane Injection</span>
+</div>
+</div>
+<div class="essay-body">
+<h4>Insulation and Cooling System</h4>
+<p>A refrigerator runs nonstop, so it's one of the biggest power draws in a kitchen. Samsung uses a digital inverter compressor that adjusts its speed smoothly based on sensor readings, instead of just switching on and off. Its twin-evaporator design keeps the freezer's dry air separate from the fridge, so fresh food doesn't dry out as fast.</p>
+<p>Artel keeps things simpler and more affordable, using a single evaporator with ducts that spread cold air through the fridge fairly evenly. It also defrosts quickly and is easy to service, making it a solid budget pick for everyday family use.</p>
+</div>
+<div class="btn-container">
+<a class="btn" href="samsung-artel.html">Examine Full Refrigeration Report</a>
+</div>
+</div>
+</div>
+</div>
+<!-- AdSense Quality Compliance Component -->
+<div class="editorial-note">
+<h3>How We Keep Testing Fair</h3>
+<p>We test appliances under the same conditions every time, so results are actually comparable. We don't accept payment from manufacturers to influence a rating - every result is based on how the product actually performs.</p>
+</div>
+</div>
+<footer>
+<div class="container">
+<div class="footer-container">
+<div class="footer-column">
+<h3>RankingHours</h3>
+<p style="color: #94a3b8; font-size: 0.95rem;">Independent, hands-on appliance testing and comparisons - no sponsored results, just real performance data.</p>
+</div>
+<div class="footer-column">
+<h3>Policies</h3>
+<ul>
+<li><a href="privacy-policy.html">Privacy Policy</a></li>
+<li><a href="disclaimer.html">Disclaimer</a></li>
+<li><a href="terms-of-service.html"><i class="fas fa-file-contract"></i> Terms of Service</a></li>
+</ul>
+</div>
+<div class="footer-column">
+<h3>Global Hub Info</h3>
+<p style="color: #94a3b8; font-size: 0.95rem; margin-bottom: 10px;">Questions about our testing, or an editorial concern? Reach us at:</p>
+<p style="color: #38bdf8; font-weight: 600;"><i class="fas fa-envelope"></i> abdullohmahmudov660@gmail.com</p>
+</div>
+</div>
+<div class="copyright">
+<p>© 2026 ranking-hours.uz. All rights reserved.</p>
+</div>
+</div>
+</footer>
+<script>
+        // Mobile Navigation UI Interaction Handler
+        document.getElementById('mobileMenuBtn').addEventListener('click', function() {
+            document.getElementById('mainNav').classList.toggle('active');
+        });
+    </script>
+</body>
+</html>
