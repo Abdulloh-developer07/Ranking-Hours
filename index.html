@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+
+<html dir="ltr" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Ranking Hours - Honest Product Comparisons</title>
+<meta content="Deep-dive product comparisons, raw benchmark diagnostics, and data-backed reviews. Helping you choose the absolute best technology without the marketing hype." name="description"/>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;family=Space+Grotesk:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Font Awesome -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+<style>
+        /* --- PREMIUM RGB / TECH DARK THEME DESIGN --- */
+        :root {
+            --bg-main: #090d16;
+            --bg-card: #111827;
+            --text-main: #f3f4f6;
+            --text-muted: #9ca3af;
+            
+            /* Neon RGB Glow Gradients */
+            --rgb-cyan: #00f2fe;
+            --rgb-purple: #9c27b0;
+            --rgb-magenta: #f355da;
+            --neon-glow: linear-gradient(90deg, #00f2fe, #9c27b0, #f355da, #00f2fe);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-main);
+            color: var(--text-main);
+            line-height: 1.9;
+            overflow-x: hidden;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        /* --- RGB BACKGROUND ANIMATION --- */
+        @keyframes rgb-slide {
+            0% { background-position: 0% 50%; }
+            100% { background-position: 400% 50%; }
+        }
+
+        /* --- FIXED CLEAN NAVBAR WITH NEON UNDERLINE --- */
+        .navbar {
+            background: rgba(9, 13, 22, 0.95);
+            backdrop-filter: blur(12px);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .navbar::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: var(--neon-glow);
+            background-size: 400%;
+            animation: rgb-slide 15s linear infinite;
+        }
+
+        .navbar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: white;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            background: var(--neon-glow);
+            background-size: 400%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: rgb-slide 10s linear infinite;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: var(--text-muted);
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            color: var(--rgb-cyan);
+        }
+
+        .contact-btn {
+            background: rgba(0, 242, 254, 0.1);
+            color: var(--rgb-cyan);
+            padding: 8px 18px;
+            border-radius: 30px;
+            border: 1px solid rgba(0, 242, 254, 0.3);
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .contact-btn:hover {
+            background: var(--neon-glow);
+            background-size: 400%;
+            color: white;
+            animation: rgb-slide 8s linear infinite;
+            border-color: transparent;
+            box-shadow: 0 0 15px rgba(0, 242, 254, 0.4);
+        }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            padding: 140px 0 90px;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 3.8rem;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 25px;
+            letter-spacing: -1px;
+        }
+
+        .hero-title span {
+            background: var(--neon-glow);
+            background-size: 400%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: rgb-slide 12s linear infinite;
+        }
+
+        .hero-subtitle {
+            color: var(--text-muted);
+            max-width: 900px;
+            margin: 0 auto 35px;
+            font-size: 1.25rem;
+            line-height: 1.8;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 32px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            margin: 5px;
+        }
+
+        .btn-primary {
+            background: var(--neon-glow);
+            background-size: 400%;
+            color: white;
+            animation: rgb-slide 10s linear infinite;
+        }
+
+        .btn-primary:hover {
+            box-shadow: 0 0 20px rgba(243, 85, 218, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            border: 1px solid var(--text-muted);
+            color: white;
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--rgb-cyan);
+            color: var(--rgb-cyan);
+            transform: translateY(-2px);
+        }
+
+        .hero-image {
+            margin-top: 65px;
+            display: flex;
+            gap: 25px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .hero-image img {
+            width: 160px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .hero-image img:hover {
+            transform: scale(1.05);
+            border-color: var(--rgb-cyan);
+            box-shadow: 0 0 15px rgba(0, 242, 254, 0.3);
+        }
+
+        /* --- DEEP INFORMATIVE TEXT PARAGRAPHS (AdSense Optimization) --- */
+        .editorial-manifesto {
+            padding: 60px 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.03);
+        }
+
+        .manifesto-box {
+            background: linear-gradient(135deg, #111827 0%, #0d1321 100%);
+            border-radius: 24px;
+            padding: 50px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        .manifesto-box::before {
+            content: '';
+            position: absolute;
+            top: -1px; left: -1px; right: -1px; bottom: -1px;
+            background: var(--neon-glow);
+            background-size: 400%;
+            z-index: -1;
+            border-radius: 25px;
+            opacity: 0.15;
+            animation: rgb-slide 15s linear infinite;
+        }
+
+        .manifesto-box h2 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 2rem;
+            color: white;
+            margin-bottom: 25px;
+        }
+
+        .manifesto-box p {
+            color: var(--text-main);
+            font-size: 1.05rem;
+            margin-bottom: 20px;
+            text-align: justify;
+            opacity: 0.9;
+        }
+
+        /* --- PREMIUM RGB GLOW CARDS & GRID --- */
+        .features, .latest-comparisons {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            font-family: 'Space Grotesk', sans-serif;
+            text-align: center;
+            font-size: 2.6rem;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--text-muted);
+            max-width: 700px;
+            margin: 0 auto 60px;
+            font-size: 1.1rem;
+        }
+
+        .features-grid, .comparisons-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 35px;
+        }
+
+        .feature-card, .comparison-card {
+            background: var(--bg-card);
+            padding: 40px 30px;
+            border-radius: 20px;
+            position: relative;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        /* RGB Border Glow Effect on Hover */
+        .feature-card::before, .comparison-card::before {
+            content: '';
+            position: absolute;
+            top: -1px; left: -1px; right: -1px; bottom: -1px;
+            background: var(--neon-glow);
+            background-size: 400%;
+            z-index: -1;
+            border-radius: 21px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            animation: rgb-slide 10s linear infinite;
+        }
+
+        .feature-card:hover::before, .comparison-card:hover::before {
+            opacity: 0.7;
+        }
+
+        .feature-card:hover, .comparison-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+        }
+
+        .feature-icon i {
+            font-size: 2.5rem;
+            background: var(--neon-glow);
+            background-size: 400%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: rgb-slide 12s linear infinite;
+            margin-bottom: 25px;
+        }
+
+        .feature-card h3, .comparison-card h3 {
+            font-size: 1.4rem;
+            color: white;
+            margin-bottom: 15px;
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        .feature-card p, .comparison-card p {
+            color: var(--text-muted);
+            font-size: 1rem;
+            line-height: 1.7;
+        }
+
+        /* --- REDIRECTED SYSTEM LINK SECTIONS --- */
+        .comparison-card {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .comparison-footer-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--rgb-cyan);
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 25px;
+            transition: gap 0.2s;
+        }
+
+        .comparison-footer-link:hover {
+            gap: 12px;
+        }
+
+        /* --- AUTHOR SPOTLIGHT --- */
+        .author-spotlight {
+            padding: 100px 0;
+            background: #0b111e;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .author-content {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .author-info h2 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 2.5rem;
+            color: white;
+            margin-bottom: 25px;
+        }
+
+        .author-info p {
+            color: var(--text-main);
+            font-size: 1.1rem;
+            margin-bottom: 25px;
+            line-height: 1.8;
+            text-align: justify;
+            opacity: 0.95;
+        }
+
+        .author-stats {
+            display: flex;
+            justify-content: space-around;
+            margin: 50px 0;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .stat-number {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: var(--rgb-cyan);
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        /* --- FOOTER DESIGN --- */
+        .footer {
+            background: #060910;
+            padding: 90px 0 40px;
+            position: relative;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.5fr repeat(3, 1fr);
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        .footer-description {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            max-width: 320px;
+            line-height: 1.7;
+        }
+
+        .footer-col h3 {
+            font-size: 1.1rem;
+            color: white;
+            margin-bottom: 25px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.2s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--rgb-cyan);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            padding-top: 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .footer-bottom p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        /* --- MOBILE ADAPTATION --- */
+        @media (max-width: 992px) {
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .hero-title {
+                font-size: 2.8rem;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .navbar .container {
+                flex-direction: column;
+                gap: 15px;
+            }
+            .nav-menu {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 15px;
+                font-size: 0.85rem;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+<link href="favicon.png" rel="icon" type="image/png"/>
+</head>
+<body>
+<!-- Fixed Modern Navigation Area -->
+<nav class="navbar">
+<div class="container">
+<a class="logo" href="index.html">
+<i class="fas fa-bolt" style="color: var(--rgb-cyan);"></i> ranking-<span>hours.uz</span>
+</a>
+<div class="nav-menu">
+<a class="nav-link active" href="index.html">Home</a>
+<a class="nav-link" href="categories.html">Categories</a>
+<a class="nav-link" href="comparisons.html">Comparisons</a>
+<a class="nav-link" href="methodology.html">Methodology</a>
+<a class="nav-link" href="about.html">About Us</a>
+<a class="nav-link contact-btn" href="contact.html">Get in Touch</a>
+</div>
+</div>
+</nav>
+<!-- Glowing Hero Landing Banner -->
+<section class="hero">
+<div class="container">
+<h1 class="hero-title">
+                Choose the Absolute Best, <br/><span>Optimize Your Time</span>
+</h1>
+<p class="hero-subtitle">
+                We test gadgets, software, and vehicles the way real people actually use them - no marketing spin, just honest results based on hands-on testing.
+            </p>
+<div class="hero-buttons">
+<a class="btn btn-primary" href="comparisons.html">
+<i class="fas fa-balance-scale"></i> View All Comparisons
+                </a>
+<a class="btn btn-secondary" href="methodology.html">
+<i class="fas fa-flask"></i> How We Test Instruments
+                </a>
+</div>
+<div class="hero-image">
+<img alt="smartphone" src="smartphone.jpg"/>
+<img alt="laptop" src="laptop.jpg"/>
+<img alt="smartwatch" src="smartwatch.jpg"/>
+</div>
+</div>
+</section>
+<!-- LONG READ MANIFESTO SECTION (Part of the 3500+ words architecture) -->
+<section class="editorial-manifesto">
+<div class="container">
+<div class="manifesto-box">
+<h2>How We Test at ranking-hours.uz</h2>
+<p>Finding a review you can actually trust is harder than it should be. A lot of tech sites just repeat what's in the press release and call it a review. We do things differently: we buy the products ourselves, use them the way a normal person would, and write down what actually happens - good or bad.</p>
+<p>When a new phone, laptop, app, or car comes out, we don't just glance at the spec sheet. We use it for weeks. We check how the battery holds up over time, how it handles heat during heavy use, and where the build quality starts to show cracks - literally and figuratively. Every rating, chart, and comparison on this site comes from that hands-on process, not from a marketing deck.</p>
+<p>We also keep our testing separate from our business side on purpose. The people running the tests don't deal with ads or partnerships, so there's no pressure to go easy on a brand. We buy our review units from regular stores, the same way you would, instead of accepting free samples that companies hand-pick to look good.</p>
+<p>Tech doesn't stand still after launch day - a software update can make a great phone worse, or fix a laptop's early problems. So we don't just review something once and move on. We go back and re-check products after major updates, which is why you'll sometimes see a score change months after a product first came out.</p>
+</div>
+</div>
+</section>
+<!-- Structural Values Section -->
+<section class="features">
+<div class="container">
+<h2 class="section-title">Why Trust Our Reviews?</h2>
+<p class="section-subtitle">A few simple reasons our testing stays honest and useful.</p>
+<div class="features-grid">
+<div class="feature-card">
+<div class="feature-icon"><i class="fas fa-hands-holding"></i></div>
+<h3>We Buy Our Own Test Units</h3>
+<p>No free review samples picked by a PR team. We buy products from regular stores and use them like a normal customer would, so we catch the same flaws and quirks you'd run into.</p>
+</div>
+<div class="feature-card">
+<div class="feature-icon"><i class="fas fa-terminal"></i></div>
+<h3>Plain-Language Reviews</h3>
+<p>We skip the jargon and explain what the specs actually mean for daily use - what's genuinely useful, and where a product falls short in real life.</p>
+</div>
+<div class="feature-card">
+<div class="feature-icon"><i class="fas fa-chart-bar"></i></div>
+<h3>A Simple 5-Point Scale</h3>
+<p>Every product is scored the same way, across the same categories: reliability, value for money, build quality, and how well it fits into daily use. Same rules for every product, no favorites.</p>
+</div>
+<div class="feature-card">
+<div class="feature-icon"><i class="fas fa-rotate"></i></div>
+<h3>We Update Our Reviews</h3>
+<p>Products change after launch through software updates and fixes. When that happens, we go back, retest, and adjust the score if something's genuinely different.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- EXTENDED KNOWLEDGE ARCHITECTURE DEEP DIVE -->
+<section class="editorial-manifesto" style="padding-top: 0;">
+<div class="container">
+<div class="manifesto-box">
+<h2>How We Test Different Kinds of Products</h2>
+<p>For phones and other consumer gadgets, we go past the spec sheet. We check screen brightness in direct sunlight, see how hot the processor gets during gaming, and track real battery drain over normal daily use - not just a lab number, but what you'd actually get on a busy day.</p>
+<p>For software - editing tools, design apps, cloud services - we look at how they hold up under real workloads. That means watching how much memory they use during heavy tasks, whether they crash on messy files, and how well they play with other tools you already use.</p>
+<p>For cars and electric vehicles, we look at how the battery range holds up in both summer and winter, how the driver-assist features react to real road situations, and how fast charging actually is on different chargers. The goal is always the same: tell you what to expect before you spend the money, not after.</p>
+</div>
+</div>
+</section>
+<!-- Dynamic Redirect Hubs (No individual comparison leaks) -->
+<section class="latest-comparisons">
+<div class="container">
+<h2 class="section-title">Browse by Category</h2>
+<p class="section-subtitle">Jump straight to the kind of product you're trying to choose between.</p>
+<div class="comparisons-grid">
+<div class="comparison-card">
+<div>
+<h3>📱 Phones &amp; Consumer Electronics</h3>
+<p>Real-world battery life, camera quality over time, and how the processor holds up under everyday use.</p>
+</div>
+<a class="comparison-footer-link" href="smartphone-comparisons.html">See the comparisons <i class="fas fa-arrow-right"></i></a>
+</div>
+<div class="comparison-card">
+<div>
+<h3>💻 Laptops &amp; Workstations</h3>
+<p>How premium laptops and dev machines actually perform under a full workload, not just on paper.</p>
+</div>
+<a class="comparison-footer-link" href="laptop-comparisons.html">See the comparisons <i class="fas fa-arrow-right"></i></a>
+</div>
+<div class="comparison-card">
+<div>
+<h3>🚗 Cars &amp; Electric Vehicles</h3>
+<p>Honest numbers on EV range, battery health over time, and how well driver-assist features work in practice.</p>
+</div>
+<a class="comparison-footer-link" href="automotive-comparisons.html">See the comparisons <i class="fas fa-arrow-right"></i></a>
+</div>
+<div class="comparison-card">
+<div>
+<h3>🎨 Software &amp; Cloud Tools</h3>
+<p>Straight comparisons of the apps and cloud tools people actually use for work, from editing software to AI tools.</p>
+</div>
+<a class="comparison-footer-link" href="software.html">See the comparisons <i class="fas fa-arrow-right"></i></a>
+</div>
+</div>
+</div>
+</section>
+<!-- Business Leadership Bio Section -->
+<section class="author-spotlight">
+<div class="container">
+<div class="author-content">
+<div class="author-info">
+<h2>Founder: Abdulloh</h2>
+<p>I started ranking-hours.uz after years working in systems engineering, tired of seeing tech "reviews" that were really just ads in disguise. I wanted a place where people could get a straight answer about whether a product is actually worth buying. Every rating on this site comes from real testing time, not a press kit.</p>
+<div class="author-stats">
+<div class="stat">
+<span class="stat-number">50+</span>
+<span>Products Tested</span>
+</div>
+<div class="stat">
+<span class="stat-number">500+</span>
+<span>Testing Hours</span>
+</div>
+<div class="stat">
+<span class="stat-number">100%</span>
+<span>Independent</span>
+</div>
+</div>
+<a class="btn btn-secondary" href="about.html"><i class="fas fa-user"></i> More About Us</a>
+</div>
+</div>
+</div>
+</section>
+<!-- Ultra Tech Dark Footer Matrix -->
+<footer class="footer">
+<div class="container">
+<div class="footer-grid">
+<div class="footer-col">
+<div style="font-family: 'Space Grotesk', sans-serif; font-size: 1.5rem; font-weight: 700; color: white; margin-bottom: 20px;">
+<i class="fas fa-bolt" style="color: var(--rgb-cyan);"></i> ranking-hours.uz
+                    </div>
+<p class="footer-description">
+                        Independent, hands-on reviews of phones, laptops, cars, and software - tested, not just described.
+                    </p>
+</div>
+<div class="footer-col">
+<h3>Categories</h3>
+<ul class="footer-links">
+<li><a href="technology.html">📱 Consumer Tech</a></li>
+<li><a href="software.html">💻 Software Systems</a></li>
+<li><a href="automotive-comparisons.html">🚗 Automotive Hub</a></li>
+<li><a href="appliances-comparisons.html">🏠 Home Appliances</a></li>
+<li><a href="gaming.html">🎮 Extreme Hardware</a></li>
+</ul>
+</div>
+<div class="footer-col">
+<h3>Operational System</h3>
+<ul class="footer-links">
+<li><a href="about.html">About Our Agency</a></li>
+<li><a href="methodology.html">Testing Methodology</a></li>
+<li><a href="independence.html">Independence Declaration</a></li>
+<li><a href="ethics.html">Code of Ethics</a></li>
+<li><a href="contact.html">Laboratory Channels</a></li>
+</ul>
+</div>
+<div class="footer-col">
+<h3>Legal</h3>
+<ul class="footer-links">
+<li><a href="privacy-policy.html">Privacy Protection</a></li>
+<li><a href="terms-of-service.html">Terms of Operations</a></li>
+<li><a href="disclaimer.html">Liability Disclaimers</a></li>
+<li><a href="cookies.html">Cookie Policy</a></li>
+<li><a href="AFFILIATE-DISCLOSURE.html">Affiliate Disclosure</a></li>
+</ul>
+</div>
+</div>
+<div class="footer-bottom">
+<p>© 2025-2026 ranking-hours.uz. All rights reserved.</p>
+<p style="font-size: 0.85rem; color: var(--text-muted); max-width: 450px; text-align: right;">
+                    Free, independent product reviews - no corporate sponsors involved.
+                </p>
+</div>
+</div>
+</footer>
+</body>
+</html>

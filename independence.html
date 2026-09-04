@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="Official Declaration of Independence and Editorial Integrity Manifesto of ranking-hours.uz. Read our exhaustive framework governing unbiased research, product testing, and journalistic objectivity." name="description"/>
+<title>Declaration of Editorial Independence | ranking-hours.uz</title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+<style>
+        :root {
+            --primary: #7b1fa2;
+            --secondary: #9c27b0;
+            --accent: #ba68c8;
+            --light: #f3e5f5;
+            --dark: #4a148c;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #fafafa 0%, #f5f5f5 100%);
+            color: #333;
+            line-height: 1.8;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--dark) 100%);
+            color: white;
+            padding: 20px 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            color: white;
+        }
+
+        .logo i {
+            font-size: 2rem;
+            color: var(--accent);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 8px 15px;
+            border-radius: 20px;
+            transition: all 0.3s;
+        }
+
+        nav a:hover, nav a.active {
+            background-color: var(--secondary);
+        }
+
+        .page-header {
+            background: linear-gradient(rgba(123, 31, 162, 0.9), rgba(74, 20, 140, 0.9)), url('https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 120px 20px;
+            margin-bottom: 50px;
+            border-radius: 0 0 30px 30px;
+        }
+
+        .page-header h1 {
+            font-size: 3.2rem;
+            margin-bottom: 20px;
+            font-weight: 800;
+        }
+
+        .page-header p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+
+        .declaration-content {
+            background: white;
+            padding: 50px;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
+            margin-bottom: 40px;
+        }
+
+        .declaration-section {
+            margin-bottom: 50px;
+            padding-bottom: 40px;
+            border-bottom: 2px solid var(--light);
+        }
+
+        .declaration-section:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .declaration-section h2 {
+            color: var(--dark);
+            font-size: 2rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .declaration-section h3 {
+            color: var(--primary);
+            margin-top: 30px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.4rem;
+        }
+
+        .declaration-section p {
+            margin-bottom: 20px;
+            color: #444;
+            text-align: justify;
+        }
+
+        .guarantee-box {
+            background: var(--light);
+            padding: 30px;
+            border-radius: 15px;
+            margin: 30px 0;
+            border-left: 6px solid var(--primary);
+        }
+
+        .guarantee-box h4 {
+            color: var(--dark);
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 1.2rem;
+        }
+
+        .independence-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 25px;
+            margin: 35px 0;
+        }
+
+        .independence-item {
+            background: #f8f9fa;
+            padding: 30px 20px;
+            border-radius: 12px;
+            text-align: center;
+            border: 1px solid #eee;
+            transition: all 0.3s ease;
+        }
+
+        .independence-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+        }
+
+        .independence-item i {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+
+        .independence-item h4 {
+            margin-bottom: 12px;
+            color: var(--dark);
+            font-size: 1.1rem;
+        }
+
+        .independence-item p {
+            font-size: 0.95rem;
+            color: #555;
+            line-height: 1.5;
+        }
+
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 60px 0 20px;
+            margin-top: 60px;
+        }
+
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-column h3 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            color: var(--accent);
+        }
+
+        .footer-column p {
+            color: #d1c4e9;
+            font-size: 0.95rem;
+            margin-bottom: 15px;
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 12px;
+        }
+
+        .footer-column a {
+            color: #e1bbe8;
+            text-decoration: none;
+            transition: color 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .footer-column a:hover {
+            color: white;
+            text-decoration: underline;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #b0bec5;
+            font-size: 0.9rem;
+        }
+
+        .signature {
+            text-align: center;
+            margin-top: 50px;
+            padding-top: 30px;
+            border-top: 2px solid var(--light);
+        }
+
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .page-header h1 {
+                font-size: 2.4rem;
+            }
+            
+            .declaration-content {
+                padding: 25px;
+            }
+            
+            .independence-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+<link href="favicon.png" rel="icon" type="image/png"/>
+</head>
+<body>
+<header>
+<div class="container header-container">
+<a class="logo" href="index.html">
+<i class="fas fa-shield-alt"></i>
+<div>ranking-<span>hours.uz</span></div>
+</a>
+<nav>
+<ul>
+<li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+<li><a class="active" href="independence.html"><i class="fas fa-shield-alt"></i> Independence</a></li>
+<li><a href="ethics.html"><i class="fas fa-scale-balanced"></i> Ethics</a></li>
+<li><a href="funding.html"><i class="fas fa-money-bill"></i> Funding</a></li>
+</ul>
+</nav>
+</div>
+</header>
+<section class="page-header">
+<div class="container">
+<h1>Declaration of Independence</h1>
+<p>The rules we follow to keep our reviews honest and free from outside influence.</p>
+</div>
+</section>
+<div class="container">
+<div class="declaration-content">
+<!-- SECTION 1: INTRODUCTION & CORE PHILOSOPHY -->
+<div class="declaration-section">
+<h2>1. Our Core Promise</h2>
+<p>There's a lot of paid content online dressed up as honest reviews. This page is our answer to that: a clear statement of the rules we follow at ranking-hours.uz to keep our reviews independent, and the safeguards that back that promise up.</p>
+<p>Our promise is simple: give people honest, tested information to help them buy the right product, without letting outside companies steer that.</p>
+<div class="guarantee-box">
+<h4><i class="fas fa-certificate"></i> Our Permanent Unconditional Vow</h4>
+<p>Every test, score, and buying guide on ranking-hours.uz is created independently. No manufacturer, retailer, or advertiser has the power to change, delay, or influence what we publish.</p>
+</div>
+<h3>The Importance of Unbiased Consumer Testing</h3>
+<p>When a review site mixes its scores with its ad deals, readers are the ones who lose out. We deal with this by keeping the people who write and test our reviews completely separate from anyone handling ads or brand deals.</p>
+</div>
+<!-- SECTION 2: PROHIBITED OPERATIONAL PRACTICES -->
+<div class="declaration-section">
+<h2>2. What We Won't Do</h2>
+<p>To keep our testing fair, we follow a few strict rules that stop PR teams or affiliate partners from steering our conclusions.</p>
+<div class="independence-grid">
+<div class="independence-item">
+<i class="fas fa-money-bill-wave"></i>
+<h4>Sponsored Review Bans</h4>
+<p>We turn down any payment offered in exchange for a better review or a higher rank.</p>
+</div>
+<div class="independence-item">
+<i class="fas fa-gift"></i>
+<h4>Zero-Gratuity Standard</h4>
+<p>Our team doesn't accept gifts, free trips, or vouchers from the brands we cover.</p>
+</div>
+<div class="independence-item">
+<i class="fas fa-handshake-slash"></i>
+<h4>No Backroom Pacts</h4>
+<p>We won't sign any agreement that requires us to hide a product's flaws or change a rating.</p>
+</div>
+<div class="independence-item">
+<i class="fas fa-user-tie"></i>
+<h4>No Conflicts of Interest</h4>
+<p>Our writers and testers can't hold shares in, or consulting deals with, any company we review.</p>
+</div>
+</div>
+<h3>Beyond Just Cash</h3>
+<p>It's not just about rejecting cash. If a manufacturer offers early access to a software update or extra hardware, our team checks whether that could look like it's buying a better score - and if it could, we turn it down.</p>
+<p>Every year, staff also have to disclose any personal investments or ties that could create a conflict of interest. If someone has a past connection to a brand, they don't work on reviews of that brand.</p>
+</div>
+<!-- SECTION 3: OPERATIONAL SAFEGUARDS & PROCUREMENT -->
+<div class="declaration-section">
+<h2>3. How We Enforce This in Practice</h2>
+<p>A promise on paper only means something if it's backed up in practice. Here's how we actually enforce this day to day.</p>
+<h3>How We Source Products</h3>
+<p>A lot of review sites test free samples hand-picked by manufacturers, which often perform better than what you'd actually buy in a store. To avoid that, we follow these rules when we source products:</p>
+<ul style="margin: 20px 0; padding-left: 25px; line-height: 1.9;">
+<li style="margin-bottom: 12px;">Buying from regular stores: Most of what we test, we buy ourselves from regular retailers, so we're testing the same units a normal customer would get.</li>
+<li style="margin-bottom: 12px;">Short-term loans, when needed: For rare or expensive equipment, we sometimes borrow a unit temporarily - but the agreement always states the manufacturer has no right to see, edit, or block what we publish.</li>
+<li style="margin-bottom: 12px;">Returning borrowed units: Once testing is done, borrowed units go back to the manufacturer - we don't keep free long-term gear.</li>
+</ul>
+<h3>Keeping Editorial and Business Separate</h3>
+<p>Our writers and testers don't see our ad numbers or revenue targets. They're not working toward a sales goal - just toward getting the review right.</p>
+</div>
+<!-- SECTION 4: TESTING METHODOLOGIES & REPRODUCIBILITY -->
+<div class="declaration-section">
+<h2>4. How We Test</h2>
+<p>To keep personal bias out of it, our scores are based on structured tests, not just gut feeling.</p>
+<p>We use the same benchmarks and testing conditions for every product in a category, so nothing gets an easier ride. More than one person checks the raw results too, so no single reviewer's personal taste can skew a score.</p>
+<p>Because our tests are repeatable, we're happy to share our testing setup if a manufacturer disagrees with a result. We won't change a score just because a company complains - only if we find an actual error in our testing.</p>
+</div>
+<!-- SECTION 5: INTERNAL OVERSIGHT & ADHERENCE -->
+<div class="declaration-section">
+<h2>5. Ongoing Oversight</h2>
+<p>Staying independent isn't a one-time thing - it takes ongoing checks.</p>
+<div style="background: #f0f4f8; padding: 30px; border-radius: 12px; margin-top: 15px; border-left: 5px solid #3498db;">
+<h4><i class="fas fa-user-shield"></i> The Independent Integrity Committee</h4>
+<p>We have an internal team that meets monthly to check our review process, audit scores, and look into any concerns. They can pull an article if it doesn't meet our standards.</p>
+</div>
+<h3>Accountability to Our Readers</h3>
+<p>If you ever spot something that looks like a conflict of interest on our site, you can reach out and we'll look into it. Anyone raising a genuine concern - staff or reader - is protected, not penalized.</p>
+</div>
+<!-- SECTION 6: CONCLUSION & CORPORATE BINDING -->
+<div class="declaration-section">
+<h2>6. Our Commitment</h2>
+<p>This is a real commitment, not just words on a page. Everyone who works on our content signs off on it, and breaking these rules means they no longer work with us.</p>
+<div class="signature">
+<h4><i class="fas fa-signature"></i> Executed Affirmation of Integrity</h4>
+<p>Every person on the ranking-hours.uz team is bound by this, and we review it regularly.</p>
+<div style="margin-top: 25px; font-style: italic; color: var(--primary); font-weight: 600; font-size: 1.1rem;">
+<p>Our independence is what makes our reviews worth trusting.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<footer>
+<div class="container">
+<div class="footer-container">
+<div class="footer-column">
+<h3>About ranking-hours.uz</h3>
+<p>Honest, carefully checked reviews - that's the core of what we do.</p>
+</div>
+<div class="footer-column">
+<h3>Transparency Safeguards</h3>
+<ul>
+<li><a href="funding.html"><i class="fas fa-lock"></i> Funding Disclosure</a></li>
+<li><a href="faq.html"><i class="fas fa-user-shield"></i> Frequently Asked Questions</a></li>
+<li><a href="cookies.html"><i class="fas fa-balance-scale"></i> Cookie Policy</a></li>
+<li><a href="categories.html"><i class="fas fa-eye"></i> Review Categories</a></li>
+</ul>
+</div>
+<div class="footer-column">
+<h3>Questions or Concerns?</h3>
+<p>Questions about how we test or our ethics policy? Reach out to us at:</p>
+<p style="margin-top: 10px; font-weight: bold; color: var(--accent); font-size: 1.05rem;">abdullohmahmudov660@gmail.com</p>
+</div>
+</div>
+<div class="copyright">
+<p>© 2025-2026 ranking-hours.uz. This page has been in effect since January 17, 2026.</p>
+</div>
+</div>
+</footer>
+</body>
+</html>

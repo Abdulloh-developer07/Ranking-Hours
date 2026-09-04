@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="Official Code of Ethics and Editorial Integrity Framework for Ranking Hours - Establishing principles of business independence, testing objectivity, and comprehensive public transparency." name="description"/>
+<title>Our Code of Ethics | Ranking Hours</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+<style>
+        :root {
+            --primary: #3949ab;
+            --primary-light: #5c6bc0;
+            --secondary: #7986cb;
+            --accent: #9fa8da;
+            --light-bg: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border-color: #e2e8f0;
+            --success: #10b981;
+            --danger: #ef4444;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        }
+
+        body {
+            background-color: #f1f5f9;
+            color: var(--text-main);
+            line-height: 1.75;
+            font-size: 1rem;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 1140px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Top Language Switcher Layout */
+        .language-banner {
+            background-color: #0f172a;
+            padding: 10px 0;
+            border-bottom: 1px solid #1e293b;
+        }
+
+        .language-container {
+            display: flex;
+            justify-content: flex-end;
+            gap: 12px;
+        }
+
+        .lang-link {
+            color: #94a3b8;
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 500;
+            padding: 4px 10px;
+            border-radius: 4px;
+            transition: all 0.2s ease;
+            border: 1px solid #334155;
+        }
+
+        .lang-link:hover, .lang-link.active {
+            color: #ffffff;
+            background-color: #334155;
+            border-color: #475569;
+        }
+
+        /* Fixed Navigation System */
+        header {
+            background: linear-gradient(135deg, var(--primary) 0%, #1e293b 100%);
+            color: white;
+            padding: 20px 0;
+            box-shadow: 0 4px 20px rgba(15, 23, 42, 0.15);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.6rem;
+            font-weight: 800;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: white;
+            text-decoration: none;
+            letter-spacing: -0.5px;
+        }
+
+        .logo i {
+            font-size: 1.8rem;
+            color: #3b82f6;
+        }
+
+        .logo span {
+            color: #3b82f6;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 16px;
+            align-items: center;
+        }
+
+        nav a {
+            color: #cbd5e1;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            padding: 10px 18px;
+            border-radius: 8px;
+            transition: all 0.25s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        nav a:hover {
+            color: white;
+            background-color: rgba(255, 255, 255, 0.08);
+        }
+
+        nav a.active {
+            color: white;
+            background-color: #3b82f6;
+            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+        }
+
+        /* Editorial Banner Segment */
+        .page-header {
+            background: linear-gradient(rgba(15, 23, 42, 0.85), rgba(57, 73, 171, 0.9)), url('https://images.unsplash.com/photo-1553877522-43269d4ea984?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 110px 20px;
+            margin-bottom: 50px;
+            border-radius: 0 0 24px 24px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+
+        .page-header h1 {
+            font-size: 3.2rem;
+            margin-bottom: 15px;
+            font-weight: 800;
+            letter-spacing: -1px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .page-header p {
+            font-size: 1.25rem;
+            color: #e2e8f0;
+            max-width: 700px;
+            margin: 0 auto;
+            font-weight: 400;
+        }
+
+        /* Core Structure and Components */
+        .compliance-section {
+            background: var(--card-bg);
+            padding: 40px;
+            border-radius: 16px;
+            margin: 35px 0;
+            box-shadow: 0 4px 15px rgba(15, 23, 42, 0.04);
+            border: 1px solid var(--border-color);
+        }
+
+        .compliance-section.intro-block {
+            border-top: 5px solid #3b82f6;
+        }
+
+        .compliance-section h2 {
+            font-size: 2rem;
+            font-weight: 800;
+            color: #0f172a;
+            letter-spacing: -0.5px;
+        }
+
+        .compliance-section p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            line-height: 1.8;
+            max-width: 850px;
+            margin: 0 auto;
+        }
+
+        .ethics-container {
+            display: flex;
+            flex-direction: column;
+            gap: 35px;
+            margin: 40px 0;
+        }
+
+        .ethics-card {
+            background: var(--card-bg);
+            padding: 45px;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(15, 23, 42, 0.03);
+            border: 1px solid var(--border-color);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .ethics-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 25px rgba(15, 23, 42, 0.06);
+        }
+
+        .ethics-card h3 {
+            color: #0f172a;
+            font-size: 1.6rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            border-bottom: 2px solid #f1f5f9;
+            padding-bottom: 15px;
+        }
+
+        .principle-number {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--primary) 0%, #1d4ed8 100%);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            text-align: center;
+            line-height: 40px;
+            margin-right: 15px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            box-shadow: 0 4px 10px rgba(57, 73, 171, 0.25);
+        }
+
+        .ethics-card > p {
+            font-size: 1.15rem;
+            color: #334155;
+            font-weight: 500;
+            margin-bottom: 20px;
+        }
+
+        .ethics-card-intro {
+            color: var(--text-muted);
+            margin-bottom: 25px;
+            font-size: 1.05rem;
+            text-align: justify;
+        }
+
+        .ethics-card ul {
+            list-style: none;
+            margin: 20px 0 0 0;
+            padding-left: 0;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 16px;
+        }
+
+        .ethics-card li {
+            position: relative;
+            padding-left: 30px;
+            color: #334155;
+            font-size: 1.05rem;
+            text-align: justify;
+        }
+
+        .ethics-card li::before {
+            content: "\f00c";
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            top: 2px;
+            color: var(--success);
+            font-size: 0.95rem;
+        }
+
+        /* Specialized Sub-items Architecture */
+        .sub-details-list {
+            margin-top: 10px !important;
+            margin-left: 15px !important;
+            gap: 10px !important;
+            background-color: #f8fafc;
+            padding: 15px 20px !important;
+            border-radius: 8px;
+            border-left: 3px solid #cbd5e1;
+        }
+
+        .sub-details-list li::before {
+            content: "\f105" !important;
+            color: var(--primary) !important;
+        }
+
+        /* Promotional Framework Block */
+        .ad-unit {
+            background: #f8fafc;
+            border: 2px dashed #cbd5e1;
+            border-radius: 12px;
+            padding: 35px;
+            text-align: center;
+            margin: 50px 0;
+            color: var(--text-muted);
+            transition: all 0.3s ease;
+        }
+
+        .ad-unit:hover {
+            border-color: var(--primary-light);
+            background: #f0f4ff;
+        }
+
+        .ad-unit h3 {
+            color: #475569;
+            font-size: 1.25rem;
+            margin-bottom: 8px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .ad-unit p {
+            font-size: 0.95rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Registry & Complaints System */
+        .complaints-wrapper {
+            border-left: 6px solid var(--danger);
+        }
+
+        .complaints-wrapper h3 {
+            color: #b91c1c;
+            font-size: 1.5rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .contact-box-grid {
+            background: #fff5f5;
+            padding: 30px;
+            border-radius: 12px;
+            margin-top: 20px;
+            border: 1px solid #fee2e2;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .contact-meta-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+        }
+
+        .contact-meta-item i {
+            font-size: 1.4rem;
+            color: var(--danger);
+            background: white;
+            padding: 10px;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(239, 68, 68, 0.1);
+        }
+
+        .contact-meta-text h4 {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            color: #7f1d1d;
+            letter-spacing: 0.5px;
+            margin-bottom: 2px;
+        }
+
+        .contact-meta-text p {
+            font-size: 1.05rem;
+            color: #991b1b;
+            font-weight: 600;
+            text-align: left;
+        }
+
+        /* Business Footer Framework */
+        footer {
+            background: #0f172a;
+            color: #f8fafc;
+            padding: 70px 0 30px;
+            margin-top: 80px;
+            border-top: 4px solid #1e293b;
+        }
+
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-column h3 {
+            color: white;
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 40px;
+            height: 3px;
+            background-color: #3b82f6;
+            border-radius: 2px;
+        }
+
+        .footer-column p {
+            color: #94a3b8;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .footer-column ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-column li {
+            margin-bottom: 12px;
+        }
+
+        .footer-column a {
+            color: #94a3b8;
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: all 0.2s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .footer-column a:hover {
+            color: white;
+            transform: translateX(4px);
+        }
+
+        .footer-column a.active {
+            color: #3b82f6;
+            font-weight: 600;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid #1e293b;
+            color: #64748b;
+            font-size: 0.9rem;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .copyright p {
+            margin: 0;
+        }
+
+        /* Responsive Breakpoints Optimization */
+        @media (max-width: 992px) {
+            .page-header h1 {
+                font-size: 2.6rem;
+            }
+            .ethics-card {
+                padding: 30px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                gap: 20px;
+                text-align: center;
+            }
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 10px;
+            }
+            nav a {
+                padding: 8px 14px;
+                font-size: 0.9rem;
+            }
+            .page-header {
+                padding: 70px 20px;
+                border-radius: 0 0 16px 16px;
+            }
+            .page-header h1 {
+                font-size: 2rem;
+            }
+            .page-header p {
+                font-size: 1.1rem;
+            }
+            .compliance-section {
+                padding: 25px;
+            }
+            .contact-box-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+<link href="favicon.png" rel="icon" type="image/png"/>
+</head>
+<body>
+<!-- Main Navigation Bar Architecture -->
+<header>
+<div class="container header-container">
+<a class="logo" href="index.html">
+<i class="fas fa-scale-balanced"></i>
+<div>Ranking<span>Hours</span></div>
+</a>
+<nav>
+<ul>
+<li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+<li><a class="active" href="ethics.html"><i class="fas fa-scale-balanced"></i> Ethics Code</a></li>
+<li><a href="independence.html"><i class="fas fa-shield-alt"></i> Independence</a></li>
+<li><a href="funding.html"><i class="fas fa-money-bill"></i> Funding Policy</a></li>
+</ul>
+</nav>
+</div>
+</header>
+<!-- Header Jumbotron Area -->
+<section class="page-header">
+<div class="container">
+<h1>Our Code of Ethics</h1>
+<p>The rules that keep our testing and reviews honest.</p>
+</div>
+</section>
+<!-- Primary Text Core Structure -->
+<div class="container">
+<!-- Introductory Obligation Mandate -->
+<div class="compliance-section intro-block">
+<h2 style="color: var(--primary); text-align: center; margin-bottom: 20px;">Our Commitment</h2>
+<p style="text-align: center; font-size: 1.15rem; color: #334155; margin-bottom: 15px; font-weight: 500;">Our goal is to give readers trustworthy, thoroughly checked reviews they can actually rely on.</p>
+<p>Everyone who writes or tests for us follows this Code of Ethics. It's what keeps our reviews independent and free from outside commercial pressure.</p>
+</div>
+<!-- The Six Primary Principles Sections -->
+<div class="ethics-container">
+<!-- Principle 1: Objectivity and Fairness -->
+<div class="ethics-card">
+<h3>1. Staying Objective</h3>
+<p>Every test, benchmark, and score is done as objectively as possible.</p>
+<p class="ethics-card-intro">Independent analysis is at the core of what we do. Our testing is kept separate from marketing pitches and brand influence - no outside company or internal stakeholder can change or delay our results.</p>
+<ul>
+<li>No special treatment for any brand: we avoid deals or agreements that would limit our ability to openly report a product's flaws.</li>
+<li>Same conditions for every product: matching firmware versions, room temperature, and testing tools across the board.</li>
+<li>Personal opinions stay out of the data: our scores are based on measurable results, not who our staff might personally know at a company.</li>
+<li>Same standard for everyone: a small open-source app gets tested just as rigorously as software from a massive company.</li>
+</ul>
+</div>
+<!-- Principle 2: Transparency -->
+<div class="ethics-card">
+<h3>2. Being Transparent</h3>
+<p>How we test, and how we make money, are both fully open to the public.</p>
+<p class="ethics-card-intro">We share exactly how we reach our conclusions, so our work can be checked by anyone. Being open about our methods is what builds real trust.</p>
+<ul>
+<li>Our test setup is public: benchmarking tools, test conditions, and configurations are listed openly so others could reproduce our results.</li>
+<li>We clearly disclose how we make money - ads and affiliate links - and none of it affects our scores or what we write.</li>
+<li>We keep our raw test data and recordings on file, so we can back up our findings if a manufacturer disputes them.</li>
+<li>Our accounting team, who handles affiliate links, is kept separate from our writers and testers - so reviewers aren't even thinking about commissions while testing.</li>
+</ul>
+</div>
+<!-- Principle 3: Accuracy and Factuality -->
+<div class="ethics-card">
+<h3>3. Getting the Facts Right</h3>
+<p>Every number, spec, and quote we publish needs to be accurate, checked against multiple sources, and backed by evidence.</p>
+<p class="ethics-card-intro">Bad information hurts readers and our own reputation, so we take accuracy seriously. Our writers double-check claims to make sure marketing hype doesn't slip into a review as fact.</p>
+<ul>
+<li>We don't publish results from a single test run - things like battery drain and temperature are measured multiple times to rule out flukes.</li>
+<li>We clearly separate rumors and leaks from verified, hands-on test results, so readers always know what's confirmed and what's speculation.</li>
+<li>If we get something wrong, we fix it right away and add a note explaining what changed and why.</li>
+<li>We go back and update older articles when a major software update changes how a product performs, so our older reviews stay accurate.</li>
+</ul>
+</div>
+<!-- Principle 4: Confidentiality and Integrity -->
+<div class="ethics-card">
+<h3>4. Handling Confidential Information</h3>
+<p>Confidential prototypes, trade secrets, and any user data we collect are kept secure.</p>
+<p class="ethics-card-intro">Sometimes we get early access to pre-release products or software. We take that responsibility seriously and never leak details ahead of an official release.</p>
+<ul>
+<li>We honor NDAs and embargo dates - we don't break them for extra traffic.</li>
+<li>Pre-release hardware is kept locked up securely in our testing space.</li>
+<li>Any reader data we collect - feedback, emails, account details - is encrypted and handled according to standard privacy laws.</li>
+</ul>
+</div>
+<!-- Principle 5: Accountability -->
+<div class="ethics-card">
+<h3>5. Being Accountable</h3>
+<p>We take full responsibility for everything we publish.</p>
+<p class="ethics-card-intro">That means standing behind our work and actually listening when readers point out an error - not hiding behind excuses.</p>
+<ul>
+<li>We regularly review old articles and update or archive them if a product is discontinued or a company changes how it operates.</li>
+<li>We read and respond to feedback from readers and experts - it helps us catch gaps in our testing.</li>
+<li>If someone reports a possible conflict of interest involving our team, management looks into it directly and resolves it quickly.</li>
+</ul>
+</div>
+<!-- Principle 6: Compliance and Legal Standards -->
+<div class="ethics-card">
+<h3>6. Following the Law</h3>
+<p>Everything we do - testing, publishing, business operations - follows applicable laws.</p>
+<p class="ethics-card-intro">A trustworthy platform has to respect copyright, intellectual property, and fair competition. That's how we stay sustainable and respected long-term.</p>
+<ul>
+<li>We respect copyright: we don't reuse others' content, images, or trademarks without permission.</li>
+<li>We get our test units through legitimate means - buying them ourselves, official press loans, or public software releases.</li>
+<li>Every ad and affiliate link follows standard advertising rules, and it's always clear to readers what's an ad versus what's editorial content.</li>
+</ul>
+</div>
+</div>
+<!-- Educational Ad Unit Block -->
+<div class="ad-unit">
+<h3>A Note on Advertising</h3>
+<p>Ads on this site follow our safety and quality standards, and never affect our test results or scores.</p>
+</div>
+<!-- Registry & Complaints Communication Center -->
+<div class="compliance-section complaints-wrapper">
+<h3>How to Report a Concern</h3>
+<p style="margin-top: 15px; text-align: left; color: #334155;">If you think something on this site violates our Code of Ethics - a team member, a chart, a link, an article - please reach out. We take every report seriously.</p>
+<div class="contact-box-grid">
+<div class="contact-meta-item">
+<i class="fas fa-envelope"></i>
+<div class="contact-meta-text">
+<h4>Direct Compliance Email</h4>
+<p>abdullohmahmudov660@gmail.com</p>
+</div>
+</div>
+<div class="contact-meta-item">
+<i class="fas fa-phone-alt"></i>
+<div class="contact-meta-text">
+<h4>Business Support Phone</h4>
+<p>+998 88 565 06 04</p>
+</div>
+</div>
+<div class="contact-meta-item">
+<i class="fas fa-clock"></i>
+<div class="contact-meta-text">
+<h4>Processing Timeline</h4>
+<p>We aim to respond within 3 business days</p>
+</div>
+</div>
+</div>
+<p style="margin-top: 20px; font-size: 0.95rem; font-style: italic; color: #7f1d1d; text-align: left;">Please email us from a real, verified address so your message doesn't get caught by spam filters.</p>
+</div>
+</div>
+<!-- Business Master Footer -->
+<footer>
+<div class="container">
+<div class="footer-container">
+<div class="footer-column">
+<h3>Code of Ethics</h3>
+<p>Independent, hands-on reviews of phones, laptops, cars, and software - tested, not just described.</p>
+</div>
+<div class="footer-column">
+<h3>Transparency</h3>
+<ul>
+<li><a class="active" href="ethics.html"><i class="fas fa-scale-balanced"></i> Code of Ethics</a></li>
+<li><a href="independence.html">Editorial Independence</a></li>
+<li><a href="funding.html">Funding and Revenue</a></li>
+<li><a href="corrections.html"><i class="fas fa-edit"></i> Corrections Log</a></li>
+</ul>
+</div>
+<div class="footer-column">
+<h3>Report a Concern</h3>
+<p style="margin-bottom: 15px;">Report an issue or ethical concern to us directly:</p>
+<p style="color: white; font-weight: 600;"><i class="fas fa-envelope" style="margin-right: 8px; color: #3b82f6;"></i> abdullohmahmudov660@gmail.com</p>
+<p style="font-size: 0.85rem; margin-top: 8px; color: #64748b;">(Please use a real, verified email address.)</p>
+</div>
+</div>
+<div class="copyright">
+<p>© 2025-2026 ranking-hours.uz. All rights reserved.</p>
+<p style="font-size: 0.8rem; color: #475569; max-width: 900px; margin: 0 auto; line-height: 1.5;">This policy has been in effect since December 23, 2025. Any updates will be logged in our public corrections page.</p>
+</div>
+</div>
+</footer>
+</body>
+</html>

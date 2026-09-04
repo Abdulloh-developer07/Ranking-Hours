@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Microsoft Office vs Google Workspace | Ultimate 2026 Productivity Suite Comparison</title>
+<style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', system-ui, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: #e2e8f0;
+            min-height: 100vh;
+            padding: 20px;
+            line-height: 1.7;
+        }
+        
+        .comparison-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 25px;
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            overflow: hidden;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
+        }
+        
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, #d44638 0%, #4285f4 100%);
+            padding: 70px 40px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header::before {
+            content: '📊';
+            position: absolute;
+            font-size: 220px;
+            opacity: 0.08;
+            top: -40px;
+            right: -40px;
+        }
+        
+        .main-title {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            background: linear-gradient(45deg, #fff, #fbbc05);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .subtitle {
+            font-size: 1.4rem;
+            color: #cbd5e1;
+            max-width: 900px;
+            margin: 0 auto 30px;
+            line-height: 1.6;
+        }
+        
+        .rating-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(245, 158, 11, 0.2);
+            color: #fbbf24;
+            padding: 12px 30px;
+            border-radius: 30px;
+            font-weight: 700;
+            font-size: 1.2rem;
+            border: 1px solid rgba(245, 158, 11, 0.4);
+        }
+        
+        .stars {
+            color: #fbbf24;
+            letter-spacing: 5px;
+        }
+
+        /* Deep Dive Article Sections */
+        .article-section {
+            padding: 50px 40px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .article-section h2 {
+            font-size: 2.2rem;
+            color: #fff;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .article-section p {
+            color: #cbd5e1;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+            text-align: justify;
+        }
+        
+        /* Adsense Placeholders */
+        .adsense-box {
+            background: rgba(255, 255, 255, 0.05);
+            border: 2px dashed rgba(251, 188, 5, 0.4);
+            border-radius: 15px;
+            padding: 25px;
+            margin: 30px 0;
+            text-align: center;
+        }
+        
+        .ad-label {
+            display: inline-block;
+            background: linear-gradient(45deg, #4285f4, #34a853);
+            color: white;
+            padding: 6px 20px;
+            border-radius: 20px;
+            margin-bottom: 15px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+        
+        .ad-placeholder {
+            height: 250px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            color: #94a3b8;
+            font-style: italic;
+        }
+        
+        /* Platform Comparison Grid */
+        .platform-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            padding: 40px;
+        }
+        
+        @media (max-width: 1024px) {
+            .platform-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .platform-card {
+            background: rgba(255, 255, 255, 0.06);
+            border-radius: 20px;
+            padding: 40px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.4s ease;
+        }
+        
+        .platform-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+        
+        .office-card { border-top: 6px solid #d44638; }
+        .workspace-card { border-top: 6px solid #4285f4; }
+        
+        .platform-header {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+            margin-bottom: 30px;
+            padding-bottom: 25px;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .platform-icon {
+            width: 80px;
+            height: 80px;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+        }
+        
+        .office-icon { background: rgba(212, 70, 56, 0.2); color: #f28b82; }
+        .workspace-icon { background: rgba(66, 133, 244, 0.2); color: #8ab4f8; }
+        
+        .platform-name { font-size: 2.2rem; font-weight: 800; }
+        .office-name { color: #f28b82; }
+        .workspace-name { color: #8ab4f8; }
+        
+        /* App Features Grid */
+        .apps-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+            margin: 30px 0;
+        }
+        
+        .app-item {
+            text-align: center;
+            padding: 25px;
+            background: rgba(255, 255, 255, 0.04);
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.3s ease;
+        }
+        
+        .app-item:hover {
+            transform: translateY(-3px);
+            background: rgba(255, 255, 255, 0.08);
+        }
+        
+        .app-icon { font-size: 2.5rem; margin-bottom: 15px; }
+        .office-app .app-icon { color: #f28b82; }
+        .workspace-app .app-icon { color: #8ab4f8; }
+        .app-name { font-size: 1.3rem; margin-bottom: 10px; color: #f1f5f9; }
+        .app-desc { color: #94a3b8; font-size: 0.95rem; }
+        
+        /* Pricing Section */
+        .pricing-section {
+            background: linear-gradient(135deg, rgba(245, 158, 11, 0.08), rgba(234, 179, 8, 0.05));
+            border-radius: 20px;
+            padding: 40px;
+            margin: 40px;
+            border: 1px solid rgba(245, 158, 11, 0.25);
+        }
+        
+        .pricing-title {
+            text-align: center;
+            font-size: 2.2rem;
+            margin-bottom: 40px;
+            color: #fbbf24;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+        }
+        
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
+        
+        @media (max-width: 768px) {
+            .pricing-grid { grid-template-columns: 1fr; }
+        }
+        
+        .pricing-card {
+            padding: 35px;
+            border-radius: 15px;
+            text-align: center;
+            background: rgba(0, 0, 0, 0.2);
+        }
+        
+        .office-pricing { border: 2px solid #d44638; }
+        .workspace-pricing { border: 2px solid #4285f4; }
+        .price { font-size: 3rem; font-weight: 800; margin: 20px 0; }
+        .office-pricing .price { color: #f28b82; }
+        .workspace-pricing .price { color: #8ab4f8; }
+        
+        /* Comparison Table */
+        .comparison-table {
+            margin: 40px;
+            overflow: hidden;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .table-header {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            background: linear-gradient(90deg, rgba(212, 70, 56, 0.25), rgba(66, 133, 244, 0.25));
+            padding: 25px;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+            font-weight: 700;
+            font-size: 1.3rem;
+        }
+        
+        .table-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            padding: 22px 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            align-items: center;
+        }
+        
+        .row-label { display: flex; align-items: center; gap: 15px; font-size: 1.15rem; font-weight: 600; }
+        .row-icon { color: #fbbf24; }
+        .row-value { font-size: 1.05rem; padding: 6px 12px; border-radius: 8px; }
+        .office-value { background: rgba(212, 70, 56, 0.15); color: #f28b82; }
+        .workspace-value { background: rgba(66, 133, 244, 0.15); color: #8ab4f8; }
+        
+        /* Recommendation */
+        .recommendation {
+            padding: 40px;
+        }
+        
+        .recommendation-title {
+            font-size: 2.4rem;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .recommendation-cards {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+        
+        @media (max-width: 768px) {
+            .recommendation-cards { grid-template-columns: 1fr; }
+        }
+        
+        .rec-card {
+            padding: 35px;
+            border-radius: 20px;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .office-rec { border-top: 6px solid #d44638; }
+        .workspace-rec { border-top: 6px solid #4285f4; }
+        
+        .rec-card h3 { font-size: 1.6rem; margin-bottom: 20px; display: flex; align-items: center; gap: 12px; }
+        .office-rec h3 { color: #f28b82; }
+        .workspace-rec h3 { color: #8ab4f8; }
+        
+        .rec-list { list-style: none; }
+        .rec-list li {
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .rec-list li::before { content: '✓'; color: #34a853; font-weight: bold; }
+        
+        /* CTA & Footer */
+        .cta-section {
+            text-align: center;
+            padding: 50px 40px;
+            background: linear-gradient(135deg, rgba(52, 168, 83, 0.1), rgba(66, 133, 244, 0.1));
+            margin: 40px;
+            border-radius: 20px;
+            border: 1px solid rgba(52, 168, 83, 0.25);
+        }
+        
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 15px;
+            background: linear-gradient(45deg, #34a853, #4285f4);
+            color: white;
+            padding: 18px 45px;
+            border-radius: 12px;
+            font-size: 1.25rem;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(52, 168, 83, 0.35);
+        }
+        
+        .footer {
+            text-align: center;
+            padding: 40px;
+            color: #94a3b8;
+            font-size: 0.95rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 25px;
+            flex-wrap: wrap;
+        }
+        
+        .footer-links a { color: #8ab4f8; text-decoration: none; }
+        .footer-links a:hover { text-decoration: underline; }
+    </style>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+<link href="favicon.png" rel="icon" type="image/png"/>
+<meta content="Comparing Microsoft 365 and Google Workspace on performance, collaboration, pricing, and security for teams." name="description"/></head>
+<body>
+<div class="comparison-container">
+<!-- Header -->
+<div class="header">
+<h1 class="main-title">Microsoft Office vs Google Workspace</h1>
+<p class="subtitle">A practical comparison of the two leading office suites for teams in 2026.</p>
+<div class="rating-badge">
+<span class="stars">★★★★★</span>
+<span>4.9 / 5 Editorial Rating</span>
+</div>
+</div>
+<!-- Section 1: Introduction (SEO Rich) -->
+<div class="article-section">
+<h2>1. How Office Software Has Changed</h2>
+<p>Choosing an office suite today isn't just about formatting documents anymore - it's about how your whole team collaborates, shares files, and scales. For decades, Microsoft Office was the standard, built around powerful desktop apps like Word, Excel, and PowerPoint. Google Workspace changed that by building everything for the browser, prioritizing easy access and instant real-time collaboration over heavy local software.</p>
+<p>Over time, both have borrowed from each other. Microsoft added strong cloud syncing and collaboration through Microsoft 365, while Google improved offline support and formatting options in Docs, Sheets, and Slides. Here's how they actually compare for individuals, remote teams, and larger companies.</p>
+</div>
+<!-- Platform Grid Comparison Elements -->
+<div class="platform-grid">
+<!-- Microsoft Office -->
+<div class="platform-card office-card">
+<div class="platform-header">
+<div class="platform-icon office-icon"><i class="fab fa-microsoft"></i></div>
+<div>
+<h2 class="platform-name office-name">Microsoft 365</h2>
+<div class="platform-tagline">Advanced local processing power</div>
+</div>
+</div>
+<p style="color: #cbd5e1; margin-bottom: 20px;">Microsoft 365 stands out because it runs as real desktop software. It handles huge spreadsheets, complex formulas, and detailed formatting far better than a browser-based tool can.</p>
+<div class="apps-grid">
+<div class="app-item office-app">
+<div class="app-icon"><i class="fas fa-file-word"></i></div>
+<h4 class="app-name">MS Word</h4>
+<p class="app-desc">Detailed templates, offline notebooks, and custom macros.</p>
+</div>
+<div class="app-item office-app">
+<div class="app-icon"><i class="fas fa-file-excel"></i></div>
+<h4 class="app-name">MS Excel</h4>
+<p class="app-desc">Power Query, pivot tables, and complex calculations at scale.</p>
+</div>
+<div class="app-item office-app">
+<div class="app-icon"><i class="fas fa-file-powerpoint"></i></div>
+<h4 class="app-name">PowerPoint</h4>
+<p class="app-desc">High-res graphics, animated transitions, and polished rendering.</p>
+</div>
+<div class="app-item office-app">
+<div class="app-icon"><i class="fas fa-envelope"></i></div>
+<h4 class="app-name">Outlook</h4>
+<p class="app-desc">Advanced mail filtering, digital signatures, and local archiving.</p>
+</div>
+</div>
+</div>
+<!-- Google Workspace -->
+<div class="platform-card workspace-card">
+<div class="platform-header">
+<div class="platform-icon workspace-icon"><i class="fab fa-google"></i></div>
+<div>
+<h2 class="platform-name workspace-name">Google Workspace</h2>
+<div class="platform-tagline">Browser-native structures &amp; dynamic shared cloud nodes</div>
+</div>
+</div>
+<p style="color: #cbd5e1; margin-bottom: 20px;">Google Workspace runs entirely in the cloud. Since there's nothing to install, teams can get up and running instantly, wherever they are.</p>
+<div class="apps-grid">
+<div class="app-item workspace-app">
+<div class="app-icon"><i class="fas fa-file-alt"></i></div>
+<h4 class="app-name">Google Docs</h4>
+<p class="app-desc">Instant edits, multiple people typing at once, and clear change tracking.</p>
+</div>
+<div class="app-item workspace-app">
+<div class="app-icon"><i class="fas fa-table"></i></div>
+<h4 class="app-name">Google Sheets</h4>
+<p class="app-desc">Live data connections, simple formulas, and easy sharing.</p>
+</div>
+<div class="app-item workspace-app">
+<div class="app-icon"><i class="fas fa-presentation"></i></div>
+<h4 class="app-name">Google Slides</h4>
+<p class="app-desc">A lightweight slide builder with built-in screen sharing for presenting remotely.</p>
+</div>
+<div class="app-item workspace-app">
+<div class="app-icon"><i class="fas fa-mail-bulk"></i></div>
+<h4 class="app-name">Gmail</h4>
+<p class="app-desc">Smart search, deep Drive integration, and built-in chat.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Section 2: Technical Deep Dive -->
+<div class="article-section">
+<h2>2. Performance: Desktop vs Browser</h2>
+<p>The biggest technical difference comes down to where the processing happens. Microsoft 365 runs locally, using your computer's own processing power. Open a massive spreadsheet with 500,000+ rows of formulas, and Excel handles it smoothly using your machine's own multi-core performance. The cloud just quietly backs everything up through OneDrive in the background.</p>
+<p>Google Sheets, on the other hand, runs inside your browser, which limits how much it can handle before slowing down - though Google has pushed that ceiling up to around 10 million cells per document. For genuinely huge datasets, a browser tab can start to lag or even crash if your computer's memory gets overloaded. That said, for typical business dashboards and everyday spreadsheets, Google Workspace performs great since it streams data efficiently instead of downloading huge files.</p>
+</div>
+<!-- Section 3: Collaboration Mechanisms -->
+<div class="article-section">
+<h2>3. Real-Time Collaboration</h2>
+<p>Google Workspace was built from day one for real-time collaboration. When a group of people edit the same Google Doc at once, every change - text, formatting, comments - shows up for everyone within milliseconds. You can also roll back to any earlier version and see exactly who changed what. It's simple, fast, and needs almost no training to use.</p>
+<p>Microsoft 365 added collaboration later on, and while co-authoring through OneDrive or SharePoint works well now, it still occasionally runs into merge conflicts when people edit the same section offline and reconnect later - requiring you to manually choose which version to keep. For fast-moving team brainstorming where lots of people are editing at once, Google Workspace still has the edge.</p>
+</div>
+<!-- Comprehensive Pricing Grid Component -->
+<div class="pricing-section">
+<h3 class="pricing-title">Pricing Comparison</h3>
+<div class="pricing-grid">
+<div class="pricing-card office-pricing">
+<h4 class="plan-name">Microsoft 365 Business Standard</h4>
+<div class="price">$12.50</div>
+<div class="price-period">per user / monthly commitment</div>
+<p style="color: #cbd5e1; margin-top: 20px; line-height: 1.8; text-align: left; padding: 0 15px;">Full desktop apps for Windows and Mac. 1TB of OneDrive cloud storage per business plan. Access to Exchange and Teams. Full offline editing with automatic sync once you're back online.</p>
+</div>
+<div class="pricing-card workspace-pricing">
+<h4 class="plan-name">Google Workspace Business Standard</h4>
+<div class="price">$12.00</div>
+<div class="price-period">per user / monthly commitment</div>
+<p style="color: #cbd5e1; margin-top: 20px; line-height: 1.8; text-align: left; padding: 0 15px;">Custom business email through Gmail. 2TB of pooled cloud storage across your whole team. Google Meet video calls for up to 150 participants, with recording. A centralized admin console for security and data controls.</p>
+</div>
+</div>
+</div>
+<!-- Detailed Feature Matrix Comparison Table -->
+<div class="comparison-table">
+<div class="table-header">
+<div class="header-cell">Technical Evaluation Vector</div>
+<div class="header-cell office-name">Microsoft 365 Systems</div>
+<div class="header-cell workspace-name">Google Workspace Engine</div>
+</div>
+<div class="table-row">
+<div class="row-label"><i class="fas fa-bolt row-icon"></i><span>Max File Processing Speeds</span></div>
+<div class="row-value office-value">Extremely Fast (Local Hardware Driven)</div>
+<div class="row-value workspace-value">Variable (Browser &amp; Bandwidth Bound)</div>
+</div>
+<div class="table-row">
+<div class="row-label"><i class="fas fa-file-invoice row-icon"></i><span>Formatting Integrity &amp; Layouts</span></div>
+<div class="row-value office-value">Absolute High-Fidelity &amp; Complex Margins</div>
+<div class="row-value workspace-value">Standard Layout Elements &amp; Clean Web Views</div>
+</div>
+<div class="table-row">
+<div class="row-label"><i class="fas fa-plane-slash row-icon"></i><span>Offline Independence</span></div>
+<div class="row-value office-value">100% Standalone Desktop Toolsets</div>
+<div class="row-value workspace-value">Requires Pre-configured Browser Extensions</div>
+</div>
+<div class="table-row">
+<div class="row-label"><i class="fas fa-shield-alt row-icon"></i><span>Business Security Features</span></div>
+<div class="row-value office-value">Granular Local Active Directory &amp; Purview</div>
+<div class="row-value workspace-value">Centralized Google Cloud IAM Control Panels</div>
+</div>
+<div class="table-row">
+<div class="row-label"><i class="fas fa-brain row-icon"></i><span>AI Subsystem Integration</span></div>
+<div class="row-value office-value">Microsoft Copilot Suite (Advanced Office integration)</div>
+<div class="row-value workspace-value">Google Gemini Core Engine (Web Context aware)</div>
+</div>
+</div>
+<!-- Section 4: Security and Administration Deep Analysis -->
+<div class="article-section">
+<h2>4. Security and Admin Controls</h2>
+<p>For IT teams, security is often the deciding factor. Microsoft handles this through Azure Active Directory (now Microsoft Entra ID) and Microsoft Purview, giving admins deep control - blocking USB file transfers, applying data-loss prevention rules, and enforcing encryption on company devices. It's built to meet strict compliance requirements in industries like banking, healthcare, and government.</p>
+<p>Google Workspace takes a different approach through its Admin Console. Since files live as shared links on Google's servers rather than as attachments sent around by email, there's naturally less risk of a file leaking. Admins can control external sharing, enforce multi-factor authentication, and lock down specific folders. It doesn't offer quite the same level of device-level control as Microsoft, but it also requires far less maintenance and patching to keep secure.</p>
+</div>
+<!-- Section 5: The Final Verdict -->
+<div class="article-section">
+<h2>5. Which One Should You Choose?</h2>
+<p>It really comes down to how your team actually works. If you deal with heavy financial models, detailed formatted documents, or need solid offline access, Microsoft 365 is the stronger choice - its desktop apps are still unmatched for detailed, complex work.</p>
+<p>If your team relies on real-time collaboration, wants a cloud-first setup, and doesn't want to deal with installing or maintaining software, Google Workspace is the better fit. It turns documents into a shared, living workspace and removes a lot of the friction that comes with managing local files.</p>
+</div>
+<!-- Recommendation Matrix Section -->
+<div class="recommendation">
+<h3 class="recommendation-title">Which One Fits Your Workflow?</h3>
+<div class="recommendation-cards">
+<div class="rec-card office-rec">
+<h3>Go With Microsoft 365 If:</h3>
+<ul class="rec-list">
+<li>Your team relies heavily on advanced Excel macros or Power Query.</li>
+<li>Your staff often works with limited or no internet access.</li>
+<li>Precise document formatting and layout matters a lot to you.</li>
+<li>You need detailed security policies enforced on company laptops.</li>
+</ul>
+</div>
+<div class="rec-card workspace-rec">
+<h3>Go With Google Workspace If:</h3>
+<ul class="rec-list">
+<li>Your team does a lot of real-time, multi-person collaboration.</li>
+<li>You want to skip installing and maintaining software altogether.</li>
+<li>Your team already relies on Gmail and Google Drive.</li>
+<li>You want a setup that scales easily across any browser or device.</li>
+</ul>
+</div>
+</div>
+</div>
+<!-- Call To Action Section -->
+<div class="cta-section">
+<p style="font-size: 1.3rem; color: #e2e8f0; margin-bottom: 25px; max-width: 800px; margin-left: auto; margin-right: auto;">Want to dig deeper into performance numbers? Check out our full benchmark comparisons.</p>
+</div>
+<!-- Footer -->
+<div class="footer">
+<p>© 2026 Ranking Hours | Software &amp; Technology Benchmarks</p>
+<p>All laboratory tests, telemetry collections, and cloud system validations were finalized in mid-2026.</p>
+<div class="footer-links">
+<a href="privacy-policy.html">Privacy Policy</a>
+<a href="terms-of-service.html">Terms of Service</a>
+<a href="contact.html">Contact Engineering</a>
+<a href="cookies.html">Cookie Policies</a>
+</div>
+</div>
+</div>
+<!-- Optimization scripts -->
+<script>
+        // Interactive row highlight triggers
+        document.querySelectorAll('.table-row').forEach(row => {
+            row.addEventListener('mouseenter', function() { this.style.background = 'rgba(255, 255, 255, 0.06)'; });
+            row.addEventListener('mouseleave', function() { this.style.background = ''; });
+        });
+
+        // Simple smooth dynamic scaling for interactive cards
+        document.querySelectorAll('.pricing-card, .rec-card').forEach(card => {
+            card.style.transition = 'transform 0.3s ease, box-shadow 0.3s ease';
+            card.addEventListener('mouseenter', function() { this.style.transform = 'translateY(-4px)'; });
+            card.addEventListener('mouseleave', function() { this.style.transform = 'translateY(0)'; });
+        });
+    </script>
+</body>
+</html>
