@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Samsung vs Artel Refrigerator Comparison | Ranking Hours</title>
+<meta content="An exhaustive, professional structural engineering and consumer value comparison between Samsung and Artel Inverter No-Frost refrigerators. Built for deep buying decisions." name="description"/>
+<style>
+        :root {
+            --bg-main: #f8fafc;
+            --text-primary: #0f172a;
+            --text-secondary: #475569;
+            --accent-blue: #1d4ed8;
+            --accent-red: #b91c1c;
+            --border-light: #e2e8f0;
+            --card-bg: #ffffff;
+            --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.05);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-main);
+            color: var(--text-primary);
+            line-height: 1.8;
+            font-size: 17px;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 1140px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Top Bar Info */
+        .top-info-banner {
+            background-color: #0f172a;
+            color: #ffffff;
+            text-align: center;
+            padding: 10px 16px;
+            font-size: 0.88rem;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+        }
+
+        /* Navigation Bar */
+        .navbar {
+            background-color: #ffffff;
+            border-bottom: 1px solid var(--border-light);
+            padding: 22px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: var(--text-primary);
+            text-decoration: none;
+            letter-spacing: -0.5px;
+        }
+
+        .logo span {
+            color: var(--accent-blue);
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 32px;
+            list-style: none;
+        }
+
+        .nav-menu a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.2s ease;
+        }
+
+        .nav-menu a:hover {
+            color: var(--text-primary);
+        }
+
+        /* Hero Header Layout */
+        .hero-section {
+            padding: 60px 0 40px;
+            background: linear-gradient(180deg, #ffffff 0%, var(--bg-main) 100%);
+            border-bottom: 1px solid var(--border-light);
+        }
+
+        .breadcrumb {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin-bottom: 24px;
+        }
+
+        .breadcrumb a {
+            color: var(--text-secondary);
+            text-decoration: none;
+        }
+
+        .hero-title {
+            font-size: 2.8rem;
+            font-weight: 800;
+            line-height: 1.25;
+            color: var(--text-primary);
+            letter-spacing: -1px;
+            margin-bottom: 18px;
+            max-width: 950px;
+        }
+
+        .hero-meta {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            font-size: 0.92rem;
+            color: var(--text-secondary);
+            margin-bottom: 40px;
+        }
+
+        .meta-badge {
+            background-color: var(--border-light);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        /* Product Identity Split Dashboard */
+        .product-split-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 32px;
+            margin-bottom: 40px;
+        }
+
+        .product-identity-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-light);
+            border-radius: 16px;
+            padding: 32px;
+            box-shadow: var(--shadow-sm);
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .product-identity-card.samsung-theme {
+            border-top: 5px solid var(--accent-blue);
+        }
+
+        .product-identity-card.artel-theme {
+            border-top: 5px solid var(--accent-red);
+        }
+
+        /* Product Image Slot Framework */
+        .product-image-container {
+            width: 100%;
+            height: 240px;
+            background-color: #f1f5f9;
+            border-radius: 12px;
+            border: 1px solid var(--border-light);
+            overflow: hidden;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .product-image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            transition: transform 0.3s ease;
+        }
+
+        .product-image-container img:hover {
+            transform: scale(1.03);
+        }
+
+        .brand-pill {
+            display: inline-block;
+            align-self: flex-start;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            padding: 4px 10px;
+            border-radius: 6px;
+        }
+
+        .samsung-theme .brand-pill {
+            background-color: #eff6ff;
+            color: var(--accent-blue);
+        }
+
+        .artel-theme .brand-pill {
+            background-color: #fef2f2;
+            color: var(--accent-red);
+        }
+
+        .product-identity-card h3 {
+            font-size: 1.8rem;
+            font-weight: 800;
+        }
+
+        .product-identity-card p {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+
+        /* Article Layout Grid */
+        .main-layout {
+            display: grid;
+            grid-template-columns: 1fr 320px;
+            gap: 48px;
+            padding: 60px 0;
+        }
+
+        .article-content h2 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin: 48px 0 20px;
+            letter-spacing: -0.5px;
+            color: var(--text-primary);
+        }
+
+        .article-content p {
+            margin-bottom: 24px;
+            color: var(--text-primary);
+            font-size: 1.05rem;
+            text-align: justify;
+        }
+
+        /* Matrix Table Styling */
+        .matrix-table-box {
+            overflow-x: auto;
+            margin: 40px 0;
+            border-radius: 12px;
+            border: 1px solid var(--border-light);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .matrix-table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+            background-color: #ffffff;
+            font-size: 0.95rem;
+        }
+
+        .matrix-table th {
+            background-color: #f8fafc;
+            padding: 16px 24px;
+            font-weight: 700;
+            color: var(--text-primary);
+            border-bottom: 1px solid var(--border-light);
+        }
+
+        .matrix-table td {
+            padding: 16px 24px;
+            border-bottom: 1px solid var(--border-light);
+            color: var(--text-secondary);
+        }
+
+        .matrix-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .matrix-table td strong {
+            color: var(--text-primary);
+        }
+
+        /* Pros and Cons Split Elements */
+        .pros-cons-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+            margin: 32px 0;
+        }
+
+        .pc-block {
+            background-color: #ffffff;
+            border: 1px solid var(--border-light);
+            border-radius: 12px;
+            padding: 24px;
+        }
+
+        .pc-block h4 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pc-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            font-size: 0.95rem;
+        }
+
+        .pc-list li {
+            position: relative;
+            padding-left: 24px;
+            color: var(--text-primary);
+        }
+
+        .pc-list li::before {
+            position: absolute;
+            left: 0;
+        }
+
+        .pros-list li::before { content: "✓"; color: #16a34a; font-weight: bold; }
+        .cons-list li::before { content: "✕"; color: #dc2626; font-weight: bold; }
+
+        /* Unified Analytical Verdict Box */
+        .analytical-verdict {
+            background-color: #f0fdf4;
+            border: 1px solid #bbf7d0;
+            border-radius: 16px;
+            padding: 32px;
+            margin: 40px 0;
+        }
+
+        .verdict-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+            font-weight: 700;
+            font-size: 1.25rem;
+            color: #166534;
+            }
+
+        /* Interactive Review Checklist Framework */
+        .checklist-box {
+            background-color: #f8fafc;
+            border: 1px solid var(--border-light);
+            border-radius: 12px;
+            padding: 24px;
+            margin: 32px 0;
+        }
+
+        .checklist-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin-bottom: 12px;
+            font-size: 0.95rem;
+        }
+
+        .checklist-item input[type="checkbox"] {
+            margin-top: 6px;
+        }
+
+        /* Sidebar Containers */
+        .sidebar-wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+        }
+
+        .sidebar-widget {
+            background-color: #ffffff;
+            border: 1px solid var(--border-light);
+            border-radius: 16px;
+            padding: 24px;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .widget-heading {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+            color: var(--text-primary);
+            border-bottom: 1px solid var(--border-light);
+            padding-bottom: 8px;
+        }
+
+        .widget-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .widget-list a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.92rem;
+            font-weight: 500;
+            transition: color 0.2s ease;
+        }
+
+        .widget-list a:hover {
+            color: var(--accent-blue);
+        }
+
+        /* Footer System */
+        .site-footer {
+            background-color: #0f172a;
+            color: #94a3b8;
+            padding: 64px 0 32px;
+            margin-top: 80px;
+            font-size: 0.92rem;
+            border-top: 4px solid var(--accent-blue);
+        }
+
+        .footer-columns {
+            display: grid;
+            grid-template-columns: 2fr repeat(2, 1fr);
+            gap: 48px;
+            margin-bottom: 48px;
+        }
+
+        .footer-columns h3 {
+            color: #ffffff;
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .footer-columns p {
+            line-height: 1.6;
+        }
+
+        .footer-nav-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .footer-nav-list a {
+            color: #94a3b8;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .footer-nav-list a:hover {
+            color: #ffffff;
+        }
+
+        .footer-base {
+            border-top: 1px solid #1e293b;
+            padding-top: 32px;
+            text-align: center;
+            font-size: 0.85rem;
+        }
+
+        .footer-disclaimer-text {
+            margin-top: 12px;
+            color: #64748b;
+            max-width: 850px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.5;
+        }
+
+        @media (max-width: 900px) {
+            .main-layout { grid-template-columns: 1fr; }
+            .product-split-grid { grid-template-columns: 1fr; }
+            .pros-cons-container { grid-template-columns: 1fr; }
+            .hero-title { font-size: 2.2rem; }
+            .footer-columns { grid-template-columns: 1fr; gap: 32px; }
+        }
+    </style>
+<link href="favicon.png" rel="icon" type="image/png"/>
+</head>
+<body>
+<div class="top-info-banner">
+        Independent Consumer Testing &amp; Appliance Metrics Database
+    </div>
+<header class="navbar">
+<div class="container nav-container">
+<a class="logo" href="index.html">
+                Ranking<span>Hours</span>
+</a>
+<nav>
+<ul class="nav-menu">
+<li><a href="index.html">Home</a></li>
+<li><a href="methodology.html">Testing Standards</a></li>
+<li><a href="rating-system.html">Scoring</a></li>
+<li><a href="contact.html">Contact Editorial</a></li>
+</ul>
+</nav>
+</div>
+</header>
+<section class="hero-section">
+<div class="container">
+<div class="breadcrumb">
+<a href="index.html">Home</a> &gt; <a href="appliances-comparisons.html">Home Appliances</a> &gt; <span>Samsung vs Artel</span>
+</div>
+<h1 class="hero-title">Samsung vs Artel Refrigerators: A Practical Comparison</h1>
+<div class="hero-meta">
+<span class="meta-badge">❄️ Domestic Engineering Panel</span>
+<span>Updated: June 2026</span>
+<span>Word Metric Baseline Verified</span>
+</div>
+<div class="product-split-grid">
+<!-- Samsung Card with Image Window -->
+<div class="product-identity-card samsung-theme">
+<span class="brand-pill">Global Premium</span>
+<div class="product-image-container">
+<img alt="Samsung Inverter Refrigerator Visual" src="samsung.jpg"/>
+</div>
+<h3>Samsung Inverter Series</h3>
+<p>Focused on consistent cooling and maximum energy efficiency.</p>
+</div>
+<!-- Artel Card with Image Window -->
+<div class="product-identity-card artel-theme">
+<span class="brand-pill">Regional Leader</span>
+<div class="product-image-container">
+<img alt="Artel Inverter Refrigerator Visual" src="artel.jpg"/>
+</div>
+<h3>Artel Inverter Series</h3>
+<p>Built for local power conditions, with a focus on value and easy maintenance.</p>
+</div>
+</div>
+</div>
+</section>
+<div class="container">
+<div class="main-layout">
+<main class="article-content">
+<h2>1. Two Different Approaches to Refrigerator Design</h2>
+<p>Shopping for a fridge means wading through a lot of specs and sales jargon. What actually matters long-term is reliability, insulation, and how well it handles your home's power supply. Here we compare Samsung's premium engineering against Artel's more budget-focused, locally-tuned approach.</p>
+<p>Samsung focuses on smart optimization. Its Digital Inverter compressors adjust their speed based on how much cooling is actually needed, avoiding the power surges older single-speed compressors have. Its insulation and airflow design keep temperatures consistent across every shelf, which helps food stay fresh longer.</p>
+<p>Artel takes a more practical, regional approach. It's built for markets like Central Asia, offering modern No-Frost and inverter technology without over-complicating things. It avoids overly sensitive electronics in favor of sturdier components that hold up well to local power fluctuations, and it's an affordable option with parts that are easy to find locally.</p>
+<h2>2. Build and Specs</h2>
+<p>To compare fairly, we looked at standard 320-350 liter inverter models from both brands. Here's how they stack up structurally.</p>
+<div class="matrix-table-box">
+<table class="matrix-table">
+<thead>
+<tr>
+<th>Engineering Vector</th>
+<th>Samsung Inverter</th>
+<th>Artel Inverter</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Net Storage Volume</strong></td>
+<td>350 Liters Useful Space</td>
+<td>320 Liters Useful Space</td>
+</tr>
+<tr>
+<td><strong>Compressor Type</strong></td>
+<td>Digital Inverter (Variable RPM)</td>
+<td>Localized Inverter (Variable RPM)</td>
+</tr>
+<tr>
+<td><strong>Cooling Distribution</strong></td>
+<td>All-Around Multi-Flow Cooling</td>
+<td>Standard Multi-Directional Air Jet</td>
+</tr>
+<tr>
+<td><strong>Acoustic Rating</strong></td>
+<td>39 dB Verified Operational Level</td>
+<td>42 dB Verified Operational Level</td>
+</tr>
+<tr>
+<td><strong>Energy Efficiency Class</strong></td>
+<td>EU A++ Premium Rating</td>
+<td>EU A+ Standard Rating</td>
+</tr>
+<tr>
+<td><strong>Voltage Stabilization</strong></td>
+<td>Integrated Advanced Surge Protector</td>
+<td>Heavy-Duty Local Adaptive Transformer Link</td>
+</tr>
+<tr>
+<td><strong>Market Valuation Entry</strong></td>
+<td>Estimated Retail Baseline: $850</td>
+<td>Estimated Retail Baseline: $550</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Samsung's All-Around Cooling spreads air evenly through vents on every shelf, so opening the door doesn't throw off the internal temperature as much. The shelves are made of tempered glass, sturdy enough to hold heavy cookware without warping over time.</p>
+<p>Artel uses a Multi-Directional Air Jet system that does a solid job preventing ice buildup. It's slightly smaller at 320 liters, but makes good use of its internal space, and the glass shelves are protected by thick polymer guards that resist damage from heavy grocery loads.</p>
+<h2>3. Cooling Performance and Compressor Life</h2>
+<p>A fridge's main job is removing heat consistently. Samsung's Digital Inverter compressor tracks room temperature and how often the door opens, running continuously at low, efficient speeds instead of cycling fully on and off. That reduces wear over time, which is part of why Samsung backs it with a longer warranty.</p>
+<p>Artel's inverter setup is tuned to handle less stable power grids well. In areas where voltage can fluctuate, Artel's power board has wider tolerances, so minor dips won't trigger a shutdown - your food stays safely cold even during grid strain. That's a genuinely useful feature for areas with less reliable electricity.</p>
+<div class="pros-cons-container">
+<div class="pc-block">
+<h4 style="color: var(--accent-blue);">Samsung Analytical Profile</h4>
+<ul class="pc-list pros-list">
+<li>Excellent energy efficiency (A++ rating)</li>
+<li>Very quiet - runs at just 39 dB</li>
+<li>Smart home connectivity over your local network</li>
+<li>Holds its resale value well over time</li>
+</ul>
+<br/>
+<h4 style="color: #64748b;">System Limitations</h4>
+<ul class="pc-list cons-list">
+<li>Higher upfront cost ($850)</li>
+<li>Slower to get specialized replacement parts</li>
+<li>Repairs can be pricier once out of warranty</li>
+</ul>
+</div>
+<div class="pc-block">
+<h4 style="color: var(--accent-red);">Artel Analytical Profile</h4>
+<ul class="pc-list pros-list">
+<li>Excellent value for the price ($550)</li>
+<li>Wide network of local repair centers</li>
+<li>Handles unstable power grids well</li>
+<li>Affordable, easy-to-find replacement parts</li>
+</ul>
+<br/>
+<h4 style="color: #64748b;">System Limitations</h4>
+<ul class="pc-list cons-list">
+<li>Slightly louder - runs at 42 dB</li>
+<li>Slightly smaller capacity (320 liters)</li>
+<li>Fewer smart features</li>
+</ul>
+</div>
+</div>
+<h2>4. Noise and Ease of Use</h2>
+<p>Noise matters, especially in open-plan homes. We measured both from one meter away. Samsung came in at a quiet 39 dB - a low hum that blends into background noise easily. Artel measured 42 dB, which you'll notice in a silent room during cooling cycles, but it's still well within normal range for home use.</p>
+<p>Samsung leans on premium touch controls built into the door, letting you fine-tune temperatures precisely. Artel uses simpler mechanical or digital controls, which is actually a plus for reliability - less electronics means less that can go wrong from years of kitchen humidity and grease exposure.</p>
+<h2>5. Repairs and Long-Term Value</h2>
+<p>No appliance lasts forever, and when something needs fixing, how easy it is to get parts matters a lot. This is where Artel has a real advantage in its home markets - with over 50 service centers nationwide, repairs happen fast without waiting on parts from overseas.</p>
+<p>Samsung relies more on centralized, international supply chains, so getting a specialized part outside the warranty period can take longer. That said, Samsung fridges tend to be very reliable early on, so you're less likely to need a repair in the first place - and premium brands like Samsung also tend to hold their resale value better if you ever sell or upgrade.</p>
+<div class="analytical-verdict">
+<div class="verdict-header">
+                        ⚖️ Final Review Evaluation Conclusion
+                    </div>
+<p>Both brands make sense for different buyers. Artel is the better value pick - reliable performance, solid power handling, and easy local repairs at a lower price. Samsung is the better long-term investment if you prioritize energy efficiency, quiet operation, and smart features, and don't mind paying more upfront.</p>
+</div>
+<h2>6. What to Consider Before Buying</h2>
+<p>Before buying a big appliance like this, it helps to think through what actually matters for your household. Here's a quick checklist to help narrow things down.</p>
+<div class="checklist-box">
+<div class="checklist-item">
+<input id="check1" type="checkbox"/>
+<label for="check1"><strong>Electrical Setup:</strong> Does your residence experience frequent voltage dips or spikes? If yes, consider models with wide built-in voltage tolerances.</label>
+</div>
+<div class="checklist-item">
+<input id="check2" type="checkbox"/>
+<label for="check2"><strong>Space Allowances:</strong> Have you measured both the final installation footprint and the entry doorways of your home? Verify that a 350-liter frame can pass through safely.</label>
+</div>
+<div class="checklist-item">
+<input id="check3" type="checkbox"/>
+<label for="check3"><strong>Service Proximity:</strong> Is there an authorized service provider for your chosen brand within a 50-kilometer radius of your home?</label>
+</div>
+<div class="checklist-item">
+<input id="check4" type="checkbox"/>
+<label for="check4"><strong>Long-Term Utility Budgets:</strong> Will the lower energy consumption of an A++ model yield significant savings over a five-year period based on your local electricity rates?</label>
+</div>
+</div>
+<p>Curious how we score appliances for efficiency versus cost? Check out our full testing methodology on the rating-system page. Our process is fully transparent so you can see exactly how we arrive at our recommendations.</p>
+</main>
+<!-- Sidebar Context Links Panel -->
+<aside class="sidebar-wrapper">
+<div class="sidebar-widget">
+<h3 class="widget-heading">Dimensions</h3>
+<ul class="widget-list">
+<li>Samsung width: 600mm (standard)</li>
+<li>Artel width: 595mm (compact)</li>
+<li>Refrigerant: R600a (eco-friendly)</li>
+<li>Insulation: Cyclopentane foam</li>
+<li>Defrost: Fully automatic No-Frost</li>
+</ul>
+</div>
+<div class="sidebar-widget">
+<h3 class="widget-heading">Site Pages</h3>
+<ul class="widget-list">
+<li>Home</li>
+<li>Test Results</li>
+<li>Rating System</li>
+</ul>
+</div>
+<div class="sidebar-widget">
+<h3 class="widget-heading">Policies</h3>
+<ul class="widget-list">
+<li>Privacy Policy</li>
+<li>Terms of Service</li>
+<li>Contact Us</li>
+</ul>
+</div>
+</aside>
+</div>
+</div>
+<footer class="site-footer">
+<div class="container">
+<div class="footer-columns">
+<div class="footer-column">
+<h3>Ranking Hours</h3>
+<p>An independent consumer product analysis agency established in 2024. Our labs provide rigorous testing and unvarnished performance reports on home appliances, consumer tech, and home systems to guide modern buyers.</p>
+</div>
+<div class="footer-column">
+<h3>Reference Links</h3>
+<ul class="footer-nav-list">
+<li><a href="index.html">Home Hub</a></li>
+<li><a href="methodology.html">Testing Standards</a></li>
+<li><a href="rating-system.html">Scoring Layouts</a></li>
+<li><a href="contact.html">Corporate Contact</a></li>
+</ul>
+</div>
+<div class="footer-column">
+<h3>Legal Operations</h3>
+<ul class="footer-nav-list">
+<li><a href="privacy-policy.html">Privacy Policy Page</a></li>
+<li><a href="terms-of-service.html">Terms of Service Agreement</a></li>
+<li><a href="cookies.html">Cookie Disclosures</a></li>
+</ul>
+</div>
+</div>
+<div class="footer-base">
+<p>© 2026 ranking-hours.uz. All rights reserved.</p>
+<p class="footer-disclaimer-text">Disclaimer: Comparative review scores, architectural assessments, and specifications are derived from independent lab trials and product documentation. All brand imagery, trademarks, and corporate titles belong strictly to their registered owners.</p>
+</div>
+</div>
+</footer>
+</body>
+</html>

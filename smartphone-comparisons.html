@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="Comprehensive engineering database evaluating flagship smartphones, silicon SoC architectures, optic sensor layers, and mobile display calibration matrices." name="description"/>
+<title>Smartphone Comparisons | Ranking Hours</title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+<link href="style.css" rel="stylesheet"/>
+<style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        body {
+            background-color: #f4f6f9;
+            color: #1e293b;
+            line-height: 1.7;
+            font-size: 16px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        header {
+            background: linear-gradient(135deg, #ff6d00 0%, #ff9800 100%);
+            color: white;
+            padding: 20px 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.8rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 8px 15px;
+            border-radius: 20px;
+            transition: all 0.3s;
+        }
+        nav a:hover, nav a.active {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+        .page-header {
+            background: linear-gradient(rgba(255, 109, 0, 0.85), rgba(255, 152, 0, 0.85));
+            color: white;
+            text-align: center;
+            padding: 100px 20px 80px;
+            margin-bottom: 40px;
+            border-radius: 0 0 30px 30px;
+        }
+        .page-header h1 {
+            font-size: 3.2rem;
+            margin-bottom: 20px;
+            font-weight: 800;
+        }
+        .page-header .subtitle {
+            font-size: 1.3rem;
+            max-width: 800px;
+            margin: 0 auto;
+            opacity: 0.95;
+        }
+        .category-icon {
+            font-size: 4.5rem;
+            margin-bottom: 25px;
+        }
+        .intro-section {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02);
+            border: 1px solid #e2e8f0;
+        }
+        .intro-section h2 {
+            color: #ff6d00;
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+        .smartphone-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 50px;
+            margin: 40px 0;
+        }
+        .smartphone-card {
+            background: white;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.04);
+            border: 1px solid #eef2f5;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s ease;
+        }
+        .smartphone-card:hover {
+            transform: translateY(-5px);
+        }
+        .card-header {
+            background: linear-gradient(135deg, #ff6d00 0%, #ff9800 100%);
+            color: white;
+            padding: 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        .card-header h3 {
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+        .badge {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .card-content {
+            padding: 40px;
+        }
+        .metrics-dashboard {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+            background: #f8fafc;
+            padding: 25px;
+            border-radius: 16px;
+            border: 1px solid #e2e8f0;
+        }
+        .metric-block {
+            display: flex;
+            flex-direction: column;
+        }
+        .metric-title {
+            font-size: 0.85rem;
+            color: #64748b;
+            text-transform: uppercase;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+        .metric-data {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: #0f172a;
+        }
+        .essay-body {
+            margin-bottom: 30px;
+        }
+        .essay-body h4 {
+            color: #0f172a;
+            font-size: 1.3rem;
+            margin: 25px 0 12px;
+            font-weight: 600;
+        }
+        .essay-body p {
+            color: #475569;
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+        .btn-container {
+            margin-top: 30px;
+            border-top: 1px solid #e2e8f0;
+            padding-top: 25px;
+        }
+        .btn {
+            display: inline-block;
+            padding: 14px 35px;
+            background: linear-gradient(135deg, #ff6d00 0%, #ff9800 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(255, 109, 0, 0.2);
+        }
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(255, 152, 0, 0.35);
+        }
+        .editorial-note {
+            background: #fffbeb;
+            border-left: 5px solid #d97706;
+            padding: 30px;
+            border-radius: 12px;
+            margin: 60px 0;
+        }
+        .editorial-note h3 {
+            color: #b45309;
+            margin-bottom: 10px;
+        }
+        footer {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: white;
+            padding: 60px 0 30px;
+            margin-top: 80px;
+        }
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        .footer-column h3 {
+            font-size: 1.4rem;
+            margin-bottom: 25px;
+            color: #38bdf8;
+        }
+        .footer-column ul {
+            list-style: none;
+        }
+        .footer-column li {
+            margin-bottom: 12px;
+        }
+        .footer-column a {
+            color: #cbd5e1;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .footer-column a:hover {
+            color: white;
+        }
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #94a3b8;
+            font-size: 0.9rem;
+        }
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        @media (max-width: 768px) {
+            .header-container { flex-direction: column; gap: 20px; }
+            .mobile-menu-btn { display: block; position: absolute; top: 25px; right: 20px; }
+            nav ul { display: none; flex-direction: column; width: 100%; text-align: center; }
+            nav ul.active { display: flex; }
+            .page-header h1 { font-size: 2.4rem; }
+            .card-header h3 { font-size: 1.4rem; }
+        }
+    </style>
+<link href="favicon.png" rel="icon" type="image/png"/>
+</head>
+<body>
+<header>
+<div class="container header-container">
+<div class="logo">
+<a href="index.html">
+<i class="fas fa-star"></i>
+<span>RankingHours</span>
+</a>
+</div>
+<button class="mobile-menu-btn" id="mobileMenuBtn">
+<i class="fas fa-bars"></i>
+</button>
+<nav>
+<ul id="mainNav">
+<li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+<li><a class="active" href="smartphone-comparisons.html"><i class="fas fa-mobile-alt"></i> Smartphones</a></li>
+<li><a href="laptop-comparisons.html"><i class="fas fa-laptop"></i> Laptops</a></li>
+<li><a href="software.html"><i class="fas fa-code"></i> Software</a></li>
+<li><a href="automotive-comparisons.html"><i class="fas fa-car"></i> Automotive</a></li>
+<li><a href="appliances-comparisons.html"><i class="fas fa-blender"></i> Appliances</a></li>
+</ul>
+</nav>
+</div>
+</header>
+<div class="page-header">
+<div class="container">
+<div class="category-icon"><i class="fas fa-mobile-alt"></i></div>
+<h1>Smartphone Hardware Analytics</h1>
+<p class="subtitle">Real-world comparisons of chips, cameras, displays, and long-term software support.</p>
+</div>
+</div>
+<div class="container">
+<section class="intro-section">
+<h2>How We Test Smartphones</h2>
+<p>Judging a phone properly takes more than looking at the outside or going on gut feeling. Real performance depends on how well it manages heat, how the display behaves under load, and how the chip's dedicated AI hardware performs. We test all of this directly, to see how a phone actually holds up under sustained heavy use.</p>
+<p style="margin-top: 15px;">By looking at chip efficiency, camera processing, and memory bottlenecks directly, we turn marketing spec sheets into clear, unbiased numbers. Every phone goes through the same multi-stage testing process.</p>
+</section>
+<div class="smartphone-grid">
+<div class="smartphone-card">
+<div class="card-header">
+<h3>iPhone 15 Pro vs Samsung Galaxy S24 Ultra</h3>
+<span class="badge">Ultra Premium Flagships</span>
+</div>
+<div class="card-content">
+<div class="metrics-dashboard">
+<div class="metric-block">
+<span class="metric-title">Silicon Node</span>
+<span class="metric-data">3nm TSMC vs 4nm Snapdragon</span>
+</div>
+<div class="metric-block">
+<span class="metric-title">Optical Core</span>
+<span class="metric-data">48MP ProRES vs 200MP Isocell</span>
+</div>
+<div class="metric-block">
+<span class="metric-title">Chassis Alloy</span>
+<span class="metric-data">Grade 5 vs Grade 2 Titanium</span>
+</div>
+</div>
+<div class="essay-body">
+<h4>Chip Design and Heat Management</h4>
+<p>At the flagship level, it comes down to two very different chips. The iPhone 15 Pro's A17 Pro was the first phone chip built on a 3-nanometer process, with a 6-core CPU and a GPU that includes hardware ray tracing. Single-core performance is excellent, but the compact design means heat can build up quickly under sustained load, making cooling important.</p>
+<p>The Galaxy S24 Ultra uses the Snapdragon 8 Gen 3, built on a 4-nanometer process, paired with a larger vapor chamber for cooling. That keeps performance more stable during long, demanding sessions like gaming, without dropping off as heat builds up.</p>
+<h4>Optic Array Engineering and Computational Textures</h4>
+<p>Camera philosophy differs too. The iPhone 15 Pro's 48MP main sensor, paired with its Photonic Engine, focuses on preserving detail per pixel, including uncompressed ProRAW shots with strong dynamic range - reliable in tricky lighting and popular for mobile video work.</p>
+<p>Samsung's Galaxy S24 Ultra uses a 200MP sensor with pixel-binning, combining 16 pixels into one for brighter shots. It's sharp in good lighting and offers flexible zoom through its dual telephoto lenses, with on-device AI cleaning up detail as the photo is taken.</p>
+</div>
+<div class="btn-container">
+<a class="btn" href="iphone-samsung-comp.html">Examine Full Flagship Laboratory Report</a>
+</div>
+</div>
+</div>
+<div class="smartphone-card">
+<div class="card-header">
+<h3>iPhone 15 vs Samsung Galaxy S24</h3>
+<span class="badge">Standard Tier Systems</span>
+</div>
+<div class="card-content">
+<div class="metrics-dashboard">
+<div class="metric-block">
+<span class="metric-title">Display</span>
+<span class="metric-data">60Hz LTPS vs 120Hz LTPO</span>
+</div>
+<div class="metric-block">
+<span class="metric-title">SoC Engine</span>
+<span class="metric-data">A16 Bionic vs Exynos 2400</span>
+</div>
+<div class="metric-block">
+<span class="metric-title">Bus Transfer</span>
+<span class="metric-data">USB 2.0 vs USB 3.2 Gen 1</span>
+</div>
+</div>
+<div class="essay-body">
+<h4>Display Refinement Indices and Battery Calculations</h4>
+<p>Standard flagships have to make trade-offs between screen smoothness and battery life. The regular iPhone 15 has a bright Super Retina XDR screen, but sticks to a fixed 60Hz refresh rate - which keeps power use predictable but skips the smoother scrolling of high-refresh screens. The A16 Bionic chip manages power well for solid all-day battery life.</p>
+<p>The regular Galaxy S24 has a 120Hz LTPO AMOLED screen that can drop down to 1Hz for static content, saving battery when you're not actively scrolling. Depending on region, it runs the Exynos 2400 chip, which delivers fast app launches and smooth scrolling.</p>
+<h4>Connectivity Buses and Long-Term Value Factors</h4>
+<p>Data transfer differs too: the iPhone 15's USB-C port is limited to USB 2.0 speeds, which is slow for transferring large video files. The Galaxy S24 supports faster USB 3.2, making file transfers and external monitor connections quicker.</p>
+</div>
+<div class="btn-container">
+<a class="btn" href="Iphone-Samsung.html">Examine Full Standard Tier Report</a>
+</div>
+</div>
+</div>
+<div class="smartphone-card">
+<div class="card-header">
+<h3>Xiaomi 14 vs Google Pixel 8 Pro</h3>
+<span class="badge">Performance vs Intelligence</span>
+</div>
+<div class="card-content">
+<div class="metrics-dashboard">
+<div class="metric-block">
+<span class="metric-title">Power Intake</span>
+<span class="metric-data">120W Hyper vs 30W PD</span>
+</div>
+<div class="metric-block">
+<span class="metric-title">AI Compute</span>
+<span class="metric-data">Local NPU Core vs Cloud Tensor G3</span>
+</div>
+<div class="metric-block">
+<span class="metric-title">Lens Standard</span>
+<span class="metric-data">Leica Summilux vs Google Custom</span>
+</div>
+</div>
+<div class="essay-body">
+<h4>High-Velocity Power Topologies vs Machine Intelligence</h4>
+<p>Xiaomi and Google take very different approaches. The Xiaomi 14 focuses on raw speed, with a dual-cell battery supporting 120W fast charging - a full charge in under 20 minutes, with smart charging logic to protect long-term battery health.</p>
+<p>The Pixel 8 Pro prioritizes smart software over fast charging, sticking to 30W. Its Tensor G3 chip is built for on-device AI tasks rather than raw gaming performance - things like real-time translation, call screening, and audio processing.</p>
+<h4>Optic Hardware Elements vs Smart Image Reconstruction</h4>
+<p>Camera performance splits between hardware and software here too. Xiaomi partners with Leica for its lenses, with a wide aperture that captures natural light without heavy digital processing. The Pixel 8 Pro leans on computational photography instead, using AI features like Magic Eraser and Best Take to clean up shots after the fact.</p>
+</div>
+<div class="btn-container">
+<a class="btn" href="xiaomi-google.html">Examine Performance vs Intelligence Report</a>
+</div>
+</div>
+</div>
+<div class="smartphone-card">
+<div class="card-header">
+<h3>Samsung Galaxy A54 vs iPhone SE 2024</h3>
+<span class="badge">Mid-Range Value Matrices</span>
+</div>
+<div class="card-content">
+<div class="metrics-dashboard">
+<div class="metric-block">
+<span class="metric-title">Chassis Design</span>
+<span class="metric-data">Modern Infinity vs Retro Bezel</span>
+</div>
+<div class="metric-block">
+<span class="metric-title">Silicon Tier</span>
+<span class="metric-data">Exynos 1380 vs A15 Bionic</span>
+</div>
+<div class="metric-block">
+<span class="metric-title">Screen Refresh</span>
+<span class="metric-data">120Hz Super AMOLED vs 60Hz Retina</span>
+</div>
+</div>
+<div class="essay-body">
+<h4>Mid-Range Value and Software Support</h4>
+<p>The mid-range market shows how manufacturers balance cost and features. The Galaxy A54 has a 120Hz Super AMOLED screen with slim bezels that looks close to a flagship, with great contrast for media. Its Exynos 1380 chip is built more for everyday efficiency than heavy gaming.</p>
+<p>The iPhone SE takes a different approach - flagship-level performance in an older-style body with thicker bezels. Its A15 Bionic chip is fast and gets long-term software support, but the 60Hz screen feels dated. It appeals to people who want speed and Apple's ecosystem in a smaller, familiar shape.</p>
+</div>
+<div class="btn-container">
+<a class="btn" href="samsung-iphone.html">Examine Mid-Range Value Report</a>
+</div>
+</div>
+</div>
+<div class="smartphone-card">
+<div class="card-header">
+<h3>iPad Pro M2 vs Samsung Galaxy Tab S9</h3>
+<span class="badge">Large Form Slate Compute</span>
+</div>
+<div class="card-content">
+<div class="metrics-dashboard">
+<div class="metric-block">
+<span class="metric-title">Processor Grade</span>
+<span class="metric-data">Desktop Class M2 vs Mobile Snapdragon</span>
+</div>
+<div class="metric-block">
+<span class="metric-title">Display Tech</span>
+<span class="metric-data">Liquid Retina vs Dynamic AMOLED 2X</span>
+</div>
+<div class="metric-block">
+<span class="metric-title">Input Tool</span>
+<span class="metric-data">Apple Pencil Active vs Bundled S-Pen</span>
+</div>
+</div>
+<div class="essay-body">
+<h4>Desktop-Class Processing vs Mobile Productivity Slates</h4>
+<p>High-end tablets are blurring the line with laptops. The iPad Pro's M2 chip has desktop-class power and plenty of memory bandwidth, handling multi-track video editing and 3D rendering well. The hardware can keep up with serious creative work, though iPadOS still keeps things more app-based than a full desktop.</p>
+<p>The Galaxy Tab S9 focuses on multitasking, with a Snapdragon 8 Gen 2 chip and DeX Mode, which turns the interface into a proper windowed desktop layout. Combined with its bright AMOLED screen and included S-Pen, it works well out of the box for both productivity and creative work.</p>
+</div>
+<div class="btn-container">
+<a class="btn" href="Ipad-Samsung.html">See Full Tablet Report</a>
+</div>
+</div>
+</div>
+</div>
+<div class="editorial-note">
+<h3>Our Testing Standards</h3>
+<p>We test every phone under the same conditions, so results are genuinely comparable. We don't accept payment from manufacturers to influence a score - every result reflects how the phone actually performs.</p>
+</div>
+</div>
+<footer>
+<div class="container">
+<div class="footer-container">
+<div class="footer-column">
+<h3>RankingHours</h3>
+<p style="color: #94a3b8; font-size: 0.95rem;">Independent, hands-on reviews of phones, laptops, cars, and software - tested, not just described.</p>
+</div>
+<div class="footer-column">
+<h3>Compliance Directories</h3>
+<ul>
+<li><a href="privacy-policy.html"><i class="fas fa-lock"></i> Privacy Policy Agreement</a></li>
+<li><a href="disclaimer.html"><i class="fas fa-info-circle"></i> Technical Liability Disclaimer</a></li>
+<li><a href="terms-of-service.html"><i class="fas fa-file-contract"></i> Terms of Service</a></li>
+</ul>
+</div>
+<div class="footer-column">
+<h3>Global Hub Info</h3>
+<p style="color: #94a3b8; font-size: 0.95rem; margin-bottom: 10px;">Questions about our testing, or an editorial concern? Reach us at:</p>
+<p style="color: #38bdf8; font-weight: 600;"><i class="fas fa-envelope"></i> abdullohmahmudov660@gmail.com</p>
+</div>
+</div>
+<div class="copyright">
+<p>© 2026 ranking-hours.uz. All rights reserved.</p>
+</div>
+</div>
+</footer>
+<script>
+        // Mobile Navigation UI Interaction Handler
+        document.getElementById('mobileMenuBtn').addEventListener('click', function() {
+            document.getElementById('mainNav').classList.toggle('active');
+        });
+    </script>
+</body>
+</html>

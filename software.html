@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="Comprehensive engineering database evaluating enterprise software frameworks, core kernel threading, compiler subsystems, and containerized virtualization runtimes." name="description"/>
+<title>Software Comparisons | Ranking Hours</title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+<link href="style.css" rel="stylesheet"/>
+<style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f4f6f9;
+            color: #1e293b;
+            line-height: 1.7;
+            font-size: 16px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background: linear-gradient(135deg, #00b4db 0%, #0083b0 100%);
+            color: white;
+            padding: 20px 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.8rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 8px 15px;
+            border-radius: 20px;
+            transition: all 0.3s;
+        }
+
+        nav a:hover, nav a.active {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .page-header {
+            background: linear-gradient(rgba(0, 180, 219, 0.85), rgba(0, 131, 176, 0.85));
+            color: white;
+            text-align: center;
+            padding: 100px 20px 80px;
+            margin-bottom: 40px;
+            border-radius: 0 0 30px 30px;
+        }
+
+        .page-header h1 {
+            font-size: 3.2rem;
+            margin-bottom: 20px;
+            font-weight: 800;
+        }
+
+        .page-header .subtitle {
+            font-size: 1.3rem;
+            max-width: 800px;
+            margin: 0 auto;
+            opacity: 0.95;
+        }
+
+        .category-icon {
+            font-size: 4.5rem;
+            margin-bottom: 25px;
+        }
+
+        .intro-section {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02);
+            border: 1px solid #e2e8f0;
+        }
+
+        .intro-section h2 {
+            color: #0083b0;
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+
+        .software-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 50px;
+            margin: 40px 0;
+        }
+
+        .software-card {
+            background: white;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.04);
+            border: 1px solid #eef2f5;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s ease;
+        }
+
+        .software-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card-header {
+            background: linear-gradient(135deg, #00b4db 0%, #0083b0 100%);
+            color: white;
+            padding: 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .card-header h3 {
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+
+        .badge {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .card-content {
+            padding: 40px;
+        }
+
+        .metrics-dashboard {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+            background: #f8fafc;
+            padding: 25px;
+            border-radius: 16px;
+            border: 1px solid #e2e8f0;
+        }
+
+        .metric-block {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .metric-title {
+            font-size: 0.85rem;
+            color: #64748b;
+            text-transform: uppercase;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .metric-data {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: #0f172a;
+        }
+
+        .essay-body {
+            margin-bottom: 30px;
+        }
+
+        .essay-body h4 {
+            color: #0f172a;
+            font-size: 1.3rem;
+            margin: 25px 0 12px;
+            font-weight: 600;
+        }
+
+        .essay-body p {
+            color: #475569;
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        .btn-container {
+            margin-top: 30px;
+            border-top: 1px solid #e2e8f0;
+            padding-top: 25px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 35px;
+            background: linear-gradient(135deg, #00b4db 0%, #0083b0 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(0, 131, 176, 0.2);
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 131, 176, 0.35);
+        }
+
+        .editorial-note {
+            background: #fffbeb;
+            border-left: 5px solid #d97706;
+            padding: 30px;
+            border-radius: 12px;
+            margin: 60px 0;
+        }
+
+        .editorial-note h3 {
+            color: #b45309;
+            margin-bottom: 10px;
+        }
+
+        footer {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: white;
+            padding: 60px 0 30px;
+            margin-top: 80px;
+        }
+
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-column h3 {
+            font-size: 1.4rem;
+            margin-bottom: 25px;
+            color: #38bdf8;
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column li {
+            margin-bottom: 12px;
+        }
+
+        .footer-column a {
+            color: #cbd5e1;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-column a:hover {
+            color: white;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #94a3b8;
+            font-size: 0.9rem;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            .header-container { flex-direction: column; gap: 20px; }
+            .mobile-menu-btn { display: block; position: absolute; top: 25px; right: 20px; }
+            nav ul { display: none; flex-direction: column; width: 100%; text-align: center; }
+            nav ul.active { display: flex; }
+            .page-header h1 { font-size: 2.4rem; }
+            .card-header h3 { font-size: 1.4rem; }
+        }
+    </style>
+<link href="favicon.png" rel="icon" type="image/png"/>
+</head>
+<body>
+<header>
+<div class="container header-container">
+<div class="logo">
+<a href="index.html">
+<i class="fas fa-star"></i>
+<span>RankingHours</span>
+</a>
+</div>
+<button class="mobile-menu-btn" id="mobileMenuBtn">
+<i class="fas fa-bars"></i>
+</button>
+<nav>
+<ul id="mainNav">
+<li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+<li><a href="smartphone-comparisons.html"><i class="fas fa-mobile-alt"></i> Smartphones</a></li>
+<li><a href="laptop-comparisons.html"><i class="fas fa-laptop"></i> Laptops</a></li>
+<li><a class="active" href="software.html"><i class="fas fa-code"></i> Software</a></li>
+<li><a href="automotive-comparisons.html"><i class="fas fa-car"></i> Automotive</a></li>
+<li><a href="appliances-comparisons.html"><i class="fas fa-blender"></i> Appliances</a></li>
+</ul>
+</nav>
+</div>
+</header>
+<div class="page-header">
+<div class="container">
+<div class="category-icon"><i class="fas fa-layer-group"></i></div>
+<h1>Software Comparisons</h1>
+<p class="subtitle">Real-world comparisons of operating systems, creative tools, and video editing software.</p>
+</div>
+</div>
+<div class="container">
+<!-- Technical Introduction -->
+<section class="intro-section">
+<h2>How We Test Software</h2>
+<p>Reviewing software properly means going beyond a feature checklist - we look at how an app actually runs under the hood, not just what its interface looks like.</p>
+<p style="margin-top: 15px;">That includes how efficiently it uses system resources, how it handles multiple tasks at once, and how it performs across different platforms - all tested in a controlled environment for fair, accurate comparisons.</p>
+</section>
+<div class="software-grid">
+<!-- SECTION 1: OS KERNELS (Windows vs macOS) -->
+<div class="software-card">
+<div class="card-header">
+<h3>Windows vs macOS</h3>
+<span class="badge">Operating System Layers</span>
+</div>
+<div class="card-content">
+<div class="metrics-dashboard">
+<div class="metric-block">
+<span class="metric-title">Operating System Core</span>
+<span class="metric-data">Hybrid NT vs XNU/Mach</span>
+</div>
+<div class="metric-block">
+<span class="metric-title">Scheduler Mode</span>
+<span class="metric-data">How Each OS Schedules Tasks</span>
+</div>
+<div class="metric-block">
+<span class="metric-title">ISA Abstraction</span>
+<span class="metric-data">Prism x86 emulation vs Rosetta 2</span>
+</div>
+</div>
+<div class="essay-body">
+<h4>How Each System Is Built</h4>
+<p>Windows and macOS are built on fundamentally different foundations. Windows uses the NT kernel, a hybrid design that blends different kernel approaches for good performance while maintaining excellent backward compatibility - it's why Windows can still run older software alongside modern apps.</p>
+<p>macOS is built on XNU, which combines a Mach microkernel with parts of FreeBSD. It uses a system called Grand Central Dispatch to spread tasks across processor cores efficiently - and since Apple controls both the software and the hardware, this pairing runs especially smoothly on Macs.</p>
+<h4>Memory Abstraction Layers and Emulation Efficiency</h4>
+<p>Memory management differs too. Windows has to work across an enormous range of hardware combinations, which adds some overhead under heavy multitasking. Apple Silicon Macs use unified memory, where the CPU and GPU share the same memory pool directly - useful for tasks like video editing or machine learning, since data doesn't need to be copied between separate memory pools.</p>
+<p>Running older x86 software on newer ARM chips is a challenge for both platforms. Windows translates this code on the fly, so performance varies depending on the app. Apple's Rosetta 2 instead translates most of the code ahead of time, during installation, which gives more consistent performance and better battery life.</p>
+</div>
+<div class="btn-container">
+<!-- Ro'yxatingizda bor bo'lgan fayl nomi: windows-macOS.html -->
+<a class="btn" href="windows-macOS.html">Examine Full OS Laboratory Report</a>
+</div>
+</div>
+</div>
+<!-- SECTION 2: CREATIVE SOFTWARE (Photoshop vs Canva vs Figma) -->
+<div class="software-card">
+<div class="card-header">
+<h3>Photoshop vs Canva vs Figma</h3>
+<span class="badge">Graphic Production Systems</span>
+</div>
+<div class="card-content">
+<div class="metrics-dashboard">
+<div class="metric-block">
+<span class="metric-title">Graphics Engine</span>
+<span class="metric-data">Graphics Engine Comparison</span>
+</div>
+<div class="metric-block">
+<span class="metric-title">Rendering Style</span>
+<span class="metric-data">Raster vs Vector Rendering</span>
+</div>
+<div class="metric-block">
+<span class="metric-title">Collaboration</span>
+<span class="metric-data">Local File Sync vs Real-Time Cloud CRDT</span>
+</div>
+</div>
+<div class="essay-body">
+<h4>Graphics Engine Execution and Processing Typologies</h4>
+<p>Photoshop, Figma, and Canva take very different approaches to design software. Photoshop is a native desktop app built directly on your system's hardware, using its Mercury Graphics Engine to tap into your GPU directly. That lets it handle huge, complex files with many layers without running into memory issues.</p>
+<p>Figma and Canva, on the other hand, run entirely in the browser. Figma uses WebAssembly and WebGL to get near-native performance for vector graphics, while Canva focuses on being fast and accessible for quick design work. Running in a browser means no manual file syncing between team members, but it also means you're limited by your browser tab's memory, which can be a problem with very large, high-resolution files.</p>
+<h4>How Files Sync and Sharing Works</h4>
+<p>This local-vs-browser divide affects teamwork too. Photoshop saves files locally in a traditional, linear way - real-time collaboration requires a sync service, and the file locks to avoid conflicting edits, so only one person can work on a given file at a time.</p>
+<p>Figma and Canva instead use a technique (CRDTs) that lets multiple people edit the same file at once, automatically merging changes in real time without conflicts or error messages - true simultaneous collaboration, like Google Docs for design.</p>
+</div>
+<div class="btn-container">
+<!-- Ro'yxatingizda bor bo'lgan fayl nomi: Photoshop-Canva-Figma.html -->
+<a class="btn" href="Photoshop-Canva-Figma.html">Examine Full Graphic Design Report</a>
+</div>
+</div>
+</div>
+<!-- SECTION 3: CREATIVE SUITES (Adobe Photoshop vs DaVinci Resolve) -->
+<div class="software-card">
+<div class="card-header">
+<h3>Adobe vs DaVinci Resolve</h3>
+<span class="badge">Media Post-Processing Suites</span>
+</div>
+<div class="card-content">
+<div class="metrics-dashboard">
+<div class="metric-block">
+<span class="metric-title">Workflow</span>
+<span class="metric-data">Dynamic Link Inter-Process vs Monolithic Integration</span>
+</div>
+<div class="metric-block">
+<span class="metric-title">GPU Computing</span>
+<span class="metric-data">CUDA/OpenCL Abstraction vs Dedicated Neural Match</span>
+</div>
+<div class="metric-block">
+<span class="metric-title">Color Science</span>
+<span class="metric-data">ICC Color Management vs YRGB/ACES Unconstrained</span>
+</div>
+</div>
+<div class="essay-body">
+<h4>How the Apps Connect to Each Other</h4>
+<p>Video editing software also splits into two philosophies. Adobe's suite is modular - editing, audio, and motion graphics live in separate apps (Premiere, Audition, After Effects) that communicate with each other. This gives a lot of workspace flexibility, but running several of these heavy apps at once uses a lot of system resources.</p>
+<p>DaVinci Resolve does the opposite, combining editing, color grading, audio, and visual effects into one single application. Switching between tasks is instant since there's no need to move data between separate apps. It also stores projects in a proper database instead of flat project files, which makes it more stable and easier to sync across a team.</p>
+<h4>GPU Processing and Color Tools</h4>
+<p>For heavy effects work, Adobe splits rendering tasks between the CPU and GPU using standard graphics APIs, which gives broad compatibility with older graphics hardware. Its color handling works well for standard web video, though HDR projects need more manual setup.</p>
+<p>DaVinci Resolve routes heavy processing directly through hardware acceleration (CUDA, Metal, or OpenCL), and does its color math with more precision, giving colorists finer control over HDR footage without altering the original image data. It also uses built-in AI tools for things like object isolation and motion tracking, running them on your graphics hardware for smooth real-time playback.</p>
+</div>
+<div class="btn-container">
+<!-- Ro'yxatingizda bor bo'lgan fayl nomi: adobe-daVinci.html -->
+<a class="btn" href="adobe-daVinci.html">Examine Full Media Suite Report</a>
+</div>
+</div>
+</div>
+</div>
+<!-- AdSense Quality Compliance Component -->
+<div class="editorial-note">
+<h3>Our Testing Standards</h3>
+<p>We test every piece of software on identical hardware, so results are directly comparable. We never accept payment to influence a benchmark result - every score reflects genuine, independent testing.</p>
+</div>
+</div>
+<footer>
+<div class="container">
+<div class="footer-container">
+<div class="footer-column">
+<h3>RankingHours</h3>
+<p style="color: #94a3b8; font-size: 0.95rem;">Independent, hands-on reviews of phones, laptops, cars, and software - tested, not just described.</p>
+</div>
+<div class="footer-column">
+<h3>Legal</h3>
+<ul>
+<li><a href="privacy-policy.html"><i class="fas fa-lock"></i> Privacy Policy Agreement</a></li>
+<li><a href="disclaimer.html"><i class="fas fa-info-circle"></i> Technical Liability Disclaimer</a></li>
+<li><a href="terms-of-service.html"><i class="fas fa-file-contract"></i> Terms of Service</a></li>
+</ul>
+</div>
+<div class="footer-column">
+<h3>Global Hub Info</h3>
+<p style="color: #94a3b8; font-size: 0.95rem; margin-bottom: 10px;">Questions about our testing, or an editorial concern? Reach us at:</p>
+<p style="color: #38bdf8; font-weight: 600;"><i class="fas fa-envelope"></i> abdullohmahmudov660@gmail.com</p>
+</div>
+</div>
+<div class="copyright">
+<p>© 2026 ranking-hours.uz. All rights reserved.</p>
+</div>
+</div>
+</footer>
+<script>
+        // Mobile Navigation UI Interaction Handler
+        document.getElementById('mobileMenuBtn').addEventListener('click', function() {
+            document.getElementById('mainNav').classList.toggle('active');
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Privacy Policy - RankingHours</title>
+<style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', system-ui, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: #e2e8f0;
+            min-height: 100vh;
+            line-height: 1.8;
+        }
+
+        /* BOMBA Navigation Bar */
+        .bomba-nav {
+            background: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            padding: 15px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            font-size: 1.6rem;
+            font-weight: 800;
+            background: linear-gradient(45deg, #3b82f6, #10b981);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #94a3b8;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: #f3f4f6;
+            border-bottom: 2px solid #3b82f6;
+            padding-bottom: 4px;
+        }
+        
+        .policy-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+        
+        /* Premium Header */
+        .policy-header {
+            text-align: center;
+            margin-bottom: 50px;
+            padding: 70px 40px;
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.15), rgba(16, 185, 129, 0.15));
+            border-radius: 24px;
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        
+        .main-title {
+            font-size: 3.5rem;
+            background: linear-gradient(45deg, #3b82f6, #10b981);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 15px;
+            font-weight: 800;
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            color: #cbd5e1;
+        }
+
+        /* Content Structure */
+        .policy-card {
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 20px;
+            padding: 45px;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            margin-bottom: 35px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .policy-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background: #3b82f6;
+        }
+
+        .policy-card.green::before {
+            background: #10b981;
+        }
+
+        .policy-card.gold::before {
+            background: #f59e0b;
+        }
+
+        .policy-card h2 {
+            font-size: 1.8rem;
+            color: #f1f5f9;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            font-weight: 700;
+        }
+        
+        .policy-card p {
+            color: #cbd5e1;
+            margin-bottom: 20px;
+            font-size: 1.05rem;
+            text-align: justify;
+        }
+
+        .policy-list {
+            list-style: none;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        .policy-list li {
+            position: relative;
+            padding-left: 30px;
+            margin-bottom: 15px;
+            color: #cbd5e1;
+            font-size: 1.05rem;
+        }
+
+        .policy-list li::before {
+            content: '✦';
+            position: absolute;
+            left: 0;
+            color: #3b82f6;
+            font-weight: bold;
+        }
+
+        .policy-card.green .policy-list li::before {
+            color: #10b981;
+        }
+        
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 40px 20px;
+            margin-top: 60px;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            color: #94a3b8;
+            font-size: 1rem;
+        }
+
+        .footer-nav {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+        }
+
+        .footer-nav a {
+            color: #64748b;
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+        }
+
+        .footer-nav a:hover {
+            color: #94a3b8;
+        }
+    </style>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+<link href="favicon.png" rel="icon" type="image/png"/>
+<meta content="Read the Ranking Hours privacy policy to learn how we collect, use, and protect your data." name="description"/></head>
+<body>
+<!-- Top Navigation Block -->
+<nav class="bomba-nav">
+<a class="nav-logo" href="index.html">RankingHours</a>
+<ul class="nav-links">
+<li><a href="index.html">Home</a></li>
+<li><a class="active" href="privacy-policy.html">Privacy Policy</a></li>
+<li><a href="terms-of-service.html">Terms of Service</a></li>
+</ul>
+</nav>
+<div class="policy-container">
+<!-- Header Section -->
+<header class="policy-header">
+<h1 class="main-title">Privacy Policy</h1>
+<p class="subtitle">How we handle your data and privacy</p>
+<p style="color: #64748b; margin-top: 10px; font-weight: 600;">Effective Operational Date: June 30, 2026</p>
+</header>
+<!-- 1. Introduction & Core Scope -->
+<div class="policy-card">
+<h2>1. Introduction</h2>
+<p>Welcome to RankingHours (ranking-hours.uz), an independent site for hardware reviews and product comparisons. This Privacy Policy explains what data we collect, why, and what rights you have over it. Our goal is to give you unbiased reviews while being upfront about how we handle your data.</p>
+<p>By using this website, you're agreeing to the practices described here. If you don't agree with something in this policy, please stop using the site and clear any cookies it may have set in your browser.</p>
+<p>This policy covers every part of the RankingHours website - both information you give us directly, and information collected automatically, including through advertising partners like Google AdSense.</p>
+</div>
+<!-- 2. Technical Infrastructure & Log Files -->
+<div class="policy-card green">
+<h2>2. Server Logs</h2>
+<p>Like most websites, our server automatically keeps log files. This is standard practice, and it helps us catch attacks, fix bugs, and keep the site running smoothly.</p>
+<p>Every time you visit the site, our server records the following:</p>
+<ul class="policy-list">
+<li>IP address - the address your internet provider assigns your connection.</li>
+<li>Browser and device info - your browser type, version, and operating system.</li>
+<li>Timestamps - the date and time of each visit.</li>
+<li>Referrer and exit pages - the page that linked you here, and the page you left from.</li>
+<li>Basic usage stats - clicks, page views, and how long you spend on a page.</li>
+</ul>
+<p>None of this includes your name, home address, passwords, or payment details. It's anonymous data, used only to keep the site running well and understand general traffic patterns.</p>
+</div>
+<!-- 3. Granular Cookie Matrix & Web Beacons -->
+<div class="policy-card gold">
+<h2>3. Cookies</h2>
+<p>Like most sites, we use cookies - small files stored in your browser that let the site remember your settings and recognize you on return visits.</p>
+<p>We use a few types of cookies:</p>
+<ul class="policy-list">
+<li>Essential cookies - needed for basic site functions, like remembering your dark/light mode setting.</li>
+<li>Analytics cookies - help us see which pages are popular and spot anything broken on the site.</li>
+<li>Advertising cookies - help avoid showing you the same ad over and over.</li>
+</ul>
+<p>You can turn off cookies in your browser settings at any time (Chrome, Firefox, Safari, Edge all support this). Keep in mind that disabling cookies may affect how well the site works for you, like forgetting your saved preferences.</p>
+</div>
+<!-- 4. Google AdSense & Third-Party Advertising Frameworks -->
+<div class="policy-card">
+<h2>4. Google AdSense</h2>
+<p>We use Google AdSense to show ads that help fund this site. Google uses cookies and similar technology to show ads that are relevant to you, based on your browsing.</p>
+<p>Google's DART cookie is part of this - it lets Google and its partners show ads based on your visits to this site and others across the web.</p>
+<p>As a consumer, you retain full, unconstrained control over these automated tracking engines. You can easily opt out of targeted DART cookie tracking by visiting the official Google Ad and Content Network Privacy Policy directory at the following legal URL: <a href="https://policies.google.com/technologies/ads" style="color: #3b82f6; text-decoration: underline;" target="_blank">https://policies.google.com/technologies/ads</a>. Additionally, you can manage broader marketing preferences by reviewing the multi-network opt-out tool managed by the Network Advertising Initiative (NAI) at their central index page: <a href="https://optout.networkadvertising.org/" style="color: #3b82f6; text-decoration: underline;" target="_blank">https://optout.networkadvertising.org/</a>.</p>
+</div>
+<!-- 5. Third-Party Networks & Behavioral Analysis Externalities -->
+<div class="policy-card green">
+<h2>5. Other Third-Party Services</h2>
+<p>Some other ad and analytics partners may also use cookies or similar tools on our pages, and can see your IP address when their scripts load.</p>
+<p>These partners use that data to measure their campaigns and personalize ads. We don't control how they use it - that's governed by their own privacy policies, not ours.</p>
+<p>This policy only covers our own site, not those third parties - check their own privacy pages for details. If you want to limit third-party tracking generally, browser extensions or ad-blockers can help.</p>
+</div>
+<!-- 6. Comprehensive Regulatory Disclosures (GDPR & CCPA) -->
+<div class="policy-card gold">
+<h2>6. Your Privacy Rights (GDPR &amp; CCPA)</h2>
+<p>If you're covered by the California Consumer Privacy Act (CCPA) or the EU's GDPR, you have the following rights over your data:</p>
+<ul class="policy-list">
+<li>Right to access: request a copy of any personal data we hold about you.</li>
+<li>Right to correction: ask us to fix inaccurate or outdated information.</li>
+<li>Right to deletion: ask us to delete your data, as long as it doesn't conflict with a legal requirement to keep it.</li>
+<li>Right to restrict processing: ask us to pause how your data is used for analytics or marketing.</li>
+<li>Right to portability: request your data in a format you can transfer elsewhere.</li>
+<li>Right to non-discrimination: using these rights will never get you worse treatment or reduced access to our content.</li>
+</ul>
+<p>To exercise any of these rights, just contact us. We're required by law to respond within 30 business days.</p>
+</div>
+<!-- 7. Child Privacy Safeguards & Age Verification Structures -->
+<div class="policy-card">
+<h2>7. Children's Privacy</h2>
+<p>We take children's privacy seriously, and encourage parents and guardians to stay involved in kids' internet use in general.</p>
+<p>We do not knowingly collect personal information from children under 13. If you believe a child has submitted personal data to us, please contact us right away.</p>
+<p>We'll act quickly to find and delete that data from our records.</p>
+</div>
+<!-- 8. Dynamic Amendments & Operational Continuity -->
+<div class="policy-card green">
+<h2>8. Changes to This Policy</h2>
+<p>We may update this policy from time to time to reflect changes in privacy laws, our hosting setup, or how our ad partners work.</p>
+<p>Updates take effect as soon as they're posted here. We'd encourage you to check back occasionally - continuing to use the site after a change means you accept the updated policy.</p>
+<p>If any part of this policy is ever found unenforceable by a court, only that part would be adjusted - the rest of the policy stays in effect.</p>
+</div>
+<!-- Footer Element -->
+<footer class="footer">
+<p>© 2026 RankingHours. All Rights Reserved.</p>
+<div class="footer-nav">
+<a href="index.html">Home</a> | 
+                <a href="privacy-policy.html">Privacy Policy</a> | 
+                <a href="terms-of-service.html">Terms of Service</a>
+</div>
+</footer>
+</div>
+</body>
+</html>

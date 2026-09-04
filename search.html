@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="Advanced analytics and hardware engineering search engine for ranking-hours.uz. Instantly filter, compare, and analyze structural performance indexes." name="description"/>
+<title>Search | Ranking Hours</title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+<style>
+        /* --- PREMIUM BOMBA DARK ULTRA-MODERN DESIGN SYSTEM --- */
+        :root {
+            --bg-main: #070a13;
+            --bg-card: #0f1626;
+            --bg-input: #17223b;
+            --accent-cyan: #00f2fe;
+            --accent-blue: #3b82f6;
+            --accent-purple: #8b5cf6;
+            --text-primary: #f8fafc;
+            --text-muted: #94a3b8;
+            --border-color: rgba(255, 255, 255, 0.06);
+            --border-glow: rgba(0, 242, 254, 0.2);
+            --card-gradient: linear-gradient(145deg, #111a2e 0%, #0d1324 100%);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-main);
+            color: var(--text-primary);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* --- NEO GLOW BACKGROUND BLUR EFFECTS --- */
+        body::before {
+            content: '';
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(0, 242, 254, 0.08) 0%, transparent 65%);
+            top: -150px;
+            left: -150px;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        body::after {
+            content: '';
+            position: absolute;
+            width: 700px;
+            height: 700px;
+            background: radial-gradient(circle, rgba(139, 92, 246, 0.06) 0%, transparent 70%);
+            bottom: -200px;
+            right: -200px;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 30px;
+            width: 100%;
+        }
+
+        /* --- STICKY GLASSMORPHIC NAVIGATION --- */
+        header {
+            background: rgba(15, 22, 38, 0.75);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            padding: 18px 0;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo a {
+            color: var(--text-primary);
+            text-decoration: none;
+            font-size: 1.8rem;
+            font-weight: 800;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            letter-spacing: -0.5px;
+        }
+
+        .logo span {
+            background: linear-gradient(135deg, var(--accent-cyan) 0%, var(--accent-blue) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        nav a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            padding: 10px 20px;
+            border-radius: 14px;
+            transition: all 0.3s ease;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--text-primary);
+            background: rgba(255, 255, 255, 0.04);
+            box-shadow: inset 0 1px 1px rgba(255,255,255,0.08);
+        }
+
+        /* --- SEARCH ENGINE HERO DISPLAY --- */
+        .search-hero {
+            text-align: center;
+            padding: 80px 0 50px;
+        }
+
+        .search-hero h1 {
+            font-size: 3.5rem;
+            font-weight: 900;
+            letter-spacing: -1.5px;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #ffffff 20%, #a5b4fc 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .search-hero p {
+            color: var(--text-muted);
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 45px;
+            line-height: 1.6;
+        }
+
+        .search-wrapper {
+            max-width: 850px;
+            margin: 0 auto;
+        }
+
+        .search-bar-box {
+            display: flex;
+            background: var(--bg-card);
+            border: 2px solid var(--border-color);
+            border-radius: 24px;
+            padding: 10px 16px;
+            align-items: center;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 30px 60px rgba(0,0,0,0.4);
+        }
+
+        .search-bar-box:focus-within {
+            border-color: var(--accent-cyan);
+            box-shadow: 0 0 30px rgba(0, 242, 254, 0.2), 0 30px 60px rgba(0,0,0,0.5);
+            transform: translateY(-2px);
+        }
+
+        .search-icon-left {
+            color: var(--text-muted);
+            font-size: 1.4rem;
+            margin-left: 15px;
+            margin-right: 20px;
+        }
+
+        .search-input {
+            flex: 1;
+            background: none;
+            border: none;
+            outline: none;
+            color: var(--text-primary);
+            font-size: 1.25rem;
+            font-weight: 500;
+            padding: 12px 0;
+        }
+
+        .search-input::placeholder {
+            color: #4b5563;
+        }
+
+        /* --- STREAMLINED NAVIGATION CHIPS --- */
+        .filter-tags {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-top: 35px;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            color: var(--text-muted);
+            padding: 10px 22px;
+            border-radius: 40px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.25s ease;
+        }
+
+        .tag:hover, .tag.active {
+            border-color: var(--accent-cyan);
+            color: var(--text-primary);
+            background: rgba(0, 242, 254, 0.04);
+            box-shadow: 0 0 15px rgba(0, 242, 254, 0.1);
+        }
+
+        /* --- RESULTS METADATA & GRID MATRIX --- */
+        .results-section {
+            padding: 30px 0 100px;
+        }
+
+        .results-heading {
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--text-muted);
+            margin-bottom: 35px;
+            font-weight: 800;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .results-heading::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: var(--border-color);
+        }
+
+        .results-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 30px;
+        }
+
+        .result-item-card {
+            background: var(--card-gradient);
+            border: 1px solid var(--border-color);
+            border-radius: 24px;
+            padding: 35px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            text-decoration: none;
+            color: inherit;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .result-item-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(0, 242, 254, 0.03) 0%, transparent 50%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .result-item-card:hover {
+            border-color: rgba(0, 242, 254, 0.25);
+            transform: translateY(-6px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4), inset 0 1px 1px rgba(255,255,255,0.05);
+        }
+
+        .result-item-card:hover::before {
+            opacity: 1;
+        }
+
+        .card-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .category-badge {
+            font-size: 0.75rem;
+            background: rgba(255,255,255,0.03);
+            padding: 6px 14px;
+            border-radius: 30px;
+            color: var(--accent-cyan);
+            font-weight: 700;
+            border: 1px solid rgba(0, 242, 254, 0.12);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .result-item-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 14px;
+            font-weight: 700;
+            color: var(--text-primary);
+            line-height: 1.4;
+            transition: color 0.2s ease;
+        }
+
+        .result-item-card:hover h3 {
+            color: var(--accent-cyan);
+        }
+
+        .result-item-card p {
+            color: var(--text-muted);
+            font-size: 0.98rem;
+            line-height: 1.65;
+            margin-bottom: 25px;
+            flex-grow: 1;
+        }
+
+        .card-footer-link {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.95rem;
+            color: var(--accent-blue);
+            font-weight: 700;
+            transition: gap 0.2s ease;
+        }
+
+        .result-item-card:hover .card-footer-link {
+            gap: 12px;
+            color: var(--accent-cyan);
+        }
+
+        .no-results {
+            text-align: center;
+            padding: 80px 0;
+            color: var(--text-muted);
+            font-size: 1.2rem;
+            grid-column: 1 / -1;
+        }
+
+        /* --- FOOTER COMPONENT --- */
+        footer {
+            margin-top: auto;
+            background: #04060d;
+            border-top: 1px solid var(--border-color);
+            padding: 50px 0;
+            font-size: 0.95rem;
+            color: var(--text-muted);
+        }
+
+        .footer-flex {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 25px;
+        }
+
+        .footer-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            margin-left: 25px;
+            transition: color 0.2s;
+            font-weight: 600;
+        }
+
+        .footer-links a:hover {
+            color: var(--text-primary);
+        }
+
+        @media (max-width: 992px) {
+            .results-grid { grid-template-columns: 1fr; }
+            .search-hero h1 { font-size: 2.6rem; }
+        }
+
+        @media (max-width: 768px) {
+            .header-container { flex-direction: column; gap: 20px; }
+            .footer-flex { flex-direction: column; text-align: center; }
+            .footer-links a { margin: 0 12px; }
+        }
+    </style>
+<link href="favicon.png" rel="icon" type="image/png"/>
+</head>
+<body>
+<header>
+<div class="container header-container">
+<div class="logo">
+<a href="index.html"><i class="fas fa-bolt" style="color: var(--accent-cyan);"></i> <span>RankingHours</span></a>
+</div>
+<nav>
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="smartphone-comparisons.html">Smartphones</a></li>
+<li><a href="laptop-comparisons.html">Laptops</a></li>
+<li><a href="appliances-comparisons.html">Appliances</a></li>
+<li><a class="active" href="search.html"><i class="fas fa-search"></i> Search</a></li>
+</ul>
+</nav>
+</div>
+</header>
+<main class="container">
+<section class="search-hero">
+<h1>Search Reviews</h1>
+<p>Search all of our product reviews and comparisons.</p>
+<div class="search-wrapper">
+<div class="search-bar-box">
+<i class="fas fa-search search-icon-left"></i>
+<input class="search-input" id="dbSearch" placeholder="Filter microchip architectures, peripheral arrays, or computing configurations..." type="text"/>
+</div>
+<div class="filter-tags" id="tagContainer">
+<span class="tag active" data-filter="all">All Brands</span>
+<span class="tag" data-filter="smartphones">Smartphones</span>
+<span class="tag" data-filter="laptops">Computing &amp; OS</span>
+<span class="tag" data-filter="appliances">Home Appliances</span>
+<span class="tag" data-filter="audio">Acoustic Engineering</span>
+<span class="tag" data-filter="gaming">Gaming &amp; Virtuality</span>
+</div>
+</div>
+</section>
+<section class="results-section">
+<h2 class="results-heading" id="resultsCount">Loading results...</h2>
+<div class="results-grid" id="presetGrid">
+<!-- 1. xiaomi-google -->
+<a class="result-item-card" data-category="smartphones" data-keywords="xiaomi google pixel mobile smartphone flagship sensor camera tensor android snapdragon leica" href="xiaomi-google.html">
+<div class="card-meta"><span class="category-badge">Smartphones</span></div>
+<h3>Xiaomi vs Google Pixel</h3>
+<p>Camera quality, processing speed, and how each phone handles gaming heat.</p>
+<div class="card-footer-link">Deconstruct Engineering Reports <i class="fas fa-arrow-right"></i></div>
+</a>
+<!-- 2. windows-macOS -->
+<a class="result-item-card" data-category="laptops" data-keywords="windows macos operating system kernel computing architecture hardware microsoft apple unix thread allocation m3 snapdragon x elite" href="windows-macOS.html">
+<div class="card-meta"><span class="category-badge">Computing &amp; OS</span></div>
+<h3>Windows vs macOS</h3>
+<p>How the two operating systems compare on speed, battery life, and everyday use.</p>
+<div class="card-footer-link">Deconstruct Engineering Reports <i class="fas fa-arrow-right"></i></div>
+</a>
+<!-- 3. vr-qurilma -->
+<a class="result-item-card" data-category="gaming" data-keywords="vr oculus quest htc vive virtual reality spatial computing resolution refreshing display tracker optical immersion" href="vr-qurilma.html">
+<div class="card-meta"><span class="category-badge">Gaming &amp; Virtuality</span></div>
+<h3>VR Headset Comparisons</h3>
+<p>Tracking accuracy, comfort, and display quality across popular VR headsets.</p>
+<div class="card-footer-link">Deconstruct Engineering Reports <i class="fas fa-arrow-right"></i></div>
+</a>
+<!-- 4. soundbar -->
+<a class="result-item-card" data-category="audio" data-keywords="soundbar samsung lg acoustic audio speaker dolby atmos dts surround decibel amplifier harmonic distortion" href="soundbar.html">
+<div class="card-meta"><span class="category-badge">Acoustic Engineering</span></div>
+<h3>Soundbar Comparisons</h3>
+<p>Sound quality, bass, and how well each soundbar handles Dolby Atmos.</p>
+<div class="card-footer-link">Deconstruct Engineering Reports <i class="fas fa-arrow-right"></i></div>
+</a>
+<!-- 5. sony bose -->
+<a class="result-item-card" data-category="audio" data-keywords="sony bose headphones audio noise cancelling anc acoustics frequency decibel ambient feedback loop" href="sony-bose.html">
+<div class="card-meta"><span class="category-badge">Acoustic Engineering</span></div>
+<h3>Best ANC Headphones</h3>
+<p>How well each pair blocks outside noise, plus comfort and sound quality.</p>
+<div class="card-footer-link">Deconstruct Engineering Reports <i class="fas fa-arrow-right"></i></div>
+</a>
+<!-- 6. smartphone-comparisons -->
+<a class="result-item-card" data-category="smartphones" data-keywords="smartphone comparisons mobile matrix display brightness benchmark throttling hardware processor battery drain" href="smartphone-comparisons.html">
+<div class="card-meta"><span class="category-badge">Smartphones</span></div>
+<h3>Smartphone Comparisons</h3>
+<p>Screen brightness, sustained performance, and battery life across flagship phones.</p>
+<div class="card-footer-link">Deconstruct Engineering Reports <i class="fas fa-arrow-right"></i></div>
+</a>
+<!-- 7. samsung-iphone -->
+<a class="result-item-card" data-category="smartphones" data-keywords="samsung iphone apple galaxy pro max ultra flagship ios android bionic snapdragon ray tracing oled nvme" href="samsung-iphone.html">
+<div class="card-meta"><span class="category-badge">Smartphones</span></div>
+<h3>Samsung vs iPhone</h3>
+<p>Chip performance, camera quality, and display comparisons between the two flagships.</p>
+<div class="card-footer-link">Deconstruct Engineering Reports <i class="fas fa-arrow-right"></i></div>
+</a>
+<!-- 8. samsung-artel -->
+<a class="result-item-card" data-category="appliances" data-keywords="samsung artel home appliances refrigerator television dynamic cooling consumer electronics service network price utility" href="samsung-artel.html">
+<div class="card-meta"><span class="category-badge">Home Appliances</span></div>
+<h3>Samsung vs Artel Appliances</h3>
+<p>How premium imported appliances compare to affordable local options.</p>
+<div class="card-footer-link">Deconstruct Engineering Reports <i class="fas fa-arrow-right"></i></div>
+</a>
+<!-- 9. ps-xbox -->
+<a class="result-item-card" data-category="gaming" data-keywords="ps xbox playstation microsoft sony console gpu ray tracing memory bandwidth storage velocity architecture rdna" href="ps-xbox.html">
+<div class="card-meta"><span class="category-badge">Gaming &amp; Virtuality</span></div>
+<h3>PlayStation vs Xbox</h3>
+<p>Frame rates, load times, and console performance compared head to head.</p>
+<div class="card-footer-link">Deconstruct Engineering Reports <i class="fas fa-arrow-right"></i></div>
+</a>
+<!-- 10. macbook-ultrabook -->
+<a class="result-item-card" data-category="laptops" data-keywords="macbook ultrabook laptop notebook intel amd apple silicon thermal throttling efficiency premium workspace" href="macbook-ultrabook.html">
+<div class="card-meta"><span class="category-badge">Computing &amp; OS</span></div>
+<h3>MacBook vs Windows Ultrabooks</h3>
+<p>Battery life and performance for people who work on the go.</p>
+<div class="card-footer-link">Deconstruct Engineering Reports <i class="fas fa-arrow-right"></i></div>
+</a>
+<!-- 11. lg-bosch -->
+<a class="result-item-card" data-category="appliances" data-keywords="lg bosch washing machine motor direct drive ecosilence vibration kinetic balance energy integration water consumption" href="lg-bosch.html">
+<div class="card-meta"><span class="category-badge">Home Appliances</span></div>
+<h3>LG vs Bosch Washing Machines</h3>
+<p>How each brand's motor design affects vibration, noise, and durability.</p>
+<div class="card-footer-link">Deconstruct Engineering Reports <i class="fas fa-arrow-right"></i></div>
+</a>
+<!-- 12. laptop-comparisons -->
+<a class="result-item-card" data-category="laptops" data-keywords="laptop comparisons notebook hardware specs benchmark compiler workstation rendering compilation screen panel" href="laptop-comparisons.html">
+<div class="card-meta"><span class="category-badge">Computing &amp; OS</span></div>
+<h3>PC &amp; Laptop Comparisons</h3>
+<p>Real-world speed tests for developers and creative professionals.</p>
+<div class="card-footer-link">Deconstruct Engineering Reports <i class="fas fa-arrow-right"></i></div>
+</a>
+<!-- 13. gree-samsung -->
+<a class="result-item-card" data-category="appliances" data-keywords="gree samsung air conditioner climate control inverter compressor thermodynamic loop thermal transfer btu energy efficiency" href="gree-samsung.html">
+<div class="card-meta"><span class="category-badge">Home Appliances</span></div>
+<h3>Gree vs Samsung Air Conditioners</h3>
+<p>Cooling speed, noise levels, and energy efficiency compared side by side.</p>
+<div class="card-footer-link">Deconstruct Engineering Reports <i class="fas fa-arrow-right"></i></div>
+</a>
+<!-- 14. dell-lenovo -->
+<a class="result-item-card" data-category="laptops" data-keywords="dell lenovo thinkpad xps business laptop enterprise security durability hardware encryption keyboard ergonomics" href="dell-lenovo.html">
+<div class="card-meta"><span class="category-badge">Computing &amp; OS</span></div>
+<h3>Dell XPS vs Lenovo ThinkPad</h3>
+<p>Build quality, keyboard feel, and reliability for business laptops.</p>
+<div class="card-footer-link">Deconstruct Engineering Reports <i class="fas fa-arrow-right"></i></div>
+</a>
+<!-- 15. apple-samsung -->
+<a class="result-item-card" data-category="smartphones" data-keywords="apple samsung ecosystem integration data sync cloud wearable watch tablet continuity friction hardware interconnect" href="apple-samsung.html">
+<div class="card-meta"><span class="category-badge">Smartphones</span></div>
+<h3>Apple vs Samsung</h3>
+<p>How well each brand's phones, tablets, and laptops work together.</p>
+<div class="card-footer-link">Deconstruct Engineering Reports <i class="fas fa-arrow-right"></i></div>
+</a>
+</div>
+<div class="no-results" id="noResults" style="display: none;">
+<i class="fas fa-database-sad" style="font-size: 2.5rem; margin-bottom: 15px; color: var(--accent-cyan);"></i>
+<p>No matching results found.</p>
+</div>
+</section>
+</main>
+<footer>
+<div class="container footer-flex">
+<p>© 2026 ranking-hours.uz. Built by Abdulloh. All rights reserved.</p>
+<div class="footer-links">
+<a href="privacy-policy.html">Privacy</a>
+<a href="sitemap.html">Sitemap</a>
+<a href="terms-of-service.html">Terms</a>
+</div>
+</div>
+</footer>
+<!-- LIVE CLIENT-SIDE ENGINE PROCESSOR & COMPILER -->
+<script>
+        const searchInput = document.getElementById('dbSearch');
+        const cards = document.querySelectorAll('.result-item-card');
+        const countText = document.getElementById('resultsCount');
+        const noResults = document.getElementById('noResults');
+        const tags = document.querySelectorAll('.tag');
+
+        let currentFilter = 'all';
+
+        function searchExecutionEngine() {
+            const query = searchInput.value.toLowerCase().trim();
+            let visibleCount = 0;
+
+            cards.forEach(card => {
+                const innerContent = card.textContent.toLowerCase();
+                const dataKeywords = card.getAttribute('data-keywords').toLowerCase();
+                const category = card.getAttribute('data-category');
+
+                const queryMatch = innerContent.includes(query) || dataKeywords.includes(query);
+                const filterMatch = currentFilter === 'all' || category === currentFilter;
+
+                if(queryMatch && filterMatch) {
+                    card.style.display = 'flex';
+                    visibleCount++;
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+
+            // Update Metadata Counts Dynamically
+            if (query === '' && currentFilter === 'all') {
+                countText.textContent = `Recommended Structural Analytics (${cards.length} Hardware Indices Active)`;
+            } else {
+                countText.textContent = `Search Execution Complete (${visibleCount} Matching Records Compiled)`;
+            }
+
+            // Error Flag Toggle
+            if(visibleCount === 0) {
+                noResults.style.display = 'block';
+            } else {
+                noResults.style.display = 'none';
+            }
+        }
+
+        // Live input event tracking
+        searchInput.addEventListener('input', searchExecutionEngine);
+
+        // Interactive Filtering Chips
+        tags.forEach(tag => {
+            tag.addEventListener('click', () => {
+                tags.forEach(t => t.classList.remove('active'));
+                tag.classList.add('active');
+                currentFilter = tag.getAttribute('data-filter');
+                searchExecutionEngine();
+            });
+        });
+
+        // Initialize counts on execution finish
+        window.addEventListener('DOMContentLoaded', () => {
+            countText.textContent = `Recommended Structural Analytics (${cards.length} Hardware Indices Active)`;
+        });
+    </script>
+</body>
+</html>

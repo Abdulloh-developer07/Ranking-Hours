@@ -1,0 +1,1032 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="An in-depth, multi-dimensional breakdown of the Ranking Hours 5-star scoring matrix. Discover our mathematical weight distribution models, rigorous algorithmic testing metrics, and editorial independence frameworks." name="description"/>
+<title>Our 5-Star Rating System Explained | Ranking Hours</title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+<style>
+        :root {
+            --primary: #1a252f;
+            --primary-light: #2c3e50;
+            --secondary: #2980b9;
+            --accent: #e74c3c;
+            --star: #f1c40f;
+            --light-bg: #f8f9fa;
+            --border-color: #e2e8f0;
+            --text-dark: #2d3748;
+            --text-muted: #718096;
+            --shadow-sm: 0 2px 4px rgba(0,0,0,0.05);
+            --shadow-md: 0 10px 25px rgba(0,0,0,0.08);
+            --shadow-lg: 0 20px 40px rgba(0,0,0,0.12);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: var(--light-bg);
+            color: var(--text-dark);
+            line-height: 1.75;
+            font-size: 16px;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 1260px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Top Bar Banner */
+        .top-announcement {
+            background-color: var(--secondary);
+            color: white;
+            text-align: center;
+            padding: 10px 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+
+        /* Header Navigation */
+        header {
+            background-color: var(--primary);
+            color: white;
+            padding: 20px 0;
+            box-shadow: var(--shadow-sm);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.6rem;
+            font-weight: 800;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: white;
+            text-decoration: none;
+            letter-spacing: -0.5px;
+        }
+
+        .logo i {
+            font-size: 1.8rem;
+            color: var(--star);
+        }
+
+        .logo span.highlight {
+            color: var(--star);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 15px;
+        }
+
+        nav a {
+            color: rgba(255, 255, 255, 0.85);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            padding: 10px 18px;
+            border-radius: 8px;
+            transition: all 0.25s ease;
+        }
+
+        nav a:hover {
+            color: white;
+            background-color: rgba(255, 255, 255, 0.08);
+        }
+
+        nav a.active {
+            color: white;
+            background-color: var(--secondary);
+        }
+
+        /* Editorial Context Banner */
+        .editorial-context-bar {
+            background-color: white;
+            border-bottom: 1px solid var(--border-color);
+            padding: 14px 0;
+            font-size: 0.88rem;
+            color: var(--text-muted);
+        }
+
+        .editorial-flex {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .editorial-meta-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .editorial-meta-item i {
+            color: var(--secondary);
+        }
+
+        /* Hero Splash Section */
+        .page-header {
+            background: linear-gradient(135deg, var(--primary) 0%, #1e374f 100%);
+            color: white;
+            text-align: center;
+            padding: 90px 20px;
+            border-radius: 0 0 40px 40px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+        }
+
+        .page-header::before {
+            content: "★ ★ ★ ★ ★";
+            position: absolute;
+            font-size: 12rem;
+            opacity: 0.04;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+            pointer-events: none;
+            letter-spacing: 10px;
+        }
+
+        .page-header h1 {
+            font-size: 3.2rem;
+            font-weight: 800;
+            margin-bottom: 24px;
+            letter-spacing: -1px;
+            line-height: 1.2;
+        }
+
+        .page-header p {
+            font-size: 1.25rem;
+            max-width: 800px;
+            margin: 0 auto;
+            color: #b4c6d4;
+            font-weight: 400;
+        }
+
+        /* Layout Architecture Split */
+        .main-layout {
+            display: grid;
+            grid-template-columns: 1fr 320px;
+            gap: 40px;
+            margin: 60px 0;
+        }
+
+        /* Informational Narrative Blocks */
+        .narrative-block {
+            background: white;
+            border-radius: 24px;
+            padding: 45px;
+            margin-bottom: 40px;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--border-color);
+        }
+
+        .narrative-block h2 {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 25px;
+            letter-spacing: -0.5px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            border-bottom: 2px solid var(--light-bg);
+            padding-bottom: 15px;
+        }
+
+        .narrative-block h2 i {
+            color: var(--secondary);
+        }
+
+        .narrative-block p {
+            color: var(--text-dark);
+            margin-bottom: 20px;
+            font-size: 1.05rem;
+        }
+
+        .narrative-block ul, .narrative-block ol {
+            margin-left: 25px;
+            margin-bottom: 25px;
+            color: var(--text-dark);
+        }
+
+        .narrative-block li {
+            margin-bottom: 12px;
+            padding-left: 5px;
+        }
+
+        /* 5-Star Tier Scale Visuals */
+        .rating-scale {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+            margin: 35px 0;
+        }
+
+        .rating-card {
+            background: var(--light-bg);
+            border-radius: 18px;
+            padding: 30px;
+            display: grid;
+            grid-template-columns: 140px 220px 1fr;
+            align-items: center;
+            gap: 25px;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            border: 1px solid var(--border-color);
+            cursor: pointer;
+        }
+
+        .rating-card:hover {
+            transform: translateX(8px);
+            box-shadow: var(--shadow-md);
+            background: white;
+        }
+
+        .card-metric-block {
+            text-align: center;
+            border-right: 2px solid rgba(0,0,0,0.05);
+            padding-right: 15px;
+        }
+
+        .rating-number {
+            font-size: 3.5rem;
+            font-weight: 900;
+            line-height: 1;
+            margin-bottom: 5px;
+        }
+
+        .rating-stars {
+            font-size: 1.1rem;
+            color: var(--star);
+            letter-spacing: 2px;
+        }
+
+        .rating-label-block {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .rating-label {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 4px;
+        }
+
+        .rating-badge {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 30px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            width: fit-content;
+        }
+
+        .rating-desc {
+            color: #4a5568;
+            font-size: 0.98rem;
+            line-height: 1.6;
+        }
+
+        /* Individual Tier Colors */
+        .tier-5 { border-left: 6px solid #27ae60; }
+        .tier-5 .rating-number { color: #27ae60; }
+        .tier-5 .rating-badge { background-color: #e8f8f0; color: #27ae60; }
+
+        .tier-4 { border-left: 6px solid #2ecc71; }
+        .tier-4 .rating-number { color: #2ecc71; }
+        .tier-4 .rating-badge { background-color: #eafaf1; color: #2ecc71; }
+
+        .tier-3 { border-left: 6px solid #f1c40f; }
+        .tier-3 .rating-number { color: #f1c40f; }
+        .tier-3 .rating-badge { background-color: #fef9e7; color: #f1c40f; }
+
+        .tier-2 { border-left: 6px solid #e67e22; }
+        .tier-2 .rating-number { color: #e67e22; }
+        .tier-2 .rating-badge { background-color: #fdf2e9; color: #e67e22; }
+
+        .tier-1 { border-left: 6px solid #e74c3c; }
+        .tier-1 .rating-number { color: #e74c3c; }
+        .tier-1 .rating-badge { background-color: #fceae9; color: #e74c3c; }
+
+        /* Criteria Matrix Layout */
+        .criteria-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin: 35px 0;
+        }
+
+        .criterion-box {
+            background: var(--light-bg);
+            border-radius: 16px;
+            padding: 24px;
+            border: 1px solid var(--border-color);
+            transition: all 0.2s ease;
+        }
+
+        .criterion-box:hover {
+            background: white;
+            box-shadow: var(--shadow-sm);
+            border-color: var(--secondary);
+        }
+
+        .criterion-box h4 {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .criterion-box h4 i {
+            color: var(--secondary);
+            font-size: 1.2rem;
+        }
+
+        .criterion-box p {
+            font-size: 0.92rem;
+            color: #4a5568;
+            margin-bottom: 15px;
+            line-height: 1.5;
+        }
+
+        .weight-tag {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            font-weight: 700;
+            font-size: 0.8rem;
+            padding: 4px 12px;
+            border-radius: 20px;
+            letter-spacing: 0.5px;
+        }
+
+        /* Mathematical Verification Segment */
+        .math-section {
+            background: linear-gradient(135deg, #f0f4f8 0%, #d9e2ec 100%);
+            border-radius: 24px;
+            padding: 45px;
+            margin: 40px 0;
+            border: 1px solid #bcccdc;
+        }
+
+        .math-section h3 {
+            font-size: 1.6rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+            font-weight: 800;
+        }
+
+        .formula-container {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            margin: 20px 0;
+            text-align: center;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: var(--primary-light);
+            border: 1px solid #bcccdc;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .math-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 15px;
+            margin-top: 25px;
+        }
+
+        .math-step {
+            background: white;
+            border-radius: 12px;
+            padding: 16px;
+            border-left: 4px solid var(--secondary);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .math-step-num {
+            font-size: 0.85rem;
+            font-weight: 800;
+            color: var(--secondary);
+            text-transform: uppercase;
+            margin-bottom: 4px;
+        }
+
+        .math-step h5 {
+            font-size: 1rem;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+
+        .math-step span {
+            font-size: 0.88rem;
+            color: var(--text-muted);
+        }
+
+        /* Sidebar Widgets */
+        .sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .widget {
+            background: white;
+            border-radius: 20px;
+            padding: 28px;
+            border: 1px solid var(--border-color);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .widget h3 {
+            font-size: 1.25rem;
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 18px;
+            border-bottom: 2px solid var(--light-bg);
+            padding-bottom: 10px;
+        }
+
+        .widget-links {
+            list-style: none;
+        }
+
+        .widget-links li {
+            margin-bottom: 12px;
+        }
+
+        .widget-links a {
+            color: #4a5568;
+            text-decoration: none;
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: color 0.2s ease;
+        }
+
+        .widget-links a:hover {
+            color: var(--secondary);
+        }
+
+        .widget-links i {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .trust-badge-sidebar {
+            text-align: center;
+            background: linear-gradient(to bottom, #ffffff, #f7fafc);
+        }
+
+        .trust-badge-sidebar i {
+            font-size: 3rem;
+            color: var(--secondary);
+            margin-bottom: 15px;
+        }
+
+        .trust-badge-sidebar p {
+            font-size: 0.9rem;
+            color: #4a5568;
+            line-height: 1.5;
+        }
+
+        /* Interactive FAQ Accordion Elements */
+        .faq-block {
+            margin-top: 25px;
+        }
+
+        .faq-item {
+            background: var(--light-bg);
+            border-radius: 12px;
+            margin-bottom: 14px;
+            border: 1px solid var(--border-color);
+            overflow: hidden;
+        }
+
+        .faq-trigger {
+            width: 100%;
+            text-align: left;
+            background: none;
+            border: none;
+            padding: 18px 24px;
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--primary);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background-color 0.2s ease;
+        }
+
+        .faq-trigger:hover {
+            background-color: #edf2f7;
+        }
+
+        .faq-content {
+            padding: 0 24px 20px 24px;
+            color: #4a5568;
+            font-size: 0.98rem;
+            display: none;
+        }
+
+        /* Global Footer System */
+        footer {
+            background-color: var(--primary);
+            color: #e2e8f0;
+            padding: 70px 0 30px 0;
+            margin-top: 80px;
+            border-top: 4px solid var(--secondary);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr repeat(3, 1fr);
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+
+        .footer-column h3 {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 22px;
+            position: relative;
+        }
+
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -8px;
+            width: 35px;
+            height: 2px;
+            background-color: var(--secondary);
+        }
+
+        .footer-column p {
+            font-size: 0.95rem;
+            color: #a0aec0;
+            line-height: 1.6;
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column li {
+            margin-bottom: 12px;
+        }
+
+        .footer-column a {
+            color: #a0aec0;
+            text-decoration: none;
+            font-size: 0.92rem;
+            transition: all 0.2s ease;
+            display: inline-block;
+        }
+
+        .footer-column a:hover {
+            color: white;
+            transform: translateX(4px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            color: #718096;
+            font-size: 0.88rem;
+        }
+
+        .footer-tagline {
+            margin-top: 6px;
+            font-weight: 600;
+            color: var(--text-muted);
+        }
+
+        /* System Adaptability Overrides */
+        @media (max-width: 992px) {
+            .main-layout {
+                grid-template-columns: 1fr;
+            }
+            .page-header h1 {
+                font-size: 2.6rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                gap: 20px;
+                text-align: center;
+            }
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            .rating-card {
+                grid-template-columns: 1fr;
+                text-align: center;
+                justify-items: center;
+            }
+            .card-metric-block {
+                border-right: none;
+                border-bottom: 2px solid rgba(0,0,0,0.05);
+                padding-right: 0;
+                padding-bottom: 15px;
+                width: 100%;
+            }
+            .rating-label-block {
+                align-items: center;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+        }
+    </style>
+<link href="favicon.png" rel="icon" type="image/png"/>
+</head>
+<body>
+<!-- Top Bar Announcement -->
+<div class="top-announcement">
+        Unbiased Consumer Research For 2026
+    </div>
+<!-- Main Navigation Header -->
+<header>
+<div class="container header-container">
+<a class="logo" href="index.html">
+<i class="fas fa-star"></i>
+<div>Ranking<span class="highlight">Hours</span></div>
+</a>
+<nav>
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="methodology.html">Methodology</a></li>
+<li><a class="active" href="rating-system.html">Rating System</a></li>
+<li><a href="test-process.html">Test Process</a></li>
+</ul>
+</nav>
+</div>
+</header>
+<!-- Editorial Context Bar for Integrity Verification -->
+<div class="editorial-context-bar">
+<div class="container editorial-flex">
+<div class="editorial-meta-item">
+<i class="fas fa-gavel"></i>
+<span><strong>Editorial Standard:</strong> Independent Testing Results</span>
+</div>
+<div class="editorial-meta-item">
+<i class="fas fa-calendar-alt"></i>
+<span><strong>Version:</strong> 2026.4.1 Stable Core</span>
+</div>
+<div class="editorial-meta-item">
+<i class="fas fa-user-shield"></i>
+<span><strong>Review Panel:</strong> Certified Hardware Analysts</span>
+</div>
+</div>
+</div>
+<!-- Page Splash Hero Header -->
+<section class="page-header">
+<div class="container">
+<h1>How Our Rating System Works</h1>
+<p>A plain explanation of how we turn hands-on testing into a final star rating.</p>
+</div>
+</section>
+<!-- Core Layout Grid Split -->
+<div class="container main-layout">
+<!-- Left Side Primary Core Document -->
+<main class="primary-document">
+<!-- Introduction Philosophy Block -->
+<section class="narrative-block">
+<h2>1. Why We Built This System</h2>
+<p>A lot of tech reviews are just hype and gut feeling, sometimes shaped by marketing deals behind the scenes. That leaves buyers trying to decode marketing buzzwords instead of getting real, verified information.</p>
+<p>We wanted a rating system based on actual test data, not gut feeling. We use consistent, repeatable tests and judge products on real functionality, durability, build quality, and long-term value - not packaging or marketing claims.</p>
+<p>We use the same evaluation process for every category, whether it's a phone, an EV, or a home appliance. The final score isn't a vibe-based group decision - it's calculated from our weighted scoring formula.</p>
+</section>
+<!-- Detailed Tiers Breakdown -->
+<section class="narrative-block">
+<h2>2. Our 5-Star Scale</h2>
+<p>We use a 5-point scale, calculated to two decimal places, so products fall into five clear tiers:</p>
+<div class="rating-scale">
+<!-- Tier 5 -->
+<div class="rating-card tier-5">
+<div class="card-metric-block">
+<div class="rating-number">5.0</div>
+<div class="rating-stars">★★★★★</div>
+</div>
+<div class="rating-label-block">
+<span class="rating-label">Elite Class</span>
+<span class="rating-badge">Exceptional</span>
+</div>
+<p class="rating-desc">5.0 - Exceptional. Excels in every category with no notable flaws. A genuine standout in its class.</p>
+</div>
+<!-- Tier 4 -->
+<div class="rating-card tier-4">
+<div class="card-metric-block">
+<div class="rating-number">4.0</div>
+<div class="rating-stars">★★★★☆</div>
+</div>
+<div class="rating-label-block">
+<span class="rating-label">Upper Core Class</span>
+<span class="rating-badge">Highly Recommended</span>
+</div>
+<p class="rating-desc">4.0-4.9 - Excellent. Strong marks across the board, with only minor compromises in non-essential features. A reliable, recommended choice.</p>
+</div>
+<!-- Tier 3 -->
+<div class="rating-card tier-3">
+<div class="card-metric-block">
+<div class="rating-number">3.0</div>
+<div class="rating-stars">★★★☆☆</div>
+</div>
+<div class="rating-label-block">
+<span class="rating-label">Median Utility Class</span>
+<span class="rating-badge">Satisfactory</span>
+</div>
+<p class="rating-desc">3.0-3.9 - Solid but flawed. Does the core job reliably, but has clear trade-offs - like average build materials or so-so battery life. Worth considering mainly if discounted, or for a specific need.</p>
+</div>
+<!-- Tier 2 -->
+<div class="rating-card tier-2">
+<div class="card-metric-block">
+<div class="rating-number">2.0</div>
+<div class="rating-stars">★★☆☆☆</div>
+</div>
+<div class="rating-label-block">
+<span class="rating-label">Sub-Standard Class</span>
+<span class="rating-badge">Deficient</span>
+</div>
+<p class="rating-desc">2.0-2.9 - Below average. Regular performance issues or design flaws that get in the way of normal use. Generally not recommended.</p>
+</div>
+<!-- Tier 1 -->
+<div class="rating-card tier-1">
+<div class="card-metric-block">
+<div class="rating-number">1.0</div>
+<div class="rating-stars">★☆☆☆☆</div>
+</div>
+<div class="rating-label-block">
+<span class="rating-label">Defective Class</span>
+<span class="rating-badge">Critical Alert</span>
+</div>
+<p class="rating-desc">Under 2.0 - Poor. Fails at its core advertised job, or shows serious wear or safety concerns during testing. We'd recommend avoiding it.</p>
+</div>
+</div>
+<p>This keeps scores meaningful - we save 5.0 for truly exceptional products, so a 4.0 or 4.5 still means a genuinely strong recommendation.</p>
+</section>
+<!-- Detailed Criteria Matrix Explanation -->
+<section class="narrative-block">
+<h2>3. What Goes Into the Score</h2>
+<p>Every product is scored across seven categories, each weighted by how much it actually matters for daily use:</p>
+<div class="criteria-grid">
+<div class="criterion-box">
+<h4><i class="fas fa-bolt"></i> Performance &amp; Core Power</h4>
+<p>Performance: raw speed, processing power, and how it handles heavy use.</p>
+<span class="weight-tag">Weight Alloc: 25%</span>
+</div>
+<div class="criterion-box">
+<h4><i class="fas fa-shield-alt"></i> Material Build &amp; Rigidity</h4>
+<p>Build Quality: durability, materials, and long-term wear resistance.</p>
+<span class="weight-tag">Weight Alloc: 20%</span>
+</div>
+<div class="criterion-box">
+<h4><i class="fas fa-universal-access"></i> Interface &amp; Ergonomics</h4>
+<p>Ease of Use: setup, software, and how intuitive daily use is.</p>
+<span class="weight-tag">Weight Alloc: 15%</span>
+</div>
+<div class="criterion-box">
+<h4><i class="fas fa-balance-scale"></i> Pure Financial Value Index</h4>
+<p>Value for Money: how the price compares to what you actually get.</p>
+<span class="weight-tag">Weight Alloc: 15%</span>
+</div>
+<div class="criterion-box">
+<h4><i class="fas fa-leaf"></i> Consumption &amp; Power Return</h4>
+<p>Battery &amp; Efficiency: battery life, charging speed, and power draw.</p>
+<span class="weight-tag">Weight Alloc: 10%</span>
+</div>
+<div class="criterion-box">
+<h4><i class="fas fa-file-contract"></i> Warranty &amp; Service Support</h4>
+<p>Warranty &amp; Support: coverage length, support quality, and parts availability.</p>
+<span class="weight-tag">Weight Alloc: 10%</span>
+</div>
+<div class="criterion-box">
+<h4><i class="fas fa-palette"></i> Aesthetic &amp; Industrial Vision</h4>
+<p>Design: how it looks, and whether the design actually serves its function.</p>
+<span class="weight-tag">Weight Alloc: 5%</span>
+</div>
+</div>
+<p>This keeps scoring honest - if a product looks great but has poor battery life or overheats under load, those issues pull the overall score down even if the design score is high.</p>
+</section>
+<!-- Verification Mathematical Logic Box -->
+<section class="math-section">
+<h3>4. How the Math Works</h3>
+<p>Here's an example of how a final score comes together, using a real smartphone we tested:</p>
+<div class="formula-container">
+                    Final Composite Score = SUM(Category Score × Category Weight)
+                </div>
+<div class="math-grid">
+<div class="math-step">
+<div class="math-step-num">Step 1</div>
+<h5>Performance Tier</h5>
+<span>4.8 / 5.0 score × 0.25 = <strong>1.200</strong></span>
+</div>
+<div class="math-step">
+<div class="math-step-num">Step 2</div>
+<h5>Material Build</h5>
+<span>4.9 / 5.0 score × 0.20 = <strong>0.980</strong></span>
+</div>
+<div class="math-step">
+<div class="math-step-num">Step 3</div>
+<h5>Interface Layout</h5>
+<span>4.5 / 5.0 score × 0.15 = <strong>0.675</strong></span>
+</div>
+<div class="math-step">
+<div class="math-step-num">Step 4</div>
+<h5>Financial Value</h5>
+<span>3.8 / 5.0 score × 0.15 = <strong>0.570</strong></span>
+</div>
+<div class="math-step">
+<div class="math-step-num">Step 5</div>
+<h5>Power Return</h5>
+<span>4.2 / 5.0 score × 0.10 = <strong>0.420</strong></span>
+</div>
+<div class="math-step">
+<div class="math-step-num">Step 6</div>
+<h5>Service Network</h5>
+<span>4.0 / 5.0 score × 0.10 = <strong>0.400</strong></span>
+</div>
+<div class="math-step">
+<div class="math-step-num">Step 7</div>
+<h5>Industrial Vision</h5>
+<span>4.7 / 5.0 score × 0.05 = <strong>0.235</strong></span>
+</div>
+</div>
+<div style="background: var(--primary); color: white; padding: 25px; border-radius: 16px; margin-top: 30px; text-align: center; box-shadow: var(--shadow-md);">
+<h4 style="font-weight: 700; margin-bottom: 8px; font-size: 1.2rem; letter-spacing: 0.5px;">Calculated Mathematical Score Total</h4>
+<div style="font-size: 3.2rem; font-weight: 900; color: var(--star); line-height: 1.1;">4.48 / 5.00</div>
+<p style="margin-top: 8px; font-size: 1rem; color: #cbd5e0; font-weight: 600;">Result: Tier 4 - Highly Recommended</p>
+</div>
+</section>
+<!-- FAQ Accordion Segment -->
+<section class="narrative-block">
+<h2>5. Common Questions</h2>
+<p>A few questions we hear often about how our scoring works:</p>
+<div class="faq-block">
+<div class="faq-item">
+<button class="faq-trigger">Why does Ranking Hours use a static 5-point scale instead of a 100-point index? <i class="fas fa-chevron-down"></i></button>
+<div class="faq-content">
+<p>A 100-point scale often creates a false sense of precision - the difference between 87 and 88 rarely means much. Our 5-point scale, tracked to two decimals, is precise enough to show real differences while staying grounded in actual test results.</p>
+</div>
+</div>
+<div class="faq-item">
+<button class="faq-trigger">How often do you update scores when software patches improve a device? <i class="fas fa-chevron-down"></i></button>
+<div class="faq-content">
+<p>We review our top-ranked products quarterly to account for software updates. If an update fixes a known issue or improves battery life, we retest and recalculate the score.</p>
+</div>
+</div>
+<div class="faq-item">
+<button class="faq-trigger">Do these category weights remain identical across every product class? <i class="fas fa-chevron-down"></i></button>
+<div class="faq-content">
+<p>The category weights stay fixed, but what we measure within each one adapts to the product. For an appliance, "Performance" means power efficiency and noise; for a phone, it means processing speed and frame rates.</p>
+</div>
+</div>
+<div class="faq-item">
+<button class="faq-trigger">How does your platform handle sponsored review content or paid product placement? <i class="fas fa-chevron-down"></i></button>
+<div class="faq-content">
+<p>We don't do sponsored reviews or paid placements. Our team doesn't accept gifts or incentives from brands, which keeps our scores objective and focused on what's actually good for buyers.</p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Right Side Navigational Sidebar -->
+<aside class="sidebar">
+<div class="widget trust-badge-sidebar">
+<i class="fas fa-balance-scale"></i>
+<h3>Our Core Promise</h3>
+<p>We don't let affiliate links shape our recommendations, and we don't accept paid manufacturer partnerships. Every point in a score comes from actual hands-on testing.</p>
+</div>
+<div class="widget">
+<h3>Testing</h3>
+<ul class="widget-links">
+<li><a href="methodology.html">Methodology</a></li>
+<li><a href="rating-system.html">Rating System</a></li>
+<li><a href="test-process.html">Test Process</a></li>
+<li><a href="test-equipment.html">Test Equipment</a></li>
+</ul>
+</div>
+<div class="widget">
+<h3>Transparency</h3>
+<ul class="widget-links">
+<li><a href="ethics.html">Code of Ethics</a></li>
+<li><a href="independence.html">Editorial Independence</a></li>
+<li><a href="corrections.html">Corrections</a></li>
+<li><a href="contact.html">Contact Us</a></li>
+</ul>
+</div>
+</aside>
+</div>
+<!-- Complete Legal and Contextual Footer -->
+<footer>
+<div class="container">
+<div class="footer-grid">
+<div class="footer-column">
+<h3 style="color: white; margin-bottom: 15px;">Ranking Hours</h3>
+<p>Independent, hands-on reviews of phones, laptops, cars, and software - tested, not just described.</p>
+</div>
+<div class="footer-column">
+<h3>Review Portals</h3>
+<ul>
+<li><a href="index.html">Home Platform</a></li>
+<li><a href="technology.html">Phones &amp; Laptops</a></li>
+<li><a href="automotive-comparisons.html">Automotive Systems</a></li>
+<li><a href="appliances-comparisons.html">Home Appliances</a></li>
+</ul>
+</div>
+<div class="footer-column">
+<h3>Our Standards</h3>
+<ul>
+<li><a href="methodology.html">Testing Methodology</a></li>
+<li><a href="rating-system.html">Rating System</a></li>
+<li><a href="ethics.html">Code of Ethics</a></li>
+<li><a href="about.html">Our Lab Team</a></li>
+</ul>
+</div>
+<div class="footer-column">
+<h3>Legal</h3>
+<ul>
+<li><a href="privacy-policy.html">Privacy Policy</a></li>
+<li><a href="terms-of-service.html">Terms of Service</a></li>
+<li><a href="cookies.html">Cookie Policy</a></li>
+<li><a href="contact.html">Support Desk</a></li>
+</ul>
+</div>
+</div>
+<div class="footer-bottom">
+<p>© 2026 RankingHours.uz. All rights reserved.</p>
+<p class="footer-tagline">Hands-On Testing • Objective Scoring • No Marketing Influence</p>
+</div>
+</div>
+</footer>
+<!-- JavaScript Interactions for UX Polish -->
+<script>
+        // Interactive Rating Card Feedback Loop
+        document.querySelectorAll('.rating-card').forEach(card => {
+            card.addEventListener('click', function() {
+                const tierName = this.querySelector('.rating-label').textContent;
+                const tierScore = this.querySelector('.rating-number').textContent;
+                console.log(`User inspected framework subset: ${tierName} (${tierScore} Tier Baseline)`);
+            });
+        });
+
+        // FAQ Dynamic Accordion Mechanics
+        document.querySelectorAll('.faq-trigger').forEach(trigger => {
+            trigger.addEventListener('click', function() {
+                const targetContent = this.nextElementSibling;
+                const icon = this.querySelector('i');
+                
+                if (targetContent.style.display === 'block') {
+                    targetContent.style.display = 'none';
+                    icon.className = 'fas fa-chevron-down';
+                    this.style.backgroundColor = 'transparent';
+                } else {
+                    targetContent.style.display = 'block';
+                    icon.className = 'fas fa-chevron-up';
+                    this.style.backgroundColor = '#edf2f7';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
