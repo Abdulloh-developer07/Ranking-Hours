@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="Read the Ranking Hours editorial ethics policy covering accuracy, independence, conflicts of interest, corrections, and responsible product coverage." name="description"/>
+<title>Our Code of Ethics | Ranking Hours</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+<style>
+ :root {
+ --primary: #3949ab;
+ --primary-light: #5c6bc0;
+ --secondary: #7986cb;
+ --accent: #9fa8da;
+ --light-bg: #f8fafc;
+ --card-bg: #ffffff;
+ --text-main: #1e293b;
+ --text-muted: #64748b;
+ --border-color: #e2e8f0;
+ --success: #10b981;
+ --danger: #ef4444;
+ }
+
+ * {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+ }
+
+ body {
+ background-color: #f1f5f9;
+ color: var(--text-main);
+ line-height: 1.75;
+ font-size: 1rem;
+ -webkit-font-smoothing: antialiased;
+ }.container {
+ max-width: 1140px;
+ margin: 0 auto;
+ padding: 0 24px;
+ }
+
+ /* Top Language Switcher Layout */.language-banner {
+ background-color: #0f172a;
+ padding: 10px 0;
+ border-bottom: 1px solid #1e293b;
+ }.language-container {
+ display: flex;
+ justify-content: flex-end;
+ gap: 12px;
+ }.lang-link {
+ color: #94a3b8;
+ text-decoration: none;
+ font-size: 0.85rem;
+ font-weight: 500;
+ padding: 4px 10px;
+ border-radius: 4px;
+ transition: all 0.2s ease;
+ border: 1px solid #334155;
+ }.lang-link:hover,.lang-link.active {
+ color: #ffffff;
+ background-color: #334155;
+ border-color: #475569;
+ }
+
+ /* Fixed Navigation System */
+ header {
+ background: linear-gradient(135deg, var(--primary) 0%, #1e293b 100%);
+ color: white;
+ padding: 20px 0;
+ box-shadow: 0 4px 20px rgba(15, 23, 42, 0.15);
+ position: sticky;
+ top: 0;
+ z-index: 1000;
+ border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+ }.header-container {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ }.logo {
+ font-size: 1.6rem;
+ font-weight: 800;
+ display: flex;
+ align-items: center;
+ gap: 12px;
+ color: white;
+ text-decoration: none;
+ letter-spacing: -0.5px;
+ }.logo i {
+ font-size: 1.8rem;
+ color: #3b82f6;
+ }.logo span {
+ color: #3b82f6;
+ }
+
+ nav ul {
+ display: flex;
+ list-style: none;
+ gap: 16px;
+ align-items: center;
+ }
+
+ nav a {
+ color: #cbd5e1;
+ text-decoration: none;
+ font-weight: 600;
+ font-size: 0.95rem;
+ padding: 10px 18px;
+ border-radius: 8px;
+ transition: all 0.25s ease;
+ display: flex;
+ align-items: center;
+ gap: 8px;
+ }
+
+ nav a:hover {
+ color: white;
+ background-color: rgba(255, 255, 255, 0.08);
+ }
+
+ nav a.active {
+ color: white;
+ background-color: #3b82f6;
+ box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+ }
+
+ /* Editorial Banner Segment */.page-header {
+ background: linear-gradient(rgba(15, 23, 42, 0.85), rgba(57, 73, 171, 0.9)), url('https://images.unsplash.com/photo-1553877522-43269d4ea984?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
+ background-size: cover;
+ background-position: center;
+ color: white;
+ text-align: center;
+ padding: 110px 20px;
+ margin-bottom: 50px;
+ border-radius: 0 0 24px 24px;
+ box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+ }.page-header h1 {
+ font-size: 3.2rem;
+ margin-bottom: 15px;
+ font-weight: 800;
+ letter-spacing: -1px;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ gap: 15px;
+ }.page-header p {
+ font-size: 1.25rem;
+ color: #e2e8f0;
+ max-width: 700px;
+ margin: 0 auto;
+ font-weight: 400;
+ }
+
+ /* Core Structure and Components */.compliance-section {
+ background: var(--card-bg);
+ padding: 40px;
+ border-radius: 16px;
+ margin: 35px 0;
+ box-shadow: 0 4px 15px rgba(15, 23, 42, 0.04);
+ border: 1px solid var(--border-color);
+ }.compliance-section.intro-block {
+ border-top: 5px solid #3b82f6;
+ }.compliance-section h2 {
+ font-size: 2rem;
+ font-weight: 800;
+ color: #0f172a;
+ letter-spacing: -0.5px;
+ }.compliance-section p {
+ color: var(--text-muted);
+ font-size: 1.1rem;
+ line-height: 1.8;
+ max-width: 850px;
+ margin: 0 auto;
+ }.ethics-container {
+ display: flex;
+ flex-direction: column;
+ gap: 35px;
+ margin: 40px 0;
+ }.ethics-card {
+ background: var(--card-bg);
+ padding: 45px;
+ border-radius: 16px;
+ box-shadow: 0 4px 20px rgba(15, 23, 42, 0.03);
+ border: 1px solid var(--border-color);
+ transition: transform 0.3s ease, box-shadow 0.3s ease;
+ }.ethics-card:hover {
+ transform: translateY(-4px);
+ box-shadow: 0 12px 25px rgba(15, 23, 42, 0.06);
+ }.ethics-card h3 {
+ color: #0f172a;
+ font-size: 1.6rem;
+ font-weight: 700;
+ margin-bottom: 20px;
+ display: flex;
+ align-items: center;
+ border-bottom: 2px solid #f1f5f9;
+ padding-bottom: 15px;
+ }.principle-number {
+ display: inline-block;
+ background: linear-gradient(135deg, var(--primary) 0%, #1d4ed8 100%);
+ color: white;
+ width: 40px;
+ height: 40px;
+ border-radius: 10px;
+ text-align: center;
+ line-height: 40px;
+ margin-right: 15px;
+ font-weight: 700;
+ font-size: 1.1rem;
+ box-shadow: 0 4px 10px rgba(57, 73, 171, 0.25);
+ }.ethics-card > p {
+ font-size: 1.15rem;
+ color: #334155;
+ font-weight: 500;
+ margin-bottom: 20px;
+ }.ethics-card-intro {
+ color: var(--text-muted);
+ margin-bottom: 25px;
+ font-size: 1.05rem;
+ text-align: justify;
+ }.ethics-card ul {
+ list-style: none;
+ margin: 20px 0 0 0;
+ padding-left: 0;
+ display: grid;
+ grid-template-columns: 1fr;
+ gap: 16px;
+ }.ethics-card li {
+ position: relative;
+ padding-left: 30px;
+ color: #334155;
+ font-size: 1.05rem;
+ text-align: justify;
+ }.ethics-card li::before {
+ content: "\f00c";
+ font-family: "Font Awesome 5 Free";
+ font-weight: 900;
+ position: absolute;
+ left: 0;
+ top: 2px;
+ color: var(--success);
+ font-size: 0.95rem;
+ }
+
+ /* Specialized Sub-items Architecture */.sub-details-list {
+ margin-top: 10px !important;
+ margin-left: 15px !important;
+ gap: 10px !important;
+ background-color: #f8fafc;
+ padding: 15px 20px !important;
+ border-radius: 8px;
+ border-left: 3px solid #cbd5e1;
+ }.sub-details-list li::before {
+ content: "\f105" !important;
+ color: var(--primary) !important;
+ }
+
+ /* Promotional Framework Block */.ad-unit {
+ background: #f8fafc;
+ border: 2px dashed #cbd5e1;
+ border-radius: 12px;
+ padding: 35px;
+ text-align: center;
+ margin: 50px 0;
+ color: var(--text-muted);
+ transition: all 0.3s ease;
+ }.ad-unit:hover {
+ border-color: var(--primary-light);
+ background: #f0f4ff;
+ }.ad-unit h3 {
+ color: #475569;
+ font-size: 1.25rem;
+ margin-bottom: 8px;
+ font-weight: 700;
+ text-transform: uppercase;
+ letter-spacing: 1px;
+ }.ad-unit p {
+ font-size: 0.95rem;
+ max-width: 600px;
+ margin: 0 auto;
+ }
+
+ /* Registry & Complaints System */.complaints-wrapper {
+ border-left: 6px solid var(--danger);
+ }.complaints-wrapper h3 {
+ color: #b91c1c;
+ font-size: 1.5rem;
+ font-weight: 700;
+ display: flex;
+ align-items: center;
+ gap: 10px;
+ }.contact-box-grid {
+ background: #fff5f5;
+ padding: 30px;
+ border-radius: 12px;
+ margin-top: 20px;
+ border: 1px solid #fee2e2;
+ display: grid;
+ grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+ gap: 20px;
+ }.contact-meta-item {
+ display: flex;
+ align-items: flex-start;
+ gap: 15px;
+ }.contact-meta-item i {
+ font-size: 1.4rem;
+ color: var(--danger);
+ background: white;
+ padding: 10px;
+ border-radius: 8px;
+ box-shadow: 0 2px 6px rgba(239, 68, 68, 0.1);
+ }.contact-meta-text h4 {
+ font-size: 0.9rem;
+ text-transform: uppercase;
+ color: #7f1d1d;
+ letter-spacing: 0.5px;
+ margin-bottom: 2px;
+ }.contact-meta-text p {
+ font-size: 1.05rem;
+ color: #991b1b;
+ font-weight: 600;
+ text-align: left;
+ }
+
+ /* Business Footer Framework */
+ footer {
+ background: #0f172a;
+ color: #f8fafc;
+ padding: 70px 0 30px;
+ margin-top: 80px;
+ border-top: 4px solid #1e293b;
+ }.footer-container {
+ display: grid;
+ grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+ gap: 40px;
+ margin-bottom: 40px;
+ }.footer-column h3 {
+ color: white;
+ font-size: 1.2rem;
+ font-weight: 700;
+ margin-bottom: 25px;
+ position: relative;
+ padding-bottom: 10px;
+ }.footer-column h3::after {
+ content: '';
+ position: absolute;
+ left: 0;
+ bottom: 0;
+ width: 40px;
+ height: 3px;
+ background-color: #3b82f6;
+ border-radius: 2px;
+ }.footer-column p {
+ color: #94a3b8;
+ font-size: 0.95rem;
+ line-height: 1.6;
+ }.footer-column ul {
+ list-style: none;
+ padding: 0;
+ }.footer-column li {
+ margin-bottom: 12px;
+ }.footer-column a {
+ color: #94a3b8;
+ text-decoration: none;
+ font-size: 0.95rem;
+ transition: all 0.2s ease;
+ display: inline-flex;
+ align-items: center;
+ gap: 8px;
+ }.footer-column a:hover {
+ color: white;
+ transform: translateX(4px);
+ }.footer-column a.active {
+ color: #3b82f6;
+ font-weight: 600;
+ }.copyright {
+ text-align: center;
+ padding-top: 30px;
+ border-top: 1px solid #1e293b;
+ color: #64748b;
+ font-size: 0.9rem;
+ display: flex;
+ flex-direction: column;
+ gap: 10px;
+ }.copyright p {
+ margin: 0;
+ }
+
+ /* Responsive Breakpoints Optimization */
+ @media (max-width: 992px) {.page-header h1 {
+ font-size: 2.6rem;
+ }.ethics-card {
+ padding: 30px;
+ }
+ }
+
+ @media (max-width: 768px) {.header-container {
+ flex-direction: column;
+ gap: 20px;
+ text-align: center;
+ }
+ nav ul {
+ flex-wrap: wrap;
+ justify-content: center;
+ gap: 10px;
+ }
+ nav a {
+ padding: 8px 14px;
+ font-size: 0.9rem;
+ }.page-header {
+ padding: 70px 20px;
+ border-radius: 0 0 16px 16px;
+ }.page-header h1 {
+ font-size: 2rem;
+ }.page-header p {
+ font-size: 1.1rem;
+ }.compliance-section {
+ padding: 25px;
+ }.contact-box-grid {
+ grid-template-columns: 1fr;
+ }
+ }
+ 
+.uniform-footer{background:#f1f5f9;border-top:1px solid #e2e8f0;margin-top:48px;padding:40px 20px 20px;}
+.uniform-footer .uf-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:24px;max-width:1100px;margin:0 auto;}
+.uniform-footer h3{color:#1e293b;font-size:1rem;margin:0 0 12px;}
+.uniform-footer p{color:#64748b;font-size:.88rem;margin:0;}
+.uniform-footer ul{list-style:none;margin:0;padding:0;}
+.uniform-footer li{padding:4px 0;}
+.uniform-footer a{color:#64748b;text-decoration:none;font-size:.9rem;}
+.uniform-footer a:hover{color:#2563eb;}
+.uniform-footer .uf-bottom{border-top:1px solid #e2e8f0;margin-top:20px;padding-top:14px;text-align:center;color:#94a3b8;font-size:.82rem;max-width:1100px;margin-left:auto;margin-right:auto;}
+@media (max-width:700px){.uniform-footer .uf-grid{grid-template-columns:1fr;text-align:center;}}
+</style>
+<link href="favicon.png" rel="icon" type="image/png"/>
+<style>
+.page-header{background:url('ethics-bg.svg') no-repeat right 6% center/auto 80%,linear-gradient(rgba(15,23,42,.95),rgba(57,73,171,.95));}
+.ethics-card li::before{font-family:"Font Awesome 6 Free";}
+.compliance-section p + p{margin-top:16px;}
+.compliance-section h2{margin-bottom:18px;}
+.policy-pills{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin:0 0 10px;}
+.policy-pills a{background:#fff;border:1px solid var(--border-color);color:var(--primary);padding:8px 16px;border-radius:999px;font-size:.92rem;font-weight:600;text-decoration:none;transition:all .2s ease;}
+.policy-pills a:hover,.policy-pills a.current{background:var(--primary);color:#fff;border-color:var(--primary);}
+.ethics-card p + p{margin-top:0;color:var(--text-muted);font-weight:400;font-size:1.05rem;}
+.related-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;margin-top:22px;}
+.related-row a{display:block;background:#f8fafc;border:1px solid var(--border-color);border-radius:12px;padding:18px 20px;text-decoration:none;color:var(--text-main);transition:all .2s ease;}
+.related-row a:hover{border-color:var(--primary-light);background:#f0f4ff;}
+.related-row strong{display:block;color:var(--primary);margin-bottom:4px;}
+.related-row span{color:var(--text-muted);font-size:.95rem;}
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebSite", "name": "Ranking Hours", "url": "https://ranking-hours.uz/", "description": "Independent product comparisons and buying guides."}</script><link href="https://ranking-hours.uz/ethics.html" rel="canonical"/><script async="" crossorigin="anonymous" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3010655136119393"></script>
+<meta content="article" property="og:type"/><meta content="Our Code of Ethics | Ranking Hours" property="og:title"/><meta content="Read the Ranking Hours editorial ethics policy covering accuracy, independence, conflicts of interest, corrections, and responsible product coverage." property="og:description"/><meta content="https://ranking-hours.uz/ethics.html" property="og:url"/><meta content="https://ranking-hours.uz/Ranking-hours.jpg" property="og:image"/><meta content="summary_large_image" name="twitter:card"/><meta content="Our Code of Ethics | Ranking Hours" name="twitter:title"/><meta content="Read the Ranking Hours editorial ethics policy covering accuracy, independence, conflicts of interest, corrections, and responsible product coverage." name="twitter:description"/><script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "name": "Our Code of Ethics | Ranking Hours", "headline": "Our Code of Ethics | Ranking Hours", "description": "Read the Ranking Hours editorial ethics policy covering accuracy, independence, conflicts of interest, corrections, and responsible product coverage.", "url": "https://ranking-hours.uz/ethics.html", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://ranking-hours.uz/ethics.html"}, "publisher": {"@type": "Organization", "name": "Ranking Hours", "url": "https://ranking-hours.uz/"}}</script></head>
+<body><header>
+<div class="container header-container">
+<a class="logo" href="index.html">
+<i class="fas fa-scale-balanced"></i>
+<div>Ranking<span>Hours</span></div>
+</a>
+<nav>
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="comparisons.html">Comparisons</a></li>
+<li><a href="categories.html">Categories</a></li>
+<li><a href="methodology.html">Methodology</a></li>
+<li><a href="about.html">About</a></li>
+<li><a href="faq.html">FAQ</a></li>
+<li><a href="contact.html">Contact</a></li>
+</ul>
+</nav>
+</div>
+</header>
+<main>
+<div class="page-header">
+<h1>Our Code of Ethics</h1>
+<p>The standards we hold our own writing to, written down so you can check us against them.</p>
+</div>
+<div class="container">
+<div class="policy-pills">
+<a class="current" href="ethics.html">Ethics Code</a>
+<a href="independence.html">Independence</a>
+<a href="funding.html">Funding Policy</a>
+<a href="corrections.html">Corrections</a>
+<a href="AFFILIATE-DISCLOSURE.html">Affiliate Disclosure</a>
+</div>
+<div class="compliance-section intro-block">
+<h2>Why we bother writing this down</h2>
+<p>Any site that compares products has an incentive to sound more certain than it is. Confident writing gets read, gets shared, and sends people to retailers. A code of ethics is our way of setting limits on that pull before it starts shaping what we publish, quietly, one small compromise at a time.</p>
+<p>What follows isn't a list of aspirations we hope to grow into. Each principle describes how a comparison on this site is supposed to be written today, and each is specific enough that you can open an article and check whether we followed it. When we don't, the last section explains how to tell us.</p>
+<p>A short note on scope: this code covers the comparisons, guides and supporting pages on ranking-hours.uz. It sits alongside our <a href="independence.html" style="color:var(--primary);font-weight:600;">Independence</a> and <a href="funding.html" style="color:var(--primary);font-weight:600;">Funding</a> pages, which deal with money and outside influence in more detail, and our <a href="methodology.html" style="color:var(--primary);font-weight:600;">Methodology</a> page, which explains the research itself.</p>
+<p>One more thing before the principles. You don't have to take this page on trust. The whole point of writing standards down is that they become testable. Pick any comparison on the site, read it against the ten principles below, and see whether it holds up. If it doesn't, that's useful information for us and for you.</p>
+</div>
+<div class="ethics-container">
+<div class="ethics-card">
+<h3><span class="principle-number">1</span> Claims should match the evidence</h3>
+<p>A comparison earns trust by being exactly as confident as its sources allow, and no more. If the only evidence for a battery figure is the manufacturer's own claim, the article should sound like it's relaying a claim, not reporting a measurement.</p>
+<p>This sounds obvious, but it's the principle most often broken in product writing, usually without anyone meaning to. A sentence starts as "the manufacturer says" and ends up, a few edits later, as a flat statement of fact.</p>
+<ul>
+<li>Every statement about performance should trace back to a source we could name if asked: a spec sheet, a published test, or a pattern in owner reports.</li>
+<li>When evidence is thin, as it is for a product released a few weeks ago, the article says so instead of writing around the gap.</li>
+<li>Words like "dramatically" or "far better" are kept for differences that are actually large. A two percent gap in a performance score is described as a two percent gap.</li>
+<li>Where we're inferring rather than reporting, the wording shows it: "likely", "we'd expect", "reports suggest".</li>
+</ul>
+</div>
+<div class="ethics-card">
+<h3><span class="principle-number">2</span> Be honest about how we know things</h3>
+<p>Readers assume that a site comparing two laptops has held both. Often that isn't the case, and pretending otherwise would be the fastest way to lose the trust this whole site depends on.</p>
+<p>So we draw a plain line between three kinds of knowledge: what a manufacturer publishes, what independent testers have measured, and what someone on our side has personally used. Only the third gets described as our own experience, and only when it's true.</p>
+<ul>
+<li>We don't describe a product as tested, used or lived with unless someone here has actually done that.</li>
+<li>Manufacturer specifications are attributed to the manufacturer. A copied spec table is never presented as original research.</li>
+<li>Product images are there to help you recognise what's being discussed. A press photo isn't passed off as a picture of a unit we handled.</li>
+<li>When we can't verify something, the limitation is stated in the article rather than covered with invented detail.</li>
+</ul>
+</div>
+<div class="ethics-card">
+<h3><span class="principle-number">3</span> Keep facts and judgment apart</h3>
+<p>A specification can be checked against a datasheet. A recommendation can't, because it depends on what you care about. Mixing the two makes a comparison harder to trust, since a reader can't tell which sentences are verifiable and which are opinion.</p>
+<p>In practice this means each article separates what the products are from what we think of them, and ties every opinion to a priority you can accept or reject.</p>
+<ul>
+<li>Specifications and prices sit in their own sections, clearly separate from the conclusions drawn from them.</li>
+<li>"Best" is never left hanging. It's always "best for" something: a small budget, long battery life, a crowded desk.</li>
+<li>When two products suit different kinds of buyers, we say that instead of forcing a single winner onto everyone.</li>
+<li>If the honest verdict is "these are close", the article says it's close.</li>
+</ul>
+</div>
+<div class="ethics-card">
+<h3><span class="principle-number">4</span> Money doesn't get a vote</h3>
+<p>This site earns money through advertising and, on some pages, affiliate commissions. That's a real conflict of interest, and the only responsible response is to be open about it and to build the writing process so the money can't reach the conclusions.</p>
+<p>The order of work matters most here. A comparison is researched and its conclusion is settled first. Only afterwards is a retailer link added, pointing to wherever the product we already chose can be bought. Our <a href="AFFILIATE-DISCLOSURE.html" style="color:var(--primary);font-weight:600;">Affiliate Disclosure</a> explains this in full.</p>
+<ul>
+<li>A commission rate never decides which product wins, how high it's rated, or whether a flaw gets mentioned.</li>
+<li>We don't take payment to change, soften or remove a conclusion.</li>
+<li>We don't accept gifts or free products in exchange for coverage or a favourable verdict.</li>
+<li>If a piece of content were ever sponsored, it would be labelled as such on the page itself, not tucked into a policy document.</li>
+</ul>
+</div>
+<div class="ethics-card">
+<h3><span class="principle-number">5</span> Disclose conflicts of interest</h3>
+<p>Money isn't the only thing that can tilt a comparison. A writer who once worked for a phone maker, or who owns shares in a car company, will have a harder time being even-handed about it, however hard they try.</p>
+<ul>
+<li>Anyone working on a comparison who has a personal or financial connection to one of the brands involved should say so.</li>
+<li>Depending on how close the connection is, that person either steps away from the comparison or the connection is disclosed in the article.</li>
+<li>Owning a product ourselves isn't a conflict, but it's mentioned when it's relevant, because it can colour how a product feels to us.</li>
+</ul>
+</div>
+<div class="ethics-card">
+<h3><span class="principle-number">6</span> Treat brands and products fairly</h3>
+<p>Two products in a comparison should be judged against the same yardstick. It's easy to be strict about the one you're less fond of and generous about the other without noticing.</p>
+<ul>
+<li>Both sides of a comparison are measured on the same criteria, in the same order, using the same kind of evidence where it exists.</li>
+<li>We don't set a budget product against a flagship and then act surprised when the flagship wins.</li>
+<li>Criticism has to rest on something specific. "Feels cheap" needs a reason; "the hinge flexes noticeably" is a reason.</li>
+<li>If a company shows us that we got a fact wrong, we correct it, whether or not the correction helps them. A disagreement about the conclusion is a different matter and doesn't trigger a rewrite on its own.</li>
+</ul>
+</div>
+<div class="ethics-card">
+<h3><span class="principle-number">7</span> Fix mistakes in the open</h3>
+<p>We'll get things wrong. Specifications get revised after launch, prices move, and sometimes we simply misread a source. What counts is what happens next.</p>
+<p>Corrections are made in the article itself, not by publishing a new page and leaving the wrong one findable elsewhere on the site. Our <a href="corrections.html" style="color:var(--primary);font-weight:600;">Corrections page</a> describes the process from the reader's side.</p>
+<ul>
+<li>A reported error is checked against the original source before anything is changed.</li>
+<li>Genuine errors are fixed, whoever reported them and whichever way the fix cuts.</li>
+<li>We aim to acknowledge correction reports within a few business days, even when the full fix takes longer.</li>
+<li>Where we can, we tell the person who reported it once the change is made.</li>
+</ul>
+</div>
+<div class="ethics-card">
+<h3><span class="principle-number">8</span> Write plainly, without hype</h3>
+<p>Shopping pages are full of pressure: countdown timers, "only three left", "you'll regret waiting". None of that helps you choose well, and none of it belongs here.</p>
+<ul>
+<li>No manufactured urgency. If a price is worth acting on, it's worth acting on without a fake deadline.</li>
+<li>Headlines describe what the article actually contains, and don't promise a verdict the page doesn't deliver.</li>
+<li>We don't invent reader reviews, testimonials or comments, and we don't quote anyone we can't point to.</li>
+<li>Jargon gets explained the first time it appears, so a comparison doesn't require you to already know the answer.</li>
+</ul>
+</div>
+<div class="ethics-card">
+<h3><span class="principle-number">9</span> Keep content current, or say when it isn't</h3>
+<p>A comparison of two phones is only useful while both are still on sale. Products get replaced, discounted and discontinued faster than any small team can rewrite every page.</p>
+<ul>
+<li>When a product in a comparison is discontinued or superseded, we update the article or add a clear note near the top.</li>
+<li>Prices in an article are pointers to the general price range. They aren't quotes, and you should confirm the current figure with the retailer.</li>
+<li>Older pages are revisited periodically, not only when someone complains.</li>
+<li>Readers are encouraged to check the model details in an article against the product they're actually looking at, since a near-identical trim can differ in an important way.</li>
+<li>An article that can no longer be brought up to standard, because the product is long gone and nobody is comparing it any more, is retired instead of being left to mislead.</li>
+</ul>
+</div>
+<div class="ethics-card">
+<h3><span class="principle-number">10</span> Respect the people who read and write to us</h3>
+<p>You came here to compare products, not to become a data point. What we collect is limited, and what you send us on purpose is used for the purpose you sent it.</p>
+<ul>
+<li>A message sent through the Contact page is used to answer that message and to investigate it if it's a correction. It isn't added to a marketing list.</li>
+<li>We explain what data is collected, and by whom, on the <a href="privacy-policy.html" style="color:var(--primary);font-weight:600;">Privacy Policy</a> page, in language meant to be read.</li>
+<li>Readers who disagree with a conclusion are treated as useful, not as a nuisance. The best corrections often begin as complaints.</li>
+<li>Personal details you share, such as a name or an email address, are never published alongside a correction or quoted on the site without asking you first.</li>
+<li>If you ask us to delete a message you sent, we'll do that unless there's a real reason to keep it, and we'll tell you what that reason is.</li>
+</ul>
+</div>
+</div>
+
+<div class="compliance-section">
+<h2>Things we won't do, even though many sites do</h2>
+<p>Some practices are so common in product writing that leaving them out is a decision in itself. These are the ones we've deliberately ruled out.</p>
+<ul style="margin:18px 0 0 22px;color:var(--text-muted);font-size:1.05rem;line-height:1.9;">
+<li>Ranking products by commission and presenting the list as a neutral "top ten".</li>
+<li>Republishing a manufacturer's marketing copy as if it were our own assessment.</li>
+<li>Writing a glowing review of a product no one on the team has any real basis to judge.</li>
+<li>Leaving an outdated comparison live with an old price and no note, because it still gets traffic.</li>
+<li>Deleting a comment or a message because it points out an error we'd rather not admit to.</li>
+<li>Changing a conclusion after publication for any reason other than new evidence.</li>
+</ul>
+<p style="margin-top:18px;">The last item deserves a word. Updating a comparison because a product changed, or because someone showed us a better source, is exactly what should happen. Updating it because a brand asked nicely, or because a different retailer now pays more, is not, and it's the reason the wording around corrections in this code is so specific.</p>
+</div>
+<div class="compliance-section">
+<h2>Where ethics and business rub against each other</h2>
+<p>It would be dishonest to pretend this is easy. Running a comparison site costs money: research takes time, hosting isn't free, and good writing isn't a hobby that pays for itself indefinitely. Advertising and affiliate income keep the site free to read. Both create pressure, and pretending that pressure doesn't exist would make this code worthless.</p>
+<p>The way through isn't to refuse income. It's to separate the people and steps that decide what's true from the steps that earn money. The conclusion comes first. The link comes second. The ads are chosen by an ad network and not by us, and an ad appearing beside a comparison says nothing about what the comparison concludes.</p>
+<p>There are still real grey areas here, and we'd rather name them openly than pretend they don't exist. A retailer that stocks fewer of the products we recommend will get fewer of our links, simply because there's less to link to. A category with weak affiliate programs, like cars, might earn us little, which could in theory make it less attractive to cover. We try not to let that decide what gets written, and the range of categories on the <a href="categories.html" style="color:var(--primary);font-weight:600;">Categories page</a>, including several that earn almost nothing, is the honest evidence of how that plays out.</p>
+</div>
+<div class="compliance-section complaints-wrapper">
+<h3>If we've fallen short of this code</h3>
+<p>Tell us. Point to the page and the sentence, say which principle you think it breaks, and include a source if you have one. A specific report takes only minutes to check properly; a vague general one takes much, much longer.</p>
+<div class="contact-box-grid">
+<div class="contact-meta-item">
+<i class="fas fa-envelope"></i>
+<div class="contact-meta-text">
+<h4>Email</h4>
+<p><a href="mailto:abdullohmahmudov660@gmail.com" style="color:inherit;">abdullohmahmudov660@gmail.com</a></p>
+</div>
+</div>
+<div class="contact-meta-item">
+<i class="fas fa-paper-plane"></i>
+<div class="contact-meta-text">
+<h4>Contact page</h4>
+<p><a href="contact.html" style="color:inherit;">Open the contact form</a></p>
+</div>
+</div>
+<div class="contact-meta-item">
+<i class="fas fa-flag"></i>
+<div class="contact-meta-text">
+<h4>Factual errors</h4>
+<p><a href="corrections.html" style="color:inherit;">How corrections work</a></p>
+</div>
+</div>
+</div>
+<p style="margin-top:20px;">We read every report. We can't promise a personal reply to each one, but correction reports are always checked, and a confirmed error is always fixed.</p>
+</div>
+
+<div class="compliance-section">
+<h2>Related pages</h2>
+<p>This code is one piece of a set. If your question is about money, outside influence or how the research is done, one of these pages is probably the better place to look.</p>
+<div class="related-row">
+<a href="independence.html"><strong>Independence</strong><span>How we keep manufacturers and retailers from shaping what we publish.</span></a>
+<a href="funding.html"><strong>Funding Policy</strong><span>Where the site's income comes from and what it pays for.</span></a>
+<a href="methodology.html"><strong>Methodology</strong><span>How a comparison is researched, sourced and checked.</span></a>
+<a href="AFFILIATE-DISCLOSURE.html"><strong>Affiliate Disclosure</strong><span>Exactly how affiliate links work on this site.</span></a>
+</div>
+</div>
+<div class="compliance-section">
+<h2>A living document</h2>
+<p>This code will change as the site itself changes and grows over time. If we take on a new kind of content, or discover that one of these principles is vague enough to be bent, the wording here will be tightened up instead of being quietly ignored or forgotten. We'd rather revise the code than break it.</p>
+<p>If you think something is missing, and there's a standard you'd expect a comparison site to meet that isn't listed above, tell us through the <a href="contact.html" style="color:var(--primary);font-weight:600;">Contact page</a>. Some of the sharper points in this document exist because a reader pointed out a gap. We'd also welcome hearing from people who work in the industries we cover, such as engineers, retailers and repair technicians, since they often notice things a spec sheet never shows and a general reader would never think to ask about.</p>
+</div>
+</div>
+</main>
+<footer class="uniform-footer">
+<div class="uf-grid">
+<div><h3>Ranking Hours</h3><p>Independent product comparisons based on published specifications, documentation and practical buying considerations.</p></div>
+<div><h3>Explore</h3><ul><li><a href="index.html">Home</a></li><li><a href="comparisons.html">Comparisons</a></li><li><a href="categories.html">Categories</a></li></ul></div>
+<div><h3>Company</h3><ul><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li><li><a href="faq.html">FAQ</a></li></ul></div>
+<div><h3>Legal</h3><ul><li><a href="privacy-policy.html">Privacy Policy</a></li><li><a href="terms-of-service.html">Terms of Service</a></li><li><a href="AFFILIATE-DISCLOSURE.html">Affiliate Disclosure</a></li></ul></div>
+</div>
+<div class="uf-bottom"><p>© 2025-2026 ranking-hours.uz. All rights reserved.</p></div>
+</footer>
+<script src="cookie-notice.js" defer></script>
+</body>
+</html>

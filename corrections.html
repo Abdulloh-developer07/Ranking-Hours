@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Corrections Policy — Ranking Hours</title>
+<meta content="How Ranking Hours handles factual corrections, updates published pages, classifies errors by severity, and gives readers a clear way to report a mistake." name="description"/>
+<meta content="index, follow" name="robots"/>
+<meta content="Ranking-Hours" name="author"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet"/>
+<link href="favicon.png" rel="icon" type="image/png"/>
+<link href="https://ranking-hours.uz/corrections.html" rel="canonical"/>
+<meta content="article" property="og:type"/><meta content="Corrections Policy — Ranking Hours" property="og:title"/><meta content="How Ranking Hours handles factual corrections, updates published pages, classifies errors by severity, and gives readers a clear way to report a mistake." property="og:description"/><meta content="https://ranking-hours.uz/corrections.html" property="og:url"/><meta content="https://ranking-hours.uz/corrections-policy.jpg" property="og:image"/><meta content="summary_large_image" name="twitter:card"/><meta content="Corrections Policy — Ranking Hours" name="twitter:title"/><meta content="How Ranking Hours handles factual corrections, updates published pages, classifies errors by severity, and gives readers a clear way to report a mistake." name="twitter:description"/><script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "name": "Corrections Policy — Ranking Hours", "description": "How Ranking Hours handles factual corrections, updates published pages, classifies errors by severity, and gives readers a clear way to report a mistake.", "url": "https://ranking-hours.uz/corrections.html", "publisher": {"@type": "Organization", "name": "Ranking Hours", "url": "https://ranking-hours.uz/"}}</script><script async="" crossorigin="anonymous" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3010655136119393"></script>
+<style>
+:root{
+  --bg:#fbfaf7;
+  --card:#ffffff;
+  --ink:#2a2622;
+  --muted:#776e5f;
+  --line:#e6e0d3;
+  --red:#b7332a;
+  --red-light:#fbe9e7;
+  --green:#3f6b4f;
+}
+*{box-sizing:border-box;}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:'Courier New',Courier,monospace;line-height:1.75;}
+a{color:var(--red);}
+h1,h2,h3,h4{font-family:Georgia,serif;color:var(--ink);line-height:1.28;}
+.wrap{max-width:760px;margin:0 auto;padding:0 22px;}
+
+.navbar{background:var(--card);border-bottom:2px solid var(--ink);position:sticky;top:0;z-index:50;}
+.navbar .container{max-width:1040px;margin:0 auto;padding:0 22px;display:flex;align-items:center;justify-content:space-between;height:60px;font-family:Georgia,serif;}
+.brand{font-weight:700;font-size:1.15rem;color:var(--ink);text-decoration:none;}
+.brand span{color:var(--red);}
+.nav-menu{display:flex;gap:2px;flex-wrap:wrap;}
+.nav-menu a{color:var(--muted);text-decoration:none;font-size:.85rem;font-weight:600;padding:8px 13px;}
+.nav-menu a:hover{color:var(--ink);text-decoration:underline;}
+.nav-menu a.active{color:var(--red);text-decoration:underline;}
+@media (max-width:700px){.navbar .container{flex-direction:column;height:auto;padding:12px 18px;gap:6px;}.nav-menu{justify-content:center;}}
+
+.hero{padding:40px 0 10px;}
+.stamp{display:inline-block;border:2px solid var(--red);color:var(--red);font-family:Georgia,serif;font-weight:700;font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;padding:5px 14px;transform:rotate(-2deg);margin-bottom:16px;}
+.hero h1{font-size:2.05rem;margin:0 0 12px;font-family:Georgia,serif;}
+.hero p.sub{color:var(--muted);font-size:1.05rem;max-width:640px;}
+.hero-meta{margin-top:14px;font-size:.84rem;color:var(--muted);}
+
+.figure{margin:1.8em 0;}
+.figure img{width:100%;border:1px solid var(--line);display:block;}
+.figure figcaption{font-size:.82rem;color:var(--muted);margin-top:7px;}
+
+.article{padding:30px 0 10px;}
+.article h2{font-family:Georgia,serif;font-size:1.5rem;margin:2.2em 0 .55em;border-bottom:1px solid var(--line);padding-bottom:7px;}
+.article h2:first-of-type{margin-top:0;}
+.article h3{font-family:Georgia,serif;font-size:1.1rem;margin:1.5em 0 .4em;color:var(--red);}
+.article p{margin:0 0 1.1em;font-size:.98rem;color:#352f28;font-family:Georgia,serif;line-height:1.78;}
+
+.redline{background:var(--red-light);border-left:3px solid var(--red);padding:16px 20px;margin:1.6em 0;font-family:Georgia,serif;font-size:.97rem;color:#5c231c;}
+.redline strong{color:var(--red);}
+
+.log-entry{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--muted);padding:14px 18px;margin-bottom:10px;font-size:.9rem;}
+.log-entry.minor{border-left-color:#c9a227;}
+.log-entry.major{border-left-color:var(--red);}
+.log-entry .meta{display:flex;justify-content:space-between;color:var(--muted);font-size:.78rem;margin-bottom:6px;}
+.log-entry .tag{font-weight:700;text-transform:uppercase;letter-spacing:.04em;}
+.log-entry.major .tag{color:var(--red);}
+.log-entry.minor .tag{color:#9a7c1d;}
+.log-entry p{font-family:'Courier New',monospace;font-size:.88rem;margin:0;color:#3a342b;}
+
+.steps{counter-reset:step;margin:1.4em 0;padding:0;list-style:none;}
+.steps li{counter-increment:step;position:relative;padding:0 0 1.3em 42px;border-left:1px dashed var(--line);margin-left:14px;font-family:Georgia,serif;}
+.steps li:last-child{border-left:1px dashed transparent;}
+.steps li::before{content:counter(step);position:absolute;left:-15px;top:0;width:30px;height:30px;background:var(--ink);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.82rem;font-weight:700;font-family:Georgia,serif;}
+.steps h4{margin:0 0 4px;font-size:1.02rem;}
+.steps p{margin:0;color:var(--muted);font-size:.93rem;}
+
+.severity-table{width:100%;border-collapse:collapse;background:var(--card);border:1px solid var(--line);margin:1.5em 0;font-size:.9rem;}
+.severity-table th,.severity-table td{padding:11px 14px;border-bottom:1px solid var(--line);text-align:left;font-family:Georgia,serif;}
+.severity-table th{background:var(--ink);color:#fff;font-size:.76rem;text-transform:uppercase;letter-spacing:.05em;}
+.severity-table td:first-child{font-weight:700;width:22%;}
+
+.qa-item{padding:16px 0;border-top:1px solid var(--line);}
+.qa-item:last-child{border-bottom:1px solid var(--line);}
+.qa-item h4{margin:0 0 5px;font-size:1rem;font-family:Georgia,serif;}
+.qa-item p{margin:0;color:var(--muted);font-size:.93rem;font-family:Georgia,serif;}
+
+.uniform-footer{background:var(--ink);color:#c5beae;margin-top:26px;padding:46px 0 18px;font-family:Georgia,serif;}
+.uniform-footer .uf-grid{display:grid;grid-template-columns:1.4fr repeat(4,1fr);gap:24px;max-width:1040px;margin:0 auto;padding:0 22px;}
+.uniform-footer h3{color:#fff;font-size:.88rem;margin:0 0 11px;text-transform:uppercase;letter-spacing:.05em;}
+.uniform-footer p{font-size:.85rem;margin:0;line-height:1.6;}
+.uniform-footer ul{list-style:none;margin:0;padding:0;}
+.uniform-footer li{padding:3px 0;}
+.uniform-footer a{color:#c5beae;text-decoration:none;font-size:.87rem;}
+.uniform-footer a:hover{color:#fff;}
+.uniform-footer .uf-bottom{border-top:1px solid #45403a;margin-top:26px;padding:15px 22px 0;text-align:center;font-size:.8rem;color:#8a8275;}
+@media (max-width:760px){.uniform-footer .uf-grid{grid-template-columns:1fr 1fr;}}
+@media (max-width:480px){.uniform-footer .uf-grid{grid-template-columns:1fr;text-align:center;}}
+</style>
+</head>
+<body>
+<nav class="navbar">
+<div class="container">
+<a class="brand" href="index.html">Ranking<span>Hours</span></a>
+<div class="nav-menu">
+<a href="index.html">Home</a>
+<a href="methodology.html">Methodology</a>
+<a href="ethics.html">Ethics</a>
+<a class="active" href="corrections.html">Corrections</a>
+<a href="contact.html">Contact</a>
+</div>
+</div>
+</nav>
+<header class="hero">
+<div class="wrap">
+<span class="stamp">Editorial Policy</span>
+<h1>Corrections Policy</h1>
+<p class="sub">We publish dozens of comparison pages covering products that change specs, prices, and availability constantly. Mistakes happen. This page explains how we find them, fix them, and tell you about it.</p>
+<p class="hero-meta"><i class="fa-regular fa-clock"></i> Updated September 29, 2026</p>
+</div>
+</header>
+<main class="article">
+<div class="wrap">
+<figure class="figure">
+<img alt="Corrections policy illustration" decoding="async" loading="lazy" src="corrections-policy.jpg"/>
+<figcaption>Every published correction on Ranking Hours is logged, not quietly erased.</figcaption>
+</figure>
+<h2>Why a corrections policy matters here specifically</h2>
+<p>A comparison site lives or dies on whether its numbers are right. We publish pages about products whose specifications, prices, and availability shift constantly — a manufacturer revises a spec sheet, a retailer changes a listing, a software update changes how a device actually performs. On top of that, writing dozens of comparison pages means ordinary editorial mistakes happen too: a typo in a battery figure, a mixed-up model name, a price that was accurate the day it was written and stale a month later.</p>
+<p>Pretending this doesn't happen would be dishonest. The more useful response is to make it easy for readers to flag a problem, to have a clear process for checking and fixing it, and to be transparent about what changed and when — rather than quietly editing a page and hoping nobody notices the old version was wrong.</p>
+<div class="redline"><strong>In short:</strong> if something on this site is wrong, we want to know, we'll check it against a real source, and if it needs fixing, we'll fix it and say so.</div>
+<h2>What counts as a correction</h2>
+<p>Not every edit to a page is a "correction" in the sense this policy covers. We draw a distinction between three kinds of changes, because treating all of them the same way would either bury genuinely important fixes in noise, or create a separate announcement for every comma we adjust.</p>
+<table class="severity-table">
+<tr><th>Type</th><th>Example</th><th>How it's handled</th></tr>
+<tr><td>Minor wording</td><td>Fixing a typo, rephrasing an awkward sentence, adjusting formatting</td><td>Made directly, no public notice needed — meaning doesn't change</td></tr>
+<tr><td>Routine update</td><td>A price changes, a product goes out of stock, a software version number moves forward</td><td>Updated on the page, with the "last updated" date refreshed</td></tr>
+<tr><td>Material correction</td><td>A spec was wrong, a claim was unsupported, a recommendation was based on incorrect information</td><td>Fixed on the page and logged publicly on this page, with the old and new claim noted</td></tr>
+</table>
+<p>The third category is what this page actually tracks. If a correction changes what a reader would have concluded from the page — not just a cosmetic fix — it gets logged here with enough detail that someone could see what was wrong, what we checked, and what it says now.</p>
+<h2>How a correction gets reported</h2>
+<p>The most common way a problem gets flagged is a message through the <a href="contact.html">Contact page</a>, usually from a reader who noticed a number that didn't match what they found elsewhere, or a claim that didn't match their own experience with the product. Some corrections come from our own review when revisiting an older page, and a smaller number come from manufacturers or PR contacts pointing out that a spec sheet has changed since a page was written.</p>
+<p>Whatever the source, the most useful reports share three things: which page, which specific statement, and some indication of what the correct information actually is — a current spec sheet, a screenshot, a link to an official source. A message that just says "this page seems wrong" is harder to act on quickly than one that says exactly what looks off and why, since it means someone first has to re-read the whole page trying to guess which part prompted the message before any actual checking can start.</p>
+<div class="redline"><strong>Example of a useful report:</strong> "On the Bmw-Tesla page, the i4 eDrive40 range is listed as 300 miles, but BMW's current official spec sheet lists 318 miles for the 2026 model year — here's the link." That's specific enough to check and fix within a day.</div>
+<h2>Disputed corrections: what happens when we don't agree</h2>
+<p>Not every correction request turns out to be correct once checked. Sometimes a reader is working from an outdated source themselves, or from a regional variant different from the one the page is actually describing, or from a forum post that turns out to be inaccurate. When that happens, we don't simply ignore the report — we respond explaining what we checked and why the original claim on the page still appears to be accurate, with a link to the source if one is available.</p>
+<p>Occasionally a claim is genuinely ambiguous — two reputable sources disagree, or a manufacturer's own documentation is internally inconsistent. In those cases, rather than picking a side and presenting it as settled, the page is updated to note that sources disagree, with both figures mentioned if that's useful to a reader trying to make a decision. Pretending there's a confident single answer when the evidence doesn't support one would be worse than admitting the uncertainty.</p>
+<p>This kind of disagreement comes up more often than you might expect, particularly with battery-life estimates, camera-quality comparisons, and electric-vehicle range figures, where different outlets test under different conditions and can reasonably arrive at different numbers. In those situations, our job isn't to manufacture a false sense of precision by picking whichever figure looks cleanest — it's to tell you honestly that the number depends on how it was tested, and to point toward what we found rather than pretend there's a single, universally agreed-upon answer.</p>
+<h2>Why we don't just quietly delete or hide outdated pages</h2>
+<p>An easier policy would be to simply take down a page once part of it is found to be wrong, rather than going through the trouble of a correction process. We don't do that, for a simple reason: a page with one outdated claim is still useful for everything else it covers, and deleting it removes value from readers who are looking for the parts that are still accurate. The exception is when a product has been discontinued and a comparison no longer makes practical sense to publish at all — in that case the page may eventually be archived or replaced, but that's a separate decision from a routine correction and is handled case by case.</p>
+<p>There's also a transparency argument for keeping corrected pages live and logging the change rather than hiding it. A reader who sees a corrected page with a note about what changed can trust the current version more, not less, because they can see the site actually checks itself rather than only ever presenting a confident final answer with no visible history.</p>
+<p>This also reflects something worth saying plainly: a comparison site that never logs a single correction isn't necessarily more accurate than one that does — it may simply not be checking itself closely enough, or not giving readers an easy way to flag a problem in the first place. A visible, if occasionally embarrassing, correction history is a better signal of editorial care than a spotless record with no paper trail behind it.</p>
+<h2>What happens after a report comes in</h2>
+<ol class="steps">
+<li>
+<h4>The claim gets isolated</h4>
+<p>The first step is identifying the exact sentence or data point in question, not just the general page — a report about "the battery section" could mean several different claims, so narrowing it down comes first.</p>
+</li>
+<li>
+<h4>It's checked against a current source</h4>
+<p>The claim is compared against the manufacturer's current documentation, a recent retailer listing, or published independent testing, depending on what kind of claim it is. If the original source has since been updated, that's usually exactly what caused the problem.</p>
+</li>
+<li>
+<h4>A decision gets made</h4>
+<p>Either the original claim holds up and no change is needed (and we'll usually explain why to whoever reported it), or it doesn't and the page gets updated.</p>
+</li>
+<li>
+<h4>The page is updated and dated</h4>
+<p>The incorrect information is replaced, and the page's "last updated" date is refreshed so readers can see it was recently reviewed.</p>
+</li>
+<li>
+<h4>Material corrections are logged here</h4>
+<p>If the fix meets the bar of a material correction, it's added to the public log below with a short, plain description of what changed.</p>
+</li>
+</ol>
+<h2>Recent corrections log</h2>
+<p>This is a representative sample of the kind of material corrections this policy covers, shown here to illustrate the format rather than as a complete historical archive. Each entry states what was wrong, not just that something changed.</p>
+<div class="log-entry major">
+<div class="meta"><span class="tag">Material</span><span>September 2026</span></div>
+<p>Battery capacity figure for a laptop comparison page was listed using an older regional variant's spec. Updated to match the configuration actually sold in the market the page targets.</p>
+</div>
+<div class="log-entry minor">
+<div class="meta"><span class="tag">Routine update</span><span>September 2026</span></div>
+<p>Pricing on several smartphone comparison pages refreshed to reflect post-launch price adjustments.</p>
+</div>
+<div class="log-entry major">
+<div class="meta"><span class="tag">Material</span><span>August 2026</span></div>
+<p>A claimed software update-support window on a phone comparison page did not match the manufacturer's current published commitment. Corrected to the officially stated support period.</p>
+</div>
+<div class="log-entry minor">
+<div class="meta"><span class="tag">Routine update</span><span>August 2026</span></div>
+<p>Streaming-service pricing referenced on a software comparison page updated after a published price increase.</p>
+</div>
+<h2>What we don't do</h2>
+<p>We don't quietly rewrite a page's conclusion without noting that something changed, and we don't delete a correction request just because acting on it would mean admitting a page recommended the "wrong" product under outdated information. If a material correction changes which option a page actually favors, that's noted plainly rather than softened.</p>
+<p>We also don't treat every disagreement as a correction. If a reader prefers a different product for taste reasons — they like a warmer sound signature, or they simply dislike a certain brand — that's a matter of opinion, not a factual error, and it doesn't get logged here. The distinction we try to hold onto is between "this is factually wrong" and "I would have written this differently," and only the first one belongs on this page.</p>
+<h2>A simple template if you want to report something</h2>
+<p>You don't need to follow a strict format to report a problem, but if you want your report to get checked and fixed as quickly as possible, including these four things helps a lot: the page it's on, the exact sentence or figure in question, what you believe the correct information is, and a source for that correction if you have one handy. A message built around those four points, sent through the <a href="contact.html">Contact page</a>, is usually enough for us to verify and act on within a few days, rather than requiring several rounds of back-and-forth just to pin down what you're actually referring to.</p>
+<p>It also helps to mention whether you're looking at a specific regional version of a product, since a surprising number of apparent "errors" turn out to be two readers correctly describing two different regional variants of the same device. A sentence as simple as "I'm looking at the version sold in the UK" can save a round of back-and-forth.</p>
+<h2>Questions about this policy</h2>
+<div class="qa-item">
+<h4>How long does a correction usually take?</h4>
+<p>Straightforward factual corrections — a wrong spec, an outdated price — are typically checked and fixed within a few days of a clear report. More complex claims that require checking multiple sources can take longer.</p>
+</div>
+<div class="qa-item">
+<h4>Will I be told if my report leads to a change?</h4>
+<p>If you reported through the Contact page and left a way to reach you, yes — we'll usually confirm whether a change was made and what it was.</p>
+</div>
+<div class="qa-item">
+<h4>What if you disagree that something is wrong?</h4>
+<p>We'll explain our reasoning and the source we checked against. If the disagreement is about interpretation rather than a verifiable fact, that's noted as a difference of opinion rather than logged as a correction.</p>
+</div>
+<div class="qa-item">
+<h4>Do you correct old pages even without a reader report?</h4>
+<p>Yes, periodically, especially for products where specs or software support commonly change after launch. Reader reports are still the fastest way to get something fixed, since we can't recheck every page on a fixed schedule.</p>
+</div>
+<div class="qa-item">
+<h4>Does a correction ever change a page's overall recommendation?</h4>
+<p>Occasionally, yes. If the corrected information is significant enough — say, a battery figure that turns out to be meaningfully lower than originally stated — it can shift which option a page favors for a given use case. When that happens, the change in recommendation is stated plainly rather than buried.</p>
+</div>
+<div class="qa-item">
+<h4>Can a manufacturer request a correction?</h4>
+<p>Yes, and these requests are checked the same way any other report is — against current, verifiable documentation, not simply accepted because of who sent them. A manufacturer correcting an outdated spec is treated the same as a reader doing the same thing.</p>
+</div>
+<div class="qa-item">
+<h4>Is this policy itself ever updated?</h4>
+<p>Yes. As the site has grown to cover more categories, the process described here has been adjusted to match — for example, adding category-specific notes once it became clear that vehicles and phones needed slightly different checking approaches. The date at the top of this page reflects the most recent update to the policy itself.</p>
+</div>
+</div>
+</main>
+<footer class="uniform-footer">
+<div class="uf-grid">
+<div>
+<h3>Ranking Hours</h3>
+<p>Independent comparisons and buying guides for technology, appliances, and vehicles.</p>
+</div>
+<div><h3>Explore</h3><ul><li><a href="index.html">Home</a></li><li><a href="comparisons.html">Comparisons</a></li><li><a href="categories.html">Categories</a></li></ul></div>
+<div><h3>Company</h3><ul><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li><li><a href="faq.html">FAQ</a></li></ul></div>
+<div><h3>Standards</h3><ul><li><a href="methodology.html">Methodology</a></li><li><a href="ethics.html">Ethics</a></li></ul></div>
+<div><h3>Legal</h3><ul><li><a href="privacy-policy.html">Privacy Policy</a></li><li><a href="AFFILIATE-DISCLOSURE.html">Affiliate Disclosure</a></li></ul></div>
+</div>
+<div class="uf-bottom"><p>© 2025-2026 ranking-hours.uz. All rights reserved.</p></div>
+</footer>
+<script src="cookie-notice.js" defer></script>
+</body>
+</html>

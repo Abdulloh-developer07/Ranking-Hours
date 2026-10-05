@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>About Us - Ranking Hours</title>
+<meta content="Learn about Ranking Hours, what the site covers, how comparisons are prepared, and the principles behind its product guides and reviews." name="description"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+<style>
+ /* Base Container Adjustment */.container {
+ max-width: 1200px;
+ margin: 0 auto;
+ padding: 0 20px;
+ }
+
+ /* Site Navigation */.navbar {
+ background: #ffffff;
+ border-bottom: 1px solid #e5e7eb;
+ position: sticky;
+ top: 0;
+ z-index: 1000;
+ box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+ }.navbar .container {
+ display: flex;
+ justify-content: center;
+ padding: 0 20px;
+ }.nav-menu {
+ display: flex;
+ gap: 8px;
+ padding: 16px 0;
+ flex-wrap: wrap;
+ justify-content: center;
+ }.nav-menu a {
+ color: #4b5563;
+ text-decoration: none;
+ font-weight: 600;
+ font-size: 0.95rem;
+ padding: 8px 16px;
+ border-radius: 8px;
+ transition: all 0.2s ease;
+ }.nav-menu a:hover {
+ color: #667eea;
+ background: #f5f3ff;
+ }.nav-menu a.active {
+ color: #ffffff;
+ background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+ }
+
+ /* Emoji Instead of Image Styling */.emoji-hint {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ background: #f1f2f6;
+ font-size: 5rem;
+ width: 100%;
+ height: 100%;
+ min-height: 250px;
+ border-radius: 15px;
+ box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+ }.story-image.emoji-hint {
+ min-height: 350px;
+ font-size: 8rem;
+ background: #eef2f7;
+ }.testimonial-author.emoji-avatar {
+ font-size: 2.5rem;
+ background: #f1f2f6;
+ width: 50px;
+ height: 50px;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ border-radius: 50%;
+ }
+
+ /* Hero Section */.about-hero {
+ background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+ color: white;
+ padding: 80px 0;
+ text-align: center;
+ }.about-hero h1 {
+ font-size: 3rem;
+ margin-bottom: 20px;
+ }.hero-subtitle {
+ font-size: 1.2rem;
+ opacity: 0.9;
+ margin-bottom: 40px;
+ }.hero-stats {
+ display: flex;
+ justify-content: center;
+ gap: 40px;
+ flex-wrap: wrap;
+ }.stat {
+ text-align: center;
+ }.stat-number {
+ font-size: 2.5rem;
+ font-weight: bold;
+ display: block;
+ }.stat-label {
+ font-size: 0.9rem;
+ opacity: 0.8;
+ }
+ 
+ /* Our Story */.our-story {
+ padding: 80px 0;
+ }.story-content {
+ display: grid;
+ grid-template-columns: 1fr 1fr;
+ gap: 60px;
+ align-items: center;
+ }.story-text h2 {
+ font-size: 2rem;
+ margin-bottom: 30px;
+ color: #2c3e50;
+ }.story-text p {
+ margin-bottom: 20px;
+ line-height: 1.8;
+ font-size: 1.1rem;
+ }
+ 
+ /* Our Mission */.our-mission {
+ padding: 80px 0;
+ background: #f8f9fa;
+ }.section-title {
+ text-align: center;
+ font-size: 2.5rem;
+ margin-bottom: 50px;
+ color: #2c3e50;
+ }.mission-grid {
+ display: grid;
+ grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+ gap: 30px;
+ }.mission-card {
+ background: white;
+ padding: 30px;
+ border-radius: 10px;
+ text-align: center;
+ box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+ transition: transform 0.3s;
+ }.mission-card:hover {
+ transform: translateY(-10px);
+ }.mission-icon {
+ font-size: 3rem;
+ color: #667eea;
+ margin-bottom: 20px;
+ }
+ 
+ /* Team Section */.our-team {
+ padding: 80px 0;
+ }.team-grid {
+ display: grid;
+ grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+ gap: 30px;
+ }.team-card {
+ background: white;
+ border-radius: 15px;
+ overflow: hidden;
+ box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+ display: flex;
+ flex-direction: column;
+ }.team-card.founder {
+ grid-column: 1 / -1;
+ display: grid;
+ grid-template-columns: 300px 1fr;
+ }.team-image {
+ position: relative;
+ min-height: 250px;
+ }.team-badge {
+ position: absolute;
+ top: 20px;
+ right: 20px;
+ background: #f1c40f;
+ color: #2c3e50;
+ padding: 5px 15px;
+ border-radius: 20px;
+ font-weight: bold;
+ z-index: 5;
+ }.team-info {
+ padding: 30px;
+ }.team-info h3 {
+ font-size: 1.5rem;
+ margin-bottom: 10px;
+ }.team-title {
+ color: #667eea;
+ font-weight: 600;
+ margin-bottom: 15px;
+ }.team-bio {
+ margin-bottom: 20px;
+ line-height: 1.6;
+ }.team-stats {
+ display: flex;
+ gap: 20px;
+ margin-bottom: 20px;
+ }.team-stat {
+ display: flex;
+ align-items: center;
+ gap: 8px;
+ font-size: 0.9rem;
+ }.team-stat i {
+ color: #667eea;
+ }.team-expertise {
+ display: flex;
+ flex-wrap: wrap;
+ gap: 10px;
+ margin-top: 15px;
+ }.expertise-tag {
+ background: #e8f4fd;
+ color: #3498db;
+ padding: 5px 15px;
+ border-radius: 15px;
+ font-size: 0.8rem;
+ }
+ 
+ /* Process Timeline */.our-process {
+ padding: 80px 0;
+ background: #f8f9fa;
+ }.process-timeline {
+ position: relative;
+ max-width: 800px;
+ margin: 0 auto;
+ }.process-timeline::before {
+ content: '';
+ position: absolute;
+ left: 30px;
+ top: 0;
+ bottom: 0;
+ width: 4px;
+ background: #667eea;
+ }.process-step {
+ position: relative;
+ margin-bottom: 40px;
+ padding-left: 80px;
+ }.step-number {
+ position: absolute;
+ left: 0;
+ top: 0;
+ width: 60px;
+ height: 60px;
+ background: #667eea;
+ color: white;
+ border-radius: 50%;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ font-size: 1.5rem;
+ font-weight: bold;
+ z-index: 2;
+ }.step-content {
+ background: white;
+ padding: 25px;
+ border-radius: 10px;
+ box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+ }.step-content h3 {
+ margin-bottom: 10px;
+ color: #2c3e50;
+ }
+ 
+ /* Values Section */.our-values {
+ padding: 80px 0;
+ }.values-grid {
+ display: grid;
+ grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+ gap: 30px;
+ }.value-card {
+ text-align: center;
+ padding: 30px;
+ }.value-icon {
+ font-size: 3rem;
+ color: #667eea;
+ margin-bottom: 20px;
+ }
+ 
+ /* Testimonials */.testimonials {
+ padding: 80px 0;
+ background: #f8f9fa;
+ }.testimonials-grid {
+ display: grid;
+ grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+ gap: 30px;
+ }.testimonial-card {
+ background: white;
+ padding: 30px;
+ border-radius: 10px;
+ box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+ }.testimonial-content p {
+ font-style: italic;
+ line-height: 1.8;
+ margin-bottom: 20px;
+ }.testimonial-author {
+ display: flex;
+ align-items: center;
+ gap: 15px;
+ }
+ 
+ /* Call-To-Action Layout */.about-cta {
+ padding: 80px 0;
+ text-align: center;
+ background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+ color: white;
+ }.about-cta h2 {
+ font-size: 2.5rem;
+ margin-bottom: 20px;
+ }.about-cta p {
+ font-size: 1.2rem;
+ margin-bottom: 40px;
+ opacity: 0.9;
+ }.cta-buttons {
+ display: flex;
+ justify-content: center;
+ gap: 20px;
+ flex-wrap: wrap;
+ }.btn {
+ display: inline-block;
+ padding: 12px 30px;
+ border-radius: 30px;
+ text-decoration: none;
+ font-weight: bold;
+ transition: all 0.3s ease;
+ }.btn-primary {
+ background: white;
+ color: #667eea;
+ }.btn-primary:hover {
+ background: #f0f0f0;
+ transform: scale(1.05);
+ }.btn-secondary {
+ background: transparent;
+ color: white;
+ border: 2px solid white;
+ }.btn-secondary:hover {
+ background: rgba(255,255,255,0.1);
+ transform: scale(1.05);
+ }
+
+ /* Footer */.footer {
+ background: #2c3e50;
+ color: white;
+ padding: 60px 0 20px 0;
+ }.footer-grid {
+ display: grid;
+ grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+ gap: 40px;
+ margin-bottom: 40px;
+ }.footer-col h3 {
+ margin-bottom: 20px;
+ font-size: 1.2rem;
+ }.footer-links {
+ list-style: none;
+ padding: 0;
+ }.footer-links li {
+ margin-bottom: 10px;
+ }.footer-links a {
+ color: #bdc3c7;
+ text-decoration: none;
+ transition: color 0.3s;
+ }.footer-links a:hover,.footer-links a.active {
+ color: white;
+ }.footer-bottom {
+ border-top: 1px solid #34495e;
+ padding-top: 20px;
+ text-align: center;
+ font-size: 0.9rem;
+ }.footer-note {
+ margin-top: 10px;
+ color: #95a5a6;
+ font-size: 0.8rem;
+ }
+ 
+ /* Responsive Breakpoints */
+ @media (max-width: 768px) {.hero-stats {
+ gap: 20px;
+ }.stat-number {
+ font-size: 1.8rem;
+ }.story-content {
+ grid-template-columns: 1fr;
+ }.team-card.founder {
+ grid-template-columns: 1fr;
+ }.process-timeline::before {
+ left: 20px;
+ }.process-step {
+ padding-left: 60px;
+ }.step-number {
+ width: 40px;
+ height: 40px;
+ font-size: 1rem;
+ }
+ }
+ 
+.uniform-footer{background:#f1f5f9;border-top:1px solid #e2e8f0;margin-top:48px;padding:40px 20px 20px;}
+.uniform-footer .uf-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:24px;max-width:1100px;margin:0 auto;}
+.uniform-footer h3{color:#1e293b;font-size:1rem;margin:0 0 12px;}
+.uniform-footer p{color:#64748b;font-size:.88rem;margin:0;}
+.uniform-footer ul{list-style:none;margin:0;padding:0;}
+.uniform-footer li{padding:4px 0;}
+.uniform-footer a{color:#64748b;text-decoration:none;font-size:.9rem;}
+.uniform-footer a:hover{color:#2563eb;}
+.uniform-footer .uf-bottom{border-top:1px solid #e2e8f0;margin-top:20px;padding-top:14px;text-align:center;color:#94a3b8;font-size:.82rem;max-width:1100px;margin-left:auto;margin-right:auto;}
+@media (max-width:700px){.uniform-footer .uf-grid{grid-template-columns:1fr;text-align:center;}}
+</style>
+<link href="favicon.png" rel="icon" type="image/png"/>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebSite", "name": "Ranking Hours", "url": "https://ranking-hours.uz/", "description": "Independent product comparisons and buying guides."}</script><link href="https://ranking-hours.uz/about.html" rel="canonical"/><script async="" crossorigin="anonymous" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3010655136119393"></script>
+<meta content="article" property="og:type"/><meta content="About Us - Ranking Hours" property="og:title"/><meta content="Learn about Ranking Hours, what the site covers, how comparisons are prepared, and the principles behind its product guides and reviews." property="og:description"/><meta content="https://ranking-hours.uz/about.html" property="og:url"/><meta content="https://ranking-hours.uz/Ranking-hours.jpg" property="og:image"/><meta content="summary_large_image" name="twitter:card"/><meta content="About Us - Ranking Hours" name="twitter:title"/><meta content="Learn about Ranking Hours, what the site covers, how comparisons are prepared, and the principles behind its product guides and reviews." name="twitter:description"/><script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "name": "About Us - Ranking Hours", "headline": "About Us - Ranking Hours", "description": "Learn about Ranking Hours, what the site covers, how comparisons are prepared, and the principles behind its product guides and reviews.", "url": "https://ranking-hours.uz/about.html", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://ranking-hours.uz/about.html"}, "publisher": {"@type": "Organization", "name": "Ranking Hours", "url": "https://ranking-hours.uz/"}}</script></head>
+<body><nav class="navbar">
+<div class="container">
+<div class="nav-menu">
+<a href="index.html">Home</a>
+<a href="comparisons.html">Comparisons</a>
+<a href="categories.html">Categories</a>
+<a href="methodology.html">Methodology</a>
+<a class="active" href="about.html">About</a>
+<a href="faq.html">FAQ</a>
+<a href="contact.html">Contact</a>
+</div>
+</div>
+</nav>
+<main>
+
+<section class="about-hero">
+<div class="container">
+<h1>About Ranking Hours</h1>
+<p class="hero-subtitle">An independent comparison site for people who'd rather read one honest article than ten browser tabs of spec sheets. We don't pretend to test every product ourselves, and we say so plainly — what we do instead is explained on this page.</p>
+<div class="hero-stats">
+<div class="stat"><span class="stat-number">40+</span><span class="stat-label">Comparisons published</span></div>
+<div class="stat"><span class="stat-number">7</span><span class="stat-label">Categories covered</span></div>
+<div class="stat"><span class="stat-number">4.4</span><span class="stat-label">Average editorial rating</span></div>
+<div class="stat"><span class="stat-number">2026</span><span class="stat-label">Most recent review pass</span></div>
+</div>
+</div>
+</section>
+
+<section class="our-story">
+<div class="container">
+<div class="story-content">
+<div class="story-text">
+<h2>Why this site exists</h2>
+<p>Most comparison articles online are two spec sheets pasted side by side with a headline slapped on top. That tells you one phone's chip scores higher, or one car's battery is a few kWh bigger, but it rarely tells you which one you'd actually be glad you bought six months later. Ranking Hours started from that gap — the space between what a spec sheet says and what a product is actually like to live with, day after day, once the excitement of a new purchase has worn off.</p>
+<p>We're not a testing lab with a dozen engineers and a warehouse of review units. What we do is read the manufacturer documentation closely, then cross-check it against independent professional reviews and long-term owner reports, specifically looking for the places where the number on paper and the real experience start to disagree — because that gap is usually the most useful part of any comparison. Where we have used a product first-hand, the article says so directly rather than leaving it ambiguous.</p>
+<p>We also try to say when we're not sure. If two products are genuinely close for most buyers, the article says so instead of manufacturing a decisive winner to make a tidier headline. A comparison that pretends to more certainty than it actually has isn't doing the reader any favours.</p>
+<p>The categories we cover — smartphones, laptops, cars, home appliances, audio, gaming and software — aren't arbitrary. Each one is a category where people commonly find themselves choosing between two specific, named products rather than browsing broadly, which is exactly the situation a head-to-head comparison is built to help with. As the site grows, we'd rather go deeper into these seven than spread thin across a dozen loosely related categories with only one or two comparisons in each.</p>
+</div>
+<div class="story-image emoji-hint">🔍</div>
+</div>
+</div>
+</section>
+
+<section class="our-mission" style="background:#fff;padding-top:0;">
+<div class="container">
+<p style="max-width:820px;margin:0 auto 2rem;text-align:center;color:#555;">If any of that sounds like a fairly ordinary set of promises for a publisher to make, that's deliberate — we'd rather be judged on whether we actually follow them consistently across every article than on how ambitious they sound written out on a single page like this one.</p>
+<h2 class="section-title">How the coverage has grown</h2>
+<div class="process-timeline">
+<div class="process-step">
+<div class="step-number">1</div>
+<div class="step-content"><h3>Started with phones and laptops</h3><p>The earliest comparisons focused on smartphones and laptops, partly because those are the categories where the largest number of people are actively deciding between two specific products at any given time, and partly because manufacturer documentation for them is unusually thorough and easy to verify.</p></div>
+</div>
+<div class="process-step">
+<div class="step-number">2</div>
+<div class="step-content"><h3>Added vehicles and home appliances</h3><p>Cars and EVs came next, followed by home appliances — both categories where the gap between the advertised figures and the real-world experience tends to be larger than most spec sheets let on, which made them a natural fit for the kind of comparison we wanted to write.</p></div>
+</div>
+<div class="process-step">
+<div class="step-number">3</div>
+<div class="step-content"><h3>Rounded out with audio, gaming and software</h3><p>Audio, gaming, and software and cloud tools filled out the current seven categories, chosen because each has its own specific set of trade-offs — comfort and codec support for audio, exclusive libraries for gaming, pricing tiers for software — that don't map cleanly onto the categories that came before.</p></div>
+</div>
+<div class="process-step">
+<div class="step-number">4</div>
+<div class="step-content"><h3>What's next</h3><p>Rather than adding an eighth category for its own sake, the current focus is on deepening the seven we already have — more comparisons within cars and EVs in particular, since reader interest there has consistently outpaced the number of articles available, and a few software categories readers have specifically asked us to cover.</p></div>
+</div>
+</div>
+</div>
+</section>
+
+<section class="our-mission">
+<div class="container">
+<h2 class="section-title">What actually earns your trust here</h2>
+<p style="text-align:center;max-width:760px;margin:0 auto 3rem;color:#555;">None of this is complicated on its own — the hard part is doing it consistently across dozens of comparisons instead of just the ones we happen to care most about. The four points below are the ones we actually get held to.</p>
+<div class="mission-grid">
+<div class="mission-card"><div class="mission-icon"><i class="fas fa-magnifying-glass"></i></div><h3>Look past the spec sheet</h3><p>A number on a product page only matters once you know how it plays out in daily use — that's the part we spend the most time on.</p></div>
+<div class="mission-card"><div class="mission-icon"><i class="fas fa-scale-balanced"></i></div><h3>Stay neutral about the winner</h3><p>We don't adjust a conclusion to favour a brand we have an affiliate relationship with, and we say when two products are simply close.</p></div>
+<div class="mission-card"><div class="mission-icon"><i class="fas fa-rotate"></i></div><h3>Keep pages current</h3><p>A comparison gets revisited when a product is discontinued, replaced, or meaningfully repriced, not left to go stale indefinitely.</p></div>
+<div class="mission-card"><div class="mission-icon"><i class="fas fa-comments"></i></div><h3>Actually read feedback</h3><p>Corrections and category requests sent through the contact page get read, and they regularly change what we publish next.</p></div>
+</div>
+</div>
+</section>
+
+<section class="our-team container">
+<h2>Editorial team</h2>
+<div class="team-grid">
+<div class="team-card founder">
+<div class="team-info">
+<h3>Ranking Hours Editorial Team</h3>
+<p class="team-title">Research &amp; Comparisons</p>
+<p class="team-bio">Comparisons on this site are researched and written by a small editorial team rather than a single named reviewer. We work from manufacturer specifications, publicly available documentation, and independent professional and owner reviews, and we don't claim first-hand hands-on testing on an article unless that testing actually happened. We keep individual contributors unnamed for now rather than attach names to a workflow that's genuinely a team effort across research, writing and fact-checking — if you need to reach us directly about a specific article, the Contact page goes straight to the team responsible for it. Most comparisons pass through at least two people before publishing: one drafting the initial research and comparison structure, and a second doing a fact-check pass against the original sources before it goes live.</p>
+<div class="team-expertise"><span class="expertise-tag">Consumer Technology</span><span class="expertise-tag">Buying Guides</span><span class="expertise-tag">Fact-Checking</span><span class="expertise-tag">Automotive</span><span class="expertise-tag">Home Appliances</span></div>
+<p style="margin-top:1.2rem;font-size:0.92rem;color:#777;">We're a small team by design, not by accident — it keeps the editorial voice and standards consistent across categories, rather than fragmenting into as many different writing styles as there are contributors.</p>
+</div>
+</div>
+</div>
+</section>
+
+<section class="our-process">
+<div class="container">
+<h2 class="section-title">How a comparison actually gets made</h2>
+<div class="process-timeline">
+<div class="process-step">
+<div class="step-number">1</div>
+<div class="step-content"><h3>Start from what's officially published</h3><p>Every comparison begins with the specifications and pricing each manufacturer publishes directly, since that's the one source both products share and the most reliable starting point.</p></div>
+</div>
+<div class="process-step">
+<div class="step-number">2</div>
+<div class="step-content"><h3>Cross-check against independent sources</h3><p>We read through professional reviews and long-term owner feedback on forums and retailer sites, looking specifically for where the spec sheet and the lived experience disagree.</p></div>
+</div>
+<div class="process-step">
+<div class="step-number">3</div>
+<div class="step-content"><h3>Identify what actually differs day to day</h3><p>Not every spec difference matters equally. We try to separate the ones that change daily use — battery drain, noise, learning curve — from the ones that are mostly marketing.</p></div>
+</div>
+<div class="process-step">
+<div class="step-number">4</div>
+<div class="step-content"><h3>Write toward "best for what," not just "best"</h3><p>Where possible, the conclusion names who each product actually suits, rather than forcing a single universal winner onto every kind of buyer.</p></div>
+</div>
+<div class="process-step">
+<div class="step-number">5</div>
+<div class="step-content"><h3>Revisit when something changes</h3><p>A comparison is updated when a product is discontinued, replaced, or repriced, and gets a slower periodic check even without a specific trigger, since not every stale detail gets reported by a reader before someone else stumbles across it.</p></div>
+</div>
+</div>
+</div>
+</section>
+
+<section class="our-mission" style="background:#fff;">
+<div class="container">
+<h2 class="section-title">Editorial independence, in practice</h2>
+<div class="mission-grid">
+<div class="mission-card" style="text-align:left;"><div class="mission-icon"><i class="fas fa-building-columns"></i></div><h3>No brand reviews articles before publishing</h3><p>Manufacturers and retailers don't see a comparison before it goes live, and none has editorial sign-off over what the article concludes. If a company reaches out after publication to dispute a factual point, we'll check the claim against our sources and correct the page if they're right — but the request itself doesn't guarantee a change.</p></div>
+<div class="mission-card" style="text-align:left;"><div class="mission-icon"><i class="fas fa-link"></i></div><h3>Affiliate links are added after the conclusion, not before</h3><p>The comparison and its recommendation are written first, based on the criteria described in the article. Once that's settled, we add an affiliate link to whichever retailer happens to stock the recommended product — the presence or absence of a commission doesn't feed back into which product we recommend.</p></div>
+<div class="mission-card" style="text-align:left;"><div class="mission-icon"><i class="fas fa-file-invoice"></i></div><h3>Sponsored content, if it ever exists, will say so</h3><p>At the time of writing, nothing published on this site is paid placement. If that changes in the future, the specific article will carry a clear label saying so — sponsorship disclosure won't be something you have to dig for in a footer or a separate policy page.</p></div>
+<div class="mission-card" style="text-align:left;"><div class="mission-icon"><i class="fas fa-people-group"></i></div><h3>Reader corrections outrank internal convenience</h3><p>When a reported error would require reworking a comparison's structure rather than just swapping a number, we still make the change — a comparison that's easy to maintain but factually wrong isn't something we're willing to leave live for the sake of convenience.</p></div>
+</div>
+</div>
+</section>
+
+<section class="our-values">
+<div class="container">
+<h2 class="section-title">What we hold ourselves to</h2>
+<div class="values-grid">
+<div class="value-card"><div class="value-icon"><i class="fas fa-check-double"></i></div><h3>Accuracy</h3><p>Specifications are checked against the source at the time of publication, and corrected promptly when a reader flags something wrong — a claim that can't be traced back to a manufacturer page or a credible independent review doesn't make it into an article.</p></div>
+<div class="value-card"><div class="value-icon"><i class="fas fa-eye"></i></div><h3>Transparency</h3><p>We distinguish published research from first-hand use, and disclose affiliate relationships rather than burying them in fine print — if we haven't personally used a product, the article won't imply that we have.</p></div>
+<div class="value-card"><div class="value-icon"><i class="fas fa-handshake"></i></div><h3>Neutrality</h3><p>A comparison's conclusion is decided by the criteria in the article, not by which retailer happens to be an affiliate partner, and that holds even when the more profitable product for us isn't the one we'd actually recommend.</p></div>
+<div class="value-card"><div class="value-icon"><i class="fas fa-user-check"></i></div><h3>Practicality</h3><p>We'd rather explain what a spec means for daily use than repeat a number the manufacturer already published clearly enough — a paragraph that just restates the spec sheet in different words isn't adding anything for the reader.</p></div>
+<div class="value-card"><div class="value-icon"><i class="fas fa-clock"></i></div><h3>Timeliness</h3><p>Comparisons involving a discontinued or heavily repriced product are flagged or updated rather than left to quietly mislead readers who don't realise the article predates a change in the market.</p></div>
+</div>
+</div>
+</section>
+
+<section class="our-mission" style="background:#fff;">
+<div class="container">
+<h2 class="section-title">Questions people ask us about the site</h2>
+<div class="mission-grid">
+<div class="mission-card" style="text-align:left;"><h3>Are you affiliated with any manufacturer?</h3><p>No. We're an independent publisher, and no brand controls or reviews our comparisons before they go live. Affiliate commerce links, where they exist, are disclosed on the affiliate disclosure page.</p></div>
+<div class="mission-card" style="text-align:left;"><h3>Do you buy every product you compare?</h3><p>Not always — see the editorial team note above. We're upfront about when a comparison is built from research rather than hands-on testing, instead of implying testing that didn't happen.</p></div>
+<div class="mission-card" style="text-align:left;"><h3>How do you make money?</h3><p>Mainly display advertising and affiliate commissions when a reader buys through a linked retailer after clicking from this site, at no extra cost to them. Neither influences which product a comparison recommends.</p></div>
+<div class="mission-card" style="text-align:left;"><h3>Can I write for Ranking Hours?</h3><p>We occasionally work with outside contributors on specific categories. The contact page is the right place to reach out with relevant experience or writing samples.</p></div>
+<div class="mission-card" style="text-align:left;"><h3>Why don't you name individual writers?</h3><p>Because most comparisons genuinely pass through more than one person before publishing — research, drafting and fact-checking aren't always done by the same contributor, so attaching a single byline would overstate any one person's involvement rather than accurately reflect how the article was actually put together.</p></div>
+<div class="mission-card" style="text-align:left;"><h3>What happens if I find an error?</h3><p>Send specifics through the contact page — which comparison, which claim, and ideally a source for the correct figure. Genuine errors get fixed; we'd rather have a slightly slower publishing pace than leave something factually wrong live because no one flagged it. We aim to acknowledge correction requests within a few days, even if the actual fix takes a little longer to research properly.</p></div>
+</div>
+</div>
+</section>
+
+<section class="our-process" style="background:#fff;">
+<div class="container">
+<h2 class="section-title">How we handle mistakes</h2>
+<div class="process-timeline">
+<div class="process-step">
+<div class="step-number">1</div>
+<div class="step-content"><h3>A reader flags something</h3><p>Most corrections start with a message through the contact page — a wrong spec, an outdated price, a link that no longer works, or a conclusion that doesn't match what someone experienced buying the product themselves.</p></div>
+</div>
+<div class="process-step">
+<div class="step-number">2</div>
+<div class="step-content"><h3>We check it against the source</h3><p>Before changing anything, we go back to the manufacturer documentation or the original review the claim was based on, since a reader's report and our original research occasionally both need re-checking rather than one automatically overriding the other.</p></div>
+</div>
+<div class="process-step">
+<div class="step-number">3</div>
+<div class="step-content"><h3>The page gets updated, not quietly replaced</h3><p>When a correction changes a meaningful conclusion — not just a typo — we update the article directly rather than publishing a new page and leaving the old, wrong one findable elsewhere on the site.</p></div>
+</div>
+<div class="process-step">
+<div class="step-number">4</div>
+<div class="step-content"><h3>Recurring issues change our process</h3><p>If the same kind of error keeps coming up across a category — say, EV range figures going stale faster than we'd assumed — that's a signal to check that whole category more often, not just fix the one page.</p></div>
+</div>
+</div>
+</div>
+</section>
+
+<section class="our-values" style="background:#f8f9fa;">
+<div class="container">
+<h2 class="section-title">What we deliberately avoid</h2>
+<div class="values-grid">
+<div class="value-card"><div class="value-icon"><i class="fas fa-ban"></i></div><h3>Fabricated testimonials</h3><p>We won't invent quotes from happy customers to make the site look more trusted than the track record actually supports — if we don't have a real, verifiable reader quote, we simply don't publish one.</p></div>
+<div class="value-card"><div class="value-icon"><i class="fas fa-ban"></i></div><h3>Undisclosed sponsorship</h3><p>No comparison on this site exists because a brand paid for placement without saying so. If that arrangement ever changes for a specific article, it will be disclosed clearly on that page, not buried in a footer.</p></div>
+<div class="value-card"><div class="value-icon"><i class="fas fa-ban"></i></div><h3>Unsupported superlatives</h3><p>"Best ever" and "the only one you'll ever need" show up a lot in this space. We avoid that language unless a specific claim behind it can actually be checked against a source.</p></div>
+<div class="value-card"><div class="value-icon"><i class="fas fa-ban"></i></div><h3>Silently outdated pages</h3><p>When a comparison involves a discontinued or heavily repriced product and we haven't gotten to a full rewrite yet, we'd rather flag that plainly than leave the page looking current when it isn't.</p></div>
+</div>
+</div>
+</section>
+
+<section class="our-mission">
+<div class="container">
+<h2 class="section-title">Who this site is genuinely useful for</h2>
+<div class="mission-grid">
+<div class="mission-card" style="text-align:left;"><div class="mission-icon"><i class="fas fa-thumbs-up"></i></div><h3>You've narrowed it to two options</h3><p>If you're already deciding between two specific, named products, a head-to-head comparison is exactly the format that helps — that's the situation every article here is written for.</p></div>
+<div class="mission-card" style="text-align:left;"><div class="mission-icon"><i class="fas fa-thumbs-up"></i></div><h3>You want the "why," not just a score</h3><p>If a single star rating or a "top 10" list from elsewhere feels too thin to actually decide on, our longer-form comparisons are built to explain the reasoning behind a recommendation, not just deliver one.</p></div>
+</div>
+<h2 class="section-title" style="margin-top:3rem;">Who might be better served elsewhere</h2>
+<div class="mission-grid">
+<div class="mission-card" style="text-align:left;"><div class="mission-icon"><i class="fas fa-thumbs-down"></i></div><h3>You need a live price-tracking tool</h3><p>We mention pricing context, but we're not a real-time price comparison engine — a dedicated price-tracking site will serve that specific need better than we can.</p></div>
+<div class="mission-card" style="text-align:left;"><div class="mission-icon"><i class="fas fa-thumbs-down"></i></div><h3>You're browsing broadly, not comparing two things</h3><p>If you haven't narrowed your options at all yet, a broader buying guide or a retailer's filterable catalogue is probably a faster starting point than a head-to-head comparison. Come back once you've got it down to two or three names — that's when a comparison actually earns its length.</p></div>
+</div>
+</div>
+</section>
+<section class="our-mission">
+<div class="container">
+<h2 class="section-title">What a typical comparison looks like</h2>
+<div class="mission-grid">
+<div class="mission-card" style="text-align:left;"><div class="mission-icon"><i class="fas fa-list-ol"></i></div><h3>An upfront summary</h3><p>Most articles open with a short, direct answer to "which one, for whom" before the detailed breakdown, since not every reader has time to read the full comparison before deciding.</p></div>
+<div class="mission-card" style="text-align:left;"><div class="mission-icon"><i class="fas fa-table-list"></i></div><h3>A side-by-side spec section</h3><p>The core published specifications sit in one place, sourced directly from the manufacturers, so you can check the raw numbers without wading through prose to find them.</p></div>
+<div class="mission-card" style="text-align:left;"><div class="mission-icon"><i class="fas fa-magnifying-glass-chart"></i></div><h3>A category-by-category breakdown</h3><p>Camera, battery, build quality, and whatever else is relevant to that specific product type get their own short section, each ending with which product has the edge and why.</p></div>
+<div class="mission-card" style="text-align:left;"><div class="mission-icon"><i class="fas fa-flag-checkered"></i></div><h3>A final recommendation by use case</h3><p>Rather than one blanket winner, the closing section usually names two or three reader profiles and which product suits each one better.</p></div>
+</div>
+</div>
+</section>
+
+<section class="our-mission" style="background:#fff;">
+<div class="container">
+<h2 class="section-title">How we try to write these</h2>
+<p style="max-width:820px;margin:0 auto 20px;line-height:1.8;font-size:1.05rem;">Plenty of comparison sites lean on the same handful of stock phrases — "packs a punch," "seamless experience," "elevates your setup" — until every article on every site starts to sound like the same press release. We try actively to avoid that, partly for readability and partly because vague enthusiasm doesn't actually tell you anything a spec sheet didn't already say. A sentence like "the battery lasts noticeably longer on a video call than the competitor's" is more useful than "impressive battery life," even though the second one is shorter and easier to write.</p>
+<p style="max-width:820px;margin:0 auto;line-height:1.8;font-size:1.05rem;">We also try to write for someone who's genuinely deciding, not for someone browsing for entertainment. That means naming actual trade-offs — this one is quieter but that one is cheaper to maintain — rather than padding an article with general category background the reader probably already knows. If a comparison feels shorter than others in the same category, it's usually because there was less genuine daylight between the two products to write about, not because we ran out of things to say.</p>
+</div>
+</section>
+
+<section class="our-mission" style="background:#f8f9fa;">
+<div class="container">
+<h2 class="section-title">A couple more questions</h2>
+<div class="mission-grid">
+<div class="mission-card" style="text-align:left;"><h3>Do you cover products outside your seven categories?</h3><p>Occasionally, if there's clear reader interest and we can research it to the same standard as everything else on the site — but we won't stretch into a category just to look broader than we actually are.</p></div>
+<div class="mission-card" style="text-align:left;"><h3>Is Ranking Hours the same team behind other comparison sites?</h3><p>No — this is a standalone, independently run publication. If you've seen similar-sounding content elsewhere, it isn't from the same editorial team, and we can't speak to how another site's process works or vouch for its accuracy.</p></div>
+</div>
+</div>
+</section>
+
+<section class="our-mission">
+<div class="container">
+<h2 class="section-title">What's worth writing to us about</h2>
+<div class="mission-grid">
+<div class="mission-card"><div class="mission-icon"><i class="fas fa-bug"></i></div><h3>Factual errors</h3><p>A wrong spec, an outdated price, a discontinued product still listed as current — these are the fastest kind of correction to make, and we genuinely want to know about them.</p></div>
+<div class="mission-card"><div class="mission-icon"><i class="fas fa-link-slash"></i></div><h3>Broken links</h3><p>Retailer links occasionally break when a product page moves or a listing expires. Flagging these helps every reader who visits after you, not just you.</p></div>
+<div class="mission-card"><div class="mission-icon"><i class="fas fa-lightbulb"></i></div><h3>Comparison requests</h3><p>If you're stuck choosing between two specific products we haven't covered yet, tell us. Requests like this directly shape what gets researched next.</p></div>
+<div class="mission-card"><div class="mission-icon"><i class="fas fa-comment"></i></div><h3>Disagreement with a conclusion</h3><p>If you owned both products in a comparison and reached a different conclusion than we did, that's useful too — it doesn't automatically change the article, but it does get read, considered, and occasionally leads to a follow-up question back to you for more detail.</p></div>
+</div>
+</div>
+</section>
+
+<section class="about-cta">
+<div class="container">
+<h2>Have a correction, a request, or a question?</h2>
+<p>We read everything that comes through the contact page, and it genuinely shapes what gets published and corrected next. If you're weighing two specific products right now and can't find a comparison for them yet, that message is exactly the kind of thing that moves up our research list.</p>
+<div class="cta-buttons">
+<a class="btn btn-primary" href="contact.html">Contact us</a>
+<a class="btn btn-secondary" href="comparisons.html">Browse comparisons</a>
+</div>
+</div>
+</section>
+
+</main>
+<footer class="uniform-footer">
+<div class="uf-grid">
+<div><h3>Ranking Hours</h3><p>Independent product comparisons based on published specifications, documentation and practical buying considerations.</p></div>
+<div><h3>Explore</h3><ul><li><a href="index.html">Home</a></li><li><a href="comparisons.html">Comparisons</a></li><li><a href="categories.html">Categories</a></li></ul></div>
+<div><h3>Company</h3><ul><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li><li><a href="faq.html">FAQ</a></li></ul></div>
+<div><h3>Legal</h3><ul><li><a href="privacy-policy.html">Privacy Policy</a></li><li><a href="terms-of-service.html">Terms of Service</a></li><li><a href="AFFILIATE-DISCLOSURE.html">Affiliate Disclosure</a></li></ul></div>
+</div>
+<div class="uf-bottom"><p>&#169; 2025-2026 ranking-hours.uz. All rights reserved.</p></div>
+</footer>
+<script src="cookie-notice.js" defer></script>
+</body>
+</html>

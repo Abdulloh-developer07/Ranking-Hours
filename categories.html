@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Categories | Ranking Hours</title>
+<meta content="Browse Ranking Hours categories for smartphones, computers, gaming, audio, vehicles, appliances, software, and other comparison topics." name="description"/>
+<link href="style.css" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+<style>
+ /* --- Premium Modern Architecture & Variable Mapping --- */
+ :root {
+ --bg-main: #0b0f19;
+ --bg-card: #131a2c;
+ --bg-nav: rgba(11, 15, 25, 0.85);
+ --accent: #38bdf8;
+ --accent-gradient: linear-gradient(135deg, #38bdf8 0%, #818cf8 100%);
+ --text-main: #f1f5f9;
+ --text-muted: #94a3b8;
+ --border-color: #1e293b;
+ --radius: 12px;
+ --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+ }
+
+ * {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+ }
+
+ body {
+ background-color: var(--bg-main);
+ color: var(--text-main);
+ line-height: 1.6;
+ overflow-x: hidden;
+ padding-top: 80px;
+ }.container {
+ max-width: 1200px;
+ margin: 0 auto;
+ padding: 0 2rem;
+ }
+
+ a {
+ text-decoration: none;
+ color: inherit;
+ transition: var(--transition);
+ }
+
+ /* --- Header Navigation --- */.navbar {
+ position: fixed;
+ top: 0;
+ left: 0;
+ width: 100%;
+ z-index: 1000;
+ background: var(--bg-nav);
+ backdrop-filter: blur(12px);
+ border-bottom: 1px solid var(--border-color);
+ }.navbar.container {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ padding: 1.2rem 2rem;
+ }.logo {
+ font-size: 1.5rem;
+ font-weight: 800;
+ letter-spacing: -0.5px;
+ background: var(--accent-gradient);
+ -webkit-background-clip: text;
+ -webkit-text-fill-color: transparent;
+ display: flex;
+ align-items: center;
+ gap: 8px;
+ }.nav-menu {
+ display: flex;
+ gap: 2rem;
+ }.nav-menu a {
+ font-size: 0.95rem;
+ font-weight: 500;
+ color: var(--text-muted);
+ }.nav-menu a:hover,.nav-menu a.active {
+ color: var(--accent);
+ }
+
+ /* --- Hub Hero Banner --- */.categories-hero {
+ background: radial-gradient(circle at top right, rgba(56, 189, 248, 0.08), transparent 50%), var(--bg-main);
+ padding: 5rem 0 3rem;
+ text-align: center;
+ border-bottom: 1px solid var(--border-color);
+ }.categories-hero h1 {
+ font-size: 3.5rem;
+ font-weight: 800;
+ line-height: 1.1;
+ margin-bottom: 1.2rem;
+ letter-spacing: -1px;
+ background: var(--accent-gradient);
+ -webkit-background-clip: text;
+ -webkit-text-fill-color: transparent;
+ }.hero-subtitle {
+ color: var(--text-muted);
+ font-size: 1.2rem;
+ max-width: 700px;
+ margin: 0 auto 3.5rem;
+ }.stats-grid {
+ display: grid;
+ grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+ gap: 1.5rem;
+ margin-top: 2rem;
+ }.stat {
+ background: var(--bg-card);
+ border: 1px solid var(--border-color);
+ padding: 1.5rem;
+ border-radius: var(--radius);
+ display: flex;
+ align-items: center;
+ gap: 15px;
+ }.stat i {
+ font-size: 1.8rem;
+ color: var(--accent);
+ }.stat h3 {
+ font-size: 1.5rem;
+ font-weight: 700;
+ }.stat p {
+ font-size: 0.85rem;
+ color: var(--text-muted);
+ }
+
+ /* --- Global Grid System --- */.main-categories {
+ padding: 5rem 0;
+ }.section-title {
+ font-size: 2rem;
+ font-weight: 700;
+ margin-bottom: 3rem;
+ position: relative;
+ }.section-title::after {
+ content: '';
+ position: absolute;
+ bottom: -8px;
+ left: 0;
+ width: 40px;
+ height: 3px;
+ background: var(--accent);
+ border-radius: 2px;
+ }.categories-grid {
+ display: grid;
+ grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+ gap: 1.5rem;
+ }.category-card {
+ background: var(--bg-card);
+ border: 1px solid var(--border-color);
+ padding: 2rem;
+ border-radius: var(--radius);
+ display: flex;
+ flex-direction: column;
+ justify-content: space-between;
+ transition: var(--transition);
+ }.category-card:hover {
+ transform: translateY(-5px);
+ border-color: var(--accent);
+ box-shadow: 0 10px 30px rgba(56, 189, 248, 0.05);
+ }.category-card.large {
+ grid-column: span 2;
+ flex-direction: row;
+ gap: 2rem;
+ }.category-image {
+ width: 220px;
+ height: 100%;
+ border-radius: 8px;
+ overflow: hidden;
+ flex-shrink: 0;
+ position: relative;
+ background: #1e293b;
+ }.category-image img {
+ width: 100%;
+ height: 100%;
+ object-fit: cover;
+ }.category-icon {
+ font-size: 2rem;
+ color: var(--accent);
+ margin-bottom: 1.5rem;
+ }.category-card h3 {
+ font-size: 1.4rem;
+ font-weight: 700;
+ margin-bottom: 0.5rem;
+ }.category-count {
+ font-size: 0.85rem;
+ font-weight: 600;
+ color: var(--accent);
+ text-transform: uppercase;
+ letter-spacing: 0.5px;
+ margin-bottom: 1rem;
+ }.category-desc {
+ color: var(--text-muted);
+ font-size: 0.95rem;
+ margin-bottom: 1.5rem;
+ }.category-meta {
+ display: flex;
+ gap: 1.5rem;
+ font-size: 0.85rem;
+ color: var(--text-muted);
+ border-top: 1px solid var(--border-color);
+ padding-top: 1rem;
+ margin-top: auto;
+ }
+
+ /* --- Dynamic Comparison Tabs --- */.category-features {
+ padding: 5rem 0;
+ border-top: 1px solid var(--border-color);
+ }.tabs-header {
+ display: flex;
+ gap: 0.75rem;
+ margin-bottom: 3rem;
+ justify-content: center;
+ flex-wrap: wrap;
+ }.tab-btn {
+ padding: 0.8rem 1.5rem;
+ background: var(--bg-card);
+ border: 1px solid var(--border-color);
+ color: var(--text-muted);
+ border-radius: 30px;
+ font-weight: 500;
+ cursor: pointer;
+ display: flex;
+ align-items: center;
+ gap: 8px;
+ transition: var(--transition);
+ }.tab-btn:hover,.tab-btn.active {
+ border-color: var(--accent);
+ color: var(--text-main);
+ background: rgba(56, 189, 248, 0.05);
+ }.tab-pane {
+ display: none;
+ }.tab-pane.active {
+ display: block;
+ animation: fadeIn 0.4s ease-out;
+ }
+
+ @keyframes fadeIn {
+ from { opacity: 0; transform: translateY(10px); }
+ to { opacity: 1; transform: translateY(0); }
+ }.test-params {
+ display: grid;
+ grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+ gap: 1.5rem;
+ }.param {
+ background: var(--bg-card);
+ border: 1px solid var(--border-color);
+ padding: 1.5rem;
+ border-radius: var(--radius);
+ display: flex;
+ gap: 15px;
+ }.param-icon {
+ font-size: 1.3rem;
+ color: var(--accent);
+ background: rgba(56, 189, 248, 0.1);
+ width: 40px;
+ height: 40px;
+ border-radius: 50%;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ flex-shrink: 0;
+ }.param-content h4 {
+ font-size: 1.05rem;
+ margin-bottom: 0.4rem;
+ }.param-content p {
+ color: var(--text-muted);
+ font-size: 0.9rem;
+ }
+
+ /* --- Comparison Data Table --- */.category-comparison {
+ padding: 5rem 0;
+ background: #070a12;
+ border-top: 1px solid var(--border-color);
+ }.comparison-table {
+ overflow-x: auto;
+ border: 1px solid var(--border-color);
+ border-radius: var(--radius);
+ }
+
+ table {
+ width: 100%;
+ border-collapse: collapse;
+ text-align: left;
+ font-size: 0.95rem;
+ background: var(--bg-card);
+ }
+
+ th {
+ background: #0f172a;
+ padding: 1.2rem;
+ font-weight: 600;
+ border-bottom: 1px solid var(--border-color);
+ color: var(--text-main);
+ }
+
+ td {
+ padding: 1.2rem;
+ border-bottom: 1px solid var(--border-color);
+ color: var(--text-muted);
+ }
+
+ tr:last-child td {
+ border-bottom: none;
+ }
+
+ tr:hover td {
+ color: var(--text-main);
+ background: rgba(255, 255, 255, 0.01);
+ }.stars {
+ color: #f59e0b;
+ }
+
+ /* --- Performance Leaders --- */.most-popular {
+ padding: 5rem 0;
+ }.popular-categories {
+ display: grid;
+ grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+ gap: 1.5rem;
+ }.popular-card {
+ background: var(--bg-card);
+ border: 1px solid var(--border-color);
+ padding: 2rem;
+ border-radius: var(--radius);
+ display: flex;
+ gap: 20px;
+ position: relative;
+ }.popular-rank {
+ font-size: 2rem;
+ font-weight: 800;
+ line-height: 1;
+ }.btn-small {
+ background: var(--border-color);
+ padding: 0.5rem 1.2rem;
+ border-radius: 6px;
+ font-size: 0.85rem;
+ font-weight: 600;
+ display: inline-block;
+ margin-top: 1rem;
+ border: 1px solid transparent;
+ }.btn-small:hover {
+ border-color: var(--accent);
+ background: transparent;
+ color: var(--accent);
+ }
+
+ /* --- Action Footprint CTA --- */.categories-cta {
+ background: linear-gradient(180deg, var(--bg-main) 0%, #070a12 100%);
+ padding: 6rem 0;
+ text-align: center;
+ border-top: 1px solid var(--border-color);
+ }.cta-buttons {
+ display: flex;
+ justify-content: center;
+ gap: 1rem;
+ margin-top: 2.5rem;
+ }.btn {
+ padding: 0.8rem 2rem;
+ border-radius: 30px;
+ font-weight: 600;
+ font-size: 0.95rem;
+ }.btn-primary {
+ background: var(--accent-gradient);
+ color: #0b0f19;
+ }.btn-secondary {
+ border: 1px solid var(--border-color);
+ color: var(--text-main);
+ }.btn-secondary:hover {
+ border-color: var(--text-muted);
+ }
+
+ /* --- Footer Standards --- */.footer {
+ background: #070a12;
+ border-top: 1px solid var(--border-color);
+ padding: 5rem 0 3rem;
+ }.footer-grid {
+ display: grid;
+ grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+ gap: 3rem;
+ margin-bottom: 4rem;
+ }.footer-col h3 {
+ font-size: 0.95rem;
+ font-weight: 600;
+ text-transform: uppercase;
+ letter-spacing: 0.5px;
+ margin-bottom: 1.5rem;
+ color: var(--text-main);
+ }.footer-links {
+ list-style: none;
+ }.footer-links li {
+ margin-bottom: 0.8rem;
+ }.footer-links a {
+ color: var(--text-muted);
+ font-size: 0.9rem;
+ }.footer-links a:hover {
+ color: var(--accent);
+ }.footer-bottom {
+ border-top: 1px solid var(--border-color);
+ padding-top: 2rem;
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ font-size: 0.85rem;
+ color: var(--text-muted);
+ }
+
+ /* Responsive Breakpoints */
+ @media (max-width: 992px) {.category-card.large { grid-column: span 1; flex-direction: column; }.category-image { width: 100%; height: 200px; }
+ }
+
+ @media (max-width: 768px) {.nav-menu { display: none; }.categories-hero h1 { font-size: 2.5rem; }.footer-bottom { flex-direction: column; gap: 1rem; text-align: center; }
+ }
+ 
+.uniform-footer{background:#0a0f1d;border-top:1px solid rgba(255,255,255,.08);margin-top:48px;padding:40px 20px 20px;}
+.uniform-footer .uf-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:24px;max-width:1100px;margin:0 auto;}
+.uniform-footer h3{color:#fff;font-size:1rem;margin:0 0 12px;}
+.uniform-footer p{color:#9aa5b8;font-size:.88rem;margin:0;}
+.uniform-footer ul{list-style:none;margin:0;padding:0;}
+.uniform-footer li{padding:4px 0;}
+.uniform-footer a{color:#9aa5b8;text-decoration:none;font-size:.9rem;}
+.uniform-footer a:hover{color:#60a5fa;}
+.uniform-footer .uf-bottom{border-top:1px solid rgba(255,255,255,.08);margin-top:20px;padding-top:14px;text-align:center;color:#7c8698;font-size:.82rem;max-width:1100px;margin-left:auto;margin-right:auto;}
+@media (max-width:700px){.uniform-footer .uf-grid{grid-template-columns:1fr;text-align:center;}}
+</style>
+<link href="favicon.png" rel="icon" type="image/png"/>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebSite", "name": "Ranking Hours", "url": "https://ranking-hours.uz/", "description": "Independent product comparisons and buying guides."}</script><link href="https://ranking-hours.uz/categories.html" rel="canonical"/><script async="" crossorigin="anonymous" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3010655136119393"></script>
+<meta content="website" property="og:type"/><meta content="Categories | Ranking Hours" property="og:title"/><meta content="Browse Ranking Hours categories for smartphones, computers, gaming, audio, vehicles, appliances, software, and other comparison topics." property="og:description"/><meta content="https://ranking-hours.uz/categories.html" property="og:url"/><meta content="https://ranking-hours.uz/Ranking-hours.jpg" property="og:image"/><meta content="summary_large_image" name="twitter:card"/><meta content="Categories | Ranking Hours" name="twitter:title"/><meta content="Browse Ranking Hours categories for smartphones, computers, gaming, audio, vehicles, appliances, software, and other comparison topics." name="twitter:description"/><script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "name": "Categories | Ranking Hours", "headline": "Categories | Ranking Hours", "description": "Browse Ranking Hours categories for smartphones, computers, gaming, audio, vehicles, appliances, software, and other comparison topics.", "url": "https://ranking-hours.uz/categories.html", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://ranking-hours.uz/categories.html"}, "publisher": {"@type": "Organization", "name": "Ranking Hours", "url": "https://ranking-hours.uz/"}}</script></head>
+<body><nav class="navbar">
+<div class="container">
+<a class="logo" href="index.html">
+<span>Ranking <span class="highlight"> Hours</span></span>
+</a>
+<div class="nav-menu">
+<a href="index.html">Home</a>
+<a href="comparisons.html">Comparisons</a>
+<a class="active" href="categories.html">Categories</a>
+<a href="methodology.html">Methodology</a>
+<a href="about.html">About</a>
+<a href="faq.html">FAQ</a>
+<a href="contact.html">Contact</a>
+</div>
+</div>
+</nav>
+<main>
+<section class="categories-hero">
+<div class="container">
+<h1>Categories</h1>
+<p class="hero-subtitle">We organise comparisons by the kind of decision they help with, not just by product type. Each category below covers a specific set of trade-offs — pick the one closest to what you're actually shopping for, and you'll land on comparisons written with that decision in mind. If you're already set on two exact products, jumping straight into the relevant category and scanning the card descriptions is usually quicker than reading this whole page top to bottom.</p>
+<div class="stats-grid">
+<div class="stat"><i class="fas fa-folder-tree"></i><div><h3>7</h3><p>Active categories</p></div></div>
+<div class="stat"><i class="fas fa-scale-balanced"></i><div><h3>40+</h3><p>Comparisons across them</p></div></div>
+<div class="stat"><i class="fas fa-star"></i><div><h3>4.4</h3><p>Average category rating</p></div></div>
+<div class="stat"><i class="fas fa-clock-rotate-left"></i><div><h3>2026</h3><p>Last structural review</p></div></div>
+</div>
+</div>
+</section>
+
+<section class="main-categories container">
+<h2 class="section-title">Browse by category</h2>
+<div class="categories-grid">
+
+<a class="category-card large" href="smartphone-comparisons.html">
+<div class="category-image"><img alt="Smartphone comparisons" loading="lazy" src="smartphone.jpg"/></div>
+<div>
+<div class="category-icon"><i class="fas fa-mobile-alt"></i></div>
+<span class="category-count">12 comparisons</span>
+<h3>Smartphones &amp; Tablets</h3>
+<p class="category-desc">Camera processing, battery health after real use, and how many years of software updates you're actually getting — the questions that matter more than the chipset name on the box.</p>
+<div class="category-meta"><span><i class="fas fa-star"></i> 4.4 avg</span><span><i class="fas fa-arrow-right"></i> View category</span></div>
+</div>
+</a>
+
+<a class="category-card" href="laptop-comparisons.html">
+<div class="category-icon"><i class="fas fa-laptop"></i></div>
+<span class="category-count">9 comparisons</span>
+<h3>Laptops &amp; PCs</h3>
+<p class="category-desc">What a machine feels like once real work is loaded onto it — sustained performance, keyboard feel, and how repairable it is down the line.</p>
+<div class="category-meta"><span><i class="fas fa-star"></i> 4.3 avg</span><span><i class="fas fa-arrow-right"></i> View category</span></div>
+</a>
+
+<a class="category-card" href="automotive-comparisons.html">
+<div class="category-icon"><i class="fas fa-car"></i></div>
+<span class="category-count">7 comparisons</span>
+<h3>Cars &amp; EVs</h3>
+<p class="category-desc">Real range against the rated figure, running costs over years of ownership, and how each car actually feels on a normal commute.</p>
+<div class="category-meta"><span><i class="fas fa-star"></i> 4.7 avg</span><span><i class="fas fa-arrow-right"></i> View category</span></div>
+</a>
+
+<a class="category-card" href="appliances-comparisons.html">
+<div class="category-icon"><i class="fas fa-blender"></i></div>
+<span class="category-count">5 comparisons</span>
+<h3>Home Appliances</h3>
+<p class="category-desc">Noise at night, the real cost of filters and consumables, and how forgiving a machine is when you don't follow the manual exactly.</p>
+<div class="category-meta"><span><i class="fas fa-star"></i> 4.2 avg</span><span><i class="fas fa-arrow-right"></i> View category</span></div>
+</a>
+
+<a class="category-card" href="audio.html">
+<div class="category-icon"><i class="fas fa-headphones"></i></div>
+<span class="category-count">6 comparisons</span>
+<h3>Audio</h3>
+<p class="category-desc">Noise cancelling on an actual commute rather than in a quiet lab, comfort over long listening sessions, and codec support that changes what you actually hear.</p>
+<div class="category-meta"><span><i class="fas fa-star"></i> 4.5 avg</span><span><i class="fas fa-arrow-right"></i> View category</span></div>
+</a>
+
+<a class="category-card" href="gaming.html">
+<div class="category-icon"><i class="fas fa-gamepad"></i></div>
+<span class="category-count">4 comparisons</span>
+<h3>Gaming</h3>
+<p class="category-desc">Exclusive libraries, subscription value, and controller ergonomics — separated from whatever happens to be on sale this particular month.</p>
+<div class="category-meta"><span><i class="fas fa-star"></i> 4.6 avg</span><span><i class="fas fa-arrow-right"></i> View category</span></div>
+</a>
+
+<a class="category-card" href="software.html">
+<div class="category-icon"><i class="fas fa-code"></i></div>
+<span class="category-count">5 comparisons</span>
+<h3>Software &amp; Cloud Tools</h3>
+<p class="category-desc">What a pricing tier actually restricts once the free trial ends, and how steep the learning curve really is for someone starting from zero.</p>
+<div class="category-meta"><span><i class="fas fa-star"></i> 4.1 avg</span><span><i class="fas fa-arrow-right"></i> View category</span></div>
+</a>
+
+</div>
+</section>
+
+<section class="category-features">
+<div class="container">
+<h2 class="section-title">How a category actually gets built</h2>
+<div class="tabs-header">
+<button class="tab-btn active" data-tab="tab-criteria">What we check</button>
+<button class="tab-btn" data-tab="tab-rating">How ratings are set</button>
+<button class="tab-btn" data-tab="tab-updates">Update schedule</button>
+</div>
+
+<div class="tab-pane active" id="tab-criteria">
+<div class="test-params">
+<div class="param"><div class="param-icon"><i class="fas fa-list-check"></i></div><div class="param-content"><h4>Manufacturer specifications first</h4><p>Every comparison starts from what the maker actually publishes — capacity, dimensions, claimed performance — since that's the one number both products share.</p></div></div>
+<div class="param"><div class="param-icon"><i class="fas fa-users"></i></div><div class="param-content"><h4>Independent reviews and owner reports</h4><p>We cross-check specs against professional reviews and long-term owner feedback, looking specifically for where the two disagree.</p></div></div>
+<div class="param"><div class="param-icon"><i class="fas fa-scale-unbalanced"></i></div><div class="param-content"><h4>Everyday trade-offs</h4><p>Noise, maintenance, learning curve, resale value — the details that only show up after a few months of actually owning something.</p></div></div>
+</div>
+</div>
+
+<div class="tab-pane" id="tab-rating">
+<div class="test-params">
+<div class="param"><div class="param-icon"><i class="fas fa-star-half-stroke"></i></div><div class="param-content"><h4>A relative score, not an absolute one</h4><p>The rating on a comparison reflects how clearly one product suits most buyers better than the other, not a fixed quality performance score.</p></div></div>
+<div class="param"><div class="param-icon"><i class="fas fa-people-arrows"></i></div><div class="param-content"><h4>Weighted toward daily use</h4><p>A feature used once a year counts for less than one you'd touch every day, even if it looks more impressive on a spec sheet.</p></div></div>
+<div class="param"><div class="param-icon"><i class="fas fa-eye"></i></div><div class="param-content"><h4>No hidden tie-breakers</h4><p>When two products are genuinely close, the rating stays close too — we don't force a wider gap to make the conclusion feel more decisive.</p></div></div>
+</div>
+</div>
+
+<div class="tab-pane" id="tab-updates">
+<div class="test-params">
+<div class="param"><div class="param-icon"><i class="fas fa-rotate"></i></div><div class="param-content"><h4>Revisited on real triggers</h4><p>A comparison gets a fresh look when a product is discontinued, replaced, or has a meaningful price change — not on a fixed calendar.</p></div></div>
+<div class="param"><div class="param-icon"><i class="fas fa-flag"></i></div><div class="param-content"><h4>Reader reports matter</h4><p>Messages through the contact page pointing out something outdated get read, and they do lead to pages being corrected.</p></div></div>
+<div class="param"><div class="param-icon"><i class="fas fa-calendar-check"></i></div><div class="param-content"><h4>Periodic full passes</h4><p>Beyond individual triggers, older categories get a slower, periodic sweep to catch anything that's gone stale without anyone flagging it.</p></div></div>
+</div>
+</div>
+
+</div>
+</section>
+
+<section class="category-features" style="border-top:none;">
+<div class="container">
+<h2 class="section-title">Choosing between two categories</h2>
+<p style="color:var(--text-muted);max-width:820px;margin-bottom:2rem;">Some purchases don't fit neatly into one category, and that's normal rather than a sign the directory is missing something. A few situations come up often enough that they're worth addressing directly.</p>
+<div class="test-params">
+<div class="param"><div class="param-icon"><i class="fas fa-tablet-screen-button"></i></div><div class="param-content"><h4>A tablet that might replace a laptop</h4><p>We file this under Smartphones &amp; Tablets by default, since the hardware and update cycle behave more like a phone's, but if you're specifically weighing a tablet against a genuine laptop, the laptop comparisons will give you the more useful trade-offs on things like keyboard quality and multitasking.</p></div></div>
+<div class="param"><div class="param-icon"><i class="fas fa-car-side"></i></div><div class="param-content"><h4>A plug-in hybrid</h4><p>These sit in Cars &amp; EVs alongside full electric vehicles, since the buying decision — charging habits, running costs, resale value — has more in common with an EV purchase than with a purely combustion one, even though the vehicle itself is a mix of both. Where a plug-in hybrid is being cross-shopped against a traditional petrol or diesel model instead, the comparison will say so explicitly rather than assuming every reader is already sold on electrification, since that's a genuinely different decision with different priorities.</p></div></div>
+<div class="param"><div class="param-icon"><i class="fas fa-headset"></i></div><div class="param-content"><h4>A gaming headset</h4><p>We treat these as Audio rather than Gaming, because the comfort, sound signature and microphone quality questions are closer to a general headphone comparison than to a console or controller one.</p></div></div>
+<div class="param"><div class="param-icon"><i class="fas fa-robot"></i></div><div class="param-content"><h4>A smart-home appliance with an app</h4><p>These stay in Home Appliances even when the app and connectivity features are a big part of the pitch, since day-to-day satisfaction still comes down to how well the physical appliance does its actual job.</p></div></div>
+<div class="param"><div class="param-icon"><i class="fas fa-camera"></i></div><div class="param-content"><h4>A phone camera versus a dedicated camera</h4><p>This one usually isn't a fair comparison in either direction — a flagship phone camera and a mirrorless body solve different problems — so rather than forcing it into one category, we address it directly inside the relevant smartphone comparison whenever it's a genuinely common question for that specific model.</p></div></div>
+<div class="param"><div class="param-icon"><i class="fas fa-briefcase"></i></div><div class="param-content"><h4>A subscription bundled with hardware</h4><p>When a purchase is really a hardware decision with a subscription attached — a game console and its online service, for example — we keep the comparison in the hardware category and mention the subscription as one factor among several, rather than splitting it into a separate software write-up.</p></div></div>
+</div>
+</div>
+</section>
+
+<section class="main-categories container" style="padding-top:0;">
+<h2 class="section-title">Notes on each category</h2>
+<div class="categories-grid">
+<div class="category-card">
+<h3>Smartphones &amp; Tablets</h3>
+<p class="category-desc">This is the category that changes fastest, since two or three flagship launches a year reshuffle which comparisons are actually relevant. We try to retire or clearly flag comparisons involving a phone that's been discontinued for more than a generation, rather than leaving an outdated match-up sitting at the top of search results.</p>
+</div>
+<div class="category-card">
+<h3>Laptops &amp; PCs</h3>
+<p class="category-desc">Less seasonal than phones — a laptop bought this year is a reasonable purchase for three to five years, so these comparisons stay relevant longer. The trade-off is that when a manufacturer does refresh a line, the change can be substantial enough that an older comparison stops being useful almost overnight.</p>
+</div>
+<div class="category-card">
+<h3>Cars &amp; EVs</h3>
+<p class="category-desc">The category where a comparison is least likely to age well on pricing alone, since incentives, tax treatment and financing offers shift by region and by month in a way that a spec sheet never captures. Treat the driving-experience conclusions as durable and the price figures as a starting point to verify locally.</p>
+</div>
+<div class="category-card">
+<h3>Home Appliances</h3>
+<p class="category-desc">Product cycles here are slow, and a well-reviewed appliance can stay the sensible choice for several years without a newer model changing the calculation much. The main thing worth re-checking over time is consumable pricing, which can drift upward well after the appliance itself has stopped changing, sometimes enough to change which of two similarly priced machines actually costs less to own after a couple of years.</p>
+</div>
+<div class="category-card">
+<h3>Audio</h3>
+<p class="category-desc">A category where personal fit genuinely matters as much as the review — ear shape and listening habits affect comfort and even perceived sound quality in ways a comparison article can describe but never fully replace for you. Treat these as a strong shortlist, not a final verdict.</p>
+</div>
+<div class="category-card">
+<h3>Gaming</h3>
+<p class="category-desc">The category most affected by things outside the hardware itself — exclusive release schedules, subscription pricing changes, and platform-specific sales all shift the practical value of a console well after the comparison was written, so it's worth a quick check of current offers, current exclusive lineups and current subscription pricing before buying, even if the hardware comparison itself hasn't changed at all.</p>
+</div>
+<div class="category-card">
+<h3>Software &amp; Cloud Tools</h3>
+<p class="category-desc">Pricing tiers and feature sets here can change with a single company announcement, more often than in any other category we cover. We link out to the provider's current pricing page wherever possible, since that number is the one most likely to have moved since a comparison was published.</p>
+</div>
+</div>
+</section>
+
+<section class="category-features">
+<div class="container">
+<h2 class="section-title">A few mistakes worth avoiding</h2>
+<div class="test-params">
+<div class="param"><div class="param-icon"><i class="fas fa-triangle-exclamation"></i></div><div class="param-content"><h4>Comparing launch-day prices only</h4><p>Most products drop in price within the first six to twelve months. If a comparison from last year still quotes the original launch price, treat that figure as historical context, not something to budget around.</p></div></div>
+<div class="param"><div class="param-icon"><i class="fas fa-triangle-exclamation"></i></div><div class="param-content"><h4>Reading only the highest-rated comparison in a category</h4><p>A high rating usually means the two products compared are well matched, not that either one is objectively the best available. The lower-rated comparisons often contain the more decisive, clear-cut recommendations.</p></div></div>
+<div class="param"><div class="param-icon"><i class="fas fa-triangle-exclamation"></i></div><div class="param-content"><h4>Skipping the category page entirely</h4><p>Jumping straight to a single comparison can mean missing a more relevant match-up one click away — someone comparing two mid-range phones might not realise a newer budget option now covers the same ground for less.</p></div></div>
+<div class="param"><div class="param-icon"><i class="fas fa-triangle-exclamation"></i></div><div class="param-content"><h4>Assuming a category page is exhaustive</h4><p>We add comparisons as we write them, not as a complete catalogue of every product on the market. If something you're specifically looking for isn't listed yet, the contact page is the fastest way to ask for it.</p></div></div>
+</div>
+</div>
+</section>
+
+<section class="most-popular container" style="padding-top:0;">
+<h2 class="section-title">Who each category tends to suit</h2>
+<div class="categories-grid">
+<div class="category-card">
+<h3>Smartphones &amp; Tablets</h3>
+<p class="category-desc">Best for someone upgrading a phone they've had for two or three years and trying to work out whether the newest model is worth the jump, or whether last year's flagship at a lower price covers everything they actually need.</p>
+</div>
+<div class="category-card">
+<h3>Laptops &amp; PCs</h3>
+<p class="category-desc">Most useful for buyers choosing a primary work or study machine, where the decision has to hold up for several years rather than being revisited every product cycle.</p>
+</div>
+<div class="category-card">
+<h3>Cars &amp; EVs</h3>
+<p class="category-desc">Aimed at people comparing two specific models they're realistically choosing between, not browsing every vehicle on the market — the comparisons go deep on two cars rather than wide across many.</p>
+</div>
+<div class="category-card">
+<h3>Home Appliances</h3>
+<p class="category-desc">Written for anyone replacing something that broke or moved with them to a new place, where the goal is usually "good enough and reliable" rather than chasing the single best-reviewed model on the market.</p>
+</div>
+<div class="category-card">
+<h3>Audio</h3>
+<p class="category-desc">Useful for someone who already knows roughly what they use headphones for — commuting, calls, gym sessions — and wants to know which of two specific options fits that use case better.</p>
+</div>
+<div class="category-card">
+<h3>Gaming</h3>
+<p class="category-desc">Mostly for people choosing a console for the first time or switching platforms, where the exclusive library and existing friend group matter as much as the hardware itself.</p>
+</div>
+<div class="category-card">
+<h3>Software &amp; Cloud Tools</h3>
+<p class="category-desc">Aimed at freelancers, students and small teams comparing tools on a real budget, where the free-tier limitations end up mattering more than the headline feature list.</p>
+</div>
+</div>
+</section>
+
+<section class="category-features">
+<div class="container">
+<h2 class="section-title">Why these seven categories</h2>
+<p style="color:var(--text-muted);max-width:820px;">The list isn't meant to mirror a retailer's navigation menu. We settled on these seven because they're the groupings where readers most often arrive already choosing between two specific, named products rather than browsing generally — which is exactly the situation a head-to-head comparison is built for. A category like "accessories" or "wearables" would technically be accurate for some of our older content, but in practice those searches tend to be broader and better served by a buying guide than a direct comparison, so we've kept them out of this directory for now rather than adding a category with only one or two thin entries in it. As the comparison library grows, splitting one of the busier sections — smartphones is the likeliest candidate — into a narrower pair of categories is something we'd rather do properly, once there's enough depth on both sides to make the split genuinely useful, than rush just to make the directory look more comprehensive than it currently is.</p>
+</div>
+</section>
+
+<section class="category-comparison">
+<div class="container">
+<h2 class="section-title">Categories at a glance</h2>
+<div class="comparison-table">
+<table>
+<thead><tr><th>Category</th><th>Comparisons</th><th>Avg. rating</th><th>Last reviewed</th></tr></thead>
+<tbody>
+<tr><td>Smartphones &amp; Tablets</td><td>12</td><td class="stars">★★★★½ 4.4</td><td>2026</td></tr>
+<tr><td>Laptops &amp; PCs</td><td>9</td><td class="stars">★★★★½ 4.3</td><td>2026</td></tr>
+<tr><td>Cars &amp; EVs</td><td>7</td><td class="stars">★★★★★ 4.7</td><td>2026</td></tr>
+<tr><td>Home Appliances</td><td>5</td><td class="stars">★★★★ 4.2</td><td>2025</td></tr>
+<tr><td>Audio</td><td>6</td><td class="stars">★★★★½ 4.5</td><td>2026</td></tr>
+<tr><td>Gaming</td><td>4</td><td class="stars">★★★★½ 4.6</td><td>2025</td></tr>
+<tr><td>Software &amp; Cloud Tools</td><td>5</td><td class="stars">★★★★ 4.1</td><td>2025</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+
+<section class="most-popular container">
+<h2 class="section-title">Most-visited categories this quarter</h2>
+<div class="popular-categories">
+<div class="popular-card">
+<div class="popular-rank">01</div>
+<div>
+<h3>Smartphones &amp; Tablets</h3>
+<p class="category-desc">Consistently our busiest section — phone upgrade cycles bring readers back every few months.</p>
+<a class="btn-small" href="smartphone-comparisons.html">View category</a>
+</div>
+</div>
+<div class="popular-card">
+<div class="popular-rank">02</div>
+<div>
+<h3>Cars &amp; EVs</h3>
+<p class="category-desc">The highest average rating on the site, largely because EV buyers tend to research far more thoroughly before committing.</p>
+<a class="btn-small" href="automotive-comparisons.html">View category</a>
+</div>
+</div>
+<div class="popular-card">
+<div class="popular-rank">03</div>
+<div>
+<h3>Laptops &amp; PCs</h3>
+<p class="category-desc">A steady, year-round category rather than a seasonal spike — people replace laptops on their own schedule, not a launch calendar.</p>
+<a class="btn-small" href="laptop-comparisons.html">View category</a>
+</div>
+</div>
+</div>
+</section>
+
+<section class="categories-cta">
+<div class="container">
+<h2 class="section-title" style="display:inline-block;">Not sure which category fits?</h2>
+<p class="hero-subtitle">If your question spans two categories — a tablet that might replace a laptop, for instance — start with the comparisons page and use the search box instead. It searches titles and summaries across every category at once, which tends to work better than guessing which single section a borderline product should live under.</p>
+<div class="cta-buttons">
+<a class="btn btn-primary" href="comparisons.html">Search all comparisons</a>
+<a class="btn btn-secondary" href="contact.html">Suggest a category</a>
+</div>
+</div>
+</section>
+
+<section class="category-features" style="border-top:1px solid var(--border-color);">
+<div class="container">
+<h2 class="section-title">Questions about how categories work</h2>
+<div class="test-params">
+<div class="param"><div class="param-icon"><i class="fas fa-plus"></i></div><div class="param-content"><h4>Will you add more categories?</h4><p>Probably, but only once there's enough genuine comparison content to justify a dedicated section — we'd rather fold a handful of related articles into an existing category than launch a near-empty one just to have more entries in this directory — a category page with two or three comparisons in it reads as unfinished, and readers can usually tell the difference.</p></div></div>
+<div class="param"><div class="param-icon"><i class="fas fa-arrows-rotate"></i></div><div class="param-content"><h4>Can a product move to a different category later?</h4><p>Yes, occasionally. If a product genuinely straddles two categories and we picked the less useful one initially, we'll move it and update the internal links rather than leaving it somewhere that doesn't serve readers well.</p></div></div>
+<div class="param"><div class="param-icon"><i class="fas fa-magnifying-glass-chart"></i></div><div class="param-content"><h4>Why do some categories have more comparisons than others?</h4><p>Mostly reader demand and how fast a market moves — phones get compared more often simply because more people are actively deciding between two phones at any given moment than, say, two air purifiers.</p></div></div>
+<div class="param"><div class="param-icon"><i class="fas fa-comment-dots"></i></div><div class="param-content"><h4>What if I disagree with how a category is scored?</h4><p>Tell us specifically why through the contact page — a category's average rating is just a summary of the comparisons inside it, and if one of those individual ratings looks wrong to you, that's exactly the kind of feedback that gets a page a second look.</p></div></div>
+<div class="param"><div class="param-icon"><i class="fas fa-globe"></i></div><div class="param-content"><h4>Are these categories the same in every country?</h4><p>The categories themselves are universal, but pricing, availability and even which models get sold varies by region — a car or appliance comparison written with one market in mind may reference trims or price points that don't exist where you're shopping, so treat the qualitative conclusions as more portable than the specific numbers.</p></div></div>
+<div class="param"><div class="param-icon"><i class="fas fa-layer-group"></i></div><div class="param-content"><h4>Do subcategories exist within these seven?</h4><p>Informally, yes — smartphones naturally splits into flagship and budget tiers, laptops into ultrabooks and workstation-class machines, and cars into everyday commuters and higher-performance models — but we haven't built separate pages for those splits yet, since the category page and the search box together already get most readers to the right comparison quickly enough without an extra layer of navigation to click through.</p></div></div>
+</div>
+</div>
+</section>
+
+<section class="category-features">
+<div class="container">
+<h2 class="section-title">How this directory is kept honest</h2>
+<div class="tabs-header" style="pointer-events:none;">
+<span class="tab-btn active">Structure over sales</span>
+</div>
+<div class="tab-pane active">
+<div class="test-params">
+<div class="param"><div class="param-icon"><i class="fas fa-hand-holding-dollar"></i></div><div class="param-content"><h4>Categories aren't ranked by ad revenue</h4><p>Some categories on this site earn more through affiliate links than others simply because of how retailers structure their programs — electronics generally pay better than home appliances, for instance. That difference has no bearing on how many comparisons we write for a category or how prominently it appears in this directory. The order above reflects reader traffic and how much genuinely useful ground there is to cover, not which section is most profitable for us.</p></div></div>
+<div class="param"><div class="param-icon"><i class="fas fa-database"></i></div><div class="param-content"><h4>Numbers on this page are directional</h4><p>The comparison counts and average ratings shown throughout this page are accurate as of our last full review, but they shift slightly as new comparisons get published and older ones get retired. Treat them as a reasonable snapshot of how active a category is rather than a live, second-by-second count — if you need the exact current figure for a specific comparison, the individual article itself is always the more accurate source.</p></div></div>
+<div class="param"><div class="param-icon"><i class="fas fa-user-shield"></i></div><div class="param-content"><h4>No category is quietly sponsored</h4><p>None of the seven sections here exist because a brand paid for placement, and none of them will in the future without it being disclosed clearly on the page itself. If that ever changes for a specific comparison, the affiliate disclosure linked in the footer is where it would be noted.</p></div></div>
+<div class="param"><div class="param-icon"><i class="fas fa-scale-balanced"></i></div><div class="param-content"><h4>We'd rather have fewer, deeper categories</h4><p>It would be easy to split this directory into fifteen or twenty narrow categories to look more thorough, but a category with two comparisons in it isn't actually useful to anyone browsing — it just adds another click. We've kept the list at seven deliberately, and we'll only add an eighth, or split an existing one, once there's enough real content behind it to justify the extra click for readers rather than just padding out this page.</p></div></div>
+</div>
+</div>
+</div>
+</section>
+
+<section class="most-popular container">
+<h2 class="section-title">If you came here from a search engine</h2>
+<p style="color:var(--text-muted);max-width:820px;">There's a decent chance you landed on this exact page looking for something specific — a particular product, a particular pairing — rather than browsing categories for their own sake. If that's the case, the fastest path is usually the search box on the <a href="comparisons.html" style="color:var(--accent);">all comparisons page</a>, which checks titles and summaries across every category at once instead of making you guess which section a product belongs in. This page exists mainly for the opposite situation: when you know roughly what kind of product you're deciding on, but haven't settled on the two specific options yet. Bookmarking this page is also reasonable if you tend to make one or two significant purchases a year across different categories — a phone this spring, an appliance in the autumn — since the card descriptions above are written to still make sense on a second or third visit, months apart, without needing to re-read everything from scratch. Either way, nothing on this page requires a login or tracks your browsing to work — it's a plain directory, and it's meant to stay that way.</p>
+</section>
+
+</main>
+<footer class="uniform-footer">
+<div class="uf-grid">
+<div><h3>Ranking Hours</h3><p>Comparisons built on published specs, available documentation and the kind of details that actually affect a purchase.</p></div>
+<div><h3>Explore</h3><ul><li><a href="index.html">Home</a></li><li><a href="comparisons.html">Comparisons</a></li><li><a href="categories.html">Categories</a></li></ul></div>
+<div><h3>Company</h3><ul><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li><li><a href="faq.html">FAQ</a></li></ul></div>
+<div><h3>Legal</h3><ul><li><a href="privacy-policy.html">Privacy Policy</a></li><li><a href="terms-of-service.html">Terms of Service</a></li><li><a href="AFFILIATE-DISCLOSURE.html">Affiliate Disclosure</a></li></ul></div>
+</div>
+<div class="uf-bottom"><p>&#169; 2025-2026 ranking-hours.uz. All rights reserved.</p></div>
+</footer>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+ var tabBtns = document.querySelectorAll('.tab-btn');
+ var tabPanes = document.querySelectorAll('.tab-pane');
+ tabBtns.forEach(function (btn) {
+ btn.addEventListener('click', function () {
+ tabBtns.forEach(function (b) { b.classList.remove('active'); });
+ tabPanes.forEach(function (p) { p.classList.remove('active'); });
+ btn.classList.add('active');
+ var pane = document.getElementById(btn.dataset.tab);
+ if (pane) pane.classList.add('active');
+ });
+ });
+});
+</script>
+<script src="cookie-notice.js" defer></script>
+</body>
+</html>
