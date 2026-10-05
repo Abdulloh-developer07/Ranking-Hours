@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="Use the Ranking Hours search page to find comparison guides, reviews, buying resources, and other technology content across the website." name="description"/>
+<title>Search | Ranking Hours</title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet"/>
+<style>
+ /* --- PREMIUM BOMBA DARK ULTRA-MODERN DESIGN SYSTEM --- */
+ :root {
+ --bg-main: #070a13;
+ --bg-card: #0f1626;
+ --bg-input: #17223b;
+ --accent-cyan: #00f2fe;
+ --accent-blue: #3b82f6;
+ --accent-purple: #8b5cf6;
+ --text-primary: #f8fafc;
+ --text-muted: #94a3b8;
+ --border-color: rgba(255, 255, 255, 0.06);
+ --border-glow: rgba(0, 242, 254, 0.2);
+ --card-gradient: linear-gradient(145deg, #111a2e 0%, #0d1324 100%);
+ }
+
+ * {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+ }
+
+ body {
+ background-color: var(--bg-main);
+ color: var(--text-primary);
+ min-height: 100vh;
+ display: flex;
+ flex-direction: column;
+ overflow-x: hidden;
+ position: relative;
+ }
+
+ /* --- NEO GLOW BACKGROUND BLUR EFFECTS --- */
+ body::before {
+ content: '';
+ position: absolute;
+ width: 600px;
+ height: 600px;
+ background: radial-gradient(circle, rgba(0, 242, 254, 0.08) 0%, transparent 65%);
+ top: -150px;
+ left: -150px;
+ z-index: -1;
+ pointer-events: none;
+ }
+
+ body::after {
+ content: '';
+ position: absolute;
+ width: 700px;
+ height: 700px;
+ background: radial-gradient(circle, rgba(139, 92, 246, 0.06) 0%, transparent 70%);
+ bottom: -200px;
+ right: -200px;
+ z-index: -1;
+ pointer-events: none;
+ }.container {
+ max-width: 1400px;
+ margin: 0 auto;
+ padding: 0 30px;
+ width: 100%;
+ }
+
+ /* --- STICKY GLASSMORPHIC NAVIGATION --- */
+ header {
+ background: rgba(15, 22, 38, 0.75);
+ backdrop-filter: blur(16px);
+ -webkit-backdrop-filter: blur(16px);
+ border-bottom: 1px solid var(--border-color);
+ position: sticky;
+ top: 0;
+ z-index: 100;
+ padding: 18px 0;
+ }.header-container {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ }.logo a {
+ color: var(--text-primary);
+ text-decoration: none;
+ font-size: 1.8rem;
+ font-weight: 800;
+ display: flex;
+ align-items: center;
+ gap: 12px;
+ letter-spacing: -0.5px;
+ }.logo span {
+ background: linear-gradient(135deg, var(--accent-cyan) 0%, var(--accent-blue) 100%);
+ -webkit-background-clip: text;
+ -webkit-text-fill-color: transparent;
+ }
+
+ nav ul {
+ display: flex;
+ list-style: none;
+ gap: 25px;
+ }
+
+ nav a {
+ color: var(--text-muted);
+ text-decoration: none;
+ font-weight: 600;
+ font-size: 0.95rem;
+ padding: 10px 20px;
+ border-radius: 14px;
+ transition: all 0.3s ease;
+ }
+
+ nav a:hover, nav a.active {
+ color: var(--text-primary);
+ background: rgba(255, 255, 255, 0.04);
+ box-shadow: inset 0 1px 1px rgba(255,255,255,0.08);
+ }
+
+ /* --- SEARCH ENGINE HERO DISPLAY --- */.search-hero {
+ text-align: center;
+ padding: 80px 0 50px;
+ }.search-hero h1 {
+ font-size: 3.5rem;
+ font-weight: 900;
+ letter-spacing: -1.5px;
+ margin-bottom: 20px;
+ background: linear-gradient(135deg, #ffffff 20%, #a5b4fc 100%);
+ -webkit-background-clip: text;
+ -webkit-text-fill-color: transparent;
+ }.search-hero p {
+ color: var(--text-muted);
+ font-size: 1.2rem;
+ max-width: 700px;
+ margin: 0 auto 45px;
+ line-height: 1.6;
+ }.search-wrapper {
+ max-width: 850px;
+ margin: 0 auto;
+ }.search-bar-box {
+ display: flex;
+ background: var(--bg-card);
+ border: 2px solid var(--border-color);
+ border-radius: 24px;
+ padding: 10px 16px;
+ align-items: center;
+ transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+ box-shadow: 0 30px 60px rgba(0,0,0,0.4);
+ }.search-bar-box:focus-within {
+ border-color: var(--accent-cyan);
+ box-shadow: 0 0 30px rgba(0, 242, 254, 0.2), 0 30px 60px rgba(0,0,0,0.5);
+ transform: translateY(-2px);
+ }.search-icon-left {
+ color: var(--text-muted);
+ font-size: 1.4rem;
+ margin-left: 15px;
+ margin-right: 20px;
+ }.search-input {
+ flex: 1;
+ background: none;
+ border: none;
+ outline: none;
+ color: var(--text-primary);
+ font-size: 1.25rem;
+ font-weight: 500;
+ padding: 12px 0;
+ }.search-input::hint {
+ color: #4b5563;
+ }
+
+ /* --- STREAMLINED NAVIGATION CHIPS --- */.filter-tags {
+ display: flex;
+ justify-content: center;
+ gap: 12px;
+ margin-top: 35px;
+ flex-wrap: wrap;
+ }.tag {
+ background: var(--bg-card);
+ border: 1px solid var(--border-color);
+ color: var(--text-muted);
+ padding: 10px 22px;
+ border-radius: 40px;
+ font-size: 0.9rem;
+ font-weight: 700;
+ cursor: pointer;
+ transition: all 0.25s ease;
+ }.tag:hover,.tag.active {
+ border-color: var(--accent-cyan);
+ color: var(--text-primary);
+ background: rgba(0, 242, 254, 0.04);
+ box-shadow: 0 0 15px rgba(0, 242, 254, 0.1);
+ }
+
+ /* --- RESULTS METADATA & GRID MATRIX --- */.results-section {
+ padding: 30px 0 100px;
+ }.results-heading {
+ font-size: 1rem;
+ text-transform: uppercase;
+ letter-spacing: 2px;
+ color: var(--text-muted);
+ margin-bottom: 35px;
+ font-weight: 800;
+ display: flex;
+ align-items: center;
+ gap: 15px;
+ }.results-heading::after {
+ content: '';
+ flex: 1;
+ height: 1px;
+ background: var(--border-color);
+ }.results-grid {
+ display: grid;
+ grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+ gap: 30px;
+ }.result-item-card {
+ background: var(--card-gradient);
+ border: 1px solid var(--border-color);
+ border-radius: 24px;
+ padding: 35px;
+ transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+ display: flex;
+ flex-direction: column;
+ justify-content: space-between;
+ text-decoration: none;
+ color: inherit;
+ position: relative;
+ overflow: hidden;
+ }.result-item-card::before {
+ content: '';
+ position: absolute;
+ top: 0;
+ left: 0;
+ width: 100%;
+ height: 100%;
+ background: linear-gradient(135deg, rgba(0, 242, 254, 0.03) 0%, transparent 50%);
+ opacity: 0;
+ transition: opacity 0.3s ease;
+ }.result-item-card:hover {
+ border-color: rgba(0, 242, 254, 0.25);
+ transform: translateY(-6px);
+ box-shadow: 0 20px 40px rgba(0,0,0,0.4), inset 0 1px 1px rgba(255,255,255,0.05);
+ }.result-item-card:hover::before {
+ opacity: 1;
+ }.card-meta {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ margin-bottom: 20px;
+ }.category-badge {
+ font-size: 0.75rem;
+ background: rgba(255,255,255,0.03);
+ padding: 6px 14px;
+ border-radius: 30px;
+ color: var(--accent-cyan);
+ font-weight: 700;
+ border: 1px solid rgba(0, 242, 254, 0.12);
+ text-transform: uppercase;
+ letter-spacing: 0.5px;
+ }.result-item-card h3 {
+ font-size: 1.4rem;
+ margin-bottom: 14px;
+ font-weight: 700;
+ color: var(--text-primary);
+ line-height: 1.4;
+ transition: color 0.2s ease;
+ }.result-item-card:hover h3 {
+ color: var(--accent-cyan);
+ }.result-item-card p {
+ color: var(--text-muted);
+ font-size: 0.98rem;
+ line-height: 1.65;
+ margin-bottom: 25px;
+ flex-grow: 1;
+ }.card-footer-link {
+ display: flex;
+ align-items: center;
+ gap: 8px;
+ font-size: 0.95rem;
+ color: var(--accent-blue);
+ font-weight: 700;
+ transition: gap 0.2s ease;
+ }.result-item-card:hover.card-footer-link {
+ gap: 12px;
+ color: var(--accent-cyan);
+ }.no-results {
+ text-align: center;
+ padding: 80px 0;
+ color: var(--text-muted);
+ font-size: 1.2rem;
+ grid-column: 1 / -1;
+ }
+
+ /* --- FOOTER COMPONENT --- */
+ footer {
+ margin-top: auto;
+ background: #04060d;
+ border-top: 1px solid var(--border-color);
+ padding: 50px 0;
+ font-size: 0.95rem;
+ color: var(--text-muted);
+ }.footer-flex {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ flex-wrap: wrap;
+ gap: 25px;
+ }.footer-links a {
+ color: var(--text-muted);
+ text-decoration: none;
+ margin-left: 25px;
+ transition: color 0.2s;
+ font-weight: 600;
+ }.footer-links a:hover {
+ color: var(--text-primary);
+ }
+
+ @media (max-width: 992px) {.results-grid { grid-template-columns: 1fr; }.search-hero h1 { font-size: 2.6rem; }
+ }
+
+ @media (max-width: 768px) {.header-container { flex-direction: column; gap: 20px; }.footer-flex { flex-direction: column; text-align: center; }.footer-links a { margin: 0 12px; }
+ }
+ </style>
+<link href="favicon.png" rel="icon" type="image/png"/>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebSite", "name": "Ranking Hours", "url": "https://ranking-hours.uz/", "description": "Independent product comparisons and buying guides."}</script><link href="https://ranking-hours.uz/search.html" rel="canonical"/>
+<meta content="website" property="og:type"/><meta content="Search | Ranking Hours" property="og:title"/><meta content="Use the Ranking Hours search page to find comparison guides, reviews, buying resources, and other technology content across the website." property="og:description"/><meta content="https://ranking-hours.uz/search.html" property="og:url"/><meta content="https://ranking-hours.uz/search-icon.jpg" property="og:image"/><meta content="summary_large_image" name="twitter:card"/><meta content="Search | Ranking Hours" name="twitter:title"/><meta content="Use the Ranking Hours search page to find comparison guides, reviews, buying resources, and other technology content across the website." name="twitter:description"/><script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "name": "Search | Ranking Hours", "headline": "Search | Ranking Hours", "description": "Use the Ranking Hours search page to find comparison guides, reviews, buying resources, and other technology content across the website.", "url": "https://ranking-hours.uz/search.html", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://ranking-hours.uz/search.html"}, "publisher": {"@type": "Organization", "name": "Ranking Hours", "url": "https://ranking-hours.uz/"}}</script></head>
+<body><h1>Search</h1>
+<header>
+<div class="container header-container">
+<div class="logo">
+<a href="index.html"><i class="fas fa-bolt" style="color: var(--accent-cyan);"></i> <span>Ranking Hours</span></a>
+</div>
+<nav>
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="smartphone-comparisons.html">Smartphones</a></li>
+<li><a href="laptop-comparisons.html">Laptops</a></li>
+<li><a href="appliances-comparisons.html">Appliances</a></li>
+<li><a class="active" href="search.html"><i class="fas fa-search"></i> Search</a></li>
+</ul>
+</nav>
+</div>
+</header>
+<main class="container"><figure class="content-image"><img alt="Search illustration" decoding="async" loading="lazy" src="search-icon.jpg"/><figcaption>Search illustration</figcaption></figure>
+<section class="editorial-content container"><h2>How to Use Search</h2>
+<p>Search on Ranking Hours is designed to help you reach a relevant comparison without browsing the entire site. Enter a product, brand, category, or model name and review the matching results. The filters can narrow the list when you already know the type of product you want to explore.</p>
+<p>Search results are a starting point, not a substitute for reading the full comparison. A result may match a brand or product name while the article itself covers a wider set of details. Open the relevant page and check the model, generation, storage, capacity, regional version, and other specifications before drawing a conclusion.</p>
+<p>Product information can change over time. Prices, availability, software features, included accessories, and retailer listings may be different when you visit a page. The comparison articles focus on information that helps readers understand the differences, while current purchasing details should be confirmed with the seller or manufacturer.</p>
+<p>If a search does not return what you expect, try a shorter product name or a broader category. You can also browse the category pages to discover comparisons that use different wording. When you find an error or an outdated result, the Corrections page explains how to report it.</p>
+</section>
+</main>
+<section class="editorial-content container"><h2>Using Site Search</h2><p>Site search is provided to help visitors find a specific comparison, buying guide, or topic without having to browse every category. Search results should be treated as a discovery tool: open the underlying article and check its date, scope, and current information before relying on it for a purchase decision.</p><p>Useful search terms are usually product names, model families, or broad subjects such as laptops, headphones, cameras, software, or electric vehicles. If a product has several regional names or model numbers, browsing the relevant category can be more reliable than relying on one exact phrase.</p><p>If search results appear incomplete or a link returns an error, the problem can be reported through the Contact page. Keeping navigation and search useful is part of the site quality standard.</p></section><section class="editorial-expansion"><h2>Search Ranking Hours</h2><p>This section adds practical context to the ways to find comparisons, guides, and product information on the site covered on Ranking Hours. The aim is to make the page useful on its own while keeping the information focused on its actual purpose.</p><h3>Search by product name</h3><p>If you already know the product, enter its brand and model or the names of both products you want to compare. Using a specific model name can reduce confusion between different generations or variants.</p><h3>Search by category</h3><p>A broader term such as smartphone, laptop, headphones, camera, software, or air conditioner can help locate category pages and related guides. Category browsing is useful when you know the type of product but not the exact model.</p><h3>Use comparison terms</h3><p>Searches that include words such as comparison, vs, or differences can be useful when looking for a direct product-to-product page. If a specific comparison is not available, a category guide may still provide useful context.</p><h3>Check the exact result</h3><p>Product names can be similar, and older models may share branding with newer ones. Before relying on a page, check its title, model names, and publication context to make sure it matches the product you are researching.</p><h3>When search does not find what you need</h3><p>A missing result does not necessarily mean the topic is outside the site’s scope. Try a broader category term or browse the Categories and Comparisons pages. You can also send a topic suggestion through Contact.</p><h3>Keep current information in mind</h3><p>Search results can lead to pages that remain useful for background information even when prices or availability have changed. Verify current commercial details with the relevant manufacturer or retailer before buying.</p></section><section class="additional-context"><h2>Additional context</h2><p>Search is most effective when the query is specific enough to identify the subject but not so narrow that a useful category page is excluded. If you are researching a phone, include the model name. If you are still deciding between product types, use the category instead. It can also help to search for the main practical issue, such as battery, compatibility, display, storage, or software support. A search result should then be checked against the page title and model names. This matters because manufacturers often reuse product family names across generations. When a result is older, treat it as background information and verify current details separately. If a topic is not yet covered, a suggestion through Contact can help identify future content that would be useful to readers.</p></section><section class="reader-notes"><h2>Reader notes</h2><p>If a search term returns several related pages, open the page that matches the exact product family before relying on its details. This is particularly important for brands that reuse names across generations or regions. Search is a discovery tool, while the individual product page and current official documentation provide the context needed for a final decision.</p></section><section class="final-reader-note"><h2>Practical note</h2><p>Search can also be combined with the site's category navigation. When a product name produces no direct comparison, open the relevant category and look for related pages. This can reveal useful background information even when the exact product pair has not yet been covered.</p></section><section><h2>Final clarification</h2><p>If a direct result is not available, the absence of a page is not a statement about the product itself. It simply means that the current site library may not contain that exact topic. Broader category pages and related comparisons can still provide useful background while a new topic is considered.</p></section><footer>
+<div class="container footer-flex">
+<p>© 2026 ranking-hours.uz. Built by Abdulloh. All rights reserved.</p>
+<div class="footer-links">
+<a href="privacy-policy.html">Privacy</a>
+<a href="sitemap.html">Sitemap</a>
+<a href="terms-of-service.html">Terms</a>
+</div>
+</div>
+</footer>
+<script>
+ const searchInput = document.getElementById('dbSearch');
+ const cards = document.querySelectorAll('.result-item-card');
+ const countText = document.getElementById('resultsCount');
+ const noResults = document.getElementById('noResults');
+ const tags = document.querySelectorAll('.tag');
+
+ let currentFilter = 'all';
+
+ function searchExecutionEngine() {
+ const query = searchInput.value.toLowerCase().trim();
+ let visibleCount = 0;
+
+ cards.forEach(card => {
+ const innerContent = card.textContent.toLowerCase();
+ const dataKeywords = card.getAttribute('data-keywords').toLowerCase();
+ const category = card.getAttribute('data-category');
+
+ const queryMatch = innerContent.includes(query) || dataKeywords.includes(query);
+ const filterMatch = currentFilter === 'all' || category === currentFilter;
+
+ if(queryMatch && filterMatch) {
+ card.style.display = 'flex';
+ visibleCount++;
+ } else {
+ card.style.display = 'none';
+ }
+ });
+
+ // Update Metadata Counts Dynamically
+ if (query === '' && currentFilter === 'all') {
+ countText.textContent = `Recommended Structural Analytics (${cards.length} Hardware Indices Active)`;
+ } else {
+ countText.textContent = `Search Execution Complete (${visibleCount} Matching Records Compiled)`;
+ }
+
+ // Error Flag Toggle
+ if(visibleCount === 0) {
+ noResults.style.display = 'block';
+ } else {
+ noResults.style.display = 'none';
+ }
+ }
+
+ // Live input event tracking
+ searchInput.addEventListener('input', searchExecutionEngine);
+
+ // Interactive Filtering Chips
+ tags.forEach(tag => {
+ tag.addEventListener('click', () => {
+ tags.forEach(t => t.classList.remove('active'));
+ tag.classList.add('active');
+ currentFilter = tag.getAttribute('data-filter');
+ searchExecutionEngine();
+ });
+ });
+
+ // Initialize counts on execution finish
+ window.addEventListener('DOMContentLoaded', () => {
+ countText.textContent = `Recommended Structural Analytics (${cards.length} Hardware Indices Active)`;
+ });
+ </script>
+<script src="cookie-notice.js" defer></script>
+</body>
+</html>
